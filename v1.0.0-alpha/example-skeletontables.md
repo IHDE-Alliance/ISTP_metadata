@@ -17,3 +17,13 @@ Use these skeleton tables as a starting point for creating your own skeleton tab
 Â· [Ground-Based Magnetometers, Riometers, Sounders](https://spdf.gsfc.nasa.gov/istp_guide/skeleton_table/cn_k0_mari_00000000_v01.skt)
 
 Â· [Ground-Based VLF/ELF/ULF, Photometers](https://spdf.gsfc.nasa.gov/istp_guide/skeleton_table/cn_k0_mpa_00000000_v01.skt)
+
+***Examples of Skeletons***
+
+Â· AÂ **skeleton table**Â is a specially formattedÂ **ASCII**Â text file that contains the metadata or information about the data set. The format of the file allows simultaneous viewing and editing of the metadata.
+
+Â· AÂ **Skeleton CDF**Â is a file with exactly the same contents as the skeleton table, but its format isÂ **binary** .
+
+If you have aÂ **skeleton table**Â you can create aÂ **Skeleton CDF**Â using the CDF toolkit routine, skeletoncdf.
+
+If you have aÂ **Skeleton CDF**Â you can create aÂ **skeleton table**Â using the CDF toolkit routine, skeletontable.

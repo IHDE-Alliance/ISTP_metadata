@@ -4,8 +4,8 @@ Global attributes are used to provide information about the data set as an entit
 
 | **Attribute**                                             | **NASA Archive Requirement** | **Example**                                              | **Notes**                                                                                                                                                                                                                                                                                                                                      |
 | --------------------------------------------------------- | ---------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Project](#Project)                                       | Required                     | { "ISTP>International " - "Solar-Terrestrial Physics" }. | Identifies the name of the project and indicates ownership.                                                                                                                                                                                                                                                                                    |
-| [Source_name](#Source_name)                               | Required                     | { "GEOTAIL>Geomagnetic Tail" }.                          | Identifies the mission or investigation that contains the sensors.                                                                                                                                                                                                                                                                             |
+| [Project](#project)                                       | Required                     | { "ISTP>International " - "Solar-Terrestrial Physics" }. | Identifies the name of the project and indicates ownership.                                                                                                                                                                                                                                                                                    |
+| [Source_name](#source_name)                               | Required                     | { "GEOTAIL>Geomagnetic Tail" }.                          | Identifies the mission or investigation that contains the sensors.                                                                                                                                                                                                                                                                             |
 | [Mission_group](#Mission_group)                           | Required                     | {< "Geotail" }.                                          | Has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).                                                                                                                                                                                                             |
 | [Instrument_type](#Instrument_type)                       | Required                     | { "Magnetic Fields (space)" }.                           | Used to facilitate making choices of instrument type through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).                                                                                                                                                                                                                              |
 | [Logical_source_description](#Logical_source_description) | Required                     | { "Geotail Magnetic Field Key Parameters" }.             | Writes out the full words associated with the encrypted Logical_source above, *e.g.,* "Geotail Magnetic Field Key Parameters."                                                                                                                                                                                                                 |
@@ -189,8 +189,8 @@ This attribute value should include a recognizable abbreviation.
 
 This attribute value should include first initial and last name.
 
-**Project --- required**
-
+**Project**
+ --- required
 This attribute identifies the name of the project and indicates ownership. For ISTP missions and investigations, the value used is "ISTP>International Solar-Terrestrial Physics." For the Cluster mission, the value is "STSP Cluster>Solar Terrestrial Science Programmes, Cluster." Other acceptable values are "IACG>Inter-Agency Consultative Group," "CDAWxx>Coordinated Data Analysis Workshop xx", and "SPDS>Space Physics Data System." Others may be defined in the future. This attribute can be multi-valued if the data has been supplied to more than one project.
 
 **Rules_of_use --- recommended**
@@ -207,8 +207,8 @@ attribute for Cluster, but for IACG purposes it exists if experimenters want to 
 
 This is a required attribute for Cluster, but for IACG purposes it exists if experimenters want to track it.
 
-**Source_name --- required**
-
+**Source_name**
+ --- required
 This attribute identifies the mission or investigation that contains the sensors. For ISTP,
 this is the mission name for spacecraft missions or the investigation name for ground-based or theory investigations. Both a long name and a short name are provided. This attribute should be single valued. Examples:
 

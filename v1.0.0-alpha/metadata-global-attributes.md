@@ -185,7 +185,7 @@ This attribute value should include a recognizable abbreviation.
 
 This attribute value should include first initial and last name.
 
-**Project**
+## Project
 
 Required
 This attribute identifies the name of the project and indicates ownership. For ISTP missions and investigations, the value used is "ISTP>International Solar-Terrestrial Physics." For the Cluster mission, the value is "STSP Cluster>Solar Terrestrial Science Programmes, Cluster." Other acceptable values are "IACG>Inter-Agency Consultative Group," "CDAWxx>Coordinated Data Analysis Workshop xx", and "SPDS>Space Physics Data System." Others may be defined in the future. This attribute can be multi-valued if the data has been supplied to more than one project.
@@ -204,7 +204,7 @@ attribute for Cluster, but for IACG purposes it exists if experimenters want to 
 
 This is a required attribute for Cluster, but for IACG purposes it exists if experimenters want to track it.
 
-**Source_name**
+## Source_name
 
 Required
 This attribute identifies the mission or investigation that contains the sensors. For ISTP,

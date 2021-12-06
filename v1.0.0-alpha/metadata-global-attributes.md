@@ -37,17 +37,17 @@ Global attributes are used to provide information about the data set as an entit
 
 Global Attribute DefinitionsÂ in alphabetical order
 
-## Acknowledgement (recommended)
+### Acknowledgement (recommended)
 
 Text string at PI disposal allowing for information on expected acknowledgment if data is citable.
 
-## ADID_ref 
+### ADID_ref 
   --- no longer relevant
 
 This attribute stores the control authority identifier associated with the detached SFDU
 label. If no control authority identifier has been assigned, then the identifier associated with the ISTP/IACG Guidelines (NSSD0241) or with CDF (NSSD0110) can be used.
 
-**Data_type --- required**
+### Data_type --- required
 
 This attribute identifies the data type of the CDF data set. Both a long name and a short name are given. For ISTP exchangeable data products the values are "Kn>Key Parameter" for approximately minute averaged survey data, and "Hn>High Resolution data" for certified data of higher resolution than Key Parameters.$n$ can run from 0 to 9 to allow for more than one kind of data product. For Cluster/Cluster Science Data System (CSDS) this can either be "SP>Summary Parameter" or "PP>Prime Parameter." Other possible data types may be defined in the future. If any of these data sets are modified or used to produce derived products, the data type should be, *e.g.,* "Mn>Modified Data n", where n is from 0 to 9.
 

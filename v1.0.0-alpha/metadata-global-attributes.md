@@ -37,9 +37,8 @@ Global attributes are used to provide information about the data set as an entit
 
 Global Attribute DefinitionsÂ in alphabetical order
 
-### Acknowledgement --- recommended
-
-Text string at PI disposal allowing for information on expected acknowledgment if data is citable.
+## Acknowledgement 
+  (Recommended) Text string at PI disposal allowing for information on expected acknowledgment if data is citable.
 
 ### ADID_ref 
   --- no longer relevant

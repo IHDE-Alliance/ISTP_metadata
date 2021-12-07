@@ -35,24 +35,20 @@ Global attributes are used to provide information about the data set as an entit
 | [Software_version](#Software)                             | Optional                     |                                                          | Required attribute for Cluster, but for Inter-Agency Consultative Group (IACG) purposes it exists if experimenters want to track it.                                                                                                                                                                                                           |
 | [Validate](#Validate)                                     | Optional                     |                                                          | Written by software for automatic validation of features such as the structure of the CDF file on a simple pass/fail criterion.                                                                                                                                                                                                                |
 
-Global Attribute DefinitionsÂ in alphabetical order
+Global Attribute Definitions in alphabetical order
 
 ## Acknowledgement 
   (Recommended) Text string at PI disposal allowing for information on expected acknowledgment if data is citable.
 
 ## ADID_ref 
-  (No longer relevant)
-
-This attribute stores the control authority identifier associated with the detached SFDU
+  (No longer relevant) This attribute stores the control authority identifier associated with the detached SFDU
 label. If no control authority identifier has been assigned, then the identifier associated with the ISTP/IACG Guidelines (NSSD0241) or with CDF (NSSD0110) can be used.
 
-### Data_type --- required
+## Data_type 
+  (Required) This attribute identifies the data type of the CDF data set. Both a long name and a short name are given. For ISTP exchangeable data products the values are "Kn>Key Parameter" for approximately minute averaged survey data, and "Hn>High Resolution data" for certified data of higher resolution than Key Parameters.$n$ can run from 0 to 9 to allow for more than one kind of data product. For Cluster/Cluster Science Data System (CSDS) this can either be "SP>Summary Parameter" or "PP>Prime Parameter." Other possible data types may be defined in the future. If any of these data sets are modified or used to produce derived products, the data type should be, *e.g.,* "Mn>Modified Data n", where n is from 0 to 9.
 
-This attribute identifies the data type of the CDF data set. Both a long name and a short name are given. For ISTP exchangeable data products the values are "Kn>Key Parameter" for approximately minute averaged survey data, and "Hn>High Resolution data" for certified data of higher resolution than Key Parameters.$n$ can run from 0 to 9 to allow for more than one kind of data product. For Cluster/Cluster Science Data System (CSDS) this can either be "SP>Summary Parameter" or "PP>Prime Parameter." Other possible data types may be defined in the future. If any of these data sets are modified or used to produce derived products, the data type should be, *e.g.,* "Mn>Modified Data n", where n is from 0 to 9.
-
-**Data_version --- required**
-
-This attribute identifies the version of a particular CDF data file for a given date, *e.g.,* the file GE_K0_MGF_19920923_V01 is the first version of data for 1992 September23. **Each time** this particular data file is reproduced - for recalibration or other reasons - the Data_version is incremented by 1. Data_version always starts at `1'.
+## Data_version 
+  (Required) This attribute identifies the version of a particular CDF data file for a given date, *e.g.,* the file GE_K0_MGF_19920923_V01 is the first version of data for 1992 September23. **Each time** this particular data file is reproduced - for recalibration or other reasons - the Data_version is incremented by 1. Data_version always starts at `1'.
 
 **Descriptor --- required**
 

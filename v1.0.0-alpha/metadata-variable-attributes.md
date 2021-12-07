@@ -53,8 +53,8 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 
 **Variable attributes for time documentation (not needed for predefined CDF_TIME_TT2000)**
 
-<style>
-</style>
+
+
 
 | **Attribute**                                   | **NASA Archive Requirement**                         | **Example** | **Notes**                                                                                                                                                                                 |
 | ----------------------------------------------- | ---------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -246,63 +246,49 @@ Reference_Position is optional metadata to account for time variance with positi
 ## SI_conversion
 (Cluster recommended) The conversion factor to SI units. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion and the second is the standard unit that it converts to. For example, the magnetic field for FGM will be in **nT**, and to convert to Tesla the value of SI_conv will be `1.0e-9>Tesla'. The use of text allows this attribute to be parsed and the value must be extracted in software.
 
-**TIME_BASE --- recommended for Time variables (important for netCDF files and clarity)**
+## TIME_BASE 
+(Recommended for Time variables [important for netCDF files and clarity]) Fixed (0AD, 1900, 1970 (POSIX), J2000 (used by CDF_TIME_TT2000), 4714 BC (Julian)) or flexible (provider-defined)
 
-Fixed (0AD, 1900, 1970 (POSIX), J2000 (used by CDF_TIME_TT2000), 4714 BC (Julian)) or flexible (provider-defined)
+## TIME_SCALE
+(Optional) TT (same as TDT, used by CDF_TIME_TT2000), TAI (same as IAT, TT-32.184s), UTC (includes leap seconds), TDB (same as SPICE ET), EME1950 [default: UTC]
 
-**TIME_SCALE --- optional**
+## UNITS
+(Required if not using UNIT_PTR [optional for time variables]) Is a character string (no more than 20 characters, but preferably 6 characters) representing the units of the variable,*e.g.,* nT for magnetic field. If the standard abbreviation used is short then the units value can be added to a data listing heading or plot label. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). For CDF_TIME_TT2000: SI measurement unit: s, ms(milliseconds for EPOCH variables), ns(nanoseconds for CDF_TIME_TT2000), ps(picoseconds for EPOCH16)
 
-TT (same as TDT, used by CDF_TIME_TT2000), TAI (same as IAT, TT-32.184s), UTC (includes leap seconds), TDB (same as SPICE ET), EME1950 [default: UTC]
+## UNIT_PTR
+(Required if not using UNITS) Has as its value a variable which stores the character strings (up to 20 characters per character string) representing the units of the original variable, which can be added to a data listing heading or plot label. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). If this attribute is used, then UNITS is not used. **The value of the attribute must be a variable in the same CDF data set.**
 
-**UNITS --- required if not using UNIT_PTR (optional for time variables)**
+## VALIDMIN and VALIDMAX 
+(Required for time varying data and support_data) Hold values which are, respectively, the minimum and maximum values for a particular variable that are expected over the lifetime of the mission. The values must match the data type of the variable.
 
-Is a character string (no more than 20 characters, but preferably 6 characters) representing the units of the variable,*e.g.,* nT for magnetic field. If the standard abbreviation used is short then the units value can be added to a data listing heading or plot label. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine).
+## VAR_NOTES
+(Optional) Holds ancillary information about the variable and can be any length.
 
-For CDF_TIME_TT2000: SI measurement unit: s, ms(milliseconds for EPOCH variables), ns(nanoseconds for CDF_TIME_TT2000), ps(picoseconds for EPOCH16)
+## VAR_TYPE
+(Required for all variables) Identifies a variable as either:
 
-**UNIT_PTR --- required if not using UNITS**
+- **data** integer or real numbers that are plottable
 
-Has as its value a variable which stores the character strings (up to 20 characters per
-character string) representing the units of the original variable, which can be added to a data listing heading or plot label. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). If this attribute is used, then UNITS is not used. **The value of the attribute must be a variable in the same CDF data set.**
+- **support_data** integer or real "attached" variables
 
-**VALIDMIN and VALIDMAX --- required for time varying data and support_data**
+- **metadata** (labels or character variables)
 
-Hold values which are, respectively, the minimum and maximum values for a particular variable that are expected over the lifetime of the mission. The values must match the
-data type of the variable.
+- **ignore_data** placeholders
 
-**VAR_NOTES --- optional**
+## VARIABLE_PURPOSE 
+(Optional) Are a list of tags/keywords separated by commas that indicate probable uses of the variable and its function. Software can use these attributes to find the primary variables in the dataset, find variables with a common function, indicate variables suitable for specific purposes such as summary plots or educational displays, etc. Tags could indicate a common geophysical quantity to enable matching several variables of the same kind. For instance, all magnetic field variables could be tagged with VARIABLE_PURPOSE="Magnetic_Field" even though they have different coordinate systems or cadences. Software could use this tag to identify variables with a common theme for easier distinguishing between groups of variables and selecting between them. The values are always in a character string. Suggested tags/keywords include:
 
-Holds ancillary information about the variable and can be any length.
+- **"PRIMARY_VAR"**: one of the primary variables in the dataset
 
-**VAR_TYPE --- required for all variables**
+- **"EDUCATION"**: one of the variables suitable for displaying in an educational context
 
-Identifies a variable as either:
+- **"SUMMARY"**: one the variables to display on automatic summary plots
 
-Â· **data** integer or real numbers that are plottable
+- **"CARTESIAN", "ANGULAR"**: distinguish variables by coordinate system
 
-Â· **support_data** integer or real "attached" variables
+- **"Magnetic_Field", "Electric_Field", etc.**: common instrument tag to relate similar variables
 
-Â· **metadata** (labels or character variables)
-
-Â· **ignore_data** placeholders
-
-**VARIABLE_PURPOSE --- optional**
-
-Are a list of tags/keywords separated by commas that indicate probable uses of the variable and its function. Software can use these attributes to find the primary variables in the dataset, find variables with a common function, indicate variables suitable for specific purposes such as summary plots or educational displays, etc. Tags could indicate a common geophysical quantity to enable matching several variables of the same kind. For instance, all magnetic field variables could be tagged with VARIABLE_PURPOSE="Magnetic_Field" even though they have different coordinate systems or cadences. Software could use this tag to identify variables with a common theme for easier distinguishing between groups of variables and selecting between them. The values are always in a character string. Suggested tags/keywords include:
-
-Â· **"PRIMARY_VAR"**: one of the primary variables in the dataset
-
-Â· **"EDUCATION"**: one of the variables suitable for displaying in an educational context
-
-Â· **"SUMMARY"**: one the variables to display on automatic summary plots
-
-Â· **"CARTESIAN", "ANGULAR"**: distinguish variables by coordinate system
-
-Â· **"Magnetic_Field", "Electric_Field", etc.**: common instrument tag to relate similar variables
-
-**V_PARENT --- optional for use with derived variables**
-
-Identifies the "attached" variable which stores the parent variable(s) of a derived
-variable. The ''attached" variable can be dimensional and sized to hold as many parents as necessary. The syntax of each entry would be: logical_file_id>variable_name.
+## V_PARENT 
+(Optional for use with derived variables) Identifies the "attached" variable which stores the parent variable(s) of a derived variable. The ''attached" variable can be dimensional and sized to hold as many parents as necessary. The syntax of each entry would be: logical_file_id>variable_name.
 
 List and definition of attributes describing each variable.

@@ -20,9 +20,9 @@ Use these skeleton tables as a starting point for creating your own skeleton tab
 
 ***Examples of Skeletons***
 
-A **skeleton table** is a specially formattedÂ **ASCII** text file that contains the metadata or information about the data set. The format of the file allows simultaneous viewing and editing of the metadata.
+A **skeleton table** is a specially formatted **ASCII** text file that contains the metadata or information about the data set. The format of the file allows simultaneous viewing and editing of the metadata.
 
-A **Skeleton CDF** is a file with exactly the same contents as the skeleton table, but its format is **binary** .
+A **Skeleton CDF** is a file with exactly the same contents as the skeleton table, but its format is **binary**.
 
 If you have a **skeleton table** you can create a **Skeleton CDF** using the CDF toolkit routine, skeletoncdf.
 

@@ -160,7 +160,7 @@ This attribute carries source_name, data_type, and descriptor information. Used 
 This attribute writes out the full words associated with the encrypted Logical_source
 above, *e.g.,* "Geotail Magnetic Field Key Parameters." Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).
 
-**Mission_group --- required**
+## Mission_group --- required**
 
 This attribute has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). Valid values include (but are not restricted to):
 

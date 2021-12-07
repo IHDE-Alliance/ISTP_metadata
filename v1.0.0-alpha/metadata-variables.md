@@ -2,7 +2,7 @@
 
 ***Introduction***
 
-We have identified three types of variables to be included in ISTP/IACG CDF files:Â **data**variables of primary importance (e.g., density, magnetic_field, particle_flux),Â  support_dataÂ variables of secondary importance (e.g., time, energy_bands associated with particle_flux) andÂ **metadata**Â variables (e.g., a variable holding "Bx,By,Bz" to label magnetic field). Variables are defined with CDF specifications and required attributes. Data variables also have attached variables for time and dependencies (support_data) and labels (metadata). The support_data variables can be attached to data variables via DEPEND_i variable attributes. Metadata variables can be attached to data variables via LABL_PTR_i variable attributes (see below).
+We have identified three types of variables to be included in ISTP/IACG CDF files: **data**variables of primary importance (e.g., density, magnetic_field, particle_flux),  support_data variables of secondary importance (e.g., time, energy_bands associated with particle_flux) and **metadata** variables (e.g., a variable holding "Bx,By,Bz" to label magnetic field). Variables are defined with CDF specifications and required attributes. Data variables also have attached variables for time and dependencies (support_data) and labels (metadata). The support_data variables can be attached to data variables via DEPEND_i variable attributes. Metadata variables can be attached to data variables via LABL_PTR_i variable attributes (see below).
 
 **NOTE:** ISTP/IACG now encourages the use of zVariables which carry their own dimensionality. (The old style rVariables carry the dimensionality of the entire CDF and are intrinsically more complicated.) For more information about zVariables and
 rVariables consult the [CDF home page](https://cdf.gsfc.nasa.gov/).
@@ -20,32 +20,6 @@ These are variables of primary importance (e.g., density, magnetic_field, partic
 ***General***
 
 The following CDF variable specifications are required. Data is always either Real or Integer type. Data is always time (record) varying, but can be of any dimensionality. Real or Integer data are always defined as having one element.
-
-The following variable attributes are required:
-
-Â· [CATDESC](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#CATDESC)
-
-Â· [DEPEND_0](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#DEPEND_0) = [Epoch](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Epoch)
-
-Â· [DEPEND_i](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#DEPEND_1)
-
-Â· [DISPLAY_TYPE](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#DISPLAY_TYPE) (time_series, spectrogram, stack_plot,image)
-
-Â· [FIELDNAM](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FIELDNAM)
-
-Â· [FILLVAL](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FILLVAL)
-
-Â· [FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT)/[FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR)
-
-Â· [LABLAXIS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#LABLAXIS)/[LABL_PTR_i](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#LABL_PTR_1)
-
-Â· [UNITS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNITS)/[UNIT_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNIT_PTR)
-
-Â· [VALIDMIN](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#VALIDMIN)
-
-Â· [VALIDMAX](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#VALIDMIN)
-
-Â· [VAR_TYPE](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#VAR_TYPE) = data
 
 The need for DEPEND_i (other than DEPEND_0) and either LABLAXIS or LABL_PTR_i depends on the data itself and how it will be displayed. This is illustrated in examples in [Variable Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Variable%20Display).
 
@@ -65,26 +39,6 @@ The following CDF variable specifications are required.
 Support_data is always either Real or Integer type. Support_data is usually time invariant, but can be time varying.
 
 If a support_data variable is attached to a data variable via DEPEND_i, then it must be of the same size as the dimension i. See example below. Real or Integer data are always defined as having one element.
-
-The following variable attributes are required:
-
-Â· [CATDESC](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#CATDESC)
-
-Â· [DEPEND_0](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#DEPEND_0) = [Epoch](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Epoch) (if time varying)
-
-Â· [FIELDNAM](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FIELDNAM)
-
-Â· [FILLVAL](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FILLVAL) (if time varying)
-
-Â· [FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT)/[FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR)
-
-Â· [UNITS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNITS)/[UNIT_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNIT_PTR)
-
-Â· [VALIDMIN](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#VALIDMIN) (if time varying)
-
-Â· [VALIDMAX](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#VALIDMIN) (if time varying)
-
-Â· [VAR_TYPE](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#VAR_TYPE) = support_data
 
 **Metadata**
 

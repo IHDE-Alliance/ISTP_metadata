@@ -2,7 +2,7 @@
 
 ***ISTP/IACG Variable Attributes***
 
-Variable attributes are linked with each individual variable, and provide additional information about each variable. A standard set of these attributes is very important, for this is where the information can be stored in a commonly defined manner. Note that CDF attributes are case-sensitive and mustÂ **exactly** follow what is shown here **(ISTP attribute names must be capitalized)**. Additional Variable attributes can be defined but **they must start with a letter and can otherwise contain letters, numbers and the underscore character (no other special characters allowed).** The variable attributes can be listed in any order.
+Variable attributes are linked with each individual variable, and provide additional information about each variable. A standard set of these attributes is very important, for this is where the information can be stored in a commonly defined manner. Note that CDF attributes are case-sensitive and must **exactly** follow what is shown here **(ISTP attribute names must be capitalized)**. Additional Variable attributes can be defined but **they must start with a letter and can otherwise contain letters, numbers and the underscore character (no other special characters allowed).** The variable attributes can be listed in any order.
 
 The following table lists all the attributes and the type of variables for which they are needed. If a type of variable is not listed, then that attribute need not be defined for that particular variable. However, if a given variable has an attribute that is not
 needed, it will be ignored in most ISTP/IACG compliant applications. (RV is record or time varying)
@@ -73,100 +73,80 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 ## ABSOLUTE_ERROR
 (Optional) Absolute or systematic error, in same units as Units attribute.
 
-**AVG_TYPE --- optional**
+## AVG_TYPE
+(Optional) Sets up useful default conditions: different techniques appropriate to averaging different types of data. If this attribute is not present, **standard** average, i.e., simple arithmetic mean, is assumed. The value of this attribute can be used with application software. The valid options are listed below:
 
-Sets up useful default conditions: different techniques appropriate to averaging different types of data. If this attribute is not present, **standard** average, i.e., simple arithmetic mean, is assumed. The value of this attribute can be used with application software. The valid options are listed below:
+- standard -- simple arithmetic mean
 
-Â· standard -- simple arithmetic mean
+- angle_degrees -- "direction" average over 360 deg e.g., average of 5 and 355 is 0 instead of 180.
 
-Â· angle_degrees -- "direction" average over 360 deg e.g., average of 5 and 355 is 0 instead of 180.
+- angle_radians -- "direction" average over 2 pi
 
-Â· angle_radians -- "direction" average over 2 pi
+- angle_hour -- "direction" average over local times (hours), e.g., average of 2 and 22 is 0 instead of 12.
 
-Â· angle_hour -- "direction" average over local times (hours), e.g., average of 2 and 22 is 0 instead of 12.
+- RMS -- square root of the average of the squares of the values.
 
-Â· RMS -- square root of the average of the squares of the values.
+- log -- logarithm of the average of the anti-logarithms of the values.
 
-Â· log -- logarithm of the average of the anti-logarithms of the values.
-
-Â· decibel -- 10 times the logarithm of the average of the anti-logarithms of the
+- decibel -- 10 times the logarithm of the average of the anti-logarithms of the
 (values/10.).
 
-Â· cosine -- cosine of the average of the arc-cosines of the values.
+- cosine -- cosine of the average of the arc-cosines of the values.
 
-Â· none -- no meaningful averaging calculation is possible.
+- none -- no meaningful averaging calculation is possible.
 
-**BIN_LOCATION --- optional**
-
-Relative position of time stamp to the data measurement bin, with 0.0 at the beginning of time bin and 1.0 at the end. Default is 0.5 for the time at the center of the data measurement. Since clock readings are usually truncated, the real value may be
+## BIN_LOCATION
+(Optional) Relative position of time stamp to the data measurement bin, with 0.0 at the beginning of time bin and 1.0 at the end. Default is 0.5 for the time at the center of the data measurement. Since clock readings are usually truncated, the real value may be
 closer to 0.0.
 
-**CATDESC --- required for all variables**
+## CATDESC
+(Required for all variables) (Catalog description) is an approximately 80-character string which is a textual description of the variable and includes a description of what the variable depends on. This information needs to be complete enough that users can select variables of interest based only on this value. (see [CDAWeb www-based interface](https://cdaweb.gsfc.nasa.gov/)). Examples:
 
-(Catalog description) is an approximately 80-character string which is a textual description of the variable and includes a description of what the variable depends on. This information needs to be complete enough that users can select variables of interest based only on this value. (see [CDAWeb www-based interface](https://cdaweb.gsfc.nasa.gov/)). Examples:
+- **Geotail Comprehensive Plasma Instrument (CPI):** Ion number density (Solar Wind Analyzer), scalar
 
-Â· **Geotail Comprehensive Plasma Instrument (CPI):** Ion number density (Solar Wind Analyzer), scalar
+- **Geotail EPI:** Ion Diff. Intensity, at 12 energies 67-1361 keV
 
-Â· **Geotail EPI:** Ion Diff. Intensity, at 12 energies 67-1361 keV
+- **Wind Magnetic Field Ion (MFI):** Magnetic Field, Cartesian GSM coordinates
 
-Â· **Wind Magnetic Field Ion (MFI):** Magnetic Field, Cartesian GSM coordinates
+- **Geotail Electric Field Detector (EFD):** Electric Field from spherical probe, sunwd \ duskwd comp
 
-Â· **Geotail Electric Field Detector (EFD):** Electric Field from spherical probe, sunwd \ duskwd comp
+- **Canopus MPA:** 42 values of 5577A Intensities from Geodetic Lat 46-67, Long=265
 
-Â· **Canopus MPA:** 42 values of 5577A Intensities from Geodetic Lat 46-67, Long=265
+- **Canopus MARI:** Local Auroral Electrojet index, lower bound (CL), scalar
 
-Â· **Canopus MARI:** Local Auroral Electrojet index, lower bound (CL), scalar
-
-**DELTA_PLUS_VAR and DELTA_MINUS_VAR --- optional**
-
-Are included to point to a variable (or variables) which stores the uncertainty in (or range of) the original variable's value. The uncertainty (or range) is stored as a
-(+/-) on the value of the original variable. For many variables in ISTP/IACG,
-the original variable will be at the center of the interval so that only one
-value (or one set of values) of uncertainty (or range) will need to be defined.
-In this case, DELTA_PLUS_VAR, and DELTA_MINUS_VAR will point to the same
+## DELTA_PLUS_VAR and DELTA_MINUS_VAR 
+(Optional) Are included to point to a variable (or variables) which stores the uncertainty in (or range of) the original variable's value. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. For many variables in ISTP/IACG, the original variable will be at the center of the interval so that only one
+value (or one set of values) of uncertainty (or range) will need to be defined. In this case, DELTA_PLUS_VAR, and DELTA_MINUS_VAR will point to the same
 variable. See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg3). **The value of the attribute must be a variable in the same CDF data set.**
 
-**DEPEND_0 --- required for time-varying variables**
-
-Explicitly ties a data variable to the time variable on which it depends. All variables which change with time must have a DEPEND_0 attribute defined. The value of DEPEND_0 is *'Epoch'*, the time ordering parameter for ISTP/IACG. Different time resolution data can be supported in a single CDF data set by defining the variables Epoch, Epoch_1, Epoch_2, etc. each representing a different time resolution. These are
+## DEPEND_0
+(Required for time-varying variables) Explicitly ties a data variable to the time variable on which it depends. All variables which change with time must have a DEPEND_0 attribute defined. The value of DEPEND_0 is *'Epoch'*, the time ordering parameter for ISTP/IACG. Different time resolution data can be supported in a single CDF data set by defining the variables Epoch, Epoch_1, Epoch_2, etc. each representing a different time resolution. These are
 "attached" appropriately to the variables in the CDF data set via the attribute DEPEND_0. **The value of the attribute must be a variable in the same CDF data set.** See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg1).
 
-**DEPEND_1, DEPEND_2, etc --- required for dimensional variables as
-shown in table above. (1D time series data variables do not need a DEPEND_1
-defined.)**
+## DEPEND_1, DEPEND_2, etc 
+(Required for dimensional variables as shown in table above.) (1D time series data variables do not need a DEPEND_1 defined.)** Ties a dimensional data variable to a support_data variable on which the i-th dimension of the data variable depends. The number of DEPEND attributes must match the dimensionality of the variable, i.e., a one-dimensional variable must have a DEPEND_1, a two-dimensional variable must have a DEPEND_1 and a DEPEND_2 attribute, etc. **The value of the attribute must be a variable in the same CDF data set.** See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg4).
 
-Ties a dimensional data variable to a support_data variable on which the i-th
-dimension of the data variable depends. The number of DEPEND attributes must
-match the dimensionality of the variable, i.e., a one-dimensional variable must
-have a DEPEND_1, a two-dimensional variable must have a DEPEND_1 and a DEPEND_2
-attribute, etc. **The value of the attribute must be a variable in the same CDF data set.** See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg4).
+## DERIVN
+(Cluster required for derived variables) A text string identifying the derivation of the variable, possibly including a function/algorithm name or journal reference. Most derived variables will not be unique, and this information is essential if the product is to be compared/validated elsewhere.
 
-**DERIVN --- Cluster required for derived variables**
+## DICT_KEY 
+(Optional) Comes from a data dictionary keyword list and describes the variable to which it is attached. The ISTP/IACG standard dictionary keyword list is described in [ISTP/IACG Dictionary Keywords](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html).
 
-A text string identifying the derivation of the variable, possibly including a function/algorithm name or journal reference. Most derived variables will not be unique, and this information is essential if the product is to be compared/validated elsewhere.
+## DISPLAY_TYPE 
+(Required for data variables) Tells automated software what type of plot to make and what associated variables in the CDF are required in order to do so. Some valid values are listed below:
 
-**DICT_KEY --- optional**
+- time_series
 
-Comes from a data dictionary keyword list and describes the variable to which it is attached. The ISTP/IACG standard dictionary keyword list is described in [ISTP/IACG Dictionary Keywords](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html).
+- spectrogram
 
-**DISPLAY_TYPE --- required for data variables**
+- stack_plot
 
-Tells automated software what type of plot to make and what associated variables in the CDF are required in order to do so. Some valid values are listed below:
+- image
 
-Â· time_series
+- no_plot
 
-Â· spectrogram
-
-Â· stack_plot
-
-Â· image
-
-Â· no_plot
-
-**FIELDNAM --- required for all variables**
-
-Holds a character string (up to 30 characters) which describes the variable. It can be used to label a plot either above or below the axis, or can be used as a data listing
-heading. Therefore, consideration should be given to the use of upper- and lower-case letters where the appearance of the output plot or data listing heading will be affected.
+## FIELDNAM
+(Required for all variables) Holds a character string (up to 30 characters) which describes the variable. It can be used to label a plot either above or below the axis, or can be used as a data listing heading. Therefore, consideration should be given to the use of upper- and lower-case letters where the appearance of the output plot or data listing heading will be affected.
 
 **FILLVAL --- required for time varying variables**
 

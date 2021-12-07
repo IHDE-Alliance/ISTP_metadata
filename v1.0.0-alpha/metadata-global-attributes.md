@@ -40,8 +40,8 @@ Global Attribute DefinitionsÂ in alphabetical order
 ## Acknowledgement 
   (Recommended) Text string at PI disposal allowing for information on expected acknowledgment if data is citable.
 
-### ADID_ref 
-  --- no longer relevant
+## ADID_ref 
+  (No longer relevant)
 
 This attribute stores the control authority identifier associated with the detached SFDU
 label. If no control authority identifier has been assigned, then the identifier associated with the ISTP/IACG Guidelines (NSSD0241) or with CDF (NSSD0110) can be used.

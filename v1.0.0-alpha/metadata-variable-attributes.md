@@ -14,8 +14,8 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | ----------------------------------------- | ---------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | [CATDESC](#CATDESC)                       | Required                     | { "Ion Diff. Intensity, at 12 energies " - "67-1361 keV (EPIC/ICS)" } | Required for all variables                                                                                                              |
 | [DEPEND_0](#DEPEND_0)                     | Required                     | { "Epoch" }                                                           | Data, RV support_data, and RV metadata                                                                                                  |
-| [DEPEND_1](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form: Â· 1D spectrogram 1D stack_plot 2D spectrogram image                                                   |
-| [DEPEND_2](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form: Â· 2D spectrogram image                                                                                    |
+| [DEPEND_1](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form:  1D spectrogram 1D stack_plot 2D spectrogram image                                                   |
+| [DEPEND_2](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form:  2D spectrogram image                                                                                    |
 | [DEPEND_3](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form:  3D spectrogram                                                                                            |
 | [DISPLAY_TYPE](#DISPLAY_TYPE)             | Required                     | { "spectrogram" }                                                     | Data                                                                                                                                    |
 | [FIELDNAM](#FIELDNAM)                     | Required                     | { "Spin-avg Ion Diff Inten (EPIC/ICS)" }                              | All                                                                                                                                     |
@@ -240,13 +240,11 @@ Reference_Position is optional metadata to account for time variance with positi
 ## SCAL_PTR 
 (Recommended for non-linear scales if not using SCALETYP) Is used for dimensional variables when one value of SCALTYP is not sufficient. SCAL_PTR is used {\em instead of} SCALTYP, and will point to a variable which will be of the same dimensionality as the original variable. The allowed values are linear and log. **The value of the attribute must be a variable in the same CDF data set.**
 
-**sig_digits --- Cluster recommended**
+## sig_digits
+(Cluster recommended) This attribute provides the number of significant digits or other measure of data accuracy in a TBD manner. It is to allow compression software to optimize the number of digits to retain, and users to assess the accuracy of products. This operation is subject to the deliberations of the 'network traffic report' Task Group, DS-CFC-TN-0001, on compression algorithms and implementation. Restrictions on data compression may also influence the format and choice of data type used by the CDF generation software.
 
-This attribute provides the number of significant digits or other measure of data accuracy in a TBD manner. It is to allow compression software to optimize the number of digits to retain, and users to assess the accuracy of products. This operation is subject to the deliberations of the 'network traffic report' Task Group, DS-CFC-TN-0001, on compression algorithms and implementation. Restrictions on data compression may also influence the format and choice of data type used by the CDF generation software.
-
-**SI_conversion --- Cluster recommended**
-
-The conversion factor to SI units. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion and the second is the standard unit that it converts to. For example, the magnetic field for FGM will be in **nT**, and to convert to Tesla the value of SI_conv will be `1.0e-9>Tesla'. The use of text allows this attribute to be parsed and the value must be extracted in software.
+## SI_conversion
+(Cluster recommended) The conversion factor to SI units. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion and the second is the standard unit that it converts to. For example, the magnetic field for FGM will be in **nT**, and to convert to Tesla the value of SI_conv will be `1.0e-9>Tesla'. The use of text allows this attribute to be parsed and the value must be extracted in software.
 
 **TIME_BASE --- recommended for Time variables (important for netCDF files and clarity)**
 

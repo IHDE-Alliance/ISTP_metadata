@@ -38,8 +38,6 @@ Global attributes are used to provide information about the data set as an entit
 
 Global Attribute Definitions in alphabetical order
 
-[[_TOC_]]
-
 ## Acknowledgement 
   (Recommended) Text string at PI disposal allowing for information on expected acknowledgment if data is citable.
 

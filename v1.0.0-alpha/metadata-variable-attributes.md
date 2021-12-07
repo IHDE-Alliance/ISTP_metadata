@@ -45,7 +45,7 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [LIMITS_WARN_MIN](#LIMITS_WARN_MIN)       | Optional                     |                                                                       | Data                                                                                                                                    |
 | [LIMITS_WARN_MAX](#LIMITS_WARN_MIN)       | Optional                     |                                                                       | Data                                                                                                                                    |
 | [LIMITS_NOMINAL_MIN](#LIMITS_NOMINAL_MIN) | Optional                     |                                                                       | Data                                                                                                                                    |
-| [LIMITS_NOMINAL_MAX](#LIMITS_NOMINAL_MIN) | Optional                     |                                                                       | Data                                                                                                                                    |
+| [LIMITS_NOMINAL_MAX](#LIMITS_NOMINAL_MAX) | Optional                     |                                                                       | Data                                                                                                                                    |
 | [VARIABLE_PURPOSE](#VARIABLE_PURPOSE)     | Optional                     |                                                                       | Data                                                                                                                                    |
 | [DERIVN](#DERIVN)                         | Cluster required             |                                                                       | For derived variables                                                                                                                   |
 | [sig_digits](#sig_digits)                 | Cluster recommended          |                                                                       | Data                                                                                                                                    |
@@ -228,10 +228,17 @@ $ cat tai-utc.dat | awk
 
 LEAP_SECONDS_INCLUDED="1961JAN01+1.42282s,1961AUG01-0.05s,1962JAN01+0.47304s,1963NOV01+0.1s,1964JAN01+1.29427s,1964APR01+0.1s,1964SEP01+0.1s,1965JAN01+0.1s,1965MAR01+0.1s,1965JUL01+0.1s,1965SEP01+0.1s,1966JAN01+0.47304s,1968FEB010.1s,1972JAN01+5.78683s,1972JUL01+1s,1973JAN01+1s,1974JAN01+1s,1975JAN01+1s,1976JAN01+1s,1977JAN01+1s,1978JAN01+1s,1979JAN01+1s,1980JAN01+1s,1981JUL01+1s,1982JUL01+1s,1983JUL01+1s,1985JUL01+1s,1988JAN01+1s,1990JAN01+1s,1991JAN01+1s,1992JUL01+1s,1993JUL01+1s,1994JUL01+1s,1996JAN01+1s,1997JUL01+1s,1999JAN01+1s,2006JAN01+1s,2009JAN01+1s"
 
-## LIMITS_WARN_MIN and MAX
+## LIMITS_WARN_MAX
 (Optional) Values which define the limits where damage is likely to occur for values outside these values (often referred to as red limits). Visualization software can use these attributes for indicating limits on plots or other warnings. **The values data type must match the data type of the variable.**
 
-## LIMITS_NOMINAL_MIN and MAX
+## LIMITS_WARN_MIN
+(Optional) Values which define the limits where damage is likely to occur for values outside these values (often referred to as red limits). Visualization software can use these attributes for indicating limits on plots or other warnings. **The values data type must match the data type of the variable.**
+
+## LIMITS_NOMINAL_MAX
+(Optional) Values which define the range of nominal operations and where values outside the range of these values should be flagged as warnings (often referred to as yellow
+limits). Visualization software can use these attributes for indicating limits on plots or other warnings. The range of LIMITS_NOMINAL_MIN and LIMITS_NOMINAL_MAX fall within the range of LIMITS_WARN_MIN and LIMITS_WARN_MAX. Yellow limits are often set a certain percentage away from the red limits to give the operator a chance to respond before the red limits are reached. **The values data type must match the data type of the variable.**
+
+## LIMITS_NOMINAL_MIN
 (Optional) Values which define the range of nominal operations and where values outside the range of these values should be flagged as warnings (often referred to as yellow
 limits). Visualization software can use these attributes for indicating limits on plots or other warnings. The range of LIMITS_NOMINAL_MIN and LIMITS_NOMINAL_MAX fall within the range of LIMITS_WARN_MIN and LIMITS_WARN_MAX. Yellow limits are often set a certain percentage away from the red limits to give the operator a chance to respond before the red limits are reached. **The values data type must match the data type of the variable.**
 

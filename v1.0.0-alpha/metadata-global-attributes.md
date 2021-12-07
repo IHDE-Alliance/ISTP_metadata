@@ -64,101 +64,89 @@ label. If no control authority identifier has been assigned, then the identifier
   
 -  ''Space Physics>Astrophysics Science"
 
-**DOI --- recommended**
-
-Digital Object Identifier (DOI) as a persistent identifier for the dataset, of the form
+## DOI
+  (Recommended) Digital Object Identifier (DOI) as a persistent identifier for the dataset, of the form
 https://doi.org/<PREFIX>/<SUFFIX> with the <PREFIX> identifying the DOI registration authority and the <SUFFIX> identifying the dataset. The DOI should point to a landing page for additional information about the dataset. DOIs are typically created by the [SPASE](https://spase-group.org/) naming authority or archive.
 
-**Generated_by --- recommended**
+## Generated_by
+  (Recommended) This attribute allows for the generating data center/group to be identified.
 
-This attribute allows for the generating data center/group to be identified.
-
-**Generation_date --- recommended**
-
-Date stamps the creation of the file using the syntax yyyymmdd, *e.g.,* "19920923."
+## Generation_date
+  (Recommended) Date stamps the creation of the file using the syntax yyyymmdd, *e.g.,* "19920923."
 This is distinct from the date in "validate" below which records the times of later validation processes.
 
-**HTTP_LINK --- recommended**
+## HTTP_LINK
+  (Recommended) This attribute stores the URL for the PI or CoI web site holding on-line data. This attribute is used in conjunction with "LINK_TEXT" and "LINK_TITLE." There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TEXT" and "LINK_TITLE" for each "HTTP_LINK" entry. CDAWeb will then link to the URL given by "HTTP_LINK" using the "LINK_TITLE" and the description in "LINK_TEXT," on the CDAWeb Data Explorer page. For example:
 
-This attribute stores the URL for the PI or CoI web site holding on-line data. This attribute is used in conjunction with "LINK_TEXT" and "LINK_TITLE." There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TEXT" and "LINK_TITLE" for each "HTTP_LINK" entry. CDAWeb will then link to the URL given by "HTTP_LINK" using the "LINK_TITLE" and the description in "LINK_TEXT," on the CDAWeb Data Explorer page. For example:
+-"LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
 
-Â· "LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
+-"LINK_TITLE" = Institute of Space and Astronautical Science (ISAS) Data ARchives and Transmission System (DARTS)
 
-Â· "LINK_TITLE" = Institute of Space and Astronautical Science (ISAS) Data ARchives and Transmission System (DARTS)
-
-Â· "HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
+-"HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
 
 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at [ISAS DARTS](https://www.darts.isas.jaxa.jp/stp/geotail/)
 
-**Instrument_type --- required**
+## Instrument_type 
+  (Required) This attribute is used to facilitate making choices of instrument type through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). More than one entry is allowed. The following list contains the valid values:
 
-This attribute is used to facilitate making choices of instrument type through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). More than one entry is allowed. The following list contains the valid values:
+-Electric Fields (space)
 
-Â· Electric Fields (space)
+-Ephemeris
 
-Â· Ephemeris
+-Imagers (space)
 
-Â· Imagers (space)
+-Magnetic Fields (space)
 
-Â· Magnetic Fields (space)
+-Particles (space)
 
-Â· Particles (space)
+-Plasma and Solar Wind
 
-Â· Plasma and Solar Wind
+-Radio and Plasma Waves (space)
 
-Â· Radio and Plasma Waves (space)
+-Ground-Based High Frequency (HF)-Radars
 
-Â· Ground-Based High Frequency (HF)-Radars
+-Ground-Based Imagers
 
-Â· Ground-Based Imagers
+-Ground-Based Magnetometers, Riometers, Sounders
 
-Â· Ground-Based Magnetometers, Riometers, Sounders
+-Ground-Based Very Low Frequency (VLF)/Extremely Low Frequency (ELF)/Ultralow Frequency (ULF), Photometers
 
-Â· Ground-Based Very Low Frequency (VLF)/Extremely Low Frequency (ELF)/Ultralow Frequency (ULF), Photometers
-
-**LINK_TEXT --- recommended**
-
-This attribute stores text describing on-line data available at PI or CoI web sites. This attribute is used in conjunction with "LINK_TITLE" and "HTTP_LINK." There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TITLE" and "HTTP_LINK" for each "LINK_TEXT" entry. CDAWeb will then link to the URL given by
+## LINK_TEXT
+  (Recommended) This attribute stores text describing on-line data available at PI or CoI web sites. This attribute is used in conjunction with "LINK_TITLE" and "HTTP_LINK." There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TITLE" and "HTTP_LINK" for each "LINK_TEXT" entry. CDAWeb will then link to the URL given by
 "HTTP_LINK" using the "LINK_TITLE" and the description in "LINK_TEXT," on the CDAWeb Data Explorer page. For example:
 
-Â· "LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
+- "LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
 
-Â· "LINK_TITLE" = ISAS DARTS
+- "LINK_TITLE" = ISAS DARTS
 
-Â· "HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
+- "HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
 
 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at [ISAS DARTS](https://www.darts.isas.jaxa.jp/stp/geotail/)
 
-**LINK_TITLE --- recommended**
-
-This attribute stores the title of the web site holding on-line data available at PI or CoI
+## LINK_TITLE
+  (Recommended) This attribute stores the title of the web site holding on-line data available at PI or CoI
 web sites. This attribute is used in conjunction with "LINK_TEXT" and "HTTP_LINK." There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TEXT" and "HTTP_LINK" for each "LINK_TITLE" entry. CDAWeb will then link to the URL given by "HTTP_LINK" using the "LINK_TITLE" and the description in "LINK_TEXT," on the CDAWeb Data Explorer page. For example:
 
-Â· "LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
+-"LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
 
-Â· "LINK_TITLE" = ISAS DARTS
+-"LINK_TITLE" = ISAS DARTS
 
-Â· "HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
+-"HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
 
 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at [ISAS DARTS](https://www.darts.isas.jaxa.jp/stp/geotail/)
 
-**Logical_file_id --- required**
+## Logical_file_id
+  (Required) This attribute stores the name of the CDF file using the ISTP naming convention (source_name / data_type / descriptor / date / data_version), *e.g.,* GE_K0_MGF_19920923_V01. This attribute is required (1) to allow storage of the full name on IBM PCs, and (2) to avoid loss of the original source in the case of accidental (or intentional) renaming. For CDFs created on the ISTP Central Data Handling Facilities (CDHF), the correct Logical_file_id will be filled in by an ICSS support routine.
 
-This attribute stores the name of the CDF file using the ISTP naming convention (source_name / data_type / descriptor / date / data_version), *e.g.,* GE_K0_MGF_19920923_V01. This attribute is required (1) to allow storage of the full name on IBM PCs, and (2) to avoid loss of the original source in the case of accidental (or intentional) renaming. For CDFs created on the ISTP Central Data Handling Facilities (CDHF), the correct Logical_file_id will be filled in by an ICSS support routine.
+## Logical_source
+  (Required) This attribute carries source_name, data_type, and descriptor information. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).
 
-**Logical_source --- required**
-
-This attribute carries source_name, data_type, and descriptor information. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).
-
-**Logical_source_description --- required**
-
-This attribute writes out the full words associated with the encrypted Logical_source
+## Logical_source_description
+  (Required) This attribute writes out the full words associated with the encrypted Logical_source
 above, *e.g.,* "Geotail Magnetic Field Key Parameters." Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).
 
 ## Mission_group 
-  required**
-
-This attribute has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). Valid values include (but are not restricted to):
+  (Required) This attribute has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). Valid values include (but are not restricted to):
 
 - Geotail
 - IMP8

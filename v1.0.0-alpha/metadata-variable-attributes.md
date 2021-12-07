@@ -148,36 +148,35 @@ variable. See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#dat
 ## FIELDNAM
 (Required for all variables) Holds a character string (up to 30 characters) which describes the variable. It can be used to label a plot either above or below the axis, or can be used as a data listing heading. Therefore, consideration should be given to the use of upper- and lower-case letters where the appearance of the output plot or data listing heading will be affected.
 
-**FILLVAL --- required for time varying variables**
-
-Is the number inserted in the CDF in place of data values that are known to be bad or
+## FILLVAL
+(Required for time varying variables) Is the number inserted in the CDF in place of data values that are known to be bad or
 missing. Fill data are always non-valid data. The ISTP standard fill values are listed below. Fill values are automatically supplied in the ISTP CDHF ICSS environment (ICSS_KP_FILL_VALUES.INC) for key parameters produced at the CDHF. The FILLVAL data type must match the data type of the variable. For key parameters produced outside of the CDHF, the values below should be used.
 
-Â· REAL*4
+- REAL*4
 ---- -1.0E31
 
-Â· REAL*8
+- REAL*8
 ---- -1.0E31
 
-Â· BYTE
+- BYTE
 ---- -128
 
-Â· INTEGER*2
+- INTEGER*2
 ---- -32768
 
-Â· INTEGER*4
+- INTEGER*4
 ---- -2147483648
 
-Â· Unsigned
+- Unsigned
 INTEGER*1 ---- 255
 
-Â· Unsigned
+- Unsigned
 INTEGER*2 ---- 65535
 
-Â· Unsigned
+- Unsigned
 INTEGER*4 ---- 4294967295
 
-Â· Signed
+- Signed
 INTEGER*8 ---- -9223372036854775808LL
 
 In addition, the CDF library has special cases for the FILLVAL and PADVALUE numbers for the three-time variable data types, where the display string is purposefully set to a recognizable string rather than the actual stored number:

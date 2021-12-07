@@ -255,7 +255,10 @@ Reference_Position is optional metadata to account for time variance with positi
 ## RESOLUTION
 (Optional) Using ISO8601 relative time format, for example: "1s" = 1 second. Resolution provides the smallest change in time that is measured.
 
-## SCALEMIN and SCALEMAX
+## SCALEMAX
+(Optional) Are values which can be based on the actual values of data found in the CDF data set or on the probable uses of the data, {\em e.g.}, plotting multiple files at the same scale. Visualization software can use these attributes as defaults for plotting. The values must match the data type of the variable.
+
+## SCALEMIN
 (Optional) Are values which can be based on the actual values of data found in the CDF data set or on the probable uses of the data, {\em e.g.}, plotting multiple files at the same scale. Visualization software can use these attributes as defaults for plotting. The values must match the data type of the variable.
 
 ## SCALETYP 

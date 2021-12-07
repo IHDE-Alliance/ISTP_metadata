@@ -154,78 +154,63 @@ above, *e.g.,* "Geotail Magnetic Field Key Parameters." Used by [CDAWeb](https:/
 - Geosynchronous Investigations
 - Ground-Based Investigations
 
-**MODS --- recommended**
+## MODS
+  (Recommended) This attribute is a standard global attribute which is used to denote the history of modifications made to the CDF data set. The Metadata Object Description (MODS) attribute should contain a description of all significant changes to the data set. This attribute is not directly tied to Data_version, but each version produced will contain the relevant modifications. This attribute can have as many entries as necessary to contain the desired information.
 
-This attribute is a standard global attribute which is used to denote the history of modifications made to the CDF data set. The Metadata Object Description (MODS) attribute should contain a description of all significant changes to the data set. This attribute is not directly tied to Data_version, but each version produced will contain the relevant modifications. This attribute can have as many entries as necessary to contain the desired information.
+## Parents 
+  (Optional) This attribute lists the parent CDF(s) for files of derived and merged data sets. Subsequent entry values are used for multiple parents. The syntax for a CDF parent would be *e.g.* "CDF>logical_file_id."
 
-**Parents --- optional**
+## PI_affiliation
+  (Required) This attribute value should include a recognizable abbreviation.
 
-This attribute lists the parent CDF(s) for files of derived and merged data sets. Subsequent entry values are used for multiple parents. The syntax for a CDF parent would be *e.g.* "CDF>logical_file_id."
-
-**PI_affiliation --- required**
-
-This attribute value should include a recognizable abbreviation.
-
-**PI_name --- required**
-
-This attribute value should include first initial and last name.
+## PI_name
+  (Required) This attribute value should include first initial and last name.
 
 ## Project
-
 (Required)
 This attribute identifies the name of the project and indicates ownership. For ISTP missions and investigations, the value used is "ISTP>International Solar-Terrestrial Physics." For the Cluster mission, the value is "STSP Cluster>Solar Terrestrial Science Programmes, Cluster." Other acceptable values are "IACG>Inter-Agency Consultative Group," "CDAWxx>Coordinated Data Analysis Workshop xx", and "SPDS>Space Physics Data System." Others may be defined in the future. This attribute can be multi-valued if the data has been supplied to more than one project.
 
-**Rules_of_use --- recommended**
-
-Text containing information on, {\it e.g.} citability and PI access restrictions. This may
+## Rules_of_use 
+  (Recommended) Text containing information on, {\it e.g.} citability and PI access restrictions. This may
 point to a World Wide Web page specifying the rules of use.
 
-**Skeleton_version --- optional**
-
-This is a text attribute containing the skeleton file version number. This is a required
+## Skeleton_version 
+  (Optional) This is a text attribute containing the skeleton file version number. This is a required
 attribute for Cluster, but for IACG purposes it exists if experimenters want to track it.
 
-**Software_version --- optional**
-
-This is a required attribute for Cluster, but for IACG purposes it exists if experimenters want to track it.
+## Software_version 
+  (Optional) This is a required attribute for Cluster, but for IACG purposes it exists if experimenters want to track it.
 
 ## Source_name
-
-Required
-This attribute identifies the mission or investigation that contains the sensors. For ISTP,
+(Required) This attribute identifies the mission or investigation that contains the sensors. For ISTP,
 this is the mission name for spacecraft missions or the investigation name for ground-based or theory investigations. Both a long name and a short name are provided. This attribute should be single valued. Examples:
 
-Â· "GEOTAIL>Geomagnetic Tail"
+- "GEOTAIL>Geomagnetic Tail"
 
-Â· "WIND>Wind Interplanetary Plasma Laboratory"
+- "WIND>Wind Interplanetary Plasma Laboratory"
 
-Â· "DARN>Dual Auroral Radar Network"
+- "DARN>Dual Auroral Radar Network"
 
-Â· "GOES_7>Geostationary Operational Environmental Satellite 7"
+- "GOES_7>Geostationary Operational Environmental Satellite 7"
 
-Â· "IMP-8>Interplanetary Monitoring Platform"
+- "IMP-8>Interplanetary Monitoring Platform"
 
-Â· "LANL1989_046>Los Alamos National Laboratory 1989"
+- "LANL1989_046>Los Alamos National Laboratory 1989"
 
-Â· "C1>Cluster Satellite No 1"
+- "C1>Cluster Satellite No 1"
 
-**spase_DatasetResourceID --- recommended**
+## spase_DatasetResourceID
+  (Recommended) Unique dataset identifier assigned by [SPASE](http://www.spase-group.org/), of the form spase://<NAMING_AUTHORITY>/<UNIQUE_ID>, where <UNIQUE_ID> is the ID assigned to the SPASE resource record for the dataset in the [SPASE system](http://www.spase-group.org/) by a SPASE <NAMING_AUTHORITY>. The SPASE resource record provides metadata about the dataset, including pointers to locations holding the data.
 
-Unique dataset identifier assigned by [SPASE](http://www.spase-group.org/), of the form spase://<NAMING_AUTHORITY>/<UNIQUE_ID>, where <UNIQUE_ID> is the ID assigned to the SPASE resource record for the dataset in the [SPASE system](http://www.spase-group.org/) by a SPASE <NAMING_AUTHORITY>. The SPASE resource record provides metadata about the dataset, including pointers to locations holding the data.
-
-**TEXT --- required**
-
-This attribute is a standard global attribute which is a text description of the
+## TEXT
+  (Required) This attribute is a standard global attribute which is a text description of the
 experiment whose data is included in the CDF. A reference to a journal article(s) or to a World Wide Web page describing the experiment is essential and constitutes the minimum requirement. A written description of the data set is also desirable. This attribute can have as many entries as necessary to contain the desired information.
 
-**Time_resolution --- recommended**
+## Time_resolution
+  (Recommended) Specifies time resolution of the file, e.g., "3 seconds."
+  
+## TITLE
+  (Optional) This attribute is a standard global attribute which is a title for the data set, *e.g.,* "Geotail EPIC Key Parameters."
 
-specifies time resolution of the file, *e.g.,* "3 seconds."
-
-**TITLE --- optional**
-
-This attribute is a standard global attribute which is a title for the data set, *e.g.,* "Geotail EPIC Key Parameters."
-
-**Validate --- optional**
-
-Details to be specified. This attribute is written by software for automatic validation of features such as the structure of the CDF file on a simple pass/fail criterion. The software will test that all expected attributes are present and, where possible, have reasonable values. The syntax is likely to be of the form "test>result>where done>date." It is not the same as data validation.
+## Validate
+  (Optional) Details to be specified. This attribute is written by software for automatic validation of features such as the structure of the CDF file on a simple pass/fail criterion. The software will test that all expected attributes are present and, where possible, have reasonable values. The syntax is likely to be of the form "test>result>where done>date." It is not the same as data validation.

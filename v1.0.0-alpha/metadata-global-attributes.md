@@ -2,7 +2,6 @@
 
 Global attributes are used to provide information about the data set as an entity. Together with variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence, a good archive product. The global attributes are also used by the Coordinated Data Analysis Web ([CDAWeb)](https://cdaweb.gsfc.nasa.gov/) Display and Retrieval system. The required Global Attributes are listed here with example values. Note that Common Data Format (CDF) attributes are case-sensitive and must **exactly** follow what is shown here. Additional Global attributes can be defined but **they must start with a letter and can otherwise contain letters, numbers and the unscore character (no other special characters allowed).** See [Global Attribute Definitions](https://spdf.gsfc.nasa.gov/istp_guide/gattributes.html#gdefinitions) for the full set of defined Global Attributes.
 
-[[_TOC_]]
 
 | **Attribute**                                             | **NASA Archive Requirement** | **Example**                                              | **Notes**                                                                                                                                                                                                                                                                                                                                      |
 | --------------------------------------------------------- | ---------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -38,6 +37,8 @@ Global attributes are used to provide information about the data set as an entit
 | [Validate](#Validate)                                     | Optional                     |                                                          | Written by software for automatic validation of features such as the structure of the CDF file on a simple pass/fail criterion.                                                                                                                                                                                                                |
 
 Global Attribute Definitions in alphabetical order
+
+[[_TOC_]]
 
 ## Acknowledgement 
   (Recommended) Text string at PI disposal allowing for information on expected acknowledgment if data is citable.

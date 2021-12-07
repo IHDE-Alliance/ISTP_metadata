@@ -190,47 +190,32 @@ In addition, the CDF library has special cases for the FILLVAL and PADVALUE numb
 | EPOCH16            | FILLVAL           | -1.0E31, -1.0E31       | 9999-12-31:23:59:59.999999999999 |
 |                    | PADVALUE          | 0.0                    | 0000-01-01:00:00:00.000000000000 |
 
-**FORMAT --- required if not using FORM_PTR**
+## FORMAT 
+(Required if not using FORM_PTR) Is the output format used when extracting data values out to a file or screen (using CDFlist). The magnitude and the number of significant figures needed should be carefully considered. A good check is to consider it with respect to the values of VALIDMIN and VALIDMAX attributes. The output should be in Fortran format.
 
-Is the output format used when extracting data values out to a file or screen (using
-CDFlist). The magnitude and the number of significant figures needed should be
-carefully considered. A good check is to consider it with respect to the values
-of VALIDMIN and VALIDMAX attributes. The output should be in Fortran format.
-
-**FORM_PTR --- required if not using FORMAT**
-
-Has as its value a variable which stores the character strings (up to 20 characters per
+## FORM_PTR
+(Required if not using FORMAT) Has as its value a variable which stores the character strings (up to 20 characters per
 character string) representing the desired output format for the original variable. FORM_PTR is used *instead of* FORMAT. **The value of the attribute must be a variable in the same CDF data set.**
 
-**LABLAXIS --- required if not using LABL_PTR_1**
+## LABLAXIS
+(Required if not using LABL_PTR_1) Should be a short character string (approximately 10 characters, but preferably 6 characters - more only if absolutely required for clarity) which can be used to label a y-axis for a plot or to provide a heading for a data listing.
 
-Should be a short character string (approximately 10 characters, but preferably 6 characters - more only if absolutely required for clarity) which can be used to label a y-axis for a plot or to provide a heading for a data listing.
+## LABL_PTR_1, LABL_PTR_2, etc. 
+(Required if not using LABLAXIS) Is used to label a dimensional variable when one value of LABLAXIS is not sufficient to describe the variable or to label all the axes. LABL_PTR_i is used *instead of* LABLAXIS, where *i* can take on any value from 1 to *n* where *n* is the total number of dimensions of the original variable. The value of LABL_PTR_1 is a variable which will contain the short character strings which describe the first dimension of the original variable. The actual labels should be short as described above for LABLAXIS. **The value of the attribute must be a variable in the same CDF data set.** See [example (https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg2).
 
-**LABL_PTR_1, LABL_PTR_2, etc. --- required if not using LABLAXIS**
-
-Is used to label a dimensional variable when one value of LABLAXIS is not sufficient to describe the variable or to label all the axes. LABL_PTR_i is used *instead of* LABLAXIS,
-where *i* can take on any value from 1 to *n* where *n* is the total number of dimensions of the original variable. The value of LABL_PTR_1 is a variable which will contain the short character strings which describe the first dimension of the original variable. The actual labels should be short as described above for LABLAXIS. **The value of the attribute must be a variable in the same CDF data set.** See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg2).
-
-**LEAP_SECONDS_INCLUDED --- recommended for UTC only**
-
-Comma-delimited list (within brackets) of leap seconds included in the form of a lists of
-ISO8601 times when each leap second was added, appended with the size of the
-leap second in ISO8601 relative time (+/- time, most commonly: "+1s") [default: standard list of leap seconds up to time of data]. Leap_Seconds_Included is needed to account for time scales that don't have all 34 (in 2009) leap seconds and for the clocks in various countries that started using leap seconds at different times. The full list is required to handle the equally or more common case where a time scale starts at a specific Universal Time Coordinate (UTC) but continues on without leap seconds in TAI mode; this is basically what missions that don't add leap seconds are doing.
+## LEAP_SECONDS_INCLUDED
+(Recommended for UTC only) Comma-delimited list (within brackets) of leap seconds included in the form of a lists of ISO8601 times when each leap second was added, appended with the size of the leap second in ISO8601 relative time (+/- time, most commonly: "+1s") [default: standard list of leap seconds up to time of data]. Leap_Seconds_Included is needed to account for time scales that don't have all 34 (in 2009) leap seconds and for the clocks in various countries that started using leap seconds at different times. The full list is required to handle the equally or more common case where a time scale starts at a specific Universal Time Coordinate (UTC) but continues on without leap seconds in TAI mode; this is basically what missions that don't add leap seconds are doing.
 
 $ cat tai-utc.dat | awk
 'ORS="," { val = $7 - prev } {prev = $7} { print $1$2"01+"val "s" }'
 
 LEAP_SECONDS_INCLUDED="1961JAN01+1.42282s,1961AUG01-0.05s,1962JAN01+0.47304s,1963NOV01+0.1s,1964JAN01+1.29427s,1964APR01+0.1s,1964SEP01+0.1s,1965JAN01+0.1s,1965MAR01+0.1s,1965JUL01+0.1s,1965SEP01+0.1s,1966JAN01+0.47304s,1968FEB010.1s,1972JAN01+5.78683s,1972JUL01+1s,1973JAN01+1s,1974JAN01+1s,1975JAN01+1s,1976JAN01+1s,1977JAN01+1s,1978JAN01+1s,1979JAN01+1s,1980JAN01+1s,1981JUL01+1s,1982JUL01+1s,1983JUL01+1s,1985JUL01+1s,1988JAN01+1s,1990JAN01+1s,1991JAN01+1s,1992JUL01+1s,1993JUL01+1s,1994JUL01+1s,1996JAN01+1s,1997JUL01+1s,1999JAN01+1s,2006JAN01+1s,2009JAN01+1s"
 
-**LIMITS_WARN_MIN and MAX --- optional**
+## LIMITS_WARN_MIN and MAX
+(Optional) Values which define the limits where damage is likely to occur for values outside these values (often referred to as red limits). Visualization software can use these attributes for indicating limits on plots or other warnings. **The values data type must match the data type of the variable.**
 
-Values which define the limits where damage is likely to occur for values outside these
-values (often referred to as red limits). Visualization software can use these attributes for indicating limits on plots or other warnings. **The values data type must match
-the data type of the variable.**
-
-**LIMITS_NOMINAL_MIN and MAX --- optional**
-
-Values which define the range of nominal operations and where values outside the range of these values should be flagged as warnings (often referred to as yellow
+## LIMITS_NOMINAL_MIN and MAX
+(Optional) Values which define the range of nominal operations and where values outside the range of these values should be flagged as warnings (often referred to as yellow
 limits). Visualization software can use these attributes for indicating limits on plots or other warnings. The range of LIMITS_NOMINAL_MIN and LIMITS_NOMINAL_MAX fall within the range of LIMITS_WARN_MIN and LIMITS_WARN_MAX. Yellow limits are often set a certain percentage away from the red limits to give the operator a chance to respond before the red limits are reached. **The values data type must match the data type of the variable.**
 
 **MONOTON --- optional**

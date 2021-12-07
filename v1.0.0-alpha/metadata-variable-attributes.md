@@ -128,7 +128,13 @@ variable. See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#dat
 (Required for time-varying variables) Explicitly ties a data variable to the time variable on which it depends. All variables which change with time must have a DEPEND_0 attribute defined. The value of DEPEND_0 is *'Epoch'*, the time ordering parameter for ISTP/IACG. Different time resolution data can be supported in a single CDF data set by defining the variables Epoch, Epoch_1, Epoch_2, etc. each representing a different time resolution. These are
 "attached" appropriately to the variables in the CDF data set via the attribute DEPEND_0. **The value of the attribute must be a variable in the same CDF data set.** See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg1).
 
-## DEPEND_1, DEPEND_2, etc 
+## DEPEND_1 
+(Required for dimensional variables as shown in table above.) (1D time series data variables do not need a DEPEND_1 defined.) Ties a dimensional data variable to a support_data variable on which the i-th dimension of the data variable depends. The number of DEPEND attributes must match the dimensionality of the variable, i.e., a one-dimensional variable must have a DEPEND_1, a two-dimensional variable must have a DEPEND_1 and a DEPEND_2 attribute, etc. **The value of the attribute must be a variable in the same CDF data set.** See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg4).
+
+## DEPEND_2
+(Required for dimensional variables as shown in table above.) (1D time series data variables do not need a DEPEND_1 defined.) Ties a dimensional data variable to a support_data variable on which the i-th dimension of the data variable depends. The number of DEPEND attributes must match the dimensionality of the variable, i.e., a one-dimensional variable must have a DEPEND_1, a two-dimensional variable must have a DEPEND_1 and a DEPEND_2 attribute, etc. **The value of the attribute must be a variable in the same CDF data set.** See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg4).
+
+## DEPEND_3
 (Required for dimensional variables as shown in table above.) (1D time series data variables do not need a DEPEND_1 defined.) Ties a dimensional data variable to a support_data variable on which the i-th dimension of the data variable depends. The number of DEPEND attributes must match the dimensionality of the variable, i.e., a one-dimensional variable must have a DEPEND_1, a two-dimensional variable must have a DEPEND_1 and a DEPEND_2 attribute, etc. **The value of the attribute must be a variable in the same CDF data set.** See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg4).
 
 ## DERIVN
@@ -296,4 +302,4 @@ Reference_Position is optional metadata to account for time variance with positi
 ## V_PARENT 
 (Optional for use with derived variables) Identifies the "attached" variable which stores the parent variable(s) of a derived variable. The ''attached" variable can be dimensional and sized to hold as many parents as necessary. The syntax of each entry would be: logical_file_id>variable_name.
 
-List and definition of attributes describing each variable.
+

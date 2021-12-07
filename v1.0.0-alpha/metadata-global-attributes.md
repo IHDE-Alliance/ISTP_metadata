@@ -50,19 +50,19 @@ label. If no control authority identifier has been assigned, then the identifier
 ## Data_version 
   (Required) This attribute identifies the version of a particular CDF data file for a given date, *e.g.,* the file GE_K0_MGF_19920923_V01 is the first version of data for 1992 September23. **Each time** this particular data file is reproduced - for recalibration or other reasons - the Data_version is incremented by 1. Data_version always starts at `1'.
 
-**Descriptor --- required**
+## Descriptor 
+  (Required) This attribute identifies the name of the instrument or sensor that collected the data. Both a long name and a short name are given. An example for ISTP is "EPI>Energetic Particles and Ion Composition." The short name should be limited to from 2 to 4 characters for consistency with ISTP. This attribute should be single valued.
 
-This attribute identifies the name of the instrument or sensor that collected the data. Both a long name and a short name are given. An example for ISTP is "EPI>Energetic Particles and Ion Composition." The short name should be limited to from 2 to 4 characters for consistency with ISTP. This attribute should be single valued.
+## Discipline
+  (Required) This attribute describes both the science discipline and subdiscipline. More than one entry is allowed. The list for space physics is:
 
-**Discipline --- required**
+- "Space Physics>Magnetospheric Science"
 
-This attribute describes both the science discipline and subdiscipline. More than one entry is allowed. The list for space physics is:
+- ''Space Physics>Interplanetary Studies"
 
-Â· "Space Physics>Magnetospheric Science"
-
-Â· ''Space Physics>Interplanetary Studies"
-
-Â· ''Space Physics>Ionospheric Science"
+- ''Space Physics>Ionospheric Science"
+  
+-  ''Space Physics>Astrophysics Science"
 
 **DOI --- recommended**
 

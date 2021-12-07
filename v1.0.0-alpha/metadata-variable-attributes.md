@@ -2,7 +2,7 @@
 
 ***ISTP/IACG Variable Attributes***
 
-Variable attributes are linked with each individual variable, and provide additional information about each variable. A standard set of these attributes is very important, for this is where the information can be stored in a commonly defined manner. Note that CDF attributes are case-sensitive and mustÂ **exactly**Â follow what is shown hereÂ **(ISTP attribute names must be capitalized)**. Additional Variable attributes can be defined but **they must start with a letter and can otherwise contain letters, numbers and the underscore character (no other special characters allowed).** The variable attributes can be listed in any order.
+Variable attributes are linked with each individual variable, and provide additional information about each variable. A standard set of these attributes is very important, for this is where the information can be stored in a commonly defined manner. Note that CDF attributes are case-sensitive and mustÂ **exactly** follow what is shown here **(ISTP attribute names must be capitalized)**. Additional Variable attributes can be defined but **they must start with a letter and can otherwise contain letters, numbers and the underscore character (no other special characters allowed).** The variable attributes can be listed in any order.
 
 The following table lists all the attributes and the type of variables for which they are needed. If a type of variable is not listed, then that attribute need not be defined for that particular variable. However, if a given variable has an attribute that is not
 needed, it will be ignored in most ISTP/IACG compliant applications. (RV is record or time varying)
@@ -68,11 +68,10 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [RELATIVE_ERROR](#Relative_Error)               | Optional                                             |             | Relative or random error, in same units as Units attribute - to specify the accuracy of the time stamps relative to each other.                                                           |
 | [BIN_LOCATION](#Bin_Location)                   | Optional                                             |             | Relative position of time stamp to the data measurement bin, with 0.0 at the beginning of time bin and 1.0 at the end. Default is 0.5 for the time at the center of the data measurement. |
 
-**Variable Attribute DefinitionsÂ in alphabetical order**
+**Variable Attribute Definitions in alphabetical order**
 
-**ABSOLUTE_ERROR --- optional**
-
-Absolute or systematic error, in same units as Units attribute.
+## ABSOLUTE_ERROR
+(Optional) Absolute or systematic error, in same units as Units attribute.
 
 **AVG_TYPE --- optional**
 

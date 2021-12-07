@@ -12,20 +12,20 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 
 | **Attribute**                             | **NASA Archive Requirement** | **Example**                                                           | **Notes**                                                                                                                               |
 | ----------------------------------------- | ---------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| [CATDESC](#CATDESC)                       | Required                     | { "Ion Diff. Intensity, at 12 energies " -Â "67-1361 keV (EPIC/ICS)" } | Required for all variables                                                                                                              |
+| [CATDESC](#CATDESC)                       | Required                     | { "Ion Diff. Intensity, at 12 energies " - "67-1361 keV (EPIC/ICS)" } | Required for all variables                                                                                                              |
 | [DEPEND_0](#DEPEND_0)                     | Required                     | { "Epoch" }                                                           | Data, RV support_data, and RV metadata                                                                                                  |
-| [DEPEND_1](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form: Â· 1D spectrogram Â· 1D stack_plot Â· 2D spectrogram Â· image                                                   |
-| [DEPEND_2](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form: Â· 2D spectrogram Â· image                                                                                    |
-| [DEPEND_3](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form: Â· 3D spectrogram                                                                                            |
+| [DEPEND_1](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form: Â· 1D spectrogram 1D stack_plot 2D spectrogram image                                                   |
+| [DEPEND_2](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form: Â· 2D spectrogram image                                                                                    |
+| [DEPEND_3](#DEPEND_1)                     | Required                     |                                                                       | Data of the following form:  3D spectrogram                                                                                            |
 | [DISPLAY_TYPE](#DISPLAY_TYPE)             | Required                     | { "spectrogram" }                                                     | Data                                                                                                                                    |
 | [FIELDNAM](#FIELDNAM)                     | Required                     | { "Spin-avg Ion Diff Inten (EPIC/ICS)" }                              | All                                                                                                                                     |
 | [FILLVAL](#FILLVAL)                       | Required                     | { -1.000000e+31 }                                                     | Data, RV support_data, and RV metadata                                                                                                  |
 | [FORMAT](#FORMAT)                         | Required                     |                                                                       | All not using [FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR)                                               |
 | [FORM_PTR](#FORM_PTR)                     | Required                     |                                                                       | 1D data, support_data, and metadata not using [FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT)                   |
-| [LABLAXIS](#LABLAXIS)                     | Required                     |                                                                       | Data of the following form: Â· image Â· scalar time_series Â· 1D spectrogram Also needed for support_data that does not utilize LABL_PTR_X |
-| [LABL_PTR_1](#LABL_PTR_1)                 | Required                     |                                                                       | Data of the following form: Â· 1D time_series Â· 2D spectrogram Also needed for 1D and 2D support_data without a LABLAXIS                 |
-| [LABL_PTR_2](#LABL_PTR_1)                 | Required                     |                                                                       | Data of the following form: Â· 2D spectrogram Â· 3D spectrogram Also needed for 2D support_data without a LABLAXIS                        |
-| [LABL_PTR_3](#LABL_PTR_1)                 | Required                     |                                                                       | Data of the following form: Â· 3D spectrogram                                                                                            |
+| [LABLAXIS](#LABLAXIS)                     | Required                     |                                                                       | Data of the following form:  image scalar time_series 1D spectrogram Also needed for support_data that does not utilize LABL_PTR_X |
+| [LABL_PTR_1](#LABL_PTR_1)                 | Required                     |                                                                       | Data of the following form:  1D time_series 2D spectrogram Also needed for 1D and 2D support_data without a LABLAXIS                 |
+| [LABL_PTR_2](#LABL_PTR_1)                 | Required                     |                                                                       | Data of the following form:  2D spectrogram 3D spectrogram Also needed for 2D support_data without a LABLAXIS                        |
+| [LABL_PTR_3](#LABL_PTR_1)                 | Required                     |                                                                       | Data of the following form:  3D spectrogram                                                                                            |
 | [UNITS](#UNITS)                           | Required                     |                                                                       | Data and support_data not using [UNIT_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNIT_PTR)                             |
 | [UNIT_PTR](#UNIT_PTR)                     | Required                     |                                                                       | 1D data and support_data not using [UNITS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNITS)                                |
 | [VALIDMIN](#VALIDMIN)                     | Required                     |                                                                       | Data and RV support_data                                                                                                                |
@@ -218,37 +218,27 @@ LEAP_SECONDS_INCLUDED="1961JAN01+1.42282s,1961AUG01-0.05s,1962JAN01+0.47304s,196
 (Optional) Values which define the range of nominal operations and where values outside the range of these values should be flagged as warnings (often referred to as yellow
 limits). Visualization software can use these attributes for indicating limits on plots or other warnings. The range of LIMITS_NOMINAL_MIN and LIMITS_NOMINAL_MAX fall within the range of LIMITS_WARN_MIN and LIMITS_WARN_MAX. Yellow limits are often set a certain percentage away from the red limits to give the operator a chance to respond before the red limits are reached. **The values data type must match the data type of the variable.**
 
-**MONOTON --- optional**
+## MONOTON
+(Optional) Indicates whether the variable is monotonically increasing or monotonically decreasing. Use of MONOTON is strongly recommended for the Epoch time variable, and can significantly increase the performance speed on retrieval of data. Valid values: INCREASE, DECREASE.
 
-Indicates whether the variable is monotonically increasing or monotonically decreasing. Use of MONOTON is strongly recommended for the Epoch time variable, and can significantly increase the performance speed on retrieval of data. Valid values: INCREASE, DECREASE.
+## RELATIVE_ERROR
+(Optional) Relative or random error, in same units as Units attribute - to specify the accuracy of the time stamps relative to each other. This is usually much smaller than Absolute_Error.
 
-**RELATIVE_ERROR --- optional**
-
-Relative or random error, in same units as Units attribute - to specify the accuracy of the time stamps relative to each other. This is usually much smaller than Absolute_Error.
-
-**REFERENCE_POSITION --- optional**
-
-Topocenter (local), Geocenter , rotating Earth geoid (used by CDF_TIME_TT2000).
+## REFERENCE_POSITION
+(Optional) Topocenter (local), Geocenter , rotating Earth geoid (used by CDF_TIME_TT2000).
 Reference_Position is optional metadata to account for time variance with position in the gravity wells and with relative velocity. While we could use a combined TimeSystem attribute that defines mission-specific time scales where needed, such as UTC-at-STEREO-B, it's cleaner to keep them separate as Time_Scale=UTC and Reference_Position=STEREO-B.
 
-**RESOLUTION --- optional**
+## RESOLUTION
+(Optional) Using ISO8601 relative time format, for example: "1s" = 1 second. Resolution provides the smallest change in time that is measured.
 
-Using ISO8601 relative time format, for example: "1s" = 1 second. Resolution
-provides the smallest change in time that is measured.
+## SCALEMIN and SCALEMAX
+(Optional) Are values which can be based on the actual values of data found in the CDF data set or on the probable uses of the data, {\em e.g.}, plotting multiple files at the same scale. Visualization software can use these attributes as defaults for plotting. The values must match the data type of the variable.
 
-**SCALEMIN and SCALEMAX --- optional**
+## SCALETYP 
+(Recommended for non-linear scales if not using SCAL_PTR) Indicates whether the variable should have a **linear** or a **log** scale as a default. If this attribute is not present, **linear** scale is assumed.
 
-Are values which can be based on the actual values of data found in the CDF data set or on the probable uses of the data, {\em e.g.}, plotting multiple files at the same
-scale. Visualization software can use these attributes as defaults for plotting. The values must match the data type of the variable.
-
-**SCALETYP --- recommended for non-linear scales if not using SCAL_PTR**
-
-Indicates whether the variable should have a **linear** or a **log** scale as a default. If this attribute is not present, **linear** scale is assumed.
-
-**SCAL_PTR --- recommended for non-linear scales if not using SCALETYP**
-
-Is used for dimensional variables when one value of SCALTYP is not sufficient. SCAL_PTR is used {\em instead of} SCALTYP, and will point to a variable which will be of
-the same dimensionality as the original variable. The allowed values are linear and log. **The value of the attribute must be a variable in the same CDF data set.**
+## SCAL_PTR 
+(Recommended for non-linear scales if not using SCALETYP) Is used for dimensional variables when one value of SCALTYP is not sufficient. SCAL_PTR is used {\em instead of} SCALTYP, and will point to a variable which will be of the same dimensionality as the original variable. The allowed values are linear and log. **The value of the attribute must be a variable in the same CDF data set.**
 
 **sig_digits --- Cluster recommended**
 

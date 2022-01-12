@@ -9,15 +9,19 @@ Try as links:
 
 
 Try as include:
-@@include[metadata-global-attributes.md](metadata-global-attributes.md)
+@@include[02_metadata-global-attributes.md](02_metadata-global-attributes.md)
 
-:(metadata-global-attributes.md)
+:(02_metadata-global-attributes.md)
 
-!!!(metadata-global-attributes.md)!!!
+!!!(02_metadata-global-attributes.md)!!!
 
-@[:markdown](metadata-global-attributes.md)
+@[:markdown](02_metadata-global-attributes.md)
 
-{metadata-global-attributes.md}
+{02_metadata-global-attributes.md}
+
+{% include "02_metadata-global-attributes.md" %}
+
+{% include "git+https://github.com/HDE-Alliance/ISTP_metadata/edit/main/v1.0.0-alpha/01_metadata-intro.md" %}
 
 
 [Variable Attributes](03_metadata-variable-attributes.md)

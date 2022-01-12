@@ -17,3 +17,6 @@ Try as include:
 
 @[:markdown](metadata-global-attributes.md)
 
+{metadata-global-attributes.md}
+
+

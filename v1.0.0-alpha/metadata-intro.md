@@ -13,3 +13,5 @@ Try as include:
 
 :(metadata-global-attributes.md)
 
+!!!(metadata-global-attributes.md)!!!
+

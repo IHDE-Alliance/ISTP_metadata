@@ -4,27 +4,8 @@
 
 This document addresses the required and optional types of metadata. Global attributes, variable attributes and types of variables are defined, as well as examples of each type. The examples are included in Appendix A.
 
-Try as links:
+
 [Global Attributes](02_metadata-global-attributes.md)
-
-
-Try as include:
-@@include[02_metadata-global-attributes.md](02_metadata-global-attributes.md)
-
-:(02_metadata-global-attributes.md)
-
-!!!(02_metadata-global-attributes.md)!!!
-
-@[:markdown](02_metadata-global-attributes.md)
-
-{02_metadata-global-attributes.md}
-
-{% include "02_metadata-global-attributes.md" %}
-
-{% include "git+https://github.com/HDE-Alliance/ISTP_metadata/edit/main/v1.0.0-alpha/01_metadata-intro.md" %}
-
-<iframe src="02_metadata-global-attributes.md" seamless></iframe>
-
 
 [Variable Attributes](03_metadata-variable-attributes.md)
 
@@ -265,3 +246,23 @@ experiment whose data is included in the CDF. A reference to a journal article(s
   (Optional) Details to be specified. This attribute is written by software for automatic validation of features such as the structure of the CDF file on a simple pass/fail criterion. The software will test that all expected attributes are present and, where possible, have reasonable values. The syntax is likely to be of the form "test>result>where done>date." It is not the same as data validation.
 </details>
 
+
+  ## failed attempts at including other markdown files:
+  
+  
+Try as include:
+@@include[02_metadata-global-attributes.md](02_metadata-global-attributes.md)
+
+:(02_metadata-global-attributes.md)
+
+!!!(02_metadata-global-attributes.md)!!!
+
+@[:markdown](02_metadata-global-attributes.md)
+
+{02_metadata-global-attributes.md}
+
+{% include "02_metadata-global-attributes.md" %}
+
+{% include "git+https://github.com/HDE-Alliance/ISTP_metadata/edit/main/v1.0.0-alpha/01_metadata-intro.md" %}
+
+<iframe src="02_metadata-global-attributes.md" seamless></iframe>

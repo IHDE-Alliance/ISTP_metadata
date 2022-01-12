@@ -11,3 +11,5 @@ Try as links:
 Try as include:
 @@include[metadata-global-attributes.md](metadata-global-attributes.md)
 
+:(metadata-global-attributes.md)
+

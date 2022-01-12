@@ -23,6 +23,8 @@ Try as include:
 
 {% include "git+https://github.com/HDE-Alliance/ISTP_metadata/edit/main/v1.0.0-alpha/01_metadata-intro.md" %}
 
+<iframe src="02_metadata-global-attributes.md" seamless></iframe>
+
 
 [Variable Attributes](03_metadata-variable-attributes.md)
 

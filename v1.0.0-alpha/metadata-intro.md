@@ -15,3 +15,5 @@ Try as include:
 
 !!!(metadata-global-attributes.md)!!!
 
+@[:markdown](metadata-global-attributes.md)
+

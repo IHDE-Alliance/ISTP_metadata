@@ -449,7 +449,7 @@ ISO standard date/time strings are used in the same format as used in data recor
    
    DELTA PLUS and DELTA MINUS DEPEND i variables, including the time tags which are DEPEND 0 for the data, may have these. They describe the range over which the data are integrated, representative, etc, and locate the position of the time tag or value within this range. In the case of time, DELTA PLUS and DELTA MINUS are the number of seconds corresponding to the sampling interval or other representative time interval, given in seconds as a float. Alternatively, DELTA PLUS and DELTA MINUS for time variables could themselves be variables, e.g., if they are record-varying, in which case they require their own metadata. For an array of energies used as dependencies for array data, DELTA PLUS and DELTA MINUS used together with the energy value provide a complete description of the energy bin over which the measurement was made or is representative.
    
-   It is also advisable to supply extra information to describe the relationships between the DEPEND variables with the parent variable, such as the method required to construct the volume of the bin. No syntax is prescribed for these parameters which should be text, but examples of possible descriptors are listed below.
+   It is also advisable to supply extra information to describe the relationships between the DEPEND variables with the parent variable, such as the method required to construct the volume of the bin. No syntax is prescribed for these parameters which should be text, but examples of possible descriptors are listed below.
    
    For some data it will be necessary to specify different area and volume factors depending on the slice to be taken through the data. Added parameters may be specified to cover any integration or processing factors appropriate.
    
@@ -467,7 +467,7 @@ ISO standard date/time strings are used in the same format as used in data recor
    DELTA PLUS = Wth
    DELTA MINUS = 0
    
-   Other attributes may be defined to show the use of these form factors in calculating quantities associated with the binning, such as
+   Other attributes may be defined to show the use of these form factors in calculating quantities associated with the binning, such as
    
    Theta Factor = "TFactor[j] is cos(theta[j])-cos(theta[j]+Wth[j])"
    Energy Factor = "EFactor[i] for volume is E[i]^2 *2*WE[i] + (2/3)WE[i]^3"
@@ -678,7 +678,7 @@ divided into 4 categories:
 • Attributes defined by the ISTP (http://spdf.gsfc.nasa.gov/sp_use_of_cdf.html)
 
 • Attributes associated to the Space Physics Archive Search and Extract dictionary (SPASE, http://www.spase-group.org/)
-• Attributes derived from the Virtual European Solar and Planetary Access dictionary (VESPA, http://voparis-europlanetnew.obspm.fr/planetary/data/epn/query/all/)
+• Attributes derived from the Virtual European Solar and Planetary Access dictionary (VESPA, http://voparis-europlanetnew.obspm.fr/planetary/data/epn/query/all/)
 • Additional attributes specific to Solar Orbiter CDF data sets.
 
 ISTP attributes

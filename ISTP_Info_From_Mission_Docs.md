@@ -453,7 +453,7 @@ ISO standard date/time strings are used in the same format as used in data recor
    
    For some data it will be necessary to specify different area and volume factors depending on the slice to be taken through the data. Added parameters may be specified to cover any integration or processing factors appropriate.
    
-   For example, consider a 2-D array of phase space densities calculated at centre energies Ei and starting polar angles θj and over a constant azimuthal angular range of 15◦. A suitable description parameter and described DEPEND variables could take the value
+   For example, consider a 2-D array of phase space densities calculated at centre energies Ei and starting polar angles and over a constant azimuthal angular range of 15◦. A suitable description parameter and described DEPEND variables could take the value
    
    DEPEND 1 = E
    and the variable E block would contain metadata

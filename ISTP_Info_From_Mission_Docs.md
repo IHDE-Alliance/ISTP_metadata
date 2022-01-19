@@ -372,7 +372,7 @@ ISO standard date/time strings are used in the same format as used in data recor
    .
    .
    END VARIABLE = name
-   Where data in science units are provided it is required that metadata sufficient to describe that data for science use is provided. The following metadata are
+   Where data in science units are provided it is required that metadata sufficient to describe that data for science use is provided. The following metadata are
    required whenever meaningful.
    VALUE TYPE This identifies the data type and is necessary for conversion from the ascii
    entry. Allowed values are:

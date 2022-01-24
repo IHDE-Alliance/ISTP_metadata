@@ -1,6 +1,6 @@
 ## Mission Metadata Usage
 
-Table of Contents
+#### Table of Contents
 
 MMS (#MMS)
 

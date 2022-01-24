@@ -1,5 +1,4 @@
-*****Mission Metadata Usage*****
-
+Mission Metadata Usage
 <style>
 </style>
 

@@ -3,7 +3,7 @@
 <style>
 </style>
 
-#MMS
+**MMS**
 
 Global attributes are used to provide information about the data set as an entity.
 Together with variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence, a good archive product.

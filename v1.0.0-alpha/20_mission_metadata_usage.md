@@ -380,7 +380,7 @@ MMS Science Working Team pages. Those pages also lay out the rules for formattin
 2.1.3.13 UNIT_PTR- (required if not using UNITS)
 The value of this field is a variable which stores short character strings which identify the units of the variable. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). The value of this attribute must be a variable in the same CDF data set.
 
-**Cluster**
+### Cluster
 
 1. Global Metadata-
    Global attributes are used to provide informational metadata associated with all the variables in the file, and as a means of attaching information that may be carried along with the data.
@@ -551,7 +551,7 @@ SIG DIGITS Gives the number of significant digits in the data measurement.
 
 Other descriptive metadata in the same syntax may be supplied as deemed appropriate to describe the data adequately for scientific use.
 
-**ERG**
+### ERG
 
 The next task was to design what metadata and data variables are needed to well accommodate the  scientific data and metadata of each observation. As for the metadata, there has already existed  the standard metadata list released from the CDF 
 website, called the International Solar-Terrestrial Physics/Inter-Agency Consultative Group (ISTP/IACG) CDF guidelines, which are suitable to  describe the general information on various data and observation. We adopted them as the base of  metadata for our data files and further sought to supplement them with some specific information necessary for actual data analyses. Naturally these data analysis-oriented metadata are different for different types of observational data. Thus we discussed what kind of information, parameter, description would be needed for each data and 
@@ -589,7 +589,7 @@ and “Elevation” provide the exact location of a magnetometer and data users 
 | Http_link*                                                                                                                                                     | URL of the PI or CoI websites.                                                                                                                |
 | Time_resolution*                                                                                                                                               | Typical time resolution of the data set.                                                                                                      |
 
-**PRBEM**
+### PRBEM
 
 Global attributes 
 Global attributes are used to provide information about the data set as an entity. Together with variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence, a good archive product. The global attributes can also be used by any software, one popular example being the CDAWeb Display and Retrieval system (http://cdaweb.gsfc.nasa.gov/cdaweb/). A list of global attributes is provided below, note that it is not limited, one can decide to add more global attributes if needed for his own applications.
@@ -739,7 +739,7 @@ The need for DEPEND_i (other than DEPEND_0) and either LABLAXIS or LABL_PTR_i de
 
 • VAR_NOTES
 
-**Solar Orbiter**
+### Solar Orbiter
 
 Global attributes-
 Global attributes are used to provide information about the data set as an entity. Global attributes for Solar Orbiter CDF data sets are 

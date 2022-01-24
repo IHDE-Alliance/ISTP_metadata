@@ -1,7 +1,6 @@
 **Mission Metadata Usage**
 
-<style>
-</style>
+
 
 **MMS**
 

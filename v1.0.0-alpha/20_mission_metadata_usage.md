@@ -107,6 +107,14 @@
 
     2.1 Global Metadata
 
+    2.2 Variable Metadata
+
+    2.2.1 Mandatory Variable Metadata
+
+    2.3 Extra Metadata for Depend Variables
+
+    2.4 Optional Variable Metadata
+
 3. ERG
 
 4. PRBEM

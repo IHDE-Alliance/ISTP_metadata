@@ -26,6 +26,9 @@ Together with variables and variable attributes, the global attributes make the 
   
    1.1.1  Data_type-
      This attribute is used by CDF file writing software to create a filename. It is a combination of the following filename components: mode, data level, and optional data product descriptor. 
+     
+   1.1.2 Data_version-
+   This attribute identifies the version (vX.Y.Z) of a particular CDF data file. 
 
     1.1.2 Data_version- 
     This attribute identifies the version (vX.Y.Z) of a particular CDF data file.

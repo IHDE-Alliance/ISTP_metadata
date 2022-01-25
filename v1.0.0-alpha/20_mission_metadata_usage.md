@@ -4,7 +4,7 @@
 
 [1. MMS](#MMS) 
 
-    1.1 Required
+    [1.1 Required](#Required)
 
     1.1.1 Data_type
 
@@ -130,7 +130,7 @@ Together with variables and variable attributes, the global attributes make the 
 
 
 
-1.1 Required-
+## 1.1 Required-
    The following global attributes are required with MMS data products. MMS-specific values are provided where applicable.
   
    1.1.1  Data_type-

@@ -4,11 +4,11 @@
 
 1. MMS 
 
-  1.1 Required
+    1.1 Required
 
-  1.1.1 Data_type
+    1.1.1 Data_type
 
-  1.1.2 Data_version
+    1.1.2 Data_version
 
 
 

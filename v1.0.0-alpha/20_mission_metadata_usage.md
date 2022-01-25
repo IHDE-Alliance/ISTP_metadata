@@ -53,7 +53,7 @@ Together with variables and variable attributes, the global attributes make the 
 -    EIS-FEEPS
 -    ASP1>Active Spacecraft Potential Control - sensor 1
 -    ASP2>Active Spacecraft Potential Control - sensor 2
--    ASP>Active Spacecraft Potential Control – sensors 1 and 2
+-    ASP>Active Spacecraft Potential Control - sensors 1 and 2
 -    EPH>Ephemeris
 -    ATT>Attitude
 -    MEC>Magnetic Ephemeris and Coordinates

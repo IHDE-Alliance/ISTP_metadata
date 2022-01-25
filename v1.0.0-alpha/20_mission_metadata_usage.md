@@ -54,9 +54,58 @@
 
     1.3.1 Parents
 
+    1.3.2 Skeleton_version
+
+    1.3.3 Rules_of_use
+
+    1.3.4 Time_resolution
+
+    1.4 Variables
+
+    1.4.1 Data
+
+    1.4.2 Naming
+
+    1.4.3 Required_Epoch_Variable 
+
+    1.4.4 Attributes
+
+    1.4.4.1 CATDESC
+
+    1.4.4.2 DEPEND_0
+
+    1.4.4.3 DEPEND_i
+
+    1.4.4.4 DISPLAY_TYPE
+
+    1.4.4.5 FIELDNAM
+
+    1.4.4.6 FILLVAL
+
+    1.4.4.7 FORMAT
+
+    1.4.4.8 FORM_PTR
+
+    1.4.4.9 LABLAXIS
+
+    1.4.4.10 LABL_PTR_i
+
+    1.4.4.11 SI_CONVERSION
+
+    1.4.4.12 UNITS
+
+    1.4.4.13 UNIT_PTR
+
+
+    
+
+    
+
 
 
 2. Cluster
+
+    2.1 Global Metadata
 
 3. ERG
 

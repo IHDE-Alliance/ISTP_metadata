@@ -2,18 +2,18 @@
 
 #### Table of Contents
 
-MMS 
+1. MMS 
 
-Cluster
+2. Cluster
 
-ERG
+3. ERG
 
-PRBEM
+4. PRBEM
 
-Solar Orbiter
+5. Solar Orbiter
 
 
-### MMS
+### 1. MMS
 
 Global attributes are used to provide information about the data set as an entity.
 Together with variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence, a good archive product.
@@ -21,13 +21,13 @@ Together with variables and variable attributes, the global attributes make the 
 
 
 
-1. Required-
+1.1 Required-
    The following global attributes are required with MMS data products. MMS-specific values are provided where applicable.
   
-   1.1  Data_type-
+   1.1.1  Data_type-
      This attribute is used by CDF file writing software to create a filename. It is a combination of the following filename components: mode, data level, and optional data product descriptor. 
 
-    1.2  Data_version- 
+    1.1.2  Data_version- 
    This attribute identifies the version (vX.Y.Z) of a particular CDF data file.
    
     1.3  Descriptor- 

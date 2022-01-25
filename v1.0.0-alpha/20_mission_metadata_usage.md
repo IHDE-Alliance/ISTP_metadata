@@ -494,7 +494,7 @@ VALUE TYPE- The VALUE TYPE of a global attribute may be used to convert the asci
    
    DELTA PLUS and DELTA MINUS DEPEND i variables, including the time tags which are DEPEND 0 for the data, may have these. They describe the range over which the data are integrated, representative, etc, and locate the position of the time tag or value within this range. In the case of time, DELTA PLUS and DELTA MINUS are the number of seconds corresponding to the sampling interval or other representative time interval, given in seconds as a float. Alternatively, DELTA PLUS and DELTA MINUS for time variables could themselves be variables, e.g., if they are record-varying, in which case they require their own metadata. For an array of energies used as dependencies for array data, DELTA PLUS and DELTA MINUS used together with the energy value provide a complete description of the energy bin over which the measurement was made or is representative.
    
-   It is also advisable to supply extra information to describe the relationships between the DEPEND variables with the parent variable, such as the method required to construct the volume of the bin. No syntax is prescribed for these parameters which should be text, but examples of possible descriptors are listed below.
+   It is also advisable to supply extra information to describe the relationships between the DEPEND variables with the parent variable, such as the method required to construct the volume of the bin. No syntax is prescribed for these parameters which should be text, but examples of possible descriptors are listed below.
    
    For some data it will be necessary to specify different area and volume factors depending on the slice to be taken through the data. Added parameters may be specified to cover any integration or processing factors appropriate.
    
@@ -591,7 +591,7 @@ and “Elevation” provide the exact location of a magnetometer and data users 
 
 ### PRBEM
 
-Global attributes 
+Global attributes- 
 Global attributes are used to provide information about the data set as an entity. Together with variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence, a good archive product. The global attributes can also be used by any software, one popular example being the CDAWeb Display and Retrieval system (http://cdaweb.gsfc.nasa.gov/cdaweb/). A list of global attributes is provided below, note that it is not limited, one can decide to add more global attributes if needed for his own applications.
 
 Acknowledgement--- (recommended) 

@@ -10,6 +10,50 @@
 
     1.1.2 Data_version
 
+    1.1.3 Descriptor
+
+    1.1.4 Discipline
+
+    1.1.5 Generation_date
+
+    1.1.6 Instrument_type
+
+    1.1.7 Logical_file_id
+
+    1.1.8 Logical_source
+
+    1.1.9 Logical_source_description
+
+    1.1.10 Mission_group
+
+    1.1.11 PI_affiliation
+
+    1.1.12 PI_name
+
+    1.1.13 Project
+
+    1.1.14 Source_name
+
+    1.1.15 TEXT
+
+    1.1.16 HTTP_LINK
+
+    1.1.17 LINK_TEXT
+
+    1.1.18 LINK_TITLE
+
+    1.1.19 MODS
+
+    1.2 Recommended
+
+    1.2.1 Acknowledgement 
+
+    1.2.2 Generated_by
+
+    1.3 Optional
+
+    1.3.1 Parents
+
 
 
 2. Cluster

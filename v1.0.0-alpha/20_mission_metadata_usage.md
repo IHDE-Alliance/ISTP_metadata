@@ -4,7 +4,7 @@
 
 [1. MMS](#MMS) 
 
-    [1.1 Required](#Required)
+    1.1 [Required](#Required)
 
     1.1.1 Data_type
 

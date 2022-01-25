@@ -30,7 +30,7 @@ Together with variables and variable attributes, the global attributes make the 
     1.1.2  Data_version- 
    This attribute identifies the version (vX.Y.Z) of a particular CDF data file.
    
-    1.3  Descriptor- 
+    1.1.3  Descriptor- 
    This attribute identifies the name of the instrument or sensor that collected the data. Both a long name and a short name are given. For any data file, only a single value is allowed. For MMS, the following are valid values:
 -    FIELDS>Electric and Magnetic Fields Investigation
 -    ADP>Axial Double Probe
@@ -58,16 +58,16 @@ Together with variables and variable attributes, the global attributes make the 
 -    MEC>Magnetic Ephemeris and Coordinates
 
 
-1.4  Discipline-
+1.1.4  Discipline-
 This attribute describes both the science discipline and sub discipline. For MMS, this 
 value should always be “Space Physics>Magnetospheric Science.”
 
-1.5 Generation_date- 
+1.1.5 Generation_date- 
 Date stamps the creation of the file using the syntax yyyymmdd, e.g., "20150923". This 
 is distinct from the date in "validate" below which records the times of later validation 
 processes. 
 
-1.6 Instrument_type-
+1.1.6 Instrument_type-
 This attribute is used to facilitate making choices of instrument type. More than one entry is allowed. Valid values for MMS include:
 - Electric Fields (space)
 - Magnetic Fields (space)
@@ -76,10 +76,10 @@ This attribute is used to facilitate making choices of instrument type. More tha
 - Spacecraft Potential Control
 - Ephemeris
 
-1.7 Logical_file_id-
+1.1.7 Logical_file_id-
 This attribute stores the name of the CDF file but without the  file extension (e.g. ".cdf"). This attribute is required to avoid loss of the original source  in the case of accidental (or intentional) renaming. This attribute must be manually set by  the user during creation. 
 
-1.8 Logical_source- 
+1.1.8 Logical_source- 
 This attribute determines the file naming convention in the SKT Editor and is used by 
 CDA Web. It is composed of the following values:
 - source_name - (e.g. spacecraft identifier)
@@ -100,15 +100,15 @@ For instance, the following examples are valid "Logical_source" attributes:
 - mms1_des_slow_l1A_cnts-1h
 - mms1_dis_slow_l1A_cnts-1h
 
-1.9 Logical_source_description-
+1.1.9 Logical_source_description-
 This attribute writes out the full words associated with the encrypted Logical_source 
 above, e.g., "Level 1 Dual Electron Spectrometer Survey Data". Users on CDAWeb see 
 this value on their website.
 
-1.10 Mission_group-
+1.1.10 Mission_group-
 This attribute has a single value and is used to facilitate making choices of source through CDAWeb. This value should be “MMS.”
 
-1.11 PI_affiliation- 
+1.1.11 PI_affiliation- 
 This attribute value should include the MMS mission PI affiliation followed by a comma separated list of any Co-I affiliations that are responsible for this particular dataset. The
 following are valid MMS values, of which the abbreviations should be used exclusively 
 within this attribute value, and the full text of the affiliation included in the general text 
@@ -125,17 +125,17 @@ attribute as it is used solely in plot labels.
 - UCLA - University of California Los Angeles
 - UNH – University of New Hampshire
 
-1.12 PI_name- 
+1.1.12 PI_name- 
 This attribute value should include first initial and last name of the MMS mission PI 
 followed by a comma-separated list of any Co-Is that are responsible for this particular 
 dataset. For example, a single PI entry in this attribute would be: J. Burch. The attribute 
 inclusive of Co-Is would be: J. Burch, C. Pollock, S. Fuselier, R. Torbert, B. Mauk, K.Torkar. 
 
-1.13 Project- 
+1.1.13 Project- 
 This attribute identifies the name of the project and indicates ownership. For MMS, this 
 value should be “STP>Solar-Terrestrial Physics”. 
 
-1.14 Source_name-
+1.1.14 Source_name-
 This attribute identifies the observatory where the data originated. The following are 
 valid values for MMS:
 - MMS1>MMS Satellite Number 1
@@ -144,7 +144,7 @@ valid values for MMS:
 - MMS4>MMS Satellite Number 4
 - MMS>MMS Constellation
 
-1.15 TEXT-
+1.1.15 TEXT-
 This attribute is an SPDF standard global attribute, which is a text description of the 
 experiment whose data is included in the CDF. A reference to a journal article(s) or to a 
 World Wide Web page describing the experiment is essential, and constitutes the 
@@ -152,7 +152,7 @@ minimum requirement. A written description of the data set is also desirable. Th
 attribute can have as many entries as necessary to contain the desired information. 
 Typically, this attribute is about a paragraph in length and is not shown on CDAWeb.
 
-1.16 HTTP_LINK- 
+1.1.16 HTTP_LINK- 
 This attribute stores the URL for with a description of this dataset at the SDC. This 
 attribute is used in conjunction with "LINK_TEXT" and "LINK_TITLE". There can be 
 up to 5 entries for each - there MUST be a corresponding entry of "LINK_TEXT" and 
@@ -177,12 +177,12 @@ MMS1 DES Multiple HTTP_LINK (as well as LINK_TEXT and LINK_TITLE) attributes may
 - 2: CDF_CHAR {“AT SWRI”}
 - 3: CDF_CHAR {“LASP SDC”}
 
-1.17 LINK_TEXT- 
+1.1.17 LINK_TEXT- 
 If text is not needed, use: ""
 
-1.18 LINK_TITLE 
+1.1.18 LINK_TITLE 
 
-1.19 MODS- 
+1.1.19 MODS- 
 This attribute is an SPDF standard global attribute, which is used to denote the history of modifications made to the CDF data set. The MODS attribute should contain a description of all significant changes to the data set, essentially capturing a log of high-level release notes. This attribute can have as many entries as necessary and should be 
 updated if the "X" value of the version number changes. 
 
@@ -215,13 +215,13 @@ a World Wide Web page specifying the rules of use. Rules of Use are determined o
 1.3.4 Time_resolution-
 Specifies time resolution of the file, e.g., "3 seconds."
 
-2. Variables- There are three types of variables that should be included in CDF files: data, support data, and metadata. Additionally, required attributes are listed with each variable type listed below. To facilitate data exchange and software development, variable names should be consistent across the MMS instruments and four spacecraft. Additionally, it is preferable that data types are consistent throughout all MMS data products (e.g. all real variables are CDF_REAL4, all integer variables are CDF_INT2, and flag/status variables are UINT2). This is not to imply that only these data types are allowable within MMS CDF files. All CDF supported data types are available for use by MMS.
+1.4. Variables- There are three types of variables that should be included in CDF files: data, support data, and metadata. Additionally, required attributes are listed with each variable type listed below. To facilitate data exchange and software development, variable names should be consistent across the MMS instruments and four spacecraft. Additionally, it is preferable that data types are consistent throughout all MMS data products (e.g. all real variables are CDF_REAL4, all integer variables are CDF_INT2, and flag/status variables are UINT2). This is not to imply that only these data types are allowable within MMS CDF files. All CDF supported data types are available for use by MMS.
 
-2.1 Data- 
+1.4.1 Data- 
 These are variables of primary importance (e.g., density, magnetic field, particle flux). 
 Data is always time (record) varying, but can be of any dimensionality or CDF supported  data type. Real or Integer data are always defined as having one element.
 
-2.1.1 Naming- 
+1.4.2 Naming- 
 MMS data variables must adhere to the following naming convention scId_instrumentId_paramName
 An underscore is used to separate different fields in the variable name. It is strongly 
 recommended that variable names employ further fields, qualifiers and information 
@@ -234,7 +234,7 @@ Note the following caveats:
 - In general, the instrumentId field follows the convention used for file names. However, since variable names cannot contain a hyphen, an underscore should be used instead of a hyphen when needing to separateinstrument components. For instance, "afg-dfg" is a valid instrumentId in a filename but when used in a variable name, "afg_dfg" should be used instead. 
 - To ensure software compatibility between disparate systems, parameter names will consist of all lowercase characters.
 
-2.1.2 Required Epoch Variable-
+1.4.3 Required Epoch Variable-
 All MMS CDF data files must contain at least one variable of data type 
 CDF_TIME_TT2000, typically named "Epoch". This variable should normally 
 be the first variable in each CDF data set. All time varying variables in the CDF 
@@ -270,7 +270,7 @@ and 5.1.3.15, respectively) are given values corresponding to the dates 1990-01-
 01T00:00:00 and 2100-01-01T00:00:00 as these are well outside any expected valid 
 times.
 
-2.1.3 Attributes: Data Variables-
+1.4.4 Attributes: Data Variables-
 Data variables require the following attributes:
 - CATDESC
 - DEPEND_0
@@ -292,22 +292,22 @@ quaternions which are held in or relate to a particular coordinate system:
 - REPRESENTATION_i
 - OPERATOR_TYPE [for quaternions]
 
-2.1.3.1 CATDESC-
+1.4.4.1 CATDESC-
 This is a human readable description of the data variable. Generally, this is an 80-
 character string which describes the variable and what it depends on. 
 
-2.1.3.2 DEPEND_0- 
+1.4.4.2 DEPEND_0- 
 Explicitly ties a data variable to the time variable on which it depends. All variables 
 which change with time must have a DEPEND_0 attribute defined.
 
-2.1.3.3 DEPEND_i-
+1.4.4.3 DEPEND_i-
 Ties a dimensional data variable to a SUPPORT_DATA variable on which the i-th 
 dimension of the data variable depends. The number of DEPEND attributes must match the dimensionality of the variable, i.e., a one-dimensional variable must have a 
 DEPEND_1, a two-dimensional variable must have a DEPEND_1 and a DEPEND_2 
 attribute, etc. The value of the attribute must be a variable in the same CDF data set. It is strongly recommended that DEPEND_i variables hold values in physical units. 
 DEPEND_i variables also require their own attributes.
 
-2.1.3.4 DISPLAY_TYPE- (e.g. time_series, spectrogram, stack_plot,image)
+1.4.4.4 DISPLAY_TYPE- (e.g. time_series, spectrogram, stack_plot,image)
 This tells automated software, such as CDAWEB, how the data should be displayed. 
 Examples of valid values include:
 - time_series
@@ -315,11 +315,11 @@ Examples of valid values include:
 - stack_plot
 - image
 
-2.1.3.5 FIELDNAM-
+1.4.4.5 FIELDNAM-
 A shortened version of CATDESC which can be used to label a plot axis or as a data 
 listing heading. This is a string, up to ~30 characters in length.
 
-2.1.3.6 FILLVAL-
+1.4.4.6 FILLVAL-
 Identifies the fill value used where data values are known to be bad or missing. 
 FILLVAL is required for time-varying variables. Fill data are always non-valid data. The 
 ISTP standard fill values are listed below:
@@ -336,21 +336,21 @@ ISTP standard fill values are listed below:
 - EPOCH16 ---- -1.0E31 (9999-12-31:23:59:59.999999999999)
 - TT2000 ---- -9223372036854775808LL (9999-12-31:23:59:59.999999999999)
 
-2.1.3.7 FORMAT- (required if not using FORM_PTR)
+1.4.4.7 FORMAT- (required if not using FORM_PTR)
 This field allows software to properly format the associated data when displayed on a 
 screen or output to a file. Format can be specified using either Fortran or C format codes. 
 For instance, "F10.3" indicates that the data should be displayed across 10 characters 
 where 3 of those characters are to the right of the decimal.
 
-2.1.3.8 FORM_PTR- (required if not using FORMAT)
+1.4.4.8 FORM_PTR- (required if not using FORMAT)
 The value of this field is a variable which stores the character string that represents the 
 desired output format for the associated data. 
 
-2.1.3.9 LABLAXIS- (required if not using LABL_PTR_i)
+1.4.4.9 LABLAXIS- (required if not using LABL_PTR_i)
 Used to label a plot axis or to provide a heading for a data listing. This field is generally 
 6-10 characters. Only one of LABLAXIS or LABL_PTR_i should be present.
 
-2.1.3.10 LABL_PTR_i- (required if not using LABLAXIS)
+1.4.4.10 LABL_PTR_i- (required if not using LABLAXIS)
 Used to label a dimensional variable when one value of LABLAXIS is not sufficient to 
 describe the variable or to label all the axes. LABL_PTR_i is used instead of 
 LABLAXIS, where i can take on any value from 1 to n where n is the total number of 
@@ -359,7 +359,7 @@ contain the short character strings which describe the first dimension of the or
 variable. The value of the attribute must be a variable in the same CDF data set and is 
 generally 6-10 characters. Only one of LABLAXIS or LABL_PTR_i should be present.
 
-2.1.3.11 SI_CONVERSION-
+1.4.4.11 SI_CONVERSION-
 The conversion factor to SI units. This is the factor that the variable must be multiplied 
 by in order to convert it to generic SI units. This parameter contains two text fields 
 separated by the ">" delimiter. The first component is the conversion factor and the 
@@ -371,18 +371,18 @@ MMS Science Working Team pages. SI_CONVERSION strings must adhere to a strict,
 machine-parseable format that is fully described on the “Units of Measure” web page 
 found by following the above link.
 
-2.1.3.12 UNITS- (required if not using UNIT_PTR)
+1.4.4.12 UNITS- (required if not using UNIT_PTR)
 A 6-20 character string that identifies the units of the variable (e.g. nT for magnetic 
 field). Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). An active list of MMS standard UNITS and their SI_CONVERSIONs is maintained on the mission web-pages at
 https://lasp.colorado.edu/galaxy/display/mms/Units+of+Measure, accessible via the 
 MMS Science Working Team pages. Those pages also lay out the rules for formatting the UNITS string.
 
-2.1.3.13 UNIT_PTR- (required if not using UNITS)
+1.4.4.13 UNIT_PTR- (required if not using UNITS)
 The value of this field is a variable which stores short character strings which identify the units of the variable. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). The value of this attribute must be a variable in the same CDF data set.
 
-### Cluster
+### 2. Cluster
 
-1. Global Metadata-
+2.1 Global Metadata-
    Global attributes are used to provide informational metadata associated with all the variables in the file, and as a means of attaching information that may be carried along with the data.
    START META This parameter starts a block of metadata supplying the entries associated with a global attribute (in cdf terminology). This block is closed by an END META parameter. They are described more fully below. The value associated with these parameters is the name of the global attribute. No defaults are provided, and no global attributes are required by this syntax. The CAA requires metadata as specified in the CAA Metadata Dictionary, CAA-CDPP-TN-0002.
    The Global attribute block starts with a line
@@ -402,14 +402,14 @@ VALUE TYPE- The VALUE TYPE of a global attribute may be used to convert the asci
 - BYTE
 - ISO standard date/time strings are used in the same format as used in data records.
 
-2. Variable Metadata-
+2.2 Variable Metadata-
    Blocks of information describing the variables start with a line
    START VARIABLE = name
    and end with the line
    END VARIABLE = name
    where the value name is the name to be used for the variable. The variable name is not in quotes. These blocks are required for variable description and headers are not valid without one describing each variable. Variable entries must appear within the header in the same order as the variable themselves within each data record. Variable names are case sensitive, and are an exception to the usual rule of case insensitivity.
    
-   2.1 Mandatory Variable Metadata-
+   2.2.1 Mandatory Variable Metadata-
    These metadata provide formatting information specific to the named variable. There is no preferred order for parameters within a variable metadata block.
    Each block of variable metadata takes the form,
    START VARIABLE = name
@@ -522,7 +522,7 @@ VALUE TYPE- The VALUE TYPE of a global attribute may be used to convert the asci
 
 For fixed bin widths of 100 eV, say, the subscript would be removed from the WE[i] in the above, and a separate WE variable would not be used.
 
-2.2 Extra Metadata for Depend variables
+2.3 Extra Metadata for Depend variables
 Depend variables require the SIZES and VALUE TYPE parameters to be set, and should take the UNITS, SI CONVERSION and DATA parameters in the same way as a data variable. They should take a LABLAXIS attribute to provide labelling information specific to that index. A DELTA PLUS and DELTA MINUS attribute is also required to establish bin boundaries for DEPEND i.
 
 Depend variables do not, themselves, take Depend variables to describe the arrays.
@@ -539,7 +539,7 @@ LABLAXIS = “E”
 SI CONVERSION = “1.602e-16>J”
 END VARIABLE = EnergyBins
 
-2.3 Optional Variable Metadata
+2.4 Optional Variable Metadata
 All CSDS variable attributes may be specified within the variable metadata block, but are not required. The following subset of the standard CSDS attributes are currently used by science tools and recommended.
 
 CATDESC The ISTP Catdesc as used by, e.g., CSDS
@@ -551,7 +551,7 @@ SIG DIGITS Gives the number of significant digits in the data measurement.
 
 Other descriptive metadata in the same syntax may be supplied as deemed appropriate to describe the data adequately for scientific use.
 
-### ERG
+### 3. ERG
 
 The next task was to design what metadata and data variables are needed to well accommodate the  scientific data and metadata of each observation. As for the metadata, there has already existed  the standard metadata list released from the CDF 
 website, called the International Solar-Terrestrial Physics/Inter-Agency Consultative Group (ISTP/IACG) CDF guidelines, which are suitable to  describe the general information on various data and observation. We adopted them as the base of  metadata for our data files and further sought to supplement them with some specific information necessary for actual data analyses. Naturally these data analysis-oriented metadata are different for different types of observational data. Thus we discussed what kind of information, parameter, description would be needed for each data and 
@@ -589,7 +589,7 @@ and “Elevation” provide the exact location of a magnetometer and data users 
 | Http_link*                                                                                                                                                     | URL of the PI or CoI websites.                                                                                                                |
 | Time_resolution*                                                                                                                                               | Typical time resolution of the data set.                                                                                                      |
 
-### PRBEM
+### 4. PRBEM
 
 Global attributes- 
 Global attributes are used to provide information about the data set as an entity. Together with variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence, a good archive product. The global attributes can also be used by any software, one popular example being the CDAWeb Display and Retrieval system (http://cdaweb.gsfc.nasa.gov/cdaweb/). A list of global attributes is provided below, note that it is not limited, one can decide to add more global attributes if needed for his own applications.
@@ -739,7 +739,7 @@ The need for DEPEND_i (other than DEPEND_0) and either LABLAXIS or LABL_PTR_i de
 
 • VAR_NOTES
 
-### Solar Orbiter
+### 5. Solar Orbiter
 
 Global attributes-
 Global attributes are used to provide information about the data set as an entity. Global attributes for Solar Orbiter CDF data sets are 

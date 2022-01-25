@@ -4,7 +4,7 @@
 
 [1. MMS](#MMS) 
 
-    1.1 [Required](#Required)
+    1.1 Required
 
     1.1.1 Data_type
 
@@ -103,7 +103,7 @@
 
 
 
-2. Cluster
+[2. Cluster](# Cluster)
 
     2.1 Global Metadata
 

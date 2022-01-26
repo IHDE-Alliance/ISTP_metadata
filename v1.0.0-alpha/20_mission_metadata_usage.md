@@ -902,3 +902,48 @@ In general, the global attributes need to be set, the Epoch time variable(s) nee
 
 6.2	Global Attributes
 NetCDF uses global attributes to describe the file and purpose of the data. The attributes shown below should be followed. There may be other attributes added to any NetCDF file which are not specified here. The expected attributes are summarized here.
+
+* Note: Except where mentioned, all values are character strings.
+
+	Acknowledgement	            <Acknowledgement Text>
+	ADID_Ref	                “NASA Contract > NNG12FA45C”
+	Calibration_File	        <Calibration File Name>
+	Conventions	                “SPDF ISTP/IACG Modified for NetCDF” 
+	Data_Level	                <Data Product Level>
+	Data_Revision	            <Data File Version>
+	Data_Type	                <Data Product Short & Long Name>
+	Data_Version	            <Data File Version>
+	Data_VersionMajor	        <Data File Version>
+	Date_End	                <UTC Data End Time>
+	Date_Start	                <UTC Data Start Time>
+	Description	                <Description of Data Set>
+	Descriptor	                <Instrument Descriptor>
+	Discipline	                “Space Physics > Ionospheric Science”
+    File	                    <Full File Name>
+	File_Date	                <File Generation Date – UTC>
+	Generated_By	            <Generator Data Center / Group>
+	Generation_Date	            <Date File Generated>
+    History	                    <History Information>
+	HTTP_LINK	                <See LINK Section>
+	Instrument	                <Instrument Name>
+	Instrument_Type	            <ISTP Instrument Type>
+	Link_Text	                <See LINK Section>
+	Link_Title	                <See LINK Section>
+	Logical_File_ID	            <ISTP Logical File Name>
+	Logical_Source	            <ISTP Logical Source Header>
+	Logical_Source_Description	<ISTP Logical Source Descriptions>
+	Mission_Group	            “Ionospheric Investigations”
+	MODS	                    <History Information>
+	Parents	                    <Parent Documents>
+	PI_Affiliation	            “UC Berkeley > SSL”
+    PI_Name	                    “T. J. Immel”
+	Project	                    “NASA > ICON”
+	Rules_of_Use	            “Public Data for Scientific Use”
+	Software_Version	        <Software Version>
+	Source_Name	                “ICON > Ionospheric Connection Explorer”
+	Spacecraft_ID	            “NASA > ICON - 493”
+	Text	                    <See TEXT Section>
+	Text_Supplement	            <Extra Descriptive Text>
+	Time_Resolution	            <Data Time Resolution>
+	Title	                    <ICON Data Product Title>
+

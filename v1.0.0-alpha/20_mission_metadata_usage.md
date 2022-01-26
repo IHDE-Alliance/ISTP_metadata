@@ -903,7 +903,7 @@ In general, the global attributes need to be set, the Epoch time variable(s) nee
 6.2	Global Attributes
 NetCDF uses global attributes to describe the file and purpose of the data. The attributes shown below should be followed. There may be other attributes added to any NetCDF file which are not specified here. The expected attributes are summarized here.
 
-* Note: Except where mentioned, all values are character strings.
+*Note: Except where mentioned, all values are character strings.
 
 	Acknowledgement
 	

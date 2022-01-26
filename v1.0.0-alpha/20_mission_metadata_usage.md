@@ -947,3 +947,537 @@ NetCDF uses global attributes to describe the file and purpose of the data. The 
 	Time_Resolution	            <Data Time Resolution>
 	Title	                    <ICON Data Product Title>
 
+2.1.1	Acknowledgement
+This is an ISTP recommended designed for the PI to give citable acknowledgements. This will be fixed for ICON, with the same acknowledgement text used for all data products. Updates to this acknowledgement are maintained first at a password-protected site as follows:
+sftp://icon-science.ssl.berkeley.edu:36868/Drop/Acknowledgement.TXT
+•	Name:	“Acknowledgement”
+•	Value:	
+This is a data product from the NASA Ionospheric Connection Explorer mission, an Explorer launched in June 2018. Guidelines for the use of this product are described in the ICON Rules of the Road  (https://http://icon.ssl.berkeley.edu/Data).
+
+Responsibility for the mission science falls to the Principal Investigator, Dr. Thomas Immel at UC Berkeley:
+Immel, T.J., England, S.L., Mende, S.B. et al. Space Sci Rev (2018) 214: 13. https://doi.org/10.1007/s11214-017-0449-2
+
+Responsibility for the validation of the L1 data products falls to the instrument lead investigators/scientists.  
+* EUV: Dr. Eric Korpela :  https://doi.org/10.1007/s11214-017-0384-2
+* FUV: Dr. Harald Frey : https://doi.org/10.1007/s11214-017-0386-0
+* MIGHTI: Dr. Christoph Englert : https://doi.org/10.1007/s11214-017-0358-4, and https://doi.org/10.1007/s11214-017-0374-4
+* IVM: Dr. Roderick Heelis : https://doi.org/10.1007/s11214-017-0383-3
+
+Responsibility for the validation of the L2 data products falls to those scientists responsible for those products.
+* Daytime O and N2 profiles: Dr. Andrew Stephan : https://doi.org/10.1007/s11214-018-0477-6
+* Daytime (EUV) O+ profiles: Dr. Andrew Stephan : https://doi.org/10.1007/s11214-017-0385-1
+* Nighttime (FUV) O+ profiles: Dr. Farzad Kamalabadi : https://doi.org/10.1007/s11214-018-0502-9
+* Neutral Wind profiles: Dr. Jonathan Makela : https://doi.org/10.1007/s11214-017-0359-3
+* Neutral Temperature profiles: Dr. Christoph Englert : https://doi.org/10.1007/s11214-017-0434-9
+* Ion Velocity Measurements : Dr. Russell Stoneback : https://doi.org/10.1007/s11214-017-0383-3
+
+Responsibility for Level 4 products falls to those scientists responsible for those products.
+* Hough Modes : Dr. Chihoko Yamashita :  https://doi.org/10.1007/s11214-017-0401-5
+* TIEGCM : Dr. Astrid Maute : https://doi.org/10.1007/s11214-017-0330-3
+* SAMI3 : Dr. Joseph Huba : https://doi.org/10.1007/s11214-017-0415-z
+
+Pre-production versions of all above papers are available on the ICON website. 
+
+Overall validation of the products is overseen by the ICON Project Scientist, Dr. Scott England.
+
+NASA oversight for all products is provided by the Mission Scientist, Dr. Jeffrey Klenzing.
+
+Users of these data should contact and acknowledge the Principal Investigator Dr. Immel and the party directly responsible for the data product (noted above) and acknowledge NASA funding for the collection of the data used in the research with the following statement : "ICON is supported by NASA’s Explorers Program through contracts NNG12FA45C and NNG12FA42I".
+
+These data are openly available as described in the ICON Data Management Plan available on the ICON website (http://icon.ssl.berkeley.edu/Data). 
+•	Comment:	Required and fixed.
+
+2.1.2	Authority Control Identifier (ADID Reference)
+This is the control authority identifier (currently somewhat defunct in CDF). ICON uses it for the NASA contract number and it should be included with every file.
+•	Name:	“ADID_Ref”
+•	Value:	“NASA Contract > NNG12FA45C”
+•	Comment:	Required and fixed.
+
+2.1.3	Calibration File
+This is the name of the calibration file used when generating this data. If there is no file, leave it blank. The name is similar to the logical source name global attribute but includes the extension. Note the file name conventions section for file naming.
+•	Name:	“Calibration_File”
+•	Value Example:	“ICON_L1_EUV_Calibration_v0001.NC”
+•	Comment:	Required though may be empty if no calibration file was used.
+
+2.1.4	Conventions
+This is standard for NetCDF files and is required for ICON.
+•	Name:	“Conventions”
+•	Value:	“SPDF ISTP/IACG Modified for NetCDF”
+•	Comment:	Required and fixed.
+
+2.1.5	Data Level
+The data product level as specified in the DPID. This is required and should follow the format “L#.#”. If there is no data product then leave blank.
+•	Name:	“Data_Level”
+•	Value Example:	“L2.0”
+•	Comment:	Required.
+
+2.1.6	Data Type
+The identifier for the data set within this NetCDF data file. The short name and long name are included. For the short name we will go with the data product as specified in the DPID. The long name should also be from the DPID and be descriptive. Data product 2.2 would be represented as in the example below. If a name is not provided in the DPID then the science team should be consulted.
+•	Name:	“Data_Type”
+•	Value Example:	“DP22 > Data Product 2.2: MIGHTI Cardinal Vector Winds”
+•	Comment:	Required.
+
+2.1.7	Data Version
+The version of this NetCDF file. The first version should always be 1.0 and increment as the file is updated later with new or updated data. The revision normally gets incremented during reprocessing. The major version normally only changes for a software change significant enough to alter the data format produced. The major version should be between 1 and 99 while the revision should be between 0 and 999 as shown below. The actual version is computed by adding the major version to the revision divided by 1000.
+
+•	Name:	“Data_Revision”
+•	Value Example:	2 (unsigned short) (limit 0 through 999).
+•	Comment:	Recommended.
+
+•	Name:	“Data_Version”
+•	Value Example:	1.002 (float) (limit 1.0 through 99.999).
+•	Comment:	Required.
+
+•	Name:	“Data_VersionMajor”
+•	Value Example:	1 (unsigned byte) (limit 1 through 99).
+•	Comment:	Recommended.
+
+2.1.8	Dates / End / Start / Generation
+The three dates here are in UTC time. One is the time of the first data point, one is the time of the last data point and the last is the time the file was generated. All are in UTC time and follow the same format. A fourth date used for ISTP compliance that does not follow the same format but does contain the same generation date. Note that the last part of the date format uses the ISO 8601 standard. The two formats are shown below.
+
+•	Format 1:	“ddd, DD MMM YYYY, YYYY-MM-DDTHH:mm:ss.xxx UTC”
+•	Format 2:	“YYYYMMDD” in UTC time
+
+•	Name:	“Date_End”
+•	Value Example:	“Fri, 18 Sep 2015, 2015-09-18T15:24:07.000 UTC”
+•	Comment:	Recommended date of last data point in file. Use first time if single data point.
+
+•	Name:	“Date_Start”
+•	Value Example:	“Fri, 18 Sep 2015, 2015-09-18T15:24:07.000 UTC”
+•	Comment:	Recommended date of first data point in file.
+
+•	Name:	“File_Date”
+•	Value Example:	“Sun, 20 Sep 2015, 2015-09-20T10:00:00.000 UTC” 
+•	Comment:	Recommended date of file creation.
+
+•	Name:	“Generation_Date”
+•	Value Example:	“20151014” (format is YYYYMMDD in UTC)
+•	Comment:	Strongly recommended.
+
+2.1.9	Description
+This contains a description of the data set which may be the same as the title attribute or contain extra information.
+•	Name:	“Description”
+•	Value Example:	“ICON Level 0 Nominal EUV Daily Downlink”
+•	Comment:	Strongly recommended.
+
+2.1.10	Descriptor
+This is a required ISTP value describing the instrument long and short name. The short name should be kept between 3 and 8 characters. The short names for the instruments are “EUV”, “FUV”, “IVM-A”, “IVM-B”, “MIGHTI-A” and “MIGHTI-B”. The models should use the DPID names for their short name.
+•	Name:	“Descriptor”
+•	Value Example:	“FUV > Intensified Far Ultraviolet Imager”
+•	Comment:	Required.
+
+2.1.11	Discipline
+This is a required ISTP value indicating the discipline and sub-discipline (fixed for ICON).
+•	Name:	“Discipline”
+•	Value:	“Space Physics > Ionospheric Science”
+•	Comment:	Required and fixed.
+
+2.1.12	File
+This is supplementary data indicating the expected full file name similar to the logical source name global attribute but including the extension. Note the file name conventions sections for file naming.
+•	Name:	“File”
+•	Value Example:	“ICON_L0P_EUV_Nominal_20150117_v0001.NC”
+•	Comment:	Recommended.
+
+2.1.13	Generated By
+This value contains the data center generating this file and the group that wrote the software. It should include the processor and version as well as the software author.
+•	Name:	“Generated_By”
+•	Value Example:	“ICON SDC > ICON SSL FUV Processor v1.1, H. U. Frey”
+•	Comment:	Strongly recommended.
+
+2.1.14	History & Modifications (MODS)
+Recommended global attribute for NSSDC indicating file modification state. This should be duplicated in the NetCDF history. When a modification is made, then it should be an appended to the attribute as another string in the vector. The initial version should be labeled as such. Modifications should contain the date, time, user name, data version, software name, software version and software command line.
+
+•	Name:	“History”
+•	Value Example:	“Version 1, H. Frey, 2015-10-22T10:00:00, FUV L1 Processor v1.”
+•	Comment:	Recommended by NetCDF.
+
+•	Name:	“MODS”
+•	Value Example:	“Version 1, H. Frey, 2015-10-22T10:00:00, FUV L1 Processor v1.”
+•	Comment:	Recommended by ISTP.
+
+2.1.15	Instrument
+This should exist for all data associated with a single instrument. The names should be one of the following. The models use their 6-8 character abbreviation.
+•	Name:	“Instrument”
+•	Value Options:	“EUV”, “FUV”, “IVM-A”, “IVM-B”, “MIGHTI-A”, or “MIGHTI-B”
+•	Comment:	Recommended setting for any data file related to one specific instrument.
+
+2.1.16	Instrument Type
+This value is used by CDA web and should likely be limited to the values below.
+•	Name:	“Instrument_Type”
+•	Value Options:	“Imagers (space)”
+	“Particles (space)”
+•	Comment:	Required by ISTP (for CDA Web compatibility).
+
+2.1.17	Link (Website Link Information / HTTP Link)
+This is a combination of three values which are used by different software to show information that has “<LINK_TEXT> <LINK_TITLE>” as text with a hyperlink at <LINK_TITLE> pointing to the <HTTP_LINK>. All three values must be included or excluded together. All links should go to a subsection of the ICON website. Links can be made from there to point to specific institutions should that be desired.
+
+•	Name:	“HTTP_LINK”
+•	Value Example:	“http://icon.ssl.berkeley.edu/Observatory/Instruments/FUV”
+•	Comment:	Strongly recommended – coupled with LINK_TEXT and LINK_TITLE.
+
+•	Name:	“Link_Text”
+•	Value Example:	“12-second FUV SW altitude profiles”
+•	Comment:	Strongly recommended – coupled with LINK_TITLE and HTTP_LINK.
+
+•	Name:	“Link_Title”
+•	Value Example:	“ICON FUV”
+•	Comment:	Strongly recommended – coupled with LINK_TEXT and HTTP_LINK.
+
+2.1.18	Logical Source / Logical File ID
+These values are required by ISTP to support CDA Web. They describe the name of the file as a header prefix, date and version. See the file naming section of the conventions for file naming. That is used here as an example. The three values below are coupled.
+
+•	Name:	“Logical_File_ID”
+•	Value Example:	“ICON_L1_FUV_SWP_2015-01-17_v0001” 
+	(format follows file name conventions)
+•	Comment:	Required setting for any data file. Note the file name conventions are followed.
+
+•	Name:	“Logical_Source”
+•	Value Example:	“ICON_L1_FUV_SWP_” 
+	(format follows file name conventions)
+•	Comment:	Same as “Logical_file_id” except the date and version.
+
+•	Name:	“Logical_Source_Description”
+•	Value Example:	“FUV Short Wavelength Channel - 135.6 Altitude Profiles” 
+•	Comment:	Describes the file from the corresponding file ID and source.
+
+2.1.19	Mission Group
+This is a required ISTP value indicating the mission data group for CDA Web (fixed for ICON).
+•	Name:	“Mission_Group”
+•	Value:	“Ionospheric Investigations”
+•	Comment:	Required and fixed.
+
+2.1.20	Parents
+List the parent NetCDF files used to generate this file. This should be a comma-separated list. The name is not the name of this file but does follow the same pattern as the logical source attribute.
+•	Name:	“Parents”
+•	Value Example:	“NC > ICON_L1_FUV_SWP_2015-01-17.v0001”
+•	Comment:	Optional. Note the “NC >” indicates that the parent is a NetCDF file.
+
+2.1.21	PI Affiliation
+This is a required ISTP value indicating the primary investigators affiliation (fixed for ICON).
+•	Name:	“PI_Affiliation”
+•	Value:	“UC Berkeley > SSL”
+•	Comment:	Required and fixed.
+
+2.1.22	PI Name
+This is a required ISTP value indicating the primary investigators name (fixed for ICON).
+•	Name:	“PI_Name”
+•	Value:	“T. J. Immel”
+•	Comment:	Required and fixed.
+
+2.1.23	Project
+This must exist for all data files. It has a fixed setting as shown below.
+•	Name:	“Project”
+•	Value:	“NASA > ICON”
+•	Comment:	Required and fixed.
+2.1.24	Rules of Use
+This should be set and if set should be the fixed value shown below.
+•	Name:	“Rules_of_Use”
+•	Value:	“Public Data for Scientific Use”
+•	Comment:	Recommended and fixed.
+
+2.1.25	Software Version
+This should be set and if set should be the version string and name of the processing software.
+•	Name:	“Software_Version”
+•	Value Example:	“ICON SDC > IVM Prime Generator v1.0.0”
+•	Comment:	Recommended value should include the processor’s source group.
+
+2.1.26	Source Name
+This ISTP required value has the short and long names of the mission sensor suite (fixed).
+•	Name:	“Source_Name”
+•	Value Example:	“ICON > Ionospheric Connection Explorer”
+•	Comment:	Required and fixed.
+
+2.1.27	Spacecraft ID
+This must exist for all data files and is fixed for ICON (note spacecraft ID 493 = ICON).
+•	Name:	“Spacecraft_ID”
+•	Value:	“NASA > ICON - 493”
+•	Comment:	Required and fixed.
+
+2.1.28	TEXT (Description)
+This ISTP required value has a description of the experiment (including a minimum of one journal or web link reference) whose data is included in the NetCDF file. The text here is set unless a specific file requires different text.
+•	Name:	“Text”
+•	Value:	“ICON explores the boundary between Earth and space – the ionosphere – to understand the physical connection between our world and the immediate space environment around us. Visit ‘http://icon.ssl.berkeley.edu’ for more details.”
+•	Comment:	Required and fixed (note – this may change per data set if approved by PI).
+
+•	Name:	“Text_Supplement”
+•	Value:	<Extra String Text if Needed>
+•	Comment:	Optional – only use if more description is required.
+2.1.29	Time Resolution
+This ISTP recommended value indicates the data frequency of data in the file.
+•	Name:	“Time_Resolution”
+•	Value Example:	“30 seconds”
+•	Comment:	Strongly recommended where applicable.
+
+2.1.30	Title
+This ISTP and NetCDF optional value should be provided which indicates the title of the NetCDF data contained (use the DPID for guidance).
+•	Name:	“Title”
+•	Value Example:	“ICON FUV Altitude Profiles (DP 1.3)”
+•	Comment:	Strongly recommended value (should correlate strongly to the DPID).
+
+2.2	Epoch Variable / Dimension
+The ISTP standard assumes that the first variable(s) in the data set will be the “Epoch” variable (different names can be used if there are more than one but the first should be “Epoch”). This is an array of times that match to each other time-related variable with a “DEPEND” linkage (described in variable attributes). If there is no time related data then there should still be an “Epoch” variable with a zero dimension.
+
+Note that more than one Epoch may be included. For example, Epoch_1, Epoch_2 and Epoch_3 variables may be included or used though the numbering should leave the one most often used named “Epoch”. Note that the dimension is named the same as the variable. Not all time series need to have the same dimension but they normally do.
+
+Things to note:
+•	Epoch (variable) has a corresponding Epoch dimension.
+•	ICON uses Epoch defined as UTC milliseconds since 01 January 1970 (Unix Style UTC Time) as a signed 64-bit integer number. This time should usually be the center time of the measurements represented in the variables.
+
+2.3	Variables
+Variables in ICON are diverse and specific to individual instruments (Level 1) or retrieved products (Level 2). They should follow naming conventions delineated here, be completely described in variable attributes (var_notes), have specific dimensions and follow ICON conventions that are to be used across all data files when possible.
+
+2.3.1	Required Variables
+It must be noted that for ISTP standard compliance the Epoch variables must be the first variables declared in the data file. Following that, and possibly unique to ICON, is a human-readable UTC_Time variable containing the ISO 8601 standard time at the center time for all of the measurements represented in variables. This will be identical to the EPOCH variable in dimension.
+
+UTC Time Format:	“YYYY-MM-DD HH:mm:ss.xxxZ”
+
+These two variables representing time are required in both Level 1and Level 2 data products.  At Level 2, several additional variables are required, which are tabulated below, as their expected variable name.
+2.3.5	Variable Attributes
+There are conventions that should be maintained for ISTP standards and others for NetCDF format reasons. A notable example is the “_FillValue” which ISTP requires being named “FillValue” while NetCDF uses the same name with an underscore to actually perform the fill. For this reason both must be maintained. A summary and examples are below of the recommended attributes. Other required ISTP attributes can be found on the ISTP guide (http://spdf.sci.gsfc.nasa.gov/istp_guide/vattributes.html).
+
+	Bin_Location	<ISTP : Time Descriptor Attribute>
+	CatDesc	<ISTP : Catalog Description>
+	Depend_#	<ISTP : Dependency Tracking 0 through #>
+	Display_Type	<ISTP : Variable Display Type>
+	FieldNam	<ISTP : Name of Variable on Plots>
+	FillVal	<ISTP : Value for Unspecified Data>
+	Format	<ISTP : Data Formatting String>
+	LablAxis	<ISTP : Data Charting Axis Label>
+	Labl_Ptr_#	<ISTP : Data Charting Axis Label>
+	Long_Name	<NetCDF : Variable Description>
+	MonoTon	<ISTP : Monotonic Indicator>
+	ScaleTyp	<ISTP : Linear or Log Scale>
+	Time_Base	<ISTP : Time Descriptor Attribute>
+	Time_Scale	<ISTP : Time Descriptor Attribute>
+	Units	<ISTP : Variable Units>
+	ValidMax	<ISTP : Maximum Value>
+	ValidMin	<ISTP : Minimum Value>
+	Valid_Max	<NetCDF : Maximum Value>
+	Valid_Min	<NetCDF : Minimum Value>
+	Valid_Range	<NetCDF : Minimum – Maximum Range>
+	Var_Notes	<ISTP : Notes>	
+	Var_Type	<ISTP : Type of Variable>
+	_ChunkingSizes	<NetCDF : Compression Related>
+	_DeflateLevel	<NetCDF : Compression Related>
+	_FillValue	<NetCDF : Same as FillVal from ISTP>
+	_Shuffle	<NetCDF : Compression Related>
+
+2.3.5.1	Catalog Description / Long Name
+•	Name:	“CatDesc”
+•	Requirement:	ISTP Required
+•	Type:	String (80 Character Maximum)
+•	Value Example:	“ICON FUV turret angle (degrees) at center time.”
+•	Notes:	A description of the data item and dependencies in string format (80 characters or less).
+
+•	Name:	“Long_Name”
+•	Requirement:	NetCDF Recommended
+•	Type:	String
+•	Value Example:	“ICON FUV turret angle (degrees) at center time.”
+•	Notes:	A description of the data item in string format similar to the ISTP CatDesc.
+
+2.3.5.2	Compression Settings
+These three settings control the NetCDF byte layout and compression. They are described in the NetCDF Compression section. “_ChunkingSizes” is the most complicated one. The others should be fixed for ICON.
+
+•	Name:	“_ChunkingSizes”
+•	Requirement:	NetCDF Required / Used
+•	Type:	Integer (INT)
+•	Value Example:	1
+•	Notes:	NetCDF attribute which controls the data arrangement. See NetCDF compression.
+
+•	Name:	“_DeflateLevel”
+•	Requirement:	NetCDF Required
+•	Type:	Integer (INT)
+•	Value:	6
+•	Notes:	ZLIB compression level from 0 to 9. ICON uses deflate level 6 by default.
+
+•	Name:	“_Shuffle”
+•	Requirement:	NetCDF Required
+•	Type:	String
+•	Value:	“true”
+•	Notes:	Enables byte shuffling in NetCDF data set for optimized compression performance.
+
+2.3.5.3	Dependency
+These indicate dimensional dependencies and should follow their dimension settings. Any time a variable is time dependent, the first dependency (“Depend_0”) should be the correct Epoch. ICON suggests that the dependency is on the UTC time of the center of the associated measurement.
+
+•	Name:	“Depend_0”, “Depend_1”, …
+•	Requirement:	ISTP Required (Conditionally)
+•	Type:	String (80 Character Maximum)
+•	Value Example:	“Epoch”
+•	Notes:	Depend_0 should always be the corresponding time variable (Epoch) if there is time variability. Otherwise there should be a number of dependencies pointing to other variables as needed (used for dimensional references). The value is set to the variable name.
+
+2.3.5.4	Display Type
+•	Name:	“Display_Type”
+•	Requirement:	ISTP Required
+•	Type:	String
+•	Value Examples:	“time_series”, “image”, “spectrogram”, …
+•	Notes:	Indicates to automated software how to display this data. See ISTP site for details.
+
+2.3.5.5	Field Name
+•	Name:	“FieldNam”
+•	Requirement:	ISTP Required
+•	Type:	String (30 Character Limit)
+•	Value Example:	“FUV Turret Angle (Degrees)”
+•	Notes:	Used to plot or display data in charts so should be written with formatting in mind.
+
+2.3.5.6	Fill Values
+Fill values are used to fill in data that is not explicitly set. NetCDF will automatically fill out data with this value and thus compress it efficiently later. Fill values should normally be a value that is out of the valid range (see valid maximum/minimums). If no such range exists then it should be set to zero. For floating point values, NaN (not a number) should be set (note that in C and similar languages NaN cannot explicitly be declared but can be defined as 0.0/0.0).
+
+The two values indicated here must both be set. One is for ISTP compliance and the other is for NetCDF internal functionality. 
+
+•	Name:	“_FillValue”
+•	Requirement:	NetCDF Required
+•	Type:	as Variable
+•	Value Examples:	“NaN”, “0”, “-1”
+•	Notes:	Used by NetCDF to fill in data that was not explicitly set. This is typed data.
+
+•	Name:	“FillVal”
+•	Requirement:	ISTP Required
+•	Type:	as Variable
+•	Value Examples:	“NaN”, “0”, “-1”
+•	Notes:	Used by ISTP to recognize the fill value. This is typed data.
+
+2.3.5.7	Format / Format Pointer
+•	Name:	“Format”
+•	Requirement:	ISTP Required
+•	Type:	String (30 Character Maximum)
+•	Value Example:	“I3”
+•	Notes:	Used by CDFlist to format output data. This is a “Fortran” style formatting string.
+
+2.3.5.8	Labels for Axes
+•	Name:	“LablAxis”
+•	Requirement:	ISTP Required (only if Labl_Ptr_1 not specified)
+•	Type:	String (10 Character Maximum)
+•	Value Example:	“Quality”
+•	Notes:	Used by CDF utilities to label the axis. Do not set this if Labl_Ptr_1 is used. 
+
+•	Name:	“Labl_Ptr_1”, “Labl_Ptr_2”, …
+•	Requirement:	ISTP Required (only if LablAxis not specified)
+•	Type:	String
+•	Value Examples:	“Time_Axis”
+•	Notes:	Used by CDF utilities to label the nth dimensional axis (the first axis being Labl_Ptr_1). The string here is a reference to another variable in the NetCDF data set that is a string following the same rules as LablAxis above.
+
+2.3.5.9	Monotonic Indicator
+•	Name:	“MonoTon”
+•	Requirement:	ISTP Optional
+•	Type:	String
+•	Value Options:	“Decrease” or “Increase”
+•	Notes:	Only used if variable is known to be monotonically decreasing or increasing.
+
+2.3.5.10	Scale Type
+•	Name:	“ScaleTyp”
+•	Requirement:	ISTP Recommended
+•	Type:	String
+•	Value Options:	“Linear” or “Log”
+•	Notes:	Linear is assumed of not specified. This indicates the default scale used when plotting.
+
+2.3.5.11	Time Assisting Attributes
+Several attributes may be used optionally to enhance the understanding of the specific time measurement. SPDF uses these so they are strongly recommended. They can be added to an individual measurement or to an Epoch variable if they apply to the overall data.
+
+•	Name:	“Bin_Location”
+•	Requirement:	ISTP Recommended
+•	Type:	Float (range from 0.0 to 1.0)
+•	Value Example:	0.5
+•	Notes:	Range fraction from start of measurement being 0.0 to end of measurement being 1.0 and middle of measurement being 0.5.
+
+•	Name:	“Time_Base”
+•	Requirement:	ISTP Required for Time Varying Variables
+•	Type:	String
+•	Value Examples:	“FIXED: 1970 (POSIX)”, “FIXED: 1980-01-06 (GPS)”, …
+•	Notes:	Indicator about the base (ICON normally uses a fixed base of GPS or UTC).
+
+•	Name:	“Time_Scale”
+•	Requirement:	ISTP Recommended for Time Varying Variables
+•	Type:	String
+•	Value Examples:	“UTC”, “GPS”, …
+•	Notes:	Indicator about the scale type of time.
+
+2.3.5.12	Units
+•	Name:	“Units”
+•	Requirement:	ISTP Required  & NetCDF Required
+•	Type:	String (20 Character Maximum – Smaller Preferred)
+•	Value Examples:	“ms”, “s”, “days”, “photon count”, …
+•	Notes:	Note that the ISTP Unit_PTR variable is not used because NetCDF also requires the use of “Units”. This should be a small character string describing the units of the variable. Leave an empty string if there are no units.
+
+2.3.5.13	Valid Maximum & Minimum
+Both NetCDF and ISTP have requirements here and both are used even though there is duplication. They should be set to the same values. The NetCDF version can opt for a range instead of using the minimum and maximum.
+
+•	Name:	“ValidMax”
+•	Requirement:	ISTP Required (Conditionally excepted for strings & unlimited floating point)
+•	Type:	Typed by Variable
+•	Value Example:	“10000.0”
+•	Notes:	The ISTP maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited.
+
+•	Name:	“ValidMin”
+•	Requirement:	ISTP Required (Conditionally excepted for strings & unlimited floating point)
+•	Type:	Typed by Variable
+•	Value Example:	“-10000.0”
+•	Notes:	The ISTP minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited.
+
+•	Name:	“Valid_Max”
+•	Requirement:	NetCDF Required (Conditionally excepted for strings & unlimited floating point)
+•	Type:	Typed by Variable
+•	Value Example:	“10000.0”
+•	Notes:	The NetCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. Note: Do not use if using “Valid_Range”.
+
+•	Name:	“Valid_Min”
+•	Requirement:	NetCDF Required (Conditionally excepted for strings & unlimited floating point)
+•	Type:	Typed by Variable
+•	Value Example:	“-10000.0”
+•	Notes:	The NetCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. Note: Do not use if using “Valid_Range”.
+
+•	Name:	“Valid_Range”
+•	Requirement:	NetCDF Required (Conditionally excepted for strings & unlimited floating point)
+•	Type:	Typed by Variable
+•	Value Example:	“-10000.0”, “10000.0”
+•	Notes:	The NetCDF two length vector containing the minimum and maximum valid values. Skip this for strings or double/floats that are unlimited. Note: Do not use if using “Valid_Max” and/or “Valid_Min”.
+
+2.3.5.14	Variable Notes
+•	Name:	“Var_Notes”
+•	Requirement:	ISTP Optional
+•	Type:	String
+•	Value Example:	“A string of any length describing optional ancillary information.”
+•	Notes:	The ISTP optional field allows adding notes about this variable. This is required for every ICON variable. It can be an array of strings with valuable information to help understand what the data is intended to be. With correct data descriptions included in ICON’s variable notes, the ICON products are self documenting.
+
+2.3.5.15	Variable Type
+•	Name:	“Var_Type”
+•	Requirement:	ISTP Required
+•	Type:	String
+•	Value Options:	“data”, “support_data”, “metadata”, or “ignore_data”
+•	Notes:	The ISTP required field indicates if the data is plottable (data), attached variables (support), labels/strings (metadata) or placeholders (ignore).
+
+2.4	File Naming Conventions
+ICON will be using a file naming convention similar to that of ISTP. Note that some fields are optional. The general format is shown here.
+
+ “ICON_<LEVEL>_<INSTRUMENT>[_<DESCRIPTION>]T<DATE>[_<TOD>]_v<VERSION>r<REVISION>.NC”
+
+Where the values in <> are replaced as shown below and values in [] are optional.
+
+•	DATE = Date used to show the file content UTC date in YYYY-MM-DD format (where “2015-12-11” is 11 December 2015 UTC).
+•	DESCRIPTION = Optional, short text allowed to give further indication of the file content.
+•	INSTRUMENT = “FUV”, “IVM-A” as per the “Instrument” setting (may be model acronym).
+•	LEVEL = “L0”, “L0P”, “L1”, “L1_5”, “L2”, “L3”, “L4” and so on indicating the data product level.
+•	REVISION = Data file revision number (starting at 0 and incrementing) formatted as “r###” such that “r000” is the first file and “r001” would be the first revision or second file and so on. The revision represents the number of times the file has been updated due to new data, data corrections or calculation corrections and changes for each data change though resets to 0 if a new version is deployed.
+•	TOD = Optional UTC time of day used if needed in “HH.MM.SS” format (“15.10.00” is 3:10 PM UTC).
+•	VERSION = Data file version number (starting at 1 and incrementing up to 99) formatted as “v##” such that “v01” is version 1 and so on. The version represents the data format and code generation and should change infrequently.
+
+So a level 0 file from the IVM-A instrument might look like any of these:
+	ICON_L0_IVM-A_NOMINAL_2015-10-13T140000_v01r003.NC
+	ICON_L0_IVM-A_2015-10-13_v02r000.NC
+	ICON_L0_IVM-A_CALIBRATE_2015-10-13T270000_v01r000.NC
+2.4.1	Level 2 Filenames
+
+Level 2 filenames are uniquely defined here to provide a uniform representation of those products. Though instrument specific information is not present in the file, the instrument responsible for the data is noted. Where an instrument has multiple product files or heads, or day/night products, those are separated. Examples for January 1, 2019 files are noted here:
+ICON_L2-1_MIGHTI-X_LOS-Wind-Red_2019-01-01_v01r00.NC
+ICON_L2-1_MIGHTI-X_LOS-Wind-Green_2019-01-01_v01r00.NC
+ICON_L2-2_MIGHTI_VEC-Wind-Green_2019-01-01_v01r00.NC
+ICON_L2-2_MIGHTI_VEC-Wind-Red_2019-01-01_v01r00.NC
+ICON_L2-3_MIGHTI-X_Temps_2019-01-01_v01r00.NC
+ICON_L2-4_FUV_Day_2019-01-01_v01r00.NC
+ICON_L2-5_FUV_Night_2019-01-01_v01r00.NC
+ICON_L2-6_EUV_2019-01-01_v01r00.NC
+ICON_L2-7_IVM-X_2019-01-01_v01r00.NC
+
+2.5	Time Conventions
+ICON typically uses two time conventions. Other may be used though are discouraged. This deviates from the ISTP standard as it is required by the ICON project. The two time conventions are described below and are the GPS EPOCH and the UTC EPOCH. 
+
+The GPS Epoch is used because the observatory reports this time in all ICON level zero files, and it is a widely used time convention in data products from other missions. The UTC time is preferred by Harald and should be the first Epoch variable in the data set. There may be multiple UTC Epochs needed (center time, start time, end time and so on) though it is recommended that the first variable is the center time. If an offset is to be used then one of the EPOCHs listed here should be used (which is the most common case). See the time example.

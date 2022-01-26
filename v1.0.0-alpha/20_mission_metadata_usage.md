@@ -940,8 +940,8 @@ NetCDF uses global attributes to describe the file and purpose of the data. The 
 	Generated_By	            
 	
 	Generation_Date	            
-    
-        History	                    
+	
+	History	                    
 	
 	HTTP_LINK	            
 	
@@ -990,6 +990,7 @@ NetCDF uses global attributes to describe the file and purpose of the data. The 
 6.2.1	Acknowledgement-
 This is an ISTP recommended designed for the PI to give citable acknowledgements. This will be fixed for ICON, with the same acknowledgement text used for all data products. Updates to this acknowledgement are maintained first at a password-protected site as follows:
 sftp://icon-science.ssl.berkeley.edu:36868/Drop/Acknowledgement.TXT
+
 •	Name:	“Acknowledgement”
 
 •	Value:	

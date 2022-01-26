@@ -905,7 +905,7 @@ NetCDF uses global attributes to describe the file and purpose of the data. The 
 
 * Note: Except where mentioned, all values are character strings.
 
-	Acknowledgement	            <Acknowledgement Text>
+	Acknowledgement, <Acknowledgement Text>
 	
 	ADID_Ref	                “NASA Contract > NNG12FA45C”
 	

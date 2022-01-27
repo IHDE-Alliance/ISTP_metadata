@@ -1146,47 +1146,68 @@ These data are openly available as described in the ICON Data Management Plan av
 
 6.2.2	Authority Control Identifier (ADID Reference)-
 This is the control authority identifier (currently somewhat defunct in CDF). ICON uses it for the NASA contract number and it should be included with every file.
+
 •	Name:	“ADID_Ref”
+
 •	Value:	“NASA Contract > NNG12FA45C”
+
 •	Comment:	Required and fixed.
 
 6.2.3	Calibration File-
 This is the name of the calibration file used when generating this data. If there is no file, leave it blank. The name is similar to the logical source name global attribute but includes the extension. Note the file name conventions section for file naming.
+
 •	Name:	“Calibration_File”
+
 •	Value Example:	“ICON_L1_EUV_Calibration_v0001.NC”
+
 •	Comment:	Required though may be empty if no calibration file was used.
 
 6.2.4	Conventions-
 This is standard for NetCDF files and is required for ICON.
+
 •	Name:	“Conventions”
+
 •	Value:	“SPDF ISTP/IACG Modified for NetCDF”
+
 •	Comment:	Required and fixed.
 
 6.2.5	Data Level-
 The data product level as specified in the DPID. This is required and should follow the format “L#.#”. If there is no data product then leave blank.
+
 •	Name:	“Data_Level”
+
 •	Value Example:	“L2.0”
+
 •	Comment:	Required.
 
 6.2.6	Data Type-
 The identifier for the data set within this NetCDF data file. The short name and long name are included. For the short name we will go with the data product as specified in the DPID. The long name should also be from the DPID and be descriptive. Data product 2.2 would be represented as in the example below. If a name is not provided in the DPID then the science team should be consulted.
+
 •	Name:	“Data_Type”
+
 •	Value Example:	“DP22 > Data Product 2.2: MIGHTI Cardinal Vector Winds”
+
 •	Comment:	Required.
 
 6.2.7	Data Version-
 The version of this NetCDF file. The first version should always be 1.0 and increment as the file is updated later with new or updated data. The revision normally gets incremented during reprocessing. The major version normally only changes for a software change significant enough to alter the data format produced. The major version should be between 1 and 99 while the revision should be between 0 and 999 as shown below. The actual version is computed by adding the major version to the revision divided by 1000.
 
 •	Name:	“Data_Revision”
+
 •	Value Example:	2 (unsigned short) (limit 0 through 999).
+
 •	Comment:	Recommended.
 
 •	Name:	“Data_Version”
+
 •	Value Example:	1.002 (float) (limit 1.0 through 99.999).
+
 •	Comment:	Required.
 
 •	Name:	“Data_VersionMajor”
+
 •	Value Example:	1 (unsigned byte) (limit 1 through 99).
+
 •	Comment:	Recommended.
 
 6.2.8	Dates / End / Start / Generation-

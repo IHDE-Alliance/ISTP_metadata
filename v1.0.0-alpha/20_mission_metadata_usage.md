@@ -2,7 +2,7 @@
 
 #### Table of Contents
 
-[1. MMS](#MMS) 
+[1. MMS](#mms) 
 
     1.1 Required
 

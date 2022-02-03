@@ -1,4 +1,4 @@
-***International Solar-Terrestrial Physics (ISTP) Metadata Guidelines***
+**International Solar-Terrestrial Physics (ISTP) Metadata Guidelines**
 
 **Introduction**
 

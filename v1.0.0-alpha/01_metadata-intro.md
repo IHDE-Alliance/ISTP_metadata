@@ -3,8 +3,9 @@
 **Introduction**
 
 This document addresses the required and optional types of metadata. Global attributes, variable attributes and types of variables are defined, as well as examples of each type. The examples are included in Appendix A. Data acquired in different countries/institutes/agencies are usually stored in various format (cdf, hdf, ascii, binary, idl 
-saveset) more or less exotic with no standard header, information, description. This current status makes it difficult to cross-compare different data sets (it is always necessary to develop dedicated routines usually done several times throughout the world). Guidelines are needed from the worldwide community of developers of space radiation data bases to permit standardization of data file format and therefore minimize efforts for data users. Metadata is information which describes a dataset. It should be complete, that is, contain all the information required to read and interpret the bits (syntactic description), and to understand what the resulting numerical values (or bit strings) 
-represent (semantic description), including how the data was obtained ; the latter information impacts upon the scientific significance of the data. 
+saveset) more or less exotic with no standard header, information, description. This current status makes it difficult to cross-compare different data sets (it is always necessary to develop dedicated routines usually done several times throughout the world). Guidelines are needed from the worldwide community of developers of space radiation data bases to permit standardization of data file format and therefore minimize efforts for data users. 
+
+Metadata is information which describes a dataset. It should be complete, that is, contain all the information required to read and interpret the bits (syntactic description), and to understand what the resulting numerical values (or bit strings) represent (semantic description), including how the data was obtained; the latter information impacts upon the scientific significance of the data. 
 
 
 [Global Attributes](02_metadata-global-attributes.md)

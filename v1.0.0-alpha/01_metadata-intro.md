@@ -9,7 +9,7 @@ A Common Data Format (CDF) data set using ISTP/Interagency Consultative Group (I
 
 Metadata is information which describes a dataset. It should be complete, that is, contain all the information required to read and interpret the bits (syntactic description), and to understand what the resulting numerical values (or bit strings) represent (semantic description), including how the data was obtained; the latter information impacts upon the scientific significance of the data. Metadata is always character type. Metadata is always time invariant if it is used to label a data variable. Metadata can be time varying if it is NOT used as a label. If a metadata variable is attached to a data variable via LABL_PTR_i, then it must be of the same size as the dimension i. Character metadata must define the number of elements to be the same as the number of characters used in its value.
 
-Global attributes, variable attributes, and variables are included in the metadata. Global attributes are used to provide information about the data set as an entity. There are three types of variables that should be included in CDF files: data, support data, and metadata.
+Global attributes, variable attributes, and variables are included in the metadata. Global attributes are used to provide information about the data set as an entity. Variable attributes are linked with each individual variable, and provide additional information about each variable. There are three types of variables that should be included in CDF files: data, support data, and metadata. Further details can be found in the sections below.
 
 
 [Global Attributes](02_metadata-global-attributes.md)

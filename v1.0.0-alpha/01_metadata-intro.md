@@ -9,6 +9,8 @@ A Common Data Format (CDF) data set using ISTP/Interagency Consultative Group (I
 
 Metadata is information which describes a dataset. It should be complete, that is, contain all the information required to read and interpret the bits (syntactic description), and to understand what the resulting numerical values (or bit strings) represent (semantic description), including how the data was obtained; the latter information impacts upon the scientific significance of the data. Metadata is always character type. Metadata is always time invariant if it is used to label a data variable. Metadata can be time varying if it is NOT used as a label. If a metadata variable is attached to a data variable via LABL_PTR_i, then it must be of the same size as the dimension i. Character metadata must define the number of elements to be the same as the number of characters used in its value.
 
+There are three types of variables to be included in ISTP/IACG CDF files: data variables of primary importance (e.g., density, magnetic_field, particle_flux), support_data variables of secondary importance (e.g., time, energy_bands associated with particle_flux) and metadata variables (e.g., a variable holding "Bx,By,Bz" to label magnetic field). Variables are defined with CDF specifications and required attributes. Data variables also have attached variables for time and dependencies (support_data) and labels (metadata). The support_data variables can be attached to data variables via DEPEND_i variable attributes. Metadata variables can be attached to data variables via LABL_PTR_i variable attributes.
+
 
 [Global Attributes](02_metadata-global-attributes.md)
 

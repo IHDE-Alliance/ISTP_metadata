@@ -216,4 +216,4 @@ experiment whose data is included in the CDF. A reference to a journal article(s
   (Optional) Details to be specified. This attribute is written by software for automatic validation of features such as the structure of the CDF file on a simple pass/fail criterion. The software will test that all expected attributes are present and, where possible, have reasonable values. The syntax is likely to be of the form "test>result>where done>date." It is not the same as data validation.
 
   
-  Return to Table of Contents, [Table of Contents](00_Table_of_Contents.md)
+  Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

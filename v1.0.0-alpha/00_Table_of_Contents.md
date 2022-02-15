@@ -1,5 +1,7 @@
 ISTP Metadata Guidelines
 
+Introduction
+
 Global Attributes
 
 Variable Attributes

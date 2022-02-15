@@ -27,3 +27,6 @@ A **Skeleton CDF** is a file with exactly the same contents as the skeleton tabl
 If you have a **skeleton table** you can create a **Skeleton CDF** using the CDF toolkit routine, skeletoncdf.
 
 If you have a **Skeleton CDF** you can create a **skeleton table** using the CDF toolkit routine, skeletontable.
+
+
+Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

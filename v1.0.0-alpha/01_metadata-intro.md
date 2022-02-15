@@ -12,25 +12,6 @@ Metadata is information which describes a dataset. It should be complete, that i
 Global attributes, variable attributes, and variables are included in the metadata. Global attributes are used to provide information about the data set as an entity. Variable attributes are linked with each individual variable, and provide additional information about each variable. There are three types of variables that should be included in CDF files: data, support data, and metadata. Further details can be found in the sections below.
 
 
-[Global Attributes](02_metadata-global-attributes.md)
-
-[Variable Attributes](03_metadata-variable-attributes.md)
-
-[Variables](04_metadata-variables.md)
-
-[Keywords](05_metadata-keywords.md)
-
-[Tools](06_metadata-tools.md)
-
-[Example variables](07_example-variables.md)
-
-[Example skeleton tables](08_example-skeletontables.md)
-
-[Example displays](09_example-displays.md)
-
-[Example PB5 times](10_example-PB5-times.md)
-
-[Example subclass keywords](11_example-subclass-keywords.md)
 
 
 # try hiding sections

@@ -62,4 +62,4 @@ Try as include:
 <iframe src="02_metadata-global-attributes.md" seamless></iframe>
 
 
-Return to Table of Contents, [Table of Contents](00_Table_of_Contents.md)
+Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

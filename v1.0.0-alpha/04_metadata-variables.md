@@ -90,3 +90,6 @@ Flag would also be included in each KP record.
 (Note: This I*4 Flag is included in every record and is defined in the following way: 0 - no gap occurred immediately prior to this record [thus most of the time this Flag would be set to 0]; 1 - the gap occurred because the instrument was not in a mode that allowed for the production of KPs; 2 - the gap occurred because Level Zero or SIRIUS data were missing; 3 - the gap occurred because Level Zero or SIRIUS data were too noisy to compute KPs. Integer numbers above 9 can be used by the PI team to define other gap conditions, as required.)
 
 A variable similar to this is recommended for inclusion in CDFs to indicate real and substantial data gaps. The detailed definition of this flag should appear in the CDF metadata in the VAR_NOTES attribute.
+
+
+Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

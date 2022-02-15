@@ -1,4 +1,4 @@
-##ISTP Metadata Guidelines Table of Contents
+## ISTP Metadata Guidelines Table of Contents
 
 [Introduction](01_introduction.md)
 

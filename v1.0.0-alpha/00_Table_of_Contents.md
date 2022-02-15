@@ -1,26 +1,7 @@
-ISTP Metadata Guidelines
+##ISTP Metadata Guidelines Table of Contents
 
-Introduction
+[Introduction](01_introduction.md)
 
-Global Attributes
-
-Variable Attributes
-
-Variables
-
-Keywords
-
-Tools
-
-Example variables
-
-Example skeleton tables
-
-Example displays
-
-Example PB5 times
-
-Example subclass keywords
 [Global Attributes](02_metadata-global-attributes.md)
 
 [Variable Attributes](03_metadata-variable-attributes.md)

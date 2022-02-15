@@ -1,6 +1,6 @@
 ## ISTP Metadata Guidelines Table of Contents
 
-[Introduction](01_introduction.md)
+[Introduction](01_metadata-intro.md)
 
 [Global Attributes](02_metadata-global-attributes.md)
 

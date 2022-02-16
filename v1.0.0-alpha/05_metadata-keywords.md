@@ -103,7 +103,7 @@ Subclass Words band
 
 LABEL A term or phrase attached by way of classification or characterization.
 
-Subclass Words Â [All other class words are also possible sub-class words]
+Subclass Words  [All other class words are also possible sub-class words]
 
  alias 
 

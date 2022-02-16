@@ -242,7 +242,7 @@ Subclass Words characteristic parallel
 
  operational threshold
 
-TIMEÂ The period between two events or measurements; a measurable interval, usually between a fixed reference (instant of time) such as 0 AD and the subject event or measurement.
+TIME The period between two events or measurements; a measurable interval, usually between a fixed reference (instant of time) such as 0 AD and the subject event or measurement.
 
 Subclass Words bin GMT minute
 
@@ -260,7 +260,7 @@ Subclass Words bin GMT minute
 
 UNCERTAINTY An estimate of the lack of precision in an observed or calculated value.
 
-Subclass Words Â [All other class words are also possible sub-class words] 
+Subclass Words  [All other class words are also possible sub-class words] 
 
  percent 
 

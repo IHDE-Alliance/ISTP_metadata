@@ -26,6 +26,28 @@ Data variables must be one of the following data types: string, char, byte, unsi
 
 Strings in variables may be represented one of two ways - as atomic strings or as character arrays. An n-dimensional array of strings may be implemented as a variable of type string with n dimensions, or as a variable of type char with n+1 dimensions where the last (most rapidly varying) dimension is large enough to contain the longest string in the variable. For example, a character array variable of strings containing the names of the months would be dimensioned (12,9) in order to accommodate "September", the month with the longest name. The other strings, such as "May", should be padded with trailing NULL or space characters so that every array element is filled. If the atomic string option is chosen, each element of the variable can be assigned a string with a different length. The CDL example below shows one variable of each type.
 
+*Naming Conventions*
+
+Variable, dimension, attribute and group names should begin with a letter and be composed of letters, digits, and underscores. Note that this is in conformance with the COARDS conventions, but is more restrictive than the netCDF interface which allows use of the hyphen character. The CDF interface also allows leading underscores in names, but the NUG states that this is reserved for system use.
+
+Case is significant in CDF names, but it is recommended that names should not be distinguished purely by case, i.e., if case is disregarded, no two names should be the same. It is also recommended that names should be obviously meaningful, if possible, as this renders the file more effectively self-describing.
+
+This convention does not standardize any variable or dimension names. Attribute names and their contents, where standardized, are given in English in this document and should appear in English in conforming CDF files for the sake of portability. Languages other than English are permitted for variables, dimensions, and non-standardized attributes. The content of some standardized attributes are string values that are not standardized, and thus are not required to be in English. For example, a description of what a variable represents may be given in a non-English language using the long_name attribute whose contents are not standardized, but a description given by the standard_name attribute must be taken from the standard name table which is in English.
+
+*Dimensions*
+
+This convention does not standardize any variable or dimension names. Attribute names and their contents, where standardized, are given in English in this document and should appear in English in conforming CDF files for the sake of portability. Languages other than English are permitted for variables, dimensions, and non-standardized attributes. The content of some standardized attributes are string values that are not standardized, and thus are not required to be in English. For example, a description of what a variable represents may be given in a non-English language using the long_name attribute whose contents are not standardized, but a description given by the standard_name attribute must be taken from the standard name table which is in English.
+
+If any or all of the dimensions of a variable have the interpretations of "date or time" (T), "height or depth" (Z), "latitude" (Y), or "longitude" (X) then we recommend, but do not require, those dimensions to appear in the relative order T, then Z, then Y, then X in the CDL definition corresponding to the file. All other dimensions should, whenever possible, be placed to the left of the spatiotemporal dimensions.
+
+Dimensions may be of any size, including unity. When a single value of some coordinate applies to all the values in a variable, the recommended means of attaching this information to the variable is by use of a dimension of size unity with a one-element coordinate variable. It is also acceptable to use a scalar coordinate variable which eliminates the need for an associated size one dimension in the data variable. The advantage of using either a coordinate variable or an auxiliary coordinate variable is that all its attributes can be used to describe the single-valued quantity, including boundaries. For example, a variable containing data for temperature at 1.5 m above the ground has a single-valued coordinate supplying a height of 1.5 m, and a time-mean quantity has a single-valued time coordinate with an associated boundary variable to record the start and end of the averaging period.
+
+*Variables*
+
+This convention does not standardize variable names.
+
+CDF variables that contain coordinate data are referred to as coordinate variables, auxiliary coordinate variables, scalar coordinate variables, or multidimensional coordinate variables.
+
 
 
 # try hiding sections

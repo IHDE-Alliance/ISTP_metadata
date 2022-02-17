@@ -15,6 +15,17 @@ Global attributes, variable attributes, and variables are included in the metada
 
 In this section conventions associated with filenames are described as well as the basic components of a netCDF file. New attributes are introduced for describing the contents of a file.
 
+*Filename*
+
+CDF files should have the file name extension ".nc".
+
+
+*Data Types*
+
+Data variables must be one of the following data types: string, char, byte, unsigned byte, short, unsigned short, int, unsigned int, int64, unsigned int64, float or real, and double supported by CDF-4. The string type is only available in files using the CDF version 4 (CDF-4) format. The char and string types are not intended for numeric data. One byte numeric data should be stored using the byte or unsigned byte data types. It is possible to treat the byte and short types as unsigned by using the NUG convention of indicating the unsigned range using the valid_min, valid_max, or valid_range attributes. In many situations, any integer type may be used. When the phrase "integer type" is used in this document, it should be understood to mean byte, unsigned byte, short, unsigned short, int, unsigned int, int64, or unsigned int64.
+
+Strings in variables may be represented one of two ways - as atomic strings or as character arrays. An n-dimensional array of strings may be implemented as a variable of type string with n dimensions, or as a variable of type char with n+1 dimensions where the last (most rapidly varying) dimension is large enough to contain the longest string in the variable. For example, a character array variable of strings containing the names of the months would be dimensioned (12,9) in order to accommodate "September", the month with the longest name. The other strings, such as "May", should be padded with trailing NULL or space characters so that every array element is filled. If the atomic string option is chosen, each element of the variable can be assigned a string with a different length. The CDL example below shows one variable of each type.
+
 
 
 # try hiding sections

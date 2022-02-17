@@ -28,7 +28,7 @@ Strings in variables may be represented one of two ways - as atomic strings or a
 
 *Naming Conventions*
 
-Variable, dimension, attribute and group names should begin with a letter and be composed of letters, digits, and underscores. Note that this is in conformance with the COARDS conventions, but is more restrictive than the netCDF interface which allows use of the hyphen character. The CDF interface also allows leading underscores in names, but the NUG states that this is reserved for system use.
+Variable, dimension, attribute and group names should begin with a letter and be composed of letters, digits, and underscores. Note that this is in conformance with the COARDS conventions, but is more restrictive than the CDF interface which allows use of the hyphen character. The CDF interface also allows leading underscores in names, but the NUG states that this is reserved for system use.
 
 Case is significant in CDF names, but it is recommended that names should not be distinguished purely by case, i.e., if case is disregarded, no two names should be the same. It is also recommended that names should be obviously meaningful, if possible, as this renders the file more effectively self-describing.
 

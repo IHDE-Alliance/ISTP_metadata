@@ -11,6 +11,9 @@ Metadata is information which describes a dataset. It should be complete, that i
 
 Global attributes, variable attributes, and variables are included in the metadata. Global attributes are used to provide information about the data set as an entity. Variable attributes are linked with each individual variable, and provide additional information about each variable. There are three types of variables that should be included in CDF files: data, support data, and metadata. Further details can be found in the sections below.
 
+**CDF Files and Components**
+
+In this section conventions associated with filenames are described as well as the basic components of a netCDF file. New attributes are introduced for describing the contents of a file.
 
 
 

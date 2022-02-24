@@ -13,7 +13,7 @@ Global attributes, variable attributes, and variables are included in the metada
 
 **CDF Files and Components**
 
-In this section conventions associated with filenames are described as well as the basic components of a CDF file. New attributes are introduced for describing the contents of a file.
+In this section conventions associated with filenames are described as well as the basic components of a CDF file. New attributes are introduced for describing the contents of a file
 
 *Filename*
 

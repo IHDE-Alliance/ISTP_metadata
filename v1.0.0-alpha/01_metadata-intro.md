@@ -11,6 +11,10 @@ Metadata is information which describes a dataset. It should be complete, that i
 
 Global attributes, variable attributes, and variables are included in the metadata. Global attributes are used to provide information about the data set as an entity. Variable attributes are linked with each individual variable, and provide additional information about each variable. There are three types of variables that should be included in CDF files: data, support data, and metadata. Further details can be found in the sections below.
 
+**History**
+
+The ISTP Guidelines were adopted internationally, and are used by most major heliophysics missions because they provide critical value in understanding the data by researchers outside the specific teams. The ISTP Guidelines fall between Specification and International Standard, and are definitely accepted as a best practice. 
+
 **CDF Files and Components**
 
 In this section conventions associated with filenames are described as well as the basic components of a CDF file. New attributes are introduced for describing the contents of a file

@@ -13,7 +13,7 @@ Global attributes, variable attributes, and variables are included in the metada
 
 **History**
 
-The ISTP Guidelines were adopted internationally, and are used by most major heliophysics missions because they provide critical value in understanding the data by researchers outside the specific teams. The ISTP Guidelines fall between Specification and International Standard, and are definitely accepted as a best practice. 
+The ISTP Guidelines were adopted internationally, and are used by most major heliophysics missions because they provide critical value in understanding the data by researchers outside the specific teams. The ISTP Guidelines fall between Specification and International Standard, and are accepted as a best practice. 
 
 **CDF Files and Components**
 

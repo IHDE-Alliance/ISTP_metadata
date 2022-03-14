@@ -2,6 +2,8 @@
 
 **Introduction**
 
+In the 1990s, collaborations between NASA, the European Space Agency (ESA), and the Institute of Space and Astronautical Science (ISAS) of Japan resulted in the International Solar-Terrestrial Physics (ISTP) Science Initiative to combine resources and scientific communities to obtain coordinated, simultaneous investigations of the Sun-Earth space environment over an extended period of time. One critical project
+
 This document addresses the required and optional types of metadata. Global attributes, variable attributes and types of variables are defined, as well as examples of each type. The examples are included in Appendix A. Data acquired in different countries/institutes/agencies are usually stored in various format (cdf, hdf, ascii, binary, idl 
 saveset) more or less exotic with no standard header, information, description. This current status makes it difficult to cross-compare different data sets (it is always necessary to develop dedicated routines usually done several times throughout the world). Guidelines are needed from the worldwide community of developers of space radiation data bases to permit standardization of data file format and therefore minimize efforts for data users. 
 

@@ -47,9 +47,7 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [LIMITS_NOMINAL_MIN](#LIMITS_NOMINAL_MIN) | Optional                     |      { 1990.0, 279.0, 0.0 }                                                                 | Data                                                                                                                                    |
 | [LIMITS_NOMINAL_MAX](#LIMITS_NOMINAL_MAX) | Optional                     |     { 2001.0, 365.0, 86400000.0 }                                                                  | Data                                                                                                                                    |
 | [VARIABLE_PURPOSE](#VARIABLE_PURPOSE)     | Optional                     |    { "support_data" }                                                                   | Data                                                                                                                                    |
-| [DERIVN](#DERIVN)                         | Cluster required             |      { "UMT" }                                                                 | For derived variables                                                                                                                   |
-| [sig_digits](#sig_digits)                 | Cluster recommended          |      { "14" }                                                                  | Data                                                                                                                                    |
-| [SI_conv](#SI_conversion)                 | Cluster recommended          |     { "1e-9>seconds" }                                                                  | Data                                                                                                                                    |
+
 
 **Variable attributes for time documentation (not needed for predefined CDF_TIME_TT2000)**
 

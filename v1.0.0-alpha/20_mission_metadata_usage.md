@@ -304,7 +304,7 @@ This attribute is used to facilitate making choices of instrument type. More tha
 - Ephemeris
 
 1.1.7 Logical_file_id-
-This attribute stores the name of the CDF file but without the  file extension (e.g. ".cdf"). This attribute is required to avoid loss of the original source  in the case of accidental (or intentional) renaming. This attribute must be manually set by  the user during creation. 
+This attribute stores the name of the CDF file but without the  file extension (e.g. ".cdf"). This attribute is required to avoid loss of the original source  in the case of accidental (or intentional) renaming. This attribute must be manually set by  the user during creation 
 
 1.1.8 Logical_source- 
 This attribute determines the file naming convention in the SKT Editor and is used by 

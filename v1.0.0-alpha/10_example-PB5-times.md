@@ -125,7 +125,7 @@
 
  "DICT_KEY" CDF_CHAR { "label>" }
 
- "CATDESC" CDF_CHAR { "Format for Time_PB5" } .
+ "CATDESC" CDF_CHAR { "Format for Time_PB5" } 
 
  ! NRV values follow...
 

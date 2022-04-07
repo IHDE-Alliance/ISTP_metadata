@@ -1,6 +1,6 @@
 ***Example of Time\_PB5***
 
-"Time\_PB5" has three "attached" variables which provide labels units and formats for the three components. These are called ``label\_time", ``unit\_time", and ``format\_time", respectively, and are shown in the example below.
+"Time\_PB5" has three "attached" variables which provide labels units and formats for the three components. These are called "label\_time", "unit\_time", and "format\_time", respectively, and are shown in the example below.
 
 ! Variable Data Number Record Dimension
 

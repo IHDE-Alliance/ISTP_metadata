@@ -1,5 +1,8 @@
 ***Example of Time\_PB5***
 
+Time_PB5 is the second variable in an ISTP KP CDF data set. It is not required for IACG or ISTP higher resolution or event data. Time_PB5 is another way of presenting time which allows for easy recognition of the time value when looking at the data, for instance in a data dump. For ISTP the time value of a record refers to the center of the accumulation period for the record if the measurement is not an instantaneous one.
+Time_PB5 is given in YEAR (4 digit), DAY OF YEAR (note: January 1 is Day 1), and MSEC OF DAY (elapsed ms). These are all signed integer*4 numbers and are stored as the three elements of the one-dimensional variable named "Time\_PB5", e.g. 1992, 214, 0 would be August 1, 1992 at midnight.
+
 "Time\_PB5" has three "attached" variables which provide labels units and formats for the three components. These are called "label\_time", "unit\_time", and "format\_time", respectively, and are shown in the example below.
 
 ! Variable Data Number Record Dimension

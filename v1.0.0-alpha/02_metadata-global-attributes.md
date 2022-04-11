@@ -49,21 +49,21 @@ label. If no control authority identifier has been assigned, then the identifier
   (Required) This attribute identifies the data type of the CDF data set. Both a long name and a short name are given. For ISTP exchangeable data products the values are "Kn>Key Parameter" for approximately minute averaged survey data, and "Hn>High Resolution data" for certified data of higher resolution than Key Parameters.$n$ can run from 0 to 9 to allow for more than one kind of data product. For Cluster/Cluster Science Data System (CSDS) this can either be "SP>Summary Parameter" or "PP>Prime Parameter." Other possible data types may be defined in the future. If any of these data sets are modified or used to produce derived products, the data type should be, *e.g.,* "Mn>Modified Data n", where n is from 0 to 9.
 
 ## Data_version 
-  (Required) This attribute identifies the version of a particular CDF data file for a given date, *e.g.,* the file GE_K0_MGF_19920923_V01 is the first version of data for 1992 September23. **Each time** this particular data file is reproduced - for recalibration or other reasons - the Data_version is incremented by 1. Data_version always starts at `1'.
+  (Required) This attribute identifies the version of a particular CDF data file for a given date, *e.g.,* the file GE_K0_MGF_19920923_V01 is the first version of data for 1992 September23. **Each time** this particular data file is reproduced - for recalibration or other reasons - the Data_version is incremented by 1. Data_version always starts at '1.'
 
 ## Descriptor 
   (Required) This attribute identifies the name of the instrument or sensor that collected the data. Both a long name and a short name are given. An example for ISTP is "EPI>Energetic Particles and Ion Composition." The short name should be limited to from 2 to 4 characters for consistency with ISTP. This attribute should be single valued.
 
 ## Discipline
-  (Required) This attribute describes both the science discipline and subdiscipline. More than one entry is allowed. The list for space physics is:
+  (Recommended) This attribute describes both the science discipline and subdiscipline. More than one entry is allowed. The list for space physics is:
 
 - "Space Physics>Magnetospheric Science"
 
-- ''Space Physics>Interplanetary Studies"
+- "Space Physics>Interplanetary Studies"
 
-- ''Space Physics>Ionospheric Science"
+- "Space Physics>Ionospheric Science"
   
--  ''Space Physics>Astrophysics Science"
+-  "Space Physics>Astrophysics Science"
 
 ## DOI
   (Recommended) Digital Object Identifier (DOI) as a persistent identifier for the dataset, of the form
@@ -90,9 +90,21 @@ This is distinct from the date in "validate" below which records the times of la
 ## Instrument_type 
   (Required) This attribute is used to facilitate making choices of instrument type through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). More than one entry is allowed. The following list contains the valid values:
 
+-Activity Indices 
+  
 -Electric Fields (space)
+  
+-Electron Precipitation Bremsstrahlung
+  
+-Energetic Particle Detector
+  
+-Engineering
 
--Ephemeris
+-Ephemeris/Attitude/Ancillary
+  
+-Gamma and X-Rays
+  
+-Housekeeping
 
 -Imagers (space)
 

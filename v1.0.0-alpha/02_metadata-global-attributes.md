@@ -178,10 +178,20 @@ above, *e.g.,* "Geotail Magnetic Field Key Parameters." Used by [CDAWeb](https:/
   (Required) This attribute has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). Valid values include (but are not restricted to):
 
 - Geotail
+- GOLD
+- ICON
 - IMP8
+- Parker Solar Probe
+- Solar Orbiter
+- THEMIS
 - Wind
+- Van Allen Probes (RBSP)
 - Geosynchronous Investigations
 - Ground-Based Investigations
+- Helio ephemeris
+- OMNI (Combined 1AU IP Data; Magnetic and Solar Indices)
+- Smallsats/Cubesats
+- Sounding Rockets
 
 ## MODS
   (Recommended) This attribute is a standard global attribute which is used to denote the history of modifications made to the CDF data set. The Metadata Object Description (MODS) attribute should contain a description of all significant changes to the data set. This attribute is not directly tied to Data_version, but each version produced will contain the relevant modifications. This attribute can have as many entries as necessary to contain the desired information.

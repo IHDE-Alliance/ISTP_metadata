@@ -7,7 +7,8 @@ Time_PB5 is given in YEAR (4 digit), DAY OF YEAR (note: January 1 is Day 1), and
 
 ! Variable      Data        Number                          Record        Dimension
 ! Name          Type        Elements     Dims     Sizes     Variance      Variances
-! --------      ----        --------     ----     -----     --------      ---------
+! 
+  --------      ----        --------     ----     -----     --------      ---------
 
  "Time_PB5"     CDF_INT4       1          0                    T
 

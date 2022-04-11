@@ -8,7 +8,6 @@ Global attributes are used to provide information about the data set as an entit
 | [Data_type](#Data_type)                                   | Required                     | "L2-Summary>level 2 summary"                          | Identifies the data type of the CDF data set. Both a long name and a short name are given. 
 | [Data_version](#Data_version)                             | Required                     |  "07"                                                 | Identifies the version of a particular CDF data file for a given date
 | [Descriptor](#Descriptor)                                 | Required                     |  "ISOIS>Integrated Science Investigation of the Sun"   |Identifies the name of the instrument or sensor that collected the data     
-
 | [Instrument_type](#Instrument_type)                       | Required                     | "Particles (space)"                             | Used to facilitate making choices of instrument type through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). 
 | [Logical_file_id](#Logical_file_id)                       | Required                     | "psp_isois_l2-summary_20180928_v07"                              | Stores the name of the CDF file using the ISTP naming convention (source_name/data_type/ descriptor/date/data_version)  
 | [Logical_source_description](#Logical_source_description) | Required                     | "Parker Solar Probe ISOIS level 2 summary"              | Writes out the full words associated with the encrypted Logical_source above

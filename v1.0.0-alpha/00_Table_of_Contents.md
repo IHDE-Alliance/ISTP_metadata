@@ -4,9 +4,9 @@
 
 [Global Attributes](02_metadata-global-attributes.md)
 
-[Variable Attributes](03_metadata-variable-attributes.md)
+[Variables](03_metadata-variables.md)
 
-[Variables](04_metadata-variables.md)
+[Variable Attributes](04_metadata-variable-attributes.md)
 
 [Keywords](05_metadata-keywords.md)
 

@@ -81,7 +81,7 @@ This is distinct from the date in "validate" below which records the times of la
 
 -"LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
 
--"LINK_TITLE" = Institute of Space and Astronautical Science (ISAS) Data ARchives and Transmission System (DARTS)
+-"LINK_TITLE" = Institute of Space and Astronautical Science (ISAS) Data Archives and Transmission System (DARTS)
 
 -"HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
 
@@ -105,16 +105,32 @@ This is distinct from the date in "validate" below which records the times of la
 -Gamma and X-Rays
   
 -Housekeeping
+  
+-Imaging and Remote Sensing (ITM/Earth)
+  
+-Imaging and Remote Sensing (Magnetosphere/Earth)
+  
+-Imaging and Remote Sensing (Sun)
 
 -Imagers (space)
+  
+-Magnetic Fields (Balloon)
 
 -Magnetic Fields (space)
 
 -Particles (space)
 
 -Plasma and Solar Wind
+  
+-Pressure gauge (space)
 
 -Radio and Plasma Waves (space)
+  
+-Radio and Plasma Waves (space), Electric Antennas
+  
+-Spacecraft Potential Control
+  
+-UV Imaging Spectrograph (Space)
 
 -Ground-Based High Frequency (HF)-Radars
 

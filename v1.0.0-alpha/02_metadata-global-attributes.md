@@ -79,66 +79,66 @@ This is distinct from the date in "validate" below which records the times of la
 ## HTTP_LINK
   (Recommended) This attribute stores the URL for the PI or CoI web site holding on-line data. This attribute is used in conjunction with "LINK_TEXT" and "LINK_TITLE." There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TEXT" and "LINK_TITLE" for each "HTTP_LINK" entry. CDAWeb will then link to the URL given by "HTTP_LINK" using the "LINK_TITLE" and the description in "LINK_TEXT," on the CDAWeb Data Explorer page. For example:
 
--"LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
+- "LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
 
--"LINK_TITLE" = Institute of Space and Astronautical Science (ISAS) Data Archives and Transmission System (DARTS)
+- "LINK_TITLE" = Institute of Space and Astronautical Science (ISAS) Data Archives and Transmission System (DARTS)
 
--"HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
+- "HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
 
 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at [ISAS DARTS](https://www.darts.isas.jaxa.jp/stp/geotail/)
 
 ## Instrument_type 
   (Required) This attribute is used to facilitate making choices of instrument type through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). More than one entry is allowed. The following list contains the valid values:
 
--Activity Indices 
+- Activity Indices 
   
--Electric Fields (space)
+- Electric Fields (space)
   
--Electron Precipitation Bremsstrahlung
+- Electron Precipitation Bremsstrahlung
   
--Energetic Particle Detector
+- Energetic Particle Detector
   
--Engineering
+- Engineering
 
--Ephemeris/Attitude/Ancillary
+- Ephemeris/Attitude/Ancillary
   
--Gamma and X-Rays
+- Gamma and X-Rays
   
--Housekeeping
+- Housekeeping
   
--Imaging and Remote Sensing (ITM/Earth)
+- Imaging and Remote Sensing (ITM/Earth)
   
--Imaging and Remote Sensing (Magnetosphere/Earth)
+- Imaging and Remote Sensing (Magnetosphere/Earth)
   
--Imaging and Remote Sensing (Sun)
+- Imaging and Remote Sensing (Sun)
 
--Imagers (space)
+- Imagers (space)
   
--Magnetic Fields (Balloon)
+- Magnetic Fields (Balloon)
 
--Magnetic Fields (space)
+- Magnetic Fields (space)
 
--Particles (space)
+- Particles (space)
 
--Plasma and Solar Wind
+- Plasma and Solar Wind
   
--Pressure gauge (space)
+- Pressure gauge (space)
 
--Radio and Plasma Waves (space)
+- Radio and Plasma Waves (space)
   
--Radio and Plasma Waves (space), Electric Antennas
+- Radio and Plasma Waves (space), Electric Antennas
   
--Spacecraft Potential Control
+- Spacecraft Potential Control
   
--UV Imaging Spectrograph (Space)
+- UV Imaging Spectrograph (Space)
 
--Ground-Based High Frequency (HF)-Radars
+- Ground-Based High Frequency (HF)-Radars
 
--Ground-Based Imagers
+- Ground-Based Imagers
 
--Ground-Based Magnetometers, Riometers, Sounders
+- Ground-Based Magnetometers, Riometers, Sounders
 
--Ground-Based Very Low Frequency (VLF)/Extremely Low Frequency (ELF)/Ultralow Frequency (ULF), Photometers
+- Ground-Based Very Low Frequency (VLF)/Extremely Low Frequency (ELF)/Ultralow Frequency (ULF), Photometers
 
 ## LINK_TEXT
   (Recommended) This attribute stores text describing on-line data available at PI or CoI web sites. This attribute is used in conjunction with "LINK_TITLE" and "HTTP_LINK." There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TITLE" and "HTTP_LINK" for each "LINK_TEXT" entry. CDAWeb will then link to the URL given by
@@ -156,11 +156,11 @@ This is distinct from the date in "validate" below which records the times of la
   (Recommended) This attribute stores the title of the web site holding on-line data available at PI or CoI
 web sites. This attribute is used in conjunction with "LINK_TEXT" and "HTTP_LINK." There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TEXT" and "HTTP_LINK" for each "LINK_TITLE" entry. CDAWeb will then link to the URL given by "HTTP_LINK" using the "LINK_TITLE" and the description in "LINK_TEXT," on the CDAWeb Data Explorer page. For example:
 
--"LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
+- "LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
 
--"LINK_TITLE" = ISAS DARTS
+- "LINK_TITLE" = ISAS DARTS
 
--"HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
+- "HTTP_LINK" = https://www.darts.isas.jaxa.jp/stp/geotail/ will give the following link:
 
 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at [ISAS DARTS](https://www.darts.isas.jaxa.jp/stp/geotail/)
 
@@ -209,13 +209,13 @@ above, *e.g.,* "Geotail Magnetic Field Key Parameters." Used by [CDAWeb](https:/
 (Required)
 This attribute identifies the name of the project and indicates ownership. For ISTP missions and investigations, the value used is "ISTP>International Solar-Terrestrial Physics." For the Cluster mission, the value is "STSP Cluster>Solar Terrestrial Science Programmes, Cluster." Other acceptable values are:
   
-  -"IACG>Inter-Agency Consultative Group"
+  - "IACG>Inter-Agency Consultative Group"
   
-  -"LWS>Living With a Star"
+  - "LWS>Living With a Star"
   
-  -"CDAWxx>Coordinated Data Analysis Workshop xx"
+  - "CDAWxx>Coordinated Data Analysis Workshop xx"
   
-  -"SPDS>Space Physics Data System" 
+  - "SPDS>Space Physics Data System" 
   
   Others may be defined in the future. This attribute can be multi-valued if the data has been supplied to more than one project.
 

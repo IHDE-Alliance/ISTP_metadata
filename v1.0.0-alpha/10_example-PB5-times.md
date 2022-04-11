@@ -5,21 +5,17 @@ Time_PB5 is given in YEAR (4 digit), DAY OF YEAR (note: January 1 is Day 1), and
 
 "Time\_PB5" has three "attached" variables which provide labels units and formats for the three components. These are called "label\_time", "unit\_time", and "format\_time", respectively, and are shown in the example below.
 
-! Variable Data Number Record Dimension
+! Variable      Data        Number                          Record        Dimension
+! Name          Type        Elements     Dims     Sizes     Variance      Variances
+! --------      ----        --------     ----     -----     --------      ---------
 
-! Name Type Elements Dims Sizes Variance Variances
+ "Time_PB5"     CDF_INT4       1          0                    T
 
-! -------- ---- -------- ---- ----- -------- ---------
+ ! Attribute    Data
+ ! Name         Type        Value
+ ! --------     ----        -----
 
- "Time_PB5" CDF_INT4 1 0 T
-
- ! Attribute Data
-
- ! Name Type Value
-
- ! -------- ---- -----
-
- "FIELDNAM" CDF_CHAR { "Time PB5" }
+ "FIELDNAM"     CDF_CHAR    { "Time PB5" }
 
  "VALIDMIN" CDF_INT4 { 1997, 237, 0 }
 

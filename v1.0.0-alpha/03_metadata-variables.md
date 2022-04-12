@@ -1,5 +1,32 @@
 **Variables**
 
+Introduction
+Complete Variable Description
+Data
+General
+Example - simple scalar density
+Example - vector magnetic field
+Example - 1D flux
+Example - 2D flux
+Support_data
+General
+Example - Epoch time
+Example - 1D Energy
+Metadata
+General
+Example - vector magnetic field labels
+Variable Display
+Scalar (0D) Time Series, e.g., Solar Wind Proton Number Density, scalar
+1D - size 3 Time Series, e.g., Magnetic Field, cartesian GSE
+1D - size 12 Spectrogram , e.g., Ion Diff. Intensity, at 12 energies 67-1361 keV
+1D - size 7 Stack_plot, e.g., Electron Flux at 7 energies (0.1-225keV)
+1D - sizes 28, 12 Spectrogram , e.g., H+ number flux for selected energy and angle bins
+Required support_data variables
+Epoch (required)
+Quality Flag (recommended)
+Time_PB5
+Post Gap Flag
+
 ***Introduction***
 
 We have identified three types of variables to be included in ISTP/IACG CDF files: **data** variables of primary importance (e.g., density, magnetic_field, particle_flux),  **support_data** variables of secondary importance (e.g., time, energy_bands associated with particle_flux) and **metadata** variables (e.g., a variable holding "Bx,By,Bz" to label magnetic field). Variables are defined with CDF specifications and required attributes. Data variables also have attached variables for time and dependencies (support_data) and labels (metadata). The support_data variables can be attached to data variables via DEPEND_i variable attributes. Metadata variables can be attached to data variables via LABL_PTR_i variable attributes (see below).

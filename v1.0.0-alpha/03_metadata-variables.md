@@ -4,7 +4,8 @@
 - Complete Variable Description
       
       - Data
-General
+
+            - General
 Example - simple scalar density
 Example - vector magnetic field
 Example - 1D flux

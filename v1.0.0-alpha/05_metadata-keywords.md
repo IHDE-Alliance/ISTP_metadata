@@ -14,17 +14,14 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | Current | 	The rate of flow of electricity | hall, primary, load, secondary	
 | Energy | 	The property of a system that is a measure of its capacity for doing work| band, channel, incident, reflected	
 | Density | The mass per unit volume of a substance, or the number of items per unit volume | partial, mass, number
+| Flag | An entity that signals the occurance of an event, or that indicates a particular status of a spacecraft or instrument or software program. The flag can be a number, letter, or word, and may have any of a variety of encoded meanings | number, quality, post_gap, status
+| Electric Field | The space surrounding an electric charge within which it is capable of exerting a perceptible force on another electric charge. The strength of an electric field at a given point is given in terms of the force exerted by the field on unit charge at that point | AC, amplitude, angle, antenna, calibration, DC, potential
+| Frequency | The number of cycles completed by a periodic function in unit time | band, channel
 
 
 **Sensor Words Supporting Words**
 
-[anisotropy](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#anisotropy) [angle](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#angle)
 
-[current](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#current) [energy](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#energy)
-
-[density](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#density) [flag](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#flag)
-
-[electric_field](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#electric_field) [frequency](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#frequency)
 
 [magnetic_field](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#magnetic_field) [label](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#label)
 

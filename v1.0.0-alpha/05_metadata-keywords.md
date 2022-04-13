@@ -18,6 +18,8 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | Electric_Field | The space surrounding an electric charge within which it is capable of exerting a perceptible force on another electric charge. The strength of an electric field at a given point is given in terms of the force exerted by the field on unit charge at that point | AC, amplitude, angle, antenna, calibration, DC, potential
 | Frequency | The number of cycles completed by a periodic function in unit time | band, channel
 | Magnetic_Field | The field of force surrounding a magnetic pole or a current flowing through a conductor, in which there is a magnetic flux | AC, amplitude, angle, antenna, calibration, DC, potential
+| Label| A term or phrase attached by way of classification or characterization | All other class words are also  
+                           possible sub-class words
 
 **Sensor Words Supporting Words**
 

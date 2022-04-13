@@ -31,21 +31,11 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | Species | The identity of a particle or class of particles in detail, such as common name, chemical name, mass, charge state, atomic number, atomic weight, degree of ionization, mass per charge, etc. |  electron, oxygen, ion, Z>3, proton, neutral, helium, particle, nitrogen, dust 
 | Pressure | Force per unit area |  atmosphere, magnetic, derived, solar, dynamic, surface 
 | Time | The period between two events or measurements; a measurable interval, usually between a fixed reference (instant of time) such as 0 AD and the subject event or measurement | bin, GMT, minute, clock, hour, PB5, cycle, interval, reference, date, Julian, relative, elapsed, local, second, epoch, magnetic, spacecraft, event, millisecond, UT
+| Temperature | The degree or intensity of heat or cold as measured on a thermometric scale. Also the equivalent temperature corresponding to the energy of thermal motion of plasma particles, or the equivalent temperature as computed in radio measurements | characteristic, parallel, isotropic, perpendicular, operational, threshold 
+| Uncertainty | An estimate of the lack of precision in an observed or calculated value | All other class words are also possible sub-class words
+| Velocity | The rate of increase of distance traversed by a body in a particular direction (linear velocity) or the rate at which a body rotates about an axis (angular velocity). Speed is similarly defined with the omission of reference to direction | doppler, horizontal, speed, drift, phase, thermal, group, rotation, vertical
+| Wavelength | The distance from a particular point of a wave to that same point in the next oscillation cycle of the wave. Also a range of wavelengths, such as infra-red, visible, radio, x-ray |  radio, band, primary, IR, bin, scan, visible, channel, resolution, UV, characteristic, x-ray, filter, gamma ray, nominal 
 
-**Sensor Words Supporting Words**
-
-
-
-
-
-
-
-
-[pressure](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#pressure) [time](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#time)
-
-[temperature](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#temperature) [uncertainty](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#uncertainty)
-
-[velocity](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#velocity) [wavelength](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#wavelength)
 
 **Implementation**
 

@@ -21,16 +21,15 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | Label| A term or phrase attached by way of classification or characterization | All other class words are also possible sub-class words
 | Particle_Flux | The number of particles passing through a specified area or volume in a specified time interval (and possibly in a specified energy range or in a specified range of directions) | differential, number, rate, directional, omni-directional, sample, integral, parallel, spectral, mass, perpendicular, thermal
 | Number | A symbol or word, or a group of either of these, showing how many or what place in a sequence | direction, frame, target, event, image, telescope, exposure, mode, filter, sequence
+| Photon_Flux | The number of photons passing through a specified area or volume in a specified time interval (and possibly in a specified energy or wavelength range or in a specified range of directions) | brightness, integral, differential, incident, directional, omni-directional, filtered, reflected
+| Ratio | The quotient of one quantity divided by another of the same kind, and usually expressed as a fraction | albedo, electric_field, power, beta, energy, pressure, anisotropy, particle_flux, temperature, current, photon_flux, velocity, density, magnetic_field, spectral
+| Position | A location, distance, or direction with respect to some particular reference. The reference can be moving or fixed, such as the geographic coordinate system or a spacecraft body | altitude, distance, radial, angle, elevation, range, antenna, height, RA, attitude, horizontal, row, azimuth, inclination, surface, column, latitude, target, declination, longitude, vertical, direction, projection  
 
 **Sensor Words Supporting Words**
 
 
 
-[magnetic_field](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#magnetic_field) [label](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#label)
 
-[particle_flux](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#particle_flux) [number](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#number)
-
-[photon_flux](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#photon_flux) [ratio](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#ratio)
 
 [position](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#position) [significance](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#significance)
 

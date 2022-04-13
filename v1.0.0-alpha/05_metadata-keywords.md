@@ -10,8 +10,8 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | Class Word    | Description    |   Subclass Word/s |		
 | ------------- | ---------------| -------------   |	
 | Anisotropy	|The variation of physical properties with direction, usually expressed as a ratio |  parallel
-| Angle 	|The geometric figure formed by two lines diverging from a point or two planes diverging from a common line or the space between two such lines or surfaces.| antenna, elevation, pitch, aspect, fov, pointing, axis, geometric, polar, azimuth, inclination, rotation, phase, sector
-		
+| Angle 	|The geometric figure formed by two lines diverging from a point or two planes diverging from a common line or the space between two such lines or surfaces| antenna, elevation, pitch, aspect, fov, pointing, axis, geometric, polar, azimuth, inclination, rotation, phase, sector
+| Current | 	The rate of flow of electricity | hall, primary, load, secondary	
 		
 
 **Sensor Words Supporting Words**

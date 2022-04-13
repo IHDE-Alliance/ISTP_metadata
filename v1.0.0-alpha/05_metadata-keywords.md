@@ -20,6 +20,7 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | Magnetic_Field | The field of force surrounding a magnetic pole or a current flowing through a conductor, in which there is a magnetic flux | AC, amplitude, angle, antenna, calibration, DC, potential
 | Label| A term or phrase attached by way of classification or characterization | All other class words are also possible sub-class words
 | Particle_Flux | The number of particles passing through a specified area or volume in a specified time interval (and possibly in a specified energy range or in a specified range of directions) | differential, number, rate, directional, omni-directional, sample, integral, parallel, spectral, mass, perpendicular, thermal
+| Number | A symbol or word, or a group of either of these, showing how many or what place in a sequence | direction, frame, target, event, image, telescope, exposure, mode, filter, sequence
 
 **Sensor Words Supporting Words**
 

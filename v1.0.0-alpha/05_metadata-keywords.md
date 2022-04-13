@@ -8,7 +8,7 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 		
 		
 | Sensor Word   | Supporting Word | Subclass Word | Description |		
-| ------------- | ----------- |	
+| ------------- | --------------- | ------------- | ----------- |	
 		
 		
 		

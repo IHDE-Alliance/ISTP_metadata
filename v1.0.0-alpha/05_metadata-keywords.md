@@ -25,6 +25,7 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | Ratio | The quotient of one quantity divided by another of the same kind, and usually expressed as a fraction | albedo, electric_field, power, beta, energy, pressure, anisotropy, particle_flux, temperature, current, photon_flux, velocity, density, magnetic_field, spectral
 | Position | A location, distance, or direction with respect to some particular reference. The reference can be moving or fixed, such as the geographic coordinate system or a spacecraft body | altitude, distance, radial, angle, elevation, range, antenna, height, RA, attitude, horizontal, row, azimuth, inclination, surface, column, latitude, target, declination, longitude, vertical, direction, projection 
 | Significance | |  correlation
+| Potential | Electrostatic, magnetostatic, or gravitational potential, at a point in the field: the work done in bringing unit positive charge, unit positive pole, or unit mass respectively from infinity (i.e., a place infinitely distant from the causes of the field) to the point | antenna, Hall, bias, magnetic, electric, polar_cap, gravity, surface
 
 **Sensor Words Supporting Words**
 
@@ -32,7 +33,6 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 
 
 
-[position](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#position) [significance](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#significance)
 
 [potential](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#potential) [source](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#source)
 

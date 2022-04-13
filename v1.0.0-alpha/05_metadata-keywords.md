@@ -9,7 +9,7 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 		
 | Class Word    | Description    |   Subclass Word/s |		
 | ------------- | ---------------| -------------   |	
-| Anisotropy	|The variation of physical properties with direction, usually expressed as a ratio
+| Anisotropy	|The variation of physical properties with direction, usually expressed as a ratio  parallel
 		
 		
 		

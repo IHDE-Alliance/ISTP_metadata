@@ -15,9 +15,9 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | Energy | 	The property of a system that is a measure of its capacity for doing work| band, channel, incident, reflected	
 | Density | The mass per unit volume of a substance, or the number of items per unit volume | partial, mass, number
 | Flag | An entity that signals the occurance of an event, or that indicates a particular status of a spacecraft or instrument or software program. The flag can be a number, letter, or word, and may have any of a variety of encoded meanings | number, quality, post_gap, status
-| Electric Field | The space surrounding an electric charge within which it is capable of exerting a perceptible force on another electric charge. The strength of an electric field at a given point is given in terms of the force exerted by the field on unit charge at that point | AC, amplitude, angle, antenna, calibration, DC, potential
+| Electric_Field | The space surrounding an electric charge within which it is capable of exerting a perceptible force on another electric charge. The strength of an electric field at a given point is given in terms of the force exerted by the field on unit charge at that point | AC, amplitude, angle, antenna, calibration, DC, potential
 | Frequency | The number of cycles completed by a periodic function in unit time | band, channel
-
+| Magnetic_Field | The field of force surrounding a magnetic pole or a current flowing through a conductor, in which there is a magnetic flux | AC, amplitude, angle, antenna, calibration, DC, potential
 
 **Sensor Words Supporting Words**
 

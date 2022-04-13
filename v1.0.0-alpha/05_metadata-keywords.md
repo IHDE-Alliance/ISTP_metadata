@@ -7,8 +7,8 @@ A project data dictionary contains information required to make the data indepen
 We provide a standard set of class keywords that include 'sensor (science)' and 'supporting' class words and their meanings, to be used to categorize the data variables of primary interest to investigators, among the several ISTP/IACG satellites and experiments. ISTP/IACG class keywords will be restricted to the approved values shown below. Sets of subclass keywords, with each set used to modify one of the class keywords, are also adopted and listed with the associated information below. Lists of common subclass keywords, valid for any variable, can also be found below.
 		
 		
-| Class Word    |		| Description    |  									| Subclass Word/s |		
-| ------------- |		| ---------------| 									| -------------   |	
+| Class Word    | Description    |   Subclass Word/s |		
+| ------------- | ---------------| -------------   |	
 | Anisotropy	|	
 		
 		

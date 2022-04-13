@@ -26,6 +26,7 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | Position | A location, distance, or direction with respect to some particular reference. The reference can be moving or fixed, such as the geographic coordinate system or a spacecraft body | altitude, distance, radial, angle, elevation, range, antenna, height, RA, attitude, horizontal, row, azimuth, inclination, surface, column, latitude, target, declination, longitude, vertical, direction, projection 
 | Significance | |  correlation
 | Potential | Electrostatic, magnetostatic, or gravitational potential, at a point in the field: the work done in bringing unit positive charge, unit positive pole, or unit mass respectively from infinity (i.e., a place infinitely distant from the causes of the field) to the point | antenna, Hall, bias, magnetic, electric, polar_cap, gravity, surface
+| Source | The origin (mission, spacecraft, instrument, ground observatory, or other observing platform) of the data in question | experiment, ground-based, campaign, investigation
 
 **Sensor Words Supporting Words**
 

@@ -27,6 +27,10 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | Significance | |  correlation
 | Potential | Electrostatic, magnetostatic, or gravitational potential, at a point in the field: the work done in bringing unit positive charge, unit positive pole, or unit mass respectively from infinity (i.e., a place infinitely distant from the causes of the field) to the point | antenna, Hall, bias, magnetic, electric, polar_cap, gravity, surface
 | Source | The origin (mission, spacecraft, instrument, ground observatory, or other observing platform) of the data in question | experiment, ground-based, campaign, investigation
+| Power | The rate at which energy is expended or work is done | amplitude, electric, radiant, antenna, emission, reflected, bandwidth, field, spectral, calibration, flux, transmittance, density, poynting 
+| Species | The identity of a particle or class of particles in detail, such as common name, chemical name, mass, charge state, atomic number, atomic weight, degree of ionization, mass per charge, etc. |  electron, oxygen, ion, Z>3, proton, neutral, helium, particle, nitrogen, dust 
+| Pressure | Force per unit area |  atmosphere, magnetic, derived, solar, dynamic, surface 
+| Time | The period between two events or measurements; a measurable interval, usually between a fixed reference (instant of time) such as 0 AD and the subject event or measurement | bin, GMT, minute, clock, hour, PB5, cycle, interval, reference, date, Julian, relative, elapsed, local, second, epoch, magnetic, spacecraft, event, millisecond, UT
 
 **Sensor Words Supporting Words**
 
@@ -35,9 +39,7 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 
 
 
-[potential](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#potential) [source](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#source)
 
-[power](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#power) [species](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#species)
 
 [pressure](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#pressure) [time](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html#time)
 

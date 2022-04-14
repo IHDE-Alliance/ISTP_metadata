@@ -27,9 +27,9 @@ We display below H+ number flux using two different cuts through the 2D data. H+
 
 **There are two ways to plot spectrograms with 2D data**:
 
-Â· plot all energies (y-axis) and a few selected angle bins (in separate panels)
+- plot all energies (y-axis) and a few selected angle bins (in separate panels)
 
-Â· plot all angles (y-axis) and a few selected energy bins (in separate panels).
+- plot all angles (y-axis) and a few selected energy bins (in separate panels).
 
 These are both illustrated below. [H+ number flux needs two label variables to adequately label all possible spectrogram displays. LABL_PTR_1 points to a label (metadata) 1D variable of size 28; the label variable holds 28 H+ energy labels, e.g.,
 "H+ Flux 4.4keV/e". LABL_PTR_2 points to a label (metadata) 1D variable of size 12; the label variable holds 12 H+ angle labels, e.g., "H+ Flux 7.5 deg".]
@@ -38,13 +38,13 @@ These are both illustrated below. [H+ number flux needs two label variables to a
 
 The 3 selected angle bins appear as separate panels. The energy attribute values (either the LABLAXIS value or the FIELDNAM value, along with the UNITS value) are used to label the y-axis on each panel. The energy support_data variable is attached to the data variable via the DEPEND_1 attribute.
 
-The z-axis (color bar) is labeled with selected values from theÂ *H+ angle label variable*Â that is attached to the data variable via the LABL_PTR_2 attribute. The z-axis units come from the data variable UNITS attributes.
+The z-axis (color bar) is labeled with selected values from the *H+ angle label variable*Â that is attached to the data variable via the LABL_PTR_2 attribute. The z-axis units come from the data variable UNITS attributes.
 
 **H+ number flux for 12 angles and 3 selected energy bins**
 
 The 3 selected energy bins appear as separate panels. The angle attribute values (either the LABLAXIS value or the FIELDNAM value, along with the UNITS value) are used to label the y-axis on each panel. The angle support_data variable is attached to the data variable via the DEPEND_2 attribute.
 
-The z-axis (color bar) is labeled with selected values from theÂ *H+ energy label variable*Â that is attached to the data variable via the LABL_PTR_1 attribute. The z-axis units come from the data variable UNITS attributes.
+The z-axis (color bar) is labeled with selected values from the *H+ energy label variable*Â that is attached to the data variable via the LABL_PTR_1 attribute. The z-axis units come from the data variable UNITS attributes.
 
 
 Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

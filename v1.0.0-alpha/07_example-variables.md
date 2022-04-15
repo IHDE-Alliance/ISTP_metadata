@@ -3,17 +3,18 @@
 ***Examples of data and support_data variables***
 
 Examples of data and support_data variables commonly found in ISTP/IACG investigations are shown in the image below. They are mapped to their corresponding dimensions and sizes in CDF.
+
 ![image](https://user-images.githubusercontent.com/94626382/163575651-588e8af0-d722-4235-ae49-9d2a9c8b6bca.png)
 
 
-Density and Temperature (**data**) in this example are scalars; in CDF they are associated with zero dimension and no size.
+- Density and Temperature (**data**) in this example are scalars; in CDF they are associated with zero dimension and no size.
 
-Plasma velocity, electric and magnetic fields (**data**) are vectors, i.e., three
+- Plasma velocity, electric and magnetic fields (**data**) are vectors, i.e., three
 orthogonal components in some coordinate system, stored in one-dimension of size 3.
 
-Particle flux, for this example, has values at eight energy channels. Flux (**data**) and Energy (**support_data**) are stored as one-dimensional variables of size 8.
+- Particle flux, for this example, has values at eight energy channels. Flux (**data**) and Energy (**support_data**) are stored as one-dimensional variables of size 8.
 
-The image array (**data**) maps into a two-dimensional variable with sizes 256 and 256. Latitude and longitude (**support_data**) are one-dimensional variables of size 256, providing the necessary coordinate indices for the image array.
+- The image array (**data**) maps into a two-dimensional variable with sizes 256 and 256. Latitude and longitude (**support_data**) are one-dimensional variables of size 256, providing the necessary coordinate indices for the image array.
 
 ***Example of a simple scalar data variable***
 

@@ -44,7 +44,8 @@ We show here the variable, Ion number density, as it would appear in a CDF Skele
  ```"VALIDMIN"      CDF_REAL4      { 0.01 }
  ```"VALIDMAX"      CDF_REAL4      { 1000.0 }
  ```"VAR_NOTES"     CDF_CHAR       { "Assuming no helium (0.3 - several " - "hundred) if the density is less than " -
-                                   "0.3/cc the higher moments (VEL,TEMP) " - "shall not be used because of the poor " - "counting statistics." }
+                                   "0.3/cc the higher moments (VEL,TEMP) " - "shall not be used because of the poor " 
+                                   - "counting statistics." }
 
  ```"VAR_TYPE"      CDF_CHAR       { "data" }.
 

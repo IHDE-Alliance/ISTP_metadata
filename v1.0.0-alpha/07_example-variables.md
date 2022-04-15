@@ -389,7 +389,7 @@ This metadata variable labels the cartesian GSE magnetic field (1D size 3) data 
 
  ! Attribute Data
 
- ! Name Type Â Value
+ ! Name Type  Value
 
  ! -------- ---- -----
 
@@ -409,21 +409,19 @@ This metadata variable labels the cartesian GSE magnetic field (1D size 3) data 
 
 ***Example of Character Metadata***
 
-Character metadata must define the number of elements to be the same as the number of characters used in its value
+Character metadata must define the number of elements to be the same as the number of characters used in its value - 6 in the example below. The following variable attributes are required:
 
-- 6 in the example below. The following variable attributes are required:
+- [CATDESC](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#CATDESC)
 
-Â· [CATDESC](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#CATDESC)
+- [DEPEND_0](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#DEPEND_0) = [Epoch](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Epoch) (if time varying)
 
-Â· [DEPEND_0](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#DEPEND_0) = [Epoch](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Epoch) (if time varying)
+- [FIELDNAM](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FIELDNAM)
 
-Â· [FIELDNAM](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FIELDNAM)
+- [FILLVAL](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FILLVAL) (if time varying)
 
-Â· [FILLVAL](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FILLVAL) (if time varying)
+- [FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT)/[FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR)
 
-Â· [FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT)/[FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR)
-
-Â· [VAR_TYPE](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#VAR_TYPE) = support_data
+- [VAR_TYPE](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#VAR_TYPE) = support_data
 
 
 Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

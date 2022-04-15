@@ -20,19 +20,19 @@ orthogonal components in some coordinate system, stored in one-dimension of size
 
 We show here the variable, Ion number density, as it would appear in a CDF Skeleton table. We include all required variable attributes. Some recommended variable attributes are also shown. See the [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Scalar%20(0D)%20Time%20Series) of this variable.
 
-````! Variable       Data             Number                              Record          Dimension
+```` ! Variable       Data             Number                              Record          Dimension
 
-````! Name           Type             Elements      Dims      Sizes       Variance        Variances
+```` ! Name           Type             Elements      Dims      Sizes       Variance        Variances
 
-````! --------       ----             --------     ----       -----       --------        ---------
+```` ! --------       ----             --------     ----       -----       --------        ---------
 
  "SW_P_Den" CDF_REAL4 1 0 T
 
- ````! Attribute    Data
+ ```` ! Attribute    Data
 
- ````! Name         Type     Value
+ ```` ! Name         Type     Value
 
-````! --------      ----     -----
+```` ! --------      ----     -----
 
  "CATDESC" CDF_CHAR { "Ion number density (Solar Wind " -"Analyzer), scalar" }
 

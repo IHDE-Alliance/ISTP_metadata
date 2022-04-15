@@ -31,9 +31,7 @@ We show here the variable, Ion number density, as it would appear in a CDF Skele
 ```! --------      ----     -----
 
  ```"CATDESC"       CDF_CHAR       { "Ion number density (Solar Wind " -"Analyzer), scalar" }
-
  ```"DEPEND_0"      CDF_CHAR       { "Epoch" }
-
  "DICT_KEY" CDF_CHAR { "density>ion_number" }
 
  "DISPLAY_TYPE"

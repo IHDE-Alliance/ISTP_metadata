@@ -22,6 +22,7 @@ We show here the variable, Ion number density, as it would appear in a CDF Skele
 
 ````! Variable       Data             Number                              Record          Dimension
 ````! Name           Type             Elements      Dims      Sizes       Variance        Variances
+
 ````! --------       ----             --------     ----       -----       --------        ---------
 
  "SW_P_Den" CDF_REAL4 1 0 T

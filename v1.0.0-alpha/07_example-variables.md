@@ -57,11 +57,9 @@ We show here the variable, Vector Magnetic Field, as it would appear in a CDF Sk
 
 To see the LABL_PTR_1 values referenced below, see the label_B_GSE variable definition [below](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Metadata_eg1).
 
-! Variable Data Number Record Dimension
-
-! Name Type Elements Dims Sizes Variance Variances
-
-! -------- ---- -------- ---- ----- -------- ---------
+```! Variable        Data        Number                            Record         Dimension
+```! Name            Type        Elements        Dims    Sizes     Variance       Variances
+```! --------        ----        --------        ----    -----     --------       ---------
 
  "BGSE" CDF_REAL4 1 1 3 T T
 

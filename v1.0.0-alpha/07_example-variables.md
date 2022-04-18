@@ -222,82 +222,57 @@ We show here the variable, Epoch as it would appear in a CDF Skeleton table. We 
 
 We show here the variable, Ion Energy, as it would appear in a CDF Skeleton table. We include all required variable attributes. Some recommended attributes are also shown. This support_data variable is attached to a data variable (Ion Diff. Intensity, at 12 energies 67-1361 keV) of the same dimensionality and size. See this variable used in a [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#1D%20Spectrogram).
 
-! Variable Data Number Record Dimension
-
-! Name Type Elements Dims Sizes Variance Variances
-
-! -------- ---- -------- ---- ----- -------- ---------
+```
+! Variable         Data     Number                        Record     Dimension
+! Name             Type     Elements    Dims    Sizes     Variance   Variances
+! --------         ----     --------    ----    -----     --------   ---------
 
  "IDiffI_I_Energy"
+                   CDF_REAL4    1         1      12         T            T
 
- CDF_REAL4 1 1 12 T T
+ ! Attribute          Data
+ ! Name               Type          Value
+ ! --------           ----          -----
 
- ! Attribute Data
+ "CATDESC"            CDF_CHAR      { "Ion Energy, at 12 channels energies " -  "67-1361 keV (EPIC/ICS) " }
+ "DELTA_PLUS_VAR"     CDF_CHAR      { "IDiffI_I_Eplus" }
+ "DELTA_MINUS_VAR"    CDF_CHAR      { "IDiffI_I_Eminus" }
+ "DEPEND_0"           CDF_CHAR      { "Epoch" }
+ "DICT_KEY"           CDF_CHAR      { "energy>ion" }
+ "FIELDNAM"           CDF_CHAR      { "Ion Energy (EPIC/ICS)" }
+ "FILLVAL"            CDF_REAL4     { -1.000000e+31 }
+ "FORMAT"             CDF_CHAR      { "F7.1" }
+ "LABLAXIS"           CDF_CHAR      { "Ion Energy" }
+ "UNITS"              CDF_CHAR      { "keV" }
+ "VALIDMIN"           CDF_REAL4     { 67.3 }
+ "VALIDMAX"           CDF_REAL4     { 1361.0 }
+ "VAR_TYPE"           CDF_CHAR      { "support_data" }.
 
- ! Name Type Value
-
- ! -------- ---- -----
-
- "CATDESC" CDF_CHAR { "Ion Energy, at 12 channels energies " -  "67-1361 keV (EPIC/ICS) " }
-
- "DELTA_PLUS_VAR"
-
- CDF_CHAR { "IDiffI_I_Eplus" }
-
- "DELTA_MINUS_VAR"
-
- CDF_CHAR { "IDiffI_I_Eminus" }
-
- "DEPEND_0" CDF_CHAR { "Epoch" }
-
- "DICT_KEY" CDF_CHAR { "energy>ion" }
-
- "FIELDNAM" CDF_CHAR { "Ion Energy (EPIC/ICS)" }
-
- "FILLVAL" CDF_REAL4 { -1.000000e+31 }
-
- "FORMAT" CDF_CHAR { "F7.1" }
-
- "LABLAXIS" CDF_CHAR { "Ion Energy" }
-
- "UNITS" CDF_CHAR { "keV" }
-
- "VALIDMIN" CDF_REAL4 { 67.3 }
-
- "VALIDMAX" CDF_REAL4 { 1361.0 }
-
- "VAR_TYPE" CDF_CHAR { "support_data" }.
-
+```
 ***Example of a 1D size 3 metadata variable***
 
 This metadata variable labels the cartesian GSE magnetic field (1D size 3) data variable. See this variable used in a [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#1D%20Time%20Series)<u><span>.</span></u>
 
-! Variable Data Number Record Dimension
+```
+! Variable         Data         Number                        Record      Dimension
+! Name             Type         Elements    Dims    Sizes     Variance    Variances
+! --------         ----         --------    ----    -----     --------    ---------
 
-! Name Type Elements Dims Sizes Variance Variances
+ "label_B_GSE"     CDF_CHAR      6            1       3         F            T
 
-! -------- ---- -------- ---- ----- -------- ---------
+ ! Attribute       Data
+ ! Name            Type         Value
+ ! --------        ----         -----
 
- "label_B_GSE" CDF_CHAR 6 1 3 F T
+ "CATDESC"         CDF_CHAR     { "Label cartesian B" }
+ "FIELDNAM"        CDF_CHAR     { "Label cartesian B" }
+ "VAR_TYPE"        CDF_CHAR     { "metadata" }.
 
- ! Attribute Data
-
- ! Name Type  Value
-
- ! -------- ---- -----
-
- "CATDESC" CDF_CHAR { "Label cartesian B" }
-
- "FIELDNAM" CDF_CHAR { "Label cartesian B" }
-
- "VAR_TYPE" CDF_CHAR { "metadata" }.
-
+```
  ! NRV values follow...
 
  [ 1 ] = { "Bx GSE" }
-
  [ 2 ] = { "By GSE" }
-
  [ 3 ] = { "Bz GSE" }
 
 ***Example of Character Metadata***

@@ -184,13 +184,12 @@ We show here the variable, Epoch as it would appear in a CDF Skeleton table. We 
 
 ***Another Example of "Epoch" is shown below.***
 
-! Variable Data Number Record Dimension
+```
+! Variable        Data      Number                               Record      Dimension
+! Name            Type      Elements     Dims      Sizes         Variance    Variances
+! --------        ----      --------     ----      -----         --------    ---------
 
-! Name Type Elements Dims Sizes Variance Variances
-
-! -------- ---- -------- ---- ----- -------- ---------
-
- "Epoch" CDF_TIME_TT2000 1 0 T
+ "Epoch"          CDF_TIME_  TT2000 1 0 T
 
  ! VAR_COMPRESSION: None
 

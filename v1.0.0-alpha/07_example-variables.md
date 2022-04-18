@@ -129,26 +129,24 @@ We show here the variable, H+ number flux, as it would appear in a CDF Skeleton 
  ! Name               Type           Value
  ! --------           ----           -----
 
- "FIELDNAM" CDF_CHAR { "H+ number flux" }
- "VALIDMAX" CDF_REAL4 { 1.0e+08 }
- "UNITS" CDF_CHAR { "#/(cm^2-s-keV/e-sr)" }
- "FORMAT" CDF_CHAR { "e12.4" }
- "LABL_PTR_1"
- CDF_CHAR { "H_energy_of_flux" }
- "LABL_PTR_2"
- CDF_CHAR { "H_angle_of_flux" }
- "MONOTON" CDF_CHAR { "FALSE " }
- "FILLVAL" CDF_REAL4 { -1.0e+31 }
- "CATDESC" CDF_CHAR { "H+ number flux for for 28 energy and " - "3 selected angle bins." }
- "VAR_TYPE" CDF_CHAR { "data" }
- "DICT_KEY" CDF_CHAR { "particle_flux>number_species_proton" }
- "DEPEND_0" CDF_CHAR { "Epoch_H" }
- "DEPEND_1" CDF_CHAR { "energy" }
- "DEPEND_2" CDF_CHAR { "angle" }
- "AVG_TYPE" CDF_CHAR { "standard" }
- "DISPLAY_TYPE" CDF_CHAR { "spectrogram>y=energy,z=Flux_H(*,1),z=F" -  "lux_H(*,7),z=Flux_H(*,12)" }
- "SCALETYP" CDF_CHAR { "log" }
- "VAR_NOTES" CDF_CHAR { "Negative values reflect low counting " - "rates and background subtraction. " } .
+ "FIELDNAM"           CDF_CHAR       { "H+ number flux" }
+ "VALIDMAX"           CDF_REAL4      { 1.0e+08 }
+ "UNITS"              CDF_CHAR       { "#/(cm^2-s-keV/e-sr)" }
+ "FORMAT"             CDF_CHAR       { "e12.4" }
+ "LABL_PTR_1"         CDF_CHAR       { "H_energy_of_flux" }
+ "LABL_PTR_2"         CDF_CHAR       { "H_angle_of_flux" }
+ "MONOTON"            CDF_CHAR       { "FALSE " }
+ "FILLVAL"            CDF_REAL4      { -1.0e+31 }
+ "CATDESC"            CDF_CHAR       { "H+ number flux for for 28 energy and " - "3 selected angle bins." }
+ "VAR_TYPE"           CDF_CHAR       { "data" }
+ "DICT_KEY"           CDF_CHAR       { "particle_flux>number_species_proton" }
+ "DEPEND_0"           CDF_CHAR       { "Epoch_H" }
+ "DEPEND_1"           CDF_CHAR       { "energy" }
+ "DEPEND_2"           CDF_CHAR       { "angle" }
+ "AVG_TYPE"           CDF_CHAR       { "standard" }
+ "DISPLAY_TYPE"       CDF_CHAR       { "spectrogram>y=energy,z=Flux_H(*,1),z=F" -  "lux_H(*,7),z=Flux_H(*,12)" }
+ "SCALETYP"           CDF_CHAR       { "log" }
+ "VAR_NOTES"          CDF_CHAR       { "Negative values reflect low counting " - "rates and background subtraction. " } .
 
 ```
 

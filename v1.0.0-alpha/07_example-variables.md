@@ -27,9 +27,9 @@ We show here the variable, Ion number density, as it would appear in a CDF Skele
 
 "SW_P_Den"      CDF_REAL4           1            0                       T
 
-! Attribute    Data
-! Name         Type     Value
-! --------      ----     -----
+! Attribute       Data
+! Name            Type          Value
+! --------        ----          -----
 
  "CATDESC"       CDF_CHAR       { "Ion number density (Solar Wind " -"Analyzer), scalar" }
  "DEPEND_0"      CDF_CHAR       { "Epoch" }
@@ -62,13 +62,11 @@ To see the LABL_PTR_1 values referenced below, see the label_B_GSE variable defi
 ! Name            Type        Elements        Dims    Sizes     Variance       Variances
 ! --------        ----        --------        ----    -----     --------       ---------
 
-"BGSE"           CDF_REAL4 1 1 3 T T
+"BGSE"           CDF_REAL4        1              1      3         T                 T
 
- ! Attribute Data
-
- ! Name Type Value
-
- ! -------- ---- -----
+ ! Attribute       Data
+ ! Name            Type         Value
+ ! --------        ----         -----
 
  "FIELDNAM"      CDF_CHAR      { "Magnetic field vector in GSE " - "coordinates (1 min)" }
  "VALIDMIN"      CDF_REAL4     { -65534.0 }
@@ -94,9 +92,9 @@ We show here the variable, Ion Differential Intensity, as it would appear in a C
 
  "IDiffI_I"            CDF_REAL4      1            1      12         T            T
 
- ! Attribute            Data
- ! Name                 Type       Value
- ! --------             ----       -----
+ ! Attribute        Data
+ ! Name             Type           Value
+ ! --------         ----           -----
 
  "FIELDNAM"         CDF_CHAR       { "Spin-avg Ion Diff Inten (EPIC/ICS)" }
  "CATDESC"          CDF_CHAR       { "Ion Diff. Intensity, at 12 energies " - "67-1361 keV (EPIC/ICS)" }
@@ -120,62 +118,39 @@ We show here the variable, Ion Differential Intensity, as it would appear in a C
 
 We show here the variable, H+ number flux, as it would appear in a CDF Skeleton table. We include all required variable attributes. Some recommended attributes are also shown. See the [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#2D%20Spectrogram) of this variable.
 
-! Variable Data Number Record Dimension
+```
+! Variable             Data             Number                       Record       Dimension
+! Name                 Type             Elements    Dims    Sizes    Variance     Variances
+! --------             ----             --------    ----    -----    --------     ---------
 
-! Name Type Elements Dims Sizes Variance Variances
+ "Flux_H"              CDF_REAL4          1           2     28 12      T             T T
 
-! -------- ---- -------- ---- ----- -------- ---------
-
- "Flux_H" CDF_REAL4 1 2 28 12 T T T
-
- ! Attribute Data
-
- ! Name Type Value
-
- ! -------- ---- -----
+ ! Attribute          Data
+ ! Name               Type           Value
+ ! --------           ----           -----
 
  "FIELDNAM" CDF_CHAR { "H+ number flux" }
-
  "VALIDMAX" CDF_REAL4 { 1.0e+08 }
-
  "UNITS" CDF_CHAR { "#/(cm^2-s-keV/e-sr)" }
-
  "FORMAT" CDF_CHAR { "e12.4" }
-
  "LABL_PTR_1"
-
  CDF_CHAR { "H_energy_of_flux" }
-
  "LABL_PTR_2"
-
  CDF_CHAR { "H_angle_of_flux" }
-
  "MONOTON" CDF_CHAR { "FALSE " }
-
  "FILLVAL" CDF_REAL4 { -1.0e+31 }
-
  "CATDESC" CDF_CHAR { "H+ number flux for for 28 energy and " - "3 selected angle bins." }
-
  "VAR_TYPE" CDF_CHAR { "data" }
-
  "DICT_KEY" CDF_CHAR { "particle_flux>number_species_proton" }
-
  "DEPEND_0" CDF_CHAR { "Epoch_H" }
-
  "DEPEND_1" CDF_CHAR { "energy" }
-
  "DEPEND_2" CDF_CHAR { "angle" }
-
  "AVG_TYPE" CDF_CHAR { "standard" }
-
- "DISPLAY_TYPE"
-
- CDF_CHAR { "spectrogram>y=energy,z=Flux_H(*,1),z=F" -  "lux_H(*,7),z=Flux_H(*,12)" }
-
+ "DISPLAY_TYPE" CDF_CHAR { "spectrogram>y=energy,z=Flux_H(*,1),z=F" -  "lux_H(*,7),z=Flux_H(*,12)" }
  "SCALETYP" CDF_CHAR { "log" }
+ "VAR_NOTES" CDF_CHAR { "Negative values reflect low counting " - "rates and background subtraction. " } .
 
- "VAR_NOTES" CDF_CHAR { "Negative values reflect low
-counting " - "rates and background subtraction. " } .
+```
 
 **Variable Examples**
 
@@ -183,40 +158,30 @@ counting " - "rates and background subtraction. " } .
 
 We show here the variable, Epoch as it would appear in a CDF Skeleton table. We include all required variable attributes. Some recommended attributes are also shown. Epoch is time varying and is attached to all time varying data variables via DEPEND_0. It is used for the x-axis in all displays below.
 
-! Name Type Elements Dims Sizes Variance Variances
+```
+!Variable          Data      Number                          Record        Dimension
+!Name              Type      Elements      Dims    Sizes     Variance      Variances
+!--------          ----      --------      ----    -----     --------      ---------
 
-! -------- ---- -------- ---- ----- -------- ---------
+ "Epoch"           CDF_EPOCH     1           0                  T
 
- "Epoch" CDF_EPOCH 1 0 T
+ ! Attribute         Data
+ ! Name              Type              Value
+ ! --------          ----              -----
 
- ! Attribute Data
+ "FIELDNAM"          CDF_CHAR          { "Time since 0 AD" }
+ "VALIDMIN"          CDF_EPOCH         { 01-Jan-1994 00:00:00.000 }
+ "VALIDMAX"          CDF_EPOCH         { 01-Jan-2020 00:00:00.000 }
+ "LABLAXIS"          CDF_CHAR          { "Epoch" }
+ "UNITS"             CDF_CHAR          { "ms" }
+ "FILLVAL"           CDF_REAL8         { -1.0e+31 }
+ "VAR_TYPE"          CDF_CHAR          { "support_data" }
+ "DICT_KEY"          CDF_CHAR          { "time>Epoch" }
+ "SCALETYP"          CDF_CHAR          { "linear" }
+ "MONOTON"           CDF_CHAR          { "INCREASE" }
+ "CATDESC"           CDF_CHAR          { "Interval centered time tag rounded to " -  "nearest msecond "}.
 
- ! Name Type Value
-
- ! -------- ---- -----
-
- "FIELDNAM" CDF_CHAR { "Time since 0 AD" }
-
- "VALIDMIN" CDF_EPOCH { 01-Jan-1994 00:00:00.000 }
-
- "VALIDMAX" CDF_EPOCH { 01-Jan-2020 00:00:00.000 }
-
- "LABLAXIS" CDF_CHAR { "Epoch" }
-
- "UNITS" CDF_CHAR { "ms" }
-
- "FILLVAL" CDF_REAL8 { -1.0e+31 }
-
- "VAR_TYPE" CDF_CHAR { "support_data" }
-
- "DICT_KEY" CDF_CHAR { "time>Epoch" }
-
- "SCALETYP" CDF_CHAR { "linear" }
-
- "MONOTON" CDF_CHAR { "INCREASE" }
-
- "CATDESC" CDF_CHAR { "Interval centered time tag rounded to " -  "nearest msecond "}.
-
+```
  ! RV values were not requested.
 
 ***Another Example of "Epoch" is shown below.***

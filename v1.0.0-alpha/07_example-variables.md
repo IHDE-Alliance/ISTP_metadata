@@ -72,11 +72,8 @@ To see the LABL_PTR_1 values referenced below, see the label_B_GSE variable defi
  "FIELDNAM" CDF_CHAR { "Magnetic field vector in GSE " - "coordinates (1 min)" }
  "VALIDMIN" CDF_REAL4 { -65534.0 }
  "VALIDMAX" CDF_REAL4 { 65534.0 }
-
  "UNITS" CDF_CHAR { "nT" }
-
  "FORMAT" CDF_CHAR { "E13.6" }
-
  "SCALETYP" CDF_CHAR { "linear" }
 
  "CATDESC" CDF_CHAR { "Magnetic field vector in GSE

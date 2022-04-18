@@ -70,23 +70,17 @@ To see the LABL_PTR_1 values referenced below, see the label_B_GSE variable defi
 
  ! -------- ---- -----
 
- "FIELDNAM" CDF_CHAR { "Magnetic field vector in GSE " - "coordinates (1 min)" }
- "VALIDMIN" CDF_REAL4 { -65534.0 }
- "VALIDMAX" CDF_REAL4 { 65534.0 }
- "UNITS" CDF_CHAR { "nT" }
- "FORMAT" CDF_CHAR { "E13.6" }
- "SCALETYP" CDF_CHAR { "linear" }
-
- "CATDESC" CDF_CHAR { "Magnetic field vector in GSE
-" - "cartesian coordinates (1 min)" }
-
- "FILLVAL" CDF_REAL4 { -1.0e+31 }
-
- "LABL_PTR_1" CDF_CHAR { "label_B_GSE" }
-
- "DEPEND_0" CDF_CHAR { "Epoch" }
-
- "VAR_TYPE" CDF_CHAR { "data" }.
+ "FIELDNAM"      CDF_CHAR      { "Magnetic field vector in GSE " - "coordinates (1 min)" }
+ "VALIDMIN"      CDF_REAL4     { -65534.0 }
+ "VALIDMAX"      CDF_REAL4     { 65534.0 }
+ "UNITS"         CDF_CHAR      { "nT" }
+ "FORMAT"        CDF_CHAR      { "E13.6" }
+ "SCALETYP"      CDF_CHAR      { "linear" }
+ "CATDESC"       CDF_CHAR      { "Magnetic field vector in GSE" - "cartesian coordinates (1 min)" }
+ "FILLVAL"       CDF_REAL4     { -1.0e+31 }
+ "LABL_PTR_1"    CDF_CHAR      { "label_B_GSE" }
+ "DEPEND_0"      CDF_CHAR      { "Epoch" }
+ "VAR_TYPE"      CDF_CHAR      { "data" }.
 
 ```
 ***Example of a 1D flux data variable***

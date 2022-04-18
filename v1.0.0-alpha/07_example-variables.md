@@ -189,59 +189,33 @@ We show here the variable, Epoch as it would appear in a CDF Skeleton table. We 
 ! Name            Type      Elements     Dims      Sizes         Variance    Variances
 ! --------        ----      --------     ----      -----         --------    ---------
 
- "Epoch"          CDF_TIME_  TT2000 1 0 T
+ "Epoch"          CDF_TIME_  TT2000       1         0               T
 
  ! VAR_COMPRESSION: None
-
- ! (Valid compression:
-None, GZIP.1-9, RLE.0, HUFF.0, AHUFF.0)
-
+ ! (Valid compression: None, GZIP.1-9, RLE.0, HUFF.0, AHUFF.0)
  ! VAR_SPARSERECORDS: None
+ ! (Valid sparserecords: None, sRecords.PAD, sRecords.PREV)
+ ! VAR_PADVALUE: 0000-01-01T00:00:00.000000000
 
- ! (Valid sparserecords:
-None, sRecords.PAD, sRecords.PREV)
+ ! Attribute        Data
+ ! Name             Type             Value
+ ! --------         ----             -----
 
- ! VAR_PADVALUE:
-0000-01-01T00:00:00.000000000
+ "CATDESC"          CDF_CHAR        { "Interval centered time tag (TBC)" }
+ "FIELDNAM"         CDF_CHAR        { "Time since Jan 1, 1958" }
+ "FILLVAL"          CDF_TIME_TT2000 { 9999-12-31T23:59:59.999999999 }
+ "LABLAXIS"         CDF_CHAR        { "Epoch" }
+ "UNITS"            CDF_CHAR        { "ns" }
+ "VALIDMIN"         CDF_TIME_TT2000 { 2010-01-01T00:00:00.000000000 }
+ "VALIDMAX"         CDF_TIME_TT2000 { 2029-12-31T23:59:58.999000000 }
+ "VAR_TYPE"         CDF_CHAR        { "support_data" }
+ "SCALETYP"         CDF_CHAR        { "linear" }
+ "MONOTON"          CDF_CHAR        { "INCREASE" }
+ "DICT_KEY"         CDF_CHAR        { "time>Epoch" }
+ "TIME_BASE"        CDF_CHAR        { "J2000" }
+ "TIME_SCALE"       CDF_CHAR        { "Terrestrial Time" }.
 
- ! Attribute Data
-
- ! Name Type Value
-
- ! -------- ---- -----
-
- "CATDESC" CDF_CHAR { "Interval centered time tag (TBC)" }
-
- "FIELDNAM" CDF_CHAR { "Time since Jan 1, 1958" }
-
- "FILLVAL"
-
- CDF_TIME_TT2000 { 9999-12-31T23:59:59.999999999 }
-
- "LABLAXIS" CDF_CHAR { "Epoch" }
-
- "UNITS" CDF_CHAR { "ns" }
-
- "VALIDMIN"
-
- CDF_TIME_TT2000 { 2010-01-01T00:00:00.000000000 }
-
- "VALIDMAX"
-
- CDF_TIME_TT2000 { 2029-12-31T23:59:58.999000000 }
-
- "VAR_TYPE" CDF_CHAR { "support_data" }
-
- "SCALETYP" CDF_CHAR { "linear" }
-
- "MONOTON" CDF_CHAR { "INCREASE" }
-
- "DICT_KEY" CDF_CHAR { "time>Epoch" }
-
- "TIME_BASE" CDF_CHAR { "J2000" }
-
- "TIME_SCALE" CDF_CHAR { "Terrestrial Time" }.
-
+```
  ! RV values were not requested.
 
 ***Example of a simple 1D size 12 time varying support_data variable - energy.***

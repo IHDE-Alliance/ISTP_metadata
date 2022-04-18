@@ -87,58 +87,35 @@ To see the LABL_PTR_1 values referenced below, see the label_B_GSE variable defi
 
 We show here the variable, Ion Differential Intensity, as it would appear in a CDF Skeleton table. We include all required variable attributes. Some recommended variable attributes are also shown. See the [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#1D%20Spectrogram) of this variable.
 
-! Variable Data Number Record Dimension
+```
+! Variable             Data        Number                          Record      Dimension
+! Name                 Type        Elements      Dims    Sizes     Variance    Variances
+! --------             ----        --------      ----    -----     --------    ---------
 
-! Name Type Elements Dims Sizes Variance Variances
+ "IDiffI_I"            CDF_REAL4      1            1      12         T            T
 
-! -------- ---- -------- ---- ----- -------- ---------
+ ! Attribute            Data
+ ! Name                 Type       Value
+ ! --------             ----       -----
 
- "IDiffI_I" CDF_REAL4 1 1 12 T T
+ "FIELDNAM"         CDF_CHAR       { "Spin-avg Ion Diff Inten (EPIC/ICS)" }
+ "CATDESC"          CDF_CHAR       { "Ion Diff. Intensity, at 12 energies " - "67-1361 keV (EPIC/ICS)" }
+ "VALIDMIN"         CDF_REAL4      { 1.000000e-04 }
+ "VALIDMAX"         CDF_REAL4      { 1.000000e+10 }
+ "SCALETYP"         CDF_CHAR       { "log" }
+ "UNITS"            CDF_CHAR       { "1/[cm**2-s-sr-keV]" }
+ "LABLAXIS"         CDF_CHAR       { "dJ/dE" }
+ "FORMAT"           CDF_CHAR       { "E9.3" }
+ "DEPEND_0"         CDF_CHAR       { "Epoch" }
+ "DEPEND_1"         CDF_CHAR       { "IDiffI_I_Energy" }
+ "DELTA_PLUS_VAR"   CDF_CHAR       { "IDiffI_I_Uncert" }
+ "DELTA_MINUS_VAR"  CDF_CHAR       { "IDiffI_I_Uncert" }
+ "DICT_KEY"         CDF_CHAR       { "particle_flux>ion_differential" }
+ "VAR_TYPE"         CDF_CHAR       { "data" }
+ "FILLVAL"          CDF_REAL4      { -1.000000e+31 }
+ "DISPLAY_TYPE"     CDF_CHAR       { "spectrogram" } .
 
- ! Attribute Data
-
- ! Name Type Value
-
- ! -------- ---- -----
-
- "FIELDNAM" CDF_CHAR { "Spin-avg Ion Diff Inten (EPIC/ICS)" }
-
- "CATDESC" CDF_CHAR { "Ion Diff. Intensity, at 12 energies " - "67-1361 keV (EPIC/ICS)" }
-
- "VALIDMIN" CDF_REAL4 { 1.000000e-04 }
-
- "VALIDMAX" CDF_REAL4 { 1.000000e+10 }
-
- "SCALETYP" CDF_CHAR { "log" }
-
- "UNITS" CDF_CHAR { "1/[cm**2-s-sr-keV]" }
-
- "LABLAXIS" CDF_CHAR { "dJ/dE" }
-
- "FORMAT" CDF_CHAR { "E9.3" }
-
- "DEPEND_0" CDF_CHAR { "Epoch" }
-
- "DEPEND_1" CDF_CHAR { "IDiffI_I_Energy" }
-
- "DELTA_PLUS_VAR"
-
- CDF_CHAR { "IDiffI_I_Uncert" }
-
- "DELTA_MINUS_VAR"
-
- CDF_CHAR { "IDiffI_I_Uncert" }
-
- "DICT_KEY" CDF_CHAR { "particle_flux>ion_differential" }
-
- "VAR_TYPE" CDF_CHAR { "data" }
-
- "FILLVAL" CDF_REAL4 { -1.000000e+31 }
-
- "DISPLAY_TYPE"
-
- CDF_CHAR { "spectrogram" } .
-
+```
 ***Example of a 2D sizes 28,12 data variable***
 
 We show here the variable, H+ number flux, as it would appear in a CDF Skeleton table. We include all required variable attributes. Some recommended attributes are also shown. See the [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#2D%20Spectrogram) of this variable.

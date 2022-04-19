@@ -8,8 +8,7 @@ Time_PB5 is given in YEAR (4 digit), DAY OF YEAR (note: January 1 is Day 1), and
 ```
 ! Variable      Data        Number                          Record        Dimension
 ! Name          Type        Elements     Dims     Sizes     Variance      Variances
-! 
-  --------      ----        --------     ----     -----     --------      ---------
+! --------      ----        --------     ----     -----     --------      ---------
 
  "Time_PB5"     CDF_INT4       1          0                    T
 
@@ -32,36 +31,29 @@ Time_PB5 is given in YEAR (4 digit), DAY OF YEAR (note: January 1 is Day 1), and
 ```
  ! RV values were not requested.
 
-! Variable Data Number Record Dimension
+```
+! Variable        Data      Number                        Record          Dimension
+! Name            Type      Elements    Dims    Sizes     Variance        Variances
+! --------        ----      --------    ----    -----     --------        ---------
 
-! Name Type Elements Dims Sizes Variance Variances
+ "unit_time"      CDF_CHAR      4         0                 F
 
-! -------- ---- -------- ---- ----- -------- ---------
+ ! Attribute          Data
+ ! Name               Type          Value
+ ! --------           ----          -----
 
- "unit_time" CDF_CHAR 4 0 F
-
- ! Attribute Data
-
- ! Name Type Value
-
- ! -------- ---- -----
-
- "FIELDNAM" CDF_CHAR { "Units for Time_PB5" }
-
- "VAR_TYPE" CDF_CHAR { "metadata" }
-
- "DICT_KEY" CDF_CHAR { "label>" }
-
- "CATDESC" CDF_CHAR { "Units for Time_PB5" } .
+ "FIELDNAM"           CDF_CHAR      { "Units for Time_PB5" }
+ "VAR_TYPE"           CDF_CHAR      { "metadata" }
+ "DICT_KEY"           CDF_CHAR      { "label>" }
+ "CATDESC"            CDF_CHAR      { "Units for Time_PB5" } .
 
  ! NRV values follow...
 
  [1] = { "year" }
-
  [2] = { "day " }
-
  [3] = { "msec" }
 
+```
 ! Variable Data Number Record Dimension
 
 ! Name Type Elements Dims Sizes Variance Variances

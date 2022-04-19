@@ -57,38 +57,31 @@ Time_PB5 is given in YEAR (4 digit), DAY OF YEAR (note: January 1 is Day 1), and
 ```
 ! Variable       Data     Number                    Record      Dimension
 ! Name           Type     Elements   Dims   Sizes   Variance    Variances
-! -------- ---- -------- ---- ----- -------- ---------
+! --------       ----     --------   ----   -----   --------    ---------
 
- "label_time" CDF_CHAR 27 0 F
+ "label_time"    CDF_CHAR   27        0               F
 
- ! Attribute Data
+ ! Attribute     Data
+ ! Name          Type        Value
+ ! --------      ----        -----
 
- ! Name Type Value
-
- ! -------- ---- -----
-
- "FIELDNAM" CDF_CHAR { "Label for Time_PB5" }
-
- "VAR_TYPE" CDF_CHAR { "metadata" }
-
- "DICT_KEY" CDF_CHAR { "label>" }
-
- "CATDESC" CDF_CHAR { "Label for Time_PB5" } .
+ "FIELDNAM"      CDF_CHAR    { "Label for Time_PB5" }
+ "VAR_TYPE"      CDF_CHAR    { "metadata" }
+ "DICT_KEY"      CDF_CHAR    { "label>" }
+ "CATDESC"       CDF_CHAR    { "Label for Time_PB5" } .
 
  ! NRV values follow...
 
  [1] = { "Year " }
-
  [2] = { "Day of Year
 (Jan 1 = Day 1)" }
 
  [3] = { "Elapsed milliseconds of day" }
-
-! Variable Data Number Record Dimension
-
-! Name Type Elements Dims Sizes Variance Variances
-
-! -------- ---- -------- ---- ----- -------- ---------
+```
+```
+! Variable       Data     Number                     Record     Dimension
+! Name           Type     Elements    Dims   Sizes   Variance    Variances
+! --------       ----     --------    ----   -----   --------    ---------
 
  "format_time" CDF_CHAR 2 0 F
 

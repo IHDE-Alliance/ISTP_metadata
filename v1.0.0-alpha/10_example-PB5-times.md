@@ -83,29 +83,22 @@ Time_PB5 is given in YEAR (4 digit), DAY OF YEAR (note: January 1 is Day 1), and
 ! Name           Type     Elements    Dims   Sizes   Variance    Variances
 ! --------       ----     --------    ----   -----   --------    ---------
 
- "format_time" CDF_CHAR 2 0 F
+ "format_time"   CDF_CHAR   2          0                F
 
- ! Attribute Data
+ ! Attribute      Data
+ ! Name           Type     Value
+ ! --------       ----     -----
 
- ! Name Type Value
-
- ! -------- ---- -----
-
- "FIELDNAM" CDF_CHAR { "Format for Time_PB5" }
-
- "VAR_TYPE" CDF_CHAR { "metadata" }
-
- "DICT_KEY" CDF_CHAR { "label>" }
-
- "CATDESC" CDF_CHAR { "Format for Time_PB5" } 
+ "FIELDNAM"    CDF_CHAR    { "Format for Time_PB5" }
+ "VAR_TYPE"    CDF_CHAR    { "metadata" }
+ "DICT_KEY"    CDF_CHAR    { "label>" }
+ "CATDESC"     CDF_CHAR    { "Format for Time_PB5" } 
 
  ! NRV values follow...
 
  [1] = { "I4" }
-
  [2] = { "I3" }
-
  [3] = { "I8" }
-
+```
 
 Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

@@ -1,6 +1,6 @@
 |                | Cluster | ERG | GOLD | ICON | MMS | PSP | PRBEM | RBSP (Van Allen Probes) | Solar Orbiter |
 | -------------- | ------- | --- | ---- | ---- | --- | --- | ----- | ----------------------- | ------------- |
-| ** Attribute** |         |     |      |      |     |     |       |                         |               |
+| ** Attribute** | TENSOR FRAME        |     |      |      |     |     |       |                         |               |
 |                |         |     |      |      |     |     |       |                         |               |
 |                |         |     |      |      |     |     |       |                         |               |
 |                |         |     |      |      |     |     |       |                         |               |

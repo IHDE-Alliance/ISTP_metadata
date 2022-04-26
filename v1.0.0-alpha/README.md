@@ -15,4 +15,4 @@ Sections
 * [10 - Examples of PB5 Times](10_example-PB5-times.md)
 * [11 - Mission-specific Metadata](20_mission_metadata_usage.md)
 * [12 - Mission-specific Attributes](Mission_Attributes_Non_ISTP.md)
-* [13 - Other Mission Attributes](Non-ISTP Mission Attributes.md)
+* [13 - Other Mission Attributes](Non-ISTP-Mission-Attributes.md)

@@ -69,18 +69,4 @@ Synchro_Flag |
 
 
 
-Acquisition_Time
-Epoch
-Epoch_i
-Interpol_Flag
-Julian_Day
-Quality_Bitmask
-Quality_Bitmask_i
-Quality_Flag
-Quality_Flag_i
-Post_Gap_Flag
-SBM_Flag
-SCET
-Synchro_Flag
-
 

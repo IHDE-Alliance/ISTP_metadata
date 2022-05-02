@@ -1,14 +1,18 @@
 # Non-ISTP Attributes Used by Missions
 
+- X - defined by mission
+- R - required by mission
+- O - optional for mission
+
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PSP | PRBEM | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | ------------- |
-| Delta_Minus | | | | | | | | | | 
-| Delta_Plus | | | | | | | | | | 
-| Frame | | | | | | | | | | 
-| Representation_i | | | | | | | | | | 
-| SI_Conversion | | | | | | | | | | 
-| Tensor_Frame | | | | | | | | | | 
-| Tensor Order | | | | | | | | | | 
+| Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
+| Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
+| Frame | X | | | | | | | | | 
+| Representation_i | X | | | | | | | | | 
+| SI_Conversion | X | | | | | | | | | 
+| Tensor_Frame | X | | | | | | | | | 
+| Tensor Order | X | | | | | | | | | 
 | Value Type  | | | | | | | | | | 
 
 Data_coordinates

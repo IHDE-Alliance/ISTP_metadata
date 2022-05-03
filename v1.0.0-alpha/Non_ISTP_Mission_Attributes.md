@@ -6,7 +6,7 @@
 
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PSP | PRBEM | Solar Orbiter | PDS |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | ------------- | --- |
-| Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | X|
+| Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
 | Frame | | X | | | | | | | | 
 | Representation_i | | X | | | | | | | | 

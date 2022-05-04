@@ -6,8 +6,14 @@
 
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
+| Alpha |
+| Alpha_Eq |
+| B_Calc| 
+| B_Eq |
 | Channel_ID |
-| _ChunkingSizes
+| _ChunkingSizes |
+| Coordinate_System |
+| CountRate |
 | Data |                            | X|
 | Data_coordinates |
 | Data_cycle |
@@ -26,6 +32,7 @@
 | epoch_1min |
 | f_1h |
 | _FillValue |
+| FLUX_PTR |
 | Frame | | X | | | | | | | | 
 | Geographic_coordinates |
 | Geographic_latitude |
@@ -35,8 +42,11 @@
 | Geomagnetic_longitude |
 | hdz_1h |
 | hdz_1min |
+| I |
 | Known_problems |
 | K9_limit |
+| L |
+| L_star |
 | Last_obs_count_in_ file |
 | L_value |
 | Long_name |
@@ -44,6 +54,7 @@
 | Maximum_PHD |
 | Minimum_PHD |
 | Mirror_hemisphere |
+| MLT |
 | Number_of_channels |
 | Observation_complete |
 | Observation_end |
@@ -51,10 +62,13 @@
 | Observation_type |
 | OBS_ID |
 | OBS_TYPE |
+| Operator_Type |
+| Position |
 | Representation_i | | X | | | | | | | | 
 | SI_Conversion | | X | | | | | | | | 
 | _Shuffle |
 | Sizes |
+| SPECIES |
 | Station_code |
 | Station_name |
 | Tensor_Frame | | X | | | | | | | | 

@@ -8,6 +8,11 @@
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | Data |                            | X|
 | Data_coordinates |
+| Data_resolution | 
+| Data_sampling_type |
+| Data_type_2 |
+| D_conversion_factor |
+| D_unit |
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
 | Frame | | X | | | | | | | | 

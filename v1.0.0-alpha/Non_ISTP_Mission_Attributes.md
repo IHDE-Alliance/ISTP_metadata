@@ -25,6 +25,7 @@
 | epoch_1h |
 | epoch_1min |
 | f_1h |
+| _FillValue |
 | Frame | | X | | | | | | | | 
 | Geographic_coordinates |
 | Geographic_latitude |
@@ -38,6 +39,7 @@
 | K9_limit |
 | Last_obs_count_in_ file |
 | L_value |
+| Long_name |
 | Magnetometer_type |
 | Maximum_PHD |
 | Minimum_PHD |
@@ -51,6 +53,7 @@
 | OBS_TYPE |
 | Representation_i | | X | | | | | | | | 
 | SI_Conversion | | X | | | | | | | | 
+| _Shuffle |
 | Sizes |
 | Station_code |
 | Station_name |
@@ -62,6 +65,9 @@
 | time_cal_ 1min |
 | time_1h |
 | time_1min |
+| Valid_Max |
+| Valid_Min |
+| Valid_Range |
 | Value Type  | | | | | | | | | | 
 | 
 

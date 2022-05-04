@@ -7,7 +7,7 @@
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | Channel_ID |
-| _Chunkingsizes
+| _ChunkingSizes
 | Data |                            | X|
 | Data_coordinates |
 | Data_cycle |
@@ -17,6 +17,7 @@
 | Data_sampling_type |
 | Data_type_2 |
 | D_conversion_factor |
+| _DeflateLevel
 | D_unit |
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 

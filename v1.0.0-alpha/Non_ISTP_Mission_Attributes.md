@@ -6,6 +6,7 @@
 
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
+| Channel_ID |
 | Data |                            | X|
 | Data_coordinates |
 | Data_resolution | 

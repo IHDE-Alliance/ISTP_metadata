@@ -9,7 +9,10 @@
 | Channel_ID |
 | Data |                            | X|
 | Data_coordinates |
+| Data_cycle |
+| Data_level |
 | Data_resolution | 
+| Data_revision |
 | Data_sampling_type |
 | Data_type_2 |
 | D_conversion_factor |
@@ -31,11 +34,19 @@
 | hdz_1min |
 | Known_problems |
 | K9_limit |
+| Last_obs_count_in_ file |
 | L_value |
 | Magnetometer_type |
+| Maximum_PHD |
+| Minimum_PHD |
+| Mirror_hemisphere |
 | Number_of_channels |
+| Observation_complete |
 | Observation_end |
 | Observation_start |
+| Observation_type |
+| OBS_ID |
+| OBS_TYPE |
 | Representation_i | | X | | | | | | | | 
 | SI_Conversion | | X | | | | | | | | 
 | Sizes |

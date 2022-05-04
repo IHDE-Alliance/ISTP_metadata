@@ -23,8 +23,17 @@
 | Geographic_coordinates |
 | Geographic_latitude |
 | Geographic_longitude |
+| Geomagnetic_coordinates |
+| Geomagnetic_latitude |
+| Geomagnetic_longitude |
 | hdz_1h |
 | hdz_1min |
+| Known_problems |
+| K9_limit |
+| L_value |
+| Magnetometer_type |
+| Number_of_channels |
+| Observation_start |
 | Representation_i | | X | | | | | | | | 
 | SI_Conversion | | X | | | | | | | | 
 | Sizes |

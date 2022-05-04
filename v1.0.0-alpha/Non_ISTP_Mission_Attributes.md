@@ -12,6 +12,7 @@
 | Frame | | X | | | | | | | | 
 | Representation_i | | X | | | | | | | | 
 | SI_Conversion | | X | | | | | | | | 
+| Sizes |
 | Tensor_Frame | | X | | | | | | | | 
 | Tensor Order | | X | | | | | | | | 
 | Value Type  | | | | | | | | | | 

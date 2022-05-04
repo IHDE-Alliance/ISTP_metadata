@@ -15,7 +15,16 @@
 | D_unit |
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
+| Elevation |
+| epoch_1h |
+| epoch_1min |
+| f_1h |
 | Frame | | X | | | | | | | | 
+| Geographic_coordinates |
+| Geographic_latitude |
+| Geographic_longitude |
+| hdz_1h |
+| hdz_1min |
 | Representation_i | | X | | | | | | | | 
 | SI_Conversion | | X | | | | | | | | 
 | Sizes |

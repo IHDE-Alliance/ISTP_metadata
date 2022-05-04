@@ -4,8 +4,8 @@
 - R - required by mission
 - O - optional for mission
 
-| Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PSP | PRBEM | Solar Orbiter | PDS |
-| ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | ------------- | --- |
+| Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
+| ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | Data
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 

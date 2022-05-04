@@ -8,6 +8,7 @@
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | Alpha |
 | Alpha_Eq |
+| Acquisition_Time |
 | B_Calc| 
 | B_Eq |
 | Channel_ID |
@@ -28,6 +29,8 @@
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
 | Elevation |
+| Epoch |
+| Epoch_i |
 | epoch_1h |
 | epoch_1min |
 | f_1h |
@@ -43,6 +46,8 @@
 | hdz_1h |
 | hdz_1min |
 | I |
+| Interpol_Flag | 
+| Julian_Day |
 | Known_problems |
 | K9_limit |
 | L |
@@ -64,13 +69,21 @@
 | OBS_TYPE |
 | Operator_Type |
 | Position |
+| Post_Gap_Flag |
+| Quality_Bitmask |
+| Quality_Bitmask_i |
+| Quality_Flag |
+| Quality_Flag_i |
 | Representation_i | | X | | | | | | | | 
+| SBM_Flag |
+| SCET |
 | SI_Conversion | | X | | | | | | | | 
 | _Shuffle |
 | Sizes |
 | SPECIES |
 | Station_code |
 | Station_name |
+| Synchro_Flag |
 | Tensor_Frame | | X | | | | | | | | 
 | Tensor Order | | X | | | | | | | | 
 | Text_supplement |

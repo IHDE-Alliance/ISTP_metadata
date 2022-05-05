@@ -6,7 +6,7 @@
 
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
-| Alpha |                            | X|
+| Alpha |                            
 | Alpha_Eq |
 | Acquisition_Time |
 | B_Calc| 

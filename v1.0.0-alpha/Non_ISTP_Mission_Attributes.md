@@ -8,7 +8,7 @@
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | Alpha |                            
 | Alpha_Eq |
-| Acquisition_Time |    | X|
+| Acquisition_Time |    
 | B_Calc| 
 | B_Eq |
 | Channel_ID |

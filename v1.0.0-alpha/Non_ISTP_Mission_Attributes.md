@@ -10,7 +10,7 @@
 | Alpha_Eq |    
 | B_Calc| 
 | B_Eq |
-| CAVEATS |                                                                                   | O |
+| CAVEATS | | | | | | | | | | O |
 | Channel_ID |
 | _ChunkingSizes |
 | Coordinate_System |

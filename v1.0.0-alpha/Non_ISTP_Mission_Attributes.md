@@ -20,7 +20,7 @@
 | Data_coordinates |
 | Data_cycle |
 | Data_level |
-| Data_product |                              | R |
+| Data_product |                                     | R |
 | DATAPRODUCT_TYPE |
 | Data_resolution | 
 | Data_revision |

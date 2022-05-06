@@ -25,6 +25,7 @@
 | Data_resolution | 
 | Data_revision |
 | Data_sampling_type |
+| Dataset_ID |
 | Data_type_2 |
 | D_conversion_factor |
 | _DeflateLevel
@@ -37,6 +38,7 @@
 | f_1h |
 | _FillValue |
 | FLUX_PTR |
+| Free_field |
 | Frame | | M | | | | | | | | 
 | Geographic_coordinates |
 | Geographic_latitude |
@@ -47,11 +49,13 @@
 | hdz_1h |
 | hdz_1min |
 | I | 
+| Job_ID |
 | Known_problems |
 | K9_limit |
 | L |
 | L_star |
 | Last_obs_count_in_ file |
+| LEVEL |
 | L_value |
 | Long_name |
 | Magnetometer_type |
@@ -68,11 +72,13 @@
 | OBS_TYPE |
 | Operator_Type |
 | Position |
+| Process_ID |
 | REFERENCE | | | | | | | | | | | | | | O |
 | Representation_i | | M | | | | | | | | 
-| SI_Conversion | | M | | | | | | | | 
+| SI_Conversion | | M | | | | | | | | R |
 | _Shuffle |
 | Sizes |
+| SOOP_TYPE |
 | spase_DatasetResource | | | | | | | | | | O |
 | spase_DatasetResourceID | | | | | | | | | O |
 | spase_GranuleResource | | | | | | | | | | O |

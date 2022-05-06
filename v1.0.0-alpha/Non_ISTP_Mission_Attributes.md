@@ -6,6 +6,7 @@
 
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
+| ACCESS_FORMAT 
 | Alpha |                            
 | Alpha_Eq |    
 | B_Calc| 
@@ -19,6 +20,7 @@
 | Data_coordinates |
 | Data_cycle |
 | Data_level |
+| DATAPRODUCT_TYPE |
 | Data_resolution | 
 | Data_revision |
 | Data_sampling_type |
@@ -65,6 +67,7 @@
 | OBS_TYPE |
 | Operator_Type |
 | Position |
+| REFERENCE | | | | | | | | | | | | | | O |
 | Representation_i | | M | | | | | | | | 
 | SI_Conversion | | M | | | | | | | | 
 | _Shuffle |
@@ -76,7 +79,9 @@
 | SPECIES |
 | Station_code |
 | Station_name |
+| TARGET_CLASS |
 | TARGET_NAME | | | | | | | | | | | | | R |
+| TARGET_REGION |
 | Tensor_Frame | | M | | | | | | | | 
 | Tensor Order | | M | | | | | | | | 
 | Text_supplement |
@@ -85,6 +90,8 @@
 | time_cal_ 1min |
 | time_1h |
 | time_1min |
+| TIME_MAX |
+| TIME_MIN |
 | Valid_Max |
 | Valid_Min |
 | Valid_Range |

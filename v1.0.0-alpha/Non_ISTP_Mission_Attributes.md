@@ -1,7 +1,7 @@
 # Non-ISTP Attributes Used by Missions
 
 - M - mandatory by mission
-- R - required by mission
+- R - recommended by mission
 - O - optional for mission
 
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
@@ -70,12 +70,13 @@
 | _Shuffle |
 | Sizes |
 | spase_DatasetResource | | | | | | | | | | O |
-| spase_DatasetResourceID |                                                                       | O |
-| spase_GranuleResource |                                                                         | O |
-| spase_GranuleResourceID |                                                                       | O |
+| spase_DatasetResourceID | | | | | | | | | O |
+| spase_GranuleResource | | | | | | | | | | O |
+| spase_GranuleResourceID | | | | | | | | | O |
 | SPECIES |
 | Station_code |
 | Station_name |
+| TARGET_NAME | | | | | | | | | | | | | | | R |
 | Tensor_Frame | | M | | | | | | | | 
 | Tensor Order | | M | | | | | | | | 
 | Text_supplement |

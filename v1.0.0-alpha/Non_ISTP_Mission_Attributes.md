@@ -76,7 +76,7 @@
 | SPECIES |
 | Station_code |
 | Station_name |
-| TARGET_NAME | | | | | | | | | | | | | | R |
+| TARGET_NAME | | | | | | | | | | | | | R |
 | Tensor_Frame | | M | | | | | | | | 
 | Tensor Order | | M | | | | | | | | 
 | Text_supplement |

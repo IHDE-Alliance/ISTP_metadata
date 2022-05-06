@@ -103,3 +103,10 @@
 
 **Descriptions**
 
+spase_DatasetResource- The SPASE XML description of the dataset that corresponds to the SPASE ResourceID.
+
+spase_DatasetResourceID- The SPASE ResourceID assigned of the NumericalData resource the data file is part of.
+
+spase_GranuleResource- The SPASE XML description of the dataset that corresponds to the SPASE Granule ResourceID.
+
+spase_GranuleResourceID- The Granule ResourceID assigned to the data file.

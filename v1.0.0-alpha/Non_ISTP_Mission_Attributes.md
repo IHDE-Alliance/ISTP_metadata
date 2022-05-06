@@ -14,13 +14,13 @@
 | CAVEATS | | | | | | | | | | O |
 | Channel_ID |
 | _ChunkingSizes |
-| Coordinate_System |                                                                       | R |
+| Coordinate_System |                                                                    | R |
 | CountRate |
 | Data |                            | M|
 | Data_coordinates |
 | Data_cycle |
 | Data_level |
-| Data_product |                                                                           | R |
+| Data_product |                                                                        | R |
 | DATAPRODUCT_TYPE |
 | Data_resolution | 
 | Data_revision |

@@ -1,6 +1,6 @@
 # Non-ISTP Attributes Used by Missions
 
-- X - defined by mission
+- M - mandatory by mission
 - R - required by mission
 - O - optional for mission
 
@@ -15,7 +15,7 @@
 | _ChunkingSizes |
 | Coordinate_System |
 | CountRate |
-| Data |                            | X|
+| Data |                            | M|
 | Data_coordinates |
 | Data_cycle |
 | Data_level |
@@ -74,10 +74,10 @@
 | Quality_Bitmask_i |
 | Quality_Flag |
 | Quality_Flag_i |
-| Representation_i | | X | | | | | | | | 
+| Representation_i | | M | | | | | | | | 
 | SBM_Flag |
 | SCET |
-| SI_Conversion | | X | | | | | | | | 
+| SI_Conversion | | M | | | | | | | | 
 | _Shuffle |
 | Sizes |
 | spase_DatasetResource |
@@ -88,8 +88,8 @@
 | Station_code |
 | Station_name |
 | Synchro_Flag |
-| Tensor_Frame | | X | | | | | | | | 
-| Tensor Order | | X | | | | | | | | 
+| Tensor_Frame | | M | | | | | | | | 
+| Tensor Order | | M | | | | | | | | 
 | Text_supplement |
 | Time_calibration_method |
 | time_cal_1h |

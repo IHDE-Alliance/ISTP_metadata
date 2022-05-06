@@ -80,6 +80,10 @@
 | SI_Conversion | | X | | | | | | | | 
 | _Shuffle |
 | Sizes |
+| spase_DatasetResource |
+| spase_DatasetResourceID |
+| spase_GranuleResource |
+| spase_GranuleResourceID |
 | SPECIES |
 | Station_code |
 | Station_name |

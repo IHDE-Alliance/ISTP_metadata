@@ -7,10 +7,10 @@
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | Alpha |                            
-| Alpha_Eq |
-| Acquisition_Time |    
+| Alpha_Eq |    
 | B_Calc| 
 | B_Eq |
+| CAVEATS |                                                                                   | O |
 | Channel_ID |
 | _ChunkingSizes |
 | Coordinate_System |
@@ -29,14 +29,12 @@
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
 | Elevation |
-| Epoch |
-| Epoch_i |
 | epoch_1h |
 | epoch_1min |
 | f_1h |
 | _FillValue |
 | FLUX_PTR |
-| Frame | | X | | | | | | | | 
+| Frame | | M | | | | | | | | 
 | Geographic_coordinates |
 | Geographic_latitude |
 | Geographic_longitude |
@@ -45,9 +43,7 @@
 | Geomagnetic_longitude |
 | hdz_1h |
 | hdz_1min |
-| I |
-| Interpol_Flag | 
-| Julian_Day |
+| I | 
 | Known_problems |
 | K9_limit |
 | L |
@@ -69,25 +65,17 @@
 | OBS_TYPE |
 | Operator_Type |
 | Position |
-| Post_Gap_Flag |
-| Quality_Bitmask |
-| Quality_Bitmask_i |
-| Quality_Flag |
-| Quality_Flag_i |
 | Representation_i | | M | | | | | | | | 
-| SBM_Flag |
-| SCET |
 | SI_Conversion | | M | | | | | | | | 
 | _Shuffle |
 | Sizes |
-| spase_DatasetResource |
-| spase_DatasetResourceID |
-| spase_GranuleResource |
-| spase_GranuleResourceID |
+| spase_DatasetResource |                                                                         | O |
+| spase_DatasetResourceID |                                                                       | O |
+| spase_GranuleResource |                                                                         | O |
+| spase_GranuleResourceID |                                                                       | O |
 | SPECIES |
 | Station_code |
 | Station_name |
-| Synchro_Flag |
 | Tensor_Frame | | M | | | | | | | | 
 | Tensor Order | | M | | | | | | | | 
 | Text_supplement |

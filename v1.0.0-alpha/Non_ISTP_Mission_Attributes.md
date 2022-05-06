@@ -14,7 +14,7 @@
 | CAVEATS | | | | | | | | | | O |
 | Channel_ID |
 | _ChunkingSizes |
-| Coordinate_System |
+| Coordinate_System |                           | R |
 | CountRate |
 | Data |                            | M|
 | Data_coordinates |

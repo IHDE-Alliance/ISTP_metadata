@@ -199,4 +199,4 @@ TIME_MAX- The date and time of the end of the last acquisition for the data cont
 
 TIME_MIN- The date and time of the beginning of the first acquisition for the data contained in the file.
 
-UCD- UCD keywords as defined by the IVOA.
+UCD- UCD keywords as defined by the IVOA

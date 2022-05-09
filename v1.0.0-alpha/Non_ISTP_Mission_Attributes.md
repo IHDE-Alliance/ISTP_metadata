@@ -104,11 +104,25 @@ ACCESS_FORMAT- Format of the file.
 
 COORDINATE_SYSTEM- For nonscalar data, contains coordinate system name, e.g. ‘HCI’ or ‘RTN’. Note representation is no longer included.
 
+Data_coordinates- Coordinate system used for observed magnetic field vector. "Other" means that an instrument-specific coordinate system is used.
+
 Data_product-  Type of data product. It shall use the ISTP format "PREFIX>Suffix" (e.g., "HIST1D>1D histogram"). 
 
 DATAPRODUCT_TYPE- High level scientific organization of the data.
 
+Data_resolution- Typical resolution of data values. 
+
+Data_sampling_type- What kind of time bin for averaging or sampling is used to obtain data values.
+
 Dataset_ID- Data set identifier.
+
+Data_type_2- Type of observed vector values, e.g., Absolute field, Variation. 
+
+D_conversion_factor- Factor used to convert the unit of D-component from degree to nT.
+
+D_unit- Physical unit of the D-component of the geomagnetic field. 
+
+Elevation- Elevation of the location of station. 
 
 Free_field- Description of the free field in the filename. It shall use the ISTP format "PREFIX>Suffix" (e.g., "NORM>Normal mode"), where the value of the prefix shall correspond to the "free" field in the file naming convention.
 
@@ -117,9 +131,43 @@ FRAME_ORIGIN- gives the origin of the reference frame where this is not implicit
 FRAME_VELOCITY- can take either the value 'Observatory' where no corrections have been applied to the data or 'Inertial' where quantities (e.g. electric 
 field or plasma flow velocity) have been corrected for spacecraft motion relative to an inertial frame (HCI).
 
+Geographic_coordinates- What kind of geographic coordinate system is used for the following latitude and longitude. Usually either of geodetic or geographic. 
+
+Geographic_latitude - Geographic or geodetic latitude of the location of station. 
+
+Geographic_longitude- Geographic or geodetic longitude of the location of station. 
+
+Geomagnetic_coordinates- What kind of geomagnetic coordinate system and what epoch and time are used for the following geomagnetic coordinate values. 
+
+Geomagnetic_latitude- Geomagnetic latitude of the location of station. 
+
+Geomagnetic_longitude- Geomagnetic longitude of the location of station. 
+
 Job_ID- Process job identifier.
 
+K9_limit- Threshold of K-index for K = 9. (for WDC data).
+
+Known_problems- Known problems regarding the data set, such as data glitches and gaps.
+
 LEVEL- Data processing level as defined in the Solar Orbiter conventions. It shall use the ISTP format "PREFIX>Suffix" (e.g., "L1>Level 1 data processing"), where the value of the prefix shall correspond to the "level" field in the file naming convention.
+
+L_value- (Dipole) L value of the location of station.
+
+Magnetometer_type- Type of magnetometer instrument. Usually "Fluxgate" or "Induction." 
+
+Number_of_channels- Number of channels of magnetometer. 
+
+OBS_ID- A unique identifier for the observation that is associated with the data acquisition and includes identifying information about: the SOOP; planning period; instrument; and instrument’s observation mode. The format of OBS_ID is defined in [IOR-ICD], and shall be included in the IORs delivered by the Instrument Teams to SOC.
+
+Observation_end- The termination date of instrument operation. This is left blank if the instrument is currently in operation.
+
+Observation_start- The start date of instrument operation.
+
+Process_ID- Process identifier.
+
+REFERENCE- Bibcode, DOI or URL.
+
+REPRESENTATION_i- Pointer to a support variable that gives the representation (['x','y','z'] for Cartesian; ['r','p','t'] for spherical polar; ['r','p','z'] for cylindrical polar) of the ith dimension of the variable.
 
 SI_CONVERSION- A string that defines the conversion needed to base SI units, e.g. "1.0E-9>T" for DC Magnetic field data in nT.
 
@@ -131,15 +179,11 @@ spase_GranuleResource- The SPASE XML description of the dataset that corresponds
 
 spase_GranuleResourceID- The Granule ResourceID assigned to the data file.
 
-OBS_ID- A unique identifier for the observation that is associated with the data acquisition and includes identifying information about: the SOOP; planning period; instrument; and instrument’s observation mode. The format of OBS_ID is defined in [IOR-ICD], and shall be included in the IORs delivered by the Instrument Teams to SOC.
-
-Process_ID- Process identifier.
-
-REFERENCE- Bibcode, DOI or URL.
-
-REPRESENTATION_i- Pointer to a support variable that gives the representation (['x','y','z'] for Cartesian; ['r','p','t'] for spherical polar; ['r','p','z'] for cylindrical polar) of the ith dimension of the variable.
-
 SOOP_TYPE-  SOOP campaign identifier, following the SOOP naming convention.
+
+Station_code- 3-letter station code. 
+
+Station_name- The full spelling of station name. 
 
 TARGET_CLASS- Class of the target.
 
@@ -148,6 +192,8 @@ TARGET_NAME- Name of the target.
 TARGET_REGION- Region where the target is observed.
 
 TENSOR_ORDER- Contains the rank or order of a tensor, i.e. 1 for a vector, 2 for a 3x3 tensor.
+
+Time_calibration_method- Time recording method for observation, e.g., "GPS." 
 
 TIME_MAX- The date and time of the end of the last acquisition for the data contained in the file.
 

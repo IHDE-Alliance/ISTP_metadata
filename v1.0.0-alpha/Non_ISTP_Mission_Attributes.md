@@ -104,7 +104,7 @@
 | UCD |
 | Valid_Max |
 | Valid_Min |
-| Valid_Range |
+| Valid_Range | | |
 | Value Type  | | | | | | | | | | 
 
 **Descriptions**

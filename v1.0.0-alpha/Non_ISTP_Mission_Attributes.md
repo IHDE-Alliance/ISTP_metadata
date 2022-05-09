@@ -33,9 +33,6 @@
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
 | Elevation |
-| epoch_1h |
-| epoch_1min |
-| f_1h |
 | _FillValue |
 | FLUX_PTR |
 | Free_field |
@@ -48,8 +45,6 @@
 | Geomagnetic_coordinates |
 | Geomagnetic_latitude |
 | Geomagnetic_longitude |
-| hdz_1h |
-| hdz_1min |
 | I | 
 | Job_ID |
 | Known_problems |
@@ -95,10 +90,6 @@
 | Tensor Order | | M | | | | | | | | 
 | Text_supplement |
 | Time_calibration_method |
-| time_cal_1h |
-| time_cal_ 1min |
-| time_1h |
-| time_1min |
 | TIME_MAX |
 | TIME_MIN |
 | UCD |

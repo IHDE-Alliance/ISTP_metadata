@@ -6,7 +6,7 @@
 
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
-| ACCESS_FORMAT | ||||
+| ACCESS_FORMAT | 
 | Alpha |                            
 | Alpha_Eq |    
 | B_Calc| 
@@ -102,15 +102,23 @@
 
 ACCESS_FORMAT- Format of the file.
 
+Channel_ID- 0 = CHANNEL A 1 = CHANNEL B
+
 COORDINATE_SYSTEM- For nonscalar data, contains coordinate system name, e.g. ‘HCI’ or ‘RTN.’ Note representation is no longer included.
 
 Data_coordinates- Coordinate system used for observed magnetic field vector. "Other" means that an instrument-specific coordinate system is used.
+
+Data_Cycle- Data cycle sequence number.
+
+Data_Level- L1B.
 
 Data_product-  Type of data product. It shall use the ISTP format "PREFIX>Suffix" (e.g., "HIST1D>1D histogram"). 
 
 DATAPRODUCT_TYPE- High level scientific organization of the data.
 
 Data_resolution- Typical resolution of data values. 
+
+Data_Revision- Revision sequence number.
 
 Data_sampling_type- What kind of time bin for averaging or sampling is used to obtain data values.
 
@@ -149,19 +157,33 @@ K9_limit- Threshold of K-index for K = 9. (for WDC data).
 
 Known_problems- Known problems regarding the data set, such as data glitches and gaps.
 
+Last_obs_Count_In_File- Identifies the number of packets in the current science observation type.
+
 LEVEL- Data processing level as defined in the Solar Orbiter conventions. It shall use the ISTP format "PREFIX>Suffix" (e.g., "L1>Level 1 data processing"), where the value of the prefix shall correspond to the "level" field in the file naming convention.
 
 L_value- (Dipole) L value of the location of station.
 
 Magnetometer_type- Type of magnetometer instrument. Usually "Fluxgate" or "Induction." 
 
+Maximum_PHD- Upper limit for the pulse height filter (typical values range from 200 to 254).
+
+Minimum_PHD- Lower limit for the pulse height filter (typical value = 2).
+
+Mirror_Hemisphere- Either ‘N’ (north) or ‘S’ (south) for the observed hemisphere.
+
 Number_of_channels- Number of channels of magnetometer. 
 
 OBS_ID- A unique identifier for the observation that is associated with the data acquisition and includes identifying information about: the SOOP; planning period; instrument; and instrument’s observation mode. The format of OBS_ID is defined in [IOR-ICD], and shall be included in the IORs delivered by the Instrument Teams to SOC.
 
+Observation_Complete- 1 if this is the last l1b file in the current observation type otherwise 0 to continue.
+
 Observation_end- The termination date of instrument operation. This is left blank if the instrument is currently in operation.
 
 Observation_start- The start date of instrument operation.
+
+Observation_Type- DAY_DISK, LIMB, NIGHT_DISK_ARCS, or STELLAR_OCCULTATION.
+
+OBS_TYPE- 1 (DAY_DISK), 2 (LIMB), 8 (NIGHT_DISK) or 3 (OCCULTATION).
 
 Process_ID- Process identifier.
 

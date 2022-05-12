@@ -58,7 +58,7 @@
 | Magnetometer_type | | | M |
 | Maximum_PHD | | | | M |
 | Minimum_PHD | | | | M |
-| Mirror_hemisphere |
+| Mirror_hemisphere | | | | M |
 | MLT |
 | Number_of_channels | | | M |
 | Observation_complete |

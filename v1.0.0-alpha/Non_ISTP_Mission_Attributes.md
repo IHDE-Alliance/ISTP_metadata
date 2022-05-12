@@ -40,8 +40,8 @@
 | FRAME_ORIGIN |
 | FRAME_VELOCITY |
 | Geographic_coordinates | | | M |
-| Geographic_latitude |
-| Geographic_longitude |
+| Geographic_latitude | | | M |
+| Geographic_longitude | | | M |
 | Geomagnetic_coordinates |
 | Geomagnetic_latitude |
 | Geomagnetic_longitude |

@@ -73,7 +73,7 @@
 | REFERENCE | | | | | | | | | | O |
 | Representation_i | | M | | | | | | | | 
 | SI_Conversion | | M | | | | | | | | R |
-| _Shuffle | | | | | | M |
+| _Shuffle | | | | | M |
 | Sizes |
 | SOOP_TYPE |
 | spase_DatasetResource | | | | | | | | | | O |

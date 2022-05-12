@@ -55,7 +55,7 @@
 | LEVEL |
 | L_value | | | M |
 | Long_name | | | | | R |
-| Magnetometer_type |
+| Magnetometer_type | | | M |
 | Maximum_PHD |
 | Minimum_PHD |
 | Mirror_hemisphere |

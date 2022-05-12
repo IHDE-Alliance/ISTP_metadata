@@ -61,12 +61,12 @@
 | Mirror_hemisphere | | | | M |
 | MLT |
 | Number_of_channels | | | M |
-| Observation_complete |
+| Observation_complete | | | | M |
 | Observation_end | | | M |
 | Observation_start | | | M |
-| Observation_type |
-| OBS_ID |
-| OBS_TYPE |
+| Observation_type | | | | M |
+| OBS_ID | | | | M |
+| OBS_TYPE | | | | M |
 | Operator_Type |
 | Position |
 | Process_ID |

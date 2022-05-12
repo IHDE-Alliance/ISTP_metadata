@@ -13,7 +13,7 @@
 | B_Eq |
 | CAVEATS | | | | | | | | | | O |
 | Channel_ID |
-| _ChunkingSizes |
+| _ChunkingSizes | | |                                   | M |
 | Coordinate_System |                                                                    | R |
 | CountRate |
 | Data |                            | M|

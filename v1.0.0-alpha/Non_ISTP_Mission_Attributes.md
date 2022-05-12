@@ -28,7 +28,7 @@
 | Dataset_ID |
 | Data_type_2 |
 | D_conversion_factor |
-| _DeflateLevel
+| _DeflateLevel | | | | | M |
 | D_unit |
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
@@ -104,7 +104,7 @@ ACCESS_FORMAT- Format of the file.
 
 Channel_ID- 0 = CHANNEL A 1 = CHANNEL B.
 
-_ChunkingSizes- NetCDF attribute which controls the data arrangement.m
+_ChunkingSizes- NetCDF attribute which controls the data arrangement.
 
 COORDINATE_SYSTEM- For nonscalar data, contains coordinate system name, e.g. ‘HCI’ or ‘RTN.’ Note representation is no longer included.
 
@@ -130,7 +130,7 @@ Data_type_2- Type of observed vector values, e.g., Absolute field, Variation.
 
 D_conversion_factor- Factor used to convert the unit of D-component from degree to nT.
 
-_DeflateLevel- ZLIB compression level from 0 to 9. ICON uses deflate level 6 by default. m
+_DeflateLevel- ZLIB compression level from 0 to 9. ICON uses deflate level 6 by default. 
 
 D_unit- Physical unit of the D-component of the geomagnetic field. 
 

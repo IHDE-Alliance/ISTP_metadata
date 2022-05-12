@@ -43,8 +43,8 @@
 | Geographic_latitude | | | M |
 | Geographic_longitude | | | M |
 | Geomagnetic_coordinates | | | M |
-| Geomagnetic_latitude |
-| Geomagnetic_longitude |
+| Geomagnetic_latitude | | | M |
+| Geomagnetic_longitude | | | M |
 | I | 
 | Job_ID |
 | Known_problems |

@@ -71,7 +71,7 @@
 | Position |
 | Process_ID |
 | REFERENCE | | | | | | | | | | O |
-| Representation_i | | M | | | | | | | | 
+| Representation_i | | M | | | | M | | | | 
 | SI_Conversion | | M | | | | | | | | R |
 | _Shuffle | | | | | M |
 | Sizes |

@@ -27,7 +27,7 @@
 | Data_sampling_type | | | M |
 | Dataset_ID |
 | Data_type_2 | | | M |
-| D_conversion_factor |
+| D_conversion_factor | | | M |
 | _DeflateLevel | | | | | M |
 | D_unit |
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 

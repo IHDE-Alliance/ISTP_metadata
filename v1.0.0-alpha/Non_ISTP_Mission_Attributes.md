@@ -67,7 +67,7 @@
 | Observation_type | | | | M |
 | OBS_ID | | | | M |
 | OBS_TYPE | | | | M |
-| Operator_Type | | | | | | | M |
+| Operator_Type | | | | | | M |
 | Position |
 | Process_ID |
 | REFERENCE | | | | | | | | | | O |

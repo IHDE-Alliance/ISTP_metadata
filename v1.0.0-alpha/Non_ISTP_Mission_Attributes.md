@@ -93,9 +93,9 @@
 | TIME_MAX | | | | | | | | | | O |
 | TIME_MIN | | | | | | | | | | O |
 | UCD |
-| Valid_Max |
-| Valid_Min |
-| Valid_Range | | |
+| Valid_Max | | | | | M |
+| Valid_Min | | | | | M |
+| Valid_Range | | | | | M |
 | Value Type  | | | | | | | | | | 
 
 **Descriptions**
@@ -233,8 +233,8 @@ TIME_MIN- The date and time of the beginning of the first acquisition for the da
 
 UCD- UCD keywords as defined by the IVOA.
 
-Valid_Max- The NetCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. m
+Valid_Max- The NetCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
 
-Valid_Min- The NetCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. m
+Valid_Min- The NetCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
 
-Valid_Range- The NetCDF two length vector containing the minimum and maximum valid values. m
+Valid_Range- The NetCDF two length vector containing the minimum and maximum valid values. 

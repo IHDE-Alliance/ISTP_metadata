@@ -87,7 +87,7 @@
 | TARGET_NAME | | | | | | | | | | R |
 | TARGET_REGION | | | | | | | | | | R |
 | Tensor_Frame | | M | | | | | | | | 
-| Tensor Order | | M | | | | | | | | 
+| Tensor Order | | M | | | | M | | | | 
 | Text_supplement | | | M |
 | Time_calibration_method | | | M |
 | TIME_MAX | | | | | | | | | | O |

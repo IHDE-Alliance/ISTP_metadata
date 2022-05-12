@@ -73,7 +73,7 @@
 | REFERENCE | | | | | | | | | | O |
 | Representation_i | | M | | | | | | | | 
 | SI_Conversion | | M | | | | | | | | R |
-| _Shuffle |
+| _Shuffle | | | | | | M |
 | Sizes |
 | SOOP_TYPE |
 | spase_DatasetResource | | | | | | | | | | O |
@@ -199,7 +199,7 @@ REFERENCE- Bibcode, DOI or URL.
 
 REPRESENTATION_i- Pointer to a support variable that gives the representation (['x','y','z'] for Cartesian; ['r','p','t'] for spherical polar; ['r','p','z'] for cylindrical polar) of the ith dimension of the variable.
 
-_Shuffle- Enables byte shuffling in NetCDF data set for optimized compression performance.m
+_Shuffle- Enables byte shuffling in NetCDF data set for optimized compression performance.
 
 SI_CONVERSION- A string that defines the conversion needed to base SI units, e.g. "1.0E-9>T" for DC Magnetic field data in nT.
 

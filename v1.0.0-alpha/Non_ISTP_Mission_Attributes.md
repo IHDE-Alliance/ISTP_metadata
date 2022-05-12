@@ -104,7 +104,7 @@ ACCESS_FORMAT- Format of the file.
 
 Channel_ID- 0 = CHANNEL A 1 = CHANNEL B.
 
-_ChunkingSizes- 
+_ChunkingSizes- NetCDF attribute which controls the data arrangement.m
 
 COORDINATE_SYSTEM- For nonscalar data, contains coordinate system name, e.g. ‘HCI’ or ‘RTN.’ Note representation is no longer included.
 
@@ -130,9 +130,13 @@ Data_type_2- Type of observed vector values, e.g., Absolute field, Variation.
 
 D_conversion_factor- Factor used to convert the unit of D-component from degree to nT.
 
+_DeflateLevel- ZLIB compression level from 0 to 9. ICON uses deflate level 6 by default. m
+
 D_unit- Physical unit of the D-component of the geomagnetic field. 
 
 Elevation- Elevation of the location of station. 
+
+_FillValue- Used by NetCDF to fill in data that was not explicitly set. This is typed data.m
 
 Free_field- Description of the free field in the filename. It shall use the ISTP format "PREFIX>Suffix" (e.g., "NORM>Normal mode"), where the value of the prefix shall correspond to the "free" field in the file naming convention.
 
@@ -163,6 +167,8 @@ Last_obs_Count_In_File- Identifies the number of packets in the current science 
 
 LEVEL- Data processing level as defined in the Solar Orbiter conventions. It shall use the ISTP format "PREFIX>Suffix" (e.g., "L1>Level 1 data processing"), where the value of the prefix shall correspond to the "level" field in the file naming convention.
 
+Long_Name- A description of the data item in string format similar to the ISTP CatDesc.r
+
 L_value- (Dipole) L value of the location of station.
 
 Magnetometer_type- Type of magnetometer instrument. Usually "Fluxgate" or "Induction." 
@@ -192,6 +198,8 @@ Process_ID- Process identifier.
 REFERENCE- Bibcode, DOI or URL.
 
 REPRESENTATION_i- Pointer to a support variable that gives the representation (['x','y','z'] for Cartesian; ['r','p','t'] for spherical polar; ['r','p','z'] for cylindrical polar) of the ith dimension of the variable.
+
+_Shuffle- Enables byte shuffling in NetCDF data set for optimized compression performance.m
 
 SI_CONVERSION- A string that defines the conversion needed to base SI units, e.g. "1.0E-9>T" for DC Magnetic field data in nT.
 
@@ -224,3 +232,9 @@ TIME_MAX- The date and time of the end of the last acquisition for the data cont
 TIME_MIN- The date and time of the beginning of the first acquisition for the data contained in the file.
 
 UCD- UCD keywords as defined by the IVOA.
+
+Valid_Max- The NetCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. m
+
+Valid_Min- The NetCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. m
+
+Valid_Range- The NetCDF two length vector containing the minimum and maximum valid values. m

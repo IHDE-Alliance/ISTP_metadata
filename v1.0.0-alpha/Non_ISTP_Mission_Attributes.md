@@ -238,3 +238,5 @@ Valid_Max- The NetCDF maximum valid value which is of the same type as the varia
 Valid_Min- The NetCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
 
 Valid_Range- The NetCDF two length vector containing the minimum and maximum valid values. 
+
+Value Type-  This identifies the data type and is necessary for conversion from the ascii entry. 

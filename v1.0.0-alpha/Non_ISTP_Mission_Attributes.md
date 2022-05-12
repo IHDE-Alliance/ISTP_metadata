@@ -17,7 +17,7 @@
 | Coordinate_System | | | | | | R |
 | CountRate |
 | Data |                            | M|
-| Data_coordinates |
+| Data_coordinates | | | | | | M |
 | Data_cycle |
 | Data_level |
 | Data_product |                                                                        | R |

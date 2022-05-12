@@ -53,7 +53,7 @@
 | L_star |
 | Last_obs_count_in_ file |
 | LEVEL |
-| L_value |
+| L_value | | | M |
 | Long_name | | | | | R |
 | Magnetometer_type |
 | Maximum_PHD |

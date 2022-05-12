@@ -29,7 +29,7 @@
 | Data_type_2 | | | M |
 | D_conversion_factor | | | M |
 | _DeflateLevel | | | | | M |
-| D_unit |
+| D_unit | | | M |
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
 | Elevation |

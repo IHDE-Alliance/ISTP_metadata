@@ -24,7 +24,7 @@
 | DATAPRODUCT_TYPE | | | | | | | | | | O |
 | Data_resolution | | | M |
 | Data_revision |
-| Data_sampling_type |
+| Data_sampling_type | | | M |
 | Dataset_ID |
 | Data_type_2 |
 | D_conversion_factor |

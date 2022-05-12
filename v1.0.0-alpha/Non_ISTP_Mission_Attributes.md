@@ -77,9 +77,9 @@
 | Sizes |
 | SOOP_TYPE |
 | spase_DatasetResource | | | | | | | | | | O |
-| spase_DatasetResourceID | | | | | | | | | O |
+| spase_DatasetResourceID | | | | | | | | | | O |
 | spase_GranuleResource | | | | | | | | | | O |
-| spase_GranuleResourceID | | | | | | | | | O |
+| spase_GranuleResourceID | | | | | | | | | | O |
 | SPECIES |
 | Station_code |
 | Station_name |

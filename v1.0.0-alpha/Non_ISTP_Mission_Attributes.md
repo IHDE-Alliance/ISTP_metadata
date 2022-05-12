@@ -54,7 +54,7 @@
 | Last_obs_count_in_ file |
 | LEVEL |
 | L_value |
-| Long_name |
+| Long_name | | | | | R |
 | Magnetometer_type |
 | Maximum_PHD |
 | Minimum_PHD |
@@ -167,7 +167,7 @@ Last_obs_Count_In_File- Identifies the number of packets in the current science 
 
 LEVEL- Data processing level as defined in the Solar Orbiter conventions. It shall use the ISTP format "PREFIX>Suffix" (e.g., "L1>Level 1 data processing"), where the value of the prefix shall correspond to the "level" field in the file naming convention.
 
-Long_Name- A description of the data item in string format similar to the ISTP CatDesc.r
+Long_Name- A description of the data item in string format similar to the ISTP CatDesc.
 
 L_value- (Dipole) L value of the location of station.
 

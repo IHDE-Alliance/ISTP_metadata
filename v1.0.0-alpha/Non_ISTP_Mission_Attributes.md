@@ -70,7 +70,7 @@
 | Operator_Type |
 | Position |
 | Process_ID |
-| REFERENCE | | | | | | | | | | | | | | O |
+| REFERENCE | | | | | | | | | | O |
 | Representation_i | | M | | | | | | | | 
 | SI_Conversion | | M | | | | | | | | R |
 | _Shuffle |

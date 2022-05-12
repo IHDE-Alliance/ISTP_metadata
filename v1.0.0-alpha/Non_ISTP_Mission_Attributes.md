@@ -33,7 +33,7 @@
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
 | Elevation | | | M |
-| _FillValue |
+| _FillValue | | | | | M |
 | FLUX_PTR |
 | Free_field |
 | Frame | | M | | | | | | | | 

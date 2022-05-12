@@ -18,12 +18,12 @@
 | CountRate |
 | Data |                            | M|
 | Data_coordinates | | | M |
-| Data_cycle |
-| Data_level |
+| Data_cycle | | | | M |
+| Data_level | | | | M |
 | Data_product |                                                                        | R |
 | DATAPRODUCT_TYPE | | | | | | | | | | O |
 | Data_resolution | | | M |
-| Data_revision |
+| Data_revision | | | | M |
 | Data_sampling_type | | | M |
 | Dataset_ID |
 | Data_type_2 | | | M |

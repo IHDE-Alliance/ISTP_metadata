@@ -77,7 +77,7 @@
 | Sizes |
 | SOOP_TYPE |
 | spase_DatasetResource | | | | | | |M | | | O |
-| spase_DatasetResourceID | | | | | |O| | | | O |
+| spase_DatasetResourceID | | | | | | O| | | | O |
 | spase_GranuleResource | | | | | | | O| | | O |
 | spase_GranuleResourceID | | | | | | |O | | | O |
 | SPECIES |

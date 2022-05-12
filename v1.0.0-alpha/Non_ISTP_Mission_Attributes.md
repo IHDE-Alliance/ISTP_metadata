@@ -83,9 +83,9 @@
 | SPECIES |
 | Station_code |
 | Station_name |
-| TARGET_CLASS |
-| TARGET_NAME | | | | | | | | | | | | | R |
-| TARGET_REGION |
+| TARGET_CLASS | | | | | | | | | | R |
+| TARGET_NAME | | | | | | | | | | R |
+| TARGET_REGION | | | | | | | | | | R |
 | Tensor_Frame | | M | | | | | | | | 
 | Tensor Order | | M | | | | | | | | 
 | Text_supplement |

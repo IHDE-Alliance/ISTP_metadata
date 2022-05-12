@@ -56,8 +56,8 @@
 | L_value | | | M |
 | Long_name | | | | | R |
 | Magnetometer_type | | | M |
-| Maximum_PHD |
-| Minimum_PHD |
+| Maximum_PHD | | | | M |
+| Minimum_PHD | | | | M |
 | Mirror_hemisphere |
 | MLT |
 | Number_of_channels | | | M |

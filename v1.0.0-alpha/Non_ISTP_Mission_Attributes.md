@@ -39,7 +39,7 @@
 | Frame | | M | | | | | | | | 
 | FRAME_ORIGIN |
 | FRAME_VELOCITY |
-| Geographic_coordinates |
+| Geographic_coordinates | | | M |
 | Geographic_latitude |
 | Geographic_longitude |
 | Geomagnetic_coordinates |

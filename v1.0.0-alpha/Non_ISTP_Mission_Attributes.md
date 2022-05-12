@@ -26,7 +26,7 @@
 | Data_revision |
 | Data_sampling_type | | | M |
 | Dataset_ID |
-| Data_type_2 |
+| Data_type_2 | | | M |
 | D_conversion_factor |
 | _DeflateLevel | | | | | M |
 | D_unit |

@@ -42,7 +42,7 @@
 | Geographic_coordinates | | | M |
 | Geographic_latitude | | | M |
 | Geographic_longitude | | | M |
-| Geomagnetic_coordinates |
+| Geomagnetic_coordinates | | | M |
 | Geomagnetic_latitude |
 | Geomagnetic_longitude |
 | I | 

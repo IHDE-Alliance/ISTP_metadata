@@ -6,7 +6,7 @@
 
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
-| ACCESS_FORMAT | 
+| ACCESS_FORMAT | | | | | | | | | | O |
 | Alpha |                            
 | Alpha_Eq |    
 | B_Calc| 
@@ -21,7 +21,7 @@
 | Data_cycle |
 | Data_level |
 | Data_product |                                                                        | R |
-| DATAPRODUCT_TYPE |
+| DATAPRODUCT_TYPE | | | | | | | | | | O |
 | Data_resolution | 
 | Data_revision |
 | Data_sampling_type |

@@ -81,8 +81,8 @@
 | spase_GranuleResource | | | | | | | O| | | O |
 | spase_GranuleResourceID | | | | | | |O | | | O |
 | SPECIES |
-| Station_code |
-| Station_name |
+| Station_code | | | M |
+| Station_name | | | M |
 | TARGET_CLASS | | | | | | | | | | R |
 | TARGET_NAME | | | | | | | | | | R |
 | TARGET_REGION | | | | | | | | | | R |

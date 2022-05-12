@@ -60,7 +60,7 @@
 | Minimum_PHD |
 | Mirror_hemisphere |
 | MLT |
-| Number_of_channels |
+| Number_of_channels | | | M |
 | Observation_complete |
 | Observation_end |
 | Observation_start |

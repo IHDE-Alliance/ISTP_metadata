@@ -32,7 +32,7 @@
 | D_unit | | | M |
 | Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
-| Elevation |
+| Elevation | | | M |
 | _FillValue |
 | FLUX_PTR |
 | Free_field |

@@ -102,7 +102,9 @@
 
 ACCESS_FORMAT- Format of the file.
 
-Channel_ID- 0 = CHANNEL A 1 = CHANNEL B
+Channel_ID- 0 = CHANNEL A 1 = CHANNEL B.
+
+_ChunkingSizes- 
 
 COORDINATE_SYSTEM- For nonscalar data, contains coordinate system name, e.g. ‘HCI’ or ‘RTN.’ Note representation is no longer included.
 

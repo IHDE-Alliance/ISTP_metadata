@@ -90,8 +90,8 @@
 | Tensor Order | | M | | | | | | | | 
 | Text_supplement |
 | Time_calibration_method |
-| TIME_MAX |
-| TIME_MIN |
+| TIME_MAX | | | | | | | | | | O |
+| TIME_MIN | | | | | | | | | | O |
 | UCD |
 | Valid_Max |
 | Valid_Min |

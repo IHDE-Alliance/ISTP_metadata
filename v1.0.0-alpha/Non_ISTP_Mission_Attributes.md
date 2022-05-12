@@ -62,8 +62,8 @@
 | MLT |
 | Number_of_channels | | | M |
 | Observation_complete |
-| Observation_end |
-| Observation_start |
+| Observation_end | | | M |
+| Observation_start | | | M |
 | Observation_type |
 | OBS_ID |
 | OBS_TYPE |

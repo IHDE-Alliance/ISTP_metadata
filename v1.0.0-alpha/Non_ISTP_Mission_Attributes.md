@@ -47,8 +47,8 @@
 | Geomagnetic_longitude | | | M |
 | I | 
 | Job_ID |
-| Known_problems |
-| K9_limit |
+| Known_problems | | | M |
+| K9_limit | | | M |
 | L |
 | L_star |
 | Last_obs_count_in_ file |

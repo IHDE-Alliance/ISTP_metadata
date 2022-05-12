@@ -22,7 +22,7 @@
 | Data_level |
 | Data_product |                                                                        | R |
 | DATAPRODUCT_TYPE | | | | | | | | | | O |
-| Data_resolution | 
+| Data_resolution | | | M |
 | Data_revision |
 | Data_sampling_type |
 | Dataset_ID |

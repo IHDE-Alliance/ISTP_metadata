@@ -88,8 +88,8 @@
 | TARGET_REGION | | | | | | | | | | R |
 | Tensor_Frame | | M | | | | | | | | 
 | Tensor Order | | M | | | | | | | | 
-| Text_supplement |
-| Time_calibration_method |
+| Text_supplement | | | M |
+| Time_calibration_method | | | M |
 | TIME_MAX | | | | | | | | | | O |
 | TIME_MIN | | | | | | | | | | O |
 | UCD |

@@ -61,7 +61,7 @@
 | OBS_TYPE | | | | M |
 | Operator_Type | | | | | | M |
 | Planet | | | | | | | | M |
-| Process_ID |
+| Process_ID | | | | | | | | | | O |
 | REFERENCE | | | | | | | | | | O |
 | Representation_i | | M | | | | M | | | | 
 | SI_Conversion | | M | | | | | | | | R |

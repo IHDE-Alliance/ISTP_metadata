@@ -30,7 +30,7 @@
 | Elevation | | | M |
 | _FillValue | | | | | M |
 | FLUX_PTR | | | | | | | | | M |
-| Free_field |
+| Free_field | | | | | | | | | | R |
 | Frame | | M | | | | | | | | 
 | FRAME_ORIGIN |
 | FRAME_VELOCITY |

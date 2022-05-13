@@ -41,7 +41,7 @@
 | Geomagnetic_latitude | | | M |
 | Geomagnetic_longitude | | | M |
 | Generated_with_software | | | | | | | | M |
-| Job_ID |
+| Job_ID | | | | | | | | | | O |
 | Known_problems | | | M |
 | K9_limit | | | M |
 | Last_obs_count_in_ file | | | | M |

@@ -72,7 +72,7 @@
 | spase_DatasetResourceID | | | | | | | O| | |O |
 | spase_GranuleResource | | | | | | | O| | | O |
 | spase_GranuleResourceID | | | | | | |O | | | O |
-| SPECIES |
+| SPECIES | | | | | | | | | M |
 | Station_code | | | M |
 | Station_name | | | M |
 | TARGET_CLASS | | | | | | | | | | R |

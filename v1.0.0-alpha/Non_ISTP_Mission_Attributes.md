@@ -15,7 +15,7 @@
 | Channel_ID | | | | M |
 | _ChunkingSizes | | | | | M |
 | Coordinate_System | | | | | | R |
-| CountRate |
+| CountRate | | | | | | | | M |
 | Data |                            | M|
 | Data_coordinates | | | M |
 | Data_cycle | | | | M |

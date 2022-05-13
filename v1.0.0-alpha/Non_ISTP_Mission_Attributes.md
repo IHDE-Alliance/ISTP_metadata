@@ -45,7 +45,7 @@
 | Known_problems | | | M |
 | K9_limit | | | M |
 | Last_obs_count_in_ file | | | | M |
-| LEVEL |
+| LEVEL | | | | | | | | | | M |
 | L_value | | | M |
 | Long_name | | | | | R |
 | Magnetometer_type | | | M |
@@ -93,6 +93,8 @@
 **Descriptions**
 
 ACCESS_FORMAT- Format of the file.
+
+CAVEATS- Information which may be important in the avoidance of the misuse of the resource, for instance the assumptions or limitations on data processing modelings or inversions.
 
 Channel_ID- 0 = CHANNEL A 1 = CHANNEL B.
 

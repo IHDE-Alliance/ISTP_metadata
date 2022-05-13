@@ -57,7 +57,7 @@
 | Observation_end | | | M |
 | Observation_start | | | M |
 | Observation_type | | | | M |
-| OBS_ID | | | | M |
+| OBS_ID | | | | M | | | | | | R |
 | OBS_TYPE | | | | M |
 | Operator_Type | | | | | | M |
 | Planet | | | | | | | | M |

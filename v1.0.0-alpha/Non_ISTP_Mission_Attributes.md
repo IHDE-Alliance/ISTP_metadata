@@ -40,6 +40,7 @@
 | Geomagnetic_coordinates | | | M |
 | Geomagnetic_latitude | | | M |
 | Geomagnetic_longitude | | | M |
+| Generated_with_software | | | | | | | M |
 | Job_ID |
 | Known_problems | | | M |
 | K9_limit | | | M |
@@ -59,6 +60,7 @@
 | OBS_ID | | | | M |
 | OBS_TYPE | | | | M |
 | Operator_Type | | | | | | M |
+| Planet | | | | | | | | M |
 | Process_ID |
 | REFERENCE | | | | | | | | | | O |
 | Representation_i | | M | | | | M | | | | 

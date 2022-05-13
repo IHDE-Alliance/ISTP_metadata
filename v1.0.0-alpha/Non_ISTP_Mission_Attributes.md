@@ -66,7 +66,7 @@
 | Representation_i | | M | | | | M | | | | 
 | SI_Conversion | | M | | | | | | | | R |
 | _Shuffle | | | | | M |
-| Sizes |
+| Sizes | | M |
 | SOOP_TYPE | | | | | | | | | | R |
 | spase_DatasetResource | | | | | | |M | | | O |
 | spase_DatasetResourceID | | | | | | | O| | |O |

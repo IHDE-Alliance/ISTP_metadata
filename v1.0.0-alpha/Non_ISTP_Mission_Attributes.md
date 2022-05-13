@@ -7,15 +7,10 @@
 | Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | ACCESS_FORMAT | | | | | | | | | | O |
-| Alpha | | | | | | | | M |                           
-| Alpha_Eq | | | | | | | | M |   
-| B_Calc| | | | | | | | M |
-| B_Eq | | | | | | | | M |
 | CAVEATS | | | | | | | | | | O |
 | Channel_ID | | | | M |
 | _ChunkingSizes | | | | | M |
 | Coordinate_System | | | | | | R |
-| CountRate | | | | | | | | M |
 | Data |                            | M|
 | Data_coordinates | | | M |
 | Data_cycle | | | | M |
@@ -45,12 +40,9 @@
 | Geomagnetic_coordinates | | | M |
 | Geomagnetic_latitude | | | M |
 | Geomagnetic_longitude | | | M |
-| I | 
 | Job_ID |
 | Known_problems | | | M |
 | K9_limit | | | M |
-| L |
-| L_star |
 | Last_obs_count_in_ file | | | | M |
 | LEVEL |
 | L_value | | | M |
@@ -59,7 +51,6 @@
 | Maximum_PHD | | | | M |
 | Minimum_PHD | | | | M |
 | Mirror_hemisphere | | | | M |
-| MLT |
 | Number_of_channels | | | M |
 | Observation_complete | | | | M |
 | Observation_end | | | M |
@@ -68,7 +59,6 @@
 | OBS_ID | | | | M |
 | OBS_TYPE | | | | M |
 | Operator_Type | | | | | | M |
-| Position |
 | Process_ID |
 | REFERENCE | | | | | | | | | | O |
 | Representation_i | | M | | | | M | | | | 

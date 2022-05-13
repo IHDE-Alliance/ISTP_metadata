@@ -84,7 +84,6 @@
 | Time_calibration_method | | | M |
 | TIME_MAX | | | | | | | | | | O |
 | TIME_MIN | | | | | | | | | | O |
-| UCD |
 | Valid_Max | | | | | M |
 | Valid_Min | | | | | M |
 | Valid_Range | | | | | M |
@@ -224,8 +223,6 @@ Time_calibration_method- Time recording method for observation, e.g., "GPS."
 TIME_MAX- The date and time of the end of the last acquisition for the data contained in the file.
 
 TIME_MIN- The date and time of the beginning of the first acquisition for the data contained in the file.
-
-UCD- UCD keywords as defined by the IVOA.
 
 Valid_Max- The NetCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
 

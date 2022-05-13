@@ -88,7 +88,7 @@
 | Valid_Max | | | | | M |
 | Valid_Min | | | | | M |
 | Valid_Range | | | | | M |
-| Value Type  | | | | | | | | | | 
+| Value Type  | M | | | | | | | | | 
 
 **Descriptions**
 

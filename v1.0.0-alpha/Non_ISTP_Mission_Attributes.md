@@ -45,7 +45,7 @@
 | Known_problems | | | M |
 | K9_limit | | | M |
 | Last_obs_count_in_ file | | | | M |
-| LEVEL | | | | | | | | | | M |
+| LEVEL | | | | | | | | | | R |
 | L_value | | | M |
 | Long_name | | | | | R |
 | Magnetometer_type | | | M |

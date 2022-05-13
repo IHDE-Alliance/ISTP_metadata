@@ -40,7 +40,7 @@
 | Geomagnetic_coordinates | | | M |
 | Geomagnetic_latitude | | | M |
 | Geomagnetic_longitude | | | M |
-| Generated_with_software | | | | | | | M |
+| Generated_with_software | | | | | | | | M |
 | Job_ID |
 | Known_problems | | | M |
 | K9_limit | | | M |

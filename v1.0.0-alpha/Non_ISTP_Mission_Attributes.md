@@ -29,7 +29,7 @@
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
 | Elevation | | | M |
 | _FillValue | | | | | M |
-| FLUX_PTR |
+| FLUX_PTR | | | | | | | | | M |
 | Free_field |
 | Frame | | M | | | | | | | | 
 | FRAME_ORIGIN |

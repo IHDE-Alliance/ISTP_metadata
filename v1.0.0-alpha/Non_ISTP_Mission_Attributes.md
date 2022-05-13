@@ -67,7 +67,7 @@
 | SI_Conversion | | M | | | | | | | | R |
 | _Shuffle | | | | | M |
 | Sizes |
-| SOOP_TYPE |
+| SOOP_TYPE | | | | | | | | | | R |
 | spase_DatasetResource | | | | | | |M | | | O |
 | spase_DatasetResourceID | | | | | | | O| | |O |
 | spase_GranuleResource | | | | | | | O| | | O |

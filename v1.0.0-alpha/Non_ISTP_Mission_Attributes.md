@@ -32,8 +32,6 @@
 | FLUX_PTR | | | | | | | | | M |
 | Free_field | | | | | | | | | | R |
 | Frame | | M | | | | | | | | 
-| FRAME_ORIGIN |
-| FRAME_VELOCITY |
 | Geographic_coordinates | | | M |
 | Geographic_latitude | | | M |
 | Geographic_longitude | | | M |
@@ -132,11 +130,6 @@ Elevation- Elevation of the location of station.
 _FillValue- Used by NetCDF to fill in data that was not explicitly set. This is typed data.m
 
 Free_field- Description of the free field in the filename. It shall use the ISTP format "PREFIX>Suffix" (e.g., "NORM>Normal mode"), where the value of the prefix shall correspond to the "free" field in the file naming convention.
-
-FRAME_ORIGIN- gives the origin of the reference frame where this is not implicit in the value of COORDINATE_SYSTEM.
-
-FRAME_VELOCITY- can take either the value 'Observatory' where no corrections have been applied to the data or 'Inertial' where quantities (e.g. electric 
-field or plasma flow velocity) have been corrected for spacecraft motion relative to an inertial frame (HCI).
 
 Geographic_coordinates- What kind of geographic coordinate system is used for the following latitude and longitude. Usually either of geodetic or geographic. 
 

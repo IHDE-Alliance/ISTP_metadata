@@ -23,7 +23,7 @@ In this section conventions associated with filenames are described as well as t
 
 *Filename*
 
-CDF files should have the file name extension ".nc".
+CDF files should have the file name extension ".cdf".
 
 
 *Data Types*
@@ -42,8 +42,6 @@ This convention does not standardize any variable or dimension names. Attribute 
 
 *Dimensions*
 
-This convention does not standardize any variable or dimension names. Attribute names and their contents, where standardized, are given in English in this document and should appear in English in conforming CDF files for the sake of portability. Languages other than English are permitted for variables, dimensions, and non-standardized attributes. The content of some standardized attributes are string values that are not standardized, and thus are not required to be in English. For example, a description of what a variable represents may be given in a non-English language using the long_name attribute whose contents are not standardized, but a description given by the standard_name attribute must be taken from the standard name table which is in English.
-
 If any or all of the dimensions of a variable have the interpretations of "date or time" (T), "height or depth" (Z), "latitude" (Y), or "longitude" (X) then we recommend, but do not require, those dimensions to appear in the relative order T, then Z, then Y, then X in the CDL definition corresponding to the file. All other dimensions should, whenever possible, be placed to the left of the spatiotemporal dimensions.
 
 Dimensions may be of any size, including unity. When a single value of some coordinate applies to all the values in a variable, the recommended means of attaching this information to the variable is by use of a dimension of size unity with a one-element coordinate variable. It is also acceptable to use a scalar coordinate variable which eliminates the need for an associated size one dimension in the data variable. The advantage of using either a coordinate variable or an auxiliary coordinate variable is that all its attributes can be used to describe the single-valued quantity, including boundaries. For example, a variable containing data for temperature at 1.5 m above the ground has a single-valued coordinate supplying a height of 1.5 m, and a time-mean quantity has a single-valued time coordinate with an associated boundary variable to record the start and end of the averaging period.
@@ -56,33 +54,10 @@ CDF variables that contain coordinate data are referred to as coordinate variabl
 
 
 
-# try hiding sections
-<details><summary>Global attributes</summary>
-  # Global Attributes
-
-Global attributes are used to provide information about the data set as an entity. Together with variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence, a good archive product. The global attributes are also used by the Coordinated Data Analysis Web ([CDAWeb)](https://cdaweb.gsfc.nasa.gov/) Display and Retrieval system. The required Global Attributes are listed here with example values. Note that Common Data Format (CDF) attributes are case-sensitive and must **exactly** follow what is shown here. Additional Global attributes can be defined but **they must start with a letter and can otherwise contain letters, numbers and the unscore character (no other special characters allowed).** See [Global Attribute Definitions](https://spdf.gsfc.nasa.gov/istp_guide/gattributes.html#gdefinitions) for the full set of defined Global Attributes.
-</details>
 
 
-  ## failed attempts at including other markdown files:
-  
-  
-Try as include:
-@@include[02_metadata-global-attributes.md](02_metadata-global-attributes.md)
 
-:(02_metadata-global-attributes.md)
 
-!!!(02_metadata-global-attributes.md)!!!
-
-@[:markdown](02_metadata-global-attributes.md)
-
-{02_metadata-global-attributes.md}
-
-{% include "02_metadata-global-attributes.md" %}
-
-{% include "git+https://github.com/HDE-Alliance/ISTP_metadata/edit/main/v1.0.0-alpha/01_metadata-intro.md" %}
-
-<iframe src="02_metadata-global-attributes.md" seamless></iframe>
 
 
 Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

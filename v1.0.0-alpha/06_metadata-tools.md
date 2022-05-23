@@ -4,11 +4,11 @@ Use SKTEditor (https://spdf.gsfc.nasa.gov/skteditor/), which is a JAVA downloada
 
 Adding Data to Skeleton CDFs
 
-Use IDLmakecdf program
+**Use IDLmakecdf program**
 
 produces a CDF file using IDL with a Skeleton CDF file and user-supplied IDL code to read user data.
 
-IDLmakecdf (IDL software and on-line help)
+- IDLmakecdf- https://spdf.gsfc.nasa.gov/CDAWlib.html (IDL software and on-line help)
 
 Use makeCDF program
 

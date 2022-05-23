@@ -10,9 +10,10 @@ produces a CDF file using IDL with a Skeleton CDF file and user-supplied IDL cod
 
 - IDLmakecdf- https://spdf.gsfc.nasa.gov/CDAWlib.html (IDL software and on-line help)
 
-Use makeCDF program
+**Use makeCDF program**
 
 produces a CDF file (using C) when given 3 input files: (1) data file, (2) translation file, (3) Skeleton CDF file.
-
+- On-line Tutorial- https://spdf.gsfc.nasa.gov/makecdf.html#help
+- makeCDF program- https://spdf.gsfc.nasa.gov/makecdf.html
 
 Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

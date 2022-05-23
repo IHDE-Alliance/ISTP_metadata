@@ -141,8 +141,7 @@ This is distinct from the date in "validate" below which records the times of la
 - Ground-Based Very Low Frequency (VLF)/Extremely Low Frequency (ELF)/Ultralow Frequency (ULF), Photometers
 
 ## LINK_TEXT
-  (Recommended) This attribute stores text describing on-line data available at PI or CoI web sites. This attribute is used in conjunction with "LINK_TITLE" and "HTTP_LINK." There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TITLE" and "HTTP_LINK" for each "LINK_TEXT" entry. CDAWeb will then link to the URL given by
-"HTTP_LINK" using the "LINK_TITLE" and the description in "LINK_TEXT," on the CDAWeb Data Explorer page. For example:
+  (Recommended) This attribute stores text describing on-line data available at PI or CoI web sites. This attribute is used in conjunction with "LINK_TITLE" and "HTTP_LINK." There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TITLE" and "HTTP_LINK" for each "LINK_TEXT" entry. CDAWeb will then link to the URL given by "HTTP_LINK" using the "LINK_TITLE" and the description in "LINK_TEXT," on the CDAWeb Data Explorer page. For example:
 
 - "LINK_TEXT" = 3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at
 
@@ -220,7 +219,7 @@ This attribute identifies the name of the project and indicates ownership. For I
   Others may be defined in the future. This attribute can be multi-valued if the data has been supplied to more than one project.
 
 ## Rules_of_use 
-  (Recommended) Text containing information on, {\it e.g.} citability and PI access restrictions. This may point to a World Wide Web page specifying the rules of use.
+  (Recommended) Text containing information on, it e.g. citability and PI access restrictions. This may point to a World Wide Web page specifying the rules of use.
 
 ## Skeleton_version 
   (Optional) This is a text attribute containing the skeleton file version number. This is a required

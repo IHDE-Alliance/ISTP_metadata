@@ -1,6 +1,6 @@
 **Instrument-Specific Skeleton CDFs**
 
-Use SKTEditor, which is a JAVA downloadable program that aids the user with the creation of a Skeleton CDF.
+Use SKTEditor (https://spdf.gsfc.nasa.gov/skteditor/), which is a JAVA downloadable program that aids the user with the creation of a Skeleton CDF.
 
 Adding Data to Skeleton CDFs
 

@@ -11,7 +11,7 @@ We provide a standard set of class keywords that include 'sensor (science)' and 
 | ------------- | ---------------| -------------   |	
 | Anisotropy	|The variation of physical properties with direction, usually expressed as a ratio |  parallel
 | Angle 	|The geometric figure formed by two lines diverging from a point or two planes diverging from a common line or the space between two such lines or surfaces| antenna, elevation, pitch, aspect, fov, pointing, axis, geometric, polar, azimuth, inclination, rotation, phase, sector
-| Current | 	The rate of flow of electricity | hall, primary, load, secondary	
+| Current | 	The rate of flow of electricity | Hall, primary, load, secondary	
 | Energy | 	The property of a system that is a measure of its capacity for doing work| band, channel, incident, reflected	
 | Density | The mass per unit volume of a substance, or the number of items per unit volume | partial, mass, number
 | Flag | An entity that signals the occurance of an event, or that indicates a particular status of a spacecraft or instrument or software program. The flag can be a number, letter, or word, and may have any of a variety of encoded meanings | number, quality, post_gap, status

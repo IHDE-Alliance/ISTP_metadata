@@ -103,7 +103,7 @@ closer to 0.0.
 
 - **Geotail EPI:** Ion Diff. Intensity, at 12 energies 67-1361 keV
 
-- **Wind Magnetic Field Ion (MFI):** Magnetic Field, Cartesian GSM coordinates
+- **Wind Magnetic Field Investigation (MFI):** Magnetic Field, Cartesian GSM coordinates
 
 - **Geotail Electric Field Detector (EFD):** Electric Field from spherical probe, sunwd \ duskwd comp
 
@@ -218,7 +218,7 @@ character string) representing the desired output format for the original variab
 (Required if not using LABLAXIS) Is used to label a dimensional variable when one value of LABLAXIS is not sufficient to describe the variable or to label all the axes. LABL_PTR_i is used *instead of* LABLAXIS, where *i* can take on any value from 1 to *n* where *n* is the total number of dimensions of the original variable. The value of LABL_PTR_1 is a variable which will contain the short character strings which describe the first dimension of the original variable. The actual labels should be short as described above for LABLAXIS. **The value of the attribute must be a variable in the same CDF data set.** See [example (https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg2).
 
 ## LEAP_SECONDS_INCLUDED
-(Recommended for UTC only) Comma-delimited list (within brackets) of leap seconds included in the form of a lists of ISO8601 times when each leap second was added, appended with the size of the leap second in ISO8601 relative time (+/- time, most commonly: "+1s") [default: standard list of leap seconds up to time of data]. Leap_Seconds_Included is needed to account for time scales that don't have all 34 (in 2009) leap seconds and for the clocks in various countries that started using leap seconds at different times. The full list is required to handle the equally or more common case where a time scale starts at a specific Universal Time Coordinate (UTC) but continues on without leap seconds in TAI mode; this is basically what missions that don't add leap seconds are doing.
+(Recommended for UTC only) Comma-delimited list (within brackets) of leap seconds included in the form of a lists of ISO8601 times when each leap second was added, appended with the size of the leap second in ISO8601 relative time (+/- time, most commonly: "+1s") [default: standard list of leap seconds up to time of data]. Leap_Seconds_Included is needed to account for time scales that don't have all 37 (in 2022) leap seconds and for the clocks in various countries that started using leap seconds at different times. The full list is required to handle the equally or more common case where a time scale starts at a specific Universal Time Coordinate (UTC) but continues on without leap seconds in TAI mode; this is basically what missions that don't add leap seconds are doing.
 
 $ cat tai-utc.dat | awk
 'ORS="," { val = $7 - prev } {prev = $7} { print $1$2"01+"val "s" }'

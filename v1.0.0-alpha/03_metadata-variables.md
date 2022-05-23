@@ -77,11 +77,11 @@ These are variables of secondary importance e.g., a variable holding "Bx,By,Bz" 
 
 ***General***
 
-The following CDF variable specifications are required. Metadata is always character type. Metadata is always time invariant if it is used to label a data variable. Metadata can be time varying if it is NOT used as a label. If a metadata variable is attached to a data variable via LABL_PTR_i, then it must be of the same size as the dimension i. See example in Appendix A, Page 34. Character metadata must define the number of elements to be the same as the number of characters used in its value. See Appendix A, Page 35 for details.
+The following CDF variable specifications are required. Metadata is always character type. Metadata is always time invariant if it is used to label a data variable. Metadata can be time varying if it is NOT used as a label. If a metadata variable is attached to a data variable via LABL_PTR_i, then it must be of the same size as the dimension i. Character metadata must define the number of elements to be the same as the number of characters used in its value. 
 
 **Variable Display**
 
-The dependencies and labels that need to be included with a data variable depend both on the data variable's dimensionality and on how the data variable will be displayed. Several data variables are displayed in Appendix B. They point out which attributes and associated support_data and metadata variables are used to label the display.
+The dependencies and labels that need to be included with a data variable depend both on the data variable's dimensionality and on how the data variable will be displayed. They point out which attributes and associated support_data and metadata variables are used to label the display.
 
 **Required support_data variables**
 

@@ -4,6 +4,8 @@
 
 We display below the Ion Number Density from the example [simple scalar density](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg1). The y-axis labels come from variable attributes LABLAXIS and UNITS. The x-axis if defined by the Epoch variable (time). Ion Number Density is tied to its time tag using the DEPEND_0 variable attribute. (Ion Number Density has 0 dimensions and does not need any other DEPEND_i defined.)
 
+![image](https://user-images.githubusercontent.com/94626382/170086225-3e6d12da-eba3-4de1-9972-d05fd8dcbe1e.png)
+
 **1D - size 3 Time Series**
 
 We display below the Magnetic Field from the example [vector magnetic field](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg2). The y-axis

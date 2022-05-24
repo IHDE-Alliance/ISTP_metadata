@@ -1,6 +1,5 @@
 **Appendix A- Examples**
 
-***Examples of data and support_data variables***
 
 Examples of data and support_data variables commonly found in ISTP/IACG investigations are shown in the image below. They are mapped to their corresponding dimensions and sizes in CDF.
 
@@ -16,6 +15,7 @@ orthogonal components in some coordinate system, stored in one-dimension of size
 
 - The image array (**data**) maps into a two-dimensional variable with sizes 256 and 256. Latitude and longitude (**support_data**) are one-dimensional variables of size 256, providing the necessary coordinate indices for the image array.
 
+***Data***
 ***Example of a simple scalar data variable***
 
 We show here the variable, Ion number density, as it would appear in a CDF Skeleton table. We include all required variable attributes. Some recommended variable attributes are also shown. See the [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Scalar%20(0D)%20Time%20Series) of this variable.
@@ -150,7 +150,7 @@ We show here the variable, H+ number flux, as it would appear in a CDF Skeleton 
 
 ```
 
-**Variable Examples**
+**Support_Data**
 
 ***Example of Epoch time***
 
@@ -249,6 +249,7 @@ We show here the variable, Ion Energy, as it would appear in a CDF Skeleton tabl
  "VAR_TYPE"           CDF_CHAR      { "support_data" }.
 
 ```
+***Metadata***
 ***Example of a 1D size 3 metadata variable***
 
 This metadata variable labels the cartesian GSE magnetic field (1D size 3) data variable. See this variable used in a [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#1D%20Time%20Series)<u><span>.</span></u>

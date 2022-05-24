@@ -4,7 +4,7 @@
 - R - recommended by mission
 - O - optional for mission
 
-| Attributes | ISTP alternative | Cluster | ERG | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
+| Attributes | ISTP alternative | Cluster | Arase (ERG) | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | ACCESS_FORMAT | | | | | | | | | | O |
 | CAVEATS | | | | | | | | | | O |
@@ -99,6 +99,8 @@ _ChunkingSizes- NetCDF attribute which controls the data arrangement.
 
 COORDINATE_SYSTEM- For nonscalar data, contains coordinate system name, e.g. ‘HCI’ or ‘RTN.’ Note representation is no longer included.
 
+Data- Used to provide the values of variables which are fixed for all records of a dataset.
+
 Data_coordinates- Coordinate system used for observed magnetic field vector. "Other" means that an instrument-specific coordinate system is used.
 
 Data_Cycle- Data cycle sequence number.
@@ -123,11 +125,17 @@ D_conversion_factor- Factor used to convert the unit of D-component from degree 
 
 _DeflateLevel- ZLIB compression level from 0 to 9. ICON uses deflate level 6 by default. 
 
+Delta_Minus-  Describes the range over which the data are integrated, representative, etc, and locate the position of the time tag or value within this range.
+
+Delta_Plus- Describes the range over which the data are integrated, representative, etc, and locate the position of the time tag or value within this range.
+
 D_unit- Physical unit of the D-component of the geomagnetic field. 
 
 Elevation- Elevation of the location of station. 
 
 _FillValue- Used by NetCDF to fill in data that was not explicitly set. This is typed data.m
+
+Frame- 
 
 Free_field- Description of the free field in the filename. It shall use the ISTP format "PREFIX>Suffix" (e.g., "NORM>Normal mode"), where the value of the prefix shall correspond to the "free" field in the file naming convention.
 
@@ -189,6 +197,8 @@ _Shuffle- Enables byte shuffling in NetCDF data set for optimized compression pe
 
 SI_CONVERSION- A string that defines the conversion needed to base SI units, e.g. "1.0E-9>T" for DC Magnetic field data in nT.
 
+Sizes-  Essential for any variable that has more than one element, such as arrays and vectors.
+
 spase_DatasetResource- The SPASE XML description of the dataset that corresponds to the SPASE ResourceID.
 
 spase_DatasetResourceID- The SPASE ResourceID assigned of the NumericalData resource the data file is part of.
@@ -208,6 +218,8 @@ TARGET_CLASS- Class of the target.
 TARGET_NAME- Name of the target. 
 
 TARGET_REGION- Region where the target is observed.
+
+Tensor_Frame- 
 
 TENSOR_ORDER- Contains the rank or order of a tensor, i.e. 1 for a vector, 2 for a 3x3 tensor.
 

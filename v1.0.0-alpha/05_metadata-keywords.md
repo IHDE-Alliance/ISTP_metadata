@@ -61,15 +61,11 @@ The following lists of words are valid for more than one class word. Note that s
                       GCI            NEV
                       GSE            polar
 
-SOURCE Subclass Words electron oxygen
-
- ion Z>3
-
- proton neutral
-
- helium particle
-
- nitrogen dust
+SOURCE     Subclass Words             electron     oxygen
+                                      ion          Z>3
+                                      proton       neutral
+                                      helium       particle
+                                      nitrogen     dust
 
 WAVELENGTH Subclass Words radio 
 

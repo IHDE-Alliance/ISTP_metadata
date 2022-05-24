@@ -61,7 +61,7 @@ The following lists of words are valid for more than one class word. Note that s
                       GCI            NEV
                       GSE            polar   
 
-| SOURCE    |             electron     oxygen
+| SOURCE    |             electron     oxygen |
                                       ion          Z>3
                                       proton       neutral
                                       helium       particle

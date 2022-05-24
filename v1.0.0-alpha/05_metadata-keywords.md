@@ -59,9 +59,9 @@ The following lists of words are valid for more than one class word. Note that s
                       geographic     HDZ
                       geomagnetic    HGI
                       GCI            NEV
-                      GSE            polar
+                      GSE            polar   
 
-SOURCE     Subclass Words             electron     oxygen
+| SOURCE    |             electron     oxygen
                                       ion          Z>3
                                       proton       neutral
                                       helium       particle

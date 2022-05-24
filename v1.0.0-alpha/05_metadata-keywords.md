@@ -58,10 +58,8 @@ The following lists of words are valid for more than one class word. Note that s
 | COORDINATE SYSTEM | cartesian      GSM |
                       geographic     HDZ
                       geomagnetic    HGI
-
- GCI NEV
-
- GSE polar
+                      GCI            NEV
+                      GSE            polar
 
 SOURCE Subclass Words electron oxygen
 

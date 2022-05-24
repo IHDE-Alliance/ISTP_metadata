@@ -54,7 +54,7 @@ The following lists of words are valid for more than one class word. Note that s
 
 |Class Word | Subclass Words | 
 | --------  | -------------- |
-| GENERAL   | absolute    instrument    mean |                                                                                                                                       average     interval      offset                                                                                                                                       center      maximum       spacecraft                                                                                                                                   component   measured      vector                                                                                                                                       derived     minimum       total
+| GENERAL   | absolute    instrument    mean |                                                                                                                                     | average     interval      offset |                                                                                                                                   | center      maximum       spacecraft |                                                                                                                               | component   measured      vector |                                                                                                                                   | derived     minimum       total |
 | COORDINATE SYSTEM | cartesian      GSM |
                       geographic     HDZ
                       geomagnetic    HGI

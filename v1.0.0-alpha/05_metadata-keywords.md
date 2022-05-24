@@ -69,15 +69,7 @@ The following lists of words are valid for more than one class word. Note that s
 
 WAVELENGTH Subclass Words radio 
 
- IR
-
- visible
-
- UV
-
- x-ray 
-
- gamma ray 
+IR visible UV x-ray gamma ray 
 
 **Examples of Sub-Class Words**
 

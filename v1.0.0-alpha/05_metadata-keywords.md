@@ -52,10 +52,10 @@ listed separately from the supporting class words below. It is envisioned that t
 
 The following lists of words are valid for more than one class word. Note that some species and wavelength subclass keywords are also considered to be common because they can be used in conjunction with several of the class words.
 
-|GENERAL | Subclass Words | absolute instrument mean |
-| ------ | -------------- |
-|        |                 |average interval offset |
-|        |               |center maximum spacecraft |
+|Class Word | Subclass Words | 
+| --------  | -------------- |
+| GENERAL   | absolute    instrument    mean |               |average interval offset |
+|           | average     interval      offset |              |center maximum spacecraft |
 
  component measured vector
 

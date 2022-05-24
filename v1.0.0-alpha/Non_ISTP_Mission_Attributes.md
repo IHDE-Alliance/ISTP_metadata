@@ -125,15 +125,15 @@ D_conversion_factor- Factor used to convert the unit of D-component from degree 
 
 _DeflateLevel- ZLIB compression level from 0 to 9. ICON uses deflate level 6 by default. 
 
-Delta_Minus-  Describes the range over which the data are integrated, representative, etc, and locate the position of the time tag or value within this range.
+Delta_Minus-  Describes the range over which the data are integrated, representative, etc. and locate the position of the time tag or value within this range.
 
-Delta_Plus- Describes the range over which the data are integrated, representative, etc, and locate the position of the time tag or value within this range.
+Delta_Plus- Describes the range over which the data are integrated, representative, etc. and locate the position of the time tag or value within this range.
 
 D_unit- Physical unit of the D-component of the geomagnetic field. 
 
 Elevation- Elevation of the location of station. 
 
-_FillValue- Used by NetCDF to fill in data that was not explicitly set. This is typed data.m
+_FillValue- Used by NetCDF to fill in data that was not explicitly set. This is typed data.
 
 Frame-  Optional and partially redundant with the more powerful description provided by the three concepts TENSOR_ORDER, REPRESENTATION, AND TENSOR_FRAME.
 

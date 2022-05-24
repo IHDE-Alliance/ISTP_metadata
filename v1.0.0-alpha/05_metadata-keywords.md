@@ -100,16 +100,11 @@ WAVELENGTH Subclass Words radio
 | ------ | --- | -------- | ------------------|
 |All     | All |Epoch     |time>Epoch_center_range |
 |IMP 8    |MAG |Time_PB5  |time>PB5_center_range |
-
-IMP 8 MAG B_GSE_c magnetic_field>GSE_cartesian_vector
-
-IMP 8 MAG B_GSM_p magnetic_field>GSM_polar_vector
-
-IMP 8 MAG Rad_dist position>radial_distance
-
-IMP 8 MAG SC_pos_se position>GSE_cartesian
-
-IMP 8 MAG Mode flag>mode
+|IMP 8    |MAG |B_GSE_c   |magnetic_field>GSE_cartesian_vector |
+|IMP 8    |MAG |B_GSM_p   |magnetic_field>GSM_polar_vector |
+|IMP 8    |MAG |Rad_dist  |position>radial_distance |
+|IMP 8    |MAG |SC_pos_se |position>GSE_cartesian |
+|IMP 8    |MAG |Mode      |flag>mode |
 
 IMP 8 MAG DQF flag>quality
 

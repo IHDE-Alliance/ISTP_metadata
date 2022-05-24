@@ -52,24 +52,13 @@ listed separately from the supporting class words below. It is envisioned that t
 
 The following lists of words are valid for more than one class word. Note that some species and wavelength subclass keywords are also considered to be common because they can be used in conjunction with several of the class words.
 
-|Class Word | Subclass Words | 
-| --------  | -------------- |
-| GENERAL   | absolute    instrument    mean |                                                                                                                         |           | average     interval      offset |                                                                                                                       |           | center      maximum       spacecraft |                                                                                                                   |           | component   measured      vector |                                                                                                                       |           | derived     minimum       total |
-| COORDINATE SYSTEM | cartesian      GSM |
-                      geographic     HDZ
-                      geomagnetic    HGI
-                      GCI            NEV
-                      GSE            polar   
+GENERAL: Subclass Words- absolute, instrument, mean, average, interval, offset, center, maximum, spacecraft, component, measured, vector, derived, minimum, total 
 
-| SOURCE    |             electron     oxygen |
-                                      ion          Z>3
-                                      proton       neutral
-                                      helium       particle
-                                      nitrogen     dust
+COORDINATE SYSTEM: Subclass Words- cartesian, GSM, geographic, HDZ, geomagnetic, HGI, GCI, NEV, GSE, polar   
 
-WAVELENGTH Subclass Words radio 
+SOURCE: Subclass Words- electron, oxygen, ion, Z>3, proton, neutral, helium, particle, nitrogen, dust
 
-IR visible UV x-ray gamma ray 
+WAVELENGTH: Subclass Words- radio, IR, visible, UV, x-ray,gamma ray 
 
 **Examples of Sub-Class Words**
 

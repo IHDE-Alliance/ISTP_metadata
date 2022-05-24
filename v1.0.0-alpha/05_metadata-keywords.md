@@ -55,7 +55,7 @@ The following lists of words are valid for more than one class word. Note that s
 |GENERAL | Subclass Words | absolute instrument mean |
 | ------ | -------------- |
 |        |                 |average interval offset |
-                          |center maximum spacecraft |
+|        |               |center maximum spacecraft |
 
  component measured vector
 

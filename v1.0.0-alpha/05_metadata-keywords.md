@@ -113,11 +113,8 @@ WAVELENGTH Subclass Words radio
 |Geotail  |EPIC |IDiffI_I    |particle_flux>ion_differential |
 |Geotail  |EPIC |IDiffI_I_Uncert |uncertainty>ion_differential |
 |Geotail  |EPIC |IDiffI_I_Energy |energy>ion_center_channel |
-
-Geotail EPIC IDiffI_I_Ch label>ion_energy_channel
-
-Geotail EPIC IDiffI_I_Eplus energy>ion_energy_plus
-
-Geotail EPIC IDiffI_I_Eminus energy>ion_energy_minus
+|Geotail  |EPIC |IDiffI_I_Ch     |label>ion_energy_channel |
+|Geotail  |EPIC |IDiffI_I_Eplus  |energy>ion_energy_plus |
+|Geotail  |EPIC |IDiffI_I_Eminus |energy>ion_energy_minus |
 
 Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

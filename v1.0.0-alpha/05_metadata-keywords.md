@@ -108,14 +108,10 @@ WAVELENGTH Subclass Words radio
 |IMP 8    |MAG |DQF       |flag>quality |
 |DARN     |GBAY |vel      |velocity>drift_components |
 |DARN     |GBAY |post_flag |flag>post_gap |
-
-DARN GBAY label_time label>time
-
-DARN GBAY label_unit label>unit
-
-Geotail EPIC IDiffI_I particle_flux>ion_differential
-
-Geotail EPIC IDiffI_I_Uncert uncertainty>ion_differential
+|DARN     |GBAY |label_time |label>time |
+|DARN     |GBAY |label_unit |label>unit |
+|Geotail  |EPIC |IDiffI_I    |particle_flux>ion_differential |
+|Geotail  |EPIC |IDiffI_I_   |Uncert uncertainty>ion_differential |
 
 Geotail EPIC IDiffI_I_Energy energy>ion_center_channel
 

@@ -96,7 +96,7 @@ WAVELENGTH Subclass Words radio
 
 **Examples of Sub-Class Words**
 
-Source Exp Variable Value of DICT_KEY
+| Source | Exp | Variable | Value of DICT_KEY |
 
 All All Epoch time>Epoch_center_range
 

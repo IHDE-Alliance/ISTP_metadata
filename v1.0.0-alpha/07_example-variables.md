@@ -250,6 +250,7 @@ We show here the variable, Ion Energy, as it would appear in a CDF Skeleton tabl
 
 ```
 ***Metadata***
+
 ***Example of a 1D size 3 metadata variable***
 
 This metadata variable labels the cartesian GSE magnetic field (1D size 3) data variable. See this variable used in a [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#1D%20Time%20Series)<u><span>.</span></u>

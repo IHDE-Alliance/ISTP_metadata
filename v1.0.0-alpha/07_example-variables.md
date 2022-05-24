@@ -4,7 +4,7 @@
 
 Examples of data and support_data variables commonly found in ISTP/IACG investigations are shown in the image below. They are mapped to their corresponding dimensions and sizes in CDF.
 
-                 ![image](https://user-images.githubusercontent.com/94626382/163575651-588e8af0-d722-4235-ae49-9d2a9c8b6bca.png)
+![image](https://user-images.githubusercontent.com/94626382/163575651-588e8af0-d722-4235-ae49-9d2a9c8b6bca.png)
 
 
 - Density and Temperature (**data**) in this example are scalars; in CDF they are associated with zero dimension and no size.

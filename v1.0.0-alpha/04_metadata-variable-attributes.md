@@ -253,22 +253,22 @@ Reference_Position is optional metadata to account for time variance with positi
 (Optional) Using ISO8601 relative time format, for example: "1s" = 1 second. Resolution provides the smallest change in time that is measured.
 
 ## SCALEMAX
-(Optional) Are values which can be based on the actual values of data found in the CDF data set or on the probable uses of the data, {\em e.g.}, plotting multiple files at the same scale. Visualization software can use these attributes as defaults for plotting. The values must match the data type of the variable.
+(Optional) Are values which can be based on the actual values of data found in the CDF data set or on the probable uses of the data, em e.g., plotting multiple files at the same scale. Visualization software can use these attributes as defaults for plotting. The values must match the data type of the variable.
 
 ## SCALEMIN
-(Optional) Are values which can be based on the actual values of data found in the CDF data set or on the probable uses of the data, {\em e.g.}, plotting multiple files at the same scale. Visualization software can use these attributes as defaults for plotting. The values must match the data type of the variable.
+(Optional) Are values which can be based on the actual values of data found in the CDF data set or on the probable uses of the data, em e.g., plotting multiple files at the same scale. Visualization software can use these attributes as defaults for plotting. The values must match the data type of the variable.
 
 ## SCALETYP 
 (Recommended for non-linear scales if not using SCAL_PTR) Indicates whether the variable should have a **linear** or a **log** scale as a default. If this attribute is not present, **linear** scale is assumed.
 
 ## SCAL_PTR 
-(Recommended for non-linear scales if not using SCALETYP) Is used for dimensional variables when one value of SCALTYP is not sufficient. SCAL_PTR is used {\em instead of} SCALTYP, and will point to a variable which will be of the same dimensionality as the original variable. The allowed values are linear and log. **The value of the attribute must be a variable in the same CDF data set.**
+(Recommended for non-linear scales if not using SCALETYP) Is used for dimensional variables when one value of SCALTYP is not sufficient. SCAL_PTR is used \em instead of SCALTYP, and will point to a variable which will be of the same dimensionality as the original variable. The allowed values are linear and log. **The value of the attribute must be a variable in the same CDF data set.**
 
 ## sig_digits
 (Cluster recommended) This attribute provides the number of significant digits or other measure of data accuracy in a TBD manner. It is to allow compression software to optimize the number of digits to retain, and users to assess the accuracy of products. This operation is subject to the deliberations of the 'network traffic report' Task Group, DS-CFC-TN-0001, on compression algorithms and implementation. Restrictions on data compression may also influence the format and choice of data type used by the CDF generation software.
 
 ## SI_conversion
-(Cluster recommended) The conversion factor to SI units. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion and the second is the standard unit that it converts to. For example, the magnetic field for FGM will be in **nT**, and to convert to Tesla the value of SI_conv will be `1.0e-9>Tesla'. The use of text allows this attribute to be parsed and the value must be extracted in software.
+(Cluster recommended) The conversion factor to SI units. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion and the second is the standard unit that it converts to. For example, the magnetic field for FGM will be in **nT**, and to convert to Tesla the value of SI_conv will be '1.0e-9>Tesla'. The use of text allows this attribute to be parsed and the value must be extracted in software.
 
 ## TIME_BASE 
 (Recommended for Time variables [important for netCDF files and clarity]) Fixed (0AD, 1900, 1970 (POSIX), J2000 (used by CDF_TIME_TT2000), 4714 BC (Julian)) or flexible (provider-defined)

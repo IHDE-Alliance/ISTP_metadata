@@ -11,9 +11,13 @@ We display below the Ion Number Density from the example [simple scalar density]
 We display below the Magnetic Field from the example [vector magnetic field](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg2). The y-axis
 labels come from 2 places: (1) Bx, By, Bz from the metadata variable "label_B_GSE" (labeled in blue) which is attached to the Magnetic Field variable via LABL_PTR_1 and (2) nT from the UNITS variable attribute. The x-axis if defined by the Epoch variable (time). Ion Number Density is tied to its time tag using the DEPEND_0 variable attribute. See also the [metadata variable](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Metadata_eg1) "label_B_GSE."
 
+![image](https://user-images.githubusercontent.com/94626382/170086345-60aeec12-dd58-4544-8216-99535f536fbc.png)
+
 **1D - size 12 Spectrogram**
 
 We display below the Ion Diff. Intensity, at 12 energies (67-1361 keV) from the example [1D flux](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg3). The z-axis labels come from variable attributes LABLAXIS and UNITS. The y-axis labels (labeled in green) come from the energy variable attached to Ion Diff. Intensity via the DEPEND_1 variable attribute, specifically the LABLAXIS (or FIELDNAM) and UNITS of the energy variable. The x-axis if defined by the Epoch variable (time). Ion Number Density is tied to its time tag using the DEPEND_0 variable attribute.
+
+![image](https://user-images.githubusercontent.com/94626382/170086392-174a1d6f-7d05-461d-ba29-6a5ac03ea764.png)
 
 See also the [Support data variable](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#support_data_eg2) "IDiffI_I_Energy."
 
@@ -21,6 +25,8 @@ See also the [Support data variable](https://spdf.gsfc.nasa.gov/istp_guide/varia
 
 We display below Electron Flux at 7 energies (0.1 - 222 keV). As opposed to the spectrogram above, the y-axis labels come from variable attributes LABLAXIS and UNITS. The z-axis labels (labeled in green) come from the energy variable attached to Electron Flux via the DEPEND_1 variable attribute, specifically the LABLAXIS
 (or FIELDNAM) and UNITS of the energy variable. The x-axis if defined by the Epoch variable (time). Ion Number Density is tied to its time tag using the DEPEND_0 variable attribute.
+
+![image](https://user-images.githubusercontent.com/94626382/170086456-6e27fbd4-28e9-4a9f-a9e6-0d962e2d9ed3.png)
 
 **2D - sizes 28, 12 Spectrogram**
 
@@ -41,11 +47,15 @@ The 3 selected angle bins appear as separate panels. The energy attribute values
 
 The z-axis (color bar) is labeled with selected values from the *H+ angle label variable* that is attached to the data variable via the LABL_PTR_2 attribute. The z-axis units come from the data variable UNITS attributes.
 
+![image](https://user-images.githubusercontent.com/94626382/170086584-78d7c7f6-8f0b-4fd4-89f4-00831eef3266.png)
+
 **H+ number flux for 12 angles and 3 selected energy bins**
 
 The 3 selected energy bins appear as separate panels. The angle attribute values (either the LABLAXIS value or the FIELDNAM value, along with the UNITS value) are used to label the y-axis on each panel. The angle support_data variable is attached to the data variable via the DEPEND_2 attribute.
 
 The z-axis (color bar) is labeled with selected values from the *H+ energy label variable* that is attached to the data variable via the LABL_PTR_1 attribute. The z-axis units come from the data variable UNITS attributes.
+
+![image](https://user-images.githubusercontent.com/94626382/170086644-5d460afe-62a3-4373-b432-167230df5c61.png)
 
 
 Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)

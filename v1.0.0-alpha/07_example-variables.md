@@ -275,23 +275,12 @@ Character metadata must define the number of elements to be the same as the numb
  ! NRV values follow...
 
  [ 1 ] = { "Bx GSE" }
+ 
  [ 2 ] = { "By GSE" }
+ 
  [ 3 ] = { "Bz GSE" }
 
-***Example of Character Metadata***
-. The following variable attributes are required:
 
--[CATDESC](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#CATDESC)
-
--[DEPEND_0](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#DEPEND_0) = [Epoch](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Epoch) (if time varying)
-
--[FIELDNAM](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FIELDNAM)
-
--[FILLVAL](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FILLVAL) (if time varying)
-
--[FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT)/[FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR)
-
--[VAR_TYPE](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#VAR_TYPE) = support_data
 
 
 

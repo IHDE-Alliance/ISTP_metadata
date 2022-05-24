@@ -105,10 +105,8 @@ WAVELENGTH Subclass Words radio
 |IMP 8    |MAG |Rad_dist  |position>radial_distance |
 |IMP 8    |MAG |SC_pos_se |position>GSE_cartesian |
 |IMP 8    |MAG |Mode      |flag>mode |
-
-IMP 8 MAG DQF flag>quality
-
-DARN GBAY vel velocity>drift_components
+|IMP 8    |MAG |DQF       |flag>quality |
+|DARN     |GBAY |vel      |velocity>drift_components |
 
 DARN GBAY post_flag flag>post_gap
 

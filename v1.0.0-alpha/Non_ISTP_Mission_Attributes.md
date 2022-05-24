@@ -135,7 +135,7 @@ Elevation- Elevation of the location of station.
 
 _FillValue- Used by NetCDF to fill in data that was not explicitly set. This is typed data.m
 
-Frame- 
+Frame-  Optional and partially redundant with the more powerful description provided by the three concepts TENSOR_ORDER, REPRESENTATION, AND TENSOR_FRAME.
 
 Free_field- Description of the free field in the filename. It shall use the ISTP format "PREFIX>Suffix" (e.g., "NORM>Normal mode"), where the value of the prefix shall correspond to the "free" field in the file naming convention.
 

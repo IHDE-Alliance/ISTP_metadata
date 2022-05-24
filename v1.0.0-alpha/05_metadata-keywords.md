@@ -98,7 +98,7 @@ WAVELENGTH Subclass Words radio
 
 | Source | Exp | Variable | Value of DICT_KEY |
 | ------ | --- | -------- | ------------------|
-All All Epoch time>Epoch_center_range
+|All     | All |Epoch     |time>Epoch_center_range |
 
 IMP 8 MAG Time_PB5 time>PB5_center_range
 

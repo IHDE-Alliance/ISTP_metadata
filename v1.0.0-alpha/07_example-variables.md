@@ -254,6 +254,7 @@ We show here the variable, Ion Energy, as it would appear in a CDF Skeleton tabl
 ***Example of a 1D size 3 metadata variable***
 
 This metadata variable labels the cartesian GSE magnetic field (1D size 3) data variable. See this variable used in a [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#1D%20Time%20Series)<u><span>.</span></u>
+Character metadata must define the number of elements to be the same as the number of characters used in its value.
 
 ```
 ! Variable         Data         Number                        Record      Dimension
@@ -278,8 +279,7 @@ This metadata variable labels the cartesian GSE magnetic field (1D size 3) data 
  [ 3 ] = { "Bz GSE" }
 
 ***Example of Character Metadata***
-
-Character metadata must define the number of elements to be the same as the number of characters used in its value - 6 in the example below. The following variable attributes are required:
+. The following variable attributes are required:
 
 -[CATDESC](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#CATDESC)
 

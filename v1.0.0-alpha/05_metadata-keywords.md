@@ -100,7 +100,7 @@ WAVELENGTH Subclass Words radio
 | ------ | --- | -------- | ------------------|
 |All     | All |Epoch     |time>Epoch_center_range |
 
-IMP 8 MAG Time_PB5 time>PB5_center_range
+|IMP 8    |MAG |Time_PB5  |time>PB5_center_range |
 
 IMP 8 MAG B_GSE_c magnetic_field>GSE_cartesian_vector
 

@@ -80,3 +80,90 @@
 | Valid_Min | | | | | M |
 | Valid_Range | | | | | M |
 | Value Type  | | M | | | | | | | | 
+
+
+
+
+Attributes	ISTP alternative	Cluster	ERG	GOLD	ICON	MMS	PDS	PRBEM	PSP	Solar Orbiter
+ACCESS_FORMAT										O
+CAVEATS										O
+Channel_ID				M						
+_ChunkingSizes					M					
+Coordinate_System						R				
+Data		M								
+Data_coordinates			M							
+Data_cycle				M						
+Data_level				M						
+Data_product		R								R
+DATAPRODUCT_TYPE										O
+Data_resolution			M							
+Data_revision				M						
+Data_sampling_type			M							
+Dataset_ID										O
+Data_type_2			M							
+D_conversion_factor			M							
+_DeflateLevel					M					
+D_unit			M							
+Delta_Minus	DELTA_MINUS_VAR	O								
+Delta_Plus	DELTA_PLUS_VAR	O								
+Elevation			M							
+_FillValue					M					
+FLUX_PTR									M	
+Free_field										R
+Frame		M								
+Geographic_coordinates			M							
+Geographic_latitude			M							
+Geographic_longitude			M							
+Geomagnetic_coordinates			M							
+Geomagnetic_latitude			M							
+Geomagnetic_longitude			M							
+Generated_with_software								M		
+Job_ID										O
+Known_problems			M							
+K9_limit			M							
+Last_obs_count_in_ file				M						
+LEVEL										R
+L_value			M							
+Long_name					R					
+Magnetometer_type			M							
+Maximum_PHD				M						
+Minimum_PHD				M						
+Mirror_hemisphere				M						
+Number_of_channels			M							
+Observation_complete				M						
+Observation_end			M							
+Observation_start			M							
+Observation_type				M						
+OBS_ID				M						R
+OBS_TYPE				M						
+Operator_Type						M				
+Planet								M		
+Process_ID										O
+REFERENCE										O
+Representation_i		M				M				
+SI_Conversion		M								R
+_Shuffle					M					
+Sizes		M								
+SOOP_TYPE										R
+spase_DatasetResource							M			O
+spase_DatasetResourceID							O			O
+spase_GranuleResource							O			O
+spase_GranuleResourceID							O			O
+SPECIES									M	
+Station_code			M							
+Station_name			M							
+TARGET_CLASS										R
+TARGET_NAME										R
+TARGET_REGION										R
+Tensor_Frame		M								
+Tensor Order		M				M				
+Text_supplement			M							
+Time_calibration_method			M							
+TIME_MAX										O
+TIME_MIN										O
+Valid_Max					M					
+Valid_Min					M					
+Valid_Range					M					
+Value Type		M								
+
+

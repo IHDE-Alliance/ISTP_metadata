@@ -1,3 +1,9 @@
+# Non-ISTP Global Attributes Used by Missions
+
+- M - mandatory by mission
+- R - recommended by mission
+- O - optional for mission
+
 | Attributes | ISTP alternative | Cluster | Arase (ERG) | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | ----------- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | ACCESS_FORMAT | | | | | | | | | | O |

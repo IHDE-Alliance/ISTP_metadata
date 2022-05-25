@@ -17,7 +17,7 @@
 | Data_coordinates | | | M |
 | Data_cycle | | | | M |
 | Data_level | | | | M |
-| Data_product | | R | | | | | | | | R |
+| Data_product | |  | | | | | | | | R |
 | DATAPRODUCT_TYPE | | | | | | | | | | O |
 | Data_resolution | | | M |
 | Data_revision | | | | M |

@@ -13,7 +13,6 @@
 | Channel_ID | | | | M |
 | _ChunkingSizes (NetCDF Internal) | | | | | M |
 | Coordinate_System | | | | | | R |
-| Data |                            | M|
 | Data_coordinates | | | M |
 | Data_cycle | | | | M |
 | Data_level | | | | M |
@@ -27,13 +26,10 @@
 | D_conversion_factor | | | M |
 | _DeflateLevel (NetCDF Internal) | | | | | M |
 | D_unit | | | M |
-| Delta_Minus | DELTA_MINUS_VAR | O | | | | | | | | 
-| Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
 | Elevation | | | M |
 | _FillValue (NetCDF) | | | | | M |
 | FLUX_PTR | | | | | | | | | M |
-| Free_field | | | | | | | | | | R |
-| Frame | | M | | | | | | | | 
+| Free_field | | | | | | | | | | R | 
 | Geographic_coordinates | | | M |
 | Geographic_latitude | | | M |
 | Geographic_longitude | | | M |
@@ -62,11 +58,8 @@
 | Operator_Type | | | | | | M |
 | Planet | | | | | | | | M |
 | Process_ID | | | | | | | | | | O |
-| REFERENCE | | | | | | | | | | O |
-| Representation_i | | M | | | | M | | | | 
-| SI_Conversion | | M | | | | | | | | R |
+| REFERENCE | | | | | | | | | | O | 
 | _Shuffle (NetCDF) | | | | | M |
-| Sizes | | M |
 | SOOP_TYPE | | | | | | | | | | R |
 | spase_DatasetResource | | | | | | |M | | | O |
 | spase_DatasetResourceID | | | | | | | O| | |O |
@@ -78,16 +71,13 @@
 | TARGET_CLASS | | | | | | | | | | R |
 | TARGET_NAME | | | | | | | | | | R |
 | TARGET_REGION | | | | | | | | | | R |
-| Tensor_Frame | | M | | | | | | | | 
-| Tensor Order | | M | | | | M | | | | 
 | Text_supplement | | | M |
 | Time_calibration_method | | | M |
 | TIME_MAX | | | | | | | | | | O |
 | TIME_MIN | | | | | | | | | | O |
 | Valid_Max (NetCDF) | | | | | M |
 | Valid_Min (NetCDF) | | | | | M |
-| Valid_Range (NetCDF) | | | | | M |
-| Value Type  | | M | | | | | | | | 
+| Valid_Range (NetCDF) | | | | | M | 
  
 
 **Descriptions**

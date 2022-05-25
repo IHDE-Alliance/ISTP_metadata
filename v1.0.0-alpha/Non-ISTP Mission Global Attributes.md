@@ -11,8 +11,6 @@
 | ACCESS_FORMAT | | | | | | | | | | O |
 | CAVEATS | | | | | | | | | | O |
 | Channel_ID | | | | M |
-| _ChunkingSizes (NetCDF Internal) | | | | | M |
-| Coordinate_System | | | | | | R |
 | Data_coordinates | | | M |
 | Data_cycle | | | | M |
 | Data_level | | | | M |
@@ -24,10 +22,8 @@
 | Dataset_ID | | | | | | | | | | O |
 | Data_type_2 | | | M |
 | D_conversion_factor | | | M |
-| _DeflateLevel (NetCDF Internal) | | | | | M |
 | D_unit | | | M |
 | Elevation | | | M |
-| _FillValue (NetCDF) | | | | | M |
 | FLUX_PTR | | | | | | | | | M |
 | Free_field | | | | | | | | | | R | 
 | Geographic_coordinates | | | M |
@@ -43,7 +39,6 @@
 | Last_obs_count_in_ file | | | | M |
 | LEVEL | | | | | | | | | | R |
 | L_value | | | M |
-| Long_name | | | | | R |
 | Magnetometer_type | | | M |
 | Maximum_PHD | | | | M |
 | Minimum_PHD | | | | M |
@@ -55,11 +50,9 @@
 | Observation_type | | | | M |
 | OBS_ID | | | | M | | | | | | R |
 | OBS_TYPE | | | | M |
-| Operator_Type | | | | | | M |
 | Planet | | | | | | | | M |
 | Process_ID | | | | | | | | | | O |
 | REFERENCE | | | | | | | | | | O | 
-| _Shuffle (NetCDF) | | | | | M |
 | SOOP_TYPE | | | | | | | | | | R |
 | spase_DatasetResource | | | | | | |M | | | O |
 | spase_DatasetResourceID | | | | | | | O| | |O |
@@ -75,9 +68,7 @@
 | Time_calibration_method | | | M |
 | TIME_MAX | | | | | | | | | | O |
 | TIME_MIN | | | | | | | | | | O |
-| Valid_Max (NetCDF) | | | | | M |
-| Valid_Min (NetCDF) | | | | | M |
-| Valid_Range (NetCDF) | | | | | M | 
+ 
  
 
 **Descriptions**

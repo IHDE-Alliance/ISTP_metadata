@@ -4,8 +4,7 @@
 - R - recommended by mission
 - O - optional for mission
 
-| Attributes | ISTP Alternate |
-| ---------- | -------------- |
+
 
 | Attributes | ISTP alternative | Cluster | Arase (ERG) | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |

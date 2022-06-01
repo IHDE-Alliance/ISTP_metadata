@@ -300,7 +300,7 @@ Reference_Position is optional metadata to account for time variance with positi
 (Required)
 
 ## TENSOR_ORDER
-(Required)
+(Required) Contains the rank or order of a tensor, i.e. 1 for a vector, 2 for a 3x3 tensor.
 
 ## TIME_BASE 
 (Recommended for Time variables [important for netCDF files and clarity]) Fixed (0AD, 1900, 1970 (POSIX), J2000 (used by CDF_TIME_TT2000), 4714 BC (Julian)) or flexible (provider-defined)

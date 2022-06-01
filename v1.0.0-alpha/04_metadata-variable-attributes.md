@@ -223,6 +223,9 @@ character string) representing the desired output format for the original variab
 ## LABLAXIS
 (Required if not using LABL_PTR_1) Should be a short character string (approximately 10 characters, but preferably 6 characters - more only if absolutely required for clarity) which can be used to label a y-axis for a plot or to provide a heading for a data listing.
 
+## FRAME
+(Required)
+
 ## LABL_PTR_1 
 (Required if not using LABLAXIS) Is used to label a dimensional variable when one value of LABLAXIS is not sufficient to describe the variable or to label all the axes. LABL_PTR_i is used *instead of* LABLAXIS, where *i* can take on any value from 1 to *n* where *n* is the total number of dimensions of the original variable. The value of LABL_PTR_1 is a variable which will contain the short character strings which describe the first dimension of the original variable. The actual labels should be short as described above for LABLAXIS. **The value of the attribute must be a variable in the same CDF data set.** See [example (https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg2).
 

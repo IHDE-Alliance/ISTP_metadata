@@ -27,7 +27,7 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [LABL_PTR_1](#LABL_PTR_1)                 | Required                     |       "Electron_ChanE_Energy_LABL"                                                                  | Data of the following form:  1D time_series, 2D spectrogram, also needed for 1D and 2D support_data without a LABLAXIS                 |
 | [LABL_PTR_2](#LABL_PTR_1)                 | Required                     |         "Telescope_Labl"                                                                | Data of the following form:  2D spectrogram, 3D spectrogram, also needed for 2D support_data without a LABLAXIS                        |
 | [LABL_PTR_3](#LABL_PTR_1)                 | Required                     |       "Sector_Label"                                                                  | Data of the following form:  3D spectrogram                                                                                            |
-| [REPRESENTATION_i](#REPRESENTATION_i)     | Required                     |
+| [REPRESENTATION_i](#REPRESENTATION_i)     | Required                     | "x", "y", "z"     | Allowed values are enumerated in the Metadata Dictionary
 | [SI_CONVERSION](#SI_CONVERSION)           | Required                     |
 | [SIZES](#SIZES)                           | Required                     |
 | [TENSOR_FRAME](#TENSOR_FRAME)             | Required                     |

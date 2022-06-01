@@ -32,7 +32,7 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [SI_CONVERSION](#SI_CONVERSION)           | Required                     |
 | [SIZES](#SIZES)                           | Required                     |
 | [TENSOR_FRAME](#TENSOR_FRAME)             | Required                     |
-| [TENSOR ORDER](#TENSOR ORDER)             | Required                     |
+| [TENSOR_ORDER](#TENSOR_ORDER)             | Required                     |
 | [UNITS](#UNITS)                           | Required                     |      "counts s!E-1!N"                                                                   | Data and support_data not using [UNIT_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNIT_PTR)                             |
 | [UNIT_PTR](#UNIT_PTR)                     | Required                     |      "unit_time"                                                                   | 1D data and support_data not using [UNITS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNITS)                                |
 | [VALIDMIN](#VALIDMIN)                     | Required                     |     1990-01-01T00:00:00.000000000                                                                     | Data and RV support_data                                                                                                                |

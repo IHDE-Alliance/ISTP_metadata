@@ -17,7 +17,7 @@
 | Delta_Plus | DELTA_PLUS_VAR | O | | | | | | | | 
 | _FillValue (NetCDF) | | | | | M |
 | FLUX_PTR | | | | | | | | | M |
-| Frame | | M | | | | | | | | 
+| Frame | | O | | | | | | | | 
 | Long_name | | | | | R |
 | Operator_Type | | | | | | M |
 | Representation_i | | M | | | | M | | | | 

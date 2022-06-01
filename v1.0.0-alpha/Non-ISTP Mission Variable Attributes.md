@@ -64,7 +64,7 @@ SI_CONVERSION- A string that defines the conversion needed to base SI units, e.g
 
 Sizes-  Essential for any variable that has more than one element, such as arrays and vectors.
 
-Tensor_Frame- 
+Tensor_Frame- Contains the frame of a tensor. 
 
 TENSOR_ORDER- Contains the rank or order of a tensor, i.e. 1 for a vector, 2 for a 3x3 tensor.
 

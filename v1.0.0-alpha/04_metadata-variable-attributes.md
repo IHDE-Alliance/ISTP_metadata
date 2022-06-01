@@ -121,6 +121,7 @@ closer to 0.0.
 - **Canopus MARI:** Local Auroral Electrojet index, lower bound (CL), scalar
 
 ## DATA 
+(Required) Used to provide the values of variables which are fixed for all records of a dataset.
 
 ## DELTA_MINUS
 

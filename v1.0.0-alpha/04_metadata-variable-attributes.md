@@ -297,7 +297,7 @@ Reference_Position is optional metadata to account for time variance with positi
 (Required) Essential for any variable that has more than one element, such as arrays and vectors.
 
 ## TENSOR_FRAME
-(Required)
+(Required) Contains the frame of a tensor. 
 
 ## TENSOR_ORDER
 (Required) Contains the rank or order of a tensor, i.e. 1 for a vector, 2 for a 3x3 tensor.
@@ -309,7 +309,7 @@ Reference_Position is optional metadata to account for time variance with positi
 (Optional) TT (same as TDT, used by CDF_TIME_TT2000), TAI (same as IAT, TT-32.184s), UTC (includes leap seconds), TDB (same as SPICE ET), EME1950 [default: UTC]
 
 ## UNITS
-(Required if not using UNIT_PTR [optional for time variables]) Is a character string (no more than 20 characters, but preferably 6 characters) representing the units of the variable,*e.g.,* nT for magnetic field. If the standard abbreviation used is short then the units value can be added to a data listing heading or plot label. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). For CDF_TIME_TT2000: SI measurement unit: s, ms(milliseconds for EPOCH variables), ns(nanoseconds for CDF_TIME_TT2000), ps(picoseconds for EPOCH16)
+(Required if not using UNIT_PTR [optional for time variables]) Is a character string (no more than 20 characters, but preferably 6 characters) representing the units of the variable, *e.g.,* nT for magnetic field. If the standard abbreviation used is short then the units value can be added to a data listing heading or plot label. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). For CDF_TIME_TT2000: SI measurement unit: s, ms(milliseconds for EPOCH variables), ns(nanoseconds for CDF_TIME_TT2000), ps(picoseconds for EPOCH16)
 
 ## UNIT_PTR
 (Required if not using UNITS) Has as its value a variable which stores the character strings (up to 20 characters per character string) representing the units of the original variable, which can be added to a data listing heading or plot label. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). If this attribute is used, then UNITS is not used. **The value of the attribute must be a variable in the same CDF data set.**

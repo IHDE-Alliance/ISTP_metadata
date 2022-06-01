@@ -29,8 +29,7 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [LABL_PTR_3](#LABL_PTR_1)                 | Required                     |       "Sector_Label"                                                                  | Data of the following form:  3D spectrogram                                                                                            |
 | [REPRESENTATION_i](#REPRESENTATION_i)     | Required                     | "x", "y", "z"     | Allowed values are enumerated in the Metadata Dictionary
 | [SI_CONVERSION](#SI_CONVERSION)           | Required                     | "1.0E-5>T"  | Expressed in terms of one of the SI units
-| [SIZES](#SIZES)                           | Required                     | 1 for a scalar (default value) | Dimensions of the array required for any 
-physical parameter represented by more than one component
+| [SIZES](#SIZES)                           | Required                     | 1 for a scalar (default value) | Dimensions of the array required for any physical parameter represented by more than one component
 | [TENSOR_FRAME](#TENSOR_FRAME)             | Required                     |
 | [TENSOR_ORDER](#TENSOR_ORDER)             | Required                     |
 | [UNITS](#UNITS)                           | Required                     |      "counts s!E-1!N"                                                                   | Data and support_data not using [UNIT_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNIT_PTR)                             |

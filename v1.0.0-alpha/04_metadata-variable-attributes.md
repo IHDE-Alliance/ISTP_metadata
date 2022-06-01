@@ -124,13 +124,14 @@ closer to 0.0.
 (Required) Used to provide the values of variables which are fixed for all records of a dataset.
 
 ## DELTA_MINUS
+(Optional)  Describes the range over which the data are integrated, representative, etc. and locate the position of the time tag or value within this range.
 
 ## DELTA_MINUS_VAR 
-(Optional) Are included to point to a variable (or variables) which stores the uncertainty in (or range of) the original variable's value. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. For many variables in ISTP/IACG, the original variable will be at the center of the interval so that only one
-value (or one set of values) of uncertainty (or range) will need to be defined. In this case, DELTA_PLUS_VAR, and DELTA_MINUS_VAR will point to the same
+(Optional) Are included to point to a variable (or variables) which stores the uncertainty in (or range of) the original variable's value. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. For many variables in ISTP/IACG, the original variable will be at the center of the interval so that only one value (or one set of values) of uncertainty (or range) will need to be defined. In this case, DELTA_PLUS_VAR, and DELTA_MINUS_VAR will point to the same
 variable. See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg3). **The value of the attribute must be a variable in the same CDF data set.**
 
 ## DELTA_PLUS 
+(Optional)  Describes the range over which the data are integrated, representative, etc. and locate the position of the time tag or value within this range.
 
 ## DELTA_PLUS_VAR
 (Optional) Are included to point to a variable (or variables) which stores the uncertainty in (or range of) the original variable's value. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. For many variables in ISTP/IACG, the original variable will be at the center of the interval so that only one

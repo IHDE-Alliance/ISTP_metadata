@@ -30,8 +30,8 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [REPRESENTATION_i](#REPRESENTATION_i)     | Required                     | "x", "y", "z"     | Allowed values are enumerated in the Metadata Dictionary
 | [SI_CONVERSION](#SI_CONVERSION)           | Required                     | "1.0E-5>T"  | Expressed in terms of one of the SI units
 | [SIZES](#SIZES)                           | Required                     | 1 for a scalar (default value) | Dimensions of the array required for any physical parameter represented by more than one component
-| [TENSOR_FRAME](#TENSOR_FRAME)             | Required                     |
-| [TENSOR_ORDER](#TENSOR_ORDER)             | Required                     |
+| [TENSOR_FRAME](#TENSOR_FRAME)             | Required                     | "gse" | 
+| [TENSOR_ORDER](#TENSOR_ORDER)             | Required                     |             | Order of the vector or tensor which represents a non-scalar physical observable
 | [UNITS](#UNITS)                           | Required                     |      "counts s!E-1!N"                                                                   | Data and support_data not using [UNIT_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNIT_PTR)                             |
 | [UNIT_PTR](#UNIT_PTR)                     | Required                     |      "unit_time"                                                                   | 1D data and support_data not using [UNITS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNITS)                                |
 | [VALIDMIN](#VALIDMIN)                     | Required                     |     1990-01-01T00:00:00.000000000                                                                     | Data and RV support_data                                                                                                                |

@@ -321,7 +321,7 @@ Reference_Position is optional metadata to account for time variance with positi
 (Required for time varying data and support_data) Hold values which are, respectively, the minimum and maximum values for a particular variable that are expected over the lifetime of the mission. The values must match the data type of the variable.
 
 ## VALUE_TYPE
-(Required)
+(Required) This identifies the data type and is necessary for conversion from the ascii entry.
 
 ## VAR_NOTES
 (Optional) Holds ancillary information about the variable and can be any length.

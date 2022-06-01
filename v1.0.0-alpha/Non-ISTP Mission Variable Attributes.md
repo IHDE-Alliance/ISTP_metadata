@@ -26,11 +26,11 @@
 | Sizes | | M |
 | SPECIES | | | | | | | | | M |
 | Tensor_Frame | | M | | | | | | | | 
-| Tensor Order | | M | | | | M | | | | 
+| Tensor_Order | | M | | | | M | | | | 
 | Valid_Max (NetCDF) | | | | | M |
 | Valid_Min (NetCDF) | | | | | M |
 | Valid_Range (NetCDF) | | | | | M |
-| Value Type  | | M | | | | | | | | 
+| Value_Type  | | M | | | | | | | | 
  
 
 **Descriptions**
@@ -74,5 +74,5 @@ Valid_Min- The NetCDF minimum valid value which is of the same type as the varia
 
 Valid_Range- The NetCDF two length vector containing the minimum and maximum valid values. 
 
-Value Type-  This identifies the data type and is necessary for conversion from the ascii entry. 
+Value_Type-  This identifies the data type and is necessary for conversion from the ascii entry. 
 

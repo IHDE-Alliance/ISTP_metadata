@@ -294,7 +294,7 @@ Reference_Position is optional metadata to account for time variance with positi
 (Cluster recommended) The conversion factor to SI units. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion and the second is the standard unit that it converts to. For example, the magnetic field for FGM will be in **nT**, and to convert to Tesla the value of SI_conv will be '1.0e-9>Tesla'. The use of text allows this attribute to be parsed and the value must be extracted in software.
 
 ## SIZES
-(Required)
+(Required) Essential for any variable that has more than one element, such as arrays and vectors.
 
 ## TENSOR_FRAME
 (Required)

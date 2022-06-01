@@ -270,7 +270,7 @@ limits). Visualization software can use these attributes for indicating limits o
 Reference_Position is optional metadata to account for time variance with position in the gravity wells and with relative velocity. While we could use a combined TimeSystem attribute that defines mission-specific time scales where needed, such as UTC-at-STEREO-B, it's cleaner to keep them separate as Time_Scale=UTC and Reference_Position=STEREO-B.
 
 ## REPRESENTATION_i
-(Required) 
+(Required) Pointer to a support variable that gives the representation (['x','y','z'] for Cartesian; ['r','p','t'] for spherical polar; ['r','p','z'] for cylindrical polar) of the ith dimension of the variable.
 
 ## RESOLUTION
 (Optional) Using ISO8601 relative time format, for example: "1s" = 1 second. Resolution provides the smallest change in time that is measured.

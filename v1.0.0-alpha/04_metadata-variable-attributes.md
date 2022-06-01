@@ -264,6 +264,9 @@ limits). Visualization software can use these attributes for indicating limits o
 (Optional) Topocenter (local), Geocenter , rotating Earth geoid (used by CDF_TIME_TT2000).
 Reference_Position is optional metadata to account for time variance with position in the gravity wells and with relative velocity. While we could use a combined TimeSystem attribute that defines mission-specific time scales where needed, such as UTC-at-STEREO-B, it's cleaner to keep them separate as Time_Scale=UTC and Reference_Position=STEREO-B.
 
+## REPRESENTATION_i
+(Required) 
+
 ## RESOLUTION
 (Optional) Using ISO8601 relative time format, for example: "1s" = 1 second. Resolution provides the smallest change in time that is measured.
 
@@ -285,6 +288,15 @@ Reference_Position is optional metadata to account for time variance with positi
 ## SI_conversion
 (Cluster recommended) The conversion factor to SI units. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion and the second is the standard unit that it converts to. For example, the magnetic field for FGM will be in **nT**, and to convert to Tesla the value of SI_conv will be '1.0e-9>Tesla'. The use of text allows this attribute to be parsed and the value must be extracted in software.
 
+## SIZES
+(Required)
+
+## TENSOR_FRAME
+(Required)
+
+## TENSOR_ORDER
+(Required)
+
 ## TIME_BASE 
 (Recommended for Time variables [important for netCDF files and clarity]) Fixed (0AD, 1900, 1970 (POSIX), J2000 (used by CDF_TIME_TT2000), 4714 BC (Julian)) or flexible (provider-defined)
 
@@ -302,6 +314,9 @@ Reference_Position is optional metadata to account for time variance with positi
 
 ## VALIDMIN
 (Required for time varying data and support_data) Hold values which are, respectively, the minimum and maximum values for a particular variable that are expected over the lifetime of the mission. The values must match the data type of the variable.
+
+## VALUE_TYPE
+(Required)
 
 ## VAR_NOTES
 (Optional) Holds ancillary information about the variable and can be any length.

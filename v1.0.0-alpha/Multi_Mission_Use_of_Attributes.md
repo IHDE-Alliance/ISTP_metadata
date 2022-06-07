@@ -1,5 +1,4 @@
-<style>
-</style>
+
 
 Multi-Mission Use of Attributes
 
@@ -65,9 +64,6 @@ O-Optional
 
 **Attribute Descriptions**
 
-**### Acknowledgment**
-
-<!----><a name="acknowledgement"></a>
 
 ### Acknowledgement
 

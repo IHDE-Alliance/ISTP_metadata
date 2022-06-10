@@ -101,6 +101,8 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 
 - none -- no meaningful averaging calculation is possible.
 
+- Geometric -- anti-logarithm of the average of the logarithms of the values.
+
 ## BIN_LOCATION
 (Optional) Relative position of time stamp to the data measurement bin, with 0.0 at the beginning of time bin and 1.0 at the end. Default is 0.5 for the time at the center of the data measurement. Since clock readings are usually truncated, the real value may be
 closer to 0.0.

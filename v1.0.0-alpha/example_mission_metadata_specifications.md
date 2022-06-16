@@ -1,4 +1,4 @@
-## Mission Metadata Usage
+## Mission Metadata Specifications 
 
 #### Table of Contents
 

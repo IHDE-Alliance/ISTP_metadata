@@ -305,7 +305,7 @@ This must exist for all data files and is fixed for ICON.
 
 ### TEXT
 
-This attribute is an NSSDC standard global attribute which is a text description of the experiment whose data is included in the CDF. A reference to a journal article(s) or to a World Wide Web page describing the experiment is essential, and constitutes the minimum requirement. A written description of the data set is also desirable. This attribute can have as many entries as necessary to contain the desired information.
+This attribute is an NSSDC standard global attribute which is a text description of the experiment whose data is included in the CDF. A reference to a journal article(s) or to a web page describing the experiment is essential, and constitutes the minimum requirement. A written description of the data set is also desirable. This attribute can have as many entries as necessary to contain the desired information.
 
 ### Text_Supplement
 

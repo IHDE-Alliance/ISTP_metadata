@@ -138,8 +138,8 @@ This attribute identifies the name of the instrument or sensor that collected th
 This attribute describes both the science discipline and subdiscipline. More than one entry is allowed. The list for space physics is:
 
 - "Space Physics>Magnetospheric Science"
-- `Space Physics>Interplanetary Studies"
-- `Space Physics>Ionospheric Science"
+- "Space Physics>Interplanetary Studies"
+- "Space Physics>Ionospheric Science"
 
 ### DISPLAYTYPE
 

@@ -10,69 +10,69 @@ needed, it will be ignored in most ISTP/IACG compliant applications. (RV is reco
 See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#variable)
 
 
-| **Attribute**                             | **NASA Archive Requirement** | **Example**                                                           | **Notes**                                                                                                                               |
-| ----------------------------------------- | ---------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| [CATDESC](#CATDESC)                       | Required                     | "HET Default time" | Required for all variables, 80 character string can be used                                                                                                              |
-| [DATA](#DATA)                             | Required                     | 0.0,1.0e3,2.0e3,3.0e3,4.0e3              |  Primary scientific parameters of the dataset
-| [DEPEND_0](#DEPEND_0)                     | Required                     |  "HET_Epoch"                                                            | Data, RV support_data, and RV metadata                                                                                                  |
-| [DEPEND_1](#DEPEND_1)                     | Required                     |        "Electron_ChanE_Energy"                                                                 | Data of the following form:  1D spectrogram, 1D stack_plot, 2D spectrogram image                                                   |
-| [DEPEND_2](#DEPEND_2)                     | Required                     |          "lat"                                                               | Data of the following form:  2D spectrogram image                                                                                    |
-| [DEPEND_3](#DEPEND_3)                     | Required                     |       "TELESCOPE_index"                                                                  | Data of the following form:  3D spectrogram                                                                                            |
-| [DISPLAY_TYPE](#DISPLAY_TYPE)             | Required                     |  "time_series"                                                     | Data                                                                                                                                    |
-| [FIELDNAM](#FIELDNAM)                     | Required                     |  "HET_A_H_Rate_TS"                              | Required for all variables, 30 character string can be used                                                                                                                                    |
-| [FILLVAL](#FILLVAL)                       | Required                     |  -1.0e+31                                                     | Data, RV support_data, and RV metadata                                                                                                  |
-| [FORMAT](#FORMAT)                         | Required                     |    "F10.1"                                                                    | All not using [FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR)                                               |
-| [FORM_PTR](#FORM_PTR)                     | Required                     |      "format_time"                                                                   | 1D data, support_data, and metadata not using [FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT)                   |
-| [LABLAXIS](#LABLAXIS)                     | Required                     |       "Time"                                                                   | Data of the following form:  image scalar time_series, 1D spectrogram, also needed for support_data that does not utilize LABL_PTR_X |
-| [LABL_PTR_1](#LABL_PTR_1)                 | Required                     |       "Electron_ChanE_Energy_LABL"                                                                  | Data of the following form:  1D time_series, 2D spectrogram, also needed for 1D and 2D support_data without a LABLAXIS                 |
-| [LABL_PTR_2](#LABL_PTR_1)                 | Required                     |         "Telescope_Labl"                                                                | Data of the following form:  2D spectrogram, 3D spectrogram, also needed for 2D support_data without a LABLAXIS                        |
-| [LABL_PTR_3](#LABL_PTR_1)                 | Required                     |       "Sector_Label"                                                                  | Data of the following form:  3D spectrogram                                                                                            |
-| [REPRESENTATION_i](#REPRESENTATION_i)     | Required                     | "x", "y", "z"     | Allowed values are enumerated in the Metadata Dictionary
-| [SI_CONVERSION](#SI_CONVERSION)           | Required                     | "1.0E-5>T"  | Expressed in terms of one of the SI units
-| [SIZES](#SIZES)                           | Required                     | 1 for a scalar (default value) | Dimensions of the array required for any physical parameter represented by more than one component
-| [TENSOR_FRAME](#TENSOR_FRAME)             | Required                     | "gse" | 
-| [TENSOR_ORDER](#TENSOR_ORDER)             | Required                     |             | Order of the vector or tensor which represents a non-scalar physical observable
-| [UNITS](#UNITS)                           | Required                     |      "counts s!E-1!N"                                                                   | Data and support_data not using [UNIT_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNIT_PTR)                             |
-| [UNIT_PTR](#UNIT_PTR)                     | Required                     |      "unit_time"                                                                   | 1D data and support_data not using [UNITS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNITS)                                |
-| [VALIDMIN](#VALIDMIN)                     | Required                     |     1990-01-01T00:00:00.000000000                                                                     | Data and RV support_data                                                                                                                |
-| [VALIDMAX](#VALIDMAX)                     | Required                     |     2029-12-31T23:59:59.999999000                                                                    | Data and RV support_data                                                                                                                |
-| [VALUE_TYPE](#VALUE_TYPE)                 | Required                     |
-| [VAR_TYPE](#VAR_TYPE)                     | Required                     |       "support_data"                                                                   | Required for all variables, describes the variable type                                                                                                                                     |
-| [SCALETYP](#SCALETYP)                     | Recommended                  |        "linear"                                                                 | Data not using [SCALE_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#SCALE_PTR) and support_data                           |
-| [SCAL_PTR](#SCAL_PTR)                     | Recommended                  |                "log"                                                         | Multidimensional data not using SCALETYP                                                                                                |
-| [VAR_NOTES](#VAR_NOTES)                   | Recommended                  |     "Epoch is midpoint of integration"                                                                     | Optional for all variables, any length of characters can be used                                                                                                                                   |
-| [AVG_TYPE](#AVG_TYPE)                     | Optional                     |           "standard"                                                               | Data or RV support_data                                                                                                                 |
-| [DELTA_MINUS](#DELTA_MINUS)               | Optional                     |
-| [DELTA_MINUS_VAR](#DELTA_MINUS_VAR)                  | Optional                     |  "HET_Epoch_DELTA"                                                 | Data       | [DELTA_PLUS](#DELTA_PLUS)                 | Optional                |                                                                                                 
-| [DELTA_PLUS_VAR](#DELTA_PLUS_VAR)                 | Optional                     |  "HET_Epoch_DELTA"                                                 | Data                                                                                                                                    |
-| [DICT_KEY](#DICT_KEY)                     | Optional                     |             "time"                                                            | Optional for all variables, describes the variable                                                                                                                                                                           |
-| [FRAME](#FRAME)                           | Optional                     |
-| [LIMITS_WARN_MIN](#LIMITS_WARN_MIN)       | Optional                     |      0.0000                                                                   | Data                                                                                                                                    |
-| [LIMITS_WARN_MAX](#LIMITS_WARN_MIN)       | Optional                     |       9999.0000                                                                  | Data                                                                                                                                    |
-| [LIMITS_NOMINAL_MIN](#LIMITS_NOMINAL_MIN) | Optional                     |       1990.0, 279.0, 0.0                                                                  | Data                                                                                                                                    |
-| [LIMITS_NOMINAL_MAX](#LIMITS_NOMINAL_MAX) | Optional                     |     2001.0, 365.0, 86400000.0                                                                   | Data                                                                                                                                    |
-| [MONOTON](#MONOTON)                       | Optional                     |      "INCREASE"                                                                   | Epoch data   
-| [SCALEMAX](#SCALEMAX)                     | Optional                     |       2025-01-01T00:00:00.000000000                                                                  | Data and RV support_data     
-| [SCALEMIN](#SCALEMIN)                     | Optional                     |     2017-01-01T00:00:00.000000000                                                                    | Data and RV support_data
-| [VARIABLE_PURPOSE](#VARIABLE_PURPOSE)     | Optional                     |     "support_data"                                                                    | Data                                                                                                                                    |
- [V_PARENT](#V_PARENT)                     | Optional                     |        "A_Heavy_Rate_Parent"                                                                  | Data                                                                                                                                    |
+| **Attribute** | **NASA Archive Requirement** | **Example** | **Notes** |
+| -------------- | ---------------- | ------------- | --------- |
+| [CATDESC](#CATDESC) | Required | "HET Default time" | Required for all variables, 80 character string can be used  |
+| [DATA](#DATA) | Required | 0.0,1.0e3,2.0e3,3.0e3,4.0e3  |  Primary scientific parameters of the dataset |
+| [DEPEND_0](#DEPEND_0) | Required |  "HET_Epoch"  | Data, RV support_data, and RV metadata  |
+| [DEPEND_1](#DEPEND_1) | Required |  "Electron_ChanE_Energy" | Data of the following form:  1D spectrogram, 1D stack_plot, 2D spectrogram image |
+| [DEPEND_2](#DEPEND_2) | Required |  "lat" | Data of the following form:  2D spectrogram image  |
+| [DEPEND_3](#DEPEND_3) | Required | "TELESCOPE_index"  | Data of the following form:  3D spectrogram  |
+| [DISPLAY_TYPE](#DISPLAY_TYPE) | Required |  "time_series" | Data  |
+| [FIELDNAM](#FIELDNAM) | Required |  "HET_A_H_Rate_TS"  | Required for all variables, 30 character string can be used  |
+| [FILLVAL](#FILLVAL) | Required |  -1.0e+31 | Data, RV support_data, and RV metadata  |
+| [FORMAT](#FORMAT) | Required |  "F10.1"  | All not using [FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR) |
+| [FORM_PTR](#FORM_PTR) | Required |  "format_time" | 1D data, support_data, and metadata not using [FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT) |
+| [LABLAXIS](#LABLAXIS) | Required | "Time" | Data of the following form:  image scalar time_series, 1D spectrogram, also needed for support_data that does not utilize LABL_PTR_X |
+| [LABL_PTR_1](#LABL_PTR_1) | Required | "Electron_ChanE_Energy_LABL"  | Data of the following form:  1D time_series, 2D spectrogram, also needed for 1D and 2D support_data without a LABLAXIS |
+| [LABL_PTR_2](#LABL_PTR_1) | Required | "Telescope_Labl"  | Data of the following form:  2D spectrogram, 3D spectrogram, also needed for 2D support_data without a LABLAXIS  |
+| [LABL_PTR_3](#LABL_PTR_1) | Required | "Sector_Label"  | Data of the following form:  3D spectrogram  |
+| [REPRESENTATION_i](#REPRESENTATION_i) | Required | "x", "y", "z" | Allowed values are enumerated in the Metadata Dictionary |
+| [SI_CONVERSION](#SI_CONVERSION) | Required | "1.0E-5>T"  | Expressed in terms of one of the SI units |
+| [SIZES](#SIZES) | Required | 1 for a scalar (default value) | Dimensions of the array required for any physical parameter represented by more than one component |
+| [TENSOR_FRAME](#TENSOR_FRAME) | Required | "gse" |
+| [TENSOR_ORDER](#TENSOR_ORDER) | Required | | Order of the vector or tensor which represents a non-scalar physical observable |
+| [UNITS](#UNITS) | Required |  "counts s!E-1!N" | Data and support_data not using [UNIT_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNIT_PTR) |
+| [UNIT_PTR](#UNIT_PTR) | Required |  "unit_time" | 1D data and support_data not using [UNITS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNITS)  |
+| [VALIDMIN](#VALIDMIN) | Required | 1990-01-01T00:00:00.000000000 | Data and RV support_data  |
+| [VALIDMAX](#VALIDMAX) | Required | 2029-12-31T23:59:59.999999000  | Data and RV support_data  |
+| [VALUE_TYPE](#VALUE_TYPE) | Required |
+| [VAR_TYPE](#VAR_TYPE) | Required | "support_data" | Required for all variables, describes the variable type |
+| [SCALETYP](#SCALETYP) | Recommended  |  "linear" | Data not using [SCALE_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#SCALE_PTR) and support_data |
+| [SCAL_PTR](#SCAL_PTR) | Recommended  |  "log" | Multidimensional data not using SCALETYP  |
+| [VAR_NOTES](#VAR_NOTES) | Recommended  | "Epoch is midpoint of integration" | Optional for all variables, any length of characters can be used |
+| [AVG_TYPE](#AVG_TYPE) | Optional | "standard" | Data or RV support_data |
+| [DELTA_MINUS](#DELTA_MINUS) | Optional |
+| [DELTA_MINUS_VAR](#DELTA_MINUS_VAR)  | Optional |  "HET_Epoch_DELTA" | Data | [DELTA_PLUS](#DELTA_PLUS) | Optional  |
+| [DELTA_PLUS_VAR](#DELTA_PLUS_VAR) | Optional |  "HET_Epoch_DELTA" | Data  |
+| [DICT_KEY](#DICT_KEY) | Optional | "time"  | Optional for all variables, describes the variable |
+| [FRAME](#FRAME) | Optional |
+| [LIMITS_WARN_MIN](#LIMITS_WARN_MIN) | Optional |  0.0000 | Data  |
+| [LIMITS_WARN_MAX](#LIMITS_WARN_MIN) | Optional | 9999.0000  | Data  |
+| [LIMITS_NOMINAL_MIN](#LIMITS_NOMINAL_MIN) | Optional | 1990.0, 279.0, 0.0  | Data  |
+| [LIMITS_NOMINAL_MAX](#LIMITS_NOMINAL_MAX) | Optional | 2001.0, 365.0, 86400000.0 | Data  |
+| [MONOTON](#MONOTON) | Optional |  "INCREASE" | Epoch data |
+| [SCALEMAX](#SCALEMAX) | Optional | 2025-01-01T00:00:00.000000000  | Data and RV support_data |
+| [SCALEMIN](#SCALEMIN) | Optional | 2017-01-01T00:00:00.000000000  | Data and RV support_data |
+| [VARIABLE_PURPOSE](#VARIABLE_PURPOSE) | Optional | "support_data"  | Data  |
+| [V_PARENT](#V_PARENT) | Optional |  "A_Heavy_Rate_Parent"  | Data  |
 
 **Variable attributes for time documentation (not needed for predefined CDF_TIME_TT2000)**
 
 
 
 
-| **Attribute**                                   | **NASA Archive Requirement**                         | **Example** | **Notes**                                                                                                                                                                                 |
-| ----------------------------------------------- | ---------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ABSOLUTE_ERROR](#Absolute_Error)               | Optional                                             |     "ms"          | Absolute or systematic error, in same units as Units attribute. 
-| [BIN_LOCATION](#Bin_Location)                   | Optional                                             |   45.00            | Relative position of time stamp to the data measurement bin, with 0.0 at the beginning of time bin and 1.0 at the end. Default is 0.5 for the time at the center of the data measurement. |
-| [LEAP_SECONDS_INCLUDED](#Leap_Seconds_Included) | Recommended for UTC only                             |   2000.0            | Comma-delimited list (within brackets) of leap seconds                                                                                                                          |
-| [REFERENCE_POSITION](#Reference_Position)       | Optional                                             |     "data"           | Topocenter (local), Geocenter, rotating Earth geoid (used by CDF_TIME_TT2000)                                                                                                             |
- | [RELATIVE_ERROR](#Relative_Error)               | Optional                                             |    "deg"           | Relative or random error, in same units as Units attribute - to specify the accuracy of the time stamps relative to each other.                                                         |
-| [RESOLUTION](#Resolution)                       | Optional                                             |     "1"          | Using ISO8601 relative time format, for example: "1s" = 1 second. Resolution provides the smallest change in time that is measured.                                                       |
-| [TIME_BASE](#Time_Base)                         | Recommended (Important for netCDF files and clarity) |   4104.8999             | Fixed (0AD, 1900, 1970 (POSIX), J2000 (used by CDF_TIME_TT2000), 4714 BC (Julian)) or flexible (provider-defined)                                                                           |
-| [TIME_SCALE](#Time_Scale)                       | Recommended                                          |    0.0           | TT (same as TDT, used by CDF_TIME_TT2000), TAI (same as IAT, TT-32.184s), UTC (includes leap seconds), TDB (same as SPICE ET), EME1950 [default: UTC]                                          |
-| [UNITS](#UNITS)                                 | Optional                                             |  "nT"             | SI measurement unit: s, ms(milliseconds for EPOCH variables), ns(nanoseconds for CDF_TIME_TT2000), ps(picoseconds for EPOCH16)  
+| **Attribute** | **NASA Archive Requirement** | **Example** | **Notes** |
+| ------------- | ---------------- | ----------- | -------------- |
+| [ABSOLUTE_ERROR](#Absolute_Error) | Optional | "ms"  | Absolute or systematic error, in same units as Units attribute. |
+| [BIN_LOCATION](#Bin_Location) | Optional | 45.00  | Relative position of time stamp to the data measurement bin, with 0.0 at the beginning of time bin and 1.0 at the end. Default is 0.5 for the time at the center of the data measurement. |
+| [LEAP_SECONDS_INCLUDED](#Leap_Seconds_Included) | Recommended for UTC only | 2000.0  | Comma-delimited list (within brackets) of leap seconds  |
+| [REFERENCE_POSITION](#Reference_Position) | Optional | "data" | Topocenter (local), Geocenter, rotating Earth geoid (used by CDF_TIME_TT2000) |
+| [RELATIVE_ERROR](#Relative_Error) | Optional |  "deg" | Relative or random error, in same units as Units attribute - to specify the accuracy of the time stamps relative to each other. |
+| [RESOLUTION](#Resolution) | Optional | "1"  | Using ISO8601 relative time format, for example: "1s" = 1 second. Resolution provides the smallest change in time that is measured. |
+| [TIME_BASE](#Time_Base) | Recommended (Important for netCDF files and clarity) | 4104.8999 | Fixed (0AD, 1900, 1970 (POSIX), J2000 (used by CDF_TIME_TT2000), 4714 BC (Julian)) or flexible (provider-defined) |
+| [TIME_SCALE](#Time_Scale) | Recommended  |  0.0 | TT (same as TDT, used by CDF_TIME_TT2000), TAI (same as IAT, TT-32.184s), UTC (includes leap seconds), TDB (same as SPICE ET), EME1950 [default: UTC]  |
+| [UNITS](#UNITS) | Optional |  "nT" | SI measurement unit: s, ms(milliseconds for EPOCH variables), ns(nanoseconds for CDF_TIME_TT2000), ps(picoseconds for EPOCH16)  |
 
 **Variable Attribute Definitions in alphabetical order**
 
@@ -122,17 +122,17 @@ closer to 0.0.
 
 - **Canopus MARI:** Local Auroral Electrojet index, lower bound (CL), scalar
 
-## DATA 
+## DATA
 (Required) Used to provide the values of variables which are fixed for all records of a dataset.
 
 ## DELTA_MINUS
 (Optional)  Describes the range over which the data are integrated, representative, etc. and locate the position of the time tag or value within this range.
 
-## DELTA_MINUS_VAR 
+## DELTA_MINUS_VAR
 (Optional) Are included to point to a variable (or variables) which stores the uncertainty in (or range of) the original variable's value. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. For many variables in ISTP/IACG, the original variable will be at the center of the interval so that only one value (or one set of values) of uncertainty (or range) will need to be defined. In this case, DELTA_PLUS_VAR, and DELTA_MINUS_VAR will point to the same
 variable. See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg3). **The value of the attribute must be a variable in the same CDF data set.**
 
-## DELTA_PLUS 
+## DELTA_PLUS
 (Optional)  Describes the range over which the data are integrated, representative, etc. and locate the position of the time tag or value within this range.
 
 ## DELTA_PLUS_VAR
@@ -144,7 +144,7 @@ variable. See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#dat
 (Required for time-varying variables) Explicitly ties a data variable to the time variable on which it depends. All variables which change with time must have a DEPEND_0 attribute defined. The value of DEPEND_0 is *'Epoch'*, the time ordering parameter for ISTP/IACG. Different time resolution data can be supported in a single CDF data set by defining the variables Epoch, Epoch_1, Epoch_2, etc. each representing a different time resolution. These are
 "attached" appropriately to the variables in the CDF data set via the attribute DEPEND_0. **The value of the attribute must be a variable in the same CDF data set.** See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg1).
 
-## DEPEND_1 
+## DEPEND_1
 (Required for dimensional variables as shown in table above.) (1D time series data variables do not need a DEPEND_1 defined.) Ties a dimensional data variable to a support_data variable on which the i-th dimension of the data variable depends. The number of DEPEND attributes must match the dimensionality of the variable, i.e., a one-dimensional variable must have a DEPEND_1, a two-dimensional variable must have a DEPEND_1 and a DEPEND_2 attribute, etc. **The value of the attribute must be a variable in the same CDF data set.** See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg4).
 
 ## DEPEND_2
@@ -156,10 +156,10 @@ variable. See [example](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#dat
 ## DERIVN
 (Cluster required for derived variables) A text string identifying the derivation of the variable, possibly including a function/algorithm name or journal reference. Most derived variables will not be unique, and this information is essential if the product is to be compared/validated elsewhere.
 
-## DICT_KEY 
+## DICT_KEY
 (Optional) Comes from a data dictionary keyword list and describes the variable to which it is attached. The ISTP/IACG standard dictionary keyword list is described in [ISTP/IACG Dictionary Keywords](https://spdf.gsfc.nasa.gov/istp_guide/data_dictionary.html).
 
-## DISPLAY_TYPE 
+## DISPLAY_TYPE
 (Required for data variables) Tells automated software what type of plot to make and what associated variables in the CDF are required in order to do so. Some valid values are listed below:
 
 - time_series
@@ -208,16 +208,16 @@ INTEGER*8 ---- -9223372036854775808LL
 
 In addition, the CDF library has special cases for the FILLVAL and PADVALUE numbers for the three-time variable data types, where the display string is purposefully set to a recognizable string rather than the actual stored number:
 
-| **Time data type** | **Variable type** | **Stored number**      | **Input/Output string**          |
+| **Time data type** | **Variable type** | **Stored number**  | **Input/Output string**  |
 | ------------------ | ----------------- | ---------------------- | -------------------------------- |
-| TT2000             | FILLVAL           | -9223372036854775808LL | 9999-12-31:23:59:59.999999999    |
-|                    | PADVALUE          | -9223372036854775807LL | 0000-01-01:00:00:00.000000000    |
-| EPOCH              | FILLVAL           | -1.0E31                | 9999-12-31:23:59:59.999          |
-|                    | PADVALUE          | 0.0                    | 0000-01-01:00:00:00.000          |
-| EPOCH16            | FILLVAL           | -1.0E31, -1.0E31       | 9999-12-31:23:59:59.999999999999 |
-|                    | PADVALUE          | 0.0                    | 0000-01-01:00:00:00.000000000000 |
+| TT2000 | FILLVAL | -9223372036854775808LL | 9999-12-31:23:59:59.999999999  |
+|  | PADVALUE  | -9223372036854775807LL | 0000-01-01:00:00:00.000000000  |
+| EPOCH  | FILLVAL | -1.0E31  | 9999-12-31:23:59:59.999  |
+|  | PADVALUE  | 0.0  | 0000-01-01:00:00:00.000  |
+| EPOCH16  | FILLVAL | -1.0E31, -1.0E31 | 9999-12-31:23:59:59.999999999999 |
+|  | PADVALUE  | 0.0  | 0000-01-01:00:00:00.000000000000 |
 
-## FORMAT 
+## FORMAT
 (Required if not using FORM_PTR) Is the output format used when extracting data values out to a file or screen (using CDFlist). The magnitude and the number of significant figures needed should be carefully considered. A good check is to consider it with respect to the values of VALIDMIN and VALIDMAX attributes. The output should be in Fortran format.
 
 ## FORM_PTR
@@ -230,7 +230,7 @@ character string) representing the desired output format for the original variab
 ## FRAME
 (Optional)  Optional and partially redundant with the more powerful description provided by the three concepts TENSOR_ORDER, REPRESENTATION, AND TENSOR_FRAME.
 
-## LABL_PTR_1 
+## LABL_PTR_1
 (Required if not using LABLAXIS) Is used to label a dimensional variable when one value of LABLAXIS is not sufficient to describe the variable or to label all the axes. LABL_PTR_i is used *instead of* LABLAXIS, where *i* can take on any value from 1 to *n* where *n* is the total number of dimensions of the original variable. The value of LABL_PTR_1 is a variable which will contain the short character strings which describe the first dimension of the original variable. The actual labels should be short as described above for LABLAXIS. **The value of the attribute must be a variable in the same CDF data set.** See example (https://spdf.gsfc.nasa.gov/istp_guide/variables.html#data_eg2).
 
 ## LABL_PTR_2
@@ -283,10 +283,10 @@ Reference_Position is optional metadata to account for time variance with positi
 ## SCALEMIN
 (Optional) Are values which can be based on the actual values of data found in the CDF data set or on the probable uses of the data, em e.g., plotting multiple files at the same scale. Visualization software can use these attributes as defaults for plotting. The values must match the data type of the variable.
 
-## SCALETYP 
+## SCALETYP
 (Recommended for non-linear scales if not using SCAL_PTR) Indicates whether the variable should have a **linear** or a **log** scale as a default. If this attribute is not present, **linear** scale is assumed.
 
-## SCAL_PTR 
+## SCAL_PTR
 (Recommended for non-linear scales if not using SCALETYP) Is used for dimensional variables when one value of SCALTYP is not sufficient. SCAL_PTR is used \em instead of SCALTYP, and will point to a variable which will be of the same dimensionality as the original variable. The allowed values are linear and log. **The value of the attribute must be a variable in the same CDF data set.**
 
 ## sig_digits
@@ -299,12 +299,12 @@ Reference_Position is optional metadata to account for time variance with positi
 (Required) Essential for any variable that has more than one element, such as arrays and vectors.
 
 ## TENSOR_FRAME
-(Required) Contains the frame of a tensor. 
+(Required) Contains the frame of a tensor.
 
 ## TENSOR_ORDER
 (Required) Contains the rank or order of a tensor, i.e. 1 for a vector, 2 for a 3x3 tensor.
 
-## TIME_BASE 
+## TIME_BASE
 (Recommended for Time variables [important for netCDF files and clarity]) Fixed (0AD, 1900, 1970 (POSIX), J2000 (used by CDF_TIME_TT2000), 4714 BC (Julian)) or flexible (provider-defined)
 
 ## TIME_SCALE
@@ -316,7 +316,7 @@ Reference_Position is optional metadata to account for time variance with positi
 ## UNIT_PTR
 (Required if not using UNITS) Has as its value a variable which stores the character strings (up to 20 characters per character string) representing the units of the original variable, which can be added to a data listing heading or plot label. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). If this attribute is used, then UNITS is not used. **The value of the attribute must be a variable in the same CDF data set.**
 
-## VALIDMAX 
+## VALIDMAX
 (Required for time varying data and support_data) Hold values which are, respectively, the minimum and maximum values for a particular variable that are expected over the lifetime of the mission. The values must match the data type of the variable.
 
 ## VALIDMIN
@@ -339,7 +339,7 @@ Reference_Position is optional metadata to account for time variance with positi
 
 - **ignore_data** placeholders
 
-## VARIABLE_PURPOSE 
+## VARIABLE_PURPOSE
 (Optional) Are a list of tags/keywords separated by commas that indicate probable uses of the variable and its function. Software can use these attributes to find the primary variables in the dataset, find variables with a common function, indicate variables suitable for specific purposes such as summary plots or educational displays, etc. Tags could indicate a common geophysical quantity to enable matching several variables of the same kind. For instance, all magnetic field variables could be tagged with VARIABLE_PURPOSE="Magnetic_Field" even though they have different coordinate systems or cadences. Software could use this tag to identify variables with a common theme for easier distinguishing between groups of variables and selecting between them. The values are always in a character string. Suggested tags/keywords include:
 
 - **"PRIMARY_VAR"**: one of the primary variables in the dataset
@@ -352,7 +352,7 @@ Reference_Position is optional metadata to account for time variance with positi
 
 - **"Magnetic_Field", "Electric_Field", etc.**: common instrument tag to relate similar variables
 
-## V_PARENT 
+## V_PARENT
 (Optional for use with derived variables) Identifies the "attached" variable which stores the parent variable(s) of a derived variable. The ''attached" variable can be dimensional and sized to hold as many parents as necessary. The syntax of each entry would be: logical_file_id>variable_name.
 
 

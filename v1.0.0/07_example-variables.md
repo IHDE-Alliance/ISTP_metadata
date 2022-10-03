@@ -28,7 +28,7 @@ We show here the variable, Ion number density, as it would appear in a CDF Skele
 "SW_P_Den"      CDF_REAL4           1            0                       T
 
 ! Attribute       Data
-! Name            Type          Value
+! Name            Type          Value 
 ! --------        ----          -----
 
  "CATDESC"       CDF_CHAR       { "Ion number density (Solar Wind " -"Analyzer), scalar" }
@@ -43,7 +43,7 @@ We show here the variable, Ion number density, as it would appear in a CDF Skele
  "VALIDMIN"      CDF_REAL4      { 0.01 }
  "VALIDMAX"      CDF_REAL4      { 1000.0 }
  "VAR_NOTES"     CDF_CHAR       { "Assuming no helium (0.3 - several " - "hundred) if the density is less than " -
-                                   "0.3/cc the higher moments (VEL,TEMP) " - "shall not be used because of the poor " 
+                                   "0.3/cc the higher moments (VEL,TEMP) " - "shall not be used because of the poor "
                                    - "counting statistics." }
 
  "VAR_TYPE"      CDF_CHAR       { "data" }.
@@ -275,9 +275,9 @@ Character metadata must define the number of elements to be the same as the numb
  ! NRV values follow...
 
  [ 1 ] = { "Bx GSE" }
- 
+
  [ 2 ] = { "By GSE" }
- 
+
  [ 3 ] = { "Bz GSE" }
 
 

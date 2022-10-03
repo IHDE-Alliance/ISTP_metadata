@@ -77,7 +77,7 @@ These are variables of secondary importance e.g., a variable holding "Bx,By,Bz" 
 
 ***General***
 
-The following CDF variable specifications are required. Metadata is always character type. Metadata is always time invariant if it is used to label a data variable. Metadata can be time varying if it is NOT used as a label. If a metadata variable is attached to a data variable via LABL_PTR_i, then it must be of the same size as the dimension i. Character metadata must define the number of elements to be the same as the number of characters used in its value. 
+The following CDF variable specifications are required. Metadata is always character type. Metadata is always time invariant if it is used to label a data variable. Metadata can be time varying if it is NOT used as a label. If a metadata variable is attached to a data variable via LABL_PTR_i, then it must be of the same size as the dimension i. Character metadata must define the number of elements to be the same as the number of characters used in its value.
 
 **Variable Display**
 
@@ -88,6 +88,10 @@ The dependencies and labels that need to be included with a data variable depend
 For IACG use (expanded international community with missions outside the core ISTP) and for ISTP higher resolution definitive data or for event data, **only Epoch is now required.** A quality flag is still recommended.
 
 **Epoch (required)**
+CDF Time variable types
+- CDF_TIME_TT2000 nanoseconds from J2000 in Terrestrial Time in 8 byte integer handles leap seconds and is well-defined; UTC conversion requires up-to-date leap second table (last value stored in CDF header as a check)
+- EPOCH milliseconds from 0AD in 8byte float; usually UTC but not leap seconds
+- EPOCH16 picoseconds from 0AD in two 8byte float; usually UTC but not leap seconds
 
 "Epoch" should be the first variable in each CDF data set. All time varying variables
 in the CDF data set will depend on the "Epoch" variable (or on a CDF_TIME_TT2000

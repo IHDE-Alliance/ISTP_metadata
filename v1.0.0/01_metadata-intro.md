@@ -14,7 +14,7 @@ Global attributes, variable attributes, and variables are included in the metada
 
 ## History
 
-Ramona Kessel at the NASA Space Physics Data Facility ([SPDF](https://spdf.gsfc.nasa.gov)) and others began coordinating development of the ISTP Guidelines in the early 1990's as part of the ISTP project and used by the Polar, Wind, Geotail, and Cluster missions initially and then adopted by later missions, including MMS, Van Allen Probes, Parker, and Solar Orbiter.
+Ramona L. Kessel and Robert E. McGuire at the NASA Space Physics Data Facility ([SPDF](https://spdf.gsfc.nasa.gov)) and others began coordinating development of the ISTP Guidelines in the early 1990's as part of the ISTP project and used by the Polar, Wind, Geotail, and Cluster missions initially and then adopted by later missions, including MMS, Van Allen Probes, Parker, and Solar Orbiter.
 
 The ISTP Guidelines were adopted internationally, and are used by most major heliophysics missions because they provide critical value in understanding the data by researchers outside the specific teams. The ISTP Guidelines fall between Specification and International Standard, and are accepted as a best practice.
 

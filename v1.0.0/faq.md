@@ -27,7 +27,7 @@ The ISTP Guidelines are maintained by volunteers in the Heliophysics community. 
 
 ### How long have the ISTP Guidelines been around? Is it mature?
 
-Ramona Kessel at the NASA Space Physics Data Facility ([SPDF](https://spdf.gsfc.nasa.gov)) began coordinating development of the ISTP Guidelines in 1993? as part of the International Solar-Terrestrial Physics Project ([ISTP](https://pwg.gsfc.nasa.gov)). It was used by the Polar, Wind, and Geotail missions initially and then adopted by later missions, including Cluster, MMS, Van Allen Probes.
+Ramona L. Kessel and Robert E. McGuire at the NASA Space Physics Data Facility ([SPDF](https://spdf.gsfc.nasa.gov)) began coordinating development of the ISTP Guidelines in 1991 as part of the International Solar-Terrestrial Physics Project ([ISTP](https://pwg.gsfc.nasa.gov)). It was used by the Polar, Wind, and Geotail missions initially and then adopted by later missions, including Cluster, MMS, Van Allen Probes.
 
 ### How does the ISTP Guidelines relate to other guidelines/specifications?
 Earth sciences has a similar set of metadata guidelines in the [CF conventions](https://cfconventions.org/)

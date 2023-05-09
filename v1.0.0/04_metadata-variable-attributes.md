@@ -13,12 +13,12 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | **Attribute** | **NASA Archive Requirement** | **Example** | **Notes** |
 | -------------- | ---------------- | ------------- | --------- |
 | [CATDESC](#CATDESC) | Required | "HET Default time" | Required for all variables, 80 character string can be used  |
-| [DATA](#DATA) | Required | 0.0,1.0e3,2.0e3,3.0e3,4.0e3  |  Primary scientific parameters of the dataset |
+| [DATA](#DATA) | Optional | 0.0,1.0e3,2.0e3,3.0e3,4.0e3  |  Non-record varying data that is the same for the whole dataset |
 | [DEPEND_0](#DEPEND_0) | Required |  "HET_Epoch"  | Data, RV support_data, and RV metadata  |
 | [DEPEND_1](#DEPEND_1) | Required |  "Electron_ChanE_Energy" | Data of the following form:  1D spectrogram, 1D stack_plot, 2D spectrogram image |
 | [DEPEND_2](#DEPEND_2) | Required |  "lat" | Data of the following form:  2D spectrogram image  |
 | [DEPEND_3](#DEPEND_3) | Required | "TELESCOPE_index"  | Data of the following form:  3D spectrogram  |
-| [DISPLAY_TYPE](#DISPLAY_TYPE) | Required |  "time_series" | Data  |
+| [DISPLAY_TYPE](#DISPLAY_TYPE) | Optional |  "time_series" | Recommended data plot type |
 | [FIELDNAM](#FIELDNAM) | Required |  "HET_A_H_Rate_TS"  | Required for all variables, 30 character string can be used  |
 | [FILLVAL](#FILLVAL) | Required |  -1.0e+31 | Data, RV support_data, and RV metadata  |
 | [FORMAT](#FORMAT) | Required |  "F10.1"  | All not using [FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR) |
@@ -27,16 +27,16 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [LABL_PTR_1](#LABL_PTR_1) | Required | "Electron_ChanE_Energy_LABL"  | Data of the following form:  1D time_series, 2D spectrogram, also needed for 1D and 2D support_data without a LABLAXIS |
 | [LABL_PTR_2](#LABL_PTR_1) | Required | "Telescope_Labl"  | Data of the following form:  2D spectrogram, 3D spectrogram, also needed for 2D support_data without a LABLAXIS  |
 | [LABL_PTR_3](#LABL_PTR_1) | Required | "Sector_Label"  | Data of the following form:  3D spectrogram  |
-| [REPRESENTATION_i](#REPRESENTATION_i) | Required | "x", "y", "z" | Allowed values are enumerated in the Metadata Dictionary |
-| [SI_CONVERSION](#SI_CONVERSION) | Required | "1.0E-5>T"  | Expressed in terms of one of the SI units |
-| [SIZES](#SIZES) | Required | 1 for a scalar (default value) | Dimensions of the array required for any physical parameter represented by more than one component |
-| [TENSOR_FRAME](#TENSOR_FRAME) | Required | "gse" |
-| [TENSOR_ORDER](#TENSOR_ORDER) | Required | | Order of the vector or tensor which represents a non-scalar physical observable |
+| [REPRESENTATION_i](#REPRESENTATION_i) | Optional | "x", "y", "z" | Allowed values are enumerated in the Metadata Dictionary |
+| [SI_CONVERSION](#SI_CONVERSION) | Optional | "1.0E-5>T"  | Expressed in terms of one of the SI units |
+| [SIZES](#SIZES) | Optional | 1 for a scalar (default value) | Dimensions of the array required for any physical parameter represented by more than one component |
+| [TENSOR_FRAME](#TENSOR_FRAME) | Optional | "gse" |
+| [TENSOR_ORDER](#TENSOR_ORDER) | Optional | | Order of the vector or tensor which represents a non-scalar physical observable |
 | [UNITS](#UNITS) | Required |  "counts s!E-1!N" | Data and support_data not using [UNIT_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNIT_PTR) |
 | [UNIT_PTR](#UNIT_PTR) | Required |  "unit_time" | 1D data and support_data not using [UNITS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNITS)  |
 | [VALIDMIN](#VALIDMIN) | Required | 1990-01-01T00:00:00.000000000 | Data and RV support_data  |
 | [VALIDMAX](#VALIDMAX) | Required | 2029-12-31T23:59:59.999999000  | Data and RV support_data  |
-| [VALUE_TYPE](#VALUE_TYPE) | Required |
+| [VALUE_TYPE](#VALUE_TYPE) | Optional | ISO_TIME | Type of variable, used by Cluster Exchange Format (CEF) |
 | [VAR_TYPE](#VAR_TYPE) | Required | "support_data" | Required for all variables, describes the variable type |
 | [SCALETYP](#SCALETYP) | Recommended  |  "linear" | Data not using [SCALE_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#SCALE_PTR) and support_data |
 | [SCAL_PTR](#SCAL_PTR) | Recommended  |  "log" | Multidimensional data not using SCALETYP  |
@@ -58,8 +58,6 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [V_PARENT](#V_PARENT) | Optional |  "A_Heavy_Rate_Parent"  | Data  |
 
 **Variable attributes for time documentation (not needed for predefined CDF_TIME_TT2000)**
-
-
 
 
 | **Attribute** | **NASA Archive Requirement** | **Example** | **Notes** |

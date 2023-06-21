@@ -12,22 +12,37 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 
 | **Attribute** | **NASA Archive Requirement** | **Example** | **Notes** |
 | -------------- | ---------------- | ------------- | --------- |
+| [AVG_TYPE](#AVG_TYPE) | Optional | "standard" | Data or RV support_data |
 | [CATDESC](#CATDESC) | Required | "HET Default time" | Required for all variables, 80 character string can be used  |
 | [DATA](#DATA) | Optional | 0.0,1.0e3,2.0e3,3.0e3,4.0e3  |  Non-record varying data that is the same for the whole dataset |
+| [DELTA_MINUS](#DELTA_MINUS) | Optional |
+| [DELTA_MINUS_VAR](#DELTA_MINUS_VAR)  | Optional |  "HET_Epoch_DELTA" | Data | [DELTA_PLUS](#DELTA_PLUS) | Optional  |
+| [DELTA_PLUS_VAR](#DELTA_PLUS_VAR) | Optional |  "HET_Epoch_DELTA" | Data  |
 | [DEPEND_0](#DEPEND_0) | Required |  "HET_Epoch"  | Data, RV support_data, and RV metadata  |
 | [DEPEND_1](#DEPEND_1) | Required |  "Electron_ChanE_Energy" | Data of the following form:  1D spectrogram, 1D stack_plot, 2D spectrogram image |
 | [DEPEND_2](#DEPEND_2) | Required |  "lat" | Data of the following form:  2D spectrogram image  |
 | [DEPEND_3](#DEPEND_3) | Required | "TELESCOPE_index"  | Data of the following form:  3D spectrogram  |
+| [DICT_KEY](#DICT_KEY) | Optional | "time"  | Optional for all variables, describes the variable |
 | [DISPLAY_TYPE](#DISPLAY_TYPE) | Optional |  "time_series" | Recommended data plot type |
 | [FIELDNAM](#FIELDNAM) | Required |  "HET_A_H_Rate_TS"  | Required for all variables, 30 character string can be used  |
 | [FILLVAL](#FILLVAL) | Required |  -1.0e+31 | Data, RV support_data, and RV metadata  |
 | [FORMAT](#FORMAT) | Required |  "F10.1"  | All not using [FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR) |
 | [FORM_PTR](#FORM_PTR) | Required |  "format_time" | 1D data, support_data, and metadata not using [FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT) |
+| [FRAME](#FRAME) | Optional |
 | [LABLAXIS](#LABLAXIS) | Required | "Time" | Data of the following form:  image scalar time_series, 1D spectrogram, also needed for support_data that does not utilize LABL_PTR_X |
 | [LABL_PTR_1](#LABL_PTR_1) | Required | "Electron_ChanE_Energy_LABL"  | Data of the following form:  1D time_series, 2D spectrogram, also needed for 1D and 2D support_data without a LABLAXIS |
 | [LABL_PTR_2](#LABL_PTR_1) | Required | "Telescope_Labl"  | Data of the following form:  2D spectrogram, 3D spectrogram, also needed for 2D support_data without a LABLAXIS  |
 | [LABL_PTR_3](#LABL_PTR_1) | Required | "Sector_Label"  | Data of the following form:  3D spectrogram  |
+| [LIMITS_WARN_MIN](#LIMITS_WARN_MIN) | Optional |  0.0000 | Data  |
+| [LIMITS_WARN_MAX](#LIMITS_WARN_MIN) | Optional | 9999.0000  | Data  |
+| [LIMITS_NOMINAL_MIN](#LIMITS_NOMINAL_MIN) | Optional | 1990.0, 279.0, 0.0  | Data  |
+| [LIMITS_NOMINAL_MAX](#LIMITS_NOMINAL_MAX) | Optional | 2001.0, 365.0, 86400000.0 | Data  |
+| [MONOTON](#MONOTON) | Optional |  "INCREASE" | Epoch data |
 | [REPRESENTATION_i](#REPRESENTATION_i) | Optional | "x", "y", "z" | Allowed values are enumerated in the Metadata Dictionary |
+| [SCALEMAX](#SCALEMAX) | Optional | 2025-01-01T00:00:00.000000000  | Data and RV support_data |
+| [SCALEMIN](#SCALEMIN) | Optional | 2017-01-01T00:00:00.000000000  | Data and RV support_data |
+| [SCALETYP](#SCALETYP) | Recommended  |  "linear" | Data not using [SCALE_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#SCALE_PTR) and support_data |
+| [SCAL_PTR](#SCAL_PTR) | Recommended  |  "log" | Multidimensional data not using SCALETYP  |
 | [SI_CONVERSION](#SI_CONVERSION) | Optional | "1.0E-5>T"  | Expressed in terms of one of the SI units |
 | [SIZES](#SIZES) | Optional | 1 for a scalar (default value) | Dimensions of the array required for any physical parameter represented by more than one component |
 | [TENSOR_FRAME](#TENSOR_FRAME) | Optional | "gse" |
@@ -37,23 +52,8 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [VALIDMIN](#VALIDMIN) | Required | 1990-01-01T00:00:00.000000000 | Data and RV support_data  |
 | [VALIDMAX](#VALIDMAX) | Required | 2029-12-31T23:59:59.999999000  | Data and RV support_data  |
 | [VALUE_TYPE](#VALUE_TYPE) | Optional | ISO_TIME | Type of variable, used by Cluster Exchange Format (CEF) |
-| [VAR_TYPE](#VAR_TYPE) | Required | "support_data" | Required for all variables, describes the variable type |
-| [SCALETYP](#SCALETYP) | Recommended  |  "linear" | Data not using [SCALE_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#SCALE_PTR) and support_data |
-| [SCAL_PTR](#SCAL_PTR) | Recommended  |  "log" | Multidimensional data not using SCALETYP  |
 | [VAR_NOTES](#VAR_NOTES) | Recommended  | "Epoch is midpoint of integration" | Optional for all variables, any length of characters can be used |
-| [AVG_TYPE](#AVG_TYPE) | Optional | "standard" | Data or RV support_data |
-| [DELTA_MINUS](#DELTA_MINUS) | Optional |
-| [DELTA_MINUS_VAR](#DELTA_MINUS_VAR)  | Optional |  "HET_Epoch_DELTA" | Data | [DELTA_PLUS](#DELTA_PLUS) | Optional  |
-| [DELTA_PLUS_VAR](#DELTA_PLUS_VAR) | Optional |  "HET_Epoch_DELTA" | Data  |
-| [DICT_KEY](#DICT_KEY) | Optional | "time"  | Optional for all variables, describes the variable |
-| [FRAME](#FRAME) | Optional |
-| [LIMITS_WARN_MIN](#LIMITS_WARN_MIN) | Optional |  0.0000 | Data  |
-| [LIMITS_WARN_MAX](#LIMITS_WARN_MIN) | Optional | 9999.0000  | Data  |
-| [LIMITS_NOMINAL_MIN](#LIMITS_NOMINAL_MIN) | Optional | 1990.0, 279.0, 0.0  | Data  |
-| [LIMITS_NOMINAL_MAX](#LIMITS_NOMINAL_MAX) | Optional | 2001.0, 365.0, 86400000.0 | Data  |
-| [MONOTON](#MONOTON) | Optional |  "INCREASE" | Epoch data |
-| [SCALEMAX](#SCALEMAX) | Optional | 2025-01-01T00:00:00.000000000  | Data and RV support_data |
-| [SCALEMIN](#SCALEMIN) | Optional | 2017-01-01T00:00:00.000000000  | Data and RV support_data |
+| [VAR_TYPE](#VAR_TYPE) | Required | "support_data" | Required for all variables, describes the variable type |
 | [VARIABLE_PURPOSE](#VARIABLE_PURPOSE) | Optional | "support_data"  | Data  |
 | [V_PARENT](#V_PARENT) | Optional |  "A_Heavy_Rate_Parent"  | Data  |
 
@@ -290,8 +290,45 @@ Reference_Position is optional metadata to account for time variance with positi
 ## sig_digits
 (Cluster recommended) This attribute provides the number of significant digits or other measure of data accuracy in a TBD manner. It is to allow compression software to optimize the number of digits to retain, and users to assess the accuracy of products. This operation is subject to the deliberations of the 'network traffic report' Task Group, DS-CFC-TN-0001, on compression algorithms and implementation. Restrictions on data compression may also influence the format and choice of data type used by the CDF generation software.
 
-## SI_conversion
-(Cluster recommended) The conversion factor to SI units. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion and the second is the standard unit that it converts to. For example, the magnetic field for FGM will be in **nT**, and to convert to Tesla the value of SI_conv will be '1.0e-9>Tesla'. The use of text allows this attribute to be parsed and the value must be extracted in software.
+## SI_CONVERSION
+(Cluster recommended) The conversion factor to SI units as a text string of the form number>SI unit, using the SI units listed below. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion number and the second is the standard unit that it converts to. For example, for a magnetic field measured in **nT**, the SI_CONVERSION="1.0e-9>T". The format must be scrupulously respected because the information will be parsed by generic software. 
+
+For compound units, the grammar will be of a standard form: distinct unit dimensions will be separated by space characters and powers (signed) will be preceded by the carat, ^. Non-dimensional qualifiers, which do not appear in the SI units list, are to be enclosed in brackets “()” and will be ignored, for example, "m s^-1" or "(number electrons) m^-3" . Non-integer powers are permitted, e.g., “Hz^–0.5”. Similarly, brackets may be used to provide user information (e.g., for labelling axes) on dimensionless quantities, such as SI_CONVERSION="1.0E-2>(fraction) unitless" for a percentage. When the unit is unitless, unitless must be specified on the right-hand side.
+
+For cases where there are multiple inhomogeneous units, such as representing a vector in polar coordinates, the syntax may be extended with commas between units, such as "1.e3>m, 0.0174533>rad, 0.0174533>rad" for spherical polar coordinates in [km, degrees, degrees]; or "1.e3>m, 1>rad, "1.e3>m" for cylindrical polar coordinates in [km, radian, km].
+
+Other examples:
+
+Magnetic field in γ : SI_CONVERSION="1.0E-5>T"
+
+density in cm-3 : SI_CONVERSION="1.0E-6>(particles)m^-3"
+
+unitless : SI_CONVERSION="1>unitless"
+
+|SI Unit|Description|
+|---|------|
+|m|metre|
+|N|newton|
+|kg|kilogram| 
+|Pa|pascal|
+|s|second|
+|Hz|hertz|
+|A|ampere|
+|V|volt|
+|K|kelvin|
+|W|watt|
+|rad|radian| 
+|J|joule|
+|sr|steradian| 
+|C|coulomb|
+|T|tesla|
+|ohm|ohm|
+|mho|mho (siemens)|
+|H|henry|
+|F|farad|
+|Celsius|celsius| 
+|unitless||
+
 
 ## SIZES
 (Required) Essential for any variable that has more than one element, such as arrays and vectors.

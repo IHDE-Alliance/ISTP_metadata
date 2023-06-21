@@ -291,11 +291,11 @@ Reference_Position is optional metadata to account for time variance with positi
 (Cluster recommended) This attribute provides the number of significant digits or other measure of data accuracy in a TBD manner. It is to allow compression software to optimize the number of digits to retain, and users to assess the accuracy of products. This operation is subject to the deliberations of the 'network traffic report' Task Group, DS-CFC-TN-0001, on compression algorithms and implementation. Restrictions on data compression may also influence the format and choice of data type used by the CDF generation software.
 
 ## SI_CONVERSION
-(Cluster recommended) The conversion factor to SI units as a text string of the form number>SI unit, using the SI units listed below. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion number and the second is the standard unit that it converts to. For example, for a magnetic field measured in **nT**, the SI_CONVERSION="1.0e-9>T". The format must be scrupulously respected because the information will be parsed by generic software. 
+(Cluster recommended) The conversion factor to SI units as a text string of the form number>SI unit, using the SI units listed below. This is the factor that the variable must be multiplied by in order to turn it to generic SI units. It will contain two text fields separated by the delimiter >. The first is the conversion number and the second is the standard unit that it converts to. For example, for a magnetic field measured in nT, the SI_CONVERSION="1.0e-9>T". The format must be scrupulously respected because the information will be parsed by generic software. Two useful units which are not SI units are added: degree (angle), and unitless (no units).
 
 For compound units, the grammar will be of a standard form: distinct unit dimensions will be separated by space characters and powers (signed) will be preceded by the carat, ^. Non-dimensional qualifiers, which do not appear in the SI units list, are to be enclosed in brackets “()” and will be ignored, for example, "m s^-1" or "(number electrons) m^-3" . Non-integer powers are permitted, e.g., “Hz^–0.5”. Similarly, brackets may be used to provide user information (e.g., for labelling axes) on dimensionless quantities, such as SI_CONVERSION="1.0E-2>(fraction) unitless" for a percentage. When the unit is unitless, unitless must be specified on the right-hand side.
 
-For cases where there are multiple inhomogeneous units, such as representing a vector in polar coordinates, the syntax may be extended with commas between units, such as "1.e3>m, 0.0174533>rad, 0.0174533>rad" for spherical polar coordinates in [km, degrees, degrees]; or "1.e3>m, 1>rad, "1.e3>m" for cylindrical polar coordinates in [km, radian, km].
+For cases where there are multiple inhomogeneous units, such as representing a vector in polar coordinates, the syntax may be extended with commas between units, such as "1.e3>m, 1>degree, 1>degree" for spherical polar coordinates in [km, degrees, degrees]; or "1.e3>m, 1>rad, "1.e3>m" for cylindrical polar coordinates in [km, radian, km].
 
 Other examples:
 
@@ -326,8 +326,9 @@ unitless : SI_CONVERSION="1>unitless"
 |mho|mho (siemens)|
 |H|henry|
 |F|farad|
-|Celsius|celsius| 
-|unitless||
+|Celsius|celsius|
+|degree|angle|
+|unitless|no units|
 
 
 ## SIZES

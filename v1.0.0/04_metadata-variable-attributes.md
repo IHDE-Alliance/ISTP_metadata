@@ -14,7 +14,6 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | -------------- | ---------------- | ------------- | --------- |
 | [AVG_TYPE](#AVG_TYPE) | Optional | "standard" | Data or RV support_data |
 | [CATDESC](#CATDESC) | Required | "HET Default time" | Required for all variables, 80 character string can be used  |
-| [DATA](#DATA) | Optional | 0.0,1.0e3,2.0e3,3.0e3,4.0e3  |  Non-record varying data that is the same for the whole dataset |
 | [DELTA_MINUS](#DELTA_MINUS) | Optional |
 | [DELTA_MINUS_VAR](#DELTA_MINUS_VAR)  | Optional |  "HET_Epoch_DELTA" | Data | [DELTA_PLUS](#DELTA_PLUS) | Optional  |
 | [DELTA_PLUS_VAR](#DELTA_PLUS_VAR) | Optional |  "HET_Epoch_DELTA" | Data  |
@@ -119,9 +118,6 @@ closer to 0.0.
 - **Canopus MPA:** 42 values of 5577A Intensities from Geodetic Lat 46-67, Long=265
 
 - **Canopus MARI:** Local Auroral Electrojet index, lower bound (CL), scalar
-
-## DATA
-(Required) Used to provide the values of variables which are fixed for all records of a dataset.
 
 ## DELTA_MINUS
 (Optional)  Describes the range over which the data are integrated, representative, etc. and locate the position of the time tag or value within this range.

@@ -10,19 +10,23 @@ Data
 - Example - vector magnetic field
 - Example - 1D flux
 - Example - 2D flux
+- 
 Support_data
 - General
 - Example - Epoch time
 - Example - 1D Energy
+- 
 Metadata
 - General
 - Example - vector magnetic field labels
+- 
 Variable Display
 - Scalar (0D) Time Series, e.g., Solar Wind Proton Number Density, scalar
 - 1D - size 3 Time Series, e.g., Magnetic Field, cartesian GSE
 - 1D - size 12 Spectrogram , e.g., Ion Diff. Intensity, at 12 energies 67-1361 keV
 - 1D - size 7 Stack_plot, e.g., Electron Flux at 7 energies (0.1-225keV)
 - 1D - sizes 28, 12 Spectrogram , e.g., H+ number flux for selected energy and angle bins
+- 
 Required support_data variables
 - Epoch (required)
 - Quality Flag (recommended)

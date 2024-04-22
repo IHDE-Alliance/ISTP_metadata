@@ -1,6 +1,6 @@
 **Variables**
 
-- Introduction(https://github.com/IHDE-Alliance/ISTP_metadata/edit/main/v1.0.0/03_metadata-variables.md)
+- [Introduction](https://github.com/IHDE-Alliance/ISTP_metadata/edit/main/v1.0.0/03_metadata-variables.md)
 - Complete Variable Description
 - Data
 - General

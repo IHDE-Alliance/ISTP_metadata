@@ -2,7 +2,7 @@
 
 [Introduction](#Introduction)
 [Complete Variable Description](#CompleteVariableDescription)
-- Data
+Data
   - General
 - Example - simple scalar density
 - Example - vector magnetic field

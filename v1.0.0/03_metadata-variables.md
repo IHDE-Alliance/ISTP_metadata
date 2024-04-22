@@ -1,6 +1,6 @@
 **Variables**
 
-- Introduction.
+- Introduction
 - Complete Variable Description
 - Data
 - General

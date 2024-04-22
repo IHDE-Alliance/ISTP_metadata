@@ -29,10 +29,9 @@
 
 ***Introduction***
 
-We have identified three types of variables to be included in ISTP/IACG CDF files: **data** variables of primary importance (e.g., density, magnetic_field, particle_flux),  **support_data** variables of secondary importance (e.g., time, energy_bands associated with particle_flux) and **metadata** variables (e.g., a variable holding "Bx,By,Bz" to label magnetic field). Variables are defined with CDF specifications and required attributes. Data variables also have attached variables for time and dependencies (support_data) and labels (metadata). The support_data variables can be attached to data variables via DEPEND_i variable attributes. Metadata variables can be attached to data variables via LABL_PTR_i variable attributes (see below).
+We have identified three types of variables to be included in ISTP/IACG CDF files: **data** variables of primary importance (e.g., density, magnetic_field, particle_flux), **support_data** variables of secondary importance (e.g., time, energy_bands associated with particle_flux) and **metadata** variables (e.g., a variable holding "Bx,By,Bz" to label magnetic field). Variables are defined with CDF specifications and required attributes. Data variables also have attached variables for time and dependencies (support_data) and labels (metadata). The support_data variables can be attached to data variables via DEPEND_i variable attributes. Metadata variables can be attached to data variables via LABL_PTR_i variable attributes (see below).
 
-**NOTE:** ISTP/IACG now encourages the use of zVariables which carry their own dimensionality. (The old style rVariables carry the dimensionality of the entire CDF and are intrinsically more complicated.) For more information about zVariables and
-rVariables consult the [CDF home page](https://cdf.gsfc.nasa.gov/).
+**NOTE:** ISTP/IACG now encourages the use of zVariables which carry their own dimensionality. (The old style rVariables carry the dimensionality of the entire CDF and are intrinsically more complicated.) For more information about zVariables and rVariables consult the [CDF home page](https://cdf.gsfc.nasa.gov/).
 
 **Complete Variable Description**
 

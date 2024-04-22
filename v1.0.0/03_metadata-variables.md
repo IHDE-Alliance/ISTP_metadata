@@ -1,7 +1,9 @@
 **Variables**
 
 [Introduction](#Introduction)
+
 [Complete Variable Description](#CompleteVariableDescription)
+
 Data
   - General
 - Example - simple scalar density

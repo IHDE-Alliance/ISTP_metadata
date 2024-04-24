@@ -7,9 +7,9 @@
 [Data](#Data)
 - [General](#General)
 - [Example - simple scalar density](https://github.com/IHDE-Alliance/ISTP_metadata/blob/main/v1.0.0/07_example-variables.md)
-- Example - vector magnetic field
-- Example - 1D flux
-- Example - 2D flux
+- [Example - vector magnetic field](https://github.com/IHDE-Alliance/ISTP_metadata/blob/main/v1.0.0/07_example-variables.md)
+- [Example - 1D flux](https://github.com/IHDE-Alliance/ISTP_metadata/blob/main/v1.0.0/07_example-variables.md)
+- [Example - 2D flux](https://github.com/IHDE-Alliance/ISTP_metadata/blob/main/v1.0.0/07_example-variables.md)
 
 [Support_data](#Support_data)
 - [General](#General)

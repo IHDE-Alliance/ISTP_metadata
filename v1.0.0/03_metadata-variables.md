@@ -6,7 +6,7 @@
 
 [Data](#Data)
 - [General](#General)
-- [Example - simple scalar density](#simple-scalar-density)
+- [Example - simple scalar density](#Example-simple-scalar-density)
 - Example - vector magnetic field
 - Example - 1D flux
 - Example - 2D flux

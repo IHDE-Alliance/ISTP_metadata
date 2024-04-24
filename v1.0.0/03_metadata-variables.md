@@ -13,8 +13,8 @@
 
 [Support_data](#Support_data)
 - [General](#General)
-- Example - Epoch time
-- Example - 1D Energy
+- [Example - Epoch time](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#support_data_eg1)
+- [Example - 1D Energy](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#support_data_eg2)
  
 [Metadata](#Metadata)
 - [General](#General)

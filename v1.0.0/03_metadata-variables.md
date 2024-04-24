@@ -18,14 +18,14 @@
  
 [Metadata](#Metadata)
 - [General](#General)
-- Example - vector magnetic field labels
+- [Example - vector magnetic field labels](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Metadata_eg1)
  
 [Variable Display](#Variable-Display)
-- Scalar (0D) Time Series, e.g., Solar Wind Proton Number Density, scalar
-- 1D - size 3 Time Series, e.g., Magnetic Field, cartesian GSE
-- 1D - size 12 Spectrogram , e.g., Ion Diff. Intensity, at 12 energies 67-1361 keV
-- 1D - size 7 Stack_plot, e.g., Electron Flux at 7 energies (0.1-225keV)
-- 1D - sizes 28, 12 Spectrogram , e.g., H+ number flux for selected energy and angle bins
+- [Scalar (0D) Time Series, e.g., Solar Wind Proton Number Density, scalar](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Scalar%20(0D)%20Time%20Series)
+- [1D - size 3 Time Series, e.g., Magnetic Field, cartesian GSE](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#1D%20Time%20Series)
+- [1D - size 12 Spectrogram , e.g., Ion Diff. Intensity, at 12 energies 67-1361 keV](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#1D%20Spectrogram)
+- [1D - size 7 Stack_plot, e.g., Electron Flux at 7 energies (0.1-225keV)](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#1D%20Stack_plot)
+- [1D - sizes 28, 12 Spectrogram , e.g., H+ number flux for selected energy and angle bins](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#2D%20Spectrogram)
  
 [Required support_data variables](#Required-support_data_variables)
 - [Epoch (required)](#Epoch-(required))

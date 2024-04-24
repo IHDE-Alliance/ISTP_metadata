@@ -6,19 +6,12 @@
 
 [Data](#Data)
 - [General](#General)
-- [Example - simple scalar density](#Example-simple-scalar-density)
-- Example - vector magnetic field
-- Example - 1D flux
-- Example - 2D flux
- 
+
 [Support_data](#Support_data)
-- General
-- Example - Epoch time
-- Example - 1D Energy
+- [General](#General)
  
-Metadata
-- General
-- Example - vector magnetic field labels
+[Metadata](#Metadata)
+- [General](#General)
  
 Variable Display
 - Scalar (0D) Time Series, e.g., Solar Wind Proton Number Density, scalar
@@ -64,7 +57,7 @@ particle_flux).
 
 **CDF Variable names must begin with a letter and can contain numbers and undercores, but no other special characters.**
 
-***General***
+# ***General***
 
 The following CDF variable specifications are required.
 
@@ -72,7 +65,7 @@ Support_data is always either Real or Integer type. Support_data is usually time
 
 If a support_data variable is attached to a data variable via DEPEND_i, then it must be of the same size as the dimension i. See example below. Real or Integer data are always defined as having one element.
 
-**Metadata**
+# **Metadata**
 
 These are variables of secondary importance e.g., a variable holding "Bx,By,Bz" to label magnetic field).
 
@@ -80,7 +73,7 @@ These are variables of secondary importance e.g., a variable holding "Bx,By,Bz" 
 
 **CDF Variable names must begin with a letter and can contain numbers and underscores, but no other special characters.**
 
-***General***
+# ***General***
 
 The following CDF variable specifications are required. Metadata is always character type. Metadata is always time invariant if it is used to label a data variable. Metadata can be time varying if it is NOT used as a label. If a metadata variable is attached to a data variable via LABL_PTR_i, then it must be of the same size as the dimension i. Character metadata must define the number of elements to be the same as the number of characters used in its value.
 

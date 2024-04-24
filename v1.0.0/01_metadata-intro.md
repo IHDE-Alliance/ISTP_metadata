@@ -70,7 +70,7 @@ This convention does not standardize any variable or dimension names, although o
 
 ### Dimensions
 
-Dimensions ?
+Dimensions 
 
 ### Variable attributes
 

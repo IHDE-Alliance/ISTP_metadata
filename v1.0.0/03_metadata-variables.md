@@ -39,7 +39,7 @@ We have identified three types of variables to be included in ISTP/IACG CDF file
 
 **NOTE:** ISTP/IACG now encourages the use of zVariables which carry their own dimensionality. (The old style rVariables carry the dimensionality of the entire CDF and are intrinsically more complicated.) For more information about zVariables and rVariables consult the [CDF home page](https://cdf.gsfc.nasa.gov/).
 
-## **Complete Variable Description**
+# **Complete Variable Description**
 
 ***Data***
 

@@ -6,12 +6,19 @@
 
 [Data](#Data)
 - [General](#General)
+- Example - simple scalar density
+- Example - vector magnetic field
+- Example - 1D flux
+- Example - 2D flux
 
 [Support_data](#Support_data)
 - [General](#General)
+- Example - Epoch time
+- Example - 1D Energy
  
 [Metadata](#Metadata)
 - [General](#General)
+- Example - vector magnetic field labels
  
 [Variable Display](#Variable-Display)
 - Scalar (0D) Time Series, e.g., Solar Wind Proton Number Density, scalar

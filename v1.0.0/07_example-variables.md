@@ -16,7 +16,7 @@ orthogonal components in some coordinate system, stored in one-dimension of size
 - The image array (**data**) maps into a two-dimensional variable with sizes 256 and 256. Latitude and longitude (**support_data**) are one-dimensional variables of size 256, providing the necessary coordinate indices for the image array.
 
 ***Data***
-# ***Example of a simple scalar data variable***
+***Example of a simple scalar data variable***
 
 We show here the variable, Ion number density, as it would appear in a CDF Skeleton table. We include all required variable attributes. Some recommended variable attributes are also shown. See the [Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Scalar%20(0D)%20Time%20Series) of this variable.
 

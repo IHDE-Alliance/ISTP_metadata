@@ -55,7 +55,7 @@ The following CDF variable specifications are required. Data is always either Re
 
 The need for DEPEND_i (other than DEPEND_0) and either LABLAXIS or LABL_PTR_i depends on the data itself and how it will be displayed. This is illustrated in examples in [Variable Display](https://spdf.gsfc.nasa.gov/istp_guide/variables.html#Variable%20Display).
 
-**Support_Data**
+# **Support_Data**
 
 These are variables of secondary importance (e.g., time, energy_bands associated with
 particle_flux).

@@ -5,8 +5,8 @@
 [Complete Variable Description](#Complete-Variable-Description)
 
 [Data](#Data)
-- General
-- Example - simple scalar density
+- [General](#General)
+- [Example - simple scalar density](#simple-scalar-density)
 - Example - vector magnetic field
 - Example - 1D flux
 - Example - 2D flux
@@ -49,7 +49,7 @@ These are variables of primary importance (e.g., density, magnetic_field, partic
 
 **CDF Variable names must begin with a letter and can contain numbers and underscores, but no other special characters.**
 
-***General***
+# ***General***
 
 The following CDF variable specifications are required. Data is always either Real or Integer type. Data is always time (record) varying, but can be of any dimensionality. Real or Integer data are always defined as having one element.
 

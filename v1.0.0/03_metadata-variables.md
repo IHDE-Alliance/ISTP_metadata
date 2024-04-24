@@ -4,7 +4,7 @@
 
 [Complete Variable Description](#Complete-Variable-Description)
 
-Data
+[Data](#Data)
 - General
 - Example - simple scalar density
 - Example - vector magnetic field
@@ -41,7 +41,7 @@ We have identified three types of variables to be included in ISTP/IACG CDF file
 
 # **Complete Variable Description**
 
-***Data***
+# ***Data***
 
 These are variables of primary importance (e.g., density, magnetic_field, particle_flux). Data variables are completely defined with the combination of CDF specifications, variable attributes, and attached variables such as time and dependencies (support_data) and labels (metadata).
 

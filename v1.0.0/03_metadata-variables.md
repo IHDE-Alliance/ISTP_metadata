@@ -13,18 +13,18 @@
 [Metadata](#Metadata)
 - [General](#General)
  
-Variable Display
+[Variable Display](#Variable-Display)
 - Scalar (0D) Time Series, e.g., Solar Wind Proton Number Density, scalar
 - 1D - size 3 Time Series, e.g., Magnetic Field, cartesian GSE
 - 1D - size 12 Spectrogram , e.g., Ion Diff. Intensity, at 12 energies 67-1361 keV
 - 1D - size 7 Stack_plot, e.g., Electron Flux at 7 energies (0.1-225keV)
 - 1D - sizes 28, 12 Spectrogram , e.g., H+ number flux for selected energy and angle bins
  
-Required support_data variables
-- Epoch (required)
-- Quality Flag (recommended)
-- Time_PB5
-- Post Gap Flag
+[Required support_data variables](#Required-support_data_variables)
+- [Epoch (required)](#Epoch-(required))
+- [Quality Flag (recommended)](#Quality-Flag-(recommended))
+- [Time_PB5](#Time_PB5)
+- [Post Gap Flag](#Post-Gap-Flag)
 
 # **Introduction**
 
@@ -77,15 +77,15 @@ These are variables of secondary importance e.g., a variable holding "Bx,By,Bz" 
 
 The following CDF variable specifications are required. Metadata is always character type. Metadata is always time invariant if it is used to label a data variable. Metadata can be time varying if it is NOT used as a label. If a metadata variable is attached to a data variable via LABL_PTR_i, then it must be of the same size as the dimension i. Character metadata must define the number of elements to be the same as the number of characters used in its value.
 
-**Variable Display**
+# **Variable Display**
 
 The dependencies and labels that need to be included with a data variable depend both on the data variable's dimensionality and on how the data variable will be displayed. They point out which attributes and associated support_data and metadata variables are used to label the display.
 
-**Required support_data variables**
+# **Required support_data variables**
 
 For IACG use (expanded international community with missions outside the core ISTP) and for ISTP higher resolution definitive data or for event data, **only Epoch is now required.** A quality flag is still recommended.
 
-**Epoch (required)**
+# **Epoch (required)**
 CDF Time variable types
 - CDF_TIME_TT2000 nanoseconds from J2000 in Terrestrial Time in 8 byte integer handles leap seconds and is well-defined; UTC conversion requires up-to-date leap second table (last value stored in CDF header as a check)
 - EPOCH milliseconds from 0AD in 8byte float; usually UTC but not leap seconds
@@ -98,16 +98,16 @@ Epoch allows for a scalar representation of time which provides for seamless cro
 
 **(Note: All CDF data sets using the Epoch variable should use the subroutines provided in the CDF toolkit for making the conversion between this value and year, month, day, etc. These routines are available as black boxes from SPDF.**) To determine Epoch time it is only necessary to call the subroutine compute_Epoch (year, month, day, hour, minute, second, msec, Epoch) with arguments as shown.for making the conversion between this value and year, month, day, etc. This ensures that all users use the same conversion when generating their CDF data sets and will therefore have the same view of the effects of the various calendar changes that have occurred over the last two thousand years.)
 
-**Quality Flag (recommended)**
+# **Quality Flag (recommended)**
 
 Each ISTP/IACG CDF data set should contain at least one quality or status flag which is record varying. The CDF data set designer may choose to have more than one if the data warrants this.
 
-**Time_PB5**
+# **Time_PB5**
 
 Time_PB5 is the second variable in an ISTP KP CDF data set. It is not required for IACG or ISTP higher resolution or event data. Time_PB5 is another way of presenting time
 which allows for easy recognition of the time value when looking at the data, for instance in a data dump. For ISTP the time value of a record refers to the center of the accumulation period for the record if the measurement is not an instantaneous one. Time_PB5 is given in YEAR (4 digit), DAY OF YEAR (note: January 1 is Day 1), and MSEC OF DAY (elapsed ms). These are all signed integer*4 numbers and are stored as the three elements of the one-dimensional variable named "Time\_PB5", e.g. 1992, 214, 0 would be August 1, 1992 at midnight.
 
-**Post Gap Flag**
+# **Post Gap Flag**
 
 At the May 1992 ISTP SWG it was decided that a record varying "Post Gap" Quality
 Flag would also be included in each KP record.

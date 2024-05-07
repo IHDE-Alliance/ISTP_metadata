@@ -349,10 +349,10 @@ unitless : SI_CONVERSION="1>unitless"
 (Required if not using UNITS) Has as its value a variable which stores the character strings (up to 20 characters per character string) representing the units of the original variable, which can be added to a data listing heading or plot label. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). If this attribute is used, then UNITS is not used. **The value of the attribute must be a variable in the same CDF data set.**
 
 ## VALIDMAX
-(Required for time varying data and support_data) Hold values which are, respectively, the minimum and maximum values for a particular variable that are expected over the lifetime of the mission. The values must match the data type of the variable.
+(Required for time varying data and support_data) Hold values which are, respectively, the minimum and maximum values for a particular variable that are expected over the lifetime of the mission, not values for the individual data files. The values must match the data type of the variable.
 
 ## VALIDMIN
-(Required for time varying data and support_data) Hold values which are, respectively, the minimum and maximum values for a particular variable that are expected over the lifetime of the mission. The values must match the data type of the variable.
+(Required for time varying data and support_data) Hold values which are, respectively, the minimum and maximum values for a particular variable that are expected over the lifetime of the mission, not values for the individual data files. The values must match the data type of the variable.
 
 ## VALUE_TYPE
 (Required) This identifies the data type and is necessary for conversion from the ascii entry.

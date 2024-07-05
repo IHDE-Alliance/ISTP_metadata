@@ -26,31 +26,31 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 | [FIELDNAM](#FIELDNAM) | Required |  "HET_A_H_Rate_TS"  | Required for all variables, 30 character string can be used  |
 | [FILLVAL](#FILLVAL) | Required |  -1.0e+31 | Data, RV support_data, and RV metadata  |
 | [FORMAT](#FORMAT) | Required |  "F10.1"  | All not using [FORM_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORM_PTR) |
-| [FORM_PTR](#FORM_PTR) | Required |  "format_time" | 1D data, support_data, and metadata not using [FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT) |
+| [FORM_PTR](#FORM_PTR) | Required |  "format_time" | Points to metadata string variable name for multidimensional data not using [FORMAT](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#FORMAT) |
 | [FRAME](#FRAME) | Optional |
 | [LABLAXIS](#LABLAXIS) | Required | "Time" | Data of the following form:  image scalar time_series, 1D spectrogram, also needed for support_data that does not utilize LABL_PTR_X |
-| [LABL_PTR_1](#LABL_PTR_1) | Required | "Electron_ChanE_Energy_LABL"  | Data of the following form:  1D time_series, 2D spectrogram, also needed for 1D and 2D support_data without a LABLAXIS |
-| [LABL_PTR_2](#LABL_PTR_1) | Required | "Telescope_Labl"  | Data of the following form:  2D spectrogram, 3D spectrogram, also needed for 2D support_data without a LABLAXIS  |
-| [LABL_PTR_3](#LABL_PTR_1) | Required | "Sector_Label"  | Data of the following form:  3D spectrogram  |
+| [LABL_PTR_1](#LABL_PTR_1) | Required | "Electron_ChanE_Energy_LABL"  | Points to metadata string variable name for multidimensional data  without a LABLAXIS |
+| [LABL_PTR_2](#LABL_PTR_1) | Required | "Telescope_Labl"  | Points to metadata string variable name for multidimensional data without a LABLAXIS  |
+| [LABL_PTR_3](#LABL_PTR_1) | Required | "Sector_Label"  | Points to metadata string variable name for multidimensional data |
 | [LIMITS_WARN_MIN](#LIMITS_WARN_MIN) | Optional |  0.0000 | Data  |
 | [LIMITS_WARN_MAX](#LIMITS_WARN_MIN) | Optional | 9999.0000  | Data  |
 | [LIMITS_NOMINAL_MIN](#LIMITS_NOMINAL_MIN) | Optional | 1990.0, 279.0, 0.0  | Data  |
 | [LIMITS_NOMINAL_MAX](#LIMITS_NOMINAL_MAX) | Optional | 2001.0, 365.0, 86400000.0 | Data  |
 | [MONOTON](#MONOTON) | Optional |  "INCREASE" | Epoch data |
 | [REPRESENTATION_i](#REPRESENTATION_i) | Optional | "x", "y", "z" | Allowed values are enumerated in the Metadata Dictionary |
-| [SCALEMAX](#SCALEMAX) | Optional | 2025-01-01T00:00:00.000000000  | Data and RV support_data |
-| [SCALEMIN](#SCALEMIN) | Optional | 2017-01-01T00:00:00.000000000  | Data and RV support_data |
+| [SCALEMAX](#SCALEMAX) | Optional | 10  | Data and RV support_data |
+| [SCALEMIN](#SCALEMIN) | Optional | 100  | Data and RV support_data |
 | [SCALETYP](#SCALETYP) | Recommended  |  "linear" | Data not using [SCALE_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#SCALE_PTR) and support_data |
-| [SCAL_PTR](#SCAL_PTR) | Recommended  |  "log" | Multidimensional data not using SCALETYP  |
+| [SCAL_PTR](#SCAL_PTR) | Recommended  |  "D_scale" | Points to metadata string variable name for multidimensional data not using SCALETYP  |
 | [SI_CONVERSION](#SI_CONVERSION) | Optional | "1.0E-5>T"  | Expressed in terms of one of the SI units |
 | [SIZES](#SIZES) | Optional | 1 for a scalar (default value) | Dimensions of the array required for any physical parameter represented by more than one component |
 | [TENSOR_FRAME](#TENSOR_FRAME) | Optional | "gse" |
 | [TENSOR_ORDER](#TENSOR_ORDER) | Optional | | Order of the vector or tensor which represents a non-scalar physical observable |
 | [UNITS](#UNITS) | Required |  "counts s!E-1!N" | Data and support_data not using [UNIT_PTR](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNIT_PTR) |
-| [UNIT_PTR](#UNIT_PTR) | Required |  "unit_time" | 1D data and support_data not using [UNITS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNITS)  |
-| [VALIDMIN](#VALIDMIN) | Required | 1990-01-01T00:00:00.000000000 | Data and RV support_data  |
-| [VALIDMAX](#VALIDMAX) | Required | 2029-12-31T23:59:59.999999000  | Data and RV support_data  |
-| [VALUE_TYPE](#VALUE_TYPE) | Optional | ISO_TIME | Type of variable, used by Cluster Exchange Format (CEF) |
+| [UNIT_PTR](#UNIT_PTR) | Required |  "unit_time" | Points to metadata string variable name for multidimensional data not using [UNITS](https://spdf.gsfc.nasa.gov/istp_guide/vattributes.html#UNITS)  |
+| [VALIDMIN](#VALIDMIN) | Required | 0 | Data and RV support_data  |
+| [VALIDMAX](#VALIDMAX) | Required | 200  | Data and RV support_data  |
+| [VALUE_TYPE](#VALUE_TYPE) | Optional | "ISO_TIME" | Type of variable, used by Cluster Exchange Format (CEF) |
 | [VAR_NOTES](#VAR_NOTES) | Recommended  | "Epoch is midpoint of integration" | Optional for all variables, any length of characters can be used |
 | [VAR_TYPE](#VAR_TYPE) | Required | "support_data" | Required for all variables, describes the variable type |
 | [VARIABLE_PURPOSE](#VARIABLE_PURPOSE) | Optional | "support_data"  | Data  |
@@ -61,15 +61,15 @@ See [Alphabetical list of Variable Attribute Definitions.](https://spdf.gsfc.nas
 
 | **Attribute** | **NASA Archive Requirement** | **Example** | **Notes** |
 | ------------- | ---------------- | ----------- | -------------- |
-| [ABSOLUTE_ERROR](#Absolute_Error) | Optional | "ms"  | Absolute or systematic error, in same units as Units attribute. |
-| [BIN_LOCATION](#Bin_Location) | Optional | 45.00  | Relative position of time stamp to the data measurement bin, with 0.0 at the beginning of time bin and 1.0 at the end. Default is 0.5 for the time at the center of the data measurement. |
-| [LEAP_SECONDS_INCLUDED](#Leap_Seconds_Included) | Recommended for UTC only | 2000.0  | Comma-delimited list (within brackets) of leap seconds  |
-| [REFERENCE_POSITION](#Reference_Position) | Optional | "data" | Topocenter (local), Geocenter, rotating Earth geoid (used by CDF_TIME_TT2000) |
-| [RELATIVE_ERROR](#Relative_Error) | Optional |  "deg" | Relative or random error, in same units as Units attribute - to specify the accuracy of the time stamps relative to each other. |
-| [RESOLUTION](#Resolution) | Optional | "1"  | Using ISO8601 relative time format, for example: "1s" = 1 second. Resolution provides the smallest change in time that is measured. |
-| [TIME_BASE](#Time_Base) | Recommended (Important for netCDF files and clarity) | 4104.8999 | Fixed (0AD, 1900, 1970 (POSIX), J2000 (used by CDF_TIME_TT2000), 4714 BC (Julian)) or flexible (provider-defined) |
-| [TIME_SCALE](#Time_Scale) | Recommended  |  0.0 | TT (same as TDT, used by CDF_TIME_TT2000), TAI (same as IAT, TT-32.184s), UTC (includes leap seconds), TDB (same as SPICE ET), EME1950 [default: UTC]  |
-| [UNITS](#UNITS) | Optional |  "nT" | SI measurement unit: s, ms(milliseconds for EPOCH variables), ns(nanoseconds for CDF_TIME_TT2000), ps(picoseconds for EPOCH16)  |
+| [ABSOLUTE_ERROR](#Absolute_Error) | Optional | 0.3  | Absolute or systematic error, in same units as Units attribute. |
+| [BIN_LOCATION](#Bin_Location) | Optional | 0.5  | Relative position of time stamp to the data measurement bin, with 0.0 at the beginning of time bin and 1.0 at the end. Default is 0.5 for the time at the center of the data measurement. |
+| [LEAP_SECONDS_INCLUDED](#Leap_Seconds_Included) | Recommended for UTC only | "1961JAN01+1.42282s,1961AUG01-0.05s,1962JAN01+0.47304s,1963NOV01+0.1s,1964JAN01+1.29427s,1964APR01+0.1s,1964SEP01+0.1s,1965JAN01+0.1s,1965MAR01+0.1s,1965JUL01+0.1s,1965SEP01+0.1s,1966JAN01+0.47304s,1968FEB010.1s,1972JAN01+5.78683s,1972JUL01+1s,1973JAN01+1s,1974JAN01+1s,1975JAN01+1s,1976JAN01+1s,1977JAN01+1s,1978JAN01+1s,1979JAN01+1s,1980JAN01+1s,1981JUL01+1s,1982JUL01+1s,1983JUL01+1s,1985JUL01+1s,1988JAN01+1s,1990JAN01+1s,1991JAN01+1s,1992JUL01+1s,1993JUL01+1s,1994JUL01+1s,1996JAN01+1s,1997JUL01+1s,1999JAN01+1s,2006JAN01+1s,2009JAN01+1s",2012JUL01+1s,2015JUL01+1s,2017JAN01+1s"  | Comma-delimited list (within brackets) of leap seconds  |
+| [REFERENCE_POSITION](#Reference_Position) | Optional | "Geocenter" | Topocenter (local), Geocenter, rotating Earth geoid (used by CDF_TIME_TT2000) |
+| [RELATIVE_ERROR](#Relative_Error) | Optional |  0,4 | Relative or random error, in same units as Units attribute - to specify the accuracy of the time stamps relative to each other. |
+| [RESOLUTION](#Resolution) | Optional | "1ms"  | Using ISO8601 relative time format, for example: "1s" = 1 second. Resolution provides the smallest change in time that is measured. |
+| [TIME_BASE](#Time_Base) | Recommended (Important for netCDF files and clarity) | "J2000" | Fixed (0AD, 1900, 1970 (POSIX), J2000 (used by CDF_TIME_TT2000), 4714 BC (Julian)) or flexible (provider-defined) |
+| [TIME_SCALE](#Time_Scale) | Recommended  |  "TDT" | TT (same as TDT, used by CDF_TIME_TT2000), TAI (same as IAT, TT-32.184s), UTC (includes leap seconds), TDB (same as SPICE ET), EME1950 [default: UTC]  |
+| [UNITS](#UNITS) | Optional |  "ns" | SI measurement unit: s, ms(milliseconds for EPOCH variables), ns(nanoseconds for CDF_TIME_TT2000), ps(picoseconds for EPOCH16)  |
 
 **Variable Attribute Definitions in alphabetical order**
 

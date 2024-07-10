@@ -1,4 +1,15 @@
-**Instrument-Specific Skeleton Tables**
+#Skeleton Tables
+
+A **skeleton table** is a specially formatted **ASCII** text file that contains the metadata or information about the data set. The format of the file allows simultaneous viewing and editing of the metadata.
+
+A **Skeleton CDF** is a file with exactly the same contents as the skeleton table, but its format is **binary**.
+
+If you have a **skeleton table** you can create a **Skeleton CDF** using the CDF toolkit routine, skeletoncdf.
+
+If you have a **Skeleton CDF** you can create a **skeleton table** using the CDF toolkit routine, skeletontable.
+
+
+##Instrument-Specific Skeleton Tables
 
 Use these skeleton tables as a starting point for creating your own skeleton table. Choose below one of a similar type:
 
@@ -18,15 +29,5 @@ Use these skeleton tables as a starting point for creating your own skeleton tab
 
 - [Ground-Based VLF/ELF/ULF, Photometers](https://spdf.gsfc.nasa.gov/istp_guide/skeleton_table/cn_k0_mpa_00000000_v01.skt)
 
-***Examples of Skeletons***
 
-A **skeleton table** is a specially formatted **ASCII** text file that contains the metadata or information about the data set. The format of the file allows simultaneous viewing and editing of the metadata.
-
-A **Skeleton CDF** is a file with exactly the same contents as the skeleton table, but its format is **binary**.
-
-If you have a **skeleton table** you can create a **Skeleton CDF** using the CDF toolkit routine, skeletoncdf.
-
-If you have a **Skeleton CDF** you can create a **skeleton table** using the CDF toolkit routine, skeletontable.
-
-
-Return to Table of Contents: [Table of Contents](00_Table_of_Contents.md)
+###Return to [Table of Contents](00_Table_of_Contents.md)

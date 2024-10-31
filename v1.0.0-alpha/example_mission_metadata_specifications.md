@@ -979,6 +979,7 @@ divided into 4 categories:
 - Additional attributes specific to Solar Orbiter CDF data sets.
 
 ISTP attributes
+
 The following table provides the list of ISTP global attributes that should be used for Solar Orbiter CDF data sets.
 
 | Name                       | Description                                                                                                                                                                                                                                                              | Type | Default Value                          | Comment                                                                                                                                                                                                                              |
@@ -1012,7 +1013,6 @@ The following table provides the list of ISTP global attributes that should be u
 | Parents                    | This attribute lists the parent CDF(S) for files of derived and merged data sets. Subsequent entry values are used for multiple parents. The syntax for a CDF parent would be e.g.                                                                                       |      |                                        |                                                                                                                                                                                                                                      |
 | "CDF>logical_file_id"      | O                                                                                                                                                                                                                                                                        |      |                                        |                                                                                               
 |
-
 5.2 Variable Attributes
 
 ### 6. ICON

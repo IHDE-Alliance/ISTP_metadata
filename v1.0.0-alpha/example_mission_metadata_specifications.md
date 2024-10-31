@@ -968,9 +968,9 @@ The need for DEPEND_i (other than DEPEND_0) and either LABLAXIS or LABL_PTR_i de
 
 ### 5. Solar Orbiter
 
-Metadata definition of Solar Orbiter Science Data (see https://s2e2.cosmos.esa.int/confluence/display/SOSP/Metadata+Definition+for+Solar+Orbiter+Science+Data) include ISTP and non-ISTP global and variable attributes.  
+Metadata definition of Solar Orbiter Science Data (see https://s2e2.cosmos.esa.int/confluence/display/SOSP/Metadata+Definition+for+Solar+Orbiter+Science+Data) includes ISTP and non-ISTP global and variable attributes.  
 
-5.1 Global attributes
+5.1 Global attributes - 
 Global attributes are used to provide information about the data set as an entity. Global attributes for Solar Orbiter CDF data sets are 
 divided into 4 categories:
 - Attributes defined by the ISTP (http://spdf.gsfc.nasa.gov/sp_use_of_cdf.html)
@@ -1010,8 +1010,11 @@ The following table provides the list of ISTP global attributes that should be u
 | HTTP_LINK                  | The URL for the PI or Co-I web site holding on-line data.                                                                                                                                                                                                                | P    |                                        | TBD                                                                                                                                                                                                                                  |
 | TEXT_supplement_1          | An attribute that can be used for providing additional information about dataset.                                                                                                                                                                                        | O    |                                        |                                                                                                                                                                                                                                      |
 | Parents                    | This attribute lists the parent CDF(S) for files of derived and merged data sets. Subsequent entry values are used for multiple parents. The syntax for a CDF parent would be e.g.                                                                                       |      |                                        |                                                                                                                                                                                                                                      |
-| "CDF>logical_file_id"      | O                                                                                                                                                                                                                                                                        |      |                                        |                                                                                               5.2 Variable Attributes
+| "CDF>logical_file_id"      | O                                                                                                                                                                                                                                                                        |      |                                        |                                                                                               
 |
+
+5.2 Variable Attributes
+
 ### 6. ICON
 
 6.1 Convention Recommendations- The following conventions are summarized and then each discussed in detail. It is recommended that ICON attempt to keep with the ISTP/IACG conventions for CDF, only deviating where there are conflicts in the native NetCDF expectations. Note that all of the data shown below are recommendations (an item indicating “required” is a strong recommendation). Each section should contain a summary of the data.

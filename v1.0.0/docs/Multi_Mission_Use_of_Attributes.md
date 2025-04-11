@@ -2,7 +2,7 @@
 
 Multi-Mission Use of Attributes
 
-| | Description | Examples  | ISTP/IACG  | Cluster | ERG | GOLD | ICON | MMS | PSP | PRBEM | RBSP (Van Allen Probes) | Solar Orbiter |
+| | Description | Examples  | ISTP  | Cluster | ERG | GOLD | ICON | MMS | PSP | PRBEM | RBSP (Van Allen Probes) | Solar Orbiter |
 | ------------ | ---------- | ----- | ----- | ------- | --- | ---- | ---- | --- | --- | ----- | ----- | ------- |
 | **Global Attribute**  | | |  | | |  |  | | | | | |
 | Data_Type | Identifies the data type of the CDF data set  | { "K0>Key Parameter" }. | M  | M | M | M  | M  | | | M | | M |
@@ -35,7 +35,7 @@ Multi-Mission Use of Attributes
 | Parents | Lists parent CDF(S) for files of derived and merged data sets | | O  | | |  | M  | | | O | | M |
 | ADID_ref  | Stores the control authority identifier | | Not relevant | | M |  | M  | | | R | | |
 
-|  | Description  | Examples  | ISTP/IACG | Cluster | ERG | GOLD | ICON | MMS | PSP | PRBEM | RBSP (Van Allen Probes) | Solar Orbiter |
+|  | Description  | Examples  | ISTP | Cluster | ERG | GOLD | ICON | MMS | PSP | PRBEM | RBSP (Van Allen Probes) | Solar Orbiter |
 | -------- | ---------- | -------- | --------- | ------- | --- | ---- | ---- | --- | --- | ----- | ----- | ----- |
 | **Variable Attribute** |  | | | | |  |  | | | | | |
 | CATDESC  | A textual description of the variable  | { "Ion Diff. Intensity, at 12 energies " - "67-1361 keV (EPIC/ICS)" } | M | M | |  |  | M | M | | M | |
@@ -71,7 +71,7 @@ Text string at PI disposal allowing for information on expected acknowledgement 
 
 ### ADID_ref
 
-This attribute stores the control authority identifier associated with the detached SFDU label. If no control authority identifier has been assigned, then the identifier associated with the ISTP/IACG Guidelines (NSSD0241) or with CDF (NSSD0110) can be used.
+This attribute stores the control authority identifier associated with the detached SFDU label. If no control authority identifier has been assigned, then the identifier associated with the ISTP Guidelines (NSSD0241) or with CDF (NSSD0110) can be used.
 
 ### Calibration_File
 
@@ -115,15 +115,15 @@ The time of the first data point.
 
 ### DELTA_MINUS_VAR
 
-Included to point to a variable (or variables) which stores the uncertainty in (or range of) the original variable's value. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. For many variables in ISTP/IACG, the original variable will be at the center of the interval so that only one value (or one set of values) of uncertainty (or range) will need to be defined. In this case, DELTA_PLUS_VAR, and DELTA_MINUS_VAR will point to the same variable. The value of the attribute must be a variable in the same CDF data set.
+Included to point to a variable (or variables) which stores the uncertainty in (or range of) the original variable's value. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. For many variables in ISTP, the original variable will be at the center of the interval so that only one value (or one set of values) of uncertainty (or range) will need to be defined. In this case, DELTA_PLUS_VAR, and DELTA_MINUS_VAR will point to the same variable. The value of the attribute must be a variable in the same CDF data set.
 
 ### DELTA_PLUS_VAR
 
-Included to point to a variable (or variables) which stores the uncertainty in (or range of) the original variable's value. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. For many variables in ISTP/IACG, the original variable will be at the center of the interval so that only one value (or one set of values) of uncertainty (or range) will need to be defined. In this case, DELTA_PLUS_VAR, and DELTA_MINUS_VAR will point to the same variable. The value of the attribute must be a variable in the same CDF data set.
+Included to point to a variable (or variables) which stores the uncertainty in (or range of) the original variable's value. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. For many variables in ISTP, the original variable will be at the center of the interval so that only one value (or one set of values) of uncertainty (or range) will need to be defined. In this case, DELTA_PLUS_VAR, and DELTA_MINUS_VAR will point to the same variable. The value of the attribute must be a variable in the same CDF data set.
 
 ### DEPEND_0
 
-Explicitly ties a data variable to the time variable on which it depends. All variables which change with time must have a DEPEND_0 attribute defined. The value of DEPEND_0 is *'Epoch'*, the time ordering parameter for ISTP/IACG. Different time resolution data can be supported in a single CDF data set by defining the variables Epoch, Epoch_1, Epoch_2, etc. each representing a different time resolution. These are "attached" appropriately to the variables in the CDF data set via the attribute DEPEND_0. **The value of the attribute must be a variable in the same CDF data set.**
+Explicitly ties a data variable to the time variable on which it depends. All variables which change with time must have a DEPEND_0 attribute defined. The value of DEPEND_0 is *'Epoch'*, the time ordering parameter for ISTP. Different time resolution data can be supported in a single CDF data set by defining the variables Epoch, Epoch_1, Epoch_2, etc. each representing a different time resolution. These are "attached" appropriately to the variables in the CDF data set via the attribute DEPEND_0. **The value of the attribute must be a variable in the same CDF data set.**
 
 ### Description
 

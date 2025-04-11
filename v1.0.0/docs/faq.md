@@ -1,8 +1,5 @@
----
-title: ISTP Guidelines Frequently Asked Questions
----
 
-# Frequently Asked Questions (FAQ) about the ISTP Guidelines
+# Frequently Asked Questions (FAQ)
 
 This page covers many of the most common questions asked about the ISTP Guidelines.
 If you have a question that isn't on this list, please open a ticket on the ISTP Guidelines Github site, so that the ISTP Guidelines community can respond.
@@ -56,3 +53,5 @@ Datasets can have multiple time variables, with some variables depending on one 
 
 ---
 This FAQ used as a template the one at the [CF Conventions](https://github.com/cf-convention/cf-convention.github.io).
+
+Return to [Table of Contents](../README.md)

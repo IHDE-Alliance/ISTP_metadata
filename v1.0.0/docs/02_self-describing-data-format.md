@@ -14,9 +14,9 @@ CDF originated in 1984 and is now available via libraries in many programming la
 
 - Self-describing data format for storage of scalar and multidimensional data in a platform- and discipline-independent way
 - Scientific data management package (CDF Library) for transparent access to data and metadata via Application Programming Interfaces (APIs) and a suite of CLI tools
-- Standard APIs for C, FORTRAN, Java, Perl, C#/Visual Basic, IDL, MATLAB and user-supplied APIs for, e.g., Python, Sybase, mySQL.
+- Standard APIs for C, Fortran, Java, Perl, C#/Visual Basic, IDL, MATLAB and user-supplied APIs for, e.g., Python, Sybase, MySQL.
 - Dedicated time data types and time encoding/decoding functions for precise time definition and handling
-- Built-in support for data compression (gZip, RLE, Huffman) and automatic data uncompression on file and individual variable levels, and checksum
+- Built-in support for data compression (gzip, RLE, Huffman) and automatic data uncompression on file and individual variable levels, and checksum
 - Large file support (> 2G-bytes)
 
 See [CDF web site](https://cdf.gsfc.nasa.gov/) for complete documentation and CDF Library and tools.

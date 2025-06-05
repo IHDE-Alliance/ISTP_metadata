@@ -23,7 +23,7 @@ Additional global attributes may be defined, but their **names must start with a
 | [`Project`](#project) | Required |  `"LWS>Living With a Star"`  | Identifies the name of the project and indicates ownership. Both the short and long names are included. |
 | [`Source_name`](#source_name) | Required | `"PSP>Parker Solar Probe"` | Identifies the mission or investigation that contains the sensors. Both the short and long names are included. |
 | [`TEXT`](#text) | Required | `"EPI-Hi HET 3600 second rates cdf. Time tags indicate midpoint of integration."`<br> `"Instrument paper: Integrated Science Investigation of the Sun (ISIS): Design of the Energetic Particle Investigation. McComas, D. J. et al (2016). Space Sci. Rev., doi:10.1007/s11214-014-0059-1"` | A standard global attribute for description of the experiment whose data are included in the CDF.  A reference to a journal article(s) or web page describing the experiment is essential, and constitutes the minimum requirement. A written description of the dataset is also essential. This attribute can have unlimited number of entries (two entries are shown).|
-| [`Acknowledgment`](#acknowledgement)  | Recommended  | `"Cite McComas et al (2016),doi:10.1007/s11214-014-0059-1"` | Text string at Principal Investigator's (PI) disposal allowing for information on expected acknowledgment if dataset is citable. |
+| [`Acknowledgement`](#acknowledgement)  | Recommended  | `"Cite McComas et al (2016),doi:10.1007/s11214-014-0059-1"` | Text string at Principal Investigator's (PI) disposal allowing for information on expected acknowledgement if dataset is citable. |
 | [`Discipline`](#discipline) | Recommended | `"Solar Physics>Heliospheric Physics"`  | Describes both the science discipline and subdiscipline. |
 | [`Data_processing_level`](#data_processing_level-proposal-only) (PROPOSAL ONLY)| Recommended | `"L2>Level 2"`  | Describes dataset processing level. Both the short and long names are included.|
 | [`DOI`](#doi) | Recommended  |  `"https://doi.org/10.48322/mede-7j02"`  | Digital Object Identifier (DOI) as a persistent identifier for the dataset. |
@@ -46,7 +46,7 @@ Additional global attributes may be defined, but their **names must start with a
 ## Global Attribute Definitions
 
 ### Acknowledgement
-(*Recommended*) Text string at Principal Investigator's (PI) disposal allowing for information on expected acknowledgment if dataset is citable.
+(*Recommended*) Text string at Principal Investigator's (PI) disposal allowing for information on expected acknowledgement if dataset is citable.
 
 ### Data_processing_level (PROPOSAL ONLY)
 

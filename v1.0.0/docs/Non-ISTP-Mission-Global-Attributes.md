@@ -75,7 +75,7 @@
 
 `ACCESS_FORMAT` &mdash; Format of the file.
 
-`CAVEATS`  &mdash; Information which may be important in the avoidance of the misuse of the resource, for instance the assumptions or limitations on data processing modelings or inversions.
+`CAVEATS`  &mdash; Information which may be important in the avoidance of the misuse of the resource, for instance the assumptions or limitations on data processing, modeling or inversions.
 
 `Channel_ID`  &mdash; `0` = CHANNEL A,  `1` = CHANNEL B.
 

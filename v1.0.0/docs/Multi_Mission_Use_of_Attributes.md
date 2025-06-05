@@ -5,33 +5,33 @@ Multi-Mission Use of Attributes
 | | Description | Examples  | ISTP  | Cluster | ERG | GOLD | ICON | MMS | PSP | PRBEM | RBSP (Van Allen Probes) | Solar Orbiter |
 | ------------ | ---------- | ----- | ----- | ------- | --- | ---- | ---- | --- | --- | ----- | ----- | ------- |
 | **Global Attribute**  | | |  | | |  |  | | | | | |
-| Data_Type | Identifies the data type of the CDF data set  | { "K0>Key Parameter" }. | M  | M | M | M  | M  | | | M | | M |
-| Data_Version  | Identifies the version of a particular CDF data file for a given date | { "1" }.  | M  | | M | M  | M  | | | M | | M |
+| Data_type | Identifies the data type of the CDF data set  | { "K0>Key Parameter" }. | M  | M | M | M  | M  | | | M | | M |
+| Data_version  | Identifies the version of a particular CDF data file for a given date | { "1" }.  | M  | | M | M  | M  | | | M | | M |
 | Descriptor  | Identifies name of the instrument or sensor that collected the data | { "EPI>Energetic Particles" -"and Ion Composition" }. | M  | | M |  | M  | | | M | | M |
 | Discipline  | Describes both science discipline and subdiscipline | { "Space Physics>Magnetospheric Science" }. | M  | | M | M  | M  | | | M | | M |
-| Instrument_Type | Used to facilitate making choices of instrument type  | { "Magnetic Fields (space)" }.  | M  | M | M | M  | M  | | | M | | M |
-| Logical_File_ID | Stores name of the CDF file using the ISTP naming convention  | { "GE_K0_EPI_19920908_V01" }. | M  | M | M | M  | M  | | | M | | M |
-| Logical_Source  | Carries source_name, data_type, and descriptor information  | { "GE_K0_EPI" }.  | M  | | M | M  | M  | | | M | | M |
-| Logical_Source_Description  | Writes out full words associated with encrypted Logical_source  | { "Geotail Magnetic Field Key Parameters" }.  | M  | | M | M  | M  | | | M | | M |
-| Mission_Group | Has a single value and is used to facilitate making choices of source through CDAWeb  | { "Geotail" }.  | M  | | M | M  | M  | | | M | | M |
-| PI_Affiliation  | Should include a recognizable abbreviation  | { "JHU/APL" }.  | M  | | M | M  | M  | | | M | | M |
-| PI_Name | Should include first initial and last name  | { "D. Williams" }.  | M  | | M | M  | M  | | | M | | M |
+| Instrument_type | Used to facilitate making choices of instrument type  | { "Magnetic Fields (space)" }.  | M  | M | M | M  | M  | | | M | | M |
+| Logical_file_id | Stores name of the CDF file using the ISTP naming convention  | { "GE_K0_EPI_19920908_V01" }. | M  | M | M | M  | M  | | | M | | M |
+| Logical_source  | Carries source_name, data_type, and descriptor information  | { "GE_K0_EPI" }.  | M  | | M | M  | M  | | | M | | M |
+| Logical_source_description  | Writes out full words associated with encrypted Logical_source  | { "Geotail Magnetic Field Key Parameters" }.  | M  | | M | M  | M  | | | M | | M |
+| Mission_group | Has a single value and is used to facilitate making choices of source through CDAWeb  | { "Geotail" }.  | M  | | M | M  | M  | | | M | | M |
+| PI_affiliation  | Should include a recognizable abbreviation  | { "JHU/APL" }.  | M  | | M | M  | M  | | | M | | M |
+| PI_name | Should include first initial and last name  | { "D. Williams" }.  | M  | | M | M  | M  | | | M | | M |
 | Project | Identifies project name and indicates ownership | { "ISTP>International" - "Solar-Terrestrial Physics" }. | M  | | M | M  | M  | | | M | | M |
-| Source_Name | Identifies mission or investigation that contains the sensors | { "GEOTAIL>Geomagnetic Tail" }. | M  | | M | M  | M  | | | M | | M |
+| Source_name | Identifies mission or investigation that contains the sensors | { "GEOTAIL>Geomagnetic Tail" }. | M  | | M | M  | M  | | | M | | M |
 | TEXT  | A text description of the experiment whose data is included in the CDF  | { "reference to journal article, URL address" }.  | M  | | M | M  | M  | | | M | | M |
 | Acknowledgement | Text string at PI disposal  | | R  | M | |  | M  | | | R | | M |
-| Generated_By  | Allows for generating data center/group to be identified  | | R  | | M | M  | M  | | | R | | M |
-| Generation_Date | Date stamps the creation of the file  | | R  | M | M |  | M  | | | R | | M |
+| Generated_by  | Allows for generating data center/group to be identified  | | R  | | M | M  | M  | | | R | | M |
+| Generation_date | Date stamps the creation of the file  | | R  | M | M |  | M  | | | R | | M |
 | HTTP_LINK | Stores URL for the PI or CoI web site holding on-line data  | | R  | | | M  | M  | | | R | | M |
-| Link_Text | Stores text describing on-line data available at PI or CoI web sites  | | R  | | M | M  | M  | | | R | | M |
-| Link_Title  | Stores title of the web site holding on-line data available at PI or CoI web sites  | | R  | | M | M  | M  | | | R | | M |
+| LINK_TEXT | Stores text describing on-line data available at PI or CoI web sites  | | R  | | M | M  | M  | | | R | | M |
+| LINK_TITLE  | Stores title of the web site holding on-line data available at PI or CoI web sites  | | R  | | M | M  | M  | | | R | | M |
 | MODS  | An NSSDC standard global attribute used to denote the history of modifications made to the CDF data set | | R  | | M |  | M  | | | R | | M |
 | Rules_of_use  | Text containing information on citability and PI access restrictions  | | R  | | M | M  | M  | | | R | | M |
-| Time_Resolution | Specifies time resolution of the file | | R  | M | |  | M  | | | M | | |
+| Time_resolution | Specifies time resolution of the file | | R  | M | |  | M  | | | M | | |
 | TITLE | An NSSDC standard global attribute which is a title for the data set  | | O  | | M | M  | M  | | | O | | |
 | Validate  | Written by software for automatic validation of features  | | O  | | |  |  | | | O | | |
-| Software_Version  | Exists if experimenters want to track it  | | O  | | | M  | M  | | | O | | M |
-| Skeleton_Version  | Contains the skeleton file version number | | O  | | |  |  | | | O | | M |
+| Software_version  | Exists if experimenters want to track it  | | O  | | | M  | M  | | | O | | M |
+| Skeleton_version  | Contains the skeleton file version number | | O  | | |  |  | | | O | | M |
 | Parents | Lists parent CDF(S) for files of derived and merged data sets | | O  | | |  | M  | | | O | | M |
 | ADID_ref  | Stores the control authority identifier | | Not relevant | | M |  | M  | | | R | | |
 
@@ -50,7 +50,7 @@ Multi-Mission Use of Attributes
 | VALIDMAX | Maximum values for a particular variable expected over the lifetime of the mission | | M | | |  |  | | M | | M | |
 | VALIDMIN | Minimum values for a particular variable expected over the lifetime of the mission | | M | | |  |  | | M | | M | |
 | VAR_TYPE | Identifies a variable as either data, support_data, metadata or ignore_data  | | M | | |  |  | M | | | M | |
-| VAR_NOTES  | Holds ancilliary information about the variable and can be any length  | | O | | |  |  | | M | | M | |
+| VAR_NOTES  | Holds ancillary information about the variable and can be any length  | | O | | |  |  | | M | | M | |
 | DELTA_MINUS_VAR  | Points to a variable which stores uncertainty in original variable's value | { "IDiffI_I_Uncert" } | O | M | |  |  | | M | | M | |
 | DELTA_PLUS_VAR | Value of the attribute must be a variable in the same CDF data set | { "IDiffI_I_Uncert" } | O | M | |  |  | | M | | M | |
 
@@ -93,11 +93,11 @@ The data product level as specified in the DPID. This is required and should fol
 
 The data revision normally gets incremented during reprocessing.
 
-### Data_Type
+### Data_type
 
 This attribute identifies the data type of the CDF data set. Both a long name and a short name are given. For ISTP exchangeable data products the values are "Kn>Key Parameter" for approximately minute averaged survey data, and "Hn>High Resolution data" for certified data of higher resolution than Key Parameters can run from 0 to 9 to allow for more than one kind of data product. For Cluster/CSDS this can either be "SP>Summary Parameter" or "PP>Prime Parameter". Other possible data types may be defined in future. If any of these data sets are modified or used to produce derived products, the data type should be, *e.g.,* "Mn>Modified Data n", where n is from 0 to 9.
 
-### Data_Version
+### Data_version
 
 This attribute identifies the version of a particular CDF data file for a given date, *e.g.,* the file GE_K0_MGF_19920923_V01 is the first version of data for 1992 September 23. **Each time** this particular data file is reproduced - for recalibration or other reasons - the Data_version is incremented by 1. Data_version always starts at '1'.
 
@@ -189,7 +189,7 @@ The output format used when extracting data values out to a file or screen (usin
 
 Has as its value a variable which stores the character strings (up to 20 characters per character string) representing the desired output format for the original variable. FORM_PTR is used instead of FORMAT. The value of the attribute must be a variable in the same CDF data set.
 
-### Generated_By
+### Generated_by
 
 This attribute allows for the generating data center/group to be identified.
 
@@ -197,7 +197,7 @@ This attribute allows for the generating data center/group to be identified.
 
 This attribute describes the software and its version being used for processing the data as well as the library and its version for computing magnetic coordinates.
 
-### Generation_Date
+### Generation_date
 
 Date stamps the creation of the file using the syntax yyyymmdd, *e.g.,* "19920923". This is distinct from the date in "validate" below which records the times of later validation processes.
 
@@ -213,7 +213,7 @@ This attribute stores the URL for the PI or CoI web site holding on-line data. T
 
 This should exist for all data associated with a single instrument.
 
-### Instrument_Type
+### Instrument_type
 
 This attribute is used to facilitate making choices of instrument type through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). More than one entry is allowed. The following list contains the valid values.
 
@@ -229,27 +229,27 @@ This attribute is used to facilitate making choices of instrument type through [
 - Ground-Based Magnetometers, Riometers, Sounders
 - Ground-Based VLF/ELF/ULF, Photometers
 
-### Link_Text
+### LINK_TEXT
 
 This attribute stores text describing on-line data available at PI or CoI web sites. This attribute is used in conjunction with "LINK_TITLE" and "HTTP_LINK". There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TITLE" and "HTTP_LINK" for each "LINK_TEXT" entry. CDAWeb will then link to the URL given by "HTTP_LINK" using the "LINK_TITLE" and the description in "LINK_TEXT", on the CDAWeb Data Explorer page.
 
-### Link_Title
+### LINK_TITLE
 
 This attribute stores the title of the web site holding on-line data available at PI or CoI web sites. This attribute is used in conjunction with "LINK_TEXT" and "HTTP_LINK". There can be up to 5 entries for each - there MUST be a corresponding entry of "LINK_TEXT" and "HTTP_LINK" for each "LINK_TITLE" entry. CDAWeb will then link to the URL given by "HTTP_LINK" using the "LINK_TITLE" and the description in "LINK_TEXT", on the CDAWeb Data Explorer page.
 
-### Logical_File_ID
+### Logical_file_id
 
 This attribute stores the name of the CDF file using the ISTP naming convention (source_name / data_type / descriptor / date / data_version), *e.g.,* GE_K0_MGF_19920923_V01. This attribute is required (1) to allow storage of the full name on IBM PCs, and (2) to avoid loss of the original source in the case of accidental (or intentional) renaming. For CDFs created on the ISTP CDHF, the correct Logical_file_id will be filled in by an ICSS support routine.
 
-### Logical_Source
+### Logical_source
 
 This attribute carries source_name, data_type, and descriptor information. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).
 
-### Logical_Source_Description
+### Logical_source_description
 
 This attribute writes out the full words associated with the encrypted Logical_source above, *e.g.,* "Geotail Magnetic Field Key Parameters". Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).
 
-### Mission_Group
+### Mission_group
 
 This attribute has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). Valid values include (but are not restricted to) :
 
@@ -267,17 +267,17 @@ This attribute is an NSSDC standard global attribute which is used to denote the
 
 This attribute lists the parent CDF(S) for files of derived and merged data sets. Subsequent entry values are used for multiple parents. The syntax for a CDF parent would be *e.g.* "CDF>logical_file_id".
 
-### PI_Affiliation
+### PI_affiliation
 
 This attribute value should include a recognizable abbreviation.
 
-### PI_Name
+### PI_name
 
 This attribute value should include first initial and last name.
 
 ### Planet
 
-This attribute value indicate from which planet the data are from.
+This attribute value indicates from which planet the data are from.
 
 ### Project
 
@@ -291,11 +291,11 @@ Text containing information on {\it e.g.} citability and PI access restrictions.
 
 This is a text attribute containing the skeleton file version number. This is a required attribute for Cluster, but for IACG purposes it exists if experimenters want to track it.
 
-### Software_Version
+### Software_version
 
 This is a required attribute for Cluster, but for IACG purposes it exists if experimenters want to track it.
 
-### Source_Name
+### Source_name
 
 This attribute identifies the mission or investigation that contains the sensors. For ISTP, this is the mission name for spacecraft missions or the investigation name for ground-based or theory investigations. Both a long name and a short name are provided. This attribute should be single valued.
 
@@ -307,15 +307,7 @@ This must exist for all data files and is fixed for ICON.
 
 This attribute is an NSSDC standard global attribute which is a text description of the experiment whose data is included in the CDF. A reference to a journal article(s) or to a web page describing the experiment is essential, and constitutes the minimum requirement. A written description of the data set is also desirable. This attribute can have as many entries as necessary to contain the desired information.
 
-### Text_Supplement
-
-Extra descriptive text.
-
-### TEXT_Supplement_1
-
-An attribute that can be used for providing additional information about a dataset.
-
-### Time_Resolution
+### Time_resolution
 
 Specifies time resolution of the file, *e.g.,* "3 seconds".
 
@@ -351,7 +343,7 @@ Holds ancilliary information about the variable and can be any length.
 
 Identifies a variable as either
 
-- **data** integer or real numbers that are plottable
-- **support_data** integer or real "attached" variables
-- **metadata** (labels or character variables)
-- **ignore_data** placeholders
+- **data** - integer or real numbers that are plottable
+- **support_data** - integer or real "attached" variables
+- **metadata** - labels or character variables
+- **ignore_data** - variables ignored by applications/APIs

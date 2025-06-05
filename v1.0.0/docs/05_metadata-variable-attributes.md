@@ -34,7 +34,7 @@ Additional variable attributes may be defined, but their **names must start with
 | [`AVG_TYPE`](#avg_type) | *Optional* | `"standard"` <br> CDF_CHAR | **_data_** or RV **_support_data_** |
 | [`DELTA_MINUS`](#delta_plus-delta_minus) | *Optional* | `5.0` <br> **Var data type** (CDF_REAL4) | **_data_** or **_support_data_** |
 | [`DELTA_MINUS_VAR`](#delta_plus_var-delta_minus_var)  | *Optional* |  `"E_cnt_rate_DELTA"` <br> CDF_CHAR | **_data_** or **_support_data_** variables. Points to a  **_support_data_** variable with the same dimension sizes.| 
-| [`DELTA_PLUS`](#delta_plus-delta_minus) | *Optional*   | `5.0` <br> **Var data type** | **_data_** or **_support_data_** |
+| [`DELTA_PLUS`](#delta_plus-delta_minus) | *Optional*   | `5.0` <br> **Var data type** (CDF_REAL4) | **_data_** or **_support_data_** |
 | [`DELTA_PLUS_VAR`](#delta_plus_var-delta_minus_var) | *Optional* |  `"E_cnt_rate_DELTA"` <br> CDF_CHAR | **_data_** or **_support_data_** variables. Points to a  **_support_data_** variable with the same dimension sizes. |
 | [`DICT_KEY`](#dict_key) | *Optional* | `"particle_flux>number_rate"` <br> CDF_CHAR | *Optional* for all variables, describes the variable using controlled vocabulary |
 | [`LIMITS_WARN_MIN`](#limits_warn_min-limits_warn_max) | *Optional* |  `100.0` <br> **Var data type** (CDF_REAL4) | **_data_** or *RV* **_support_data_**  |
@@ -112,7 +112,7 @@ UNITS = "ns"
 ### DELTA_PLUS_VAR, DELTA_MINUS_VAR
 (*Optional*) The two attributes, always used together, have as their values names of variables (in the same dataset) which store the uncertainty (or range) of the original variable values. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. In many cases, the original variable will be at the center of the interval, so that only one uncertainty (or range) variable will need to be defined to which both `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` will point to. See [example of use](07_example-variables.md#example-of-1-d-flux-variable). 
 
- The variables pointed to by `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` must be of the same dimensionality and the same data type as the original variable, and can be either time varying or time invariant. In case of the original variable being of a time data type (CDF_TIME_TT2000, CDF_EPOCH, or CDF_EPOCH16), variables pointed to by `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` must be of the underlying basic data type (CDF_INT8 for CDF_TIME_TT2000 and CDF_REAL8 for both CDF_EPOCH and CDF_EPOCH16).
+ The variables pointed to by `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` must be of the same dimensionality and the same data type as the original variable, and can be either time varying or time invariant. In case of the original variable being of a time data type (CDF_TIME_TT2000, CDF_EPOCH, or CDF_EPOCH16), variables pointed to by `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` should be of the underlying basic data type (CDF_INT8 for CDF_TIME_TT2000 and CDF_REAL8 for both CDF_EPOCH and CDF_EPOCH16).
 
 ### DEPEND_0
 (*Required for RV variables.*) Explicitly ties a variable to the time variable on which it depends. All variables which change with time must have a `DEPEND_0` attribute defined. The value of `DEPEND_0` is `"Epoch"`, the time ordering parameter for ISTP. Different time resolution data variables can be supported in a single dataset by defining multiple time variables, e.g., `Epoch`, `Epoch_1`, `Epoch_2`, etc., each representing a different time resolution. These are attached appropriately to variables in the dataset via their `DEPEND_0` attribute. The value of the attribute must be name of a variable in the same dataset. See [example of use](07_example-variables.md#example-of-a-vector-magnetic-field-data-variable).
@@ -220,7 +220,7 @@ limits). Visualization software can use these attributes for indicating limits o
 (*Recommended for time variables.*) `"TT"` (same as `"TDT"`, used by CDF_TIME_TT2000), `"TAI"` (same as IAT, TT-32.184s), `"UTC"` (includes leap seconds), `"TDB"` (same as `"SPICE ET"`), `"EME1950"`. Default: `"UTC"`.
 
 ### UNITS
-(*Required if not using* `UNIT_PTR`, *optional for time variables*.) Is a short string (no more than 20, but preferably 10, characters) representing the units of the variable, *e.g.,* `"nT"` for magnetic field. If the standard abbreviation used is short then the units value can be added to a data listing heading or plot label. Use a blank character `" "`, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). For a CDF_TIME_TT2000 time type variable `UNITS = "ns"` (nanoseconds), for EPOCH time type `UNITS = "ms"` (milliseconds), and for EPOCH16 time type `UNITS = "ps"` (picoseconds).
+(*Required if not using* `UNIT_PTR`, *optional for time variables*.) Is a short string (no more than 20, but preferably 10, characters) representing the units of the variable, *e.g.,* `"nT"` for magnetic field. If the standard abbreviation used is short then the units value can be added to a data listing heading or plot label. Use a blank character `" "`, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). For a CDF_TIME_TT2000 time type variable `UNITS = "ns"` (nanoseconds), for CDF_EPOCH time type `UNITS = "ms"` (milliseconds), and for CDF_EPOCH16 time type `UNITS = "ps"` (picoseconds).
 
 ### UNIT_PTR
 (*Required if not using* `UNITS`.) Points to a variable which stores short strings (no more than 20, but preferably 10, characters) representing the units of the original variable, which can be added to a data listing heading or plot label. Use a blank character, rather than "None" or "unitless", for variables that have no units (e.g., a ratio or a direction cosine). If this attribute is used, then `UNITS` is not used. The value of the attribute must be name of a variable in the same dataset.
@@ -237,7 +237,7 @@ limits). Visualization software can use these attributes for indicating limits o
 - `"data"` - plottable variables of integer or real type
 - `"support_data"` - support (attached to **data**) variables of integer or real type
 - `"metadata"` - labels or other character type variables
-- `"ignore_data"` - placeholders
+- `"ignore_data"` - variables ignored by applications/APIs
 
 ### VARIABLE_PURPOSE
 (*Optional*) List of tags/keywords separated by commas that indicate probable uses of the variable and its function. Software can use these attributes to find the primary variables in the dataset, find variables with a common function, indicate variables suitable for specific purposes such as summary plots or educational displays, etc. Tags could indicate a common geophysical quantity to enable matching several variables of the same kind. For instance, all magnetic field variables could be tagged with `VARIABLE_PURPOSE = "Magnetic_Field"` even though they have different coordinate systems or cadences. Software could use this tag to identify variables with a common theme for easier distinguishing between groups of variables and selecting between them. The values are always in a character string. Suggested tags/keywords include:

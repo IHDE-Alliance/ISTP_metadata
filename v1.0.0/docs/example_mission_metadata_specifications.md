@@ -321,7 +321,8 @@ For instance, the following examples are valid "Logical_source" attributes:
 - mms1_dsp_fast_ql_mfe
 - mms2_dsp_slow_ql_lfb
 - mms3_sdp_fast_ql_swd
-- mms4_brst_l2_efield 
+- mms1_fgm_srvy_l2
+- mms4_edi_brst_l2_efield 
 - mms1_brst_l2_bfield
 - mms1_fpi_fast_sitl_1h
 - mms1_des_slow_l1A_cnts-1h
@@ -660,14 +661,14 @@ VALUE TYPE- The VALUE TYPE of a global attribute may be used to convert the asci
    It is not required for scalars.
    DATA The concept of a variable that is fixed for all records is supported for cef files. Data for these ‘non-record-varying’ variables must be supplied within the header variable metadata segment, and no entry is then allowed in the data records. The presence of a parameter ‘DATA’ will be taken to indicate that this is a non-record-varying variable. The value(s) associated with this parameter are the data for that variable. These are particularly useful for label variables. They are comma separated. For array data elements will appear in the natural C ordering - last index varies fastest, and data lines for arrays may be continued using ‘\’ as a continuation marker following one of the commas separating the list of values.
    REPRESENTATION i This is a rigorous generalisation of the ISTP FRAME attribute for
-   CAA, and allowed values are enumerated in the Metadata Dictionary, CAA-CDPP-TN0002. It is only used for tensor types (vectors and tensors). There are as many of these attributes as there are indices i in the tensor. A vector takes only REPRESENTATION 1. This should have the same number of entries as the dimension of index i. For example, a cartesian pressure tensor takes
-   REPRESENTATION 1 = "x", "y", "z"
-   REPRESENTATION 2 = "x", "y", "z"
+   CAA, and allowed values are enumerated in the Metadata Dictionary, CAA-CDPP-TN0002. It is only used for tensor types (vectors and tensors). There are as many of these attributes as there are indices i in the tensor. A vector takes only REPRESENTATION_1. This should have the same number of entries as the dimension of index i. For example, a cartesian pressure tensor takes
+   REPRESENTATION_1 = "x", "y", "z"
+   REPRESENTATION_2 = "x", "y", "z"
    indicating that the components are
    "Pxx","Pxy","Pxz","Pyx","Pyy","Pyz","Pzx","Pzy","Pzz"
    A complete tensor in real 3-space will have three components in each index. An incomplete tensor may be specified where the dimension of one or more indices are less than three. For example a vector measured in the xy-plane will have
-   REPRESENTATION 1 = "x", "y"
-   and this in turn implies it may be rotated in the xy-plane but not around any other axis. This will often duplicate LABEL i, and is provided distinctly as it identifes TENSOR type data explicitly, and this has science processing connotations - ability to rotate, for example.
+   REPRESENTATION_1 = "x", "y"
+   and this in turn implies it may be rotated in the xy-plane but not around any other axis. This will often duplicate LABEL i, and is provided distinctly as it identifies TENSOR type data explicitly, and this has science processing connotations - ability to rotate, for example.
    TENSOR ORDER This is the number of indices for a tensor data type. Vectors have rank 1.
    SI CONVERSION Required for all data in science units. Text string of the form
    number>SI unit
@@ -822,7 +823,7 @@ Global attributes-
 Global attributes are used to provide information about the data set as an entity. Together with variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence, a good archive product. The global attributes can also be used by any software, one popular example being the CDAWeb Display and Retrieval system (http://cdaweb.gsfc.nasa.gov/cdaweb/). A list of global attributes is provided below, note that it is not limited, one can decide to add more global attributes if needed for his own applications.
 
 Acknowledgement--- (recommended) 
-Text string at PI disposal allowing for information on expected acknowledgment if data is citable.
+Text string at PI disposal allowing for information on expected acknowledgement if data is citable.
 
 ADID_ref --- (recommended) 
 This attribute stores the control authority identifier associated with the detached SFDU label. If no control authority identifier has been assigned, then the identifier associated with the ISTP/IACG Guidelines (NSSD0241) or with CDF (NSSD0110) can be used. 
@@ -968,7 +969,9 @@ The need for DEPEND_i (other than DEPEND_0) and either LABLAXIS or LABL_PTR_i de
 
 ### 5. Solar Orbiter
 
-Global attributes-
+Metadata definition of Solar Orbiter Science Data (see https://s2e2.cosmos.esa.int/confluence/display/SOSP/Metadata+Definition+for+Solar+Orbiter+Science+Data) includes ISTP and non-ISTP global and variable attributes.  
+
+5.1 Global attributes - 
 Global attributes are used to provide information about the data set as an entity. Global attributes for Solar Orbiter CDF data sets are 
 divided into 4 categories:
 - Attributes defined by the ISTP (http://spdf.gsfc.nasa.gov/sp_use_of_cdf.html)
@@ -977,6 +980,7 @@ divided into 4 categories:
 - Additional attributes specific to Solar Orbiter CDF data sets.
 
 ISTP attributes
+
 The following table provides the list of ISTP global attributes that should be used for Solar Orbiter CDF data sets.
 
 | Name                       | Description                                                                                                                                                                                                                                                              | Type | Default Value                          | Comment                                                                                                                                                                                                                              |
@@ -1001,14 +1005,18 @@ The following table provides the list of ISTP global attributes that should be u
 | Rules_of_use               | Citability and PI access restrictions. This may point to a World Wide Web page specifying the rules of use.                                                                                                                                                              | M    |                                        |                                                                                                                                                                                                                                      |
 | Generated_by               | The generating data center/group.                                                                                                                                                                                                                                        | M    |                                        | The name of the Institute that produce the data file. (TBC)                                                                                                                                                                          |
 | Generation_date            | Date stamp for the creation of the file.                                                                                                                                                                                                                                 | M    |                                        | It shall be the data file creation date in ISO8601 format ("YYYY-MMDDTHH:MN:SS") (TBC)                                                                                                                                               |
-| Acknowledgement            | Text string at PI disposal allowing for information on expected acknowledgment if data is citable.                                                                                                                                                                       | M    |                                        |                                                                                                                                                                                                                                      |
+| Acknowledgement            | Text string at PI disposal allowing for information on expected acknowledgement if data is citable.                                                                                                                                                                       | M    |                                        |                                                                                                                                                                                                                                      |
 | MODS                       | History of modifications made to the CDF data set.                                                                                                                                                                                                                       | P    |                                        | A new entry shall be added each time a modification is made to the CDF data set. Each entry has to specify the date of the modifications, the person responsible and a summary of the changes. (TBC)                                 |
 | LINK_TEXT                  | Text describing on-line data available at PI or Co-I web sites.                                                                                                                                                                                                          | O    |                                        | TBD                                                                                                                                                                                                                                  |
 | LINK_TITLE                 | The title of the web site holding on-line data available at PI or Co- I web sites.                                                                                                                                                                                       | O    |                                        | TBD                                                                                                                                                                                                                                  |
 | HTTP_LINK                  | The URL for the PI or Co-I web site holding on-line data.                                                                                                                                                                                                                | P    |                                        | TBD                                                                                                                                                                                                                                  |
 | TEXT_supplement_1          | An attribute that can be used for providing additional information about dataset.                                                                                                                                                                                        | O    |                                        |                                                                                                                                                                                                                                      |
 | Parents                    | This attribute lists the parent CDF(S) for files of derived and merged data sets. Subsequent entry values are used for multiple parents. The syntax for a CDF parent would be e.g.                                                                                       |      |                                        |                                                                                                                                                                                                                                      |
-| "CDF>logical_file_id"      | O                                                                                                                                                                                                                                                                        |      |                                        |                                                                                                                                                                                                                                      |
+| "CDF>logical_file_id"      | O                                                                                                                                                                                                                                                                        |      |                                        |  	                                                                                            
+|
+
+5.2 Variable Attributes
+
 ### 6. ICON
 
 6.1 Convention Recommendations- The following conventions are summarized and then each discussed in detail. It is recommended that ICON attempt to keep with the ISTP/IACG conventions for CDF, only deviating where there are conflicts in the native NetCDF expectations. Note that all of the data shown below are recommendations (an item indicating “required” is a strong recommendation). Each section should contain a summary of the data.
@@ -1094,7 +1102,7 @@ NetCDF uses global attributes to describe the file and purpose of the data. The 
 	
 	Spacecraft_ID	          
 	
-	Text	                  
+	TEXT	                  
 	
 	Text_Supplement	          
 	
@@ -1109,7 +1117,7 @@ sftp://icon-science.ssl.berkeley.edu:36868/Drop/Acknowledgement.TXT
 •	Name:	“Acknowledgement”
 
 •	Value:	
-This is a data product from the NASA Ionospheric Connection Explorer mission, an Explorer launched in June 2018. Guidelines for the use of this product are described in the ICON Rules of the Road  (https://http://icon.ssl.berkeley.edu/Data).
+This is a data product from the NASA Ionospheric Connection Explorer mission, an Explorer launched in June 2018. Guidelines for the use of this product are described in the ICON Rules of the Road  (https://icon.ssl.berkeley.edu/Data).
 
 Responsibility for the mission science falls to the Principal Investigator, Dr. Thomas Immel at UC Berkeley:
 Immel, T.J., England, S.L., Mende, S.B. et al. Space Sci Rev (2018) 214: 13. https://doi.org/10.1007/s11214-017-0449-2

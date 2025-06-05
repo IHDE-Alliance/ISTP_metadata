@@ -34,7 +34,7 @@ Learning about and changing the ISTP Guidelines.
 
 ### How do I propose a change?
 
-Changes to the the ISTP Guidelines standard are generally proposed by opening an issue on the Github site.
+Changes to the ISTP Guidelines standard are generally proposed by opening an issue on the Github site.
 
 ### What is the process for accepting a change to the ISTP Guidelines?
 

@@ -48,7 +48,8 @@ For a **_data_** variable, the following variable attributes are required:
 
 Note that need for `DEPEND_i` (other than `DEPEND_0`) and either `LABLAXIS` or `LABL_PTR_i` depends on the data itself and how it will be displayed. 
 
-See examples of [**_data_** variable definitions and displays](./07_example-variables.md#data-variables).
+See examples of [**_data_** variable definitions and displays](./07_example-variables.md#data-variables). Additional display examples are available at [CDAWeb](https://cdaweb.gsfc.nasa.gov/about.html).
+
 
 
 ### Support_Data Variables

@@ -1019,12 +1019,12 @@ The following table provides the list of ISTP global attributes that should be u
 
 ### 6. ICON
 
-6.1 Convention Recommendations- The following conventions are summarized and then each discussed in detail. It is recommended that ICON attempt to keep with the ISTP/IACG conventions for CDF, only deviating where there are conflicts in the native NetCDF expectations. Note that all of the data shown below are recommendations (an item indicating “required” is a strong recommendation). Each section should contain a summary of the data.
+6.1 Convention Recommendations- The following conventions are summarized and then each discussed in detail. It is recommended that ICON attempt to keep with the ISTP/IACG conventions for CDF, only deviating where there are conflicts in the native netCDF expectations. Note that all of the data shown below are recommendations (an item indicating “required” is a strong recommendation). Each section should contain a summary of the data.
 
 In general, the global attributes need to be set, the Epoch time variable(s) need to be set first, then other variables and their associated attributes and dimensions. File names should follow the conventions below. Examples can be seen in the CDL chapter.
 
 6.2	Global Attributes
-NetCDF uses global attributes to describe the file and purpose of the data. The attributes shown below should be followed. There may be other attributes added to any NetCDF file which are not specified here. The expected attributes are summarized here.
+NetCDF uses global attributes to describe the file and purpose of the data. The attributes shown below should be followed. There may be other attributes added to any netCDF file which are not specified here. The expected attributes are summarized here.
 
 *Note: Except where mentioned, all values are character strings.
 
@@ -1171,7 +1171,7 @@ This is the name of the calibration file used when generating this data. If ther
 •	Comment:	Required though may be empty if no calibration file was used.
 
 6.2.4	Conventions-
-This is standard for NetCDF files and is required for ICON.
+This is standard for netCDF files and is required for ICON.
 
 •	Name:	“Conventions”
 
@@ -1189,7 +1189,7 @@ The data product level as specified in the DPID. This is required and should fol
 •	Comment:	Required.
 
 6.2.6	Data Type-
-The identifier for the data set within this NetCDF data file. The short name and long name are included. For the short name we will go with the data product as specified in the DPID. The long name should also be from the DPID and be descriptive. Data product 2.2 would be represented as in the example below. If a name is not provided in the DPID then the science team should be consulted.
+The identifier for the data set within this netCDF data file. The short name and long name are included. For the short name we will go with the data product as specified in the DPID. The long name should also be from the DPID and be descriptive. Data product 2.2 would be represented as in the example below. If a name is not provided in the DPID then the science team should be consulted.
 
 •	Name:	“Data_Type”
 
@@ -1198,7 +1198,7 @@ The identifier for the data set within this NetCDF data file. The short name and
 •	Comment:	Required.
 
 6.2.7	Data Version-
-The version of this NetCDF file. The first version should always be 1.0 and increment as the file is updated later with new or updated data. The revision normally gets incremented during reprocessing. The major version normally only changes for a software change significant enough to alter the data format produced. The major version should be between 1 and 99 while the revision should be between 0 and 999 as shown below. The actual version is computed by adding the major version to the revision divided by 1000.
+The version of this netCDF file. The first version should always be 1.0 and increment as the file is updated later with new or updated data. The revision normally gets incremented during reprocessing. The major version normally only changes for a software change significant enough to alter the data format produced. The major version should be between 1 and 99 while the revision should be between 0 and 999 as shown below. The actual version is computed by adding the major version to the revision divided by 1000.
 
 •	Name:	“Data_Revision”
 
@@ -1301,7 +1301,7 @@ Recommended global attribute for NSSDC indicating file modification state. This 
 
 •	Value Example:	“Version 1, H. Frey, 2015-10-22T10:00:00, FUV L1 Processor v1.”
 
-•	Comment:	Recommended by NetCDF.
+•	Comment:	Recommended by netCDF.
 
 •	Name:	“MODS”
 
@@ -1382,13 +1382,13 @@ This is a required ISTP value indicating the mission data group for CDA Web (fix
 •	Comment:	Required and fixed.
 
 6.2.20	Parents-
-List the parent NetCDF files used to generate this file. This should be a comma-separated list. The name is not the name of this file but does follow the same pattern as the logical source attribute.
+List the parent netCDF files used to generate this file. This should be a comma-separated list. The name is not the name of this file but does follow the same pattern as the logical source attribute.
 
 •	Name:	“Parents”
 
 •	Value Example:	“NC > ICON_L1_FUV_SWP_2015-01-17.v0001”
 
-•	Comment:	Optional. Note the “NC >” indicates that the parent is a NetCDF file.
+•	Comment:	Optional. Note the “NC >” indicates that the parent is a netCDF file.
 
 6.2.21	PI Affiliation-
 This is a required ISTP value indicating the primary investigators affiliation (fixed for ICON).
@@ -1454,7 +1454,7 @@ This must exist for all data files and is fixed for ICON (note spacecraft ID 493
 •	Comment:	Required and fixed.
 
 6.2.28	TEXT (Description)-
-This ISTP required value has a description of the experiment (including a minimum of one journal or web link reference) whose data is included in the NetCDF file. The text here is set unless a specific file requires different text.
+This ISTP required value has a description of the experiment (including a minimum of one journal or web link reference) whose data is included in the netCDF file. The text here is set unless a specific file requires different text.
 
 •	Name:	“Text”
 
@@ -1478,7 +1478,7 @@ This ISTP recommended value indicates the data frequency of data in the file.
 •	Comment:	Strongly recommended where applicable.
 
 6.2.30	Title-
-This ISTP and NetCDF optional value should be provided which indicates the title of the NetCDF data contained (use the DPID for guidance).
+This ISTP and netCDF optional value should be provided which indicates the title of the netCDF data contained (use the DPID for guidance).
 
 •	Name:	“Title”
 
@@ -1508,7 +1508,7 @@ UTC Time Format:	“YYYY-MM-DD HH:mm:ss.xxxZ”
 These two variables representing time are required in both Level 1and Level 2 data products.  At Level 2, several additional variables are required, which are tabulated below, as their expected variable name.
 
 6.4.2	Variable Attributes-
-There are conventions that should be maintained for ISTP standards and others for NetCDF format reasons. A notable example is the “_FillValue” which ISTP requires being named “FillValue” while NetCDF uses the same name with an underscore to actually perform the fill. For this reason both must be maintained. A summary and examples are below of the recommended attributes. Other required ISTP attributes can be found on the ISTP guide (http://spdf.sci.gsfc.nasa.gov/istp_guide/vattributes.html).
+There are conventions that should be maintained for ISTP standards and others for netCDF format reasons. A notable example is the “_FillValue” which ISTP requires being named “FillValue” while netCDF uses the same name with an underscore to actually perform the fill. For this reason both must be maintained. A summary and examples are below of the recommended attributes. Other required ISTP attributes can be found on the ISTP guide (http://spdf.sci.gsfc.nasa.gov/istp_guide/vattributes.html).
 
 	Bin_Location	<ISTP : Time Descriptor Attribute>
 	CatDesc	<ISTP : Catalog Description>
@@ -1560,7 +1560,7 @@ There are conventions that should be maintained for ISTP standards and others fo
 •	Notes:	A description of the data item in string format similar to the ISTP CatDesc.
 
 6.4.2.2	Compression Settings-
-These three settings control the NetCDF byte layout and compression. They are described in the NetCDF Compression section. “_ChunkingSizes” is the most complicated one. The others should be fixed for ICON.
+These three settings control the netCDF byte layout and compression. They are described in the netCDF Compression section. “_ChunkingSizes” is the most complicated one. The others should be fixed for ICON.
 
 •	Name:	“_ChunkingSizes”
 
@@ -1570,7 +1570,7 @@ These three settings control the NetCDF byte layout and compression. They are de
 
 •	Value Example:	1
 
-•	Notes:	NetCDF attribute which controls the data arrangement. See NetCDF compression.
+•	Notes:	netCDF attribute which controls the data arrangement. See NetCDF compression.
 
 •	Name:	“_DeflateLevel”
 
@@ -1590,7 +1590,7 @@ These three settings control the NetCDF byte layout and compression. They are de
 
 •	Value:	“true”
 
-•	Notes:	Enables byte shuffling in NetCDF data set for optimized compression performance.
+•	Notes:	Enables byte shuffling in netCDF data set for optimized compression performance.
 
 6.4.2.3	Dependency-
 These indicate dimensional dependencies and should follow their dimension settings. Any time a variable is time dependent, the first dependency (“Depend_0”) should be the correct Epoch. ICON suggests that the dependency is on the UTC time of the center of the associated measurement.
@@ -1632,7 +1632,7 @@ These indicate dimensional dependencies and should follow their dimension settin
 6.4.2.6	Fill Values-
 Fill values are used to fill in data that is not explicitly set. NetCDF will automatically fill out data with this value and thus compress it efficiently later. Fill values should normally be a value that is out of the valid range (see valid maximum/minimums). If no such range exists then it should be set to zero. For floating point values, NaN (not a number) should be set (note that in C and similar languages NaN cannot explicitly be declared but can be defined as 0.0/0.0).
 
-The two values indicated here must both be set. One is for ISTP compliance and the other is for NetCDF internal functionality. 
+The two values indicated here must both be set. One is for ISTP compliance and the other is for netCDF internal functionality. 
 
 •	Name:	“_FillValue”
 
@@ -1642,7 +1642,7 @@ The two values indicated here must both be set. One is for ISTP compliance and t
 
 •	Value Examples:	“NaN”, “0”, “-1”
 
-•	Notes:	Used by NetCDF to fill in data that was not explicitly set. This is typed data.
+•	Notes:	Used by netCDF to fill in data that was not explicitly set. This is typed data.
 
 •	Name:	“FillVal”
 
@@ -1686,7 +1686,7 @@ The two values indicated here must both be set. One is for ISTP compliance and t
 
 •	Value Examples:	“Time_Axis”
 
-•	Notes:	Used by CDF utilities to label the nth dimensional axis (the first axis being Labl_Ptr_1). The string here is a reference to another variable in the NetCDF data set that is a string following the same rules as LablAxis above.
+•	Notes:	Used by CDF utilities to label the nth dimensional axis (the first axis being Labl_Ptr_1). The string here is a reference to another variable in the netCDF data set that is a string following the same rules as LablAxis above.
 
 6.4.2.9	Monotonic Indicator-
 
@@ -1755,10 +1755,10 @@ Several attributes may be used optionally to enhance the understanding of the sp
 
 •	Value Examples:	“ms”, “s”, “days”, “photon count”, …
 
-•	Notes:	Note that the ISTP Unit_PTR variable is not used because NetCDF also requires the use of “Units”. This should be a small character string describing the units of the variable. Leave an empty string if there are no units.
+•	Notes:	Note that the ISTP Unit_PTR variable is not used because netCDF also requires the use of “Units”. This should be a small character string describing the units of the variable. Leave an empty string if there are no units.
 
 6.4.2.13	Valid Maximum & Minimum-
-Both NetCDF and ISTP have requirements here and both are used even though there is duplication. They should be set to the same values. The NetCDF version can opt for a range instead of using the minimum and maximum.
+Both netCDF and ISTP have requirements here and both are used even though there is duplication. They should be set to the same values. The netCDF version can opt for a range instead of using the minimum and maximum.
 
 •	Name:	“ValidMax”
 
@@ -1788,7 +1788,7 @@ Both NetCDF and ISTP have requirements here and both are used even though there 
 
 •	Value Example:	“10000.0”
 
-•	Notes:	The NetCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. Note: Do not use if using “Valid_Range”.
+•	Notes:	The netCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. Note: Do not use if using “Valid_Range”.
 
 •	Name:	“Valid_Min”
 
@@ -1798,7 +1798,7 @@ Both NetCDF and ISTP have requirements here and both are used even though there 
 
 •	Value Example:	“-10000.0”
 
-•	Notes:	The NetCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. Note: Do not use if using “Valid_Range”.
+•	Notes:	The netCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. Note: Do not use if using “Valid_Range”.
 
 •	Name:	“Valid_Range”
 
@@ -1808,7 +1808,7 @@ Both NetCDF and ISTP have requirements here and both are used even though there 
 
 •	Value Example:	“-10000.0”, “10000.0”
 
-•	Notes:	The NetCDF two length vector containing the minimum and maximum valid values. Skip this for strings or double/floats that are unlimited. Note: Do not use if using “Valid_Max” and/or “Valid_Min”.
+•	Notes:	The netCDF two length vector containing the minimum and maximum valid values. Skip this for strings or double/floats that are unlimited. Note: Do not use if using “Valid_Max” and/or “Valid_Min”.
 
 6.4.2.14	Variable Notes-
 

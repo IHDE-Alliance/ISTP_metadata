@@ -2,10 +2,10 @@
 
 ## Variable Types
 
-ISTP Guidelines divide all variables into three types, identified by the value of the[`VAR_TYPE` ](./05_metadata-variable-attributes.md#var_type)variable attribute: 
+ISTP Guidelines divide all variables into three types, identified by the value of the[`VAR_TYPE` ](./05_metadata-variable-attributes.md#var_type) variable attribute: 
 - **_data_** variables (`VAR_TYPE = "data"`) of primary importance (e.g., density, magnetic field, particle flux)
 - **_support_data_** variables (`VAR_TYPE = "support_data"`) of secondary importance (e.g., time and energy associated with particle flux)
-- **_metadata_** variables (`VAR_TYPE = "metadata"`) used for labeling dimensional data, e.g., a variable holding  string array [`"Bx GSE"`,`"By GSE"`,`"Bz GSE"`] for labeling vector magnetic field
+- **_metadata_** variables (`VAR_TYPE = "metadata"`) used for labeling dimensional data ( e.g., a variable holding  string array [`"Bx GSE"`,`"By GSE"`,`"Bz GSE"`] for labeling vector magnetic field)
 
 Examples of **_data_** and **_support_data_** variables commonly found in ISTP datasets are shown below. They are mapped to their corresponding dimensions and sizes in CDF.
 
@@ -20,11 +20,11 @@ Examples of **_data_** and **_support_data_** variables commonly found in ISTP d
 
 Each ISTP variable type is defined with CDF specifications and required attributes. **_data_** variables also have attached variables for time and dependencies (**_support_data_**) and for labels (**_metadata_**). **_support_data_** variables can be attached to **_data_** variables via, e.g., the **_data_** variable `DEPEND_i` attributes, with `DEPEND_0` always pointing (by name) to a time variable. **_metadata_** variables can be attached to **_data_** variables via, e.g., **_data_** variable `LABL_PTR_i`, `UNIT_PTR`, `FORM_PTR`,  `SCAL_PTR` attributes.
 
-An ISTP dataset is usually split into many files, over which the dataset definition must remain static, meaning that **variables cannot be added or removed, or have their data types, dimension sizes, or variances within dimensions or records changed.** When defining record or dimension variances of a variable, the whole dataset life, and not just a particular file, must be considered. Similarly, the variable dimensions must be defined with the maximum sizes expected over the dataset life, with currently unused values filled with the `FILLVAL` attribute value. There also must be no duplication of data over all dataset files, with all files seamlessly concatenating in one whole dataset.
+An ISTP dataset usually spans over many files, over which the dataset definitions must remain static, meaning that **variables cannot be added or removed, or have their data types, dimension sizes, or variances within dimensions/records changed.** When defining record or dimension variances of a variable, the whole dataset life, and not just a particular file, must be considered. Similarly, the variable dimensions must be defined with the maximum sizes expected over the dataset life, with currently unused values filled with the `FILLVAL` attribute value. There also must be no duplication of data over all dataset files, with all files seamlessly concatenating in one whole dataset.
 
-If variable values change extremely rarely with time, a CDF variable can be defined with record sparseness set to previous record, meaning that only explicitly written records (records with changes) for the variable are stored in the CDF file, while reading any record will return the last explicitly written record before the requested one. (See the [CDF User's Guide](https://spdf.gsfc.nasa.gov/pub/software/cdf/doc/cdf_User_Guide.pdf) for details on CDF variable sparse records.) Alternatively, a rarely changing variable can have all records written, but variable compression should be enabled in this case. Variable compression should also be enabled for large size variables, while file level compression is generally discouraged. Note that for efficient data access, time variables should never be compressed.
+If extremely rare changes occur in the variable values over time, a CDF variable can be defined with **record sparseness set to previous record**. In this case, only records with changes need to be explicitly written into the CDF file, while reading any record will return the last explicitly written record before the requested one. See the [CDF User's Guide](https://spdf.gsfc.nasa.gov/pub/software/cdf/doc/cdf_User_Guide.pdf) for details on CDF variable sparse records. Alternatively, a rarely changing variable can have all records written, but variable compression should be enabled in this case. Variable compression should also be enabled for large size variables, while file-level compression is generally discouraged. Note that for efficient data access, time variables should **never** be compressed.
 
- Each variable in a dataset must have a unique name that **starts with a letter, and can contain numbers and underscores, but no other special characters**. Variable names are case sensitive, but the names must never be distinguished by case only. Variable names should also carry sufficient information for initial understanding of their meaning and for clear distinguishing between different variables.
+ Each variable in a dataset must have a unique name that **starts with a letter and can contain numbers, underscores, but no other special characters**. Variable names are case sensitive, but the names must never be distinguished by case only. Variable names should also carry sufficient information for initial understanding of their meaning by a dataset user and for clear distinguishing between different variables.
 
 ### Data Variables
 
@@ -48,7 +48,7 @@ For a **_data_** variable, the following variable attributes are required:
 
 Note that need for `DEPEND_i` (other than `DEPEND_0`) and either `LABLAXIS` or `LABL_PTR_i` depends on the data itself and how it will be displayed. 
 
-See examples of [**_data_** variable definitions and displays](./07_example-variables.md#data-variables). Additional display examples are available at [CDAWeb](https://cdaweb.gsfc.nasa.gov/about.html).
+See examples of [**_data_** variable definitions with displays](./07_example-variables.md#data-variables). **Additional display examples are available at [CDAWeb](https://cdaweb.gsfc.nasa.gov/about.html)**.
 
 
 
@@ -73,7 +73,7 @@ See examples of [**_support_data_** variable definitions](./07_example-variables
 
 ### Metadata Variables
 
-**_metadata_** variables are variables of secondary importance holding strings, e.g., a variable holding  array of strings for labeling magnetic field vector components. **_metadata_** variable is always of a character type and is always time invariant if used to label a **_data_** variable. **_metadata_** can be time varying if it is NOT used as a label. If a **_metadata_** variable is attached to a **_data_** variable (via, e.g., `LABL_PTR_i`), it must be of the same size as the corresponding dimension of the **_data_** variable. A character data type variable must define the number of elements to be the same as the maximum number of characters used in its values (`6` in case of a variable holding array of six-character strings [`"Bx GSE"`,`"By GSE"`,`"Bz GSE"`]).
+**_metadata_** variables are variables of secondary importance holding strings, e.g., a variable holding  array of strings for labeling magnetic field vector components. **_metadata_** variable is always of a character type and is always time invariant if used to label a **_data_** variable. **_metadata_** can be time varying if it is NOT used as a label. If a **_metadata_** variable is attached to a **_data_** variable (via, e.g., `LABL_PTR_i`), it must be of the same size as the corresponding dimension of the **_data_** variable. A character data type variable must define the number of elements to be the same as the maximum number of characters used in its values. For example, `6` in case of a variable holding array of six-character strings [`"Bx GSE"`,`"By GSE"`,`"Bz GSE"`].
 
 The following variable attributes are required:
 - [`CATDESC`](./05_metadata-variable-attributes.md#catdesc)
@@ -90,16 +90,16 @@ See examples of [**_metadata_** variable definitions](./07_example-variables.md#
 ## Required and Recommended Variables
 
 ### Epoch (required)
-An epoch (time) variable (**_support_data_**) must be included, and should be the first variable, in each CDF dataset. Each time-varying variable in a CDF dataset depends (via `DEPEND_0` attribute) on an epoch variable. Multiple epoch variables can be included in a dataset allowing time descriptions of variables with different cadences. An epoch variable must be either monotonically increasing or decreasing, and it is strongly recommended that `MONOTON` variable attribute with either `"INCREASE"` or `"DECREASE"` value is included for each epoch variable. An epoch variable also should not contain `FILLVAL` values; instead, invalid epoch variable records, and the corresponding data variable records dependent on them, should not be included in the dataset. 
+An epoch (time) variable (**_support_data_**) must be included and should be the first variable in each CDF dataset. Each time-varying variable in a CDF dataset depends (via `DEPEND_0` attribute) on an epoch variable. Multiple epoch variables can be included in a dataset allowing time descriptions of variables with different cadences. An epoch variable must be either monotonically increasing or decreasing, and it is strongly recommended that `MONOTON` variable attribute with either `"INCREASE"` or `"DECREASE"` value is included for each epoch variable. An epoch variable also should not contain `FILLVAL` values; instead, invalid epoch variable records, and the corresponding data variable records, should not be included in the dataset. 
 
 CDF includes three time data types:
 - CDF_TIME_TT2000: nanoseconds since J2000 in Terrestrial Time as 8-byte signed integer; includes leap seconds and is well-defined; UTC conversion requires up-to-date leap second table (last value is stored in CDF header as a check).
 - CDF_EPOCH: milliseconds since 0AD as 8-byte floating-point number; usually UTC but no leap seconds
 - CDF_EPOCH16: picoseconds since 0AD as two 8-byte floating-point numbers; usually UTC but no leap seconds.
 
-**Note that for CDF_TIME_TT2000, CDF_EPOCH, and CDF_EPOCH16 data types, time encoding and decoding MUST be done using the dedicated CDF Library functions (available as black boxes from SPDF).**
+**Note that for CDF_TIME_TT2000, CDF_EPOCH, and CDF_EPOCH16 data types, time encoding and decoding MUST be done using the dedicated [CDF Library](https://cdf.gsfc.nasa.gov/) functions (available as black boxes from SPDF).**
 
-Since CDF_TIME_TT2000 data type is precisely defined internally (as `TIME_BASE = "J2000"`, `TIME_SCALE = "Terrestrial Time"`, `REFERENCE_POSITION = "Rotating Earth Geoid"`, `RESOLUTION = "1ns"`, `UNITS = "ns"`), it does not require explicit [time attribute](./05_metadata-variable-attributes.md#variable-attributes-for-time-documentation) definitions, and **is strongly recommended for new datasets.**
+Since CDF_TIME_TT2000 data type is precisely defined internally (as `TIME_BASE = "J2000"`, `TIME_SCALE = "Terrestrial Time"`, `REFERENCE_POSITION = "Rotating Earth Geoid"`, `UNITS = "ns"`), it does not require explicit [time attribute](./05_metadata-variable-attributes.md#variable-attributes-for-time-documentation) definitions, and **is strongly recommended for new datasets.**
 
 The ISTP Guidelines define the time value of a record as the center of the measurement period, if the measurement is not an instantaneous one. To describe time values that are different from the measurement period center, the epoch variable must include `BIN_LOCATION` attribute with a floating-point value between `0.0` (corresponding to measurement period beginning) and `1.0` (measurement period end). Such epoch variable should also include description of the time position within measurement period in `VAR_NOTES` attribute and, preferably, also in `CATDESC` attribute. Alternatively, in order to completely describe the measurement periods, and especially in case of time varying measurement periods, `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` attribute pair can be used.
 

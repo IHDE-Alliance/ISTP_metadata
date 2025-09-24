@@ -83,7 +83,7 @@ An approximately 80-character string which is a textual description of the varia
 
 ### Conventions
 
-This is standard for NetCDF files and is required for ICON.
+This is standard for netCDF files and is required for ICON.
 
 ### Data_Level
 
@@ -203,7 +203,7 @@ Date stamps the creation of the file using the syntax yyyymmdd, *e.g.,* "1992092
 
 ### History
 
-Recommended global attribute for NSSDC indicating file modification state. This should be duplicated in the NetCDF history.
+Recommended global attribute for NSSDC indicating file modification state. This should be duplicated in the netCDF history.
 
 ### HTTP_LINK
 

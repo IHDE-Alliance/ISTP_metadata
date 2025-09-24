@@ -95,7 +95,7 @@ CAVEATS- Information which may be important in the avoidance of the misuse of th
 
 Channel_ID- 0 = CHANNEL A 1 = CHANNEL B.
 
-_ChunkingSizes- NetCDF attribute which controls the data arrangement.
+_ChunkingSizes- netCDF attribute which controls the data arrangement.
 
 COORDINATE_SYSTEM- For nonscalar data, contains coordinate system name, e.g. ‘HCI’ or ‘RTN.’ Note representation is no longer included.
 
@@ -229,10 +229,10 @@ TIME_MAX- The date and time of the end of the last acquisition for the data cont
 
 TIME_MIN- The date and time of the beginning of the first acquisition for the data contained in the file.
 
-Valid_Max- The NetCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
+Valid_Max- The netCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
 
-Valid_Min- The NetCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
+Valid_Min- The netCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
 
-Valid_Range- The NetCDF two length vector containing the minimum and maximum valid values. 
+Valid_Range- The netCDF two length vector containing the minimum and maximum valid values. 
 
 Value Type-  This identifies the data type and is necessary for conversion from the ascii entry. 

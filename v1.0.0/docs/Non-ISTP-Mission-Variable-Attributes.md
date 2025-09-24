@@ -36,7 +36,7 @@
 **Descriptions**
 
 
-`_ChunkingSizes`  &mdash; NetCDF attribute which controls the data arrangement.
+`_ChunkingSizes`  &mdash; netCDF attribute which controls the data arrangement.
 
 `COORDINATE_SYSTEM`  &mdash; For nonscalar data, contains coordinate system name, e.g. `"HCI"` or `"RTN"`. Note representation is no longer included.
 
@@ -48,7 +48,7 @@
 
 `DELTA_PLUS` &mdash; Describes the range over which the data are integrated, representative, etc. and locate the position of the time tag or value within this range.
 
-`_FillValue` &mdash; Used by NetCDF to fill in data that was not explicitly set. This is typed data.
+`_FillValue` &mdash; Used by netCDF to fill in data that was not explicitly set. This is typed data.
 
 `Frame` &mdash;  Optional and partially redundant with the more powerful description provided by the three concepts TENSOR_ORDER, REPRESENTATION, AND TENSOR_FRAME.
 
@@ -58,7 +58,7 @@
 
 `REPRESENTATION_i`- Pointer to a support variable that gives the representation ([`"x"`,`"y"`,`"z"`] for Cartesian; [`"r"`,`"p"`,`"t"`] for spherical polar; [`"r"`,`"p"`,`"z"`] for cylindrical polar) of the ith dimension of the variable.
 
-`_Shuffle` &mdash; Enables byte shuffling in NetCDF data set for optimized compression performance.
+`_Shuffle` &mdash; Enables byte shuffling in netCDF data set for optimized compression performance.
 
 `SI_CONVERSION` &mdash; A string that defines the conversion needed to base SI units, e.g. `"1.0E-9>T"` for DC Magnetic field data in nT.
 
@@ -68,11 +68,11 @@
 
 `TENSOR_ORDER` &mdash; Contains the rank or order of a tensor, i.e. `1` for a vector, `2` for a 3x3 tensor.
 
-`Valid_Max` &mdash; The NetCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
+`Valid_Max` &mdash; The netCDF maximum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
 
-`Valid_Min` &mdash; The NetCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
+`Valid_Min` &mdash; The netCDF minimum valid value which is of the same type as the variable. Skip this for strings or double/floats that are unlimited. 
 
-`Valid_Range` &mdash; The NetCDF two-element vector containing the minimum and maximum valid values. 
+`Valid_Range` &mdash; The netCDF two-element vector containing the minimum and maximum valid values. 
 
 `Value_Type` &mdash;  This identifies the data type and is necessary for conversion from the ascii entry. 
 

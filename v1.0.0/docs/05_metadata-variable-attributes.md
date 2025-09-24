@@ -52,7 +52,7 @@ Additional variable attributes may be defined, but their **names must start with
 
 ## Variable Attributes for Time Documentation
 
-These attributes can be used for precise definition of a time variable, e.g., for time variables in netCDF with no dedicated time data type. **Not needed for pre-defined CDF_TIME_TT2000 time data type**, defined as:
+These attributes should be used for precise definition of a time variable, and especially for time variables in netCDF with no dedicated time data type. **Not needed for CDF_TIME_TT2000 time data type**, internally precisely defined as:
 ```
 TIME_BASE = "J2000"  
 TIME_SCALE = "Terrestrial Time"
@@ -63,7 +63,7 @@ UNITS = "ns"
 | **Attribute** | **NASA Archive Requirement** | **Example Value, <br> Required Data Type** | **Notes** |
 | ------------- | ---------------- | ----------- | -------------- |
 | [`TIME_BASE`](#time_base) | Recommended (Important for netCDF files and clarity) | `"J2000"` <br> CDF_CHAR | Fixed (`"0AD"`, `"1900"`, `"1970"` (POSIX), `"J2000"` (used by CDF_TIME_TT2000), `"4714 BC"` (Julian)) or `"flexible"` (provider-defined) |
-| [`TIME_SCALE`](#time_scale) | Recommended  |  `"TT"` <br> CDF_CHAR | `"TT"` (same as TDT, used by CDF_TIME_TT2000), `"TAI"` (same as IAT, TT-32.184s), `"UTC"` (includes leap seconds), `"TDB"` (same as SPICE ET), `"EME1950"` [default: `"UTC"`]  |
+| [`TIME_SCALE`](#time_scale) | Recommended  |  `"TT"` <br> CDF_CHAR | `"TT"` (same as TDT, used by CDF_TIME_TT2000), `"TAI"` (same as IAT, TT-32.184s), `"UTC"` (includes leap seconds), `"TDB"` (same as SPICE ET), `"EME1950"` [default: `"UTC"`] |
 | [`LEAP_SECONDS_INCLUDED`](#leap_seconds_included) | Recommended for UTC only | `"1961JAN01+1.42282s,` ... `,2017JAN01+1s"` <br> CDF_CHAR  | Comma-delimited list of leap seconds  |
 | [`ABSOLUTE_ERROR`](#absolute_error) | *Optional* | `0.3` <br> **Var data type** (CDF_REAL4) | Absolute or systematic error, in same units as `UNITS` attribute. |
 | [`BIN_LOCATION`](#bin_location) | *Optional* | `0.5` <br> CDF_REAL4, CDF_REAL8, or equivalent  | Relative position of time stamp to the data measurement bin, with `0.0` at the beginning of time bin and `1.0` at the end. Default is `0.5` for the time at the center of the data measurement. |
@@ -115,10 +115,10 @@ UNITS = "ns"
  The variables pointed to by `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` must be of the same dimensionality and the same data type as the original variable, and can be either time varying or time invariant. In case of the original variable being of a time data type (CDF_TIME_TT2000, CDF_EPOCH, or CDF_EPOCH16), variables pointed to by `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` should be of the underlying basic data type (CDF_INT8 for CDF_TIME_TT2000 and CDF_REAL8 for both CDF_EPOCH and CDF_EPOCH16).
 
 ### DEPEND_0
-(*Required for RV variables.*) Explicitly ties a variable to the time variable on which it depends. All variables which change with time must have a `DEPEND_0` attribute defined. The value of `DEPEND_0` is `"Epoch"`, the time ordering parameter for ISTP. Different time resolution data variables can be supported in a single dataset by defining multiple time variables, e.g., `Epoch`, `Epoch_1`, `Epoch_2`, etc., each representing a different time resolution. These are attached appropriately to variables in the dataset via their `DEPEND_0` attribute. The value of the attribute must be name of a variable in the same dataset. See [example of use](07_example-variables.md#example-of-a-vector-magnetic-field-data-variable).
+(*Required for RV variables.*) Explicitly ties a variable to the time variable on which it depends. All variables which change with time must have a `DEPEND_0` attribute defined. The value of `DEPEND_0` is `"Epoch"`, the time ordering parameter for ISTP. Different time resolution data variables can be supported in a single dataset by defining multiple time variables, e.g., `Epoch`, `Epoch_1`, `Epoch_2`, etc., each representing a different time resolution. These are attached appropriately to variables in the dataset via their `DEPEND_0` attribute. The value of the attribute must be name of a variable in the same dataset. See [example of use](07_example-variables.md#example-of-vector-magnetic-field-variable).
 
 ### DEPEND_i
-(*Required for dimensional variables as shown in table above. 1D time series data variables do not need `DEPEND_1`.*) Ties a dimensional **_data_** variable to a **_support_data_** variable on which the i-th dimension of the ***_data_*** variable depends. The number of `DEPEND_i` attributes must match the dimensionality of the variable, i.e., a one-dimensional variable must have a `DEPEND_1`, a two-dimensional variable must have `DEPEND_1` and `DEPEND_2` attributes, etc. The value of the attribute must be name of a variable in the same dataset. See [example of use](07_example-variables.md#example-of-a-2d-sizes-2812-data-variable).
+(*Required for dimensional variables as shown in table above. 1D time series data variables do not need `DEPEND_1`.*) Ties a dimensional **_data_** variable to a **_support_data_** variable on which the i-th dimension of the ***_data_*** variable depends. The number of `DEPEND_i` attributes must match the dimensionality of the variable, i.e., a one-dimensional variable must have a `DEPEND_1`, a two-dimensional variable must have `DEPEND_1` and `DEPEND_2` attributes, etc. The value of the attribute must be name of a variable in the same dataset. See [example of use](07_example-variables.md#example-of-2-d-flux-variable).
 
 ### DICT_KEY
 (*Optional*) Comes from a data dictionary keyword list and describes the variable to which it is attached. Use of both ISTP standard dictionary keywords and [SPASE](https://spase-group.org) dictionary keywords is described in [Dictionary Keywords](06_metadata-keywords.md).
@@ -205,7 +205,7 @@ limits). Visualization software can use these attributes for indicating limits o
 (*Optional*) Are values which can be based on the actual values of data found in the dataset or on the probable uses of the data, e.g., plotting multiple files at the same scale. Visualization software can use these attributes as defaults for plotting. The attribute data type must match the data type of the variable.
 
 ### SCALETYP
-(Recommended for non-linear scales if not using `SCAL_PTR`.) Indicates whether the variable should have a `linear` or a `log` scale as a default. If this attribute is not present, `linear` scale is assumed.
+(Recommended for non-linear scales if not using `SCAL_PTR`.) Indicates whether the variable should have a `linear` or a `log` scale as a default.
 
 ### SCAL_PTR
 (*Recommended for non-linear scales if not using `SCALETYP`.*) Is used for dimensional variables when one value of `SCALTYP` is not sufficient. `SCAL_PTR` is used instead of `SCALTYP`, and will point to a variable which will be of the same dimensionality as the original variable. The allowed values are `"linear"` and `"log"`. The value of the attribute must be name of a variable in the same dataset.

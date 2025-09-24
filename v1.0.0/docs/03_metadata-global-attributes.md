@@ -2,9 +2,9 @@
 
 Global attributes are used to provide information about the dataset as an entity and about the individual files composing the datasets. Together with variables and variable attributes the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence, a good archive product. Global attributes provide informational metadata associated with all the variables in the file, and as a means of attaching information that may be carried along with the data. The global attributes are also used by the Coordinated Data Analysis Web ([CDAWeb)](https://cdaweb.gsfc.nasa.gov/) Display and Retrieval system. 
 
-The required, recommended, and optional global attributes with example values are listed in the table below. See [Global Attribute Definitions](#global-attribute-definitions) for the full set of defined global attributes in alphabetical order. Global attributes can be listed in any order. Note that the attribute names are case-sensitive, and the names of the ISTP global attributes must match the case **exactly** as shown. Also, all ISTP global attributes are of **character data type** (string).
+The required, recommended, and optional global attributes with example values are listed in the table below. See [Global Attribute Definitions](#global-attribute-definitions) for the full set of defined global attributes in alphabetical order. Global attributes can be listed in any order. Note that the attribute names are case sensitive, and the names of the ISTP global attributes must match the case **exactly as shown**. Also, all ISTP global attributes are of **character data type** (string).
 
-Additional global attributes may be defined, but their **names must start with a letter and can otherwise contain letters, numbers and the underscore character, but no other special characters.** Though attribute names are case sensitive, the names must never be distinguished by case only.
+Additional global attributes may be defined, but their **names must start with a letter and contain letters, numbers, underscore character, but no other special characters.** Though attribute names are case sensitive, the names must never be distinguished by case only.
 
 
 
@@ -42,7 +42,7 @@ Additional global attributes may be defined, but their **names must start with a
 | [`Skeleton_version`](#skeleton_version) | Optional | `"2.0.0"` | Version number of the skeleton file used to create the data file.  |
 | [`Software_version`](#software_version) | Optional |  `"1.3.0"` | Used to document version of software that generated the file.  |
 | [`TITLE`](#title) | Optional | `"Parker Solar Probe ISOIS level 2 summary"` | Dataset title.  |
-| [`Validate`](#validate) | Optional | `"Compatible with the ISTP CDF Standards"` | Written by software for automatic validation of features such as the structure of the CDF file on a simple pass/fail criterion. |
+| [`Validate`](#validate) | Optional | `"ISTP_skel>pass>CDHF>19951107"` | Written by software for automatic validation of features such as the structure of the CDF file on a simple pass/fail criterion. |
 
 
 ## Global Attribute Definitions
@@ -52,20 +52,20 @@ Additional global attributes may be defined, but their **names must start with a
 
 ### Data_processing_level (PROPOSAL ONLY)
 
-Processing level of the dataset. Both a short name (used in `Logical_source` and in the filename) and a long name (description used in `Logical_source_description`) separated by `>` are required. For example, `Data_processing_level = "L2>Level 2"`
+(*Recommended*) Processing level of the dataset. Both a short name (used in `Logical_source` and in the filename) and a long name (description used in `Logical_source_description`) separated by `>` are required. For example, `Data_processing_level = "L2>Level 2"`
 
 
 ### Data_type
 (*Required*) This attribute identifies the data type of the CDF dataset. Both a short name (used in `Logical_source` and in the filename) and a long name (description used in `Logical_source_description`) separated by `>` are required. Originally, for ISTP exchangeable data products, the values were `"Kn>Key Parameter"` for approximately minute averaged survey data, `"Hn>High Resolution data"` for certified data of higher resolution than Key Parameters, and `"Mn>Modified Data"` for modified or derived datasets, where`n` is from `0` to `9`. For Cluster/Cluster Science Data System (CSDS) the allowed values were either `"SP>Summary Parameter"` or `"PP>Prime Parameter"`. For new datasets, data providers are not restricted to these original definitions, and can define data types individually for each mission or instrument to capture relevant information. For example, `Data_type = "L2-Summary>level 2 summary"` indicates both the processing level (`L2`) and that the dataset contains summary data, as two subfields separated by hyphen. 
 
 ### Data_version
-(*Required*) This attribute identifies the version of a particular CDF data file for a given date, e.g., the file GE_K0_MGF_19920923_V01 is the first version of data for 1992 September 23. **Each time** this particular data file is reproduced - for recalibration or other reasons - the `Data_version` is incremented by unity. `Data_version` always starts at `"1"`.
+(*Required*) This attribute identifies the version of a particular CDF data file for a given date, e.g., the file GE_K0_MGF_19920923_V01 is the first version of data for 1992 September 23. **Each time** this particular data file is reproduced - for recalibration or other reasons - the `Data_version` is incremented by unity. `Data_version` always starts at `"1"`. Combination of major and minor versions, separated by period, is also supported (e.g., `Data_version = "01.00"`)
 
 ### Date_Start, Date_End
-(*Required for **netCDF** only*)  The two attributes, always used together, describe start and end UTC date/time (in yyyy-mm-ddThh:mm:ss format) of the data in the file.
+(*Required for **netCDF** only*) The two attributes, always used together, describe start and end UTC date/time (in yyyy-mm-ddThh:mm:ss format) of the data in the file. Required since netCDF does not have a standard or defined variable for epoch/time values. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).
 
 ### Descriptor
-(*Required*) This attribute identifies the name of the instrument or sensor that collected the data. Both a short name (used in `Logical_source` and in the filename) and a long name (description used in `Logical_source_description`) separated by `>` are required. For example,  `Descriptor = "EPI>Energetic Particles and Ion Composition"`. The short name should be limited to from 2 to 4 characters for consistency with ISTP. This attribute should have single entry.
+(*Required*) This attribute identifies the name of the instrument or sensor that collected the data. Both a short name (used in `Logical_source` and in the filename) and a long name (description used in `Logical_source_description`) separated by `>` are required. For example,  `Descriptor = "ISOIS>Integrated Science Investigation of the Sun"`. This attribute should have single entry.
 
 ### Discipline
 (*Recommended*) This attribute describes both the science discipline and subdiscipline. More than one entry is allowed. The list for space physics is:
@@ -90,11 +90,8 @@ https://doi.org/PREFIX/SUFFIX with the PREFIX identifying the DOI registration a
 
 - `"Activity Indices"`
 - `"Electric Fields (space)"`
-- `"Electron Precipitation Bremsstrahlung"`
-- `"Energetic Particle Detector"`
 - `"Engineering"`
 - `"Ephemeris/Attitude/Ancillary"`
-- `"Gamma and X-Rays"`
 - `"Ground-Based HF-Radars"`
 - `"Ground-Based Imagers"`
 - `"Ground-Based Magnetometers, Riometers, Sounders"`
@@ -103,16 +100,12 @@ https://doi.org/PREFIX/SUFFIX with the PREFIX identifying the DOI registration a
 - `"Imaging and Remote Sensing (ITM/Earth)"`
 - `"Imaging and Remote Sensing (Magnetosphere/Earth)"`
 - `"Imaging and Remote Sensing (Sun)"`
-- `"Imagers (space)"`
 - `"Linear Energy Transfer Spectrometer"`
 - `"Magnetic Fields (Balloon)"`
 - `"Magnetic Fields (space)"`
 - `"Particles (space)"`
 - `"Plasma and Solar Wind"`
-- `"Pressure gauge (space)"`
 - `"Radio and Plasma Waves (space)"`
-- `"Spacecraft Potential Control"`
-- `"UV Imaging Spectrograph (Space)"`
 
 
 ### LINK_TEXT, LINK_TITLE, HTTP_LINK
@@ -178,7 +171,7 @@ _3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at [ISAS DART
   - `"CDAWxx>Coordinated Data Analysis Workshop xx"`
   - `"SPDS>Space Physics Data System"`
 
-  Others may be defined in the future. This attribute can be multi-valued if the data has been supplied to more than one project.
+  Others may be defined in the future. This attribute can have multiple entries if the data has been supplied to more than one project.
 
 ### Rules_of_use
 (*Recommended*) Text containing information on, e.g., citability or use restrictions. This may point to web page specifying the rules of use.
@@ -205,8 +198,7 @@ attribute for Cluster, but for IACG purposes it exists if experimenters want to 
 (*Recommended*) Unique dataset identifier assigned by [SPASE](http://www.spase-group.org/), of the form spase://NAMING_AUTHORITY/UNIQUE_ID, where UNIQUE_ID is the ID assigned to the SPASE resource record for the dataset in the [SPASE system](http://www.spase-group.org/) by a SPASE NAMING_AUTHORITY. The SPASE resource record provides metadata about the dataset, including pointers to locations holding the data.
 
 ### TEXT
-(*Required*) This attribute is a standard global attribute which is a text description of the
-experiment whose data is included in the CDF. A reference to a journal article(s) or to a web page describing the experiment is essential, and constitutes the minimum requirement. A written description of the dataset is also essential. This attribute can have as many entries as necessary.
+(*Required*) This attribute is a standard global attribute which includes a short description of the experiment followed by the description of the dataset. A reference to a journal article(s) or to a web page describing the experiment is also essential, and constitutes the minimum requirement. This attribute can have as many entries as necessary.
 
 ### Time_resolution
 (*Recommended*) Specifies time resolution of the file, e.g., `"1 min"`

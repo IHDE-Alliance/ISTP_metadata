@@ -13,7 +13,7 @@ Follow the SPDF [Recommended File and Data Collection Naming Practices](https://
 - Do not use netCDF groups, unsigned 64-bit integers, or user-defined variable types, since these are not widely supported by generalized science software
 - Provide two global attributes `Data_Start` and `Data_End` with value = yyyy-mm-ddThh:mm:ss UTC
 
-Recommend using the CDF_TIME_TT2000 variable type as 8-byte integers in netCDF, and using the CDF library routines for conversion to and from other time formats. Otherwise, time variables should be in seconds from some epoch, with UNITS of "seconds since 2000-01-01", for instance.
+Recommend using the CDF_TIME_TT2000 variable type as 8-byte integers in netCDF, and using the CDF library routines for conversion to and from other time formats. Otherwise, time variables should be in seconds from some epoch, with `UNITS` of "seconds since 2000-01-01", for instance.
 
 In addition to the ISTP-defined `FILLVAL`, `CATDESC` and `UNITS`, netCDF conventions call for also storing in `_FillValue`, `long_name`, and `units`, respectively.  See [netCDF Attribute Conventions](https://docs.unidata.ucar.edu/netcdf-c/4.9.2/attribute_conventions.html)
 

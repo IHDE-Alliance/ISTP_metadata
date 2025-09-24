@@ -20,13 +20,13 @@ The most common practice in the heliophysics in-situ community is currently to u
 
 ## ISTP Guidelines Structure and Concepts
 - Data is time-ordered and time-identified; times vary by record
-- Multiple time variable in a file, allowing data variables with different time cadences
+- Multiple time variables in a file, allowing data variables with different time cadences
 - Set of required and suggested metadata (as defined in this document)
-- Variable structure stays unchanged throughout the dataset
+- Variable structure stays unchanged throughout the entire mission for the whole dataset
 - Variables can carry metadata (e.g. labels for dimensional variables)
 - Variable attributes can point to other variables by name and carry arguments, and thus carry information about relationships among variables
-- Carry slowly-varying data as variables rather than in attributes (CDF variables can be defined with record sparseness set to previous record, allowing storing only records that changed)
-- Skeleton CDF is a CDF with structure and metadata defined but no data, so it can be used as a template from which to build a data file
+- Slowly-varying data should be stored as variables rather than in attributes (CDF variables can be defined with record sparseness set to previous record, allowing storing only records that changed)
+- Skeleton CDF is a CDF with structure and metadata defined but no data, so it can be used as a template from which to build a data file. [NetCDF Common Data Language (CDL)](https://docs.unidata.ucar.edu/nug/2.0-draft/cdl.html) is the netCDF equivalent.
 - General dataset and file naming conventions
 
 ## Defining a Dataset
@@ -36,7 +36,9 @@ General guidelines for defining a dataset may include answering following questi
 - How are they going to be named?
 - Understand (at the dataset level) the dimensionality and dependencies, and variance with time and dimensions
 
-The general rule is to capture the relationships in the structure and in the variable attributes. The relationships should be logically-structured and machine-readable, and available for general-purpose codes to understand. In particular, the following variable attributes are often required for automated processing:
+The overall purpose for the dataset and its connections to the missions, instruments, people, and organizations are provided in the [Global Attributes](/03_metadata-global-attributes.md)
+
+The general rule is to capture the dataset-internal relationships in the structure and in the variable attributes. The relationships should be logically-structured and machine-readable, and available for general-purpose codes to understand. In particular, the following variable attributes are often required for automated processing:
 - `FIELDNAM` short variable name for plots
 - `CATDESC` for longer variable description
 - `DEPEND_0` points to time variable describing time dimension

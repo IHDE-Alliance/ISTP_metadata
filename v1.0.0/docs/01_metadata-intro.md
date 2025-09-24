@@ -38,7 +38,7 @@ General guidelines for defining a dataset may include answering the following qu
 - How will they be named?
 - Understand (at the dataset level) the dimensionality, dependencies, and variance with time and dimensions.
 
-The overall purpose for the dataset and its connections to the missions, instruments, people, and organizations are provided in the [Global Attributes](/03_metadata-global-attributes.md)
+The overall purpose for the dataset and its connections to the missions, instruments, people, and organizations are provided in the [Global Attributes](/03_metadata-global-attributes.md).
 
 The general rule is to capture the relationships in the variable structure and variable attributes. The relationships should be logically structured, machine-readable, and available for general-purpose codes to understand. In particular, the following variable attributes are often required for automated processing:
 - `FIELDNAM` short variable name for plots

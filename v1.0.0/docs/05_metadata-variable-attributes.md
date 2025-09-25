@@ -2,9 +2,9 @@
 
 Variable attributes are linked with and provide additional information about the individual variables. The following tables list all the ISTP variable attributes with examples and requirements based on the ISTP variable type. If a variable type is not listed, then that attribute need not be defined for that particular type; however, if a given variable has an attribute that is not needed, it will be ignored by most of the ISTP compliant applications. See [Variable Attribute Definitions](#variable-attribute-definitions) for the full set of defined variable attributes in alphabetical order. (**RV** means record or time varying variable.) Variable attributes can be listed in any order.
 
-Note that attribute names are case-sensitive, and the names of the ISTP variable attributes must match the case **exactly** as shown.  Also note that for variable attributes with numerical values of the same quantity kind as the variable values, the attribute data type must match **exactly** the variable data type. E.g., for a variable of CDF_REAL4 data type, its `FILLVAL`, `VALIDMIN`, `VALIDMAX` attributes must be of CDF_REAL4 data type. 
+Note that attribute names are case-sensitive, and the names of the ISTP variable attributes must match the case **exactly** as shown.  Also note that for variable attributes with numerical values of the same quantity kind as the variable values, the attribute data type must match **exactly** the variable data type. E.g., for a variable of CDF_REAL4 data type, its `FILLVAL`, `VALIDMIN`, `VALIDMAX` attributes must be of CDF_REAL4 data type to enable exact bit matching. 
 
-Additional variable attributes may be defined, but their **names must start with a letter and can otherwise contain letters, numbers and the underscore character, but no other special characters.** Though attribute names are case sensitive, the names must never be distinguished by case only.
+Additional variable attributes may be defined, but their **names must start with a letter and can otherwise contain letters, numbers and the underscore character, but no other special or Unicode characters.** Though attribute names are case sensitive, the names must never be distinguished by case only.
 
 
 | **Attribute Name** | **NASA Archive Requirement** | **Example Value, <br> Required Data Type** | **Notes** |
@@ -163,16 +163,16 @@ Additionally, the ISTP Guidelines require the following special `FILLVAL` values
 |          | `PadValue`  |            `0.0`, `0.0`  | `"0000-01-01T00:00:00.000000000000"` |
 
 ### FORMAT
-(*Required if not using* `FORM_PTR`.) Is the output format used when extracting data values out to a file or screen (e.g., using CDFlist utility of CDF Library). The magnitude and the number of significant figures needed should be carefully considered. A good check is to consider it with respect to the values of `VALIDMIN` and `VALIDMAX` attributes. The output should be in Fortran format.
+(*Required if not using* `FORM_PTR`) Is the output format used when extracting data values out to a file or screen (e.g., using CDFlist utility of CDF Library). The magnitude and the number of significant figures needed should be carefully considered. A good check is to consider it with respect to the values of `VALIDMIN` and `VALIDMAX` attributes. The output should be in Fortran format.
 
 ### FORM_PTR
-(*Required if not using* `FORMAT`.) Has as its value name of a variable which stores the character strings representing the desired output format for the original variable. `FORM_PTR` is used instead of `FORMAT`. The value of the attribute must be name of a variable in the same dataset.
+(*Required if not using* `FORMAT`) Has as its value name of a variable which stores the character strings representing the desired output format for the original variable. `FORM_PTR` is used instead of `FORMAT`. The value of the attribute must be name of a variable in the same dataset.
 
 ### LABLAXIS
-(*Required if not using* `LABL_PTR_1`.) Should be a short string (no more than 20, but preferably 10, characters), which can be used to label a y-axis for a plot or to provide a heading for a data listing.
+(*Required if not using* `LABL_PTR_1`) Should be a short string (no more than 20, but preferably 10, characters), which can be used to label a y-axis for a plot or to provide a heading for a data listing.
 
 ### LABL_PTR_i
-(*Required if not using* `LABLAXIS`.) Is used to label a dimensional variable when one value of `LABLAXIS` is not sufficient to describe the variable or to label all the axes. `LABL_PTR_i` is used instead of `LABLAXIS`, where `i` can be from 1 to the total number of dimensions of the original variable. The value of `LABL_PTR_1` is name of a variable which will contain the short character strings which describe the first dimension of the original variable. The actual labels should be short as described above for `LABLAXIS`. The value of the attribute must be a name of variable in the same dataset. See [example of use](07_example-variables.md#example-of-a-2d-sizes-2812-data-variable).
+(*Required if not using* `LABLAXIS`) Is used to label a dimensional variable when one value of `LABLAXIS` is not sufficient to describe the variable or to label all the axes. `LABL_PTR_i` is used instead of `LABLAXIS`, where `i` can be from 1 to the total number of dimensions of the original variable. The value of `LABL_PTR_1` is name of a variable which will contain the short character strings which describe the first dimension of the original variable. The actual labels should be short as described above for `LABLAXIS`. The value of the attribute must be a name of variable in the same dataset. See [example of use](07_example-variables.md#example-of-a-2d-sizes-2812-data-variable).
 
 ### LEAP_SECONDS_INCLUDED
 (*Recommended for UTC only.*) Comma-delimited list of leap seconds included in the form of a lists of ISO8601 times when each leap second was added, appended with the size of the leap second in ISO8601 relative time (+/- time, most commonly: "+1s") [default: standard list of leap seconds up to time of data]. `LEAP_SECONDS_INCLUDED` is needed to account for time scales that don't have all 37 (in 2022) leap seconds and for the clocks in various countries that started using leap seconds at different times. The full list is required to handle the equally or more common case where a time scale starts at a specific Universal Time Coordinate (UTC) but continues on without leap seconds in TAI mode; this is basically what missions that don't add leap seconds are doing.
@@ -234,10 +234,10 @@ limits). Visualization software can use these attributes for indicating limits o
 ### VAR_TYPE
 (*Required for all variables.*) Identifies ISTP variable type as either:
 
-- `"data"` - plottable variables of integer or real type
+- `"data"` - plottable variables of integer or real type (used in CDAWeb and similar software as the list of variables to select from for processing or display)
 - `"support_data"` - support (attached to **data**) variables of integer or real type
 - `"metadata"` - labels or other character type variables
-- `"ignore_data"` - variables ignored by applications/APIs
+- `"ignore_data"` - variables to be ignored by applications/APIs
 
 ### VARIABLE_PURPOSE
 (*Optional*) List of tags/keywords separated by commas that indicate probable uses of the variable and its function. Software can use these attributes to find the primary variables in the dataset, find variables with a common function, indicate variables suitable for specific purposes such as summary plots or educational displays, etc. Tags could indicate a common geophysical quantity to enable matching several variables of the same kind. For instance, all magnetic field variables could be tagged with `VARIABLE_PURPOSE = "Magnetic_Field"` even though they have different coordinate systems or cadences. Software could use this tag to identify variables with a common theme for easier distinguishing between groups of variables and selecting between them. The values are always in a character string. Suggested tags/keywords include:

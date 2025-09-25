@@ -260,37 +260,6 @@ In this example, **_support_data_** variable `Epoch` is of CDF_EPOCH data type. 
  "MONOTON"           CDF_CHAR          { "INCREASE" }.
 ```
 
-### Example of Time_PB5 Variable
-
-`Time_PB5` variable is a way of representing time as a 1-D (size 3) integer array storing Year, Day of Year (note: January 1 is Day 1), and Millisecond of Day (elapsed ms), which allows for easy recognition of the time value when looking at the data, for instance in a data dump. This variable was part of the requirements for the ISTP Key Parameter (KP) CDF datasets only, and it is optional for new datasets.
-
-To describe the time components, `Time_PB5` has three attached **_metadata_** variables which provide labels (`label_time` variable attached via `LABL_PTR_1` attribute),  units (`unit_time` attached via `UNIT_PTR`) and formats (`format_time` attached via `FORM_PTR`). See [descriptions of these **_metadata_** variables](#examples-of-time_pb5-related-variables).
-```
-! Variable          Data     Number                 Record    Dimension
-! Name              Type     Elements  Dims  Sizes  Variance  Variances
-! --------          ----     --------  ----  -----  --------  ---------
-  "time_pb5"      CDF_INT4       1       1     3        T         T
-
-! Attribute       Data
-! Name            Type         Value
-! --------        ----         -----
-
-"CATDESC"        CDF_CHAR     { "Time of observation in Year, Day, & " -
-                                 "milliseconds" }
-"DEPEND_0"       CDF_CHAR     { "epoch_1hr" }
-"DICT_KEY"       CDF_CHAR     { "time>pb5" }
-"FIELDNAM"       CDF_CHAR     { "Time PB5" }
-"FILLVAL"        CDF_INT4     { -2147483648 }
-"LABL_PTR_1"     CDF_CHAR     { "label_time" }
-"MONOTON"        CDF_CHAR     { "INCREASE" }
-"UNIT_PTR"       CDF_CHAR     { "unit_time" }
-"VALIDMIN"       CDF_INT4     { 1997, 237, 0 }
-"VALIDMAX"       CDF_INT4     { 2030, 365, 0 }
-"VAR_TYPE"       CDF_CHAR     { "support_data" }
-"SCALETYP"       CDF_CHAR     { "linear" }
-"FORM_PTR"       CDF_CHAR     { "format_time" } .
-```
-
 ### Example of 1-D Energy Variable
 
 We show definition of a time-varying 1-D (size 12) **_support_data_** variable `IDiffI_I_Energy` (Ion Energy at 12 channels), with all the required and some recommended attributes included. This **_support_data_** variable is attached to the same size **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies, [described here](#example-of-1-d-flux-variable)) via the `IDiffI_I` variable `DEPEND_1` attribute.
@@ -349,6 +318,38 @@ This 1-D (size 3) **_metadata_** variable `label_B_GSE` holds three strings for 
  [ 1 ] = { "Bx GSE" }
  [ 2 ] = { "By GSE" }
  [ 3 ] = { "Bz GSE" }
+```
+
+
+### Example of Time_PB5 Variable
+
+`Time_PB5` variable is a way of representing time as a 1-D (size 3) integer array storing Year, Day of Year (note: January 1 is Day 1), and Millisecond of Day (elapsed ms), which allows for easy recognition of the time value when looking at the data, for instance in a data dump. This variable was part of the requirements for the ISTP Key Parameter (KP) CDF datasets only, and it is not recommended for new datasets.
+
+To describe the time components, `Time_PB5` has three attached **_metadata_** variables which provide labels (`label_time` variable attached via `LABL_PTR_1` attribute),  units (`unit_time` attached via `UNIT_PTR`) and formats (`format_time` attached via `FORM_PTR`). See [descriptions of these **_metadata_** variables](#examples-of-time_pb5-related-variables).
+```
+! Variable          Data     Number                 Record    Dimension
+! Name              Type     Elements  Dims  Sizes  Variance  Variances
+! --------          ----     --------  ----  -----  --------  ---------
+  "time_pb5"      CDF_INT4       1       1     3        T         T
+
+! Attribute       Data
+! Name            Type         Value
+! --------        ----         -----
+
+"CATDESC"        CDF_CHAR     { "Time of observation in Year, Day, & " -
+                                 "milliseconds" }
+"DEPEND_0"       CDF_CHAR     { "epoch_1hr" }
+"DICT_KEY"       CDF_CHAR     { "time>pb5" }
+"FIELDNAM"       CDF_CHAR     { "Time PB5" }
+"FILLVAL"        CDF_INT4     { -2147483648 }
+"LABL_PTR_1"     CDF_CHAR     { "label_time" }
+"MONOTON"        CDF_CHAR     { "INCREASE" }
+"UNIT_PTR"       CDF_CHAR     { "unit_time" }
+"VALIDMIN"       CDF_INT4     { 1997, 237, 0 }
+"VALIDMAX"       CDF_INT4     { 2030, 365, 0 }
+"VAR_TYPE"       CDF_CHAR     { "support_data" }
+"SCALETYP"       CDF_CHAR     { "linear" }
+"FORM_PTR"       CDF_CHAR     { "format_time" } .
 ```
 
 ### Examples of Time_PB5 Related Variables
@@ -427,7 +428,6 @@ Variable `format_time` (attached to `Time_PB5` variable via its `FORM_PTR` attri
     [2] = { "I3" }
     [3] = { "I8" }
 ```
-
 
 ---
 Return to [Table of Contents](../README.md)

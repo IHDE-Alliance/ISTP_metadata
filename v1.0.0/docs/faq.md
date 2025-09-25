@@ -29,6 +29,8 @@ Ramona L. Kessel and Robert E. McGuire at the NASA Space Physics Data Facility (
 ### How does the ISTP Guidelines relate to other guidelines/specifications?
 Earth sciences has a similar set of metadata guidelines in the [CF conventions](https://cfconventions.org/)
 
+FITS has its [standard metadata guidelines](https://fits.gsfc.nasa.gov) used across astro and solar physics, and solar physics is developing additional [SOLARNET Metadata Recommendations for Solar Observations](https://github.com/IHDE-Alliance/solarnet_metadata).
+
 ## Working with the ISTP Guidelines
 Learning about and changing the ISTP Guidelines.
 

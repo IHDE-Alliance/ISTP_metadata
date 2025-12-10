@@ -5,7 +5,7 @@
 ### Example of Scalar Density Variable
 
 
-The example demonstrates a scalar **_data_** variable `SW_P_Den` displayed in [CDAWeb](https://cdaweb.gsfc.nasa.gov/) as a time series (`DISPLAY_TYPE = "time_series"`) and its corresponding definition as it appears in a CDF Skeleton table. All required and some recommended variable attributes are defined. On the plot, the y-axis labels come from variable attributes `LABLAXIS` and `UNITS`. The x-axis is defined by the **_support_data_** variable `Epoch` (time, [see examples here](#examples-of-epoch-variables)), which is attached to `SW_P_Den` via the `DEPEND_0` attribute. Since `SW_P_Den` is a 0-dimensional variable, it does not require any other `DEPEND_i` attributes.
+The example demonstrates a scalar **_data_** variable `SW_P_Den` displayed in [CDAWeb](https://cdaweb.gsfc.nasa.gov/) as a time series (`DISPLAY_TYPE = "time_series"`) and its corresponding definition as it appears in a CDF Skeleton table. All required and some recommended variable attributes are included. On the corresponding plot, the y-axis labels come from the variable attributes `LABLAXIS` and `UNITS`. The x-axis is defined by the **_support_data_** variable `Epoch` (time, [see examples here](#examples-of-epoch-variables)) attached  via `SW_P_Den` variable's `DEPEND_0` attribute. Since `SW_P_Den` is a 0-dimensional variable, it does not require any other `DEPEND_i` attributes.
 
 <p align="left">
     <img width=500 src="./_images/scalar.gif"/>
@@ -48,7 +48,7 @@ The example demonstrates a scalar **_data_** variable `SW_P_Den` displayed in [C
 
 ### Example of Vector Magnetic Field Variable
 
-**_data_** variable `BGSE` (Vector Magnetic Field) is displayed as time series plots, one for each vector component (`DISPLAY_TYPE = "time_series"`). The vector variable does not need a `DEPEND_1` attribute since it does not depend on any additional numerical data. The x-axis is defined by the **_support_data_** variable `Epoch` (time) attached via `DEPEND_0` attribute. The y-axis labels come from two places: (1) `"Bx GSE"`, `"By GSE"`, `"Bz GSE"` array of strings (labeled in blue) from the **_metadata_** variable `label_B_GSE` ([described here](#example-of-magnetic-field-label-variable)) which is attached to `BGSE` via the `LABL_PTR_1` attribute and (2) `nT` from the `UNITS` attribute. Note that if each vector component requires distinct unit or format string, instead of using `UNITS` and `FORMAT` attributes, the string arrays must be provided in separate **_metadata_** variables attached to the **_data_** variable via `UNIT_PTR` and `FORM_PTR` attributes. 
+**_Data_** variable `BGSE` (Vector Magnetic Field) is displayed as time series plots (`DISPLAY_TYPE = "time_series"`), one for each vector component. The vector variable does not need `DEPEND_1` attribute since it does not depend on any additional numerical data. The x-axis is defined by the **_support_data_** variable `Epoch` (time) attached via `BGSE` variable's `DEPEND_0` attribute. The y-axis labels come from two places: (1) [`"Bx GSE"`, `"By GSE"`, `"Bz GSE"`] array of strings (labeled in blue) from the **_metadata_** variable `label_B_GSE` ([described here](#example-of-magnetic-field-label-variable)) which is attached to `BGSE` via the `LABL_PTR_1` attribute and (2) `"nT"` from the `UNITS` attribute. Note that if each vector component requires distinct unit or format string, instead of using `UNITS` and `FORMAT` attributes, the string arrays must be provided in separate **_metadata_** variables attached to the **_data_** variable via `UNIT_PTR` and `FORM_PTR` attributes. 
 
 <p align="left">
     <img width=550 src="./_images/1d_time_series.gif"/>
@@ -83,7 +83,7 @@ The example demonstrates a scalar **_data_** variable `SW_P_Den` displayed in [C
 ```
 ### Example of 1-D Flux Variable
 
-A 1-D **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies) is displayed as a spectrogram (`DISPLAY_TYPE = "spectrogram"`). The z-axis labels come from variable attributes `LABLAXIS` and `UNITS`. The y-axis labels (labeled in green) come from the  energy variable `IDiffI_I_Energy` (**_support_data_**, [described here](#example-of-1-d-energy-variable)) attached to `IDiffI_I` via the `DEPEND_1` attribute, specifically the `LABLAXIS` (or `FIELDNAM`) and `UNITS` of the energy variable. The x-axis if defined by the **_support_data_** variable `Epoch` (time) attached via `DEPEND_0` attribute.
+A 1-D **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies) is displayed as a spectrogram (`DISPLAY_TYPE = "spectrogram"`). The z-axis labels come from variable attributes `LABLAXIS` and `UNITS`. The y-axis labels (labeled in green) come from the  energy variable `IDiffI_I_Energy` (**_support_data_**, [described here](#example-of-1-d-energy-variable)) attached to `IDiffI_I` via the `DEPEND_1` attribute, specifically the `LABLAXIS` (or `FIELDNAM`) and `UNITS` of the energy variable. The x-axis is defined by the **_support_data_** variable `Epoch` (time) attached via `DEPEND_0` attribute.
 
 <p align="left">
     <img width=600 src="./_images/1d_spectrogram.gif"/>
@@ -121,7 +121,7 @@ A 1-D **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies) is dis
 
 ```
 
-As an alternative to spectrogram, stack plot (`DISPLAY_TYPE = "stack_plot"`) also displays all 1-D data on a single plot. The following plot shows Electron Flux variable at 7 energies displayed as a stack plot. As opposed to spectrogram, the y-axis labels come from variable attributes `LABLAXIS` and `UNITS`. The z-axis labels (labeled in green) come from the energy variable attached to the Electron Flux variable via the `DEPEND_1` attribute, specifically the `LABLAXIS` (or `FIELDNAM`) and `UNITS` of the energy variable. The x-axis is defined by the **_support_data_** variable `Epoch` (time) attached via `DEPEND_0` attribute.
+As an alternative to spectrogram, stack plot (`DISPLAY_TYPE = "stack_plot"`) also displays all 1-D data on a single plot. The following plot shows an Electron Flux variable at 7 energies displayed as a stack plot. As opposed to spectrogram, the y-axis labels come from variable attributes `LABLAXIS` and `UNITS`. The z-axis labels (labeled in green) come from the energy variable attached to the Electron Flux variable via the `DEPEND_1` attribute, specifically the `LABLAXIS` (or `FIELDNAM`) and `UNITS` of the energy variable. The x-axis is defined by the **_support_data_** variable `Epoch` (time) attached via `DEPEND_0` attribute.
 
 <p align="left">
     <img width=600 src="./_images/1d_stack.gif"/>
@@ -131,7 +131,7 @@ As an alternative to spectrogram, stack plot (`DISPLAY_TYPE = "stack_plot"`) als
 ### Example of 2-D Flux Variable
 
 The following 2-D (sizes 28,12) **_data_** variable `Flux_H` (H+ number flux) depends on **_support_data_** variables `energy` (first dimension) and `angle` (second dimension). **There are two ways to plot spectrograms with these 2-D data**:
-- plot all energies (y-axis) and a few selected angle bins (in separate panels)
+- plot all energies (y-axis) and a few selected angle bins (in separate panels).
 - plot all angles (y-axis) and a few selected energy bins (in separate panels).
 
 These are both illustrated below. `Flux_H` needs two label variables to adequately label all possible spectrogram displays. `LABL_PTR_1` points to a label (**_metadata_**) 1-D variable `H_energy_of_flux` of size 28; the label variable holds 28 H+ energy labels, e.g., `"H+ Flux 4.4keV/e"`. `LABL_PTR_2` points to a label (**_metadata_**) 1-D variable `H_angle_of_flux` of size 12; the label variable holds 12 H+ angle labels, e.g., `"H+ Flux 7.5 deg"`.
@@ -140,7 +140,7 @@ These are both illustrated below. `Flux_H` needs two label variables to adequate
 
 The three selected angle bins appear as separate panels. The `energy` (**_support_data_**) variable attribute values (either the `LABLAXIS` value or the `FIELDNAM` value, along with the `UNITS` value) are used to label the y-axis on each panel. The `energy` variable is attached to the `Flux_H` (**_data_**) variable  via the `DEPEND_1` attribute.
 
-The z-axis (color bar) is labeled with selected values from the H+ angle label variable `H_angle_of_flux` (**_metadata_**) that is attached to the **_data_** variable via the `LABL_PTR_2` attribute. The z-axis units come from the `Flux_H` (**_data_**) variable `UNITS` attributes.
+The z-axis (color bar) is labeled with selected values from the H+ angle label variable `H_angle_of_flux` (**_metadata_**) that is attached to the **_data_** variable via the `LABL_PTR_2` attribute. The z-axis units come from the `Flux_H` (**_data_**) variable's `UNITS` attributes.
 
 
 
@@ -188,7 +188,7 @@ The z-axis (color bar) is labeled with selected values from the H+ angle label v
 
 The three selected energy bins appear as separate panels. The `angle` (**_support_data_**) variable attribute values (either the `LABLAXIS` value or the `FIELDNAM` value, along with the `UNITS` value) are used to label the y-axis on each panel. The `angle` variable is attached to the `Flux_H` (**_data_**) variable via the `DEPEND_2` attribute.
 
-The z-axis (color bar) is labeled with selected values from the H+ energy label variable `H_energy_of_flux` (**_metadata_**) that is attached to the **_data_** variable via the `LABL_PTR_1` attribute. The z-axis units come from the `Flux_H` (**_data_**) variable `UNITS` attributes.
+The z-axis (color bar) is labeled with selected values from the H+ energy label variable `H_energy_of_flux` (**_metadata_**) that is attached to the **_data_** variable via the `LABL_PTR_1` attribute. The z-axis units come from the `Flux_H` (**_data_**) variable's `UNITS` attributes.
 
 <p align="left">
     <img width=600 src="./_images/2d_spectrogram_2.gif"/>
@@ -198,11 +198,11 @@ The z-axis (color bar) is labeled with selected values from the H+ energy label 
 
 
 
-## Support_Data Variables
+## Support_data Variables
 
 ### Examples of Epoch Variables
 
-This example demonstrates a **_support_data_** variable `Epoch` of CDF_TIME_TT2000 data type (number of nanoseconds since J2000 in Terrestrial Time with leap seconds included, see [CDF User's Guide](https://spdf.gsfc.nasa.gov/pub/software/cdf/doc/cdf_User_Guide.pdf)). All the required and some recommended variable attributes are included in the description. Note that Epoch is always defined as record (time) varying, and it is attached to **_data_** variables via **_data_** variable `DEPEND_0` attribute.
+The first example below demonstrates a **_support_data_** variable `Epoch` of CDF_TIME_TT2000 data type (number of nanoseconds since J2000 in Terrestrial Time with leap seconds included, see [CDF User's Guide](https://spdf.gsfc.nasa.gov/pub/software/cdf/doc/cdf_User_Guide.pdf)). All the required and some recommended variable attributes are included in the description. Note that Epoch is always defined as record (time) varying, and it is attached to a **_data_** variables via the **_data_** variable's `DEPEND_0` attribute.
 
  **CDF_TIME_TT2000 data type is internally well-defined and its use is strongly encouraged for new datasets**.
 
@@ -234,7 +234,7 @@ This example demonstrates a **_support_data_** variable `Epoch` of CDF_TIME_TT20
 
 ```
 
-In this example, **_support_data_** variable `Epoch` is of CDF_EPOCH data type. The CDF data type CDF_EPOCH values are the number of milliseconds since 01-Jan-0000 00:00:00.000 (see [CDF User's Guide](https://spdf.gsfc.nasa.gov/pub/software/cdf/doc/cdf_User_Guide.pdf)).
+In the second example, a **_support_data_** variable `Epoch` is of CDF_EPOCH data type. The CDF data type CDF_EPOCH is the number of milliseconds since 01-Jan-0000 00:00:00.000 (see [CDF User's Guide](https://spdf.gsfc.nasa.gov/pub/software/cdf/doc/cdf_User_Guide.pdf)).
 ```
 ! Variable       Data       Number                       Record      Dimension
 ! Name           Type       Elements    Dims    Sizes    Variance    Variances
@@ -262,7 +262,7 @@ In this example, **_support_data_** variable `Epoch` is of CDF_EPOCH data type. 
 
 ### Example of 1-D Energy Variable
 
-We show definition of a time-varying 1-D (size 12) **_support_data_** variable `IDiffI_I_Energy` (Ion Energy at 12 channels), with all the required and some recommended attributes included. This **_support_data_** variable is attached to the same size **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies, [described here](#example-of-1-d-flux-variable)) via the `IDiffI_I` variable `DEPEND_1` attribute.
+This example show definition of a time-varying 1-D (size 12) **_support_data_** variable `IDiffI_I_Energy` (Ion Energy at 12 channels), with all the required and some recommended attributes included. This **_support_data_** variable is attached to the same size **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies, [described here](#example-of-1-d-flux-variable)) via the `IDiffI_I` variable `DEPEND_1` attribute.
 
 ```
 ! Variable           Data       Number                       Record      Dimension
@@ -323,9 +323,9 @@ This 1-D (size 3) **_metadata_** variable `label_B_GSE` holds three strings for 
 
 ### Example of Time_PB5 Variable
 
-`Time_PB5` variable is a way of representing time as a 1-D (size 3) integer array storing Year, Day of Year (note: January 1 is Day 1), and Millisecond of Day (elapsed ms), which allows for easy recognition of the time value when looking at the data, for instance in a data dump. This variable was part of the requirements for the ISTP Key Parameter (KP) CDF datasets only, and it is not recommended for new datasets.
+`time_pb5` variable is representing the time as a 1-D (size 3) integer array storing Year, Day of Year (note: January 1 is Day 1), and Millisecond of Day (elapsed ms), which allows for easy recognition of the time value when looking at the data, for instance in a data dump. This variable was part of the requirements for the ISTP Key Parameter (KP) CDF datasets only, and it is not recommended for new datasets.
 
-To describe the time components, `Time_PB5` has three attached **_metadata_** variables which provide labels (`label_time` variable attached via `LABL_PTR_1` attribute),  units (`unit_time` attached via `UNIT_PTR`) and formats (`format_time` attached via `FORM_PTR`). See [descriptions of these **_metadata_** variables](#examples-of-time_pb5-related-variables).
+To describe the time components, `time_pb5` has three attached **_metadata_** variables which provide labels (`label_time` variable attached via `LABL_PTR_1` attribute),  units (`unit_time` attached via `UNIT_PTR`) and formats (`format_time` attached via `FORM_PTR`). See [descriptions of these **_metadata_** variables](#examples-of-time_pb5-related-variables).
 ```
 ! Variable          Data     Number                 Record    Dimension
 ! Name              Type     Elements  Dims  Sizes  Variance  Variances
@@ -354,9 +354,9 @@ To describe the time components, `Time_PB5` has three attached **_metadata_** va
 
 ### Examples of Time_PB5 Related Variables
 
-The three 1-D (size 3) **_metadata_** variables (`label_time`, `unit_time`, `format_time` ) hold string arrays for describing three time components stored in the `Time_PB5` **_support_data_** variable ([described here](#example-of-time_pb5-variable)).  
+The three 1-D (size 3) **_metadata_** variables (`label_time`, `unit_time`, `format_time`) hold string arrays for describing the three time components stored in the `time_pb5` **_support_data_** variable ([described here](#example-of-time_pb5-variable)).  
 
-Variable `label_time` (attached to `Time_PB5` variable via its `LABL_PTR_1` attribute) holds labels for time components in `Time_PB5`. Note the number of elements (`27`) in the variable definition equal to the number of characters in the strings, and the `FORMAT` code (`"A28"`) sufficient to output these strings.
+Variable `label_time` (attached to the `time_pb5` variable via its `LABL_PTR_1` attribute) holds labels for the time components in `time_pb5`. Note the number of elements (`27`) in the variable definition equal to the number of characters in the strings, and the `FORMAT` code (`"A28"`) sufficient to output these strings.
 
 ```
 ! Variable          Data     Number                 Record    Dimension
@@ -380,7 +380,7 @@ Variable `label_time` (attached to `Time_PB5` variable via its `LABL_PTR_1` attr
     [2] = { "Day of Year (Jan 1 = Day 1)" }
     [3] = { "Elapsed milliseconds of day" }
 ```
-Variable `unit_time` (attached to `Time_PB5` variable via its `UNIT_PTR` attribute) holds units (`"year"`, `"day "`, `"msec"`) for the three time components in `Time_PB5`.
+Variable `unit_time` (attached to the `time_pb5` variable via its `UNIT_PTR` attribute) holds units (`"year"`, `"day "`, `"msec"`) for the three time components in `time_pb5`.
 
 ```
 ! Variable          Data     Number                 Record    Dimension
@@ -404,7 +404,7 @@ Variable `unit_time` (attached to `Time_PB5` variable via its `UNIT_PTR` attribu
     [2] = { "day " }
     [3] = { "msec" }
 ```
-Variable `format_time` (attached to `Time_PB5` variable via its `FORM_PTR` attribute) holds string formats  for the `Time_PB5` time component values: `"I4"` format for four-digit integer year, `"I3"` format for maximum three-digit integer Day of Year, and `"I8"` format for maximum eight-digit integer Millisecond of Day.
+Variable `format_time` (attached to the `time_pb5` variable via its `FORM_PTR` attribute) holds string formats  for the `time_pb5` time component values: `"I4"` format for four-digit integer year, `"I3"` format for maximum three-digit integer Day of Year, and `"I8"` format for maximum eight-digit integer Millisecond of Day.
 
 ```
 ! Variable          Data     Number                 Record    Dimension

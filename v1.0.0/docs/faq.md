@@ -7,13 +7,12 @@ We will use that list as the basis for additional content for this set of questi
 
 Some links in this FAQ may point to previously released versions of the ISTP Guidelines specification.
 
-## ISTP Guidelines background
+## ISTP Guidelines Background
 This section includes general background about the ISTP Guidelines.
 
 ### What are the ISTP Guidelines, and what do they include?
 
-The ISTP Guidelines metadata are designed to promote the processing and sharing of Heliophysics non-solar data in self-describing scientific data formats (including CDF and netCDF files).
-The Guidelines define metadata that provide a definitive description of what the data in each variable represents, and enable building generalized analysis and display applications.
+The ISTP Guidelines are designed to promote the processing and sharing of Heliophysics non-solar data in self-describing scientific data formats (including CDF and netCDF files).They define metadata that provide a definitive description of what the data in each variable represents, and enable building generalized analysis and display applications.
 
 ### What are the principles of the ISTP Guidelines?
 Principles of the ISTP Guidelines include self-describing data (no external tables needed for understanding); metadata equally readable by humans and software; minimum redundancy and maximum simplicity; and a development process focusing on existing needs.
@@ -50,7 +49,7 @@ As a general rule, tools that work with files following the ISTP Guidelines shou
 
 ### How can I describe a file with multiple time coordinates?
 
-Datasets can have multiple time variables, with some variables depending on one time variable or another.  This dependency is defined by the DEPEND_0 variable attribute, that contains a string giving the name of the associated time variable. Other dimensions should also point to associated variables using the DEPEND_1, DEPEND_2, etc. variable attributes.
+Datasets can have multiple time variables, with some variables depending on one time variable or another.  This dependency is defined by the `DEPEND_0` variable attribute, that contains a string giving the name of the associated time variable. Other dimensions should also point to associated variables using the `DEPEND_1`, `DEPEND_2`, etc. variable attributes.
 
 
 ---

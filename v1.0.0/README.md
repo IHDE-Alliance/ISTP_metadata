@@ -5,7 +5,7 @@ ISTP Metadata Guidelines for Heliophysics Science Data File Internal Metadata
 
 [Introduction](docs/01_metadata-intro.md)
 
-[Self-Describing Scientific Data Formats](docs/02_self-describing-data-format.md)
+[Self-Describing Data Formats](docs/02_self-describing-data-format.md)
 
 [ISTP Global Attributes](docs/03_metadata-global-attributes.md)
 
@@ -19,8 +19,12 @@ ISTP Metadata Guidelines for Heliophysics Science Data File Internal Metadata
 
 [Appendix B. Skeleton Table Examples](docs/08_example-skeletontables.md)
 
-[Appendix C. Non-ISTP Mission Global Attributes](docs/Non-ISTP-Mission-Global-Attributes.md)
+[Appendix C. Multi-Mission Use of ISTP Attributes](docs/Multi_Mission_Use_of_Attributes.md)
 
-[Appendix D. Non-ISTP Mission Variable Attributes](docs/Non-ISTP-Mission-Variable-Attributes.md)
+[Appendix D. Non-ISTP Mission Global Attributes](docs/Non-ISTP-Mission-Global-Attributes.md)
 
-[Appendix E. Frequently Asked Questions (FAQ)](docs/faq.md)
+[Appendix E. Non-ISTP Mission Variable Attributes](docs/Non-ISTP-Mission-Variable-Attributes.md)
+
+[Appendix F. Best Practices](docs/best-practices.md)
+
+[Appendix G. Frequently Asked Questions (FAQ)](docs/faq.md)

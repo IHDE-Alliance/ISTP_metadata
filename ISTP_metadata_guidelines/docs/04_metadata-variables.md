@@ -22,7 +22,7 @@ Each ISTP variable type is defined with CDF (or netCDF) specifications and requi
 
 An ISTP dataset usually spans over many files, over which the dataset definitions must remain static, meaning that **variables cannot be added or removed, or have their data types, number of dimensions, dimension sizes, or variances within records and dimensions changed.** When defining record or dimension variances of a variable, the whole dataset life, and not just a particular file, must be considered. Similarly, the variable dimensions must be defined with the maximum sizes expected over the dataset life, with currently unused values filled with the `FILLVAL` attribute value. There also must be no duplication of data over all dataset files, with all files seamlessly concatenating into one whole dataset.
 
-(_**CDF-specific**_.) If extremely rare changes occur in the variable values over time, a CDF variable can be defined with **record sparseness set to previous record**. In this case, only records with changes need to be explicitly written into the CDF file, while reading any record will return the last explicitly written record before the requested one. See the [CDF User's Guide](https://spdf.gsfc.nasa.gov/pub/software/cdf/doc/cdf_User_Guide.pdf) for details on CDF variable sparse records. Alternatively, a rarely changing variable can have all records written, but variable compression should be enabled in this case. Variable compression should also be enabled for large size variables, while file-level compression is generally discouraged since reading is slower. Note that for efficient data access, time variables should **never** be compressed.
+(_**CDF-specific**_.) If extremely rare changes occur in the variable values over time, a CDF variable can be defined with **record sparseness set to previous record**. In this case, only records with changes need to be explicitly written into the CDF file, while reading any record will return the last explicitly written record before the requested one. Note that the first variable record in each CDF file still must be explicitly written with valid value. See the [CDF User's Guide](https://spdf.gsfc.nasa.gov/pub/software/cdf/doc/cdf_User_Guide.pdf) for details on CDF variable sparse records. Alternatively, a rarely changing variable can have all records written, but variable compression should be enabled in this case. Variable compression should also be enabled for large size variables, while file-level compression is generally discouraged since reading is slower. Note that for efficient data access, time variables should **never** be compressed.
 
  Each variable in a dataset must have a unique name that **starts with a letter and can contain numbers, underscores, but no other special characters**. Variable names are case sensitive, but the names must never be distinguished by case only. This enables broad support across many programming languages and analysis packages. Variable names should also carry sufficient information for initial understanding of their meaning by a dataset user and for clear distinguishing between different variables. **Otherwise, the ISTP Guidelines do not prescribe a specific scheme for variable naming**.
 
@@ -30,14 +30,14 @@ An ISTP dataset usually spans over many files, over which the dataset definition
 
 ### Data Variables
 
-**_Data_** variables are variables of primary importance (e.g., density, magnetic field, particle flux). **_Data_** variables are almost always of either a floating-point or integer data type, almost always time (record) varying, and can be a scalar or an array of values of up to 10 dimensions. Note that floating-point and integer data type variables are always defined as having one element at each variable value.
+**_Data_** variables are variables of primary importance (e.g., density, magnetic field, particle flux). **_Data_** variables are almost always of either a floating-point or integer data type, always time (record) varying, and can be a scalar or an array of values of up to 10 dimensions. Note that floating-point and integer data type variables are always defined as having one element at each variable value.
 
 For a **_data_** variable, the following variable attributes are required:
 
 - [`CATDESC`](./05_metadata-variable-attributes.md#catdesc)
 - [`DEPEND_0`](./05_metadata-variable-attributes.md#depend_0) = `"Epoch"` (time data type variable)
 - [`DEPEND_i`](./05_metadata-variable-attributes.md#depend_i)
-- [`DISPLAY_TYPE`](./05_metadata-variable-attributes.md#display_type) (`"time_series"`, `"spectrogram"`, `"stack_plot"`,`"image"`)
+- [`DISPLAY_TYPE`](./05_metadata-variable-attributes.md#display_type) (`"time_series"`, `"spectrogram"`, `"stack_plot"`,`"image"`, `"no_plot"`)
 - [`FIELDNAM`](./05_metadata-variable-attributes.md#fieldnam)
 - [`FILLVAL`](./05_metadata-variable-attributes.md#fillval)
 - [`FORMAT`](./05_metadata-variable-attributes.md#format)/[`FORM_PTR`](./05_metadata-variable-attributes.md#form_ptr)
@@ -66,8 +66,8 @@ For a **_support_data_** variable, the following variable attributes are require
 - [`FORMAT`](./05_metadata-variable-attributes.md#format)/[`FORM_PTR`](./05_metadata-variable-attributes.md#form_ptr)
 - [`LABLAXIS`](./05_metadata-variable-attributes.md#lablaxis)/[`LABL_PTR_i`](./05_metadata-variable-attributes.md#labl_ptr_i)
 - [`UNITS`](./05_metadata-variable-attributes.md#units)/[`UNIT_PTR`](./05_metadata-variable-attributes.md#unit_ptr)
-- [`VALIDMIN`](./05_metadata-variable-attributes.md#validmin-validmax)
-- [`VALIDMAX`](./05_metadata-variable-attributes.md#validmin-validmax)
+- [`VALIDMIN`](./05_metadata-variable-attributes.md#validmin-validmax) (if time varying)
+- [`VALIDMAX`](./05_metadata-variable-attributes.md#validmin-validmax) (if time varying)
 - [`VAR_TYPE`](./05_metadata-variable-attributes.md#var_type) = `"support_data"`
 
 See examples of [**_support_data_** variable definitions](./07_example-variables.md#support_data-variables).

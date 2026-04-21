@@ -20,7 +20,7 @@ Additional variable attributes may be defined. Their names must start with a let
 | [`FIELDNAM`](#fieldnam) | Required |  `"Electron count rate"` <br> CDF_CHAR  | All variables. No more than 50, but preferably 30, characters. |
 | [`FILLVAL`](#fillval) | Required |  `-1.0e+31` <br> **Variable data type** | **_Data_**, *RV* **_support_data_**, and *RV* **_metadata_**.  |
 | [`_FillValue`](#fillval)  <br> (**netCDF only**) | Required |  `-1.0e+31` <br> **Variable data type** | **_Data_**, *RV* **_support_data_**, and *RV* **_metadata_**.  |
-| [`FORMAT`](#format) | Required |  `"F10.1"` <br> CDF_CHAR  | All not using `FORM_PTR`. |
+| [`FORMAT`](#format) | Required |  `"F10.1"` <br> CDF_CHAR  | All not using `FORM_PTR`, except for predefined time data types. |
 | [`FORM_PTR`](#form_ptr) | Required |  `"formats_E_cnt_rate"` <br> CDF_CHAR | 1-D **_data_**, **_support_data_**, and **_metadata_** not using `FORMAT`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
 | [`LABLAXIS`](#lablaxis) | Required | `"E count rate"` <br> CDF_CHAR | **_Data_** of the following form:  *image*, scalar *time_series*, 1-D *spectrogram*. Also needed for **_support_data_** that does not utilize `LABL_PTR_i`. No more than 20, but preferably 10, characters. |
 | [`LABL_PTR_1`](#labl_ptr_i) | Required | `"Electron_Energy_Label"` <br> CDF_CHAR  | **_Data_** of the following form: 1-D *Time_series*, 2-D *Spectrogram*. Also needed for 1-D and 2-D **_support_data_** without a `LABLAXIS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
@@ -153,7 +153,7 @@ See CDF_TIME_TT2000 [requirements analysis](http://cdf.gsfc.nasa.gov/html/leapse
 ### FILLVAL
 (*Required for RV variables. **netCDF** additionally requires `_FillValue` attribute with the same value*.) The attribute holds a special value that is used in place of the variable values that are known to be non-valid or missing. The `FILLVAL` attribute data type for each variable **must match** the data type of that variable. The ISTP recommended `FILLVAL` values for different data type are listed below. However, different `FILLVAL` values, and possibly different for different variables of the same data type, may be used as long as for each variable its `FILLVAL` value is outside of the `[VALIDMIN, VALIDMAX]` range for that variable. Additionally, for CDF_REAL4 and CDF_REAL8 data types, `NaN` (IEEE 754) can be used. 
 
-Also listed below, but **for information purpose only**, are the default values (for different data type) of the `PadValue` CDF variable property. `PadValue` is used, e.g., to fill allocated variable records when a variable in a CDF file is first created and before the actual data records are written for the variable. `PadValue` is also returned when a variable record outside of the maximum record for the variables is read. The default `PadValue` is set **automatically** by the CDF Library when a CDF variable is created.
+Also listed below are the default values (for different data type) of the `PadValue` CDF variable property. `PadValue` is used, e.g., to fill allocated variable records when a variable in a CDF file is first created and before the actual data records are written for the variable. `PadValue` is also returned when a variable record outside of the maximum record for the variables is read. The default `PadValue` is set **automatically** by the CDF Library when a CDF variable is created. Note that starting with CDF Library V3.8, if `FILLVAL` attribute is defined, it will be used to fill variable’s missing data, instead of the `PadValue`.
 
 | Data Type | FILLVAL| PadValue |
 |:--------- | ------:|------:|
@@ -179,7 +179,7 @@ Additionally, the ISTP Guidelines require the following special `FILLVAL` values
 |          | `PadValue`  |            `0.0`, `0.0`  | `"0000-01-01T00:00:00.000000000000"` |
 
 ### FORMAT
-(*Required for all variables not using `FORM_PTR`*.) Is the output format used when extracting data values out to a file or screen (e.g., using CDFlist utility of CDF Library). The magnitude and the number of significant figures needed should be carefully considered. A good check is to consider it with respect to the values of `VALIDMIN` and `VALIDMAX` attributes. The output should be in Fortran format, i.e., `"I10"` for an integer or `"F10.3"` for a floating-point data type.
+(*Required for all variables not using `FORM_PTR`*, except for predefined time data types.) Is the output format used when extracting data values out to a file or screen (e.g., using CDFlist utility of CDF Library). The magnitude and the number of significant figures needed should be carefully considered. A good check is to consider it with respect to the values of `VALIDMIN` and `VALIDMAX` attributes. The output should be in Fortran format, i.e., `"I10"` for an integer or `"F10.3"` for a floating-point data type.
 
 ### FORM_PTR
 (*Required for dimensional variables not using `FORMAT`*.) `FORM_PTR` is used instead of `FORMAT` when one format string is not sufficient for a dimensional variable. Its value is the name of a variable (in the same dataset) of the same dimensionality as the original variable, which stores the character strings representing the desired output formats for the original variable. 

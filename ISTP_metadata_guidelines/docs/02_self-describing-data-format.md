@@ -8,7 +8,7 @@ Self-describing scientific data formats are designed to store both multi-dimensi
 - [CDF](https://cdf.gsfc.nasa.gov/) in the rest of Heliophysics with ISTP metadata. Also, CDF-A, defined as CDF files with ISTP and [SPASE](https://spase-group.org/) metadata, but without compression or sparse variables, is one of the standard formats (in addition to PDS-3, PDS-4, JPEG) in Planetary Data System ([PDS](https://pds.nasa.gov/)).
 - [ASDF](https://www.asdf-format.org/en/latest/overview.html) Advanced Scientific Data Format (ASDF) is a next-generation interchange format for scientific data.
 
-Since the ISTP Metadata Guidelines were originally developed, and are now mostly used, for datasets in CDF format, the description of the ISTP Guidelines and examples will be presented as related to CDF format, with brief introduction to CDF, its variables, attributes, and data types also presented below. However, since the ISTP Guidelines define variables,  variable attributes (metadata describing individual variables), and global attributes (metadata describing the whole file), concepts that exist in other self-describing data formats, the ISTP Guidelines can be ported, with modifications, to other data formats. Specifically, the ISTP Guidelines have been used with netCDF4 format, by adding the string data type and using time as the unlimited dimension, but not including groups, unsigned 64-bit integers, or user-defined variable types.
+Since the ISTP Metadata Guidelines were originally developed, and are now mostly used, for datasets in CDF format, the description of the ISTP Guidelines and examples will be presented as related to CDF format, with brief introduction to CDF, its variables, attributes, and data types also presented below. However, since the ISTP Guidelines define variables,  variable attributes (metadata describing individual variables), and global attributes (metadata describing the whole file), concepts that exist in other self-describing data formats, the ISTP Guidelines can be ported, with modifications, to other data formats. Specifically, the ISTP Guidelines have been used with netCDF-4 format, by using time as the unlimited dimension, but not including groups, unsigned 64-bit integers, or user-defined variable types.
 
 Variable names and attribute names are case-sensitive in CDF and netCDF formats. The ISTP attribute names use a mixture of case in their definitions, which should be preserved.  However, since there are datasets where some variations were used, the generalized software should match in a case-insensitive way when acting on the attributes.
 
@@ -74,15 +74,15 @@ value is allowed.
 #### Floating Point Data Types
 | Data Type | Description|
 |-|-|
-|CDF_REAL4 & CDF_FLOAT  |4-byte single-precision floating-point |
-|CDF_REAL8 & CDF_DOUBLE |8-byte double-precision floating-point |
+|CDF_REAL4 & CDF_FLOAT  |4-byte floating-point |
+|CDF_REAL8 & CDF_DOUBLE |8-byte floating-point |
 
 #### Time Data Types
 | Data Type | Description|
 |-|-|
+| CDF_TIME_TT2000 | nanoseconds since J2000 in Terrestrial Time, including leap seconds, as 8-byte signed integer|
 | CDF_EPOCH       | milliseconds since 0AD as 8-byte floating-point|
 | CDF_EPOCH16     | picoseconds since 0AD as two 8-byte floating-point numbers |
-| CDF_TIME_TT2000 | nanoseconds since J2000 in Terrestrial Time, including leap seconds, as 8-byte signed integer|
 
 ---
 Return to [Table of Contents](../README.md)

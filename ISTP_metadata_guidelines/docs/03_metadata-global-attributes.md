@@ -1,50 +1,49 @@
 # ISTP Global Attributes
 
-Global attributes are used to provide information about the dataset as an entity and about the individual files composing the datasets. Together with variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence make a good archive product. Global attributes provide informational metadata associated with all the variables in the file, and are a means of attaching information that may be carried along with the data. 
+Global attributes are used to provide information about the dataset as an entity and about the individual files composing the datasets. Together with the variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence a good archive product. Global attributes provide informational metadata associated with all the variables in the file, and are a means of attaching information that may be carried along with the data. 
 
 The global attributes are also used by the Coordinated Data Analysis Web ([CDAWeb)](https://cdaweb.gsfc.nasa.gov/) data browsing and retrieval system hosted by SPDF, and by other data display and analysis software such as [AutoPlot.org](https://autoplot.org) and [SPEDAS](https://spedas.org/). 
 
-The required, recommended, and optional global attributes are listed in the table below. See [Global Attribute Definitions](#global-attribute-definitions) for the full set of defined global attributes in alphabetical order. Global attributes can be listed in any order. Note that the attribute names are case sensitive, and the names of the ISTP global attributes must match the case **exactly as shown**. Also, all ISTP global attributes are of **character data type** (string).
+The required, recommended, and optional global attributes are listed in the table below. See [Global Attribute Definitions](#global-attribute-definitions) for the full set of defined global attributes in alphabetical order; however, the global attributes in a file can be listed in any order. Note that the attribute names are case sensitive, and the names of the ISTP global attributes must match the case **exactly as shown**. Additional global attributes may be defined, but their **names must start with a letter and contain letters, numbers, and underscore character but no other special characters.** Though attribute names are case-sensitive, the names must not be distinguished by case only.
 
-Additional global attributes may be defined, but their **names must start with a letter and contain letters, numbers, and underscore character but no other special characters.** Though attribute names are case-sensitive, the names must not be distinguished by case only.
-
+**Note** that all ISTP global attributes are of character data type (CDF_CHAR) in the CDF file format. The CDF format also allows multiple entries for global attributes, with each ISTP global attribute entry being a 1-D array of characters (a string). These global attribute multiple entries in the CDF format correspond to a 1-D array of strings as global attribute value in the netCDF-4 format.
 
 
 | **Attribute Name** | **NASA Archive Requirement** | **Example Value** | **Notes** |
 | -------------- | ---------------------------- | -------- | --------- |
-| [`Data_type`](#data_type) | Required | `"L2-Summary>level 2 summary"`  | Identifies the data type of the dataset. Both the short and long names are included. |
-| [`Data_version`](#data_version) | Required |  `"1"` | Identifies the version of a particular data file. |
-| [`Descriptor`](#descriptor) | Required |  `"ISOIS>Integrated Science Investigation of the Sun"` | Identifies both the short and long names of the instrument or sensor that collected the data. |
-| [`Instrument_type`](#instrument_type) | Required | `"Particles (space)"` <br> `"Plasma and Solar Wind"` | Used to facilitate making choices of instrument type through [CDAWeb](https://cdaweb.gsfc.nasa.gov/). This attribute can have up to five entries (two entries are shown in the example). |
-| [`Logical_file_id`](#logical_file_id) | Required | `"psp_isois_l2-summary_20180928_v07"`  | Stores the name of the file using the ISTP naming convention (`Source_name`\_`Descriptor`\_`Data_type`\_Date\_`Data_version`, with short names for `Source_name`, `Descriptor`, and `Data_type`).  |
-| [`Logical_source`](#logical_source) | Required | `"psp_isois_l2-summary"`  | Carries `Source_name`, `Descriptor`, and `Data_type` short names. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/). |
-| [`Logical_source_description`](#logical_source_description) | Required | `"Parker Solar Probe ISOIS level 2 summary"`  | Writes out the full names associated with the encrypted `Logical_source`. |
-| [`PI_affiliation`](#pi_affiliation) | Required |  `"Princeton University"` | Lead organization, usually that of the Principal Investigator (PI); should include a recognizable abbreviation. |
-| [`PI_name`](#pi_name) | Required |  `"David McComas"` | Lead person, usually Principal Investigator (PI); should at least include first initial and last name. |
-| [`Source_name`](#source_name) | Required | `"PSP>Parker Solar Probe"` | Identifies the mission or investigation that contains the sensors. Both the short and long names are included. |
-| [`TEXT`](#text) | Required | `"EPI-Hi HET 3600 second rates cdf. Time tags indicate midpoint of integration."`<br> `"Instrument paper: Integrated Science Investigation of the Sun (ISIS): Design of the Energetic Particle Investigation. McComas, D. J. et al (2016). Space Sci. Rev., doi:10.1007/s11214-014-0059-1"` | Describes the experiment producing the data and the dataset. A reference to a journal article(s) or web page describing the experiment is essential, and constitutes the minimum requirement. This attribute can have unlimited number of entries (two entries are shown in the example).|
-| [`Date_Start`](#date_start-date_end)  <br> (**netCDF only**) | Required | `"2025-11-01T00:00:00"` | Start UTC date/time (in yyyy-mm-ddThh:mm:ss format) of the data in the file.|
-| [`Date_End`](#date_start-date_end)  <br> (**netCDF only**) | Required | `"2025-11-01T23:59:59"` | End UTC date/time (in yyyy-mm-ddThh:mm:ss format) of the data in the file. | |
-| [`Acknowledgement`](#acknowledgement)  | Recommended  | `"Cite McComas et al (2016),doi:10.1007/s11214-014-0059-1"` | Specifies the expected acknowledgement text if the dataset is cited. |
-| [`Discipline`](#discipline) | Recommended | `"Solar Physics>Heliospheric Physics"`  | Describes both the science discipline and subdiscipline. |
-| [`Data_processing_level`](#data_processing_level) (**PROPOSAL ONLY**)| Recommended | `"L2>Level 2"`  | Describes the dataset processing level. Both the short and long names are included.|
-| [`DOI`](#doi) | Recommended  |  `"https://doi.org/10.48322/mede-7j02"`  | Digital Object Identifier (DOI) as a persistent identifier for the dataset. |
-  | [`Generated_by`](#generated_by) | Recommended  | `"ISOIS SOC, University of New Hampshire"` | Allows for the generating data center/group to be identified. |
-| [`Generation_date`](#generation_date) | Recommended  |  `"20210329"` | Date of the file creation using yyyymmdd format.  |
-| [`HTTP_LINK`](#link_text-link_title-http_link) | Recommended  |  `"http://spp-isois.sr.unh.edu/ISOIS_Terms_of_Use.html"` <br> `"https://link.springer.com/article/10.1007%2Fs11214-014-0059-1"` <br> `"http://fields.ssl.berkeley.edu/"` <br> `"https://www2.mps.mpg.de/homes/fraenz/systems/"` <br> `"http://spp-isois.sr.unh.edu/data_public/ISOIS_Data_Glossary.pdf"` | Stores the URL for the link. Used with `LINK_TEXT` and `LINK_TITLE` attributes. This attribute can have up to five entries (five entries are shown in the example). |
-| [`LINK_TEXT`](#link_text-link_title-http_link) | Recommended  | `"Data "` <br> `"Instrument paper at "` <br> `"Magnetic field data for pitch angle calculation courtesy of "` <br> `"Coordinate systems according to definitions of "` <br> `"Detailed information in "` | Stores the text describing online data or documents. Used with `LINK_TITLE` and `HTTP_LINK` attributes. This attribute can have up to five entries (five entries are shown in the example).|
-| [`LINK_TITLE`](#link_text-link_title-http_link) | Recommended  |  `"Rules of Use"` <br> `"Space Science Reviews"` <br> `"the FIELDS team"` <br>  `"Fraenz and Harper, PSS, 2002."` <br> `"ISOIS Data Glossary"`  | Stores the title of the web page holding online data or documents. Used with `LINK_TEXT` and `HTTP_LINK` attributes. This attribute can have up to five entries (five entries are shown in the example). |
-| [`Mission_group`](#mission_group) | Recommended |  `"Parker Solar Probe (PSP)"` | Has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/). |
-| [`MODS`](#mods) | Recommended  |  `"Version 1.0 Jan. 1, 2020"`  | Stores the history of modifications made to the dataset. This attribute can have unlimited number of entries.|
-| [`Project`](#project) | Recommended |  `"LWS>Living With a Star"`  | Identifies the name of the project and indicates ownership. Both the short and long names are included. |
-| [`Rules_of_use`](#rules_of_use)  | Recommended  | `"See http://spp-isois.sr.unh.edu/ISOIS_Terms_of_Use.html"` | Text containing information on citability and PI access restrictions. This may point to a web page specifying the rules of use. |
-| [`spase_DatasetResourceID`](#spase_datasetresourceid) | Recommended  | `"spase://NASA/NumericalData/ParkerSolarProbe/ISOIS/Merged/Level2/Summary/PT1M"` | Unique dataset identifier assigned by Space Physics Archive Search and Extract (SPASE). |
-| [`Time_resolution`](#time_resolution) | Recommended  | `"1 min"`  | Specifies time resolution of the data. |
-| [`Parents`](#parents) | Optional | `"RDM>0012081A"`  | Lists the parent files of derived and merged datasets. |
-| [`Skeleton_version`](#skeleton_version) | Optional | `"2.0.0"` | Version of the skeleton file used to create the data file.  |
-| [`Software_version`](#software_version) | Optional |  `"1.3.0"` | Version of the software that generated the data file.  |
-| [`TITLE`](#title) | Optional | `"Parker Solar Probe ISOIS level 2 summary"` | Dataset title.  |
-| [`Validate`](#validate) | Optional | `"ISTP_skel>pass>CDHF>19951107"` | Written by software for automatic validation of features such as the structure of the data file on a simple pass/fail criterion. |
+| [`Data_type`](#data_type) | **Required** | `"L2-Summary>level 2 summary"`  | Identifies the data type of the dataset. Both the short and long names, separated by `>`, are included. |
+| [`Data_version`](#data_version) | **Required** |  `"1"` | Identifies the version of a particular data file. |
+| [`Descriptor`](#descriptor) | **Required** |  `"ISOIS>Integrated Science Investigation of the Sun"` | Identifies both the short and long names, separated by `>`, of the instrument or sensor that collected the data. |
+| [`Instrument_type`](#instrument_type) | **Required by CDAWeb**  (allows five **[`controlled list`](#instrument_type)**  entries)  | `"Particles (space)"` <br> `"Plasma and Solar Wind"` | Combines types of instruments and regions as a simple way to quickly separate types of datasets for search through [CDAWeb](https://cdaweb.gsfc.nasa.gov/). Up to five entries from the **[`controlled list`](#instrument_type)** are allowed by [CDAWeb](https://cdaweb.gsfc.nasa.gov/) (two entries are shown in the example). |
+| [`Logical_file_id`](#logical_file_id) | **Required** | `"psp_isois_l2-summary_20180928_v07"`  | Stores the name of the file using the ISTP naming convention `Source_name`\_`Descriptor`\_`Data_type`\_Date\_`Data_version`, with short names for `Source_name`, `Descriptor`, and `Data_type`.  |
+| [`Logical_source`](#logical_source) | **Required** | `"psp_isois_l2-summary"`  | Carries `Source_name`, `Descriptor`, and `Data_type` short names. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/). |
+| [`Logical_source_description`](#logical_source_description) | **Required** | `"Parker Solar Probe ISOIS level 2 summary"`  | Writes out the full names associated with the encrypted `Logical_source`. |
+| [`PI_affiliation`](#pi_affiliation) | **Required** |  `"Princeton University"` | Lead organization, usually that of the Principal Investigator (PI); should include a recognizable abbreviation. |
+| [`PI_name`](#pi_name) | **Required** |  `"David McComas"` | Lead person, usually Principal Investigator (PI); should at least include first initial and last name. |
+| [`Source_name`](#source_name) | **Required** | `"PSP>Parker Solar Probe"` | Identifies the mission or investigation that contains the sensors. Both the short and long names, separated by `>`, are included. |
+| [`TEXT`](#text) | **Required** (allows multiple entries) | `"EPI-Hi HET 3600 second rates cdf. Time tags indicate midpoint of integration."`<br> `"Instrument paper: Integrated Science Investigation of the Sun (ISIS): Design of the Energetic Particle Investigation. McComas, D. J. et al (2016). Space Sci. Rev., doi:10.1007/s11214-014-0059-1"` | Describes the experiment producing the data and the dataset. A reference to a journal article(s) or web page describing the experiment is essential, and constitutes the minimum requirement. This attribute can have multiple entries (two entries are shown in the example).|
+| [`Date_Start`](#date_start-date_end)  <br> (**netCDF only**) | **Required** | `"2025-11-01T00:00:00"` | Start UTC date/time (in yyyy-mm-ddThh:mm:ss format) of the data in the file.|
+| [`Date_End`](#date_start-date_end)  <br> (**netCDF only**) | **Required** | `"2025-11-01T23:59:59"` | End UTC date/time (in yyyy-mm-ddThh:mm:ss format) of the data in the file. | |
+| [`Acknowledgement`](#acknowledgement)  | **Recommended**  | `"Cite McComas et al (2016),doi:10.1007/s11214-014-0059-1"` | Specifies the expected acknowledgement text if the dataset is cited. |
+| [`Discipline`](#discipline) | **Recommended** (allows multiple entries) | `"Solar Physics>Heliospheric Physics"`  | Describes both the science discipline and subdiscipline. This attribute allow multiple entries. |
+| [`Data_processing_level`](#data_processing_level) (**PROPOSAL ONLY**)| **Recommended** | `"L2>Level 2"`  | Describes the dataset processing level. Both the short and long names, separated by `>`, are included.|
+| [`DOI`](#doi) | **Recommended**  |  `"https://doi.org/10.48322/mede-7j02"`  | Digital Object Identifier (DOI) as a persistent identifier for the dataset. |
+  | [`Generated_by`](#generated_by) | **Recommended**  | `"ISOIS SOC, University of New Hampshire"` | Allows for the generating data center/group to be identified. |
+| [`Generation_date`](#generation_date) | **Recommended**  |  `"20210329"` | Date of the file creation using yyyymmdd format.  |
+| [`HTTP_LINK`](#link_text-link_title-http_link) | **Recommended** (five entries allowed by **CDAWeb**)  |  `"http://spp-isois.sr.unh.edu/ISOIS_Terms_of_Use.html"` <br> `"https://link.springer.com/article/10.1007%2Fs11214-014-0059-1"` <br> `"http://fields.ssl.berkeley.edu/"` <br> `"https://www2.mps.mpg.de/homes/fraenz/systems/"` <br> `"http://spp-isois.sr.unh.edu/data_public/ISOIS_Data_Glossary.pdf"` | Stores the URL for the link. Used with `LINK_TEXT` and `LINK_TITLE` attributes. Up to five entries allowed by [CDAWeb](https://cdaweb.gsfc.nasa.gov/) (five entries are shown in the example). |
+| [`LINK_TEXT`](#link_text-link_title-http_link) | **Recommended** (five entries allowed by **CDAWeb**) | `"Data "` <br> `"Instrument paper at "` <br> `"Magnetic field data for pitch angle calculation courtesy of "` <br> `"Coordinate systems according to definitions of "` <br> `"Detailed information in "` | Stores the text describing online data or documents. Used with `LINK_TITLE` and `HTTP_LINK` attributes. Up to five entries allowed by [CDAWeb](https://cdaweb.gsfc.nasa.gov/) (five entries are shown in the example).|
+| [`LINK_TITLE`](#link_text-link_title-http_link) | **Recommended** (five entries allowed by **CDAWeb**) |  `"Rules of Use"` <br> `"Space Science Reviews"` <br> `"the FIELDS team"` <br>  `"Fraenz and Harper, PSS, 2002."` <br> `"ISOIS Data Glossary"`  | Stores the title of the web page holding online data or documents. Used with `LINK_TEXT` and `HTTP_LINK` attributes. Up to five entries allowed by [CDAWeb](https://cdaweb.gsfc.nasa.gov/) (five entries are shown in the example). |
+| [`Mission_group`](#mission_group) | **Recommended (Required by CDAWeb)**. |  `"Parker Solar Probe (PSP)"` | Has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/). |
+| [`MODS`](#mods) | **Recommended** (allows multiple entries) |  `"Version 1.0 Jan. 1, 2020"`  | Stores the history of modifications made to the dataset. This attribute can have multiple entries.|
+| [`Project`](#project) | **Recommended** |  `"LWS>Living With a Star"`  | Identifies the name of the project, and indicates ownership. Both the short and long names are included. |
+| [`Rules_of_use`](#rules_of_use)  | **Recommended**  | `"See http://spp-isois.sr.unh.edu/ISOIS_Terms_of_Use.html"` | Text containing information on citability and PI access restrictions. This may point to a web page specifying the rules of use. |
+| [`spase_DatasetResourceID`](#spase_datasetresourceid) | **Recommended**  | `"spase://NASA/NumericalData/ParkerSolarProbe/PT1M"` | Unique dataset identifier assigned by a Space Physics Archive Search and Extract ([SPASE](https://spase-group.org/)) naming authority. |
+| [`Time_resolution`](#time_resolution) | **Recommended**  | `"1 min"`  | Specifies time resolution of the data. |
+| [`Parents`](#parents) | **Optional** (allows multiple entries) | `"RDM>0012081A"`  | Lists the parent files of derived and merged datasets. This attribute allow multiple entries. |
+| [`Skeleton_version`](#skeleton_version) | **Optional** | `"2.0.0"` | Version of the skeleton file used to create the data file.  |
+| [`Software_version`](#software_version) | **Optional** |  `"1.3.0"` | Version of the software that generated the data file.  |
+| [`TITLE`](#title) | **Optional** | `"Parker Solar Probe ISOIS level 2 summary"` | Dataset title.  |
+| [`Validate`](#validate) | **Optional** | `"ISTP_skel>pass>CDHF>19951107"` | Written by software for automatic validation of features such as the structure of the data file on a simple pass/fail criterion. |
 
 
 ## Global Attribute Definitions
@@ -77,7 +76,7 @@ For new datasets, data providers are not restricted to these original definition
 (*Required*.) This attribute identifies the name of the instrument or sensor that collected the data. Both a short name (used in `Logical_source` and in the filename) and a long name (used in `Logical_source_description`) separated by `>` are required. For example,  `Descriptor = "ISOIS>Integrated Science Investigation of the Sun"`. This attribute should have single entry.
 
 ### Discipline
-(*Recommended*.) This attribute describes both the science discipline and subdiscipline. More than one entry is allowed. The list for space physics is:
+(*Recommended*.) This attribute describes both the science discipline and subdiscipline. Multiple entries are allowed. The list for space physics is:
 - `"Solar Physics>Heliospheric Physics"`
 - `"Space Physics>Interplanetary Studies"`
 - `"Space Physics>Magnetospheric Science"`
@@ -95,9 +94,10 @@ For new datasets, data providers are not restricted to these original definition
 (*Recommended*.) File creation date using *yyyymmdd* syntax, e.g., `Generation_date = "19920923"`. This is distinct from the date in `Validate` below which records the times of later validation processes.
 
 ### Instrument_type
-(*Required*.) This attribute is used to facilitate making choices of instrument type through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). Up to five entries are allowed. The following list contains the valid values:
+(*Required* by **CDAWeb**.) Combines types of instruments and regions as a simple way to quickly separate types of datasets for search through [CDAWeb](https://cdaweb.gsfc.nasa.gov/). Up to five entries are allowed. The following list contains allowed values:
 
 - `"Activity Indices"`
+- `"Dust and Debris"`
 - `"Electric Fields (space)"`
 - `"Engineering"`
 - `"Ephemeris/Attitude/Ancillary"`
@@ -117,30 +117,40 @@ For new datasets, data providers are not restricted to these original definition
 
 
 ### LINK_TEXT, LINK_TITLE, HTTP_LINK
-(*Recommended*.) The three attributes are used together to store the text (in `LINK_TEXT`; optional even if the other two are present) providing links to the related and useful resources and documents, including links to the online data available at the PI or Co-I web site, and the associated title (in `LINK_TITLE`) and URL (in `HTTP_LINK`). CDAWeb will display the links on the CDAWeb Data Explorer page for the dataset. For example:
+(*Recommended*.) These attributes are used together to store the text (`LINK_TEXT`, optional even if the other two attributes are present), the title (`LINK_TITLE`), and the URL (`HTTP_LINK`)  of the link to the related and useful resources and documents, including links to the online data available at the PI or Co-I web site. The links will be displayed on the [CDAWeb](https://cdaweb.gsfc.nasa.gov/) Data Explorer page for the dataset. For example, if all three attributes are used:
   
 ```
 LINK_TEXT = "3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at "
 LINK_TITLE = "ISAS DARTS"
 HTTP_LINK = "https://www.darts.isas.jaxa.jp/stp/geotail/"
 ```
-will display:
+[CDAWeb](https://cdaweb.gsfc.nasa.gov/) will display:
 
 _3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at [ISAS DARTS](https://www.darts.isas.jaxa.jp/stp/geotail/)_
 
-`LINK_TEXT`, `LINK_TITLE`, and `HTTP_LINK` can have multiple (up to five) entries, but exactly the same number of entries is required for each of the attributes, with empty strings allowed. This will result in multiple lines of text displayed at the CDAWeb Data Explorer page.
+If only `LINK_TITLE` and `HTTP_LINK` are used:
+```
+LINK_TITLE = "ISAS DARTS"
+HTTP_LINK = "https://www.darts.isas.jaxa.jp/stp/geotail/"
+```
+[CDAWeb](https://cdaweb.gsfc.nasa.gov/) will display: 
+
+_[ISAS DARTS](https://www.darts.isas.jaxa.jp/stp/geotail/)_
+
+
+These attributes can have multiple entries (up to five entries allowed by [CDAWeb](https://cdaweb.gsfc.nasa.gov/)), but exactly the same number of entries is required for each of the included attributes, with empty strings allowed. This will result in multiple lines of text displayed on the [CDAWeb](https://cdaweb.gsfc.nasa.gov/) Data Explorer page for the dataset.
 
 ### Logical_file_id
-(*Required*.) This attribute stores the name of the data file, without extension, using the ISTP naming convention (`Source_name`\_`Descriptor`\_`Data_type`\_Date\_v`Data_version`), e.g., `"psp_isois_l2-summary_20180928_v07"`, in caase the filename itself is mangled or lost.
+(*Required*.) This attribute stores the name of the data file, without extension, using the ISTP naming convention (`Source_name`\_`Descriptor`\_`Data_type`\_Date\_v`Data_version`), with short names for `Source_name`, `Descriptor`, and `Data_type`, e.g., `"psp_isois_l2-summary_20180928_v07"`. The attribute keeps the filename in case of an inadvertent filename change.
 
 ### Logical_source
 (*Required*.) This attribute carries dataset ID (used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/)) in the form `Source_name`\_ `Data_type`\_`Descriptor`, e.g., `"psp_isois_l2-summary"`.
 
 ### Logical_source_description
-(*Required*) This attribute writes out the full names associated with the encrypted `Logical_source`, e.g., `"Parker Solar Probe ISOIS level 2 summary"`. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).
+(*Required*.) This attribute writes out the full names associated with the encrypted `Logical_source`, e.g., `"Parker Solar Probe ISOIS level 2 summary"`. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).
 
 ### Mission_group
-(*Required*.) This attribute has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). Examples:
+(*Recommended*; *required by **CDAWeb***.) This attribute has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/). Examples:
 
 - `"Geotail"`
 - `"GOLD"`
@@ -205,7 +215,7 @@ _3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at [ISAS DART
 (*Recommended*.) Unique dataset identifier assigned by [SPASE](http://www.spase-group.org/), of the form `spase://NAMING_AUTHORITY/UNIQUE_ID`, where UNIQUE_ID is the ID assigned to the SPASE resource record for the dataset in the [SPASE system](http://www.spase-group.org/) by a NAMING_AUTHORITY. The SPASE resource record provides metadata about the dataset, including pointers to locations holding the data.
 
 ### TEXT
-(*Required*.) This attribute stores a short description of the experiment followed by the description of the dataset. A reference to a journal article(s) or web page describing the experiment is essential, and constitutes the minimum requirement. This attribute can have as many entries as necessary.
+(*Required*.) This attribute stores a short description of the experiment followed by the description of the dataset. A reference to a journal article(s) or web page describing the experiment is essential, and constitutes the minimum requirement. This attribute can have multiple entries.
 
 ### Time_resolution
 (*Recommended*.) Specifies time resolution of the file, e.g., `"1 min"`

@@ -39,7 +39,7 @@ DICT_KEY = “SPASE>Field>FieldQuantity:Magnetic,Qualifier:Vector,CoordinateSyst
 
 **Format:**
 ```
-DICT_KEY = “SPASE>Particle>ParticleType:VALUE[_VALUE...],ParticleQuantity:VALUE,Qualifier:VALUE[_VALUE...],CoordinateSystemName:VALUE,CoordinateRepresentation:VALUE”
+DICT_KEY = “SPASE>Particle>ParticleType:VALUE[_VALUE...],ParticleQuantity:VALUE,Qualifier:VALUE[_VALUE...],AtomicNumber:VALUE[_VALUE...],CoordinateSystemName:VALUE,CoordinateRepresentation:VALUE”
 ```
 
 **Examples:**

@@ -38,17 +38,29 @@ General guidelines for defining a dataset may include answering the following qu
 - What are the key data quantities?
 - What is their definition/meaning?
 - How will they be named?
-- Understand (at the dataset level) the dimensionality, dependencies, and variance with time and dimensions.
+- Understand, for each variable, its dimensionality, dependencies, and variances with time and all dimensions.
 
-The overall purpose for the dataset and its connections to the missions, instruments, people, and organizations are provided in the [Global Attributes](./03_metadata-global-attributes.md). The data structure and relationships are captured in the variable structure and [Variable Attributes](./05_metadata-variable-attributes.md). The relationships should be logically structured, machine-readable, and available for general-purpose codes to understand. In particular, the following variable attributes are often required for automated processing:
-- `FIELDNAM` short variable name for plots.
-- `CATDESC` for longer variable description.
-- `DEPEND_0` points to time variable describing time dimension (record dimension in CDF).
-- `DEPEND_i` point to variables that describe higher dimensions.
-- `LABLAXIS`/`LABL_PTR_i` for axis and column titles.
-- `UNITS`/`UNIT_PTR` for units.
-- `VALIDMIN`/`VALDMAX` for valid data range.
-- `FILLVAL` values indicating missing or bad data.
+The overall purpose for the dataset and its connections to the missions, instruments, people, and organizations are provided in the [Global Attributes](./03_metadata-global-attributes.md). The data structure and relationships are captured in each variable structure and [Variable Attributes](./05_metadata-variable-attributes.md). The relationships should be logically structured, machine-readable, and available for general-purpose codes to understand. In particular, the following variable attributes are often required for automated processing:
+
+- `FIELDNAM` - variable name (up to 50 characters), often used for plots and data listing headings.
+- `CATDESC` - longer variable description (up to 120 characters).
+- `DEPEND_0` - points to a time variable describing time dimension (record dimension in CDF).
+- `DEPEND_1` - points to a 1-D variable holding first dimension values, which can also be time-varying. And similar for higher dimensions.
+- `LABLAXIS` - short y-axis label (up to 20 characters).
+- `LABL_PTR_1` - points to variable holding 1-D array of labels corresponding to the first dimension. And similar for higher dimensions.
+- `UNITS` - short units string, displayed under y-axis label.
+- `UNIT_PTR` - points to variable holding 1-D array of units strings corresponding to the first dimension.
+- `VALIDMIN`/`VALDMAX` - identify variable valid data range.
+- `FILLVAL` - identify variable missing or bad data.
+- `DISPLAY_TYPE` - tells automated software what type of plot (e.g., "spectrogram") to make and what attributes and associated variables in the CDF are required in order to do so.
+
+ The example below shows how the attributes of the time-varying 2-D (energy, angle)  proton flux variable are used for automatically plotting the data as a set of spectrograms:
+
+<p align="left">
+    <img width=600 src="./_images/2d_spectrogram_1.gif"/>
+</p>
+
+
 
 ---
 Return to [Table of Contents](../README.md)

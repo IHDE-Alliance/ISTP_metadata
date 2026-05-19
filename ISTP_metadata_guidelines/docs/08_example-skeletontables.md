@@ -11,11 +11,13 @@ Use these skeleton tables as a starting point for creating your own skeleton tab
 
 - [Activity Indices](https://spdf.gsfc.nasa.gov/pub/software/cdawlib/0SKELTABLES/omni_hro2_1min_00000000_v01.skt)
 
+- [Dust and Debris](https://cdaweb.gsfc.nasa.gov/pub/software/cdawlib/0SKELTABLES/psp_fld_l3_dust_00000000_v01.skt)
+
 - [Electric Fields (space)](https://spdf.gsfc.nasa.gov/pub/software/cdawlib/0SKELTABLES/psp_fld_l2_dfb_dbm_vac_00000000_v01.skt)
 
 - [Engineering](https://spdf.gsfc.nasa.gov/pub/software/cdawlib/0SKELTABLES/tss-1r_m1_stda_00000000_v01.skt)
 
-- [Ephemeris/Attitude/Ancillary](https://spdf.gsfc.nasa.gov/pub/software/cdawlib/0SKELTABLES/stb_helio1day_position_00000000_v01.skt)
+- [Ephemeris/Attitude/Ancillary](https://spdf.gsfc.nasa.gov/pub/software/cdawlib/0SKELTABLES/stb_helio1hr_position_00000000_v01.skt)
 
 - [Ground-Based HF-Radars](https://spdf.gsfc.nasa.gov/pub/software/cdawlib/0SKELTABLES/dn_k0_gbay_00000000_v01.skt)
 

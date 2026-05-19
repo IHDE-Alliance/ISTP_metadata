@@ -38,7 +38,7 @@ General guidelines for defining a dataset may include answering the following qu
 - What are the key data quantities?
 - What is their definition/meaning?
 - How will they be named?
-- Understand, for each variable, its dimensionality, dependencies, and variances with time and all dimensions.
+- Understand, for each variable, its dimensionality/dimension sizes, dependencies, and variances with time and all dimensions.
 
 The overall purpose for the dataset and its connections to the missions, instruments, people, and organizations are provided in the [Global Attributes](./03_metadata-global-attributes.md). The data structure and relationships are captured in each variable structure and [Variable Attributes](./05_metadata-variable-attributes.md). The relationships should be logically structured, machine-readable, and available for general-purpose codes to understand. In particular, the following variable attributes are often required for automated processing:
 

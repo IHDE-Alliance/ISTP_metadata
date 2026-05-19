@@ -1,9 +1,7 @@
 
 # Frequently Asked Questions (FAQ)
 
-This page covers many of the most common questions asked about the ISTP Guidelines.
-If you have a question that isn't on this list, please open a ticket on the ISTP Guidelines Github site, so that the ISTP Guidelines community can respond.
-We will use that list as the basis for additional content for this set of questions.
+This page covers many of the most common questions asked about the ISTP  Guidelines. If you have a question that isn't on this list, please open a ticket on the [ISTP Guidelines Github](https://github.com/IHDE-Alliance/ISTP_metadata) site, so that the ISTP Guidelines community can respond. We will use that list as the basis for additional content for this set of questions.
 
 Some links in this FAQ may point to previously released versions of the ISTP Guidelines specification.
 
@@ -35,7 +33,7 @@ Learning about and changing the ISTP Guidelines.
 
 ### How do I propose a change?
 
-Changes to the ISTP Guidelines standard are generally proposed by opening an issue on the Github site.
+Changes to the ISTP Guidelines standard are generally proposed by opening an issue on the [ISTP Guidelines Github](https://github.com/IHDE-Alliance/ISTP_metadata) site.
 
 ### What is the process for accepting a change to the ISTP Guidelines?
 

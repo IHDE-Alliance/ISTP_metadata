@@ -8,14 +8,14 @@
 If extremely rare changes occur in the variable values over time, a CDF variable can be defined with **record sparseness set to previous record**. In this case, only records with changes need to be explicitly written into the CDF file, while reading any record will return the last explicitly written record before the requested one. Note that the first variable record in each CDF file still must be explicitly written with valid value. See the [CDF User's Guide](https://spdf.gsfc.nasa.gov/pub/software/cdf/doc/cdf_User_Guide.pdf) for details on CDF variable sparse records.
 
 ## netCDF-Specific Practices
-- Use time as the unlimited dimension
-- Define variables to hold the values for each dimension
-- Do not use netCDF groups, unsigned 64-bit integers, or user-defined variable types, since these are not widely supported by generalized science software
-- Provide two global attributes `Data_Start` and `Data_End` with value = yyyy-mm-ddThh:mm:ss UTC
+- Use netCDF-4, but do not use netCDF groups, unsigned 64-bit integers, or user-defined variable types, since these are not widely supported by generalized science software.
+- Use time as the UNLIMITED dimension.
+- Define variables to hold the values for each dimension.
+- Provide two global attributes `Data_Start` and `Data_End`, with values in yyyy-mm-ddThh:mm:ss UTC format, since netCDF doesn't include standard/data type for time.
 
-Recommend using the CDF_TIME_TT2000 variable type as 8-byte integers in netCDF, and using the CDF library routines for conversion to and from other time formats. Otherwise, time variables should be in seconds from some epoch, with `UNITS` of "seconds since 2000-01-01", for instance.
+We recommend using the CDF_TIME_TT2000 variable data type (stored as 8-byte signed integers in netCDF), and using the CDF library routines for conversion to and from other time formats. Otherwise, time variables should be in seconds from some epoch, with `UNITS` of "seconds since 2000-01-01", for instance.
 
-In addition to the ISTP-defined `FILLVAL`, `CATDESC` and `UNITS`, netCDF conventions call for also storing in `_FillValue`, `long_name`, and `units`, respectively.  See [netCDF Attribute Conventions](https://docs.unidata.ucar.edu/netcdf-c/current/attribute_conventions.html).
+In addition to the ISTP-defined `FILLVAL`, `CATDESC` and `UNITS`, netCDF conventions call for also storing same values in `_FillValue`, `long_name`, and `units`, respectively.  See [netCDF Attribute Conventions](https://docs.unidata.ucar.edu/netcdf-c/current/attribute_conventions.html).
 
 
 ## Tools for Laying out Datasets

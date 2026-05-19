@@ -262,7 +262,7 @@ In the second example, a **_support_data_** variable `Epoch` is of CDF_EPOCH dat
 
 ### Example of 1-D Energy Variable
 
-This example show definition of a time-varying 1-D (size 12) **_support_data_** variable `IDiffI_I_Energy` (Ion Energy at 12 channels), with all the required and some recommended attributes included. This **_support_data_** variable is attached to the same size **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies, [described here](#example-of-1-d-flux-variable)) via the `IDiffI_I` variable `DEPEND_1` attribute.
+This example show definition of a time-varying 1-D (size 12) **_support_data_** variable `IDiffI_I_Energy` (Ion Energy at 12 channels), with all the required and some recommended attributes included. This **_support_data_** variable is attached to the same size **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies, [described here](#example-of-1-d-flux-variable)) via the `IDiffI_I` variable's `DEPEND_1` attribute.
 
 ```
 ! Variable           Data       Number                       Record      Dimension
@@ -295,7 +295,7 @@ This example show definition of a time-varying 1-D (size 12) **_support_data_** 
 
 ### Example of Magnetic Field Label Variable
 
-This 1-D (size 3) **_metadata_** variable `label_B_GSE` holds three strings for labeling the cartesian GSE magnetic field **_data_** variable `BGSE` ([described here](#example-of-vector-magnetic-field-variable)), and it is attached to `BGSE` via its `LABL_PTR_1` attribute. A Character metadata must define the number of elements to be the same as the maximum number of characters used in its values, `6` in this case of six-character strings.
+This 1-D (size 3) **_metadata_** variable `label_B_GSE` holds three strings for labeling the cartesian GSE magnetic field **_data_** variable `BGSE` ([described here](#example-of-vector-magnetic-field-variable)), and it is attached to `BGSE` via `BGSE` variable's `LABL_PTR_1` attribute. A Character metadata must define the number of elements to be the same as the maximum number of characters used in its values, `6` in this case of six-character strings.
 
 ```
 ! Variable        Data       Number                       Record      Dimension
@@ -323,7 +323,7 @@ This 1-D (size 3) **_metadata_** variable `label_B_GSE` holds three strings for 
 
 ### Example of Time_PB5 Variable
 
-`time_pb5` variable is representing the time as a 1-D (size 3) integer array storing Year, Day of Year (note: January 1 is Day 1), and Millisecond of Day (elapsed ms), which allows for easy recognition of the time value when looking at the data, for instance in a data dump. This variable was part of the requirements for the ISTP Key Parameter (KP) CDF datasets only, and it is not recommended for new datasets.
+`time_pb5` variable is representing the time as a 1-D (size 3) integer array storing Year, Day of Year (note: January 1 is Day 1), and Millisecond of Day (elapsed ms), which allows for easy recognition of the time value when looking at the data, for instance in a data dump. This variable was part of the requirements for the ISTP Key Parameter (KP) CDF datasets only, and **it is not recommended for new datasets**.
 
 To describe the time components, `time_pb5` has three attached **_metadata_** variables which provide labels (`label_time` variable attached via `LABL_PTR_1` attribute),  units (`unit_time` attached via `UNIT_PTR`) and formats (`format_time` attached via `FORM_PTR`). See [descriptions of these **_metadata_** variables](#examples-of-time_pb5-related-variables).
 ```

@@ -9,7 +9,7 @@
 | Attributes | ISTP alternative | Cluster | Arase (ERG) | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | `ACCESS_FORMAT` | | | | | | | | | | O |
-| `CAVEATS` | | | | | | | | | | O |
+| `CAVEATS` | `Rules_of_use` | O | | | | | | | | O |
 | `Channel_ID` | | | | M |
 | `Data_coordinates` | | | M |
 | `Data_cycle` | | | | M |

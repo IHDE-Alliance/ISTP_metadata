@@ -1,13 +1,14 @@
 # Dictionary Keywords
 
-A project data dictionary contains information required to make the data independently useable to a wide community. The ISTP metadata format carries much (but not all) of the data dictionary information using a set of standard global attributes describing the overall data content and a set of standard attributes for each variable in the dataset. The variable attributes contain descriptions, variable types, minimum and maximum values, labels, units, time tags, and if required, dependencies, uncertainties, and offsets. However, there is little consistency in variable names nor in the descriptions that are tied to each variable, to help other users of the data find and use the variables of interest. 
+A project data dictionary contains information required to make the data independently useable to a wide community. The ISTP metadata format carries much (but not all) of the data dictionary information using a set of standard global attributes describing the overall data content and a set of standard attributes for each variable in the dataset. The variable attributes contain descriptions, variable types, minimum and maximum values, labels, units, time tags, and if required, dependencies, uncertainties, and offsets. However, there is little consistency in the variable names or descriptions to help other users of the data find and use the variables of interest. 
 
 ## SPASE Dictionary Keywords
-See below for description of the [Original ISTP Dictionary Keywords](#original-istp-dictionary-keywords). Alternatively and preferably, `DICT_KEY` variable attribute can be used with values from the controlled lists of the Space Physics Archive Search and Extract ([SPASE](https://spase-group.org)) data model, enabling both accurate description of parameters and full compatibility with the SPASE model. For compliance with the SPASE model requirements for Level 2 (L2) and higher level datasets archived at NASA SPDF, `DICT_KEY` attribute using SPASE controlled lists must be included for all **_data_**  and **_support_data_** ISTP variables. `DICT_KEY` is not required for **_metadata_** variables.
+See section below for use of the [Original ISTP Dictionary Keywords](#original-istp-dictionary-keywords) with the `DICT_KEY` variable attribute. Alternatively, and **preferably**, `DICT_KEY` attribute can be used with values from the controlled lists of the Space Physics Archive Search and Extract ([SPASE](https://spase-group.org)) data model, enabling both accurate description of parameters and full compatibility with the SPASE model. For compliance with the SPASE model requirements for Level 2 (L2) and higher level datasets archived at NASA SPDF, `DICT_KEY` attribute using SPASE controlled lists must be included for all **_data_**  and **_support_data_** ISTP variables. `DICT_KEY` is not required for **_metadata_** variables.
 
-See format and examples below (depending on the described parameter type in the SPASE model: *Field*, *Particle*, *Wave*, *Mixed*, or *Support*) for filling the `DICT_KEY` attribute string value. Note that the SPASE parameter type is independent from the ISTP variable type (identified by the `VAR_TYPE` attribute value). `Key:VALUE` pairs in bold are always required, other `Key:VALUE` pairs are required if applicable. `VALUE[_VALUE...]` means multiple values are allowed, separated by underscores. **If a parameter cannot be described in any other way, use** `DICT_KEY = “SPASE>Support>SupportQuantity:Other”`.
+See format and examples below (depending on the described parameter type in the SPASE model: **_Field_**, **_Particle_**, **_Wave_**, **_Mixed_**, or **_Support_**) for filling the `DICT_KEY` attribute string value. Note that the SPASE parameter type is independent from the ISTP variable type (**_data_**, **_support_data_**, or **_metadata_**, identified by the `VAR_TYPE` attribute value). `Key:VALUE` pairs in bold are always required, other `Key:VALUE` pairs are required if applicable. `VALUE[_VALUE...]` means multiple values are allowed, separated by underscores. **If a parameter cannot be described in any other way, use** `DICT_KEY = “SPASE>Support>SupportQuantity:Other”`.
 
-In the `DICT_KEY` formats for various SPASE parameter types below, replace `VALUE` with a value from a linked list corresponding to `Key`:
+In the `DICT_KEY` formats for various SPASE parameter types below, replace `VALUE` with a value from the linked list corresponding to the `Key`:
+
 - [FieldQuantity](https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#FieldQuantity)
 - [ParticleType](https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#ParticleType)
 - [ParticleQuantity](https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#ParticleQuantity)
@@ -20,7 +21,7 @@ In the `DICT_KEY` formats for various SPASE parameter types below, replace `VALU
 - [CoordinateRepresentation](https://spase-group.org/data/model/spase-latest/spase-latest_xsd.htm#CoordinateRepresentation)
 
 
-### Field (Magnetic or Electric) Parameter
+### Field Parameter
 
 **Format:**
 ```

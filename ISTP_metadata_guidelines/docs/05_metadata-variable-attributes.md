@@ -26,9 +26,9 @@ Additional variable attributes may be defined. Their names must start with a let
 | [`LABL_PTR_1`](#labl_ptr_i) | **Required** | `"Electron_Energy_Label"` <br> CDF_CHAR  | Required for **_data_** of the following form: 1-D *Time_series*, 2-D *Spectrogram*. Also needed for 1-D and 2-D **_support_data_** without a `LABLAXIS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
 | [`LABL_PTR_2`](#labl_ptr_i) | **Required** | `"Telescope_Label"` <br> CDF_CHAR  | Required for **_data_** of the following form: 2-D *spectrogram*, 3-D *spectrogram*. Also needed for 2-D **_support_data_** without `LABLAXIS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
 | [`LABL_PTR_3`](#labl_ptr_i) | **Required** | `"Sector_Label"` <br> CDF_CHAR  | Required for **_data_** of the following form: 3-D *Spectrogram*. Points to a 1-D string **_metadata_** variable with the same dimension size. |
-| [`REPRESENTATION_i`](#representation_i) | **Cluster required** | `"representation_xyz"`  <br> CDF_CHAR  | Cluster required for **_data_** vectors and tensors. Points to a 1-D string **_metadata_** variable with the same dimension size.|
-| [`TENSOR_FRAME`](#tensor_frame) | **Cluster required** | `"GSE"`  <br> CDF_CHAR  | Cluster required for _**data**_ vectors, tensors, and individual components.|
-| [`TENSOR_ORDER`](#tensor_order) | **Cluster required** | `2`  <br> Integer | Cluster required for _**data**_ vectors and tensors. |
+| [`REPRESENTATION_i`](#representation_i) | **Optional, required by Cluster** | `"representation_xyz"`  <br> CDF_CHAR  | Optional (required by Cluster) for **_data_** vectors and tensors. Points to a 1-D string **_metadata_** variable with the same dimension size.|
+| [`TENSOR_FRAME`](#tensor_frame) | **Optional, required by Cluster** | `"GSE"`  <br> CDF_CHAR  | Optional (required by Cluster) for _**data**_ vectors, tensors, and individual components.|
+| [`TENSOR_ORDER`](#tensor_order) | **Optional, required by Cluster** | `2`  <br> Integer | Optional (required by Cluster) for _**data**_ vectors and tensors. |
 | [`UNITS`](#units) | **Required** |  `"count/ms` <br> CDF_CHAR | Required for **_data_** and **_support_data_** not using `UNIT_PTR`. |
 | [`units`](#units)  <br> (**netCDF only**) | **Required** |  `"count/ms` <br> CDF_CHAR | Required for **_data_** and **_support_data_** not using `UNIT_PTR`. |
 | [`UNIT_PTR`](#unit_ptr) | **Required** |  `"units_E_cnt_rate"` <br> CDF_CHAR | Required for 1-D **_data_** and **_support_data_** not using `UNITS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
@@ -40,19 +40,19 @@ Additional variable attributes may be defined. Their names must start with a let
 | [`FRAME_VELOCITY`](#frame_velocity) (**PROPOSAL ONLY**) | **Recommended** | `"Observatory"`  <br> CDF_CHAR  | Recommended for _**data**_ vectors, tensors, and individual components. |
 | [`SCALETYP`](#scaletyp) | **Recommended**  |  `"linear"` <br> CDF_CHAR | Recommended for **_data_** not using `SCAL_PTR` and **_support_data_**. |
 | [`SCAL_PTR`](#scal_ptr) | **Recommended**  |  `"scales_E_cnt_rate"` <br> CDF_CHAR | Recommended for 1-D **_data_** not using `SCALETYP`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
-| [`sig_digits`](#sig_digits) | **Cluster recommended**  | `5` <br> Integer | Cluster recommended for **_data_**. |
+| [`sig_digits`](#sig_digits) | **Optional, recommended by Cluster**  | `5` <br> Integer | Optional (recommended by Cluster) for **_data_**. |
 | [`VAR_NOTES`](#var_notes) | **Recommended**  | `"Particle Energy mode. Corrected for deadtime. May contain substantial non-electron background."` <br> CDF_CHAR | Recommended for **all** variables; unlimited character length. |
 | [`AVG_TYPE`](#avg_type) | **Optional** | `"standard"` <br> CDF_CHAR | Optional for **_data_** and RV **_support_data_**. |
 | [`DELTA_MINUS` ](#delta_plus-delta_minus) (**PROPOSAL ONLY**) | **Optional** | `5.0` <br> **Must match variable data type** | Optional for **_data_** and **_support_data_**. |
 | [`DELTA_MINUS_VAR`](#delta_plus_var-delta_minus_var)  | **Optional** |  `"E_cnt_rate_DELTA"` <br> CDF_CHAR | Optional for **_data_** and **_support_data_** variables. Points to a  **_support_data_** variable with the same dimension sizes.| 
 | [`DELTA_PLUS`](#delta_plus-delta_minus) (**PROPOSAL ONLY**) | **Optional**   | `5.0` <br> **Must match variable data type** | Optional for **_data_** and **_support_data_**. |
 | [`DELTA_PLUS_VAR`](#delta_plus_var-delta_minus_var) | **Optional** |  `"E_cnt_rate_DELTA"` <br> CDF_CHAR | Optional for **_data_** and **_support_data_** variables. Points to a  **_support_data_** variable with the same dimension sizes. |
-| [`FRAME`](#frame) | **Cluster optional** | `"vector>gse_xyz"` <br> CDF_CHAR | Cluster optional for **data**. |
+| [`FRAME`](#frame) | **Optional** | `"vector>gse_xyz"` <br> CDF_CHAR | Optional for **data**. |
 | [`LIMITS_NOMINAL_MIN`](#limits_nominal_min-limits_nominal_max) | **Optional** | `200.0` <br> **Must match variable data type**  | Optional for **_data_** and *RV* **_support_data_**.  |
 | [`LIMITS_NOMINAL_MAX`](#limits_nominal_min-limits_nominal_max) | **Optional** | `800.0` <br> **Must match variable data type**  | Optional for **_data_** and *RV* **_support_data_**.  |
 | [`LIMITS_WARN_MIN`](#limits_warn_min-limits_warn_max) | **Optional** |  `100.0` <br> **Must match variable data type** | Optional for **_data_** and *RV* **_support_data_**.  |
 | [`LIMITS_WARN_MAX`](#limits_warn_min-limits_warn_max) | **Optional** | `900.0` <br> **Must match variable data type**  | Optional for **_data_** and *RV* **_support_data_**.  |
-| [`MONOTON`](#monoton) | **Optional** |  `"INCREASE"` | Optional for epoch variables (*RV* **_support_data_**). |
+| [`MONOTON`](#monoton) | **Optional** |  `"INCREASE"` <br> CDF_CHAR | Optional for epoch variables (*RV* **_support_data_**).  |
 | [`SCALEMIN`](#scalemin-scalemax) | **Optional** | `200.0` <br> **Must match variable data type** | Optional for **_data_** and *RV* **_support_data_**. |
 | [`SCALEMAX`](#scalemin-scalemax) | **Optional** | `800.0` <br> **Must match variable data type** | Optional for **_data_** and *RV* **_support_data_**. |
 | [`SI_CONVERSION`](#si_conversion) | **Optional** | `"1.0E3>count/s"`  | Optional for **_data_** and **_support_data_**. |
@@ -188,7 +188,7 @@ Additionally, the ISTP Guidelines require the following special `FILLVAL` values
 
 ### FRAME
 
-(**_Cluster optional for data_**.) Optional and partially redundant with the more powerful description provided by the three concepts `TENSOR_ORDER`, `REPRESENTATION_i`, and `TENSOR_FRAME`.
+(**_Optional for data_**.) Optional and partially redundant with the more powerful description provided by the three concepts `TENSOR_ORDER`, `REPRESENTATION_i`, and `TENSOR_FRAME`.
 
 ### FRAME_ORIGIN
 
@@ -228,7 +228,7 @@ limits). Visualization software can use these attributes for indicating limits o
 (**_Optional for time variables_**.) Used to account for time variance with position in the gravity wells and with relative velocity. E.g, `"Topocenter"` (local), `"Geocenter"`, `"Rotating Earth Geoid"` (used by CDF_TIME_TT2000). While we could use a combined `TimeSystem` attribute that defines mission-specific time scales where needed, such as `"UTC-at-STEREO-B"`, it is cleaner to keep them separate as `TIME_SCALE = "UTC"` and `REFERENCE_POSITION = "STEREO-B"`.
 
 ### REPRESENTATION_i
-(**_Cluster required for data vectors and tensors_**.) Points to a 1-D metadata variable holding string representations of the i-th dimension of the data variable, e.g., [`"x"`,`"y"`,`"z"`] for Cartesian components in the x-y-z order, [`"r"`,`"p"`,`"t"`] for spherical polar, [`"r"`,"`p`",`"z"`] for cylindrical polar. Number of `REPRESENTATION_i` attributes must match the number of dimensions of the data variable. When `REPRESENTATION_i` is used, labels for tensor components are created by concatenating to the `LABLAXIS` value the corresponding value in the variable pointed to by `REPRESENTATION_i`, e.g., `"Vx"`, `"Vy"`, `"Vz"` for a 1-D vector (using `LABLAXIS = "V"` and `REPRESENTATION_1` pointing to a variable holding [`"x"`,`"y"`,`"z"`]) or `"Pxx"`, `"Pxy"`, `"Pxz"`, `"Pyx"`, etc., for a tensor of order 2 (using `LABLAXIS = "P"` and both `REPRESENTATION_1` and `REPRESENTATION_2` pointing to a variable holding [`"x"`,`"y"`,`"z"`]).
+(**_Optional [required by Cluster] for data vectors and tensors_**.) Points to a 1-D metadata variable holding string representations of the i-th dimension of the data variable, e.g., [`"x"`,`"y"`,`"z"`] for Cartesian components in the x-y-z order, [`"r"`,`"p"`,`"t"`] for spherical polar, [`"r"`,"`p`",`"z"`] for cylindrical polar. Number of `REPRESENTATION_i` attributes must match the number of dimensions of the data variable. When `REPRESENTATION_i` is used, labels for tensor components are created by concatenating to the `LABLAXIS` value the corresponding value in the variable pointed to by `REPRESENTATION_i`, e.g., `"Vx"`, `"Vy"`, `"Vz"` for a 1-D vector (using `LABLAXIS = "V"` and `REPRESENTATION_1` pointing to a variable holding [`"x"`,`"y"`,`"z"`]) or `"Pxx"`, `"Pxy"`, `"Pxz"`, `"Pyx"`, etc., for a tensor of order 2 (using `LABLAXIS = "P"` and both `REPRESENTATION_1` and `REPRESENTATION_2` pointing to a variable holding [`"x"`,`"y"`,`"z"`]).
 
 ### RESOLUTION
 (**_Optional for time variables_**.) Using ISO8601 relative time format, e.g. `"1s"`. Resolution provides the smallest change in time that is measured.
@@ -247,13 +247,13 @@ limits). Visualization software can use these attributes for indicating limits o
 (**_Optional for data and support_data_**.) The multiplicative factor for converting `UNITS` value into International System of Units (SI) units. The factor is expressed in the form `"number>x"`, where `number` is a numerical value and `x` is the appropriate SI units. The basic SI units are: `m` (meter), `N` (newton), `kg` (kilogram), `Pa` (pascal), `s` (second), `Hz` (hertz), `A` (ampere), `V` (volt), `K` (kelvin), `W` (watt), `rad` (radian), `J` (joule), `sr` (steradian), `C` (coulomb), `T` (tesla), `ohm` (ohm), `mho` (mho or seimens), `H` (henry), and `F` (farad). Two useful units which are not SI units are: `degree` (angle), and `unitless` (no units). An example is `SI_CONVERSION = "1e-9>T"` which converts the units of magnetic field data expressed in nT to T. Another example is `SI_CONVERSION = "1E+3>m/s"`, which converts a velocity expressed in `km/s` to `m/s`.
 
 ### sig_digits
-(**_Cluster recommended for data_**.) This attribute provides the number of significant decimal digits required to preserve the precision of the parameter (essential for ASCII conversion).
+(**_Optional [recommended by Cluster] for data_**.) This attribute provides the number of significant decimal digits required to preserve the precision of the parameter (essential for ASCII conversion).
 
 ### TENSOR_FRAME
-(**_Cluster required for data vectors and tensors_**.) The name of the frame (coordinate system) of a tensor, e.g., `"GSE"`. Same as `COORDINATE_SYSTEM`.
+(**_Optional [required by Cluster] for data vectors and tensors_**.) The name of the frame (coordinate system) of a tensor, e.g., `"GSE"`. Same as `COORDINATE_SYSTEM`.
 
 ### TENSOR_ORDER
-(**_Cluster required for data vectors and tensors_**.) The order of a tensor, i.e. `1` for a vector, `2` for a 3x3 tensor.
+(**_Optional [required by Cluster] for data vectors and tensors_**.) The order of a tensor, i.e. `1` for a vector, `2` for a 3x3 tensor.
 
 
 ### TIME_BASE

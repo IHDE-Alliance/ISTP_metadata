@@ -40,24 +40,48 @@ General guidelines for defining a dataset may include answering the following qu
 - How will they be named?
 - Understand, for each variable, its dimensionality/dimension sizes, dependencies, and variances with time and all dimensions.
 
-The overall purpose for the dataset and its connections to the missions, instruments, people, and organizations are provided in the [Global Attributes](./03_metadata-global-attributes.md). The data structure and relationships are captured in each variable structure and [Variable Attributes](./05_metadata-variable-attributes.md). The relationships should be logically structured, machine-readable, and available for general-purpose codes to understand. In particular, the following variable attributes are often required for automated processing:
+The overall purpose for the dataset and its connections to the missions, instruments, people, and organizations are provided in the [Global Attributes](./03_metadata-global-attributes.md). For example, the [CDAWeb](https://cdaweb.gsfc.nasa.gov/) home page uses global attributes [`Mission_group`](./03_metadata-global-attributes.md#mission_group) and [`Instrument_type`](./03_metadata-global-attributes.md#instrument_type) (combination of instrument type and observed region) as a simple dataset filtering for quick dataset selection.
 
-- `FIELDNAM` - variable name (up to 50 characters), often used for plots and data listing headings.
-- `CATDESC` - longer variable description (up to 120 characters).
-- `DEPEND_0` - points to a time variable describing time dimension (record dimension in CDF).
-- `DEPEND_1` - points to a 1-D variable holding first dimension values, which can also be time-varying. And similar for higher dimensions.
-- `LABLAXIS` - short y-axis label (up to 20 characters).
-- `LABL_PTR_1` - points to variable holding 1-D array of labels corresponding to the first dimension. And similar for higher dimensions.
-- `UNITS` - short units string, displayed under y-axis label.
-- `UNIT_PTR` - points to variable holding 1-D array of units strings corresponding to the first dimension.
-- `VALIDMIN`/`VALDMAX` - identify variable valid data range.
-- `FILLVAL` - identify variable missing or bad data.
-- `DISPLAY_TYPE` - tells automated software what type of plot (e.g., "spectrogram") to make and what attributes and associated variables in the CDF are required in order to do so.
+<p align="center">
+    <img width=650 src="./_images/CDAWeb_main_page.png"/>
+</p>
 
- The example below shows how the attributes of the time-varying 2-D (energy, angle)  proton flux variable are used for automatically plotting the data as a set of spectrograms:
+And the consequent CDAWeb pages use global attributes:
 
-<p align="left">
-    <img width=600 src="./_images/2d_spectrogram_1.gif"/>
+- [`Logical_source`](./03_metadata-global-attributes.md#logical_source) - dataset ID, combination of short names in global attributes: [`Source_name`](./03_metadata-global-attributes.md#source_name) (mission name), [`Descripton`](./03_metadata-global-attributes.md#descriptor) (instrument name), and [`Data_type`](./03_metadata-global-attributes.md#data_type) (dataset type).
+- [`Logical_source_description`](./03_metadata-global-attributes.md#logical_source_description) - dataset full name.
+- [`PI_name`](./03_metadata-global-attributes.md#pi_name) and [`PI_affiliation`](./03_metadata-global-attributes.md#pi_affiliation)- lead person, usually Principal Investigator (PI), and their affiliation.
+- [`LINK_TEXT`, `LINK_TITLE`, `HTTP_LINK`](./03_metadata-global-attributes.md#link_text-link_title-http_link) -  links to the related and useful resources and documents.
+- [`TEXT`](./03_metadata-global-attributes.md#text) - dataset detailed description.
+- [`MODS`](./03_metadata-global-attributes.md#mods) - dataset modification history.
+- [`DOI`](./03_metadata-global-attributes.md#doi) - dataset digital object identifier (DOI).
+
+
+<p align="center">
+    <img width=650 src="./_images/CDAWeb_variable_selection.png"/>
+</p>
+
+The data structure and relationships are captured in each variable structure and [Variable Attributes](./05_metadata-variable-attributes.md). The relationships should be logically structured, machine-readable, and available for general-purpose codes to understand. In particular, the following variable attributes are often required for automated processing:
+
+- [`VAR_TYPE`](./05_metadata-variable-attributes.md#var_type) - identifies ISTP variable type as: `"data"`- time-dependent variables of primary importance (e.g., particle flux, magnetic flux density) that can be plotted and ASCII listed and is immediately visible in interfaces and APIs; `"support_data"` - support variables that `"data"` variables depend on (e.g., time, energy, angle); `"metadata"` - labels and other character type variables used for `"data"` variable plots and ASCII listings.
+- [`FIELDNAM`](./05_metadata-variable-attributes.md#fieldnam) - variable name (up to 50 characters), often used for plots and data listing headings.
+- [`CATDESC`](./05_metadata-variable-attributes.md#catdesc) - longer variable description (up to 120 characters).
+- [`DEPEND_0`](./05_metadata-variable-attributes.md#depend_0) - points to a time variable (`VAR_TYPE="support_data"`) describing time dimension (record dimension in CDF).
+- [`DEPEND_1`](./05_metadata-variable-attributes.md#depend_i) - points to a 1-D variable (`VAR_TYPE="support_data"`) holding first dimension values, which can also be time-varying. And similar for higher dimensions.
+- [`LABLAXIS`](./05_metadata-variable-attributes.md#lablaxis) - short y-axis label string (up to 20 characters).
+- [`LABL_PTR_1`](./05_metadata-variable-attributes.md#labl_ptr_i) - points to a variable (`VAR_TYPE="metadata"`) holding 1-D array of labels corresponding to the first dimension. And similar for higher dimensions.
+- [`UNITS`](./05_metadata-variable-attributes.md#units) - short units string, displayed under y-axis label.
+- [`UNIT_PTR`](./05_metadata-variable-attributes.md#unit_ptr) - points to a variable (`VAR_TYPE="metadata"`) holding 1-D array of units strings corresponding to the first dimension.
+- [`FORMAT`](./05_metadata-variable-attributes.md#format) - output format string (FORTRAN format) used for ASCII listings.
+- [`FORM_PTR`](./05_metadata-variable-attributes.md#form_ptr) - points to a variable (`VAR_TYPE="metadata"`) holding 1-D array of output format strings (FORTRAN format) corresponding to the first dimension.
+- [`VALIDMIN`](./05_metadata-variable-attributes.md#validmin-validmax)/[`VALDMAX`](./05_metadata-variable-attributes.md#validmin-validmax) - identify variable valid data range.
+- [`FILLVAL`](./05_metadata-variable-attributes.md#fillval) - identify variable missing or bad data.
+- [`DISPLAY_TYPE`](./05_metadata-variable-attributes.md#display_type) - tells automated software what type of plot (e.g., `"spectrogram"`) to make for a `VAR_TYPE="data"` variable and what attributes and associated variables are required in order to do so.
+
+The example below shows how the attributes of a time-varying 2-D proton flux variable (`VAR_TYPE="data"`) that depends on energy and angle variables (both 1-D `VAR_TYPE="support_data"`) are used to automatically plot the data as a set of spectrograms:
+
+<p align="center">
+    <img width=650 src="./_images/2d_spectrogram_1.gif"/>
 </p>
 
 

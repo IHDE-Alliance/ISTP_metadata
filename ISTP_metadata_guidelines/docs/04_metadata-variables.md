@@ -81,7 +81,7 @@ See examples of [**_support_data_** variable definitions](./07_example-variables
 
 The following variable attributes are required:
 - [`CATDESC`](./05_metadata-variable-attributes.md#catdesc)
-- [`DEPEND_0`](./05_metadata-variable-attributes.md#depend_0)` = "Epoch"` (if time varying)
+- [`DEPEND_0`](./05_metadata-variable-attributes.md#depend_0) = `"Epoch"` (if time varying)
 - [`FIELDNAM`](./05_metadata-variable-attributes.md#fieldnam)
 - [`FILLVAL`](./05_metadata-variable-attributes.md#fillval) (if time varying)
 - [`FORMAT`](./05_metadata-variable-attributes.md#format)/[`FORM_PTR`](./05_metadata-variable-attributes.md#form_ptr)

@@ -15,7 +15,7 @@ ISTP Metadata Guidelines for Heliophysics Science Data File Internal Metadata
 
 [Dictionary Keywords](docs/06_metadata-keywords.md)
 
-[File and Dataset Naming Practices](https://spdf.gsfc.nasa.gov/guidelines/filenaming_recommendations.html)
+[File and Dataset Naming Practices](docs/filenaming-dataset-naming-recommendations.md)
 
 [Appendix A. Variable Examples](docs/07_example-variables.md)
 

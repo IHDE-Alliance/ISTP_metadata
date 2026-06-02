@@ -23,25 +23,25 @@ The example demonstrates a scalar **_data_** variable `SW_P_Den` displayed in [C
 ! Name            Type            Value
 ! --------        ----            -----
 
+ "VAR_TYPE"      CDF_CHAR       { "data" }.
+ "FIELDNAM"      CDF_CHAR       { "Ion Number Density (CPI/SWA)" }
  "CATDESC"       CDF_CHAR       { "Ion number density (Solar Wind " -
                                   "Analyzer), scalar" }
  "DEPEND_0"      CDF_CHAR       { "Epoch" }
- "DICT_KEY"      CDF_CHAR       { "density>ion_number" }
- "DISPLAY_TYPE"  CDF_CHAR       { "time_series" }
- "FIELDNAM"      CDF_CHAR       { "Ion Number Density (CPI/SWA)" }
- "FILLVAL"       CDF_REAL4      { -1.0e+31 }
- "FORMAT"        CDF_CHAR       { "f8.3" }
  "LABLAXIS"      CDF_CHAR       { "Ion N" }
  "UNITS"         CDF_CHAR       { "#/cc" }
+ "FORMAT"        CDF_CHAR       { "F8.3" }
  "VALIDMIN"      CDF_REAL4      { 0.01 }
  "VALIDMAX"      CDF_REAL4      { 1000.0 }
+ "FILLVAL"       CDF_REAL4      { -1.0e+31 }
+ "DISPLAY_TYPE"  CDF_CHAR       { "time_series" }
+ "DICT_KEY"      CDF_CHAR       { “SPASE>Particle>ParticleType:Ion," -
+                                  "ParticleQuantity:NumberDensity” }
  "VAR_NOTES"     CDF_CHAR       { "Assuming no helium (0.3 - several " - 
                                   "hundred) if the density is less than " -
                                   "0.3/cc the higher moments (VEL,TEMP) " - 
                                   "shall not be used because of the poor " - 
                                   "counting statistics." }
-
- "VAR_TYPE"      CDF_CHAR       { "data" }.
 ```
 
 
@@ -66,19 +66,22 @@ The example demonstrates a scalar **_data_** variable `SW_P_Den` displayed in [C
 ! Name            Type           Value
 ! --------        ----           -----
 
+ "VAR_TYPE"      CDF_CHAR      { "data" }.
  "FIELDNAM"      CDF_CHAR      { "B field in GSE coordinates (1 min)" }
- "VALIDMIN"      CDF_REAL4     { -65534.0 }
- "VALIDMAX"      CDF_REAL4     { 65534.0 }
- "UNITS"         CDF_CHAR      { "nT" }
- "DISPLAY_TYPE"  CDF_CHAR      { "time_series" }
- "FORMAT"        CDF_CHAR      { "E13.6" }
- "SCALETYP"      CDF_CHAR      { "linear" }
  "CATDESC"       CDF_CHAR      { "Magnetic field vector in GSE" - 
                                  "cartesian coordinates (1 min)" }
- "FILLVAL"       CDF_REAL4     { -1.0e+31 }
- "LABL_PTR_1"    CDF_CHAR      { "label_B_GSE" }
  "DEPEND_0"      CDF_CHAR      { "Epoch" }
- "VAR_TYPE"      CDF_CHAR      { "data" }.
+ "LABL_PTR_1"    CDF_CHAR      { "label_B_GSE" }
+ "UNITS"         CDF_CHAR      { "nT" }
+ "FORMAT"        CDF_CHAR      { "E13.6" }
+ "VALIDMIN"      CDF_REAL4     { -65534.0 }
+ "VALIDMAX"      CDF_REAL4     { 65534.0 }
+ "FILLVAL"       CDF_REAL4     { -1.0e+31 }
+ "SCALETYP"      CDF_CHAR      { "linear" }
+ "DISPLAY_TYPE"  CDF_CHAR      { "time_series" }
+ "DICT_KEY"      CDF_CHAR      { “SPASE>Field>FieldQuantity:Magnetic," - 
+                                 "Qualifier:Vector,CoordinateSystemName:GSM," -
+                                 "CoordinateRepresentation:Cartesian” }
 
 ```
 ### Example of 1-D Flux Variable
@@ -101,23 +104,25 @@ A 1-D **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies) is dis
 ! Name               Type            Value
 ! --------           ----            -----
 
+ "VAR_TYPE"         CDF_CHAR       { "data" }
  "FIELDNAM"         CDF_CHAR       { "Spin-avg Ion Diff Inten (EPIC/ICS)" }
  "CATDESC"          CDF_CHAR       { "Ion Diff. Intensity, at 12 energies " - 
                                      "67-1361 keV (EPIC/ICS)" }
- "VALIDMIN"         CDF_REAL4      { 1.000000e-04 }
- "VALIDMAX"         CDF_REAL4      { 1.000000e+10 }
- "SCALETYP"         CDF_CHAR       { "log" }
- "UNITS"            CDF_CHAR       { "1/[cm**2-s-sr-keV]" }
- "LABLAXIS"         CDF_CHAR       { "dJ/dE" }
- "FORMAT"           CDF_CHAR       { "E9.3" }
  "DEPEND_0"         CDF_CHAR       { "Epoch" }
  "DEPEND_1"         CDF_CHAR       { "IDiffI_I_Energy" }
+ "LABLAXIS"         CDF_CHAR       { "dJ/dE" }
+ "UNITS"            CDF_CHAR       { "1/[cm**2-s-sr-keV]" }
+ "FORMAT"           CDF_CHAR       { "E9.3" }
+ "VALIDMIN"         CDF_REAL4      { 1.000000e-04 }
+ "VALIDMAX"         CDF_REAL4      { 1.000000e+10 }
+ "FILLVAL"          CDF_REAL4      { -1.000000e+31 }
  "DELTA_PLUS_VAR"   CDF_CHAR       { "IDiffI_I_Uncert" }
  "DELTA_MINUS_VAR"  CDF_CHAR       { "IDiffI_I_Uncert" }
- "DICT_KEY"         CDF_CHAR       { "particle_flux>ion_differential" }
- "VAR_TYPE"         CDF_CHAR       { "data" }
- "FILLVAL"          CDF_REAL4      { -1.000000e+31 }
+ "SCALETYP"         CDF_CHAR       { "log" }
  "DISPLAY_TYPE"     CDF_CHAR       { "spectrogram" } .
+ "DICT_KEY"         CDF_CHAR       { "SPASE>Particle>ParticleType:Ion," - 
+                                     "ParticleQuantity:NumberFlux," -
+                                     "Qualifier:Differential_Vector" }
 
 ```
 
@@ -160,25 +165,27 @@ The z-axis (color bar) is labeled with selected values from the H+ angle label v
 ! Name                 Type            Value
 ! --------             ----            -----
 
+ "VAR_TYPE"           CDF_CHAR       { "data" }
  "FIELDNAM"           CDF_CHAR       { "H+ number flux" }
- "VALIDMAX"           CDF_REAL4      { 1.0e+08 }
- "UNITS"              CDF_CHAR       { "#/(cm^2-s-keV/e-sr)" }
- "FORMAT"             CDF_CHAR       { "e12.4" }
- "LABL_PTR_1"         CDF_CHAR       { "H_energy_of_flux" }
- "LABL_PTR_2"         CDF_CHAR       { "H_angle_of_flux" }
- "MONOTON"            CDF_CHAR       { "FALSE " }
- "FILLVAL"            CDF_REAL4      { -1.0e+31 }
  "CATDESC"            CDF_CHAR       { "H+ number flux for for 28 energy and " - 
                                        "3 selected angle bins." }
- "VAR_TYPE"           CDF_CHAR       { "data" }
- "DICT_KEY"           CDF_CHAR       { "particle_flux>number_species_proton" }
  "DEPEND_0"           CDF_CHAR       { "Epoch_H" }
  "DEPEND_1"           CDF_CHAR       { "energy" }
  "DEPEND_2"           CDF_CHAR       { "angle" }
+ "LABL_PTR_1"         CDF_CHAR       { "H_energy_of_flux" }
+ "LABL_PTR_2"         CDF_CHAR       { "H_angle_of_flux" }
+ "UNITS"              CDF_CHAR       { "#/(cm^2-s-keV/e-sr)" }
+ "FORMAT"             CDF_CHAR       { "E12.4" }
+ "VALIDMIN"           CDF_REAL4      { 0.0 }
+ "VALIDMAX"           CDF_REAL4      { 1.0e+08 }
+ "FILLVAL"            CDF_REAL4      { -1.0e+31 }
  "AVG_TYPE"           CDF_CHAR       { "standard" }
+ "SCALETYP"           CDF_CHAR       { "log" }
  "DISPLAY_TYPE"       CDF_CHAR       { "spectrogram>y=energy,z=Flux_H(*,1),z=" -  
                                        "Flux_H(*,7),z=Flux_H(*,12)" }
- "SCALETYP"           CDF_CHAR       { "log" }
+ "DICT_KEY"           CDF_CHAR       { "SPASE>Particle>ParticleType:Proton," - 
+                                       "ParticleQuantity:NumberFlux," -
+                                       "Qualifier:Differential_Array" }
  "VAR_NOTES"          CDF_CHAR       { "Negative values reflect low counting " - 
                                        "rates and background subtraction. " } .
 
@@ -217,20 +224,20 @@ The first example below demonstrates a **_support_data_** variable `Epoch` of CD
 ! Name               Type             Value
 ! --------           ----             -----
 
+ "VAR_TYPE"         CDF_CHAR        { "support_data" }
+ "FIELDNAM"         CDF_CHAR        { "Time since J2000" }
  "CATDESC"          CDF_CHAR        { "Time, number of nanoseconds since " -
                                       "J2000 with leap seconds included" }
- "FIELDNAM"         CDF_CHAR        { "Time since J2000" }
- "FILLVAL"          CDF_TIME_TT2000 { 9999-12-31T23:59:59.999999999 }
  "LABLAXIS"         CDF_CHAR        { "Epoch" }
  "UNITS"            CDF_CHAR        { "ns" }
  "VALIDMIN"         CDF_TIME_TT2000 { 2010-01-01T00:00:00.000000000 }
  "VALIDMAX"         CDF_TIME_TT2000 { 2029-12-31T23:59:58.999000000 }
- "VAR_TYPE"         CDF_CHAR        { "support_data" }
+ "FILLVAL"          CDF_TIME_TT2000 { 9999-12-31T23:59:59.999999999 }
  "SCALETYP"         CDF_CHAR        { "linear" }
  "MONOTON"          CDF_CHAR        { "INCREASE" }
- "DICT_KEY"         CDF_CHAR        { "time>Epoch" }
  "TIME_BASE"        CDF_CHAR        { "J2000" }
  "TIME_SCALE"       CDF_CHAR        { "Terrestrial Time" }.
+ "DICT_KEY"         CDF_CHAR        { "SPASE>Support>SupportQuantity:Temporal" }
 
 ```
 
@@ -246,18 +253,18 @@ In the second example, a **_support_data_** variable `Epoch` is of CDF_EPOCH dat
 ! Name                Type               Value
 ! --------            ----               -----
 
+ "VAR_TYPE"          CDF_CHAR          { "support_data" }
+ "FIELDNAM"          CDF_CHAR          { "Time since 0 AD" }
  "CATDESC"           CDF_CHAR          { "Interval centered time tag rounded to " -
                                          "nearest msecond "}
- "FIELDNAM"          CDF_CHAR          { "Time since 0 AD" }
- "VALIDMIN"          CDF_EPOCH         { 01-Jan-1994 00:00:00.000 }
- "VALIDMAX"          CDF_EPOCH         { 01-Jan-2020 00:00:00.000 }
  "LABLAXIS"          CDF_CHAR          { "Epoch" }
  "UNITS"             CDF_CHAR          { "ms" }
- "FILLVAL"           CDF_REAL8         { -1.0e+31 }
- "VAR_TYPE"          CDF_CHAR          { "support_data" }
- "DICT_KEY"          CDF_CHAR          { "time>Epoch" }
+ "VALIDMIN"          CDF_EPOCH         { 01-Jan-1994 00:00:00.000 }
+ "VALIDMAX"          CDF_EPOCH         { 01-Jan-2020 00:00:00.000 }
+ "FILLVAL"           CDF_EPOCH         { 31-Dec-9999 23:59:59.999 }
  "SCALETYP"          CDF_CHAR          { "linear" }
  "MONOTON"           CDF_CHAR          { "INCREASE" }.
+ "DICT_KEY"          CDF_CHAR          { "SPASE>Support>SupportQuantity:Temporal" }
 ```
 
 ### Example of 1-D Energy Variable
@@ -275,20 +282,21 @@ This example show definition of a time-varying 1-D (size 12) **_support_data_** 
 ! Name                 Type           Value
 ! --------             ----           -----
 
+ "VAR_TYPE"           CDF_CHAR      { "support_data" }.
+ "FIELDNAM"           CDF_CHAR      { "Ion Energy (EPIC/ICS)" }
  "CATDESC"            CDF_CHAR      { "Ion Energy, at 12 channels energies " -
                                       "67-1361 keV (EPIC/ICS) " }
- "DELTA_PLUS_VAR"     CDF_CHAR      { "IDiffI_I_Eplus" }
- "DELTA_MINUS_VAR"    CDF_CHAR      { "IDiffI_I_Eminus" }
  "DEPEND_0"           CDF_CHAR      { "Epoch" }
- "DICT_KEY"           CDF_CHAR      { "energy>ion" }
- "FIELDNAM"           CDF_CHAR      { "Ion Energy (EPIC/ICS)" }
- "FILLVAL"            CDF_REAL4     { -1.000000e+31 }
- "FORMAT"             CDF_CHAR      { "F7.1" }
  "LABLAXIS"           CDF_CHAR      { "Ion Energy" }
  "UNITS"              CDF_CHAR      { "keV" }
+ "FORMAT"             CDF_CHAR      { "F7.1" }
  "VALIDMIN"           CDF_REAL4     { 67.3 }
  "VALIDMAX"           CDF_REAL4     { 1361.0 }
- "VAR_TYPE"           CDF_CHAR      { "support_data" }.
+ "FILLVAL"            CDF_REAL4     { -1.000000e+31 }
+ "DELTA_PLUS_VAR"     CDF_CHAR      { "IDiffI_I_Eplus" }
+ "DELTA_MINUS_VAR"    CDF_CHAR      { "IDiffI_I_Eminus" }
+ "DICT_KEY"           CDF_CHAR      { "SPASE>Particle>ParticleType:Ion," - 
+                                      "ParticleQuantity:Energy" }
 
 ```
 ## Metadata Variables
@@ -308,10 +316,10 @@ This 1-D (size 3) **_metadata_** variable `label_B_GSE` holds three strings for 
 ! Name              Type          Value
 ! --------          ----          -----
 
- "CATDESC"         CDF_CHAR     { "Label cartesian B" }
- "FIELDNAM"        CDF_CHAR     { "Label cartesian B" }
- "FORMAT"          CDF_CHAR     { "A6" }
  "VAR_TYPE"        CDF_CHAR     { "metadata" }.
+ "FIELDNAM"        CDF_CHAR     { "Label cartesian B" }
+ "CATDESC"         CDF_CHAR     { "Label cartesian B" }
+ "FORMAT"          CDF_CHAR     { "A6" }
 
  ! NRV values follow...
 
@@ -336,20 +344,18 @@ To describe the time components, `time_pb5` has three attached **_metadata_** va
 ! Name            Type         Value
 ! --------        ----         -----
 
+"VAR_TYPE"       CDF_CHAR     { "support_data" }
+"FIELDNAM"       CDF_CHAR     { "Time PB5" }
 "CATDESC"        CDF_CHAR     { "Time of observation in Year, Day, & " -
                                  "milliseconds" }
 "DEPEND_0"       CDF_CHAR     { "epoch_1hr" }
-"DICT_KEY"       CDF_CHAR     { "time>pb5" }
-"FIELDNAM"       CDF_CHAR     { "Time PB5" }
-"FILLVAL"        CDF_INT4     { -2147483648 }
 "LABL_PTR_1"     CDF_CHAR     { "label_time" }
-"MONOTON"        CDF_CHAR     { "INCREASE" }
 "UNIT_PTR"       CDF_CHAR     { "unit_time" }
+"FORM_PTR"       CDF_CHAR     { "format_time" } .
 "VALIDMIN"       CDF_INT4     { 1997, 237, 0 }
 "VALIDMAX"       CDF_INT4     { 2030, 365, 0 }
-"VAR_TYPE"       CDF_CHAR     { "support_data" }
-"SCALETYP"       CDF_CHAR     { "linear" }
-"FORM_PTR"       CDF_CHAR     { "format_time" } .
+"FILLVAL"        CDF_INT4     { -2147483648 }
+"DICT_KEY"       CDF_CHAR     { "SPASE>Support>SupportQuantity:Temporal" }
 ```
 
 ### Examples of Time_PB5 Related Variables
@@ -368,11 +374,10 @@ Variable `label_time` (attached to the `time_pb5` variable via its `LABL_PTR_1` 
 ! Name             Type          Value
 ! --------         ----          -----
 
- "CATDESC"        CDF_CHAR     { "Label for Time_PB5" }
- "DICT_KEY"       CDF_CHAR     { "label" }
- "FIELDNAM"       CDF_CHAR     { "Label for Time_PB5" }
- "FORMAT"         CDF_CHAR     { "A28" }
  "VAR_TYPE"       CDF_CHAR     { "metadata" } .
+ "FIELDNAM"       CDF_CHAR     { "Label for Time_PB5" }
+ "CATDESC"        CDF_CHAR     { "Label for Time_PB5" }
+ "FORMAT"         CDF_CHAR     { "A28" }
 
   ! NRV values follow...
 
@@ -392,11 +397,10 @@ Variable `unit_time` (attached to the `time_pb5` variable via its `UNIT_PTR` att
 ! Name             Type          Value
 ! --------         ----          -----
 
-"CATDESC"         CDF_CHAR     { "Units for Time_PB5" }
-"DICT_KEY"        CDF_CHAR     { "label" }
-"FIELDNAM"        CDF_CHAR     { "Units for Time_PB5" }
-"FORMAT"          CDF_CHAR     { "A4" }
 "VAR_TYPE"        CDF_CHAR     { "metadata" } .
+"FIELDNAM"        CDF_CHAR     { "Units for Time_PB5" }
+"CATDESC"         CDF_CHAR     { "Units for Time_PB5" }
+"FORMAT"          CDF_CHAR     { "A4" }
 
   ! NRV values follow...
 
@@ -416,11 +420,10 @@ Variable `format_time` (attached to the `time_pb5` variable via its `FORM_PTR` a
 ! Name             Type          Value
 ! --------         ----          -----
 
-"CATDESC"         CDF_CHAR     { "Format for Time_PB5" }
-"DICT_KEY"        CDF_CHAR     { "label" }
-"FIELDNAM"        CDF_CHAR     { "Format for Time_PB5" }
-"FORMAT"          CDF_CHAR     { "A2" }
 "VAR_TYPE"        CDF_CHAR     { "metadata" } .
+"FIELDNAM"        CDF_CHAR     { "Format for Time_PB5" }
+"CATDESC"         CDF_CHAR     { "Format for Time_PB5" }
+"FORMAT"          CDF_CHAR     { "A2" }
 
   ! NRV values follow...
 

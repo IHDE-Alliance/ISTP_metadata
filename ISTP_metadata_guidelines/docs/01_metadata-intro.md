@@ -48,7 +48,7 @@ The overall purpose for the dataset and its connections to the missions, instrum
 
 And the consequent CDAWeb pages use global attributes:
 
-- [`Logical_source`](./03_metadata-global-attributes.md#logical_source) - dataset ID, combination of short names in global attributes: [`Source_name`](./03_metadata-global-attributes.md#source_name) (mission name), [`Descripton`](./03_metadata-global-attributes.md#descriptor) (instrument name), and [`Data_type`](./03_metadata-global-attributes.md#data_type) (dataset type).
+- [`Logical_source`](./03_metadata-global-attributes.md#logical_source) - dataset ID, combination of short names in global attributes: [`Source_name`](./03_metadata-global-attributes.md#source_name) (mission name), [`Descriptor`](./03_metadata-global-attributes.md#descriptor) (instrument name), and [`Data_type`](./03_metadata-global-attributes.md#data_type) (dataset type).
 - [`Logical_source_description`](./03_metadata-global-attributes.md#logical_source_description) - dataset full name.
 - [`PI_name`](./03_metadata-global-attributes.md#pi_name) and [`PI_affiliation`](./03_metadata-global-attributes.md#pi_affiliation)- lead person, usually Principal Investigator (PI), and their affiliation.
 - [`LINK_TEXT`, `LINK_TITLE`, `HTTP_LINK`](./03_metadata-global-attributes.md#link_text-link_title-http_link) -  links to the related and useful resources and documents.

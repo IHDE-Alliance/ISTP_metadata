@@ -53,4 +53,4 @@ Datasets can have multiple time variables, with some variables depending on one 
 ---
 This FAQ used as a template the one at the [CF Conventions](https://github.com/cf-convention/cf-convention.github.io).
 
-Return to [Table of Contents](../README.md)
+Return to [Table of Contents](../../README.md)

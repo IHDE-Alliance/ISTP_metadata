@@ -184,6 +184,6 @@
 `TIME_MIN`  &mdash; The date and time of the beginning of the first acquisition for the data contained in the file.
 
 ---
-Return to [Table of Contents](../README.md)
+Return to [Table of Contents](../../README.md)
 
 

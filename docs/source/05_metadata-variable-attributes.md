@@ -297,4 +297,4 @@ limits). Visualization software can use these attributes for indicating limits o
 (**_Optional for data. For use with derived variables_**.) Points to a **_metadata_** variable which stores the parent variables (including variables from different files/datasets) of a derived variable. The pointed to variable can be dimensional and sized to hold as many parents as necessary. The syntax of each value would be a string in the form `Logical_file_id>variable_name`.
 
 ---
-Return to [Table of Contents](../README.md)
+Return to [Table of Contents](../../README.md)

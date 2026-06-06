@@ -43,7 +43,7 @@ General guidelines for defining a dataset may include answering the following qu
 The overall purpose for the dataset and its connections to the missions, instruments, people, and organizations are provided in the [Global Attributes](./03_metadata-global-attributes.md). For example, the [CDAWeb](https://cdaweb.gsfc.nasa.gov/) home page uses global attributes [`Mission_group`](./03_metadata-global-attributes.md#mission_group) and [`Instrument_type`](./03_metadata-global-attributes.md#instrument_type) (combination of instrument type and observed region) as a simple dataset filtering for quick dataset selection.
 
 <p align="center">
-    <img width=650 src="./_images/CDAWeb_main_page.png"/>
+    <img width=650 src="./_static/CDAWeb_main_page.png"/>
 </p>
 
 And the consequent CDAWeb pages use global attributes:
@@ -58,7 +58,7 @@ And the consequent CDAWeb pages use global attributes:
 
 
 <p align="center">
-    <img width=650 src="./_images/CDAWeb_variable_selection.png"/>
+    <img width=650 src="./_static/CDAWeb_variable_selection.png"/>
 </p>
 
 The data structure and relationships are captured in each variable structure and [Variable Attributes](./05_metadata-variable-attributes.md). The relationships should be logically structured, machine-readable, and available for general-purpose codes to understand. In particular, the following variable attributes are often required for automated processing:
@@ -81,10 +81,10 @@ The data structure and relationships are captured in each variable structure and
 The example below shows how the attributes of a time-varying 2-D proton flux variable (`VAR_TYPE="data"`) that depends on energy and angle variables (both 1-D `VAR_TYPE="support_data"`) are used to automatically plot the data as a set of spectrograms:
 
 <p align="center">
-    <img width=650 src="./_images/2d_spectrogram_1.gif"/>
+    <img width=650 src="./_static/2d_spectrogram_1.gif"/>
 </p>
 
 
 
 ---
-Return to [Table of Contents](../README.md)
+Return to [Table of Contents](../../README.md)

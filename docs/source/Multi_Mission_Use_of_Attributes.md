@@ -56,4 +56,4 @@
 | [`DELTA_MINUS_VAR`, `DELTA_PLUS_VAR`](./05_metadata-variable-attributes.md#delta_plus_var-delta_minus_var)  | O | M |  R | M | | M | |
 
 ---
-Return to [Table of Contents](../README.md)
+Return to [Table of Contents](../../README.md)

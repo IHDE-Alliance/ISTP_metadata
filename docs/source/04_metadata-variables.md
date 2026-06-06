@@ -10,7 +10,7 @@ ISTP Guidelines divide all variables into three types, identified by the value o
 Examples of **_data_** and **_support_data_** variables commonly found in ISTP datasets are shown below. They are mapped to their corresponding dimensions and sizes in CDF format (and could be in netCDF-4 and other structured file formats).
 
 <p align="center">
-    <img width=550 src="./_images/CDF_Planning.gif"/>
+    <img width=550 src="./_static/CDF_Planning.gif"/>
 </p>
 
 - `DENSITY` and `TEMPERATURE` (**_data_**) are scalars; in CDF format they are associated with zero dimensions and no size. **Note** that in CDF format, time is associated with record (one record per timestamp), which is separate from variable dimensions.
@@ -133,4 +133,4 @@ Flag would also be included in each KP record. This I*4 Flag is included in ever
 A variable similar to this is recommended for inclusion in CDFs to indicate real and substantial data gaps. The detailed definition of this flag should appear in the CDF metadata in the `VAR_NOTES` attribute.
 
 ---
-Return to [Table of Contents](../README.md)
+Return to [Table of Contents](../../README.md)

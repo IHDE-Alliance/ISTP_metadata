@@ -17,16 +17,18 @@ International Solar-Terrestrial Physics (ISTP) Metadata Guidelines for describin
    source/06_metadata-keywords
    source/filenaming-dataset-naming-recommendations
 
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
 
-   Appendix A. Variable Examples <source/07_example-variables>
-   Appendix B. Skeleton Table Examples <source/08_example-skeletontables>
-   Appendix C. Multi-Mission Use of ISTP Attributes <source/Multi_Mission_Use_of_Attributes>
-   Appendix D. Non-ISTP Mission Global Attributes <source/Non-ISTP-Mission-Global-Attributes>
-   Appendix E. Non-ISTP Mission Variable Attributes <source/Non-ISTP-Mission-Variable-Attributes>
-   Appendix F. Best Practices <source/best-practices>
-   Appendix G. Frequently Asked Questions (FAQ) <source/faq>
+.. only:: html
+   .. toctree::
+      :maxdepth: 1
+      :titlesonly:
+
+      Appendix A. Variable Examples <source/07_example-variables>
+      Appendix B. Skeleton Table Examples <source/08_example-skeletontables>
+      Appendix C. Multi-Mission Use of ISTP Attributes <source/Multi_Mission_Use_of_Attributes>
+      Appendix D. Non-ISTP Mission Global Attributes <source/Non-ISTP-Mission-Global-Attributes>
+      Appendix E. Non-ISTP Mission Variable Attributes <source/Non-ISTP-Mission-Variable-Attributes>
+      Appendix F. Best Practices <source/best-practices>
+      Appendix G. Frequently Asked Questions (FAQ) <source/faq>
 
 

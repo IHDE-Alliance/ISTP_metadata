@@ -80,7 +80,7 @@ html_static_path = ["source/_static"]
 intersphinx_disabled_reftypes = ["*"]
 
 
-# Handle appedices in PDF correctly
+# Handle appendices in PDF correctly
 # 1. Register your appendix document names (omit the extension)
 latex_appendices = ["source/07_example-variables", "source/08_example-skeletontables", "source/Multi_Mission_Use_of_Attributes", "source/Non-ISTP-Mission-Global-Attributes", "source/Non-ISTP-Mission-Variable-Attributes", "source/best-practices", "source/faq"]
 
@@ -90,42 +90,14 @@ latex_elements = {
 }
 
 
-# Custom slug function to preserve underscores in markdown header links
-from docutils import nodes
-from sphinx.transforms import SphinxTransform
+# Configure Sphinx to clone GitHub's exact header-slug behaviour
+myst_heading_anchors = 3 # Enable auto-generation for headers up to level 3
 
-class DynamicIdRestorer(SphinxTransform):
-    """Restores underscores to section IDs ONLY if they were present in the source heading."""
 
-    # Run early in translation
-    default_priority = 100
+# MyST-Parser extensions
+myst_enable_extensions = [
+    "html_image",  # Enables HTML tags in Read the Docs
+]
 
-    def apply(self):
-        # Scan every section in the document
-        for node in self.document.findall(nodes.section):
-            if "ids" in node:
-                # Extract the actual raw heading string (e.g., "unit_ptr" or "some-hyphen")
-                raw_title_text = node.astext().strip().lower()
 
-                # If the raw title specifically contains an underscore, we fix the ID
-                if "_" in raw_title_text:
-                    new_ids = []
-                    for node_id in node["ids"]:
-                        # If Docutils made it "unit-ptr", but title has "unit_ptr", swap it
-                        fixed_id = node_id.replace("-", "_")
 
-                        # Double check against the source text to ensure validity
-                        if fixed_id in raw_title_text or fixed_id.replace(
-                            "_", ""
-                        ) in raw_title_text.replace("_", ""):
-                            new_ids.append(fixed_id)
-                        else:
-                            new_ids.append(
-                                node_id
-                            )  # Keep original if it doesn't match match layout
-
-                    node["ids"] = new_ids
-
-# Register the smart transform with Sphinx
-def setup(app):
-    app.add_transform(DynamicIdRestorer)

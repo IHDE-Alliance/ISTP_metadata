@@ -82,41 +82,52 @@ intersphinx_disabled_reftypes = ["*"]
 
 
 # Custom slug function to preserve underscores in markdown header links
+
+import re
 from docutils import nodes
 from sphinx.transforms import SphinxTransform
 
-class DynamicIdRestorer(SphinxTransform):
-    """Restores underscores to section IDs ONLY if they were present in the source heading."""
+class MultiUnderscoreIdRestorer(SphinxTransform):
+    """Restores underscores to section IDs, fully supporting multiple consecutive underscores."""
 
-    # Run early in translation
     default_priority = 100
 
     def apply(self):
-        # Scan every section in the document
         for node in self.document.findall(nodes.section):
             if "ids" in node:
-                # Extract the actual raw heading string (e.g., "unit_ptr" or "some-hyphen")
-                raw_title_text = node.astext().strip().lower()
+                # Get the raw text of the markdown heading
+                raw_title = node.astext().strip().lower()
 
-                # If the raw title specifically contains an underscore, we fix the ID
-                if "_" in raw_title_text:
-                    new_ids = []
-                    for node_id in node["ids"]:
-                        # If Docutils made it "unit-ptr", but title has "unit_ptr", swap it
-                        fixed_id = node_id.replace("-", "_")
+                # If there are no underscores in the actual heading text, skip it completely
+                if "_" not in raw_title:
+                    continue
 
-                        # Double check against the source text to ensure validity
-                        if fixed_id in raw_title_text or fixed_id.replace(
-                            "_", ""
-                        ) in raw_title_text.replace("_", ""):
-                            new_ids.append(fixed_id)
-                        else:
-                            new_ids.append(
-                                node_id
-                            )  # Keep original if it doesn't match match layout
+                new_ids = []
+                for node_id in node["ids"]:
+                    # Create an underscore-substituted version of the ID
+                    fixed_id = node_id.replace("-", "_")
 
-                    node["ids"] = new_ids
+                    # Strip special characters from both to create a baseline check
+                    clean_title = "".join(
+                        c for c in raw_title if c.isalnum() or c in ("_", "-")
+                    )
+                    clean_fixed_id = "".join(
+                        c for c in fixed_id if c.isalnum() or c in ("_", "-")
+                    )
 
-# Register the smart transform with Sphinx
+                    # Build a flexible regex sequence where hyphens match any boundary separator
+                    # This safely links "a-b-c" (from Docutils) directly back to "a_b_c"
+                    pattern = re.sub(r"[_\-]+", ".*", clean_fixed_id)
+
+                    if re.search(pattern, clean_title) or clean_fixed_id in clean_title:
+                        new_ids.append(fixed_id)
+                    else:
+                        new_ids.append(
+                            node_id
+                        )  # Fallback to the original hyphen id if it's a mismatch
+
+                node["ids"] = new_ids
+
+# Register with Sphinx
 def setup(app):
-    app.add_transform(DynamicIdRestorer)
+    app.add_transform(MultiUnderscoreIdRestorer)

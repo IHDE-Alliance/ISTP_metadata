@@ -70,6 +70,16 @@ source_suffix = {
 html_theme = "alabaster"
 
 
+# Show pointer to GitHub repository
+html_theme_options = {
+    'github_user': 'IHDE-Alliance',
+    'github_repo': 'ISTP_metadata',
+    'github_button': True,
+    'github_type': 'star',
+    'github_banner': True,
+}
+
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -96,8 +106,7 @@ myst_heading_anchors = 3 # Enable auto-generation for headers up to level 3
 
 # MyST-Parser extensions
 myst_enable_extensions = [
-    "html_image",  # Enables HTML tags in Read the Docs
+    "html_image",  # Enables correct handling of <img> tags
 ]
-
 
 

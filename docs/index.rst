@@ -19,6 +19,7 @@ International Solar-Terrestrial Physics (ISTP) Metadata Guidelines for describin
 
 
 .. only:: html
+
    .. toctree::
       :maxdepth: 1
       :titlesonly:

@@ -7,9 +7,7 @@
 
 The example demonstrates a scalar **_data_** variable `SW_P_Den` displayed in [CDAWeb](https://cdaweb.gsfc.nasa.gov/) as a time series (`DISPLAY_TYPE = "time_series"`) and its corresponding definition as it appears in a CDF Skeleton table. All required and some recommended variable attributes are included. On the corresponding plot, the y-axis labels come from the variable attributes `LABLAXIS` and `UNITS`. The x-axis is defined by the **_support_data_** variable `Epoch` (time, [see examples here](#examples-of-epoch-variables)) attached  via `SW_P_Den` variable's `DEPEND_0` attribute. Since `SW_P_Den` is a 0-dimensional variable, it does not require any other `DEPEND_i` attributes.
 
-<p align="center">
-    <img width=500 src="./_static/scalar.gif"/>
-</p>
+<img width=550 src="./_static/scalar.gif"/>
 
 
 ```
@@ -50,9 +48,7 @@ The example demonstrates a scalar **_data_** variable `SW_P_Den` displayed in [C
 
 **_Data_** variable `BGSE` (Vector Magnetic Field) is displayed as time series plots (`DISPLAY_TYPE = "time_series"`), one for each vector component. The vector variable does not need `DEPEND_1` attribute since it does not depend on any additional numerical data. The x-axis is defined by the **_support_data_** variable `Epoch` (time) attached via `BGSE` variable's `DEPEND_0` attribute. The y-axis labels come from two places: (1) [`"Bx GSE"`, `"By GSE"`, `"Bz GSE"`] array of strings (labeled in blue) from the **_metadata_** variable `label_B_GSE` ([described here](#example-of-magnetic-field-label-variable)) which is attached to `BGSE` via the `LABL_PTR_1` attribute and (2) `"nT"` from the `UNITS` attribute. Note that if each vector component requires distinct unit or format string, instead of using `UNITS` and `FORMAT` attributes, the string arrays must be provided in separate **_metadata_** variables attached to the **_data_** variable via `UNIT_PTR` and `FORM_PTR` attributes. 
 
-<p align="center">
-    <img width=550 src="./_static/1d_time_series.gif"/>
-</p>
+<img width=600 src="./_static/1d_time_series.gif"/>
 
 
 ```
@@ -88,9 +84,7 @@ The example demonstrates a scalar **_data_** variable `SW_P_Den` displayed in [C
 
 A 1-D **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies) is displayed as a spectrogram (`DISPLAY_TYPE = "spectrogram"`). The z-axis labels come from variable attributes `LABLAXIS` and `UNITS`. The y-axis labels (labeled in green) come from the  energy variable `IDiffI_I_Energy` (**_support_data_**, [described here](#example-of-1-d-energy-variable)) attached to `IDiffI_I` via the `DEPEND_1` attribute, specifically the `LABLAXIS` (or `FIELDNAM`) and `UNITS` of the energy variable. The x-axis is defined by the **_support_data_** variable `Epoch` (time) attached via `DEPEND_0` attribute.
 
-<p align="center">
-    <img width=600 src="./_static/1d_spectrogram.gif"/>
-</p>
+<img width=650 src="./_static/1d_spectrogram.gif"/>
 
 
 ```
@@ -128,9 +122,7 @@ A 1-D **_data_** variable `IDiffI_I` (Ion Diff. Intensity at 12 energies) is dis
 
 As an alternative to spectrogram, stack plot (`DISPLAY_TYPE = "stack_plot"`) also displays all 1-D data on a single plot. The following plot shows an Electron Flux variable at 7 energies displayed as a stack plot. As opposed to spectrogram, the y-axis labels come from variable attributes `LABLAXIS` and `UNITS`. The z-axis labels (labeled in green) come from the energy variable attached to the Electron Flux variable via the `DEPEND_1` attribute, specifically the `LABLAXIS` (or `FIELDNAM`) and `UNITS` of the energy variable. The x-axis is defined by the **_support_data_** variable `Epoch` (time) attached via `DEPEND_0` attribute.
 
-<p align="center">
-    <img width=600 src="./_static/1d_stack.gif"/>
-</p>
+<img width=650 src="./_static/1d_stack.gif"/>
 
 
 ### Example of 2-D Flux Variable
@@ -149,9 +141,7 @@ The z-axis (color bar) is labeled with selected values from the H+ angle label v
 
 
 
-<p align="center">
-    <img width=600 src="./_static/2d_spectrogram_1.gif"/>
-</p>
+<img width=650 src="./_static/2d_spectrogram_1.gif"/>
 
 
 ```
@@ -197,11 +187,7 @@ The three selected energy bins appear as separate panels. The `angle` (**_suppor
 
 The z-axis (color bar) is labeled with selected values from the H+ energy label variable `H_energy_of_flux` (**_metadata_**) that is attached to the **_data_** variable via the `LABL_PTR_1` attribute. The z-axis units come from the `Flux_H` (**_data_**) variable's `UNITS` attributes.
 
-<p align="center">
-    <img width=600 src="./_static/2d_spectrogram_2.gif"/>
-</p>
-
-
+<img width=650 src="./_static/2d_spectrogram_2.gif"/>
 
 
 

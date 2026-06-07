@@ -82,7 +82,7 @@ intersphinx_disabled_reftypes = ["*"]
 
 # Handle appedices in PDF correctly
 # 1. Register your appendix document names (omit the extension)
-latex_appendices = ['appendix_a', 'appendix_b']
+latex_appendices = ["source/07_example-variables", "source/08_example-skeletontables", "source/Multi_Mission_Use_of_Attributes", "source/Non-ISTP-Mission-Global-Attributes", "source/Non-ISTP-Mission-Variable-Attributes", "source/best-practices", "source/faq"]
 
 # 2. Prevent the fncychap package from rendering "Chapter X" headers over appendices
 latex_elements = {

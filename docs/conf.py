@@ -82,52 +82,61 @@ intersphinx_disabled_reftypes = ["*"]
 
 
 # Custom slug function to preserve underscores in markdown header links
-
 import re
 from docutils import nodes
 from sphinx.transforms import SphinxTransform
 
-class MultiUnderscoreIdRestorer(SphinxTransform):
-    """Restores underscores to section IDs, fully supporting multiple consecutive underscores."""
+class PreciseIdRestorer(SphinxTransform):
+    """Reconstructs section IDs directly from source text to respect mixed underscores and hyphens."""
 
     default_priority = 100
 
     def apply(self):
         for node in self.document.findall(nodes.section):
             if "ids" in node:
-                # Get the raw text of the markdown heading
+                # 1. Get raw heading text (e.g., "delta_plus-delta_minus")
                 raw_title = node.astext().strip().lower()
 
-                # If there are no underscores in the actual heading text, skip it completely
+                # If there are no underscores anywhere in the text, let Docutils handle it safely
                 if "_" not in raw_title:
                     continue
 
+                # 2. Reconstruct the ideal slug directly from the source text
+                # Replace spaces/whitespace sequences with hyphens (standard web practice)
+                ideal_slug = re.sub(r"\s+", "-", raw_title)
+
+                # Strip out everything except alphanumerics, underscores, and hyphens
+                # (This removes punctuation like ?, !, commas, etc.)
+                ideal_slug = "".join(
+                    c for c in ideal_slug if c.isalnum() or c in ("_", "-")
+                )
+
+                # Clean up any accidental double hyphens/underscores caused by punctuation removal
+                ideal_slug = re.sub(r"-+", "-", ideal_slug)
+                ideal_slug = re.sub(r"_+", "_", ideal_slug)
+                ideal_slug = ideal_slug.strip("-_")
+
+                if not ideal_slug:
+                    continue
+
+                # 3. Update the node IDs matching this pattern
                 new_ids = []
                 for node_id in node["ids"]:
-                    # Create an underscore-substituted version of the ID
-                    fixed_id = node_id.replace("-", "_")
-
-                    # Strip special characters from both to create a baseline check
-                    clean_title = "".join(
-                        c for c in raw_title if c.isalnum() or c in ("_", "-")
-                    )
-                    clean_fixed_id = "".join(
-                        c for c in fixed_id if c.isalnum() or c in ("_", "-")
-                    )
-
-                    # Build a flexible regex sequence where hyphens match any boundary separator
-                    # This safely links "a-b-c" (from Docutils) directly back to "a_b_c"
-                    pattern = re.sub(r"[_\-]+", ".*", clean_fixed_id)
-
-                    if re.search(pattern, clean_title) or clean_fixed_id in clean_title:
-                        new_ids.append(fixed_id)
+                    # If this is the main auto-generated ID or a numerical variant (e.g. -1, -2)
+                    # We match it to our ideal layout
+                    if node_id.startswith(
+                        ideal_slug.replace("_", "-").replace("-", "-")
+                    ):
+                        # Preserve suffix numbers if Docutils added uniqueness markers (like delta-plus-1)
+                        suffix = node_id[
+                            len(ideal_slug.replace("_", "-")) :
+                        ]  # Capture any trailing numbers
+                        new_ids.append(f"{ideal_slug}{suffix}")
                     else:
-                        new_ids.append(
-                            node_id
-                        )  # Fallback to the original hyphen id if it's a mismatch
+                        new_ids.append(node_id)
 
                 node["ids"] = new_ids
 
-# Register with Sphinx
+# Register the updated transform with Sphinx
 def setup(app):
-    app.add_transform(MultiUnderscoreIdRestorer)
+    app.add_transform(PrecerveIdRestorer if "PrecerveIdRestorer" in locals() else PreciseIdRestorer)

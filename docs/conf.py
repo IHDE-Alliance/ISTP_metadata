@@ -80,4 +80,4 @@ html_static_path = ["source/_static"]
 myst_heading_slug_func = lambda text: text.lower().replace(" ", "-")
 
 # Prevent Intersphinx from hijacking local Markdown/unresolved references
-intersphinx_disabled_reftypes = ["*"]
+# intersphinx_disabled_reftypes = ["*"]

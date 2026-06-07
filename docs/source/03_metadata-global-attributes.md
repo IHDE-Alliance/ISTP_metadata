@@ -50,7 +50,7 @@ All ISTP global attributes are of character data type (CDF_CHAR) in the CDF file
 ### Acknowledgement
 (**_Recommended_**.) Specifies the expected acknowledgement text if the dataset is cited.
 
-## ADID_ref
+### ADID_ref
 (**_No longer relevant_**.) This attribute stores the control authority identifier associated with the detached SFDU label. If no control authority identifier has been assigned, then the identifier associated with the ISTP/IACG Guidelines (NSSD0241) or with CDF (NSSD0110) can be used.
 
 ### Data_processing_level

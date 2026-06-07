@@ -62,8 +62,8 @@ source_suffix = {
     ".md": "markdown",
 }
 
-# -- Options for HTML output -------------------------------------------------
 
+# -- Options for HTML output -------------------------------------------------
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
@@ -79,6 +79,15 @@ html_static_path = ["source/_static"]
 # Prevent Intersphinx from hijacking local Markdown/unresolved references
 intersphinx_disabled_reftypes = ["*"]
 
+
+# Handle appedices in PDF correctly
+# 1. Register your appendix document names (omit the extension)
+latex_appendices = ['appendix_a', 'appendix_b']
+
+# 2. Prevent the fncychap package from rendering "Chapter X" headers over appendices
+latex_elements = {
+    'fncychap': '',  # Disables the default fancy chapter heading behavior
+}
 
 
 # Custom slug function to preserve underscores in markdown header links

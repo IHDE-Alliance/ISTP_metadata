@@ -77,7 +77,18 @@ html_static_path = ["source/_static"]
 
 
 # Custom slug function to preserve underscores in markdown header links
-myst_heading_slug_func = "myst_helpers.preserve_underscores"
+def preserve_underscores_slugifier(text: str) -> str:
+    """Custom slugify function to keep underscores instead of hyphens."""
+    # Convert to lowercase
+    slug = text.lower()
+    # Replace spaces with underscores
+    slug = slug.replace(" ", "_")
+    # Strip out common punctuation except underscores and hyphens
+    slug = "".join(c for c in slug if c.isalnum() or c in ("_", "-"))
+    return slug
+
+# Assign the custom function to MyST
+myst_heading_slug_func = preserve_underscores_slugifier
 
 
 # Prevent Intersphinx from hijacking local Markdown/unresolved references

@@ -9,10 +9,10 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+
+ import os
+ import sys
+ sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
@@ -77,18 +77,7 @@ html_static_path = ["source/_static"]
 
 
 # Custom slug function to preserve underscores in markdown header links
-def preserve_underscores_slugifier(text: str) -> str:
-    """Custom slugify function to keep underscores instead of hyphens."""
-    # Convert to lowercase
-    slug = text.lower()
-    # Replace spaces with underscores
-    slug = slug.replace(" ", "_")
-    # Strip out common punctuation except underscores and hyphens
-    slug = "".join(c for c in slug if c.isalnum() or c in ("_", "-"))
-    return slug
-
-# Assign the custom function to MyST
-myst_heading_slug_func = preserve_underscores_slugifier
+myst_heading_slug_func = "myst_helpers.preserve_underscores"
 
 
 # Prevent Intersphinx from hijacking local Markdown/unresolved references

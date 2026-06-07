@@ -1,4 +1,4 @@
-# Appendix A. Variable Examples
+# Variable Examples
 
 ## Data Variables
 

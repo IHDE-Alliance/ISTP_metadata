@@ -1,5 +1,5 @@
 
-# Appendix G. Frequently Asked Questions (FAQ)
+# Frequently Asked Questions (FAQ)
 
 This page covers many of the most common questions asked about the ISTP  Guidelines. If you have a question that isn't on this list, please open a ticket on the [ISTP Guidelines Github](https://github.com/IHDE-Alliance/ISTP_metadata) site, so that the ISTP Guidelines community can respond. We will use that list as the basis for additional content for this set of questions.
 

@@ -1,4 +1,4 @@
-# Appendix D. Non-ISTP Mission Global Attributes
+# Non-ISTP Mission Global Attributes
 
 - M - mandatory by mission
 - R - recommended by mission

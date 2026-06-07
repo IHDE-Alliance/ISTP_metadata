@@ -76,5 +76,4 @@ The data structure and relationships are captured in each variable structure and
 
 The example below shows how the attributes of a time-varying 2-D proton flux variable (`VAR_TYPE="data"`) that depends on energy and angle variables (both 1-D `VAR_TYPE="support_data"`) are used to automatically plot the data as a set of spectrograms:
 
-<img width=650 src="./_static/2d_spectrogram_1.gif"/>
-
+<img width=650 src="./_static/2d_spectrogram_1.png"/>

@@ -91,17 +91,26 @@ intersphinx_disabled_reftypes = ["*"]
 
 
 # Handle appendices in PDF correctly
-# 1. Register your appendix document names (omit the extension)
+# Register your appendix document names (omit the extension)
 latex_appendices = ["source/07_example-variables", "source/08_example-skeletontables", "source/Multi_Mission_Use_of_Attributes", "source/Non-ISTP-Mission-Global-Attributes", "source/Non-ISTP-Mission-Variable-Attributes", "source/best-practices", "source/faq"]
 
-# 2. Prevent the fncychap package from rendering "Chapter X" headers over appendices
 latex_elements = {
-    'fncychap': '',  # Disables the default fancy chapter heading behavior
+    # Prevent the fncychap package from rendering "Chapter X" headers over appendices
+    'fncychap': '', 
+
+    # Forces the LaTeX table engine to wrap text aggressively
+    'preamble': r'''
+        \makeatletter
+        \renewcommand{\LTleft}{0pt}
+        \renewcommand{\LTright}{\fill}
+        \makeatother
+        \setlength{\tymax}{0.7\linewidth} 
+    ''',
 }
 
 
 # Configure Sphinx to clone GitHub's exact header-slug behaviour
-myst_heading_anchors = 3 # Enable auto-generation for headers up to level 3
+myst_heading_anchors = 4 # Enable auto-generation for headers up to level 4
 
 
 # MyST-Parser extensions

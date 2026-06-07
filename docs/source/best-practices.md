@@ -1,5 +1,5 @@
 
-# Best Practices for Creating ISTP-compliant Datasets in CDF and netCDF Formats
+# Appendix F. Best Practices for Creating ISTP-compliant Datasets in CDF and netCDF Formats
 
 ## Dataset and File Naming Recommmendations
 - Follow the SPDF [Recommended File and Dataset Naming Practices](./filenaming-dataset-naming-recommendations.md)

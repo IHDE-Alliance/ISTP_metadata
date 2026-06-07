@@ -1,4 +1,4 @@
-# Skeleton Table Examples
+# Appendix B. Skeleton Table Examples
 
 A **skeleton table** is a specially formatted **ASCII** text file that contains the metadata or information about the dataset. The format of the file allows simultaneous viewing and editing of the metadata.
 

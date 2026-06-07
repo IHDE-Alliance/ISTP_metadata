@@ -1,4 +1,4 @@
-# Non-ISTP Mission Variable Attributes 
+# Appendix E. Non-ISTP Mission Variable Attributes 
 
 
 - M - mandatory by mission

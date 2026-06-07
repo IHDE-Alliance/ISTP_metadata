@@ -1,5 +1,5 @@
 
-# Multi-Mission Use of ISTP Attributes
+# Appendix C. Multi-Mission Use of ISTP Attributes
 
 - M - mandatory by mission
 - R - recommended by mission

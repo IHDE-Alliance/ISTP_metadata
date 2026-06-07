@@ -431,6 +431,3 @@ Variable `format_time` (attached to the `time_pb5` variable via its `FORM_PTR` a
     [2] = { "I3" }
     [3] = { "I8" }
 ```
-
----
-Return to [Table of Contents](../../README.md)

@@ -54,6 +54,3 @@
 | [`VAR_TYPE`](./05_metadata-variable-attributes.md#var_type) | M | M | M | M | | M | M | M |
 | [`VAR_NOTES`](./05_metadata-variable-attributes.md#var_notes)  | O | | M | | M | R | M | M |
 | [`DELTA_MINUS_VAR`, `DELTA_PLUS_VAR`](./05_metadata-variable-attributes.md#delta_plus_var-delta_minus_var)  | O | M |  R | M | | M | |
-
----
-Return to [Table of Contents](../../README.md)

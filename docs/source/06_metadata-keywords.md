@@ -189,7 +189,3 @@ WAVELENGTH Subclass Keywords &mdash; `radio`, `IR`, `visible`, `UV`, `x-ray`, `g
 |Geotail  |EPIC |`IDiffI_I_Ch`     |`"label>ion_energy_channel"` |
 |Geotail  |EPIC |`IDiffI_I_Eplus`  |`"energy>ion_energy_plus"` |
 |Geotail  |EPIC |`IDiffI_I_Eminus` |`"energy>ion_energy_minus"` |
-
-
----
-Return to [Table of Contents](../../README.md)

@@ -45,7 +45,3 @@ Use these skeleton tables as a starting point for creating your own skeleton tab
 
 - [Radio and Plasma Waves (space)](https://spdf.gsfc.nasa.gov/pub/software/cdawlib/0SKELTABLES/wind_waves_qtnfit_00000000_v01.skt)
 
-
-
----
-Return to [Table of Contents](../../README.md)

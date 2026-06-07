@@ -75,6 +75,3 @@
 `valid_range` &mdash; The netCDF two-element vector containing the minimum and maximum valid values. 
 
 `VALUE_TYPE` &mdash; (Cluster CEF only.) This identifies the data type and is necessary for conversion from the ascii entry. 
-
----
-Return to [Table of Contents](../../README.md)

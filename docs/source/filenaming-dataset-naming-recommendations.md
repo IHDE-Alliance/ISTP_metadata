@@ -149,6 +149,3 @@ Principal Investigator for data usage.
 
 _(short list of keywords for search engines)_ 
 Keywords: Sun-Earth Connections, space physics, magnetosphere, ionosphere
-
----
-Return to [Table of Contents](../../README.md)

@@ -84,5 +84,3 @@ value is allowed.
 | CDF_EPOCH       | milliseconds since 0AD as 8-byte floating-point|
 | CDF_EPOCH16     | picoseconds since 0AD as two 8-byte floating-point numbers |
 
----
-Return to [Table of Contents](../../README.md)

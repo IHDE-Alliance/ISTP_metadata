@@ -42,7 +42,3 @@ Produces a CDF file (using C) when given 3 input files: (1) data file, (2) trans
 - [Quick start guides](https://cdf.gsfc.nasa.gov/quickstartguides/) for systems and programming languages
 - [CDF software](https://cdf.gsfc.nasa.gov/html/sw_and_docs.html)
 - [CDF homepage](https://cdf.gsfc.nasa.gov/)
-
-
----
-Return to [Table of Contents](../../README.md)

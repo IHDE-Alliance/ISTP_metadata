@@ -84,7 +84,3 @@ The example below shows how the attributes of a time-varying 2-D proton flux var
     <img width=650 src="./_static/2d_spectrogram_1.gif"/>
 </p>
 
-
-
----
-Return to [Table of Contents](../../README.md)

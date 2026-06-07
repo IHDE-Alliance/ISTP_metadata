@@ -230,6 +230,3 @@ These attributes can have multiple entries (up to five entries allowed by [CDAWe
 
 ### Validate
 (**_Optional_**.) Details to be specified. This attribute is written by software for automatic validation of features such as the structure of the data file on a simple pass/fail criterion. The software will test that all expected attributes are present and, where possible, have reasonable values. The syntax is likely to be of the form `"test>result>where done>date"`. It is not the same as data validation.
-
----
-Return to [Table of Contents](../../README.md)

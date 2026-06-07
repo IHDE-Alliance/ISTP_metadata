@@ -69,7 +69,15 @@ source_suffix = {
 #
 html_theme = "alabaster"
 
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# html_static_path = ["source/_static"]
+html_static_path = ["source/_static"]
+
+
+# Custom slug function to preserve underscores in markdown header links
+myst_heading_slug_func = lambda text: text.lower().replace(" ", "-")
+
+# Prevent Intersphinx from hijacking local Markdown/unresolved references
+intersphinx_disabled_reftypes = ["*"]

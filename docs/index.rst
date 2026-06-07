@@ -6,7 +6,7 @@ International Solar-Terrestrial Physics (ISTP) Metadata Guidelines for describin
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :numbered: 3
    :caption: Table of Contents
 
@@ -20,7 +20,7 @@ International Solar-Terrestrial Physics (ISTP) Metadata Guidelines for describin
 
 .. toctree::
    :maxdepth: 1
-   :numbered: 0
+   :titlesonly:
 
    source/07_example-variables
    source/08_example-skeletontables

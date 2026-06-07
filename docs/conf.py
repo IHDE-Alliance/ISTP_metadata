@@ -82,61 +82,41 @@ intersphinx_disabled_reftypes = ["*"]
 
 
 # Custom slug function to preserve underscores in markdown header links
-import re
 from docutils import nodes
 from sphinx.transforms import SphinxTransform
 
-class PreciseIdRestorer(SphinxTransform):
-    """Reconstructs section IDs directly from source text to respect mixed underscores and hyphens."""
+class DynamicIdRestorer(SphinxTransform):
+    """Restores underscores to section IDs ONLY if they were present in the source heading."""
 
+    # Run early in translation
     default_priority = 100
 
     def apply(self):
+        # Scan every section in the document
         for node in self.document.findall(nodes.section):
             if "ids" in node:
-                # 1. Get raw heading text (e.g., "delta_plus-delta_minus")
-                raw_title = node.astext().strip().lower()
+                # Extract the actual raw heading string (e.g., "unit_ptr" or "some-hyphen")
+                raw_title_text = node.astext().strip().lower()
 
-                # If there are no underscores anywhere in the text, let Docutils handle it safely
-                if "_" not in raw_title:
-                    continue
+                # If the raw title specifically contains an underscore, we fix the ID
+                if "_" in raw_title_text:
+                    new_ids = []
+                    for node_id in node["ids"]:
+                        # If Docutils made it "unit-ptr", but title has "unit_ptr", swap it
+                        fixed_id = node_id.replace("-", "_")
 
-                # 2. Reconstruct the ideal slug directly from the source text
-                # Replace spaces/whitespace sequences with hyphens (standard web practice)
-                ideal_slug = re.sub(r"\s+", "-", raw_title)
+                        # Double check against the source text to ensure validity
+                        if fixed_id in raw_title_text or fixed_id.replace(
+                            "_", ""
+                        ) in raw_title_text.replace("_", ""):
+                            new_ids.append(fixed_id)
+                        else:
+                            new_ids.append(
+                                node_id
+                            )  # Keep original if it doesn't match match layout
 
-                # Strip out everything except alphanumerics, underscores, and hyphens
-                # (This removes punctuation like ?, !, commas, etc.)
-                ideal_slug = "".join(
-                    c for c in ideal_slug if c.isalnum() or c in ("_", "-")
-                )
+                    node["ids"] = new_ids
 
-                # Clean up any accidental double hyphens/underscores caused by punctuation removal
-                ideal_slug = re.sub(r"-+", "-", ideal_slug)
-                ideal_slug = re.sub(r"_+", "_", ideal_slug)
-                ideal_slug = ideal_slug.strip("-_")
-
-                if not ideal_slug:
-                    continue
-
-                # 3. Update the node IDs matching this pattern
-                new_ids = []
-                for node_id in node["ids"]:
-                    # If this is the main auto-generated ID or a numerical variant (e.g. -1, -2)
-                    # We match it to our ideal layout
-                    if node_id.startswith(
-                        ideal_slug.replace("_", "-").replace("-", "-")
-                    ):
-                        # Preserve suffix numbers if Docutils added uniqueness markers (like delta-plus-1)
-                        suffix = node_id[
-                            len(ideal_slug.replace("_", "-")) :
-                        ]  # Capture any trailing numbers
-                        new_ids.append(f"{ideal_slug}{suffix}")
-                    else:
-                        new_ids.append(node_id)
-
-                node["ids"] = new_ids
-
-# Register the updated transform with Sphinx
+# Register the smart transform with Sphinx
 def setup(app):
-    app.add_transform(PrecerveIdRestorer if "PrecerveIdRestorer" in locals() else PreciseIdRestorer)
+    app.add_transform(DynamicIdRestorer)

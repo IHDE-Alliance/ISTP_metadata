@@ -74,10 +74,10 @@ html_theme = "alabaster"
 html_theme_options = {
     'github_user': 'IHDE-Alliance',
     'github_repo': 'ISTP_metadata',
+    'github_banner': True,
     'github_button': False,
     'github_type': 'star',
-    'github_banner': True,
-    'fixed_sidebar': True,
+    'fixed_sidebar': False,
 }
 
 
@@ -100,12 +100,11 @@ latex_elements = {
     'fncychap': '', 
 
     # Fixes the <br> tag to render as a break in PDF
+    # Force standard markdown tables to automatically wrap long paragraphs
     'preamble': r'''
     \usepackage{etoolbox}
     \newcommand{\br}{\newline}
-    ''',
 
-    # Force standard markdown tables to automatically wrap long paragraphs
     \usepackage{tabulary}
     \renewenvironment{tabular}{\begin{tabulary}{\linewidth}{L}}{\end{tabulary}}
     ''',    

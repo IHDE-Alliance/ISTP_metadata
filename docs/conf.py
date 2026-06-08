@@ -100,10 +100,15 @@ latex_elements = {
     'fncychap': '', 
 
     # Fixes the <br> tag to render as a break in PDF
-    'preamble': r'\newcommand{\br}{\newline}',
-    
-    # Tells Sphinx to automatically clamp massive tables to fit the page margin
-    'sphinxsetup': 'tablecolwidths=auto',
+    'preamble': r'''
+    \usepackage{etoolbox}
+    \newcommand{\br}{\newline}
+    ''',
+
+    # Force standard markdown tables to automatically wrap long paragraphs
+    \usepackage{tabulary}
+    \renewenvironment{tabular}{\begin{tabulary}{\linewidth}{L}}{\end{tabulary}}
+    ''',    
 }
 
 

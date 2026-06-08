@@ -9,7 +9,7 @@ ISTP Guidelines divide all variables into three types, identified by the value o
 
 Examples of **_data_** and **_support_data_** variables commonly found in ISTP datasets are shown below. They are mapped to their corresponding dimensions and sizes in CDF format (and could be in netCDF-4 and other structured file formats).
 
-<img width=600 src="./_static/CDF_Planning.png"/>
+<img width=550 src="./_static/CDF_Planning.png"/>
 
 - `DENSITY` and `TEMPERATURE` (**_data_**) are scalars; in CDF format they are associated with zero dimensions and no size. **Note** that in CDF format, time is associated with record (one record per timestamp), which is separate from variable dimensions.
 - `VELOCITY`, `ELECTRIC_FIELD` and `MAGNETIC_FIELD` (**_data_**) are vectors, i.e., three orthogonal components in some coordinate system, stored as 1-D variables of size 3.

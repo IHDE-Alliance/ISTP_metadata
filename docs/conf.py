@@ -74,9 +74,10 @@ html_theme = "alabaster"
 html_theme_options = {
     'github_user': 'IHDE-Alliance',
     'github_repo': 'ISTP_metadata',
-#    'github_button': True,
-#    'github_type': 'star',
+    'github_button': False,
+    'github_type': 'star',
     'github_banner': True,
+    'fixed_sidebar': True,
 }
 
 
@@ -98,18 +99,11 @@ latex_elements = {
     # Prevent the fncychap package from rendering "Chapter X" headers over appendices
     'fncychap': '', 
 
-    # Configure the tabulary engine for smart proportional wrapping
-    'preamble': r'''
-        \makeatletter
-        \renewcommand{\LTleft}{0pt}
-        \renewcommand{\LTright}{\fill}
-        \makeatother
-        \setlength{\tymax}{0.7\linewidth} 
-        \setlength{\tymin}{0.05\linewidth} 
-    ''',
-
-    # Reset this to the default dynamic wrapping behavior
-    'tabulary_columns': r'J',
+    # Fixes the <br> tag to render as a break in PDF
+    'preamble': r'\newcommand{\br}{\newline}',
+    
+    # Tells Sphinx to automatically clamp massive tables to fit the page margin
+    'sphinxsetup': 'tablecolwidths=auto',
 }
 
 

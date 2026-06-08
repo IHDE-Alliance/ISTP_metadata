@@ -95,28 +95,24 @@ intersphinx_disabled_reftypes = ["*"]
 # Register your appendix document names (omit the extension)
 latex_appendices = ["source/07_example-variables", "source/08_example-skeletontables", "source/Multi_Mission_Use_of_Attributes", "source/Non-ISTP-Mission-Global-Attributes", "source/Non-ISTP-Mission-Variable-Attributes", "source/best-practices", "source/faq"]
 
+# LaTeX
 latex_elements = {
     # Prevent the fncychap package from rendering "Chapter X" headers over appendices
     'fncychap': '', 
 
     # Globally find and replace '<br>' tags with a LaTeX newline inside tables
+    # Configure the tabulary engine for smart proportional wrapping
     'preamble': r'''
     \usepackage{etoolbox}
     \newcommand{\br}{\newline}
+    
+    \makeatletter
+    \renewcommand{\LTleft}{0pt}
+    \renewcommand{\LTright}{\fill}
+    \makeatother
+    \setlength{\tymax}{0.7\linewidth} 
+    \setlength{\tymin}{0.10\linewidth} 
     ''',
-
-    # Configure the tabulary engine for smart proportional wrapping
-    'preamble': r'''
-        \makeatletter
-        \renewcommand{\LTleft}{0pt}
-        \renewcommand{\LTright}{\fill}
-        \makeatother
-        \setlength{\tymax}{0.7\linewidth} 
-        \setlength{\tymin}{0.05\linewidth} 
-    ''',
-
-    # Reset this to the default dynamic wrapping behavior
-    'tabulary_columns': r'J',
 }
 
 

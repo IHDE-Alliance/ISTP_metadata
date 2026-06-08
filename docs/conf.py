@@ -19,7 +19,6 @@ sys.path.insert(0, os.path.abspath('.'))
 
 project = "ISTP Metadata Guidelines"
 copyright = "CC0 1.0 Universal"
-author = " "
 
 
 # -- General configuration ---------------------------------------------------
@@ -45,7 +44,7 @@ extensions = [
 # templates_path = ["_templates"]
 
 
-# Set README as your main page
+# Set index.rst as the main page
 root_doc = 'index'
 
 
@@ -129,5 +128,21 @@ myst_heading_anchors = 4 # Enable auto-generation for headers up to level 4
 myst_enable_extensions = [
     "html_image",  # Enables correct handling of <img> tags
 ]
+
+
+# Display release version (for stable release) or show "latest" (for GitHub update without release)
+# Check if the build is running on Read the Docs servers
+if os.environ.get('READTHEDOCS') == 'True':
+    # Read the dynamic version string injected by the build system
+    rtd_version = os.environ.get('READTHEDOCS_VERSION')
+    
+    # Sphinx variable for short version (displayed in headers/footers)
+    version = rtd_version
+    # Sphinx variable for full version (displayed on PDF covers/titles)
+    release = rtd_version
+else:
+    # Local fallback settings for when you run 'make html' on your machine
+    version = 'local-development'
+    release = 'local-development-draft'
 
 

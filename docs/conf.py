@@ -100,11 +100,24 @@ latex_elements = {
     # Prevent the fncychap package from rendering "Chapter X" headers over appendices
     'fncychap': '', 
 
-    # Fixes the <br> tag to render as a break in PDF
+    # Globally find and replace '<br>' tags with a LaTeX newline inside tables
     'preamble': r'''
     \usepackage{etoolbox}
     \newcommand{\br}{\newline}
-    ''',    
+    ''',
+
+    # Configure the tabulary engine for smart proportional wrapping
+    'preamble': r'''
+        \makeatletter
+        \renewcommand{\LTleft}{0pt}
+        \renewcommand{\LTright}{\fill}
+        \makeatother
+        \setlength{\tymax}{0.7\linewidth} 
+        \setlength{\tymin}{0.05\linewidth} 
+    ''',
+
+    # Reset this to the default dynamic wrapping behavior
+    'tabulary_columns': r'J',
 }
 
 
@@ -115,11 +128,6 @@ myst_heading_anchors = 4 # Enable auto-generation for headers up to level 4
 # MyST-Parser extensions
 myst_enable_extensions = [
     "html_image",  # Enables correct handling of <img> tags
-]
-
-# Change from manual (book) to howto (article) document class. Reuse project, author variables, already defined at the top
-latex_documents = [
-    ('index', 'documentation.tex', project, author, 'howto'),
 ]
 
 

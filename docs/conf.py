@@ -100,13 +100,9 @@ latex_elements = {
     'fncychap': '', 
 
     # Fixes the <br> tag to render as a break in PDF
-    # Force standard markdown tables to automatically wrap long paragraphs
     'preamble': r'''
     \usepackage{etoolbox}
     \newcommand{\br}{\newline}
-
-    \usepackage{tabulary}
-    \renewenvironment{tabular}{\begin{tabulary}{\linewidth}{L}}{\end{tabulary}}
     ''',    
 }
 

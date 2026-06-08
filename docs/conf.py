@@ -19,6 +19,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 project = "ISTP Metadata Guidelines"
 copyright = "CC0 1.0 Universal"
+author = " "
 
 
 # -- General configuration ---------------------------------------------------
@@ -114,6 +115,11 @@ myst_heading_anchors = 4 # Enable auto-generation for headers up to level 4
 # MyST-Parser extensions
 myst_enable_extensions = [
     "html_image",  # Enables correct handling of <img> tags
+]
+
+# Change from manual (book) to howto (article) document class. Reuse project, author variables, already defined at the top
+latex_documents = [
+    ('index', 'documentation.tex', project, author, 'howto'),
 ]
 
 

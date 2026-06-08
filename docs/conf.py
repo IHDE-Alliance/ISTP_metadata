@@ -100,6 +100,10 @@ latex_elements = {
     # Prevent the fncychap package from rendering "Chapter X" headers over appendices
     'fncychap': '', 
 
+    'pointsize': '11pt',
+    'classoptions': ',openany',
+    "sphinxsetup": "hmargin={0.5in,0.5in}",
+
     # Globally find and replace '<br>' tags with a LaTeX newline inside tables
     # Configure the tabulary engine for smart proportional wrapping
     'preamble': r'''

@@ -87,9 +87,6 @@ html_theme_options = {
 html_static_path = ["source/_static"]
 
 
-html_css_files = ['custom.css']
-
-
 # Prevent Intersphinx from hijacking local Markdown/unresolved references
 intersphinx_disabled_reftypes = ["*"]
 

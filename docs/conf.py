@@ -109,7 +109,7 @@ latex_elements = {
 
 
 # Ensure tables use tabulary for page fitting and longtable for multi-page content
-latex_table_style = ['tabulary', 'longtable']
+#latex_table_style = ['tabulary', 'longtable']
 
 
 # Configure Sphinx to clone GitHub's exact header-slug behaviour

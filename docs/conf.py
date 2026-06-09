@@ -103,23 +103,25 @@ latex_elements = {
 
     'pointsize': '11pt',
     'classoptions': ',oneside',
-    "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}",
+    "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
 
     'preamble': r'''
-        \usepackage{etoolbox}
+        \usepackage{seqsplit}
         
-        % 1. Intercept Sphinx's backtick/code renderer inside tables
+        % Adjust seqsplit to allow breaks at numbers and symbols as well
+        \setlength{\Xomitwidth}{0em}
+        
+        %  Target the exact LaTeX environment Sphinx uses for inline code snippets
+        \usepackage{etoolbox}
         \makeatletter
-        \protected\def\sphinxcode#1{%
-          % Force the macro to allow linebreaks at punctuation characters (/, _, -, .)
-          \sphinxbreaksviaactive
-          \let\sphinxafterbreak\empty
-          % Execute original formatting with wrapping allowed
-          \texttt{#1}%
+        \let\old@sphinxupquote\sphinxupquote
+        \protected\def\sphinxupquote#1{%
+          % Pass the code block contents to seqsplit to force character wrapping
+          \old@sphinxupquote{\seqsplit{#1}}%
         }
         \makeatother
 
-        % 2. Instruct the code block parser to wrap layout rows tightly
+        % Enforce general code-block line breaking across cells
         \appto\sphinxsetup{\fvset{breaklines=true}}
     ''',
 

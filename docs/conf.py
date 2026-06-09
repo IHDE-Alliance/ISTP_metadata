@@ -105,26 +105,6 @@ latex_elements = {
     'classoptions': ',oneside',
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
 
-    'preamble': r'''
-        \usepackage{seqsplit}
-        
-        % Adjust seqsplit to allow breaks at numbers and symbols as well
-        \setlength{\Xomitwidth}{0em}
-        
-        %  Target the exact LaTeX environment Sphinx uses for inline code snippets
-        \usepackage{etoolbox}
-        \makeatletter
-        \let\old@sphinxupquote\sphinxupquote
-        \protected\def\sphinxupquote#1{%
-          % Pass the code block contents to seqsplit to force character wrapping
-          \old@sphinxupquote{\seqsplit{#1}}%
-        }
-        \makeatother
-
-        % Enforce general code-block line breaking across cells
-        \appto\sphinxsetup{\fvset{breaklines=true}}
-    ''',
-
 }
 
 

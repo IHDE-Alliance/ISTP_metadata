@@ -106,39 +106,30 @@ latex_elements = {
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
 
     'preamble': r'''
-        %1. Enable built-in structural wrapping mechanics inside backticks
         \usepackage{etoolbox}
         
-        % 2. Re-route Sphinx's backtick interpreter (\sphinxupquote)
+        % 1. Create a safe macro that adds breaking points to targeted symbols
+        \newcommand{\allowbreaksatpunct}{%
+          \begingroup
+          \lccode`\~=`\_ \lowercase{\def~}{\_\\discretionary{}{}{}}%
+          \lccode`\~=`\- \lowercase{\def~}{\-\\discretionary{}{}{}}%
+          \lccode`\~=`\/ \lowercase{\def~}{\/\\discretionary{}{}{}}%
+          \catcode`\_=\active
+          \catcode`\-=\active
+          \catcode`\/=\active
+        }
+        \newcommand{\endallowbreaksatpunct}{\endgroup}
+
+        % 2. Intercept Sphinx backticks (`code`) safely without stripping spaces
         \makeatletter
         \protected\def\sphinxupquote#1{%
-          \bgroup
-          % Map literal formatting to \texttt while parsing targets
-          \texttt{\@parsebreakpoints{#1}}%
-          \egroup
-        }
-
-        % 3. Core text parsing mechanism to find targeted punctuation
-        \def\@parsebreakpoints#1{\@breakatpunct#1\relax\@nil}
-        
-        \def\@breakatpunct#1#2\@nil{%
-          \ifx#1\relax
-          \else
-            #1% Output current character
-            % If character matches target punctuation, inject an invisible breaking allowance
-            \ifx#1_\discretionary{}{}{}\fi
-            \ifx#1-\discretionary{}{}{}\fi
-            \ifx#1/\discretionary{}{}{}\fi
-            \ifx#1.\discretionary{}{}{}\fi % Added period (.) tracking for complete safety
-            \ifx\relax#2\relax
-            \else
-              \@breakatpunct#2\@nil % Recursively scan remaining string sequence
-            \fi
-          \fi
+          \allowbreaksatpunct
+          \texttt{#1}%
+          \endallowbreaksatpunct
         }
         \makeatother
 
-        % 4. Multi-line table code cell layout block normalization
+        % 3. Enforce general code-block line breaking across cells
         \appto\sphinxsetup{\fvset{breaklines=true}}
     ''',
 

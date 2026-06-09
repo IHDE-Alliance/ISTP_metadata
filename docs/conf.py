@@ -106,24 +106,39 @@ latex_elements = {
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
 
     'preamble': r'''
-        \usepackage{seqsplit}
+        %1. Enable built-in structural wrapping mechanics inside backticks
         \usepackage{etoolbox}
         
-        % Set the width threshold to prevent seqsplit from consuming spaces
-        \setlength{\Xomitwidth}{0em}
-
-        % 2. Safe, crash-proof macro interceptor for backticks (`code`)
+        % 2. Re-route Sphinx's backtick interpreter (\sphinxupquote)
         \makeatletter
         \protected\def\sphinxupquote#1{%
-          % Replace literal text space tokens safely before passing to the engine
           \bgroup
-          \def\seqinsert{\discretionary{}{}{}}% Allow invisible breaks anywhere inside seqsplit
-          \texttt{\seqsplit{#1}}%
+          % Map literal formatting to \texttt while parsing targets
+          \texttt{\@parsebreakpoints{#1}}%
           \egroup
+        }
+
+        % 3. Core text parsing mechanism to find targeted punctuation
+        \def\@parsebreakpoints#1{\@breakatpunct#1\relax\@nil}
+        
+        \def\@breakatpunct#1#2\@nil{%
+          \ifx#1\relax
+          \else
+            #1% Output current character
+            % If character matches target punctuation, inject an invisible breaking allowance
+            \ifx#1_\discretionary{}{}{}\fi
+            \ifx#1-\discretionary{}{}{}\fi
+            \ifx#1/\discretionary{}{}{}\fi
+            \ifx#1.\discretionary{}{}{}\fi % Added period (.) tracking for complete safety
+            \ifx\relax#2\relax
+            \else
+              \@breakatpunct#2\@nil % Recursively scan remaining string sequence
+            \fi
+          \fi
         }
         \makeatother
 
-        % 3. Enforce general code-block breaking across cells
+        % 4. Multi-line table code cell layout block normalization
         \appto\sphinxsetup{\fvset{breaklines=true}}
     ''',
 

@@ -136,6 +136,8 @@ else:
 
 # Line breaks <br> handling in PDF
 
+from docutils import nodes
+
 def convert_br_for_pdf_doctree(app, doctree, docname):
     """
     Intercepts the compiled document structure after MyST-Parser finishes.

@@ -106,30 +106,36 @@ latex_elements = {
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
 
     'preamble': r'''
+	% 1. Instruct Sphinx to natively wrap inline literal code structures
+
+        \usepackage{url}
         \usepackage{etoolbox}
         
-        % 1. Create a safe macro that adds breaking points to targeted symbols
-        \newcommand{\allowbreaksatpunct}{%
-          \begingroup
-          \lccode`\~=`\_ \lowercase{\def~}{\_\\discretionary{}{}{}}%
-          \lccode`\~=`\- \lowercase{\def~}{\-\\discretionary{}{}{}}%
-          \lccode`\~=`\/ \lowercase{\def~}{\/\\discretionary{}{}{}}%
-          \catcode`\_=\active
-          \catcode`\-=\active
-          \catcode`\/=\active
-        }
-        \newcommand{\endallowbreaksatpunct}{\endgroup}
+        % 2. Define global breaking priorities for punctuation marks
+        \makeatletter
+        \g@addto@macro{\UrlBreaks}{\do\_\do\-\do\/}
+        \makeatother
 
-        % 2. Intercept Sphinx backticks (`code`) safely without stripping spaces
+        % 3. Intercept backticks (`code`) safely, keeping all spaces intact
         \makeatletter
         \protected\def\sphinxupquote#1{%
-          \allowbreaksatpunct
-          \texttt{#1}%
-          \endallowbreaksatpunct
+          \bgroup
+          \spaceskip=0.33em\relax
+          \Url@FormatString{#1}%
+          \egroup
+        }
+        \newcommand{\Url@FormatString}[1]{\Url{#1}}
+        \makeatother
+
+        % 4. Force regular plain-text words inside tables to also wrap at punctuation
+        \makeatletter
+        \appto\sphinxsetup{%
+          % Force normal text rendering inside table cells to read URL breakpoint boundaries
+          \def\sphinxstyleliteralintitle#1{\Url{#1}}%
         }
         \makeatother
 
-        % 3. Enforce general code-block line breaking across cells
+        % 5. Enforce standard code-block breaking across cell boundaries
         \appto\sphinxsetup{\fvset{breaklines=true}}
     ''',
 

@@ -104,19 +104,6 @@ latex_elements = {
     'classoptions': ',openany',
     "sphinxsetup": "hmargin={0.5in,0.5in}",
 
-    # Globally find and replace '<br>' tags with a LaTeX newline inside tables
-    # Configure the tabulary engine for smart proportional wrapping
-    'preamble': r'''
-    \usepackage{etoolbox}
-    \newcommand{\br}{\newline}
-    
-    \makeatletter
-    \renewcommand{\LTleft}{0pt}
-    \renewcommand{\LTright}{\fill}
-    \makeatother
-    \setlength{\tymax}{0.7\linewidth} 
-    \setlength{\tymin}{0.10\linewidth} 
-    ''',
 }
 
 

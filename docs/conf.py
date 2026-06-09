@@ -134,23 +134,28 @@ else:
 
 
 
-# --- Dynamic Markdown replacement for PDF Builder ---
+# --- Dynamic `<br>` to Native Markdown Breaks for PDF Builder ---
 
-def replace_br_for_pdf(app, docname, source):
-    """Intercepts source text and replaces <br> with LaTeX breaks ONLY for PDF builds."""
-    # Check if the active builder is the PDF/LaTeX compiler
+def convert_br_for_pdf_builder(app, docname, source):
+    """
+    Intercepts raw Markdown file contents before MyST-Parser executes.
+    Swaps <br> tags with a native Markdown escape break ONLY during PDF builds.
+    """
+    # Target only LaTeX/PDF build pipelines
     if app.builder.name in ('latex', 'pdf'):
-        # source is passed as a single-element list containing the full file text
-        result = source[0]
+        # source is a single-element list containing the full file string
+        raw_text = source[0]
         
         # Replace common variations of the HTML break tag
-        result = result.replace('<br>', r'\hfill \break')
-        result = result.replace('<br/>', r'\hfill \break')
-        result = result.replace('<br />', r'\hfill \break')
+        # with a backslash followed immediately by a newline.
+        raw_text = raw_text.replace('<br>', '\\\n')
+        raw_text = raw_text.replace('<br/>', '\\\n')
+        raw_text = raw_text.replace('<br />', '\\\n')
         
-        source[0] = result
+        # Update the source in-memory
+        source[0] = raw_text
 
 def setup(app):
-    """Registers the source-read event handler into Sphinx."""
-    app.connect('source-read', replace_br_for_pdf)
-
+    """Registers the core source-read hook into Sphinx."""
+    # 'source-read' triggers before any parser tokens or AST are built
+    app.connect('source-read', convert_br_for_pdf_builder)

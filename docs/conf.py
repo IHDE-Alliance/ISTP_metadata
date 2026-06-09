@@ -102,7 +102,7 @@ latex_elements = {
 
     'pointsize': '11pt',
     'classoptions': ',oneside',
-    "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={0.5in,0.5in}",
+    "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}",
 
 }
 

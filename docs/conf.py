@@ -106,22 +106,20 @@ latex_elements = {
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}",
 
     'preamble': r'''
-        \usepackage{seqsplit}
-        \usepackage{array}
         \usepackage{etoolbox}
-
-        % 1. Inject an invisible character anchor to fool the TeX engine into wrapping the first word
-        \newcolumntype{Y}{>{\hspace{0pt}}X}
-
-        % 2. Intercept Sphinx's standard inline literal rendering macro and pass it to seqsplit
+        
+        % 1. Intercept Sphinx's backtick/code renderer inside tables
         \makeatletter
-        \protected\def\sphinxupquote#1{%
-          \def\next##1{\seqsplit{##1}}%
-          \expandafter\next\expandafter{#1}%
+        \protected\def\sphinxcode#1{%
+          % Force the macro to allow linebreaks at punctuation characters (/, _, -, .)
+          \sphinxbreaksviaactive
+          \let\sphinxafterbreak\empty
+          % Execute original formatting with wrapping allowed
+          \texttt{#1}%
         }
         \makeatother
 
-        % 3. Standard clean up to force code block wrapped lines to break across cells
+        % 2. Instruct the code block parser to wrap layout rows tightly
         \appto\sphinxsetup{\fvset{breaklines=true}}
     ''',
 

@@ -106,33 +106,27 @@ latex_elements = {
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
 
     'preamble': r'''
-        \usepackage[hyphens]{url}
+        \usepackage{seqsplit}
         \usepackage{etoolbox}
         
-        % 1. Tell the url package to define underscore (_) as a valid breakpoint
-        \makeatletter
-        \g@addto@macro{\UrlBreaks}{\do\_}
-        \makeatother
+        % Set the width threshold to prevent seqsplit from consuming spaces
+        \setlength{\Xomitwidth}{0em}
 
-        % 2. Safe wrapper that preserves spaces and wraps at underscores
+        % 2. Safe, crash-proof macro interceptor for backticks (`code`)
         \makeatletter
         \protected\def\sphinxupquote#1{%
-          % Use \Urltextarea to preserve text spacing while applying breaks
-          \bgroup\Urltextarea\Url@FormatString{#1}\egroup
-        }
-        
-        % Bridge Sphinx text structure safely into the URL breakpoint engine
-        \newcommand{\Url@FormatString}[1]{%
-          \spaceskip=0.33em\relax % Explicitly enforce standard space widths
-          \Url{%
-            \scantokens{#1\noexpand}%
-          }%
+          % Replace literal text space tokens safely before passing to the engine
+          \bgroup
+          \def\seqinsert{\discretionary{}{}{}}% Allow invisible breaks anywhere inside seqsplit
+          \texttt{\seqsplit{#1}}%
+          \egroup
         }
         \makeatother
 
-        % 3. Enforce general code block line breaking
+        % 3. Enforce general code-block breaking across cells
         \appto\sphinxsetup{\fvset{breaklines=true}}
     ''',
+
 }
 
 

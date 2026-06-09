@@ -104,19 +104,16 @@ latex_elements = {
     'classoptions': ',oneside',
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}",
 
-    # Inject custom layout overrides to handle rigid strings
     'preamble': r'''
         \usepackage{etoolbox}
-        \usepackage{microtype} % Handles micro-spacing to avoid text clip-off
+        \usepackage{microtype}
         
-        % Force long string sequences/URLs to automatically break at common characters
+        % Force long lines, URLs, and code blocks to aggressively break at symbols/hyphens
         \PassOptionsToPackage{hyphens}{url}
         \usepackage{url}
         
-        % Global switch: Forces LaTeX to wrap rigid characters in tables 
-        \makeatletter
-        \patchcmd{\LT@array}{\tabcolsep\z@}{\tabcolsep\z@\sloppy}{}{}
-        \makeatother
+        % Drop strict whitespace checks so LaTeX favors wrapping text over overflowing margins
+        \sloppy
     ''',
 }
 
@@ -148,4 +145,65 @@ else:
     # Local fallback settings for when you run 'make html' on your machine
     version = 'local-development'
     release = 'local-development-draft'
+
+
+
+
+# Table and cell spill handling
+from docutils import nodes
+from sphinx.transforms.post_transforms import SphinxPostTransform
+
+class ForceTableWrappingAndSpillFix(SphinxPostTransform):
+    """
+    Runs after MyST-Parser parses the Markdown file.
+    Intercepts rigid markdown tables and injects hard wrapping rules
+    to stop vertical/horizontal overflow exclusively during PDF builds.
+    """
+    default_priority = 500
+
+    def run(self, **kwargs):
+        # Target only LaTeX/PDF build pipelines
+        if self.app.builder.name not in ('latex', 'pdf'):
+            return
+
+        # Find every single table in the document tree
+        for table_node in self.document.findall(nodes.table):
+            # 1. Force the table to break vertically across pages
+            if 'classes' not in table_node:
+                table_node['classes'] = []
+            if 'longtable' not in table_node['classes']:
+                table_node['classes'].append('longtable')
+
+            # 2. Re-calculate fixed column alignments to force auto-wrap columns
+            for tgroup in table_node.findall(nodes.tgroup):
+                colcount = len(tgroup.findall(nodes.colspec))
+                if colcount > 0:
+                    # Give every column an equal slice of the page width (%)
+                    # This completely breaks the rigid single-line LaTeX container
+                    equal_width = int(100 / colcount)
+                    for colspec in tgroup.findall(nodes.colspec):
+                        colspec['colwidth'] = equal_width
+
+            # 3. Intercept every block of text inside the table cells
+            for entry in table_node.findall(nodes.entry):
+                for text_node in entry.findall(nodes.Text):
+                    raw_text = text_node.astext()
+                    
+                    # Fix the <br> line break issue safely
+                    if '<br>' in raw_text or '<br/>' in raw_text or '<br />' in raw_text:
+                        clean_text = raw_text.replace('<br/>', '<br>').replace('<br />', '<br>')
+                        parts = clean_text.split('<br>')
+                        
+                        new_nodes = []
+                        for i, part in enumerate(parts):
+                            new_nodes.append(nodes.Text(part))
+                            if i < len(parts) - 1:
+                                # Injects a raw LaTeX newline command directly into the cell tree
+                                new_nodes.append(nodes.raw('', r'\newline ', format='latex'))
+                        text_node.parent.replace(text_node, new_nodes)
+
+def setup(app):
+    """Registers our layout transform hook directly into the Sphinx workflow."""
+    app.add_post_transform(ForceTableWrappingAndSpillFix)
+
 

@@ -133,3 +133,24 @@ else:
     release = 'local-development-draft'
 
 
+
+# --- Dynamic Markdown replacement for PDF Builder ---
+
+def replace_br_for_pdf(app, docname, source):
+    """Intercepts source text and replaces <br> with LaTeX breaks ONLY for PDF builds."""
+    # Check if the active builder is the PDF/LaTeX compiler
+    if app.builder.name in ('latex', 'pdf'):
+        # source is passed as a single-element list containing the full file text
+        result = source[0]
+        
+        # Replace common variations of the HTML break tag
+        result = result.replace('<br>', r'\hfill \break')
+        result = result.replace('<br/>', r'\hfill \break')
+        result = result.replace('<br />', r'\hfill \break')
+        
+        source[0] = result
+
+def setup(app):
+    """Registers the source-read event handler into Sphinx."""
+    app.connect('source-read', replace_br_for_pdf)
+

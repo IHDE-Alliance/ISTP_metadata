@@ -95,6 +95,12 @@ intersphinx_disabled_reftypes = ["*"]
 # Register your appendix document names (omit the extension)
 latex_appendices = ["source/07_example-variables", "source/08_example-skeletontables", "source/Multi_Mission_Use_of_Attributes", "source/Non-ISTP-Mission-Global-Attributes", "source/Non-ISTP-Mission-Variable-Attributes", "source/best-practices", "source/faq"]
 
+
+# Force Sphinx to automatically calculate relative column widths for Markdown tables
+# This assigns cell boundaries that text can actually wrap against
+myst_table_header_printed = True 
+
+
 # LaTeX settings
 latex_elements = {
 
@@ -105,45 +111,39 @@ latex_elements = {
     'classoptions': ',oneside',
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
 
+    # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
-	% 1. Instruct Sphinx to natively wrap inline literal code structures
-
-        \usepackage{url}
+        \usepackage{ragged2e}
         \usepackage{etoolbox}
-        
-        % 2. Define global breaking priorities for punctuation marks
-        \makeatletter
-        \g@addto@macro{\UrlBreaks}{\do\_\do\-\do\/}
-        \makeatother
 
-        % 3. Intercept backticks (`code`) safely, keeping all spaces intact
+        % Tell LaTeX how to break words inside table columns explicitly
+        % This enables breaks at underscores, hyphens, and slashes without code adjustments
         \makeatletter
+        \newcommand{\forcecellwrap}{%
+          \spaceskip=0.33em\relax % Force normal space sizing (no shrinking)
+          \RightToLeft % Keeps natural text reading order
+          \setlength{\emergencystretch}{3em}% Allows engine to break lines earlier
+        }
+        
+        % Safe interceptor for Markdown backticks (`` `code` ``)
         \protected\def\sphinxupquote#1{%
           \bgroup
-          \spaceskip=0.33em\relax
-          \Url@FormatString{#1}%
+          \fontfamily{tt}\selectfont
+          % Use a safe parsing token to preserve spaces completely
+          \expandafter\RaggedRight\hspace{0pt}#1%
           \egroup
         }
-        \newcommand{\Url@FormatString}[1]{\Url{#1}}
         \makeatother
 
-        % 4. Force regular plain-text words inside tables to also wrap at punctuation
-        \makeatletter
-        \appto\sphinxsetup{%
-          % Force normal text rendering inside table cells to read URL breakpoint boundaries
-          \def\sphinxstyleliteralintitle#1{\Url{#1}}%
-        }
-        \makeatother
-
-        % 5. Enforce standard code-block breaking across cell boundaries
+        % Force multi-line table code blocks to comply with the wrap settings
         \appto\sphinxsetup{\fvset{breaklines=true}}
     ''',
 
 }
 
 
-# Ensure tables use tabulary for page fitting and longtable for multi-page content
-latex_table_style = ['tabulary', 'longtable']
+# Tell the LaTeX compiler to strictly use tabulary to enforce paper boundaries
+latex_table_style = ['tabulary']
 
 
 # Configure Sphinx to clone GitHub's exact header-slug behaviour

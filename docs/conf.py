@@ -100,9 +100,9 @@ latex_elements = {
     # Prevent the fncychap package from rendering "Chapter X" headers over appendices
     'fncychap': '', 
 
-    'pointsize': '12pt',
-    'classoptions': ',openany',
-    "sphinxsetup": "hmargin={0.5in,0.5in}",
+    'pointsize': '11pt',
+    'classoptions': ',oneside',
+    "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={0.5in,0.5in}",
 
 }
 

@@ -95,7 +95,7 @@ intersphinx_disabled_reftypes = ["*"]
 # Register your appendix document names (omit the extension)
 latex_appendices = ["source/07_example-variables", "source/08_example-skeletontables", "source/Multi_Mission_Use_of_Attributes", "source/Non-ISTP-Mission-Global-Attributes", "source/Non-ISTP-Mission-Variable-Attributes", "source/best-practices", "source/faq"]
 
-# LaTeX
+# LaTeX settings
 latex_elements = {
     # Prevent the fncychap package from rendering "Chapter X" headers over appendices
     'fncychap': '', 
@@ -104,7 +104,24 @@ latex_elements = {
     'classoptions': ',oneside',
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}",
 
+    # Inject custom layout overrides to handle rigid strings
+    'preamble': r'''
+        \usepackage{etoolbox}
+        \usepackage{microtype} % Handles micro-spacing to avoid text clip-off
+        
+        % Force long string sequences/URLs to automatically break at common characters
+        \PassOptionsToPackage{hyphens}{url}
+        \usepackage{url}
+        
+        % Global switch: Forces LaTeX to wrap rigid characters in tables 
+        \makeatletter
+        \patchcmd{\LT@array}{\tabcolsep\z@}{\tabcolsep\z@\sloppy}{}{}
+        \makeatother
+    ''',
 }
+
+# Force all MyST/Markdown tables to use multi-page splitting
+latex_table_style = ['longtable']
 
 
 # Configure Sphinx to clone GitHub's exact header-slug behaviour

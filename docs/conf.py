@@ -105,11 +105,18 @@ latex_elements = {
     'classoptions': ',oneside',
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}",
 
-    # Force table cells to wrap and allow tables to break across pages safely
     'preamble': r'''
-        \usepackage{tabulary}
-        \usepackage{etoolbox}
-        \appto\sphinxsetup{\fvset{breaklines=true}}
+        \usepackage{seqsplit}
+        % Force inline code literals to break on hyphens, slashes, and underscores
+        \usepackage[hyphens]{url}
+        
+        % Redefine Sphinx's inline literal macro to break unbreakable strings
+        \makeatletter
+        \protected\def\sphinxupquote#1{%
+          \def\next##1{\seqsplit{##1}}%
+          \expandafter\next\expandafter{#1}%
+        }
+        \makeatother
     ''',
 }
 

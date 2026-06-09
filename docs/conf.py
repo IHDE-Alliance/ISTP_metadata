@@ -106,31 +106,33 @@ latex_elements = {
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
 
     'preamble': r'''
-        \usepackage{xurl}
+        \usepackage[hyphens]{url}
         \usepackage{etoolbox}
         
-        % 1. Define explicit breaking rules for underscores, hyphens, and slashes
+        % 1. Tell the url package to define underscore (_) as a valid breakpoint
         \makeatletter
-        \g@addto@macro{\UrlBreaks}{\do\_\do\-\do\/}
+        \g@addto@macro{\UrlBreaks}{\do\_}
         \makeatother
 
-        % 2. Safe macro interceptor for backticks (`code`) that keeps spaces intact
+        % 2. Safe wrapper that preserves spaces and wraps at underscores
         \makeatletter
         \protected\def\sphinxupquote#1{%
-          \bgroup
-          % Enforce standard spacing so spaces are never stripped or compressed
-          \spaceskip=0.33em\relax
+          % Use \Urltextarea to preserve text spacing while applying breaks
+          \bgroup\Urltextarea\Url@FormatString{#1}\egroup
+        }
+        
+        % Bridge Sphinx text structure safely into the URL breakpoint engine
+        \newcommand{\Url@FormatString}[1]{%
+          \spaceskip=0.33em\relax % Explicitly enforce standard space widths
           \Url{%
             \scantokens{#1\noexpand}%
           }%
-          \egroup
         }
         \makeatother
 
-        % 3. Enforce general multi-line table code cell wrapping
+        % 3. Enforce general code block line breaking
         \appto\sphinxsetup{\fvset{breaklines=true}}
     ''',
-
 }
 
 

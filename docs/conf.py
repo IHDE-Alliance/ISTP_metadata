@@ -101,17 +101,9 @@ latex_elements = {
     'fncychap': '', 
 
     'pointsize': '11pt',
-    #'classoptions': ',oneside',
+    'classoptions': ',oneside',
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}",
 
-    # --- 1. Configure Sphinx to allow line breaks inside PDF tables ---
-    # Force the LaTeX engine to use the 'longtable' environment or auto-wrapping 'tabulary'
-    'extraclassoptions': 'openany,oneside',
-    'preamble': r'''
-        \usepackage{makecell}
-        % Force LaTeX to dynamically evaluate <br> strings as real line breaks
-        \DeclareUnicodeCharacter{00A0}{~}
-    ''',
 }
 
 
@@ -142,23 +134,37 @@ else:
 
 
 
-# --- 2. Intercept and rewrite <br> to native LaTeX commands ---
-def convert_br_for_pdf_builder(app, docname, source):
+# Line breaks <br> handling in PDF
+
+def convert_br_for_pdf_doctree(app, doctree, docname):
     """
-    Swaps <br> tags with LaTeX \newline commands ONLY during PDF builds.
-    Because we configured LaTeX to allow multiline cells above, \newline works perfectly.
+    Intercepts the compiled document structure after MyST-Parser finishes.
+    Replaces HTML <br> tags inside table cells with a real structural line break
+    ONLY during PDF/LaTeX generation.
     """
     if app.builder.name in ('latex', 'pdf'):
-        raw_text = source[0]
-        
-        # Replace variations of the HTML break tag with LaTeX cell newline macros
-        raw_text = raw_text.replace('<br>', r' \newline ')
-        raw_text = raw_text.replace('<br/>', r' \newline ')
-        raw_text = raw_text.replace('<br />', r' \newline ')
-        
-        source[0] = raw_text
+        # Find every text node inside your document tables
+        for node in doctree.findall(nodes.Text):
+            raw_text = node.astext()
+            
+            # Look for any variation of the HTML break tag
+            if '<br>' in raw_text or '<br/>' in raw_text or '<br />' in raw_text:
+                # Standardize the tags
+                clean_text = raw_text.replace('<br/>', '<br>').replace('<br />', '<br>')
+                parts = clean_text.split('<br>')
+                
+                # Rebuild the cell contents structurally using native line-block elements
+                new_nodes = []
+                for i, part in enumerate(parts):
+                    new_nodes.append(nodes.Text(part))
+                    if i < len(parts) - 1:
+                        # Inject a native docutils newline element that LaTeX compiles properly
+                        new_nodes.append(nodes.inline('', '', nodes.raw('', r'\\ ', format='latex')))
+                
+                # Replace the original flat text node with our new multi-line structure
+                node.parent.replace(node, new_nodes)
 
 def setup(app):
-    """Registers the core source-read hook into Sphinx."""
-    # Triggers right before MyST compiles the source text
-    app.connect('source-read', convert_br_for_pdf_builder)
+    """Connects our post-parser hook directly into the Sphinx engine."""
+    app.connect('doctree-resolved', convert_br_for_pdf_doctree)
+

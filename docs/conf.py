@@ -107,17 +107,24 @@ latex_elements = {
 
     'preamble': r'''
         \usepackage{seqsplit}
-        % Force inline code literals to break on hyphens, slashes, and underscores
-        \usepackage[hyphens]{url}
-        
-        % Redefine Sphinx's inline literal macro to break unbreakable strings
+        \usepackage{array}
+        \usepackage{etoolbox}
+
+        % 1. Inject an invisible character anchor to fool the TeX engine into wrapping the first word
+        \newcolumntype{Y}{>{\hspace{0pt}}X}
+
+        % 2. Intercept Sphinx's standard inline literal rendering macro and pass it to seqsplit
         \makeatletter
         \protected\def\sphinxupquote#1{%
           \def\next##1{\seqsplit{##1}}%
           \expandafter\next\expandafter{#1}%
         }
         \makeatother
+
+        % 3. Standard clean up to force code block wrapped lines to break across cells
+        \appto\sphinxsetup{\fvset{breaklines=true}}
     ''',
+
 }
 
 

@@ -105,11 +105,37 @@ latex_elements = {
     'classoptions': ',oneside',
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
 
+    'preamble': r'''
+        \usepackage{xurl}
+        \usepackage{etoolbox}
+        
+        % 1. Define explicit breaking rules for underscores, hyphens, and slashes
+        \makeatletter
+        \g@addto@macro{\UrlBreaks}{\do\_\do\-\do\/}
+        \makeatother
+
+        % 2. Safe macro interceptor for backticks (`code`) that keeps spaces intact
+        \makeatletter
+        \protected\def\sphinxupquote#1{%
+          \bgroup
+          % Enforce standard spacing so spaces are never stripped or compressed
+          \spaceskip=0.33em\relax
+          \Url{%
+            \scantokens{#1\noexpand}%
+          }%
+          \egroup
+        }
+        \makeatother
+
+        % 3. Enforce general multi-line table code cell wrapping
+        \appto\sphinxsetup{\fvset{breaklines=true}}
+    ''',
+
 }
 
 
 # Ensure tables use tabulary for page fitting and longtable for multi-page content
-#latex_table_style = ['tabulary', 'longtable']
+latex_table_style = ['tabulary', 'longtable']
 
 
 # Configure Sphinx to clone GitHub's exact header-slug behaviour

@@ -101,9 +101,17 @@ latex_elements = {
     'fncychap': '', 
 
     'pointsize': '11pt',
-    'classoptions': ',oneside',
+    #'classoptions': ',oneside',
     "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}",
 
+    # --- 1. Configure Sphinx to allow line breaks inside PDF tables ---
+    # Force the LaTeX engine to use the 'longtable' environment or auto-wrapping 'tabulary'
+    'extraclassoptions': 'openany,oneside',
+    'preamble': r'''
+        \usepackage{makecell}
+        % Force LaTeX to dynamically evaluate <br> strings as real line breaks
+        \DeclareUnicodeCharacter{00A0}{~}
+    ''',
 }
 
 
@@ -134,28 +142,23 @@ else:
 
 
 
-# --- Dynamic `<br>` to Native Markdown Breaks for PDF Builder ---
-
+# --- 2. Intercept and rewrite <br> to native LaTeX commands ---
 def convert_br_for_pdf_builder(app, docname, source):
     """
-    Intercepts raw Markdown file contents before MyST-Parser executes.
-    Swaps <br> tags with a native Markdown escape break ONLY during PDF builds.
+    Swaps <br> tags with LaTeX \newline commands ONLY during PDF builds.
+    Because we configured LaTeX to allow multiline cells above, \newline works perfectly.
     """
-    # Target only LaTeX/PDF build pipelines
     if app.builder.name in ('latex', 'pdf'):
-        # source is a single-element list containing the full file string
         raw_text = source[0]
         
-        # Replace common variations of the HTML break tag
-        # with a backslash followed immediately by a newline.
-        raw_text = raw_text.replace('<br>', '\\\n')
-        raw_text = raw_text.replace('<br/>', '\\\n')
-        raw_text = raw_text.replace('<br />', '\\\n')
+        # Replace variations of the HTML break tag with LaTeX cell newline macros
+        raw_text = raw_text.replace('<br>', r' \newline ')
+        raw_text = raw_text.replace('<br/>', r' \newline ')
+        raw_text = raw_text.replace('<br />', r' \newline ')
         
-        # Update the source in-memory
         source[0] = raw_text
 
 def setup(app):
     """Registers the core source-read hook into Sphinx."""
-    # 'source-read' triggers before any parser tokens or AST are built
+    # Triggers right before MyST compiles the source text
     app.connect('source-read', convert_br_for_pdf_builder)

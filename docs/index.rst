@@ -2,9 +2,9 @@
 ISTP Metadata Guidelines
 ========================
 
-.. rst-class:: center-authors
+.. only:: html
 
-|author|
+:Author: |author|
 
 .. rubric:: Abstract
 

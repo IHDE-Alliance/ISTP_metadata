@@ -24,13 +24,24 @@ author_list = ["Ramona L. Kessel", "Robert E. McGuire", "D. Aaron Roberts", "Rob
 # Automatically formats for HTML front page/footer:
 author = ", ".join(author_list)
 
+# Automatically injects LaTeX breaking syntax for the PDF version
+latex_author = r" \and ".join(author_list)
+
+# Pass the variables seamlessly into their respective configurations
+latex_documents = [
+    (
+        master_doc,
+        'project_name.tex',
+        project,
+        latex_author,     # Standardized list containing \and breaks
+        'manual'
+    ),
+]
+
 # This injects the |author| substitution globally
 rst_epilog = f"""
 .. |author| replace:: {author}
 """
-
-# Automatically injects LaTeX breaking syntax for the PDF version
-author = " \\\\ ".join(author_list)
 
 
 # -- General configuration ---------------------------------------------------

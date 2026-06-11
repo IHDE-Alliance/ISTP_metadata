@@ -15,6 +15,10 @@ import sys
 sys.path.insert(0, os.path.abspath('.'))
 
 
+# Set index.rst as the main page
+root_doc = 'index'
+
+
 # -- Project information -----------------------------------------------------
 
 project = "ISTP Metadata Guidelines"
@@ -66,9 +70,6 @@ extensions = [
 
 # templates_path = ["_templates"]
 
-
-# Set index.rst as the main page
-root_doc = 'index'
 
 
 # -- Options for EPUB output

@@ -30,8 +30,8 @@ latex_author = r" \and ".join(author_list)
 # Pass the variables seamlessly into their respective configurations
 latex_documents = [
     (
-        master_doc,
-        'project_name.tex',
+        root_doc,
+        'istp_metadata.tex',
         project,
         latex_author,     # Standardized list containing \and breaks
         'manual'

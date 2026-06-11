@@ -21,6 +21,10 @@ project = "ISTP Metadata Guidelines"
 copyright = "CC0 1.0 Universal"
 author = "Ramona L. Kessel, Robert E. McGuire, D. Aaron Roberts, Robert M. Candey, Andriy Koval, Reine Chimiak, Lan Jian, Tamara J. Kovalick, Sarah M. Fooks, Eric W. Grimes, Bernard T. Harris, Alfredo A. Cruz, Rita C. Johnson, Fernando Carcaboso Morales"
 
+# This injects the |author| substitution globally
+rst_epilog = f"""
+.. |author| replace:: {author}
+"""
 
 # -- General configuration ---------------------------------------------------
 

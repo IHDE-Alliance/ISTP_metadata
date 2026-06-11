@@ -2,7 +2,7 @@
 ISTP Metadata Guidelines
 ========================
 
-|author|
+:Author: |author|
 
 .. rubric:: Abstract
 

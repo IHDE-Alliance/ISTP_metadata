@@ -19,12 +19,19 @@ sys.path.insert(0, os.path.abspath('.'))
 
 project = "ISTP Metadata Guidelines"
 copyright = "CC0 1.0 Universal"
-author = "Ramona L. Kessel, Robert E. McGuire, D. Aaron Roberts, Robert M. Candey, Andriy Koval, Reine Chimiak, Lan Jian, Tamara J. Kovalick, Sarah M. Fooks, Eric W. Grimes, Bernard T. Harris, Alfredo A. Cruz, Rita C. Johnson, Fernando Carcaboso Morales"
+author_list = ["Ramona L. Kessel", "Robert E. McGuire", "D. Aaron Roberts", "Robert M. Candey", "Andriy Koval", "Reine Chimiak", "Lan Jian", "Tamara J. Kovalick", "Sarah M. Fooks", "Eric W. Grimes", "Bernard T. Harris", "Alfredo A. Cruz", "Rita C. Johnson", "Fernando Carcaboso Morales"]
+
+# Automatically formats for HTML front page/footer:
+author = ", ".join(author_list)
 
 # This injects the |author| substitution globally
 rst_epilog = f"""
 .. |author| replace:: {author}
 """
+
+# Automatically injects LaTeX breaking syntax for the PDF version
+author = r" \and ".join(author_list)
+
 
 # -- General configuration ---------------------------------------------------
 

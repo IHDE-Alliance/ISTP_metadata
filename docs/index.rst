@@ -2,6 +2,8 @@
 ISTP Metadata Guidelines
 ========================
 
+.. rst-class:: center-authors
+
 :Author: |author|
 
 .. rubric:: Abstract

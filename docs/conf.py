@@ -30,7 +30,7 @@ rst_epilog = f"""
 """
 
 # Automatically injects LaTeX breaking syntax for the PDF version
-author = r" \and ".join(author_list)
+author = " \\\\ ".join(author_list)
 
 
 # -- General configuration ---------------------------------------------------

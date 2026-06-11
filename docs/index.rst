@@ -4,7 +4,7 @@ ISTP Metadata Guidelines
 
 .. rst-class:: center-authors
 
-:Author: |author|
+|author|
 
 .. rubric:: Abstract
 

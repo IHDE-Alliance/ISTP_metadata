@@ -19,6 +19,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 project = "ISTP Metadata Guidelines"
 copyright = "CC0 1.0 Universal"
+author = "Ramona L. Kessel, Robert E. McGuire, D. Aaron Roberts, Robert M. Candey, Andriy Koval, Reine Chimiak, Lan Jian, Tamara J. Kovalick, Sarah M. Fooks, Eric W. Grimes, Bernard T. Harris, Alfredo A. Cruz, Rita C. Johnson, Fernando Carcaboso Morales"
 
 
 # -- General configuration ---------------------------------------------------
@@ -85,6 +86,9 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["source/_static"]
+
+
+html_css_files = ['custom.css']
 
 
 # Prevent Intersphinx from hijacking local Markdown/unresolved references

@@ -60,6 +60,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
+    "sphinx.ext.imgconverter"
 ]
 
 #intersphinx_mapping = {
@@ -115,11 +116,11 @@ html_static_path = ["source/_static"]
 html_css_files = ['custom.css']
 
 # Logo
-html_logo = "logo/ISTP_Metadata_icon.png"
-html_favicon = "logo/ISTP_Metadata_icon.png"
+html_logo = "logo/ISTP_Metadata_icon.svg"
+html_favicon = "logo/ISTP_Metadata_icon.svg"
 
 # Add the logo for PDF/LaTeX generation
-latex_logo = 'logo/ISTP_Metadata_icon.png' 
+latex_logo = 'logo/ISTP_Metadata_icon.svg' 
 
 
 # Prevent Intersphinx from hijacking local Markdown/unresolved references

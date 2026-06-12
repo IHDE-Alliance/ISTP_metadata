@@ -102,6 +102,7 @@ html_theme_options = {
     'github_button': False,
     'github_type': 'star',
     'fixed_sidebar': False,
+    'sidebar_width': '300px'
 }
 
 
@@ -116,6 +117,9 @@ html_css_files = ['custom.css']
 # Logo
 html_logo = "logo/ISTP_Metadata_icon.png"
 html_favicon = "logo/ISTP_Metadata_icon.png"
+
+# Add the logo for PDF/LaTeX generation
+latex_logo = 'logo/ISTP_Metadata_icon.png' 
 
 
 # Prevent Intersphinx from hijacking local Markdown/unresolved references

@@ -4,7 +4,7 @@ ISTP Metadata Guidelines
 
 .. only:: html
 
-:Author: |author|
+   :Author: |author|
 
 .. rubric:: Abstract
 

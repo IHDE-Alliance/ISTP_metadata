@@ -29,7 +29,7 @@ author_list = ["Ramona L. Kessel", "Robert E. McGuire", "D. Aaron Roberts", "Rob
 author = ", ".join(author_list)
 
 # Automatically injects LaTeX breaking syntax for the PDF version
-latex_author = r" \and ".join(author_list)
+latex_author = r", \and ".join(author_list)
 
 # Pass the variables seamlessly into their respective configurations
 latex_documents = [
@@ -112,6 +112,10 @@ html_static_path = ["source/_static"]
 
 
 html_css_files = ['custom.css']
+
+# Logo
+html_logo = "logo/ISTP_Metadata_icon.png"
+html_favicon = "logo/ISTP_Metadata_icon.png"
 
 
 # Prevent Intersphinx from hijacking local Markdown/unresolved references

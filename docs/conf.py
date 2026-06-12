@@ -102,7 +102,7 @@ html_theme_options = {
     'github_button': False,
     'github_type': 'star',
     'fixed_sidebar': False,
-    'sidebar_width': '300px'
+    'sidebar_width': '280px'
 }
 
 

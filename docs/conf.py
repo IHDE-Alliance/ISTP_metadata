@@ -179,7 +179,15 @@ latex_elements = {
         \appto\sphinxsetup{\fvset{breaklines=true}}
 
         % Override the logo command to enforce a specific width, relative to text width
-        \renewcommand{\sphinxlogo}{\includegraphics[width=0.3\textwidth]{ISTP_Metadata_icon.png}}
+
+        \renewcommand{\sphinxlogo}{
+            \begin{center}
+                %Force the image to center horizontally
+                \includegraphics[width=0.3\textwidth]{ISTP_Metadata_icon.png} 
+                %Inject 2 centimeters of vertical space below the logo
+                \vspace{2cm}                          
+            \end{center}
+        }
     ''',
 
 }

@@ -106,7 +106,7 @@ html_theme_options = {
     'sidebar_width': '270px',
     # Injects custom CSS securely on Read the Docs to force the margin
     'extra_nav_links': {
-        '<style>img.logo, .sphinxsidebar img { margin-bottom: 30px !important; }</style>': ''
+        '<style>img.logo, .sphinxsidebar img { margin-bottom: 40px !important; }</style>': ''
     }
 }
 
@@ -186,7 +186,7 @@ latex_elements = {
                 \noindent
                 %Force the image to the right
                 \hfill 
-                \includegraphics[width=0.3\textwidth]{ISTP_Metadata_icon.png} 
+                \includegraphics[width=0.35\textwidth]{ISTP_Metadata_icon.png} 
                 %Inject 2 centimeters of vertical space below the logo
                 \vspace{2cm}                          
             \end{center}

@@ -103,10 +103,10 @@ html_theme_options = {
     'github_button': False,
     'github_type': 'star',
     'fixed_sidebar': False,
-    'sidebar_width': '250px',
-    # Adds a 20px space below the logo element
+    'sidebar_width': '270px',
+    # Adds a 50px space below the logo element
     'extra_nav_links': {
-        '': '<style>img.logo { margin-bottom: 20px; }</style>'
+        '': '<style>img.logo { margin-bottom: 50px; }</style>'
     }
 }
 
@@ -114,7 +114,7 @@ html_theme_options = {
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["source/_static"]
+html_static_path = ["source/_static", "logo"]
 
 
 html_css_files = ['custom.css']
@@ -177,6 +177,9 @@ latex_elements = {
 
         % Force multi-line table code blocks to comply with the wrap settings
         \appto\sphinxsetup{\fvset{breaklines=true}}
+
+        % Override the logo command to enforce a specific width, relative to text width
+        \renewcommand{\sphinxlogo}{\includegraphics[width=0.3\textwidth]{ISTP_Metadata_icon.png}}
     ''',
 
 }

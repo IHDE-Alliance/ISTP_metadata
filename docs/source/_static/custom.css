@@ -6,12 +6,12 @@ pre, code, tt {
 
 /* Target the logo image to control its actual display size */
 img.logo {
-    width: 250px  /* Controls the actual width of your logo */
+    width: 50px  /* Controls the actual width of your logo */
     height: auto  /* Keeps the original aspect ratio intact */
 }
 
 /* Target the logo container to force a vertical space below it */
 p.logo {
-    margin-bottom: 50px  /* Adjust this number to change the space gap */
+    margin-bottom: 150px  /* Adjust this number to change the space gap */
     display: block;
 }

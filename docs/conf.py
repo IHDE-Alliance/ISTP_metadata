@@ -103,11 +103,7 @@ html_theme_options = {
     'github_button': False,
     'github_type': 'star',
     'fixed_sidebar': False,
-    'sidebar_width': '270px',
-    # Adds a 50px space below the logo element
-    'extra_nav_links': {
-        '': '<style>img.logo { margin-bottom: 50px; }</style>'
-    }
+    'sidebar_width': '270px'
 }
 
 

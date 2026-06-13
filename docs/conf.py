@@ -186,7 +186,7 @@ latex_elements = {
                 \noindent
                 %Force the image to the right
                 \hfill 
-                \includegraphics[width=0.35\textwidth]{ISTP_Metadata_icon.png} 
+                \includegraphics[width=0.3\textwidth]{ISTP_Metadata_icon.png} 
                 %Inject 2 centimeters of vertical space below the logo
                 \vspace{2cm}                          
             \end{center}

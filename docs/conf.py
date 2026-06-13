@@ -184,7 +184,8 @@ latex_elements = {
             \begin{center}
                 % Clear any default paragraph indentations
                 \noindent
-                %Force the image to center horizontally
+                %Force the image to the right
+                \hfill 
                 \includegraphics[width=0.35\textwidth]{ISTP_Metadata_icon.png} 
                 %Inject 2 centimeters of vertical space below the logo
                 \vspace{2cm}                          

@@ -182,8 +182,10 @@ latex_elements = {
 
         \renewcommand{\sphinxlogo}{
             \begin{center}
+                % Clear any default paragraph indentations
+                \noindent
                 %Force the image to center horizontally
-                \includegraphics[width=0.3\textwidth]{ISTP_Metadata_icon.png} 
+                \includegraphics[width=0.35\textwidth]{ISTP_Metadata_icon.png} 
                 %Inject 2 centimeters of vertical space below the logo
                 \vspace{2cm}                          
             \end{center}

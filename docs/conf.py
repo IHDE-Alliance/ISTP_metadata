@@ -104,7 +104,7 @@ html_theme_options = {
     'github_type': 'star',
     'fixed_sidebar': False,
     'sidebar_width': '270px'
-    'logo_width': '150px'
+    'logo_width': '150px',
     # Injects custom CSS securely on Read the Docs to force the margin
     'extra_nav_links': {
         '<style>img.logo, .sphinxsidebar img { margin-bottom: 50px !important; }</style>': ''

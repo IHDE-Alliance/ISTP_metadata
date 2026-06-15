@@ -252,33 +252,27 @@ def fix_table_cells_for_pdf(app, doctree, docname):
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)
                 
-        # 2. Safely intercept text blocks inside table cells
+        # 2. Mutate cell text directly via data payloads
         for cell in doctree.traverse(nodes.entry):
             for text_node in list(cell.traverse(nodes.Text)):
-                # Ensure the text node still exists inside its structural parent
-                parent = text_node.parent
-                if parent is None:
+                # Ignore nodes that belong to raw code snippets or layouts
+                if isinstance(text_node.parent, nodes.raw):
                     continue
                     
                 original_text = text_node.astext()
                 
-                # Skip empty spaces, short markers, and text already converted to raw LaTeX
+                # Skip whitespace or single punctuation tokens
                 if not original_text.strip() or len(original_text) < 4:
                     continue
-                if isinstance(parent, nodes.raw) and parent.get('format') == 'latex':
-                    continue
                 
-                # If the word contains breakable punctuation characters
+                # If text contains breakable punctuation characters
                 if any(char in original_text for char in ['_', '.', '/', '-', '\\']):
-                    # Escape special TeX control symbols to avoid syntax compilation errors
+                    # Escape special TeX tokens to prevent compilation bugs
                     safe_text = original_text.replace('_', r'\_').replace('&', r'\&').replace('%', r'\%')
                     
-                    # Wrap the text in the seqsplit command to break layout boundaries cleanly
-                    split_node = nodes.raw('', rf'\seqsplit{{{safe_text}}}', format='latex')
-                    
-                    # Correct way to replace a Text node using its parent element
-                    index = parent.index(text_node)
-                    parent[index] = split_node
+                    # Instead of node replacement, overwrite text payload directly using raw TeX macro strings
+                    # This tricks Sphinx into passing the seqsplit layout directly to LaTeX
+                    text_node.data = rf'\seqsplit{{{safe_text}}}'
 
 def setup(app):
     app.connect('doctree-resolved', fix_table_cells_for_pdf)

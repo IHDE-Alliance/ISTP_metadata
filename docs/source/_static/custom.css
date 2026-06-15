@@ -1,11 +1,14 @@
-/* Triggers mandatory column text-wrapping inside Alabaster/RTD themes */
+/* Triggers mandatory column text-wrapping inside Alabaster/RTD themes 
 table, td, th {
     white-space: normal !important;
     word-break: break-all !important;
 }
 
+
+/* 
 pre, code, tt {
     word-break: break-all;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+*/

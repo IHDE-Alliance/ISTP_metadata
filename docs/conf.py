@@ -153,16 +153,20 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
-        % Completely turn off standard syllable hyphenation globally
+        % Completely block hyphen dash creation
         \hyphenpenalty=10000
         \exhyphenpenalty=10000
         
-        % Force LaTeX to allow line-breaks at underscores and slashes
+        % Force extreme character wrapping points at technical symbols
         \usepackage{url}
         \makeatletter
-        \g@addto@macro\UrlBreaks{\do\_\do\.\do\/\do\-\do\\\do\:}
+        \g@addto@macro\UrlBreaks{\do\_\do\.\do\/\do\-\do\\\do\:\do\&\do\%}
         \makeatother
-    
+        
+        % Instruct LaTeX to allow splitting text on any arbitrary character if forced
+        \emergencystretch=3em
+        \tolerance=9999
+        
         \usepackage{ragged2e}
         \usepackage{etoolbox}
 
@@ -243,41 +247,36 @@ else:
 
 from docutils import nodes
 
-def force_latex_table_wrapping(app, doctree, docname):
+def force_equal_columns_and_wrapping(app, doctree, docname):
     """
-    Injects literal LaTeX layout properties into every table block.
-    This bypasses tabulary, scales columns equally, and forces wrap behaviors.
+    Finds all parsed Markdown tables and forces equal column spacing 
+    and mandatory text wrapping via native LaTeX X-specifiers.
     """
     if app.builder.name in ['latex', 'pdf']:
         
-        # 1. Retain the working <br> node translation
+        # 1. Retain the working hard <br> tag translation
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
             if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)
 
-        # 2. Inject raw LaTeX 'tabularcolumns' commands directly above every table
+        # 2. Inject explicit tabularcolumn spacing nodes directly before every table
         for table in list(doctree.traverse(nodes.table)):
-            # Count the columns by inspecting the internal table specifications
             tgroup = table.next_node(nodes.tgroup)
             if tgroup:
-                col_count = len([n for n in tgroup.children if isinstance(n, nodes.colspec)])
+                colspecs = [n for n in tgroup.children if isinstance(n, nodes.colspec)]
+                col_count = len(colspecs)
                 
                 if col_count > 0:
-                    # Calculate equal width allocation based on text width fractions
-                    # For example: 3 columns -> p{\dimexpr\textwidth/3}
-                    col_spec_string = "".join([rf"|p{{\dimexpr\textwidth/{col_count}\relax}}" for _ in range(col_count)]) + "|"
+                    # Construct structural LaTeX specifications for equal distribution
+                    # e.g., 3 columns -> |\X{1}{3}|\X{1}{3}|\X{1}{3}|
+                    spec_parts = [rf"\X{{1}}{{{col_count}}}" for _ in range(col_count)]
+                    col_spec_string = f"|{'|'.join(spec_parts)}|"
                     
-                    # Create a literal LaTeX override instruction node
-                    # This tells the Sphinx compiler: "Ignore standard parsing, use this exact grid layout"
-                    macro_node = nodes.raw('', rf'\def\sphinxatablestart{{\begin{{tabulary}}{{\linewidth}}{{{col_spec_string}}}}}\n', format='latex')
-                    
-                    # Insert the macro configuration safely right above the target table
-                    parent = table.parent
-                    if parent:
-                        index = parent.index(table)
-                        parent.insert(index, macro_node)
+                    # Create the native Sphinx layout instruction node
+                    # It targets the LaTeX engine directly before structural building
+                    table['latex_column_spec'] = col_spec_string
 
 def setup(app):
-    app.connect('doctree-resolved', force_latex_table_wrapping)
+    app.connect('doctree-resolved', force_equal_columns_and_wrapping)

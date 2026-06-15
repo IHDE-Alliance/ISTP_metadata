@@ -72,7 +72,7 @@ UNITS = "ns"
 ```
 See CDF_TIME_TT2000 [requirements analysis](http://cdf.gsfc.nasa.gov/html/leapseconds_requirements.html) and [development approach](http://cdf.gsfc.nasa.gov/html/leapseconds.html) for more details.
 
-| **Attribute** | **Requirement (see details in Notes column)** | **Example Value, <br> Required Data Type** | **Notes** |
+| **Attribute** <!-- width="25%" -->  | **Requirement (see details in Notes column)** <!-- width="25%" --> | **Example Value, <br> Required Data Type** <!-- width="25%" --> | **Notes** <!-- width="25%" --> |
 | ------------- | ---------------- | ----------- | -------------- |
 | [`TIME_BASE`](#time_base) | **Recommended** (Important for **netCDF** files and clarity) | `"J2000"` <br> CDF_CHAR | Fixed (`"0 AD"` (used by CDF_EPOCH and CDF_EPOCH16), `"1900"`, `"1970"` (POSIX), `"J2000"` (used by CDF_TIME_TT2000), `"4714 BC"` (Julian)) or `"flexible"` (provider-defined). |
 | [`TIME_SCALE`](#time_scale) | **Recommended**  |  `"TT"` <br> CDF_CHAR | `"TT"` (same as TDT, used by CDF_TIME_TT2000), `"TAI"` (same as IAT, TT-32.184s), `"UTC"` (includes leap seconds), `"TDB"` (same as SPICE ET), `"EME1950"` [default: `"UTC"`]. |

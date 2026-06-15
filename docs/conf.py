@@ -240,18 +240,93 @@ else:
 
 
 
-# Handle <br> in PDF table cells
+# Handle <br> in PDF table cells and handle custom column widths
 
+import re
 from docutils import nodes
 
-def convert_br_tags_for_pdf(app, doctree, docname):
-    if app.builder.name in ['latex', 'pdf']:
-        # Only handle the hard line breaks; the LaTeX preamble handles the wrapping/widths
+def process_table_widths_and_wrapping(app, doctree, docname):
+    """
+    Reads hidden HTML comment width attributes inside markdown cells.
+    Applies custom column styling for RTD HTML and forces un-hyphenated 
+    wrapping at any point inside PDF engines.
+    """
+    is_pdf = app.builder.name in ['latex', 'pdf']
+    is_html = 'html' in app.builder.name
+
+    # 1. First, process the hard <br> tag splits exactly as before
+    if is_pdf:
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
             if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)
 
+    # 2. Extract column width hints and force letter-by-letter breaking properties
+    for table in list(doctree.traverse(nodes.table)):
+        tgroup = table.next_node(nodes.tgroup)
+        if not tgroup:
+            continue
+            
+        colspecs = [n for n in tgroup.children if isinstance(n, nodes.colspec)]
+        if not colspecs:
+            continue
+            
+        # Parse the headers to find your width values: <!-- width="X%" -->
+        detected_widths = []
+        thead = tgroup.next_node(nodes.thead)
+        if thead:
+            for cell in thead.traverse(nodes.entry):
+                cell_text = cell.astext()
+                match = re.search(r'<!--\s*width=["\'](\d+)%?["\']\s*-->', cell_text)
+                if match:
+                    detected_widths.append(int(match.group(1)))
+                else:
+                    detected_widths.append(None)
+
+        # Apply specific sizing logic if width percentages were configured
+        if any(w is not None for w in detected_widths):
+            # Fill missing percentages equally
+            filled_widths = [w if w is not None else int(100/len(colspecs)) for w in detected_widths]
+            total_w = sum(filled_widths)
+            
+            # Convert to proportional fractions for Sphinx Layout Trees
+            for i, spec in enumerate(colspecs):
+                spec['colwidth'] = filled_widths[i]
+            
+            # FOR PDF: Map fractions straight into explicit LaTeX column directives
+            if is_pdf:
+                spec_parts = [rf"\X{{{w}}}{{{total_w}}}" for w in filled_widths]
+                table['latex_column_spec'] = f"|{'|'.join(spec_parts)}|"
+
+        # 3. Apply extreme continuous character wrapping for PDF columns
+        if is_pdf:
+            for cell in tgroup.traverse(nodes.entry):
+                for text_node in list(cell.traverse(nodes.Text)):
+                    if isinstance(text_node.parent, nodes.raw):
+                        continue
+                        
+                    original_text = text_node.astext()
+                    if not original_text.strip() or len(original_text) < 2:
+                        continue
+                    
+                    # Split strings down to separate characters and inject zero-width line breaks
+                    wrapped_chars = []
+                    for char in original_text:
+                        if char in ['_', '.', '/', '-', '\\', ':', '&', '%']:
+                            wrapped_chars.append(f"{char}\\hspace{{0pt}}")
+                        elif char.isalnum():
+                            wrapped_chars.append(f"{char}\\hspace{{0pt}}")
+                        else:
+                            wrapped_chars.append(char)
+                            
+                    modified_text = "".join(wrapped_chars)
+                    raw_latex_node = nodes.raw('', modified_text, format='latex')
+                    
+                    parent = text_node.parent
+                    if parent:
+                        parent.replace(text_node, raw_latex_node)
+
 def setup(app):
-    app.connect('doctree-resolved', convert_br_tags_for_pdf)
+    # Connect our dynamic handler safely to your Sphinx events chain
+    app.connect('doctree-resolved', process_table_widths_and_wrapping)

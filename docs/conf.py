@@ -156,9 +156,11 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
-        % Force the tabulary alignment columns (L, C, R, J) 
-        % to split the available text width exactly 50/50, 33/33/33, etc.
+        \makeatletter
+        % Force tabulary (L,C,R,J) columns to distribute total line width evenly
         \renewcommand{\TY@authorize}{\let\TY@final\TY@allcolarg}
+        \makeatother
+
 
         % urn off standard syllable hyphenation completely
         \hyphenpenalty=10000

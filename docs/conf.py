@@ -242,36 +242,41 @@ else:
 
 from docutils import nodes
 
-def enforce_table_column_widths(app, doctree, docname):
+def force_latex_table_wrapping(app, doctree, docname):
     """
-    Finds all tables and assigns proportional widths to every column.
-    This fixes text clipping, overflowing, and activates line wrapping.
+    Injects literal LaTeX layout properties into every table block.
+    This bypasses tabulary, scales columns equally, and forces wrap behaviors.
     """
-    # Filter strictly for LaTeX/PDF build loops
     if app.builder.name in ['latex', 'pdf']:
         
-        # 1. Keep our working <br> tag fix
+        # 1. Retain the working <br> node translation
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
             if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)
 
-        # 2. Automatically fix column widths for wrapping
-        for tgroup in doctree.traverse(nodes.tgroup):
-            # Find all column specifications in the current table
-            colspecs = [node for node in tgroup.children if isinstance(node, nodes.colspec)]
-            col_count = len(colspecs)
-            
-            if col_count > 0:
-                # Distribute space equally (e.g., 4 columns = 25% each)
-                equal_width = int(100 / col_count)
+        # 2. Inject raw LaTeX 'tabularcolumns' commands directly above every table
+        for table in list(doctree.traverse(nodes.table)):
+            # Count the columns by inspecting the internal table specifications
+            tgroup = table.next_node(nodes.tgroup)
+            if tgroup:
+                col_count = len([n for n in tgroup.children if isinstance(n, nodes.colspec)])
                 
-                for spec in colspecs:
-                    # 'colwidth' dictates the layout behavior to the Sphinx PDF engine
-                    spec['colwidth'] = equal_width
-                    spec['stub'] = 0  # Prevents rendering bugs in basic themes
+                if col_count > 0:
+                    # Calculate equal width allocation based on text width fractions
+                    # For example: 3 columns -> p{\dimexpr\textwidth/3}
+                    col_spec_string = "".join([rf"|p{{\dimexpr\textwidth/{col_count}\relax}}" for _ in range(col_count)]) + "|"
+                    
+                    # Create a literal LaTeX override instruction node
+                    # This tells the Sphinx compiler: "Ignore standard parsing, use this exact grid layout"
+                    macro_node = nodes.raw('', rf'\def\sphinxatablestart{{\begin{{tabulary}}{{\linewidth}}{{{col_spec_string}}}}}\n', format='latex')
+                    
+                    # Insert the macro configuration safely right above the target table
+                    parent = table.parent
+                    if parent:
+                        index = parent.index(table)
+                        parent.insert(index, macro_node)
 
 def setup(app):
-    # Enable MyST html extensions so <br> nodes are not swallowed early
-    app.connect('doctree-resolved', enforce_table_column_widths)
+    app.connect('doctree-resolved', force_latex_table_wrapping)

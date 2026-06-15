@@ -9,7 +9,7 @@ All ISTP global attributes are of character data type (CDF_CHAR) in the CDF file
 
 <!-- % MyST table metadata targets -->
 <!-- 
-:widths: 20 50 30
+:widths: 20 20 20 40
 :align: center
 -->
 

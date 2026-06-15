@@ -153,16 +153,16 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
-        \usepackage{seqsplit}
-        
-        % Completely turn off standard syllable hyphenation
+        % Completely turn off standard syllable hyphenation globally
         \hyphenpenalty=10000
         \exhyphenpenalty=10000
         
-        % Allow LaTeX to stretch spaces dynamically to fit non-hyphenated lines
-        \tolerance=2000
-        \emergencystretch=10pt
-
+        % Force LaTeX to allow line-breaks at underscores and slashes
+        \usepackage{url}
+        \makeatletter
+        \g@addto@macro\UrlBreaks{\do\_\do\.\do\/\do\-\do\\\do\:}
+        \makeatother
+    
         \usepackage{ragged2e}
         \usepackage{etoolbox}
 
@@ -242,18 +242,36 @@ else:
 
 from docutils import nodes
 
-def convert_br_tags_globally(app, doctree, docname):
-    # Process only during PDF/LaTeX compilation loops
+def enforce_table_column_widths(app, doctree, docname):
+    """
+    Finds all tables and assigns proportional widths to every column.
+    This fixes text clipping, overflowing, and activates line wrapping.
+    """
+    # Filter strictly for LaTeX/PDF build loops
     if app.builder.name in ['latex', 'pdf']:
+        
+        # 1. Keep our working <br> tag fix
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
-            
-            # Check for the raw HTML break tags passed by MyST
             if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
-                # Inject a raw LaTeX node that forces a hard cell line break
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)
 
+        # 2. Automatically fix column widths for wrapping
+        for tgroup in doctree.traverse(nodes.tgroup):
+            # Find all column specifications in the current table
+            colspecs = [node for node in tgroup.children if isinstance(node, nodes.colspec)]
+            col_count = len(colspecs)
+            
+            if col_count > 0:
+                # Distribute space equally (e.g., 4 columns = 25% each)
+                equal_width = int(100 / col_count)
+                
+                for spec in colspecs:
+                    # 'colwidth' dictates the layout behavior to the Sphinx PDF engine
+                    spec['colwidth'] = equal_width
+                    spec['stub'] = 0  # Prevents rendering bugs in basic themes
+
 def setup(app):
-    # Ensure MyST doesn't drop the raw HTML tags early
-    app.connect('doctree-resolved', convert_br_tags_globally)
+    # Enable MyST html extensions so <br> nodes are not swallowed early
+    app.connect('doctree-resolved', enforce_table_column_widths)

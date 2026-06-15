@@ -1,5 +1,5 @@
 pre, code, tt {
-    word-break: break-all !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word  !important;
+    word-break: break-all ;
+    word-wrap: break-word ;
+    overflow-wrap: break-word ;
 }

@@ -156,9 +156,16 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
+        \usepackage{tabularx}
+        % Intercept Sphinx's standard tabular environment 
+        % and map it onto tabularx to force matching, fluid column scaling
         \makeatletter
-        % Force tabulary (L,C,R,J) columns to distribute total line width evenly
-        \renewcommand{\TY@authorize}{\let\TY@final\TY@allcolarg}
+        \renewenvironment{tabular}[1]{%
+          \def\sphinxXcoltype{X}%
+          \tabularx{\linewidth}{#1}%
+        }{%
+          \endtabularx%
+        }
         \makeatother
 
 
@@ -197,7 +204,6 @@ latex_elements = {
         \appto\sphinxsetup{\fvset{breaklines=true}}
 
         % Override the logo command to enforce a specific width, relative to text width
-
         \renewcommand{\sphinxlogo}{
             \begin{center}
                 % Clear any default paragraph indentations

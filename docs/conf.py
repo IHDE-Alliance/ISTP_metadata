@@ -156,13 +156,21 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
-        % urn off standard syllable hyphenation completely
+        % Completely turn off standard syllable hyphenation dashes globally
         \hyphenpenalty=10000
         \exhyphenpenalty=10000
         
-        % Allow aggressive character splitting inside long strings
+        % Force extreme character wrapping points at technical symbols (underscores, dots, slashes)
+        \usepackage{url}
+        \makeatletter
+        \g@addto@macro\UrlBreaks{\do\_\do\.\do\/\do\-\do\\\do\:\do\&\do\%}
+        \makeatother
+        
+        % Instruct LaTeX to allow splitting text on any arbitrary character if forced
         \emergencystretch=3em
         \tolerance=9999
+
+
 
 
         \usepackage{ragged2e}
@@ -243,16 +251,75 @@ else:
 
 # Handle <br> in PDF table cells
 
-from docutils import nodes
+import re
 
-def convert_br_tags_for_pdf(app, doctree, docname):
+def process_raw_markdown_tables(app, docname, source):
+    """
+    Processes the raw Markdown text before MyST or LaTeX can alter it.
+    Forces uniform column blocks, switches on wrapping, and applies hard line breaks.
+    """
+    raw_markdown = source[0]
+
+    # --- 1. HANDLE COEXISTING HARD <br> TAGS FOR BOTH HTML & PDF ---
     if app.builder.name in ['latex', 'pdf']:
-        # Only handle the hard line breaks; the LaTeX preamble handles the wrapping/widths
-        for raw_node in list(doctree.traverse(nodes.raw)):
-            raw_text = raw_node.astext().lower()
-            if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
-                latex_newline = nodes.raw('', r'\newline ', format='latex')
-                raw_node.replace_self(latex_newline)
+        # Convert HTML breaks to literal LaTeX newline declarations inside LaTeX cells
+        raw_markdown = re.sub(r'<br\s*/?>', r'\\newline ', raw_markdown, flags=re.IGNORECASE)
+    else:
+        # Keep standard HTML breaks operational for web builds
+        raw_markdown = re.sub(r'<br\s*/?>', r'<br>', raw_markdown, flags=re.IGNORECASE)
+
+    # --- 2. ENFORCE COLUMNS & WORD WRAPPING GLOBALLY ---
+    if app.builder.name in ['latex', 'pdf']:
+        lines = raw_markdown.split('\n')
+        processed_lines = []
+        in_table = False
+        table_lines = []
+
+        for line in lines:
+            # Detect a standard Markdown pipe table boundary row
+            if re.match(r'^\s*\|.*\|\s*$', line):
+                in_table = True
+                table_lines.append(line)
+            else:
+                if in_table and table_lines:
+                    # Determine column counts by analyzing the separator row structure
+                    col_count = 0
+                    for t_line in table_lines:
+                        if '---' in t_line:
+                            col_count = t_line.count('|') - 1
+                            break
+                    if col_count <= 0:
+                        col_count = table_lines[0].count('|') - 1
+
+                    if col_count > 0:
+                        # Construct a custom, bulletproof LaTeX layout format specifier
+                        # e.g., 3 columns -> |\X{1}{3}|\X{1}{3}|\X{1}{3}|
+                        spec_parts = [rf"\X{{1}}{{{col_count}}}" for _ in range(col_count)]
+                        col_spec = f"|{'|'.join(spec_parts)}|"
+                        
+                        # Wrap the entire table in an explicit directive override block
+                        processed_lines.append(f"\n\n.. tabularcolumns:: {col_spec}\n\n")
+                    
+                    processed_lines.extend(table_lines)
+                    table_lines = []
+                    in_table = False
+                
+                processed_lines.append(line)
+        
+        # Catch any trailing tables sitting at the very end of a file
+        if in_table and table_lines:
+            col_count = table_lines[0].count('|') - 1
+            if col_count > 0:
+                spec_parts = [rf"\X{{1}}{{{col_count}}}" for _ in range(col_count)]
+                col_spec = f"|{'|'.join(spec_parts)}|"
+                processed_lines.append(f"\n\n.. tabularcolumns:: {col_spec}\n\n")
+            processed_lines.extend(table_lines)
+
+        raw_markdown = '\n'.join(processed_lines)
+
+    # Overwrite the Sphinx memory source payload safely in place
+    source[0] = raw_markdown
 
 def setup(app):
-    app.connect('doctree-resolved', convert_br_tags_for_pdf)
+    # Hook directly into the source reading process before any engine execution
+    app.connect('source-read', process_raw_markdown_tables)

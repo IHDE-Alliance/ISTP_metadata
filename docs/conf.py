@@ -207,6 +207,7 @@ myst_heading_anchors = 4 # Enable auto-generation for headers up to level 4
 # MyST-Parser extensions
 myst_enable_extensions = [
     "html_image",  # Enables correct handling of <img> tags
+    "html_admonition",
 ]
 
 
@@ -225,4 +226,25 @@ else:
     version = 'local-development'
     release = 'local-development-draft'
 
+
+
+# Handle <br> correctly in PDF
+
+from docutils import nodes
+
+def convert_br_tags_globally(app, doctree, docname):
+    # Traverse through all raw nodes in the document tree
+    for raw_node in doctree.traverse(nodes.raw):
+        # Target raw HTML data containing any variant of a line break
+        raw_text = raw_node.astext().lower()
+        if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
+            # Create a native abstract node that both HTML and PDF builders understand
+            newline_node = nodes.Inline('', '')
+            newline_node.append(nodes.Text('\n')) 
+            
+            # Replace the discarded-prone HTML string with the native token
+            raw_node.replace_self(newline_node)
+
+def setup(app):
+    app.connect('doctree-resolved', convert_br_tags_globally)
 

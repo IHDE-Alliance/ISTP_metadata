@@ -240,6 +240,10 @@ else:
 
 
 
+# Force latex mk to clean up all auxiliary log/tex files post-compilation
+latex_keep_old_macro_workers = False
+
+
 # Handle <br> in PDF table cells and handle custom column widths
 
 import re

@@ -143,13 +143,16 @@ myst_table_header_printed = True
 
 # LaTeX settings
 latex_elements = {
+    'pointsize': '11pt',
+    'classoptions': ',oneside',
+    "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
 
     # Prevent the fncychap package from rendering "Chapter X" headers over appendices
     'fncychap': '', 
 
-    'pointsize': '11pt',
-    'classoptions': ',oneside',
-    "sphinxsetup": "hmargin={0.5in,0.5in}, vmargin={1.0in,1.0in}, inlineliteralwraps=true",
+    # This forces the PDF builder to auto-wrap and dynamically size 
+    # all standard Markdown tables instead of squishing them
+    'colwidths': 'auto',
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''

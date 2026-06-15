@@ -240,7 +240,6 @@ else:
 
 
 
-
 # Handle <br> in PDF table cells
 
 from docutils import nodes

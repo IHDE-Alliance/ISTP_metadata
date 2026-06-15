@@ -153,57 +153,15 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
-        % 1. Turn off standard syllable hyphenation completely
+        % urn off standard syllable hyphenation completely
         \hyphenpenalty=10000
         \exhyphenpenalty=10000
         
         % Allow aggressive character splitting inside long strings
         \emergencystretch=3em
         \tolerance=9999
-        
-        % Force break locations at technical symbols (underscores, slashes, dots)
-        \usepackage{url}
-        \makeatletter
-        \g@addto@macro\UrlBreaks{\do\_\do\.\do\/\do\-\do\\\do\:\do\&\do\%}
-        \makeatother
-    
-        % 2. THE FIX: Override Sphinx's table startup macro dynamically
-        % This completely strips out 'tabulary' and forces fixed paragraph columns
-        \makeatletter
-        \renewcommand{\sphinxatablestart}[1]{%
-            % Safely parse the column spec string passed by Sphinx (e.g., "|l|l|l|")
-            \def\originalspec{#1}%
-            % Count how many 'l', 'r', or 'c' columns exist in this table
-            \protected@edef\countcols{\expandafter\count@columns\originalspec\relax}%
-            % Build a clean layout: e.g., if 3 columns, makes it |p{\dimexpr\linewidth/3-2tabcolsep}|
-            \edef\newspec{|}%
-            \count@=0
-            \@whilenum\count@<\countcols\do{%
-                \edef\newspec{\newspec p{\dimexpr\linewidth/\countcols-2\tabcolsep\relax}|}%
-                \advance\count@ by 1
-            }%
-            % Execute a standard tabular environment with our forced mathematical layout
-            \begin{tabular}{\newspec}%
-        }
-        % Helper macro to count column occurrences cleanly
-        \def\count@columns#1{%
-            \ifx#1\relax
-                0%
-            \else
-                \ifx#1|%
-                    \expandafter\count@columns
-                \else
-                    +1\expandafter\count@columns
-                \fi
-            \fi
-        }
-        % Match the closing environment definition
-        \renewcommand{\sphinxatableend}{\end{tabular}}
-        \makeatother
-        
-        
-        
-        
+
+
         \usepackage{ragged2e}
         \usepackage{etoolbox}
 

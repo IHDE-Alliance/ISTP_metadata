@@ -112,7 +112,7 @@ We have extended the ISTP project data dictionary to include dictionary keywords
 
 We provide a standard set of class keywords that include both *sensor* (science) and *supporting* class keywords and their meanings, to be used to categorize the data variables of primary interest to investigators. ISTP class keywords are restricted to the values shown below. Sets of subclass keywords, with each set used to modify one of the class keywords, are also adopted and listed with the associated information below. Lists of common subclass keywords, valid with any class keywords, can also be found below.
 
-| Sensor Class Keyword    | Description    |   Subclass Keywords |		
+| Sensor Class Keyword    | Description    |   Subclass Keywords |		
 | ------------- | ---------------| -------------   |
 | `anisotropy`	|The variation of physical properties with direction, usually expressed as a ratio |  `parallel` |
 | `current` | 	The rate of flow of electricity | `Hall`, `load`, `primary`,  `secondary`	|
@@ -130,7 +130,7 @@ We provide a standard set of class keywords that include both *sensor* (science)
 
 
 
-| Supporting Class Keyword    | Description    |   Subclass Keywords |		
+| Supporting Class Keyword    | Description    |   Subclass Keywords |		
 | ------------- | ---------------| -------------   |
 | `angle` 	|The geometric figure formed by two lines diverging from a point or two planes diverging from a common line or the space between two such lines or surfaces| `antenna`, `aspect`, `axis`, `azimuth`, `elevation`, `fov`, `geometric`, `inclination`, `phase`, `pitch`, `pointing`, `polar`, `rotation`, `sector` |
 | `energy` | 	The property of a system that is a measure of its capacity for doing work| `band`, `incident`, `channel`, `reflected`	|

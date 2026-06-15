@@ -156,6 +156,10 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
+        % Force the tabulary alignment columns (L, C, R, J) 
+        % to split the available text width exactly 50/50, 33/33/33, etc.
+        \renewcommand{\TY@authorize}{\let\TY@final\TY@allcolarg}
+
         % urn off standard syllable hyphenation completely
         \hyphenpenalty=10000
         \exhyphenpenalty=10000
@@ -209,7 +213,7 @@ latex_elements = {
 
 
 # Tell the LaTeX compiler to strictly use tabulary to enforce paper boundaries
-latex_table_style = ['booktabs'] # ['tabulary']
+latex_table_style = ['tabulary']
 
 
 # Configure Sphinx to clone GitHub's exact header-slug behaviour

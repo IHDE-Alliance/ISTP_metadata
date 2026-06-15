@@ -240,84 +240,18 @@ else:
 
 
 
-# Force latex mk to clean up all auxiliary log/tex files post-compilation
-latex_keep_old_macro_workers = False
-
-
 # Handle <br> in PDF table cells and handle custom column widths
 
-import re
 from docutils import nodes
 
-def process_table_widths_and_wrapping(app, doctree, docname):
-    is_pdf = app.builder.name in ['latex', 'pdf']
-
-    # 1. Process hard <br> tags exactly as before
-    if is_pdf:
+def convert_br_tags_for_pdf(app, doctree, docname):
+    if app.builder.name in ['latex', 'pdf']:
+        # Only handle the hard line breaks; the LaTeX preamble handles the wrapping/widths
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
             if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)
 
-    # 2. Extract column widths and inject word-wrapping rules safely
-    for table in list(doctree.traverse(nodes.table)):
-        tgroup = table.next_node(nodes.tgroup)
-        if not tgroup:
-            continue
-            
-        colspecs = [n for n in tgroup.children if isinstance(n, nodes.colspec)]
-        if not colspecs:
-            continue
-            
-        # Parse the headers to find your width values: <!-- width="X" -->
-        detected_widths = []
-        thead = tgroup.next_node(nodes.thead)
-        if thead:
-            for cell in thead.traverse(nodes.entry):
-                cell_text = cell.astext()
-                match = re.search(r'<!--\s*width=["\'](\d+)%?["\']\s*-->', cell_text)
-                if match:
-                    detected_widths.append(int(match.group(1)))
-                else:
-                    detected_widths.append(None)
-
-        # Apply specific sizing logic if width percentages were configured
-        if any(w is not None for w in detected_widths):
-            filled_widths = [w if w is not None else int(100/len(colspecs)) for w in detected_widths]
-            total_w = sum(filled_widths)
-            
-            # Map fractions straight into explicit LaTeX column directives
-            if is_pdf:
-                spec_parts = [rf"\X{{{w}}}{{{total_w}}}" for w in filled_widths]
-                table['latex_column_spec'] = f"|{'|'.join(spec_parts)}|"
-
-        # 3. SAFE PDF WRAPPING: Add break points to technical strings safely
-        if is_pdf:
-            for cell in tgroup.traverse(nodes.entry):
-                for text_node in list(cell.traverse(nodes.Text)):
-                    # Protect raw codes, paths, or macros from string manipulations
-                    if isinstance(text_node.parent, (nodes.raw, nodes.literal, nodes.reference)):
-                        continue
-                        
-                    original_text = text_node.astext()
-                    if not original_text.strip() or len(original_text) < 4:
-                        continue
-                    
-                    # Intercept long strings with specific symbols to introduce wrapping points
-                    # This allows wrapping at any symbol without breaking LaTeX macro syntax
-                    if any(char in original_text for char in ['_,', '.', '/', '-', '\\', ':']):
-                        modified_text = original_text
-                        modified_text = modified_text.replace('_', r'_\hspace{0pt}')
-                        modified_text = modified_text.replace('.', r'.\hspace{0pt}')
-                        modified_text = modified_text.replace('/', r'/\hspace{0pt}')
-                        modified_text = modified_text.replace('-', r'-\hspace{0pt}')
-                        modified_text = modified_text.replace(':', r':\hspace{0pt}')
-                        
-                        raw_latex_node = nodes.raw('', modified_text, format='latex')
-                        parent = text_node.parent
-                        if parent:
-                            parent.replace(text_node, raw_latex_node)
-
 def setup(app):
-    app.connect('doctree-resolved', process_table_widths_and_wrapping)
+    app.connect('doctree-resolved', convert_br_tags_for_pdf)

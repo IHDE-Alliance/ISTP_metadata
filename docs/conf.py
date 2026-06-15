@@ -156,13 +156,6 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
-        \makeatletter
-        % Safely intercept Sphinx's table column assignment
-        % Forces columns to break into equal percentages based on total column count
-        \protected\def\sphinxstyletheadfamily{\sffamily\bfseries}
-        \renewcommand{\TY@authorize}{\let\TY@final\TY@allcolarg}
-        \makeatother
-
         % urn off standard syllable hyphenation completely
         \hyphenpenalty=10000
         \exhyphenpenalty=10000

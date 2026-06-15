@@ -129,22 +129,25 @@ We provide a standard set of class keywords that include both *sensor* (science)
 | `velocity` | The rate of increase of distance traversed by a body in a particular direction (linear velocity) or the rate at which a body rotates about an axis (angular velocity). Speed is similarly defined with the omission of reference to direction | `doppler`, `drift`, `group`, `horizontal`, `phase`, `rotation`, `speed`, `thermal`, `vertical` |
 
 
+```{eval-rst}
+.. tabularcolumns:: |\Y{0.60}|\Y{0.20}|\Y{0.20}|
+```
 
 | Supporting Class Keyword    | Description    |   Subclass Keywords |		
 | ------------- | ---------------| -------------   |
-| `angle`                                           |The geometric figure formed by two lines diverging from a point or two planes diverging from a common line or the space between two such lines or surfaces| `antenna`, `aspect`, `axis`, `azimuth`, `elevation`, `fov`, `geometric`, `inclination`, `phase`, `pitch`, `pointing`, `polar`, `rotation`, `sector` |
-| `energy`                                           | 	The property of a system that is a measure of its capacity for doing work| `band`, `incident`, `channel`, `reflected`	|
-| `flag`                                           | An entity that signals the occurance of an event, or that indicates a particular status of a spacecraft or instrument or software program. The flag can be a number, letter, or word, and may have any of a variety of encoded meanings | `number`, `quality`, `post_gap`, `status` |
-| `frequency`                                           | The number of cycles completed by a periodic function in unit time | `band`, `channel` |
-| `label`                                           | A term or phrase attached by way of classification or characterization | All other class keywords are also possible subclass keywords, `alias`, `name(s)`, `source` |
-| `number`                                           | A symbol or word, or a group of either of these, showing how many or what place in a sequence | `direction`, `event`, `exposure`, `filter`, `frame`, `image`, `mode`, `sequence`, `target`, `telescope` |
-| `ratio`                                           | The quotient of one quantity divided by another of the same kind, and usually expressed as a fraction | `albedo`, `anisotropy`, `beta`, `current`, `density`, `electric_field`, `energy`, `magnetic_field`, `particle_flux`, `photon_flux`, `power`, `pressure`, `spectral`, `temperature`, `velocity` |
-| `significance`                                           | |  `correlation` |
+| `angle` 	|The geometric figure formed by two lines diverging from a point or two planes diverging from a common line or the space between two such lines or surfaces| `antenna`, `aspect`, `axis`, `azimuth`, `elevation`, `fov`, `geometric`, `inclination`, `phase`, `pitch`, `pointing`, `polar`, `rotation`, `sector` |
+| `energy` | 	The property of a system that is a measure of its capacity for doing work| `band`, `incident`, `channel`, `reflected`	|
+| `flag` | An entity that signals the occurance of an event, or that indicates a particular status of a spacecraft or instrument or software program. The flag can be a number, letter, or word, and may have any of a variety of encoded meanings | `number`, `quality`, `post_gap`, `status` |
+| `frequency` | The number of cycles completed by a periodic function in unit time | `band`, `channel` |
+| `label`| A term or phrase attached by way of classification or characterization | All other class keywords are also possible subclass keywords, `alias`, `name(s)`, `source` |
+| `number` | A symbol or word, or a group of either of these, showing how many or what place in a sequence | `direction`, `event`, `exposure`, `filter`, `frame`, `image`, `mode`, `sequence`, `target`, `telescope` |
+| `ratio` | The quotient of one quantity divided by another of the same kind, and usually expressed as a fraction | `albedo`, `anisotropy`, `beta`, `current`, `density`, `electric_field`, `energy`, `magnetic_field`, `particle_flux`, `photon_flux`, `power`, `pressure`, `spectral`, `temperature`, `velocity` |
+| `significance` | |  `correlation` |
 | `source` | The origin (mission, spacecraft, instrument, ground observatory, or other observing platform) of the data in question | `experiment`, `campaign`, `ground-based`, `investigation` |
-| `species`                                           | The identity of a particle or class of particles in detail, such as common name, chemical name, mass, charge state, atomic number, atomic weight, degree of ionization, mass per charge, etc. |  `electron`, `ion`, `proton`, `helium`, `nitrogen`, `oxygen`, `Z>3`, `neutral`, `particle`, `dust` |
-| `time`                                           | The period between two events or measurements; a measurable interval, usually between a fixed reference (instant of time) such as 0 AD and the subject event or measurement | `bin`, `clock`, `cycle`, `date`, `elapsed`, `epoch`, `event`, `GMT`, `hour`, `interval`, `Julian`, `local`, `magnetic`, `millisecond`, `minute`, `PB5`, `reference`, `relative`, `second`, `spacecraft`, `UT` |
-| `uncertainty`                                           | An estimate of the lack of precision in an observed or calculated value | All other class keywords are also possible subclass keywords, `percent` |
-| `wavelength`                                           | The distance from a particular point of a wave to that same point in the next oscillation cycle of the wave. Also a range of wavelengths, such as infra-red, visible, radio, x-ray |  `radio`, `IR`, `visible`, `UV`, `x-ray`, `gamma`, `band`, `bin`, `channel`, `characteristic`, `filter`, `nominal`, `primary`, `scan`, `resolution`|
+| `species` | The identity of a particle or class of particles in detail, such as common name, chemical name, mass, charge state, atomic number, atomic weight, degree of ionization, mass per charge, etc. |  `electron`, `ion`, `proton`, `helium`, `nitrogen`, `oxygen`, `Z>3`, `neutral`, `particle`, `dust` |
+| `time` | The period between two events or measurements; a measurable interval, usually between a fixed reference (instant of time) such as 0 AD and the subject event or measurement | `bin`, `clock`, `cycle`, `date`, `elapsed`, `epoch`, `event`, `GMT`, `hour`, `interval`, `Julian`, `local`, `magnetic`, `millisecond`, `minute`, `PB5`, `reference`, `relative`, `second`, `spacecraft`, `UT` |
+| `uncertainty` | An estimate of the lack of precision in an observed or calculated value | All other class keywords are also possible subclass keywords, `percent` |
+| `wavelength` | The distance from a particular point of a wave to that same point in the next oscillation cycle of the wave. Also a range of wavelengths, such as infra-red, visible, radio, x-ray |  `radio`, `IR`, `visible`, `UV`, `x-ray`, `gamma`, `band`, `bin`, `channel`, `characteristic`, `filter`, `nominal`, `primary`, `scan`, `resolution`|
 
 
 

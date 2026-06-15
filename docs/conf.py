@@ -153,6 +153,16 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
+        \usepackage{seqsplit}
+        
+        % Completely turn off standard syllable hyphenation
+        \hyphenpenalty=10000
+        \exhyphenpenalty=10000
+        
+        % Allow LaTeX to stretch spaces dynamically to fit non-hyphenated lines
+        \tolerance=2000
+        \emergencystretch=10pt
+
         \usepackage{ragged2e}
         \usepackage{etoolbox}
 

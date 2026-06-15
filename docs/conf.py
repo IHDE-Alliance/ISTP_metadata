@@ -209,7 +209,7 @@ latex_elements = {
 
 
 # Tell the LaTeX compiler to strictly use tabulary to enforce paper boundaries
-latex_table_style = ['tabulary']
+latex_table_style = ['booktabs'] # ['tabulary']
 
 
 # Configure Sphinx to clone GitHub's exact header-slug behaviour

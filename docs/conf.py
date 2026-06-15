@@ -153,19 +153,56 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
-        % Completely block hyphen dash creation
+        % 1. Turn off standard syllable hyphenation completely
         \hyphenpenalty=10000
         \exhyphenpenalty=10000
         
-        % Force extreme character wrapping points at technical symbols
+        % Allow aggressive character splitting inside long strings
+        \emergencystretch=3em
+        \tolerance=9999
+        
+        % Force break locations at technical symbols (underscores, slashes, dots)
         \usepackage{url}
         \makeatletter
         \g@addto@macro\UrlBreaks{\do\_\do\.\do\/\do\-\do\\\do\:\do\&\do\%}
         \makeatother
+    
+        % 2. THE FIX: Override Sphinx's table startup macro dynamically
+        % This completely strips out 'tabulary' and forces fixed paragraph columns
+        \makeatletter
+        \renewcommand{\sphinxatablestart}[1]{%
+            % Safely parse the column spec string passed by Sphinx (e.g., "|l|l|l|")
+            \def\originalspec{#1}%
+            % Count how many 'l', 'r', or 'c' columns exist in this table
+            \protected@edef\countcols{\expandafter\count@columns\originalspec\relax}%
+            % Build a clean layout: e.g., if 3 columns, makes it |p{\dimexpr\linewidth/3-2tabcolsep}|
+            \edef\newspec{|}%
+            \count@=0
+            \@whilenum\count@<\countcols\do{%
+                \edef\newspec{\newspec p{\dimexpr\linewidth/\countcols-2\tabcolsep\relax}|}%
+                \advance\count@ by 1
+            }%
+            % Execute a standard tabular environment with our forced mathematical layout
+            \begin{tabular}{\newspec}%
+        }
+        % Helper macro to count column occurrences cleanly
+        \def\count@columns#1{%
+            \ifx#1\relax
+                0%
+            \else
+                \ifx#1|%
+                    \expandafter\count@columns
+                \else
+                    +1\expandafter\count@columns
+                \fi
+            \fi
+        }
+        % Match the closing environment definition
+        \renewcommand{\sphinxatableend}{\end{tabular}}
+        \makeatother
         
-        % Instruct LaTeX to allow splitting text on any arbitrary character if forced
-        \emergencystretch=3em
-        \tolerance=9999
+        
+        
         
         \usepackage{ragged2e}
         \usepackage{etoolbox}
@@ -243,40 +280,18 @@ else:
 
 
 
-# Handle <br> and text wrapping correctly in PDF table cells
+# Handle <br> in PDF table cells
 
 from docutils import nodes
 
-def force_equal_columns_and_wrapping(app, doctree, docname):
-    """
-    Finds all parsed Markdown tables and forces equal column spacing 
-    and mandatory text wrapping via native LaTeX X-specifiers.
-    """
+def convert_br_tags_for_pdf(app, doctree, docname):
     if app.builder.name in ['latex', 'pdf']:
-        
-        # 1. Retain the working hard <br> tag translation
+        # Only handle the hard line breaks; the LaTeX preamble handles the wrapping/widths
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
             if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)
 
-        # 2. Inject explicit tabularcolumn spacing nodes directly before every table
-        for table in list(doctree.traverse(nodes.table)):
-            tgroup = table.next_node(nodes.tgroup)
-            if tgroup:
-                colspecs = [n for n in tgroup.children if isinstance(n, nodes.colspec)]
-                col_count = len(colspecs)
-                
-                if col_count > 0:
-                    # Construct structural LaTeX specifications for equal distribution
-                    # e.g., 3 columns -> |\X{1}{3}|\X{1}{3}|\X{1}{3}|
-                    spec_parts = [rf"\X{{1}}{{{col_count}}}" for _ in range(col_count)]
-                    col_spec_string = f"|{'|'.join(spec_parts)}|"
-                    
-                    # Create the native Sphinx layout instruction node
-                    # It targets the LaTeX engine directly before structural building
-                    table['latex_column_spec'] = col_spec_string
-
 def setup(app):
-    app.connect('doctree-resolved', force_equal_columns_and_wrapping)
+    app.connect('doctree-resolved', convert_br_tags_for_pdf)

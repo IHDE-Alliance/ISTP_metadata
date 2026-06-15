@@ -242,37 +242,18 @@ else:
 
 from docutils import nodes
 
-def fix_table_cells_for_pdf(app, doctree, docname):
+def convert_br_tags_globally(app, doctree, docname):
+    # Process only during PDF/LaTeX compilation loops
     if app.builder.name in ['latex', 'pdf']:
-        
-        # 1. Process the hard <br> tags into LaTeX line breaks
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
+            
+            # Check for the raw HTML break tags passed by MyST
             if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
+                # Inject a raw LaTeX node that forces a hard cell line break
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)
-                
-        # 2. Mutate cell text directly via data payloads
-        for cell in doctree.traverse(nodes.entry):
-            for text_node in list(cell.traverse(nodes.Text)):
-                # Ignore nodes that belong to raw code snippets or layouts
-                if isinstance(text_node.parent, nodes.raw):
-                    continue
-                    
-                original_text = text_node.astext()
-                
-                # Skip whitespace or single punctuation tokens
-                if not original_text.strip() or len(original_text) < 4:
-                    continue
-                
-                # If text contains breakable punctuation characters
-                if any(char in original_text for char in ['_', '.', '/', '-', '\\']):
-                    # Escape special TeX tokens to prevent compilation bugs
-                    safe_text = original_text.replace('_', r'\_').replace('&', r'\&').replace('%', r'\%')
-                    
-                    # Instead of node replacement, overwrite text payload directly using raw TeX macro strings
-                    # This tricks Sphinx into passing the seqsplit layout directly to LaTeX
-                    text_node.data = rf'\seqsplit{{{safe_text}}}'
 
 def setup(app):
-    app.connect('doctree-resolved', fix_table_cells_for_pdf)
+    # Ensure MyST doesn't drop the raw HTML tags early
+    app.connect('doctree-resolved', convert_br_tags_globally)

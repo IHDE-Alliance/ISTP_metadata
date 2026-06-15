@@ -233,18 +233,19 @@ else:
 from docutils import nodes
 
 def convert_br_tags_globally(app, doctree, docname):
-    # Traverse through all raw nodes in the document tree
-    for raw_node in doctree.traverse(nodes.raw):
-        # Target raw HTML data containing any variant of a line break
+    # Traverse through all raw elements in the doctree
+    for raw_node in list(doctree.traverse(nodes.raw)):
         raw_text = raw_node.astext().lower()
+        
+        # Check if the node is raw HTML and contains a line break variation
         if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
-            # Create a native abstract node that both HTML and PDF builders understand
-            newline_node = nodes.Inline('', '')
-            newline_node.append(nodes.Text('\n')) 
+            # Correct instantiation: lowercase nodes.inline()
+            # Pass empty strings for rawsource and text arguments
+            break_container = nodes.inline('', '')
+            break_container.append(nodes.Text('\n'))
             
-            # Replace the discarded-prone HTML string with the native token
-            raw_node.replace_self(newline_node)
+            # Safely swap out the discarded-prone raw HTML string
+            raw_node.replace_self(break_container)
 
 def setup(app):
     app.connect('doctree-resolved', convert_br_tags_globally)
-

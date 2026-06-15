@@ -250,15 +250,9 @@ import re
 from docutils import nodes
 
 def process_table_widths_and_wrapping(app, doctree, docname):
-    """
-    Reads hidden HTML comment width attributes inside markdown cells.
-    Applies custom column styling for RTD HTML and forces un-hyphenated 
-    wrapping at any point inside PDF engines.
-    """
     is_pdf = app.builder.name in ['latex', 'pdf']
-    is_html = 'html' in app.builder.name
 
-    # 1. First, process the hard <br> tag splits exactly as before
+    # 1. Process hard <br> tags exactly as before
     if is_pdf:
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
@@ -266,7 +260,7 @@ def process_table_widths_and_wrapping(app, doctree, docname):
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)
 
-    # 2. Extract column width hints and force letter-by-letter breaking properties
+    # 2. Extract column widths and inject word-wrapping rules safely
     for table in list(doctree.traverse(nodes.table)):
         tgroup = table.next_node(nodes.tgroup)
         if not tgroup:
@@ -276,7 +270,7 @@ def process_table_widths_and_wrapping(app, doctree, docname):
         if not colspecs:
             continue
             
-        # Parse the headers to find your width values: <!-- width="X%" -->
+        # Parse the headers to find your width values: <!-- width="X" -->
         detected_widths = []
         thead = tgroup.next_node(nodes.thead)
         if thead:
@@ -290,47 +284,40 @@ def process_table_widths_and_wrapping(app, doctree, docname):
 
         # Apply specific sizing logic if width percentages were configured
         if any(w is not None for w in detected_widths):
-            # Fill missing percentages equally
             filled_widths = [w if w is not None else int(100/len(colspecs)) for w in detected_widths]
             total_w = sum(filled_widths)
             
-            # Convert to proportional fractions for Sphinx Layout Trees
-            for i, spec in enumerate(colspecs):
-                spec['colwidth'] = filled_widths[i]
-            
-            # FOR PDF: Map fractions straight into explicit LaTeX column directives
+            # Map fractions straight into explicit LaTeX column directives
             if is_pdf:
                 spec_parts = [rf"\X{{{w}}}{{{total_w}}}" for w in filled_widths]
                 table['latex_column_spec'] = f"|{'|'.join(spec_parts)}|"
 
-        # 3. Apply extreme continuous character wrapping for PDF columns
+        # 3. SAFE PDF WRAPPING: Add break points to technical strings safely
         if is_pdf:
             for cell in tgroup.traverse(nodes.entry):
                 for text_node in list(cell.traverse(nodes.Text)):
-                    if isinstance(text_node.parent, nodes.raw):
+                    # Protect raw codes, paths, or macros from string manipulations
+                    if isinstance(text_node.parent, (nodes.raw, nodes.literal, nodes.reference)):
                         continue
                         
                     original_text = text_node.astext()
-                    if not original_text.strip() or len(original_text) < 2:
+                    if not original_text.strip() or len(original_text) < 4:
                         continue
                     
-                    # Split strings down to separate characters and inject zero-width line breaks
-                    wrapped_chars = []
-                    for char in original_text:
-                        if char in ['_', '.', '/', '-', '\\', ':', '&', '%']:
-                            wrapped_chars.append(f"{char}\\hspace{{0pt}}")
-                        elif char.isalnum():
-                            wrapped_chars.append(f"{char}\\hspace{{0pt}}")
-                        else:
-                            wrapped_chars.append(char)
-                            
-                    modified_text = "".join(wrapped_chars)
-                    raw_latex_node = nodes.raw('', modified_text, format='latex')
-                    
-                    parent = text_node.parent
-                    if parent:
-                        parent.replace(text_node, raw_latex_node)
+                    # Intercept long strings with specific symbols to introduce wrapping points
+                    # This allows wrapping at any symbol without breaking LaTeX macro syntax
+                    if any(char in original_text for char in ['_,', '.', '/', '-', '\\', ':']):
+                        modified_text = original_text
+                        modified_text = modified_text.replace('_', r'_\hspace{0pt}')
+                        modified_text = modified_text.replace('.', r'.\hspace{0pt}')
+                        modified_text = modified_text.replace('/', r'/\hspace{0pt}')
+                        modified_text = modified_text.replace('-', r'-\hspace{0pt}')
+                        modified_text = modified_text.replace(':', r':\hspace{0pt}')
+                        
+                        raw_latex_node = nodes.raw('', modified_text, format='latex')
+                        parent = text_node.parent
+                        if parent:
+                            parent.replace(text_node, raw_latex_node)
 
 def setup(app):
-    # Connect our dynamic handler safely to your Sphinx events chain
     app.connect('doctree-resolved', process_table_widths_and_wrapping)

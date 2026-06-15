@@ -233,19 +233,17 @@ else:
 from docutils import nodes
 
 def convert_br_tags_globally(app, doctree, docname):
-    # Traverse through all raw elements in the doctree
-    for raw_node in list(doctree.traverse(nodes.raw)):
-        raw_text = raw_node.astext().lower()
-        
-        # Check if the node is raw HTML and contains a line break variation
-        if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
-            # Correct instantiation: lowercase nodes.inline()
-            # Pass empty strings for rawsource and text arguments
-            break_container = nodes.inline('', '')
-            break_container.append(nodes.Text('\n'))
+    # Process only during PDF/LaTeX compilation loops
+    if app.builder.name in ['latex', 'pdf']:
+        for raw_node in list(doctree.traverse(nodes.raw)):
+            raw_text = raw_node.astext().lower()
             
-            # Safely swap out the discarded-prone raw HTML string
-            raw_node.replace_self(break_container)
+            # Check for the raw HTML break tags passed by MyST
+            if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
+                # Inject a raw LaTeX node that forces a hard cell line break
+                latex_newline = nodes.raw('', r'\newline ', format='latex')
+                raw_node.replace_self(latex_newline)
 
 def setup(app):
+    # Ensure MyST doesn't drop the raw HTML tags early
     app.connect('doctree-resolved', convert_br_tags_globally)

@@ -1,5 +1,23 @@
+/* 1. Turn off automated text hyphenation completely across the entire website */
+* {
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    -ms-hyphens: none !important;
+}
+
+/* 2. Keep normal line wrapping fully active for all text, headings, and tables */
+body, p, li, h1, h2, h3, h4, h5, h6, span, div, table, th, td {
+    white-space: normal !important; /* Forces text to wrap when it hits margins */
+    word-break: normal !important;   /* Prevents words from breaking mid-character */
+    overflow-wrap: break-word !important; /* Allows long unspaced strings to wrap safely */
+}
+
+
+/*
 pre, code, tt {
     word-break: break-all ;
     word-wrap: break-word ;
     overflow-wrap: break-word ;
 }
+*/

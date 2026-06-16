@@ -76,7 +76,7 @@ UNITS = "ns"
 See CDF_TIME_TT2000 [requirements analysis](http://cdf.gsfc.nasa.gov/html/leapseconds_requirements.html) and [development approach](http://cdf.gsfc.nasa.gov/html/leapseconds.html) for more details.
 
 ```{eval-rst}
-.. tabularcolumns:: |\Y{0.31}|\Y{0.16}|\Y{0.23}|\Y{0.30}|
+.. tabularcolumns:: |\Y{0.31}|\Y{0.15}|\Y{0.22}|\Y{0.32}|
 ```
 
 | **Attribute** | **Requirement (see details in Notes column)**  | **Example Value, <br> Required Data Type** | **Notes** |

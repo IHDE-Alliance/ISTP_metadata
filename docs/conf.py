@@ -156,10 +156,19 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
-        % Forces LaTeX to wrap long unspaced words anywhere they hit a column boundary
-        \usepackage{cutt}
-        \setcuttoptions{breakall}
+        \usepackage{seqsplit}
+        \usepackage{microtype}
         
+        % Automatically allows underscores to serve as breaking wrap boundaries
+        \usepackage[nohyphen]{underscore}
+        
+        % Force long, unbroken alphanumeric words to wrap character-by-character
+        % whenever they touch a column cell boundary margin limit
+        \makeatletter
+        \newcommand{\forcecellwrap}[1]{\seqsplit{#1}}
+        \makeatother
+
+
         % urn off standard syllable hyphenation completely
         \hyphenpenalty=10000
         \exhyphenpenalty=10000

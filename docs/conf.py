@@ -104,9 +104,10 @@ html_theme_options = {
     'github_type': 'star',
     'fixed_sidebar': False,
     'sidebar_width': '270px',
-    # Forces Alabaster to display the Next/Previous links at the bottom and top of the page
+    # Forces Alabaster to display the Next/Previous links at the bottom of the page
     'show_relbar_bottom': True,
-    'show_relbar_top': True,
+    # Forces the main sidebar tree navigation to show exactly 2 levels deep
+    'globaltoc_maxdepth': 2,
     # Injects custom CSS securely on Read the Docs to force the margin
     'extra_nav_links': {
         '<style>img.logo, .sphinxsidebar img { margin-bottom: 40px !important; }</style>': ''

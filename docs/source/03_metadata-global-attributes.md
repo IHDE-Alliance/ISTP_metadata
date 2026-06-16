@@ -7,7 +7,7 @@ The required, recommended, and optional global attributes are listed in the tabl
 All ISTP global attributes are of character data type (CDF_CHAR) in the CDF file format. Since the CDF format allows multiple entries for global attributes, with each ISTP global attribute entry being a 1-D array of CDF_CHAR (a string), this allows storing a 1-D array of strings in a global attribute. **Note** that these multiple entries for an ISTP global attribute in the CDF format correspond to a 1-D array of string data type in the **netCDF-4** format.
 
 ```{eval-rst}
-.. tabularcolumns:: |p{2.0in}|p{1.5in}|p{2.0in}|p{2.0in}|
+.. tabularcolumns:: |\X{20}{100}|\X{15}{100}|\X{35}{100}|\X{30}{100}|
 ```
 
 | **Attribute Name** | **Requirement** | **Example Value** | **Notes** |

@@ -241,32 +241,54 @@ else:
 
 # Handle <br> in PDF table cells and handle custom column widths
 
-# conf.py
-import re
 from docutils import nodes
+from myst_parser.nodes import MystDirectiveNode  # If using older myst, or we can use raw/comment nodes
 
-def extract_pdf_table_layouts(app, docname, source):
+def extract_pdf_table_layouts(app, doctree, docname):
     """
-    Runs early in the build. Un-comments hidden eval-rst layout commands
-    ONLY when actively rendering the PDF documentation.
+    Runs late in the build (doctree-resolved). Finds HTML comment blocks,
+    checks if they contain a table layout directive, and forces the LaTeX
+    builder to execute them ONLY when rendering a PDF.
     """
     if app.builder.name in ['latex', 'pdf']:
-        # Extract the source string text from the first slot of the list
-        raw_text = source[0]
-        
-        # Robust Regex: Matches <!-- followed by optional spacing, the eval-rst block,
-        # and the closing comment tag, across any type of system newline pattern.
-        pattern = r'<!--\s*(```{eval-rst}.*?```)\s*-->'
-        
-        # Strip out the HTML comment boundaries, leaving the inner directive exposed
-        cleaned_text = re.sub(pattern, r'\1', raw_text, flags=re.DOTALL)
-        
-        # Overwrite the string inside that exact list index slot in memory
-        source[0] = cleaned_text
+        # In docutils, HTML comments are parsed as comment nodes or raw HTML nodes
+        for node in list(doctree.traverse(nodes.comment)):
+            comment_text = node.astext().strip()
+            
+            # Check if our hidden directive is tucked inside this comment
+            if '```{eval-rst}' in comment_text and '.. tabularcolumns::' in comment_text:
+                # Extract just the raw reStructuredText command line
+                # e.g., ".. tabularcolumns:: |p{6cm}|p{3cm}|p{3cm}|"
+                lines = comment_text.split('\n')
+                rst_command = ""
+                for line in lines:
+                    if line.strip().startswith('.. tabularcolumns::'):
+                        rst_command = line.strip()
+                        break
+                
+                if rst_command:
+                    # Create a raw LaTeX node containing the exact macro the engine needs
+                    # Translates ".. tabularcolumns:: |x|" -> "\sphinxlinecolor ... or layout definitions"
+                    # To make it easiest, we inject the raw LaTeX equivalent directly:
+                    # Extract the layout portion inside the pipes: |p{6cm}|...|
+                    layout_match = rst_command.replace('.. tabularcolumns::', '').strip()
+                    
+                    # Generate the raw LaTeX instruction that sets table column specifications
+                    latex_macro = f'\\def\\sphinxXcoltype{{p}}\\centering\n' 
+                    # If you want exact centimeter control, we pass the direct Sphinx layout override:
+                    latex_node = nodes.raw('', f'\\makeatletter\\def\\sphinxXcoltype{{p}}\\makeatother', format='latex')
+                    
+                    # Alternatively, the cleanest docutils way is to insert a genuine tabularcolumns node:
+                    from sphinx.addnodes import tabularcolumns
+                    tc_node = tabularcolumns()
+                    tc_node['spec'] = layout_match
+                    
+                    # Replace the invisible comment with the active layout instruction node
+                    node.replace_self(tc_node)
 
 def convert_br_tags_for_pdf(app, doctree, docname):
     """
-    Runs late in the build. Replaces HTML breaks with LaTeX newlines.
+    Your existing function that successfully replaces HTML breaks with LaTeX newlines.
     """
     if app.builder.name in ['latex', 'pdf']:
         for raw_node in list(doctree.traverse(nodes.raw)):
@@ -276,8 +298,6 @@ def convert_br_tags_for_pdf(app, doctree, docname):
                 raw_node.replace_self(latex_newline)
 
 def setup(app):
-    # 1. Intercept raw Markdown string text early to un-hide table layouts
-    app.connect('source-read', extract_pdf_table_layouts)
-    
-    # 2. Handle your existing <br> tag conversions after the tree is resolved
+    # Connect both events to 'doctree-resolved' so they execute reliably in order
+    app.connect('doctree-resolved', extract_pdf_table_layouts)
     app.connect('doctree-resolved', convert_br_tags_for_pdf)

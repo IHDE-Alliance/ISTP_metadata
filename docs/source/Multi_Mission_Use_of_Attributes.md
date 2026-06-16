@@ -5,6 +5,11 @@
 - R - recommended by mission
 - O - optional for mission
 
+```{eval-rst}
+.. tabularcolumns:: |\Y{0.36}|\Y{0.08}|\Y{0.08}|\Y{0.08}|\Y{0.08}|\Y{0.08}|\Y{0.08}|\Y{0.08}|\Y{0.08}|
+```
+
+
 | | ISTP  | Cluster | ERG | GOLD | ICON | MMS | PRBEM | Solar Orbiter |
 | ------------ | ----- | ------- | --- | ---- | ---- | --- | ----- |------- |
 | **Global Attribute**  |  | | |  |  | | | |

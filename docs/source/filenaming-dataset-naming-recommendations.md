@@ -137,12 +137,12 @@ The following documentation files are included in this directory:
 _(Any other pointers to documentation and software)_
 
 Additional related information and data services: 
-   NSSDC's DE-1 magnetometer Master Catalog: <http://nssdc.gsfc.nasa.gov/nmc/experimentDisplay.do?id=1981-070B-01>
-   Heliophysics Data Portal <http://heliophysicsdata.gsfc.nasa.gov/websearch/dispatcher?action=RESULT\_LIST\_PANE\_ACTION&command=ProductViewCmd&pid=1143>
+   NSSDC's DE-1 magnetometer Master Catalog: \<http://nssdc.gsfc.nasa.gov/nmc/experimentDisplay.do?id=1981-070B-01\>
+   Heliophysics Data Portal \<http://heliophysicsdata.gsfc.nasa.gov/websearch/dispatcher?action=RESULT\_LIST\_PANE\_ACTION&command=ProductViewCmd&pid=1143\>
 
    Merged VEFI-MAGB data set: MAGB data are also available online in the form of merged VEFI 
    and MAG-B data sets (1/2-second and 1/16-second resolution) in directory magnetic\_electric\_fields\_vefi\_mag 
-   and the 1/2-second data also for plotting at <https://omniweb.gsfc.nasa.gov/ftpbrowser/ftphelper.html>
+   and the 1/2-second data also for plotting at \<https://omniweb.gsfc.nasa.gov/ftpbrowser/ftphelper.html\>
 
 Please acknowledge the NASA Space Physics Data Facility and the instrument's 
 Principal Investigator for data usage.

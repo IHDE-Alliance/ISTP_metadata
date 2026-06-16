@@ -107,7 +107,11 @@ html_theme_options = {
     # Forces Alabaster to display the Next/Previous links at the bottom of the page
     'show_relbar_bottom': True,
     # Forces the main sidebar tree navigation to show exactly 2 levels deep
+    # Stays expanded by default across your entire site
+    # Adds a visual [+] or [-] icons
     'navigation_depth': 2,
+    'collapse_navigation': False,
+    'sticky_navigation': True,
     # Injects custom CSS securely on Read the Docs to force the margin
     'extra_nav_links': {
         '<style>img.logo, .sphinxsidebar img { margin-bottom: 40px !important; }</style>': ''

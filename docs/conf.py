@@ -157,17 +157,9 @@ latex_elements = {
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
         \usepackage{seqsplit}
-        \usepackage{microtype}
-        
-        % Automatically allows underscores to serve as breaking wrap boundaries
+        % Intercepts the table builder and tells it to forcefully wrap 
+        % long alphanumeric strings inside paragraphs
         \usepackage[nohyphen]{underscore}
-        
-        % Force long, unbroken alphanumeric words to wrap character-by-character
-        % whenever they touch a column cell boundary margin limit
-        \makeatletter
-        \newcommand{\forcecellwrap}[1]{\seqsplit{#1}}
-        \makeatother
-
 
         % urn off standard syllable hyphenation completely
         \hyphenpenalty=10000

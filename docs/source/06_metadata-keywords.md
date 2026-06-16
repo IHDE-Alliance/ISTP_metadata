@@ -112,14 +112,9 @@ We have extended the ISTP project data dictionary to include dictionary keywords
 
 We provide a standard set of class keywords that include both *sensor* (science) and *supporting* class keywords and their meanings, to be used to categorize the data variables of primary interest to investigators. ISTP class keywords are restricted to the values shown below. Sets of subclass keywords, with each set used to modify one of the class keywords, are also adopted and listed with the associated information below. Lists of common subclass keywords, valid with any class keywords, can also be found below.
 
-<!--
-```{eval-rst}
-.. tabularcolumns:: |\Y{0.15}|\Y{0.45}|\Y{0.40}|
-```
--->
-
 | Sensor Class Keyword    | Description    |   Subclass Keywords |		
-| ------------- | ---------------| -------------   |
+| ------------- | ---------------| ------------- |
+| <colgroup> <col width="250"> <col width="100"> <col width="100"> </colgroup> | | |
 | `anisotropy`	|The variation of physical properties with direction, usually expressed as a ratio |  `parallel` |
 | `current` | 	The rate of flow of electricity | `Hall`, `load`, `primary`,  `secondary`	|
 | `density` | The mass per unit volume of a substance, or the number of items per unit volume | `partial`, `mass`, `number` |

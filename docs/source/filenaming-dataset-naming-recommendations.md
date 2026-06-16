@@ -124,28 +124,28 @@ in GMS coordinates in VAX binary fixed-length format as daily files including or
 information. The data are for the time period from Aug 10, 1981 to Feb 16, 1983. 
 
 The following documentation files are included in this directory:   
-<pre><code>
-    magb\_instrument\_data.txt: A description of the MAG-B instrument and data   
-    data\_format\_description.txt: A description of the MAG-B GMS data format and software    
-    read\_data.pro: An IDL program to read data into arrays   
-    read\_and\_average\_data.pro: An IDL program to read and average the data    
-    read\_requiring\_VAX\_UNIX\_conversion.pro: An IDL program to read data, requires VAX to UNIX conversion subroutine   
-    VAX\_UNIX\_conversion.pro:  IDL subroutine for VAX to UNIX conversion 
-</code>
-</pre>
+
+```
+magb\_instrument\_data.txt: A description of the MAG-B instrument and data   
+data\_format\_description.txt: A description of the MAG-B GMS data format and software    
+read\_data.pro: An IDL program to read data into arrays   
+read\_and\_average\_data.pro: An IDL program to read and average the data    
+read\_requiring\_VAX\_UNIX\_conversion.pro: An IDL program to read data, requires VAX to UNIX conversion subroutine   
+VAX\_UNIX\_conversion.pro:  IDL subroutine for VAX to UNIX conversion 
+```
 
 _(Any other pointers to documentation and software)_
 
 Additional related information and data services: 
-   NSSDC's DE-1 magnetometer Master Catalog: \<http://nssdc.gsfc.nasa.gov/nmc/experimentDisplay.do?id=1981-070B-01\>
-   Heliophysics Data Portal \<http://heliophysicsdata.gsfc.nasa.gov/websearch/dispatcher?action=RESULT\_LIST\_PANE\_ACTION&command=ProductViewCmd&pid=1143\>
+NSSDC's DE-1 magnetometer Master Catalog: \<http://nssdc.gsfc.nasa.gov/nmc/experimentDisplay.do?id=1981-070B-01\>
+Heliophysics Data Portal \<http://heliophysicsdata.gsfc.nasa.gov\>
 
-   Merged VEFI-MAGB data set: MAGB data are also available online in the form of merged VEFI 
-   and MAG-B data sets (1/2-second and 1/16-second resolution) in directory magnetic\_electric\_fields\_vefi\_mag 
-   and the 1/2-second data also for plotting at \<https://omniweb.gsfc.nasa.gov/ftpbrowser/ftphelper.html\>
+Merged VEFI-MAGB data set: MAGB data are also available online in the form of merged VEFI and MAG-B data sets (1/2-second and 1/16-second resolution) in directory magnetic\_electric\_fields\_vefi\_mag 
+and the 1/2-second data also for plotting at \<https://omniweb.gsfc.nasa.gov/ftpbrowser/ftphelper.html\>
 
 Please acknowledge the NASA Space Physics Data Facility and the instrument's 
 Principal Investigator for data usage.
 
 _(short list of keywords for search engines)_ 
+
 Keywords: Sun-Earth Connections, space physics, magnetosphere, ionosphere

@@ -6,7 +6,7 @@
 - O - optional for mission
 
 ```{eval-rst}
-.. tabularcolumns:: |\Y{0.36}|\Y{0.08}|\Y{0.08}|\Y{0.08}|\Y{0.08}|\Y{0.08}|\Y{0.08}|\Y{0.08}|\Y{0.08}|
+.. tabularcolumns:: |\Y{0.28}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|
 ```
 
 
@@ -42,6 +42,11 @@
 | [`Skeleton_version`](./03_metadata-global-attributes.md#skeleton_version)  | O  | M | |  |  | O | O | M |
 | [`Parents`](./03_metadata-global-attributes.md#parents) | O  | M | |  | M  | O | O | M |
 | [`ADID_ref`](./03_metadata-global-attributes.md#adid_ref)  | Not relevant | M | M |  | M  | | R | |
+
+
+```{eval-rst}
+.. tabularcolumns:: |\Y{0.28}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|
+```
 
 |  | ISTP | Cluster |ICON | MMS | PSP | PRBEM | RBSP (Van Allen Probes) | Solar Orbiter |
 | -------- | --------- | ------- | ---- | --- | --- | ----- | ----- | ----- |

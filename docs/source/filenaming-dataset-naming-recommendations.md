@@ -106,18 +106,17 @@ Dynamics Explorer-2 (DE 2) Magnetometer Instrument (MAGB) Data
 _(location of this file)_  
 
 Data Directory: 
- [https://spdf.gsfc.nasa.gov/pub/data/de/de2/magnetic_fields_magb/00readme.txt](https://spdf.gsfc.nasa.gov/pub/data/de/de2/magnetic_fields_magb/00readme.txt)  
+[\<https://spdf.gsfc.nasa.gov/pub/data/de/de2/magnetic_fields_magb/\>](https://spdf.gsfc.nasa.gov/pub/data/de/de2/magnetic_fields_magb/)  
 
 _(short description of directory)_  
 
-This directory gathers data for the MAG-B instrument that flew on the DE 2 spacecraft   
-which was launched on 3 August 1981 into an elliptical orbit with an altitude range   
-of 300 km to 1000 km and re-entered the atmosphere on 19 February 1983.   
+This directory gathers data for the MAG-B instrument that flew on the DE 2 spacecraft which was launched on 3 August 1981 into an elliptical orbit with an altitude range of 300 km to 1000 km and re-entered the atmosphere on 19 February 1983.   
 
 _(one line for each sub-directory name and short descriptive title)_   
 
 Subdirectories:
-    /gms\_62ms\_vmsbin/  High resolution magnetic field in VMS binary files (NSSDC ID: 81-070B-01G)
+
+/gms\_62ms\_vmsbin/  High resolution magnetic field in VMS binary files (NSSDC ID: 81-070B-01G)
 
 These high-resolution (16 samples per second) MAGnetometer (MAG-B) data are provided 
 in GMS coordinates in VAX binary fixed-length format as daily files including orbit 
@@ -125,14 +124,13 @@ information. The data are for the time period from Aug 10, 1981 to Feb 16, 1983.
 
 The following documentation files are included in this directory:   
 
-```
-magb\_instrument\_data.txt: A description of the MAG-B instrument and data   
-data\_format\_description.txt: A description of the MAG-B GMS data format and software    
-read\_data.pro: An IDL program to read data into arrays   
-read\_and\_average\_data.pro: An IDL program to read and average the data    
-read\_requiring\_VAX\_UNIX\_conversion.pro: An IDL program to read data, requires VAX to UNIX conversion subroutine   
-VAX\_UNIX\_conversion.pro:  IDL subroutine for VAX to UNIX conversion 
-```
+magb_insturment_data.txt: A description of the MAG-B instrument and data
+data_format_description.txt: A description of the MAG-B GMS data format and software 
+read_data.pro: An IDL program to read data into arrays 
+read_and_average_data.pro:  An IDL program to read and average the data 
+read_requiring_VAX_UNIX_conversion.pro: An IDL program to read data, requires VAX to UNIX conversion subroutine
+VAX_UNIX_conversion.pro:  IDL subroutine for VAX to UNIX conversion 
+
 
 _(Any other pointers to documentation and software)_
 
@@ -145,6 +143,7 @@ and the 1/2-second data also for plotting at \<https://omniweb.gsfc.nasa.gov/ftp
 
 Please acknowledge the NASA Space Physics Data Facility and the instrument's 
 Principal Investigator for data usage.
+
 
 _(short list of keywords for search engines)_ 
 

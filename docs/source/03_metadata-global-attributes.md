@@ -6,6 +6,9 @@ The required, recommended, and optional global attributes are listed in the tabl
 
 All ISTP global attributes are of character data type (CDF_CHAR) in the CDF file format. Since the CDF format allows multiple entries for global attributes, with each ISTP global attribute entry being a 1-D array of CDF_CHAR (a string), this allows storing a 1-D array of strings in a global attribute. **Note** that these multiple entries for an ISTP global attribute in the CDF format correspond to a 1-D array of string data type in the **netCDF-4** format.
 
+```{eval-rst}
+.. tabularcolumns:: |\Y{0.25}|\Y{0.25}|\Y{0.25}|\Y{0.25}|
+```
 
 | **Attribute Name** | **Requirement** | **Example Value** | **Notes** |
 | -------------- | ---------------------------- | -------- | --------- |
@@ -13,7 +16,7 @@ All ISTP global attributes are of character data type (CDF_CHAR) in the CDF file
 | [`Data_version`](#data_version) | **Required** |  `"1"` | Identifies the version of a particular data file. |
 | [`Descriptor`](#descriptor) | **Required** |  `"ISOIS>Integrated Science Investigation of the Sun"` | Identifies both the short and long names, separated by `>`, of the instrument or sensor that collected the data. |
 | [`Instrument_type`](#instrument_type) | **Recommended, required by CDAWeb** (allows multiple entries; five  entries allowed by **CDAWeb**)  | `"Particles (space)"` <br> `"Plasma and Solar Wind"` | Combines types of instruments and regions as a simple way to quickly separate types of datasets for search through [CDAWeb](https://cdaweb.gsfc.nasa.gov/). [CDAWeb](https://cdaweb.gsfc.nasa.gov/) allows up to five entries from **[`controlled list`](#instrument_type)** (two entries are shown in the example). |
-| [`Logical_file_id`](#logical_file_id) | **Required** | `"psp_isois_l2-summary_ 20180928_v07"`  | Stores the name of the file using the ISTP naming convention `Source_name`\_`Descriptor`\_`Data_type`\_Date\_v`Data_version`, with short names for `Source_name`, `Descriptor`, and `Data_type`.  |
+| [`Logical_file_id`](#logical_file_id) | **Required** | `"psp_isois_l2-summary_20180928_v07"`  | Stores the name of the file using the ISTP naming convention `Source_name`\_`Descriptor`\_`Data_type`\_Date\_v`Data_version`, with short names for `Source_name`, `Descriptor`, and `Data_type`.  |
 | [`Logical_source`](#logical_source) | **Required** | `"psp_isois_l2-summary"`  | Carries `Source_name`, `Descriptor`, and `Data_type` short names. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/) as the dataset ID. |
 | [`Logical_source_description`](#logical_source_description) | **Required** | `"Parker Solar Probe ISOIS level 2 summary"`  | Writes out the full names associated with the encrypted `Logical_source`. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/) as the dataset full name.|
 | [`Mission_group`](#mission_group) | **Recommended, required by CDAWeb** |  `"Parker Solar Probe (PSP)"` | Has a single value and is used to facilitate making choices of source through [CDAWeb](https://cdaweb.gsfc.nasa.gov/). |

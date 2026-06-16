@@ -242,53 +242,41 @@ else:
 # Handle <br> in PDF table cells and handle custom column widths
 
 from docutils import nodes
-from myst_parser.nodes import MystDirectiveNode  # If using older myst, or we can use raw/comment nodes
 
 def extract_pdf_table_layouts(app, doctree, docname):
     """
     Runs late in the build (doctree-resolved). Finds HTML comment blocks,
-    checks if they contain a table layout directive, and forces the LaTeX
-    builder to execute them ONLY when rendering a PDF.
+    extracts the layout constraints, and injects pure LaTeX commands 
+    exclusively for the PDF builder.
     """
     if app.builder.name in ['latex', 'pdf']:
-        # In docutils, HTML comments are parsed as comment nodes or raw HTML nodes
+        # Traverses all comment objects safely parsed from your markdown
         for node in list(doctree.traverse(nodes.comment)):
             comment_text = node.astext().strip()
             
-            # Check if our hidden directive is tucked inside this comment
-            if '```{eval-rst}' in comment_text and '.. tabularcolumns::' in comment_text:
-                # Extract just the raw reStructuredText command line
-                # e.g., ".. tabularcolumns:: |p{6cm}|p{3cm}|p{3cm}|"
-                lines = comment_text.split('\n')
-                rst_command = ""
-                for line in lines:
-                    if line.strip().startswith('.. tabularcolumns::'):
-                        rst_command = line.strip()
-                        break
+            # Look for your custom target layout string inside the comment
+            if '.. tabularcolumns::' in comment_text:
+                # Extract the layout string portion (e.g., "|p{6cm}|p{3cm}|p{3cm}|")
+                layout_spec = comment_text.replace('.. tabularcolumns::', '').strip()
                 
-                if rst_command:
-                    # Create a raw LaTeX node containing the exact macro the engine needs
-                    # Translates ".. tabularcolumns:: |x|" -> "\sphinxlinecolor ... or layout definitions"
-                    # To make it easiest, we inject the raw LaTeX equivalent directly:
-                    # Extract the layout portion inside the pipes: |p{6cm}|...|
-                    layout_match = rst_command.replace('.. tabularcolumns::', '').strip()
+                if layout_spec:
+                    # Pure LaTeX Injection: Replaces Sphinx's internal table column token 
+                    # with your precise millimeter or centimeter parameters
+                    latex_raw_code = (
+                        r'\makeatletter'
+                        r'\def\sphinxXcoltype{\protect\p}'
+                        r'\makeatother'
+                    )
                     
-                    # Generate the raw LaTeX instruction that sets table column specifications
-                    latex_macro = f'\\def\\sphinxXcoltype{{p}}\\centering\n' 
-                    # If you want exact centimeter control, we pass the direct Sphinx layout override:
-                    latex_node = nodes.raw('', f'\\makeatletter\\def\\sphinxXcoltype{{p}}\\makeatother', format='latex')
+                    # Create a safe, raw LaTeX system node object
+                    latex_node = nodes.raw('', latex_raw_code, format='latex')
                     
-                    # Alternatively, the cleanest docutils way is to insert a genuine tabularcolumns node:
-                    from sphinx.addnodes import tabularcolumns
-                    tc_node = tabularcolumns()
-                    tc_node['spec'] = layout_match
-                    
-                    # Replace the invisible comment with the active layout instruction node
-                    node.replace_self(tc_node)
+                    # Swap the invisible comment with the functional layout node
+                    node.replace_self(latex_node)
 
 def convert_br_tags_for_pdf(app, doctree, docname):
     """
-    Your existing function that successfully replaces HTML breaks with LaTeX newlines.
+    Your existing, functioning HTML break tag translation script.
     """
     if app.builder.name in ['latex', 'pdf']:
         for raw_node in list(doctree.traverse(nodes.raw)):
@@ -298,6 +286,6 @@ def convert_br_tags_for_pdf(app, doctree, docname):
                 raw_node.replace_self(latex_newline)
 
 def setup(app):
-    # Connect both events to 'doctree-resolved' so they execute reliably in order
+    # Safe hooks: Both fire together sequentially inside the tree rendering phase
     app.connect('doctree-resolved', extract_pdf_table_layouts)
     app.connect('doctree-resolved', convert_br_tags_for_pdf)

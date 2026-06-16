@@ -32,8 +32,8 @@ Additional variable attributes may be defined. Their names must start with a let
 | [`REPRESENTATION_i`](#representation_i) | **Optional, required by Cluster** | `"representation_xyz"`  <br> CDF_CHAR  | Optional (required by Cluster) for **_data_** vectors and tensors. Points to a 1-D string **_metadata_** variable with the same dimension size.|
 | [`TENSOR_FRAME`](#tensor_frame) | **Optional, required by Cluster** | `"GSE"`  <br> CDF_CHAR  | Optional (required by Cluster) for _**data**_ vectors, tensors, and individual components.|
 | [`TENSOR_ORDER`](#tensor_order) | **Optional, required by Cluster** | `2`  <br> Integer | Optional (required by Cluster) for _**data**_ vectors and tensors. |
-| [`UNITS`](#units) | **Required** |  `"count/ms` <br> CDF_CHAR | Required for **_data_** and **_support_data_** not using `UNIT_PTR`. |
-| [`units`](#units)  <br> (**netCDF only**) | **Required** |  `"count/ms` <br> CDF_CHAR | Required for **_data_** and **_support_data_** not using `UNIT_PTR`. |
+| [`UNITS`](#units) | **Required** |  `"count/ms"` <br> CDF_CHAR | Required for **_data_** and **_support_data_** not using `UNIT_PTR`. |
+| [`units`](#units)  <br> (**netCDF only**) | **Required** |  `"count/ms"` <br> CDF_CHAR | Required for **_data_** and **_support_data_** not using `UNIT_PTR`. |
 | [`UNIT_PTR`](#unit_ptr) | **Required** |  `"units_E_cnt_rate"` <br> CDF_CHAR | Required for 1-D **_data_** and **_support_data_** not using `UNITS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
 | [`VALIDMIN`](#validmin-validmax) | **Required** | `0.0` <br> **Must match variable data type** | Required for **_data_** and RV **_support_data_**.  |
 | [`VALIDMAX`](#validmin-validmax) | **Required** | `1000.0` <br> **Must match variable data type** | Required for **_data_** and RV **_support_data_**.  |
@@ -74,6 +74,10 @@ REFERENCE_POSITION = "Rotating Earth Geoid"
 UNITS = "ns"
 ```
 See CDF_TIME_TT2000 [requirements analysis](http://cdf.gsfc.nasa.gov/html/leapseconds_requirements.html) and [development approach](http://cdf.gsfc.nasa.gov/html/leapseconds.html) for more details.
+
+```{eval-rst}
+.. tabularcolumns:: |\Y{0.30}|\Y{0.16}|\Y{0.27}|\Y{0.27}|
+```
 
 | **Attribute** | **Requirement (see details in Notes column)**  | **Example Value, <br> Required Data Type** | **Notes** |
 | ------------- | ---------------- | ----------- | -------------- |

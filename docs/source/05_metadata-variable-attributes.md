@@ -6,6 +6,9 @@ Note that attribute names are case sensitive, and the names of the ISTP variable
 
 Additional variable attributes may be defined. Their names must start with a letter and can contain letters, numbers, the underscore character, but no other special or Unicode characters. Though attribute names are case sensitive, the names must not be distinguished by case only.
 
+```{eval-rst}
+.. tabularcolumns:: |\Y{0.26}|\Y{0.16}|\Y{0.30}|\Y{0.28}|
+```
 
 | **Attribute Name** | **Requirement (see details in Notes column)** | **Example Value, <br> Required Data Type** | **Notes** |
 | -------------- | ---------------- | ------------- | --------- |

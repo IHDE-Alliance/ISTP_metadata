@@ -113,7 +113,7 @@ We have extended the ISTP project data dictionary to include dictionary keywords
 We provide a standard set of class keywords that include both *sensor* (science) and *supporting* class keywords and their meanings, to be used to categorize the data variables of primary interest to investigators. ISTP class keywords are restricted to the values shown below. Sets of subclass keywords, with each set used to modify one of the class keywords, are also adopted and listed with the associated information below. Lists of common subclass keywords, valid with any class keywords, can also be found below.
 
 ```{eval-rst}
-.. tabularcolumns:: |\Y{0.15}|\Y{0.45}|\Y{0.40}|
+.. tabularcolumns:: |\Y{0.15}|\Y{0.50}|\Y{0.35}|
 ```
 
 | Sensor Class Keyword    | Description    |   Subclass Keywords |		
@@ -133,7 +133,7 @@ We provide a standard set of class keywords that include both *sensor* (science)
 | `velocity` | The rate of increase of distance traversed by a body in a particular direction (linear velocity) or the rate at which a body rotates about an axis (angular velocity). Speed is similarly defined with the omission of reference to direction | `doppler`, `drift`, `group`, `horizontal`, `phase`, `rotation`, `speed`, `thermal`, `vertical` |
 
 ```{eval-rst}
-.. tabularcolumns:: |\Y{0.15}|\Y{0.45}|\Y{0.40}|
+.. tabularcolumns:: |\Y{0.15}|\Y{0.50}|\Y{0.35}|
 ```
 
 | Supporting Class Keyword    | Description    |   Subclass Keywords |		

@@ -243,41 +243,7 @@ else:
 
 from docutils import nodes
 
-def extract_pdf_table_layouts(app, doctree, docname):
-    """
-    Runs late in the build (doctree-resolved). Finds HTML comment blocks,
-    extracts the layout constraints, and injects pure LaTeX commands 
-    exclusively for the PDF builder.
-    """
-    if app.builder.name in ['latex', 'pdf']:
-        # Traverses all comment objects safely parsed from your markdown
-        for node in list(doctree.traverse(nodes.comment)):
-            comment_text = node.astext().strip()
-            
-            # Look for your custom target layout string inside the comment
-            if '.. tabularcolumns::' in comment_text:
-                # Extract the layout string portion (e.g., "|p{6cm}|p{3cm}|p{3cm}|")
-                layout_spec = comment_text.replace('.. tabularcolumns::', '').strip()
-                
-                if layout_spec:
-                    # Pure LaTeX Injection: Replaces Sphinx's internal table column token 
-                    # with your precise millimeter or centimeter parameters
-                    latex_raw_code = (
-                        r'\makeatletter'
-                        r'\def\sphinxXcoltype{\protect\p}'
-                        r'\makeatother'
-                    )
-                    
-                    # Create a safe, raw LaTeX system node object
-                    latex_node = nodes.raw('', latex_raw_code, format='latex')
-                    
-                    # Swap the invisible comment with the functional layout node
-                    node.replace_self(latex_node)
-
 def convert_br_tags_for_pdf(app, doctree, docname):
-    """
-    Your existing, functioning HTML break tag translation script.
-    """
     if app.builder.name in ['latex', 'pdf']:
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
@@ -286,6 +252,4 @@ def convert_br_tags_for_pdf(app, doctree, docname):
                 raw_node.replace_self(latex_newline)
 
 def setup(app):
-    # Safe hooks: Both fire together sequentially inside the tree rendering phase
-    app.connect('doctree-resolved', extract_pdf_table_layouts)
     app.connect('doctree-resolved', convert_br_tags_for_pdf)

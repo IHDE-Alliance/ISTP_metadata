@@ -122,17 +122,19 @@ These high-resolution (16 samples per second) MAGnetometer (MAG-B) data are prov
 in GMS coordinates in VAX binary fixed-length format as daily files including orbit 
 information. The data are for the time period from Aug 10, 1981 to Feb 16, 1983. 
 
+_(description of other files in this directory)_
+
 The following documentation files are included in this directory:   
 
-magb_insturment_data.txt: A description of the MAG-B instrument and data
-data_format_description.txt: A description of the MAG-B GMS data format and software 
-read_data.pro: An IDL program to read data into arrays 
-read_and_average_data.pro:  An IDL program to read and average the data 
-read_requiring_VAX_UNIX_conversion.pro: An IDL program to read data, requires VAX to UNIX conversion subroutine
-VAX_UNIX_conversion.pro:  IDL subroutine for VAX to UNIX conversion 
+    magb_insturment_data.txt: A description of the MAG-B instrument and data
+    data_format_description.txt: A description of the MAG-B GMS data format and software 
+    read_data.pro: An IDL program to read data into arrays 
+    read_and_average_data.pro:  An IDL program to read and average the data 
+    read_requiring_VAX_UNIX_conversion.pro: An IDL program to read data, requires VAX to UNIX conversion subroutine
+    VAX_UNIX_conversion.pro:  IDL subroutine for VAX to UNIX conversion 
 
 
-_(Any other pointers to documentation and software)_
+_(any other pointers to documentation and software)_
 
 Additional related information and data services: 
 NSSDC's DE-1 magnetometer Master Catalog: \<http://nssdc.gsfc.nasa.gov/nmc/experimentDisplay.do?id=1981-070B-01\>

@@ -5,7 +5,7 @@
 - O - optional for mission
 
 ```{eval-rst}
-.. tabularcolumns:: |\Y{0.28}|\Y{0.18}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|
+.. tabularcolumns:: |\Y{0.23}|\Y{0.14}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|
 ```
 
 | Attributes | ISTP alternative | Cluster | Arase (ERG) | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |

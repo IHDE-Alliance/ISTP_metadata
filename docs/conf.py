@@ -156,6 +156,10 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
+        % Forces LaTeX to wrap long unspaced words anywhere they hit a column boundary
+        \usepackage{cutt}
+        \setcuttoptions{breakall}
+        
         % urn off standard syllable hyphenation completely
         \hyphenpenalty=10000
         \exhyphenpenalty=10000

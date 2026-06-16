@@ -5,10 +5,10 @@
 - O - optional for mission
 
 ```{eval-rst}
-.. tabularcolumns:: |\Y{0.23}|\Y{0.14}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|
+.. tabularcolumns:: |\Y{0.24}|\Y{0.13}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|\Y{0.07}|
 ```
 
-| Attributes | ISTP alternative | Cluster | Arase (ERG) | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
+| Attributes | ISTP alternative | Cluster | Arase (ERG) | GOLD | ICON | MMS | PDS | PRBEM | <br> PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | `ACCESS_FORMAT` | | | | | | | | | | O |
 | `CAVEATS` | `Rules_of_use` | O | | | | | | | | O |

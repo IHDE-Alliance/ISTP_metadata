@@ -10,7 +10,7 @@
 .. tabularcolumns:: |\Y{0.25}|\Y{0.21}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|
 ```
 
-| Attributes | ISTP alternative | Cluster | Arase (ERG) | GOLD | ICON | MMS | PDS | PRBEM | PSP | Solar Orbiter |
+| Attributes | ISTP alternative | Cluster | <br>Arase (ERG) | GOLD | ICON | MMS | PDS | PRBEM | <br>PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | `_ChunkingSizes` <br> (netCDF Internal) | | | | | M |
 | `COORDINATE_SYSTEM` | | | | | | R |

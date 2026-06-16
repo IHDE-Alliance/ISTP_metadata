@@ -266,6 +266,10 @@ def convert_br_tags_for_pdf(app, doctree, docname):
     if app.builder.name in ['latex', 'pdf']:
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
+            # Strip out the HTML comment tags wrapping the table settings
+            raw_text = raw_text.replace('<!--\n```{eval-rst}', '```{eval-rst}')
+            raw_text = raw_text.replace('```\n-->', '```')
+            # Strip out the HTML comment tags wrapping the table settings
             if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)

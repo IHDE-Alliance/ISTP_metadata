@@ -55,7 +55,7 @@ Additional variable attributes may be defined. Their names must start with a let
 | [`MONOTON`](#monoton) | **Optional** |  `"INCREASE"` <br> CDF_CHAR | Optional for epoch variables (*RV* **_support_data_**).  |
 | [`SCALEMIN`](#scalemin-scalemax) | **Optional** | `200.0` <br> **Must match variable data type** | Optional for **_data_** and *RV* **_support_data_**. |
 | [`SCALEMAX`](#scalemin-scalemax) | **Optional** | `800.0` <br> **Must match variable data type** | Optional for **_data_** and *RV* **_support_data_**. |
-| [`SI_CONVERSION`](#si_conversion) | **Optional** | `"1.0E3>count/s"`  | Optional for **_data_** and **_support_data_**. |
+| [`SI_CONVERSION`](#si_conversion) | **Optional** | `"1.0E3>count/s"` <br> CDF_CHAR  | Optional for **_data_** and **_support_data_**. |
 | [`VARIABLE_PURPOSE`](#variable_purpose) | **Optional** | `"PRIMARY_VAR"` <br> CDF_CHAR | Optional for **_data_**.  |
 | [`V_PARENT`](#v_parent) | **Optional** |  `"E_cnt_rate_all"` <br> CDF_CHAR  | Optional for **_data_**.  |
 

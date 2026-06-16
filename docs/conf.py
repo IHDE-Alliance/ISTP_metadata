@@ -110,8 +110,7 @@ html_theme_options = {
     # Stays expanded by default across your entire site
     # Adds a visual [+] or [-] icons
     'navigation_depth': 2,
-    'collapse_navigation': False,
-    'sticky_navigation': True,
+    'sidebar_collapse': False,
     # Injects custom CSS securely on Read the Docs to force the margin
     'extra_nav_links': {
         '<style>img.logo, .sphinxsidebar img { margin-bottom: 40px !important; }</style>': ''

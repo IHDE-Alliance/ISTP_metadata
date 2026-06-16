@@ -241,6 +241,8 @@ else:
 
 # Handle <br> in PDF table cells and handle custom column widths
 
+# conf.py
+import re
 from docutils import nodes
 
 def extract_pdf_table_layouts(app, docname, source):
@@ -249,15 +251,18 @@ def extract_pdf_table_layouts(app, docname, source):
     ONLY when actively rendering the PDF documentation.
     """
     if app.builder.name in ['latex', 'pdf']:
-        # source is a list containing a single string element: [raw_markdown_text]
+        # Extract the source string text from the first slot of the list
         raw_text = source[0]
         
-        # Strip out the HTML comment tags wrapping the table settings
-        raw_text = raw_text.replace('<!--\n```{eval-rst}', '```{eval-rst}')
-        raw_text = raw_text.replace('```\n-->', '```')
+        # Robust Regex: Matches <!-- followed by optional spacing, the eval-rst block,
+        # and the closing comment tag, across any type of system newline pattern.
+        pattern = r'<!--\s*(```{eval-rst}.*?```)\s*-->'
         
-        # Update the raw markdown content array in-place
-        source[0] = raw_text
+        # Strip out the HTML comment boundaries, leaving the inner directive exposed
+        cleaned_text = re.sub(pattern, r'\1', raw_text, flags=re.DOTALL)
+        
+        # Overwrite the string inside that exact list index slot in memory
+        source[0] = cleaned_text
 
 def convert_br_tags_for_pdf(app, doctree, docname):
     """
@@ -266,10 +271,6 @@ def convert_br_tags_for_pdf(app, doctree, docname):
     if app.builder.name in ['latex', 'pdf']:
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
-            # Strip out the HTML comment tags wrapping the table settings
-            raw_text = raw_text.replace('<!--\n```{eval-rst}', '```{eval-rst}')
-            raw_text = raw_text.replace('```\n-->', '```')
-            # Strip out the HTML comment tags wrapping the table settings
             if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
                 latex_newline = nodes.raw('', r'\newline ', format='latex')
                 raw_node.replace_self(latex_newline)

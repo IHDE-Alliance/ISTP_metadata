@@ -76,7 +76,7 @@ UNITS = "ns"
 See CDF_TIME_TT2000 [requirements analysis](http://cdf.gsfc.nasa.gov/html/leapseconds_requirements.html) and [development approach](http://cdf.gsfc.nasa.gov/html/leapseconds.html) for more details.
 
 ```{eval-rst}
-.. tabularcolumns:: |\Y{0.30}|\Y{0.16}|\Y{0.27}|\Y{0.27}|
+.. tabularcolumns:: |\Y{0.31}|\Y{0.16}|\Y{0.23}|\Y{0.30}|
 ```
 
 | **Attribute** | **Requirement (see details in Notes column)**  | **Example Value, <br> Required Data Type** | **Notes** |
@@ -84,10 +84,10 @@ See CDF_TIME_TT2000 [requirements analysis](http://cdf.gsfc.nasa.gov/html/leapse
 | [`TIME_BASE`](#time_base) | **Recommended** (Important for **netCDF** files and clarity) | `"J2000"` <br> CDF_CHAR | Fixed (`"0 AD"` (used by CDF_EPOCH and CDF_EPOCH16), `"1900"`, `"1970"` (POSIX), `"J2000"` (used by CDF_TIME_TT2000), `"4714 BC"` (Julian)) or `"flexible"` (provider-defined). |
 | [`TIME_SCALE`](#time_scale) | **Recommended**  |  `"TT"` <br> CDF_CHAR | `"TT"` (same as TDT, used by CDF_TIME_TT2000), `"TAI"` (same as IAT, TT-32.184s), `"UTC"` (includes leap seconds), `"TDB"` (same as SPICE ET), `"EME1950"` [default: `"UTC"`]. |
 | [`LEAP_SECONDS_INCLUDED`](#leap_seconds_included) | **Recommended for UTC only** | `"1961JAN01+1.42282s,` ... `,2017JAN01+1s"` <br> CDF_CHAR  | Comma-delimited list of leap seconds.  |
-| [`ABSOLUTE_ERROR`](#absolute_error) | **Optional** | `0.3` <br> **Variable data type** | Absolute or systematic error, in same units as `UNITS` attribute. |
+| [`ABSOLUTE_ERROR`](#absolute_error) | **Optional** | `0.3` <br> **Must match variable underlying basic data type** | Absolute or systematic error, in same units as `UNITS` attribute. |
 | [`BIN_LOCATION`](#bin_location) | **Optional** | `0.5` <br> CDF_REAL4, CDF_REAL8, or equivalent  | Relative position of time stamp to the data measurement bin, with `0.0` at the beginning of time bin and `1.0` at the end. Default is `0.5` for the time at the center of the data measurement. |
 | [`REFERENCE_POSITION`](#reference_position) | **Optional** | `"Geocenter"` <br> CDF_CHAR | `"Topocenter"` (local), `"Geocenter"`, `"Rotating Earth Geoid"` (used by CDF_TIME_TT2000). |
-| [`RELATIVE_ERROR`](#relative_error) | **Optional** |  `0.4` <br> **Variable data type** | Relative or random error, in same units as `UNITS` attribute - to specify the accuracy of the time stamps relative to each other. |
+| [`RELATIVE_ERROR`](#relative_error) | **Optional** |  `0.4` <br> **Must match variable underlying basic data type** | Relative or random error, in same units as `UNITS` attribute - to specify the accuracy of the time stamps relative to each other. |
 | [`RESOLUTION`](#resolution) | **Optional** | `"1ms"` <br> CDF_CHAR  | Using ISO8601 relative time format, for example: `"1ms"` = 1 millisecond. Resolution provides the smallest change in time that is measured. |
 | [`UNITS`](#units) | **Optional** |  `"ns"` <br> CDF_CHAR | SI measurement unit: `"s"`, `"ms"`(milliseconds for CDF_EPOCH variables), `"ns"`(nanoseconds for CDF_TIME_TT2000), `"ps"`(picoseconds for CDF_EPOCH16).  |
 

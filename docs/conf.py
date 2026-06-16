@@ -242,8 +242,43 @@ else:
 # Handle <br> in PDF table cells and handle custom column widths
 
 from docutils import nodes
+from sphinx.writers.latex import LaTeXTranslator
+
+# Keep your existing setup configuration unchanged
+# ... your existing imports
+
+class CustomLaTeXTableTranslator(LaTeXTranslator):
+    """
+    Globally intercepts MyST Markdown pipe tables and dynamically rewrites 
+    their rigid column declarations into flexible paragraph boxes.
+    """
+    def visit_table(self, node):
+        # We look inside the structural nodes of the markdown table
+        if 'colwidths' in node:
+            # MyST passes a list of relative percentages, e.g., [33, 33, 33]
+            widths = node['colwidths']
+            total = sum(widths) if widths else 1
+            
+            # Translate percentages into exact fractions of the PDF page width (\linewidth)
+            # Example: [50, 25, 25] becomes: p{0.50\linewidth}p{0.25\linewidth}p{0.25\linewidth}
+            latex_spec = "".join([f"|p{{{w/total:.2f}\\linewidth}}" for w in widths]) + "|"
+            
+            # Force LaTeX to override the native column layouts seamlessly
+            self.body.append(f'\n\\begin{{tabular}}{{{latex_spec}}}\n')
+            node['pushed_custom_table'] = True
+        else:
+            super().visit_table(node)
+
+    def depart_table(self, node):
+        if node.get('pushed_custom_table'):
+            self.body.append('\n\\end{tabular}\n')
+        else:
+            super().depart_table(node)
 
 def convert_br_tags_for_pdf(app, doctree, docname):
+    """
+    Your existing function that replaces HTML breaks with LaTeX newlines.
+    """
     if app.builder.name in ['latex', 'pdf']:
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
@@ -252,4 +287,8 @@ def convert_br_tags_for_pdf(app, doctree, docname):
                 raw_node.replace_self(latex_newline)
 
 def setup(app):
+    # 1. Force Sphinx to utilize our custom table writer class for PDF builds
+    app.set_translator('latex', CustomLaTeXTableTranslator)
+    
+    # 2. Maintain your existing break tag translation script seamlessly
     app.connect('doctree-resolved', convert_br_tags_for_pdf)

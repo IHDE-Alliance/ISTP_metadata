@@ -114,7 +114,6 @@ We provide a standard set of class keywords that include both *sensor* (science)
 
 | Sensor Class Keyword    | Description    |   Subclass Keywords |		
 | ------------- | ---------------| ------------- |
-| <colgroup> <col width="250"> <col width="100"> <col width="100"> </colgroup> | | |
 | `anisotropy`	|The variation of physical properties with direction, usually expressed as a ratio |  `parallel` |
 | `current` | 	The rate of flow of electricity | `Hall`, `load`, `primary`,  `secondary`	|
 | `density` | The mass per unit volume of a substance, or the number of items per unit volume | `partial`, `mass`, `number` |

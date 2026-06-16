@@ -33,7 +33,7 @@ Learning about and changing the ISTP Guidelines.
 
 ### How do I propose a change?
 
-Changes to the ISTP Guidelines standard are generally proposed by opening an issue on the [**ISTP Guidelines Github**](https://github.com/IHDE-Alliance/ISTP_metadata) site.
+Changes to the ISTP Guidelines standard are generally proposed by opening an issue on the [**ISTP Guidelines GitHub**](https://github.com/IHDE-Alliance/ISTP_metadata) site.
 
 ### What is the process for accepting a change to the ISTP Guidelines?
 

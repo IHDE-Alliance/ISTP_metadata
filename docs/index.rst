@@ -15,7 +15,7 @@ International Solar-Terrestrial Physics (ISTP) Metadata Guidelines for describin
    .. rubric:: Table of Contents
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :numbered: 3
 
    source/01_metadata-intro

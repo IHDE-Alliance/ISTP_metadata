@@ -39,7 +39,7 @@ All ISTP global attributes are of character data type (CDF_CHAR) in the CDF file
 | [`MODS`](#mods) | **Recommended** (allows multiple entries) |  `"Version 1.0 Jan. 1, 2020"`  | Stores the history of modifications made to the dataset. This attribute can have multiple entries.|
 | [`Project`](#project) | **Recommended**  (allows multiple entries) |  `"LWS>Living With a Star"`  | Identifies the name of the project, and indicates ownership. Both the short and long names, separated by `>`, are included. This attribute can have multiple entries.|
 | [`Rules_of_use`](#rules_of_use)  | **Recommended**  | `"See http://spp-isois.sr.unh.edu/ISOIS_Terms_of_Use.html"` | Text containing information on citability and PI access restrictions. This may point to a web page specifying the rules of use. |
-| [`spase_DatasetResourceID`](#spase_datasetresourceid) | **Recommended**  | `"spase://NASA/NumericalData/ParkerSolarProbe/PT1M"` | Unique dataset identifier assigned by a [SPASE](https://spase-group.org/) naming authority. |
+| [`spase_DatasetResourceID`](#spase_datasetresourceid) | **Recommended**  | "spase://NASA/NumericalData/ParkerSolarProbe/PT1M" | Unique dataset identifier assigned by a [SPASE](https://spase-group.org/) naming authority. |
 | [`Time_resolution`](#time_resolution) | **Recommended**  | `"1 min"`  | Specifies time resolution of the data. |
 | [`Parents`](#parents) | **Optional** (allows multiple entries) | `"RDM>0012081A"`  | Lists the parent files of derived and merged datasets. This attribute allows multiple entries. |
 | [`Skeleton_version`](#skeleton_version) | **Optional, required by Cluster** | `"2.0.0"` | Version of the skeleton file used to create the data file.  |

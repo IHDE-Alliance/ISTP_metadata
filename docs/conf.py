@@ -243,9 +243,27 @@ else:
 
 from docutils import nodes
 
-def convert_br_tags_for_pdf(app, doctree, docname):
+def extract_pdf_table_layouts(app, docname, source):
+    """
+    Runs early in the build. Un-comments hidden eval-rst layout commands
+    ONLY when actively rendering the PDF documentation.
+    """
     if app.builder.name in ['latex', 'pdf']:
-        # Only handle the hard line breaks; the LaTeX preamble handles the wrapping/widths
+        # source is a list containing a single string element: [raw_markdown_text]
+        raw_text = source[0]
+        
+        # Strip out the HTML comment tags wrapping the table settings
+        raw_text = raw_text.replace('<!--\n```{eval-rst}', '```{eval-rst}')
+        raw_text = raw_text.replace('```\n-->', '```')
+        
+        # Update the raw markdown content array in-place
+        source[0] = raw_text
+
+def convert_br_tags_for_pdf(app, doctree, docname):
+    """
+    Runs late in the build. Replaces HTML breaks with LaTeX newlines.
+    """
+    if app.builder.name in ['latex', 'pdf']:
         for raw_node in list(doctree.traverse(nodes.raw)):
             raw_text = raw_node.astext().lower()
             if 'html' in raw_node.get('format', '') and any(tag in raw_text for tag in ['<br>', '<br/>', '<br />']):
@@ -253,4 +271,8 @@ def convert_br_tags_for_pdf(app, doctree, docname):
                 raw_node.replace_self(latex_newline)
 
 def setup(app):
+    # 1. Intercept raw Markdown string text early to un-hide table layouts
+    app.connect('source-read', extract_pdf_table_layouts)
+    
+    # 2. Handle your existing <br> tag conversions after the tree is resolved
     app.connect('doctree-resolved', convert_br_tags_for_pdf)

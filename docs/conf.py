@@ -156,11 +156,6 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
-        \usepackage{seqsplit}
-        % Intercepts the table builder and tells it to forcefully wrap 
-        % long alphanumeric strings inside paragraphs
-        \usepackage[nohyphen]{underscore}
-
         % urn off standard syllable hyphenation completely
         \hyphenpenalty=10000
         \exhyphenpenalty=10000

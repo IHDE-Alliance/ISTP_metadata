@@ -156,6 +156,11 @@ latex_elements = {
 
     # Force Sphinx to wrap literal inline layouts
     'preamble': r'''
+        \usepackage{seqsplit}
+        % Force standard LaTeX column paragraph definitions to wrap characters
+        % automatically when a string surpasses the cell boundary
+        \usepackage[nohyphen]{underscore} % Forces breaks at every underscore character
+
         % urn off standard syllable hyphenation completely
         \hyphenpenalty=10000
         \exhyphenpenalty=10000

@@ -2,7 +2,7 @@
 
 ## Variable Types
 
-ISTP Guidelines divide all variables into three types, identified by the value of the[`VAR_TYPE` ](./05_metadata-variable-attributes.md#var_type) variable attribute: 
+ISTP Guidelines divide all variables into three types, identified by the value of the [`VAR_TYPE` ](./05_metadata-variable-attributes.md#var_type) variable attribute: 
 - **_Data_** variables (`VAR_TYPE = "data"`) of primary importance (e.g., density, magnetic field, particle flux).
 - **_Support_data_** variables (`VAR_TYPE = "support_data"`) of secondary importance (e.g., time and energy associated with particle flux).
 - **_Metadata_** variables (`VAR_TYPE = "metadata"`) used for labeling dimensional data (e.g., a variable holding  string array [`"Bx GSE"`,`"By GSE"`,`"Bz GSE"`] for labeling vector magnetic field).

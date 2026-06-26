@@ -168,7 +168,7 @@ Also listed below are the default values (for different data type) of the `PadVa
 |:--------- | ------:|------:|
 | CDF_REAL4 | `-1.0E31` or `NaN` |  `-1.0E30` |
 | CDF_REAL8 | `-1.0E31` or `NaN` |  `-1.0E30` |
-| CDF_BYTE  | `-128` | `-127` |
+| CDF_INT1  | `-128` | `-127` |
 | CDF_UINT1 | `255` | `254` |
 | CDF_INT2  | `-32768` | `-32767` |
 | CDF_UINT2 | `65535` | `65534` |

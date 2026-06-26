@@ -52,7 +52,7 @@ CDF supports a variety of data types consistent with the types available with C 
 #### Character Data Types
 | Data Type | Description|
 |-|-|
-|CDF_CHAR, CDF_UCHAR  |1-byte character  <br> (CDF_CHAR and CDF_UCHAR are **identical**)   |
+|CDF_CHAR, <br> CDF_UCHAR  |1-byte character  <br> (CDF_CHAR and CDF_UCHAR are **identical**)   |
 
  **Note** that character data types are unique for variables in that they are the only data types for which more than one element per
 value is allowed.
@@ -60,7 +60,7 @@ value is allowed.
 #### Integer Data Types
 | Data Type | Description|
 |-|-|
-|CDF_INT1, CDF_BYTE  |1-byte signed integer <br> (CDF_INT1 and CDF_BYTE are **identical**) |
+|CDF_INT1, <br> CDF_BYTE  |1-byte signed integer <br> (CDF_INT1 and CDF_BYTE are **identical**) |
 |CDF_UINT1 |1-byte unsigned integer|
 |CDF_INT2  |2-byte signed integer  |
 |CDF_UINT2 |2-byte unsigned integer|
@@ -71,8 +71,8 @@ value is allowed.
 #### Floating Point Data Types
 | Data Type | Description|
 |-|-|
-|CDF_REAL4, CDF_FLOAT  |4-byte floating-point  <br> (CDF_REAL4 and CDF_FLOAT are **identical**) |
-|CDF_REAL8, CDF_DOUBLE |8-byte floating-point <br> (CDF_REAL8 and CDF_DOUBLE are **identical**) |
+|CDF_REAL4, <br> CDF_FLOAT  |4-byte floating-point  <br> (CDF_REAL4 and CDF_FLOAT are **identical**) |
+|CDF_REAL8, <br> CDF_DOUBLE |8-byte floating-point <br> (CDF_REAL8 and CDF_DOUBLE are **identical**) |
 
 #### Time Data Types
 | Data Type | Description|

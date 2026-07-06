@@ -29,9 +29,9 @@ Additional variable attributes may be defined. Their names must start with a let
 | [`LABL_PTR_1`](#labl_ptr_i) | **Required** | `"Electron_Energy_Label"` <br> CDF_CHAR  | Required for **_data_** of the following form: 1-D *Time_series*, 2-D *Spectrogram*. Also needed for 1-D and 2-D **_support_data_** without a `LABLAXIS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
 | [`LABL_PTR_2`](#labl_ptr_i) | **Required** | `"Telescope_Label"` <br> CDF_CHAR  | Required for **_data_** of the following form: 2-D *spectrogram*, 3-D *spectrogram*. Also needed for 2-D **_support_data_** without `LABLAXIS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
 | [`LABL_PTR_3`](#labl_ptr_i) | **Required** | `"Sector_Label"` <br> CDF_CHAR  | Required for **_data_** of the following form: 3-D *Spectrogram*. Points to a 1-D string **_metadata_** variable with the same dimension size. |
-| [`REPRESENTATION_i`](#representation_i) | **Optional, required by Cluster** | `"representation_xyz"`  <br> CDF_CHAR  | Optional (required by Cluster) for **_data_** vectors and tensors. Points to a 1-D string **_metadata_** variable with the same dimension size.|
+| [`REPRESENTATION_i`](#representation_i) (**PROPOSAL ONLY**)| **Required, required by Cluster** | `"representation_xyz"`  <br> CDF_CHAR  | Required for **_data_** vectors and tensors. Points to a 1-D string **_metadata_** variable with the same dimension size.|
 | [`TENSOR_FRAME`](#tensor_frame) | **Optional, required by Cluster** | `"GSE"`  <br> CDF_CHAR  | Optional (required by Cluster) for _**data**_ vectors, tensors, and individual components.|
-| [`TENSOR_ORDER`](#tensor_order) | **Optional, required by Cluster** | `2`  <br> Integer | Optional (required by Cluster) for _**data**_ vectors and tensors. |
+| [`TENSOR_ORDER`](#tensor_order) (**PROPOSAL ONLY**) | **Required, required by Cluster** | `2`  <br> Integer | Required for _**data**_ vectors and tensors. |
 | [`UNITS`](#units) | **Required** |  `"count/ms"` <br> CDF_CHAR | Required for **_data_** and **_support_data_** not using `UNIT_PTR`. |
 | [`units`](#units)  <br> (**netCDF only**) | **Required** |  `"count/ms"` <br> CDF_CHAR | Required for **_data_** and **_support_data_** not using `UNIT_PTR`. |
 | [`UNIT_PTR`](#unit_ptr) | **Required** |  `"units_E_cnt_rate"` <br> CDF_CHAR | Required for 1-D **_data_** and **_support_data_** not using `UNITS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
@@ -235,7 +235,7 @@ limits). Visualization software can use these attributes for indicating limits o
 (**_Optional for time variables_**.) Used to account for time variance with position in the gravity wells and with relative velocity. E.g, `"Topocenter"` (local), `"Geocenter"`, `"Rotating Earth Geoid"` (used by CDF_TIME_TT2000). While we could use a combined `TimeSystem` attribute that defines mission-specific time scales where needed, such as `"UTC-at-STEREO-B"`, it is cleaner to keep them separate as `TIME_SCALE = "UTC"` and `REFERENCE_POSITION = "STEREO-B"`.
 
 ### REPRESENTATION_i
-(**_Optional [required by Cluster] for data vectors and tensors_**.) Points to a 1-D metadata variable holding string representations of the i-th dimension of the data variable, e.g., [`"x"`,`"y"`,`"z"`] for Cartesian components in the x-y-z order, [`"r"`,`"p"`,`"t"`] for spherical polar, [`"r"`,"`p`",`"z"`] for cylindrical polar. Number of `REPRESENTATION_i` attributes must match the number of dimensions of the data variable. When `REPRESENTATION_i` is used, labels for tensor components are created by concatenating to the `LABLAXIS` value the corresponding value in the variable pointed to by `REPRESENTATION_i`, e.g., `"Vx"`, `"Vy"`, `"Vz"` for a 1-D vector (using `LABLAXIS = "V"` and `REPRESENTATION_1` pointing to a variable holding [`"x"`,`"y"`,`"z"`]) or `"Pxx"`, `"Pxy"`, `"Pxz"`, `"Pyx"`, etc., for a tensor of order 2 (using `LABLAXIS = "P"` and both `REPRESENTATION_1` and `REPRESENTATION_2` pointing to a variable holding [`"x"`,`"y"`,`"z"`]).
+(**_Required [required by Cluster] for data vectors and tensors. PROPOSAL ONLY_**.) Points to a 1-D metadata variable holding string representations of the i-th dimension of the data variable, e.g., [`"x"`,`"y"`,`"z"`] for Cartesian components in the x-y-z order, [`"r"`,`"p"`,`"t"`] for spherical polar, [`"r"`,"`p`",`"z"`] for cylindrical polar. Number of `REPRESENTATION_i` attributes must match the number of dimensions of the data variable. When `REPRESENTATION_i` are used with `LABLAXIS`, labels for tensor components are created by concatenating to the `LABLAXIS` value the corresponding value in the variable pointed to by `REPRESENTATION_i`, e.g., `"Vx"`, `"Vy"`, `"Vz"` for a 1-D vector (using `LABLAXIS = "V"` and `REPRESENTATION_1` pointing to a variable holding [`"x"`,`"y"`,`"z"`]) or `"Pxx"`, `"Pxy"`, `"Pxz"`, `"Pyx"`, etc., for a tensor of order 2 (using `LABLAXIS = "P"` and both `REPRESENTATION_1` and `REPRESENTATION_2` pointing to a variable holding [`"x"`,`"y"`,`"z"`]).
 
 ### RESOLUTION
 (**_Optional for time variables_**.) Using ISO8601 relative time format, e.g. `"1s"`. Resolution provides the smallest change in time that is measured.
@@ -260,7 +260,7 @@ limits). Visualization software can use these attributes for indicating limits o
 (**_Optional [required by Cluster] for data vectors and tensors_**.) The name of the frame (coordinate system) of a tensor, e.g., `"GSE"`. Same as `COORDINATE_SYSTEM`.
 
 ### TENSOR_ORDER
-(**_Optional [required by Cluster] for data vectors and tensors_**.) The order of a tensor, i.e. `1` for a vector, `2` for a 3x3 tensor.
+(**_Required [required by Cluster] for data vectors and tensors. PROPOSAL ONLY_**.) The order of a tensor, i.e. `1` for a vector, `2` for a 3x3 tensor.
 
 
 ### TIME_BASE

@@ -1,7 +1,7 @@
 
 # Best Practices for Creating ISTP-compliant Datasets in CDF and netCDF Formats
 
-## Dataset and File Naming Recommmendations
+## Dataset and File Naming Recommendations
 - Follow the SPDF [Recommended File and Dataset Naming Practices](./filenaming-dataset-naming-recommendations.md)
 
 ## CDF-Specific Practices
@@ -11,19 +11,19 @@ If extremely rare changes occur in the variable values over time, a CDF variable
 - Use netCDF-4, but do not use netCDF groups, unsigned 64-bit integers, or user-defined variable types, since these are not widely supported by generalized science software.
 - Use time as the UNLIMITED dimension.
 - Define variables to hold the values for each dimension.
-- Provide two global attributes `Data_Start` and `Data_End`, with values in yyyy-mm-ddThh:mm:ss UTC format, since netCDF doesn't include standard/data type for time.
+- Provide two global attributes `Data_Start` and `Data_End`, with values in yyyy-mm-ddThh:mm:ss UTC format, since netCDF doesn't include a standard/data type for time.
 
 We recommend using the CDF_TIME_TT2000 variable data type (stored as 8-byte signed integers in netCDF), and using the CDF library routines for conversion to and from other time formats. Otherwise, time variables should be in seconds from some epoch, with `UNITS` of "seconds since 2000-01-01", for instance.
 
-In addition to the ISTP-defined `FILLVAL`, `CATDESC` and `UNITS`, netCDF conventions call for also storing same values in `_FillValue`, `long_name`, and `units`, respectively.  See [netCDF Attribute Conventions](https://docs.unidata.ucar.edu/netcdf-c/current/attribute_conventions.html).
+In addition to the ISTP-defined `FILLVAL`, `CATDESC` and `UNITS`, netCDF conventions call for also storing the same values in `_FillValue`, `long_name`, and `units`, respectively.  See [netCDF Attribute Conventions](https://docs.unidata.ucar.edu/netcdf-c/current/attribute_conventions.html).
 
 
 ## Tools for Laying out Datasets
 
 ### Metadata Editors
-- Browser-based [ISTP Metadata Editor](https://spdf.gsfc.nasa.gov/istp-metadata-editor/) for creating and editing ISTP guideline compliant CDF, skeleton (SKT), and netCDF files
+- Browser-based [ISTP Metadata Editor](https://spdf.gsfc.nasa.gov/istp-metadata-editor/) for creating and editing ISTP guideline-compliant CDF, skeleton (SKT), and netCDF files
 
-- Original Java based [ISTP CDF Skeleton Editor](https://spdf.gsfc.nasa.gov/skteditor/)
+- Original Java-based [ISTP CDF Skeleton Editor](https://spdf.gsfc.nasa.gov/skteditor/)
 
 ### Adding Data to Skeleton CDFs
 

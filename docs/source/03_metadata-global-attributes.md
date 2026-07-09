@@ -2,7 +2,7 @@
 
 Global attributes are used to provide information about the dataset as an entity and about the individual files composing the datasets. Together with the variables and variable attributes, the global attributes make the data correctly and independently usable by someone not connected with the instrument team, and hence a good archive product. The global attributes are also used by the Coordinated Data Analysis Web ([CDAWeb)](https://cdaweb.gsfc.nasa.gov/) data browsing and retrieval system hosted by SPDF, and by other data display and analysis software such as [AutoPlot](https://autoplot.org) and [SPEDAS](https://spedas.org/). 
 
-The required, recommended, and optional global attributes are listed in the table below. See [Global Attribute Definitions](#global-attribute-definitions) for the full set of defined global attributes in alphabetical order; however, note that global attributes in a file can be listed in any order. Also note that the attribute names are case sensitive, and the names of the ISTP global attributes must match the case **exactly as shown**. Additional global attributes may be defined, but their **names must start with a letter and contain letters, numbers, and underscore character but no other special characters.** Though attribute names are case-sensitive, the names must not be distinguished by case only.
+The required, recommended, and optional global attributes are listed in the table below. See [Global Attribute Definitions](#global-attribute-definitions) for the full set of defined global attributes in alphabetical order; however, note that global attributes in a file can be listed in any order. Also note that the attribute names are case-sensitive, and the names of the ISTP global attributes must match the case **exactly as shown**. Additional global attributes may be defined, but their **names must start with a letter and contain letters, numbers, and the underscore character but no other special characters **.** Though attribute names are case-sensitive, the names must not be distinguished by case only.
 
 All ISTP global attributes are of character data type (CDF_CHAR) in the CDF file format. Since the CDF format allows multiple entries for global attributes, with each ISTP global attribute entry being a 1-D array of CDF_CHAR (a string), this allows storing a 1-D array of strings in a global attribute. **Note** that these multiple entries for an ISTP global attribute in the CDF format correspond to a 1-D array of string data type in the **netCDF-4** format.
 
@@ -30,7 +30,7 @@ All ISTP global attributes are of character data type (CDF_CHAR) in the CDF file
 | [`Discipline`](#discipline) | **Recommended** (allows multiple entries) | `"Solar Physics>Heliospheric Physics"`  | Describes both the science discipline and subdiscipline. This attribute allow multiple entries. |
 | [`Data_processing_level`](#data_processing_level) (**PROPOSAL ONLY**)| **Recommended** | `"L2>Level 2"`  | Describes the dataset processing level. Both the short and long names, separated by `>`, are included.|
 | [`DOI`](#doi) | **Recommended**  |  `"https://doi.org/10.48322`<br>`/mede-7j02"`  | Digital Object Identifier (DOI) as a persistent identifier for the dataset. |
-| [`File_naming_convention`](#file_naming_convention) | **Recommended**  |  `"source_descriptor_datatype`<br>`_yyyyMMdd"`  | Describes the dataset file naming convention based on combination of `Source_name`, `Descriptor`, and `Data_type` attribute short names and a date/time format. |
+| [`File_naming_convention`](#file_naming_convention) | **Recommended**  |  `"source_descriptor_datatype`<br>`_yyyyMMdd"`  | Describes the dataset file naming convention based on a combination of `Source_name`, `Descriptor`, and `Data_type` attribute short names and a date/time format. |
 | [`Generated_by`](#generated_by) | **Recommended**  | `"ISOIS SOC, University of New Hampshire"` | Allows for the generating data center/group to be identified. |
 | [`Generation_date`](#generation_date) | **Recommended**  |  `"20210329"` | Date of the file creation using yyyymmdd format.  |
 | [`HTTP_LINK`](#link_text-link_title-http_link) | **Recommended** (allows multiple entries; five  entries allowed by **CDAWeb**)  |  `"http://spp-isois.sr.unh.edu`<br>`/ISOIS_Terms_of_Use.html"`, <br> `"https://link.springer.com`<br>`/article/10.1007%2Fs11214`<br>`-014-0059-1"`, <br> `"http://fields.ssl.berkeley.edu"`, <br> `"https://www2.mps.mpg.de`<br>`/homes/fraenz/systems/"`, <br> `"http://spp-isois.sr.unh.edu`<br>`/data_public/ISOIS_Data`<br>`_Glossary.pdf"` | Stores the URL for the link. Used with `LINK_TEXT` and `LINK_TITLE` attributes. This attribute allows multiple entries, with [CDAWeb](https://cdaweb.gsfc.nasa.gov/) allowing five entries (five entries are shown in the example). |
@@ -60,22 +60,22 @@ All ISTP global attributes are of character data type (CDF_CHAR) in the CDF file
 (**_Recommended. PROPOSAL ONLY_**.) Processing level of the dataset. Both a short name  and a long name, separated by `>`, are required. For example, `Data_processing_level = "L2>Level 2"`
 
 ### Data_type
-(**_Required_**.) This attribute identifies the data type of the dataset, generally the characteristics of the dataset that distinguish it from other datasets from the same instrument (including plausible ones created later) using some meaningful combination of parameters, resolution, format, compression. Both a short name (used in `Logical_source` and in the filename) and a long name (used in `Logical_source_description`), separated by `>`, are required. 
+(**_Required_**.) This attribute identifies the data type of the dataset, generally the characteristics of the dataset that distinguish it from other datasets from the same instrument (including plausible ones created later) using some meaningful combination of parameters, resolution, format, and compression. Both a short name (used in `Logical_source` and in the filename) and a long name (used in `Logical_source_description`), separated by `>`, are required. 
 
 If desired, the level (`L0`, `L1`, `L2`, key parameter `kp`, summary parameter `sp`, etc.) may be prepended to the data collection name to sort by these levels (such as `l2-gms-62ms`). Temporal resolution uses time codes such as: ms, min, s, hr, day, week, month; for example, `500ms` for 0.5sec resolution, `6s` for 6sec, `5min` for 5 minutes, `2hr` for 2 hour, `1day` for daily.
 
-Originally, for ISTP exchangeable data products, the values of `Data_type` were `"Kn>Key Parameter"` for approximately minute averaged survey data, `"Hn>High Resolution data"` for certified data of higher resolution than Key Parameters, and `"Mn>Modified Data"` for modified or derived datasets, where`n` is from `0` to `9`. For Cluster/Cluster Science Data System (CSDS), the allowed values were either `"SP>Summary Parameter"` or `"PP>Prime Parameter"`. For new datasets, data providers are not restricted to these original definitions, and can define data types individually for each mission or instrument to capture relevant information. For example, `Data_type = "L2-Summary>level 2 summary"` indicates both the processing level (`L2`) and that the dataset contains summary data, as two subfields separated by hyphen. 
+Originally, for ISTP exchangeable data products, the values of `Data_type` were `"Kn>Key Parameter"` for approximately minute averaged survey data, `"Hn>High Resolution data"` for certified data of higher resolution than Key Parameters, and `"Mn>Modified Data"` for modified or derived datasets, where`n` is from `0` to `9`. For Cluster/Cluster Science Data System (CSDS), the allowed values were either `"SP>Summary Parameter"` or `"PP>Prime Parameter"`. For new datasets, data providers are not restricted to these original definitions, and can define data types individually for each mission or instrument to capture relevant information. For example, `Data_type = "L2-Summary>level 2 summary"` indicates both the processing level (`L2`) and that the dataset contains summary data, as two subfields separated by a hyphen. 
 
 ### Data_version
 (**_Required_**.) This attribute identifies the version of a particular data file for a given date, e.g., file ge_k0_mgf_19920923_v01.cdf is the first version of data for 1992 September 23. `Data_version` generally starts at `"1"`. **Each time** the data file is reproduced - for recalibration or other reasons - the `Data_version` is incremented by unity. Some projects use a more complex versioning scheme, such as Release, Major, Minor versions separated by period (e.g., `Data_version = "2.13.004"`). 
 
-**Note** that the version, in case of a simple versioning, or the major version, in case of a more complex scheme, should be consistent across all files in the dataset (same version number have the same meaning for all files). This enables easy and unambiguous identification of major processing version for each data file. Description of all significant changes corresponding to each major processing version (up to, and including, the file current version) should also be included as a `MODS` global attribute entry (one entry per major version).
+**Note** that the version, in case of a simple versioning, or the major version, in case of a more complex scheme, should be consistent across all files in the dataset (the same version number has the same meaning for all files). This enables easy and unambiguous identification of major processing version for each data file. Description of all significant changes corresponding to each major processing version (up to, and including, the file current version) should also be included as a `MODS` global attribute entry (one entry per major version).
 
 ### Date_Start, Date_End
 (**_Required for netCDF only_**.) The two attributes, always used together, describe the start and end UTC date/time (in yyyy-mm-ddThh:mm:ss format) of the data in the file. Required for netCDF since netCDF does not have a standard or defined variable for epoch/time values. Used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/istp_public/).
 
 ### Descriptor
-(**_Required_**.) This attribute identifies the name of the instrument or sensor that collected the data. Both a short name (used in `Logical_source` and in the filename) and a long name (used in `Logical_source_description`), separated by `>`, are required. For example,  `Descriptor = "ISOIS>Integrated Science Investigation of the Sun"`. This attribute should have single entry.
+(**_Required_**.) This attribute identifies the name of the instrument or sensor that collected the data. Both a short name (used in `Logical_source` and in the filename) and a long name (used in `Logical_source_description`), separated by `>`, are required. For example,  `Descriptor = "ISOIS>Integrated Science Investigation of the Sun"`. This attribute should have a single entry.
 
 ### Discipline
 (**_Recommended_**.) This attribute describes both the science discipline and subdiscipline. Multiple entries are allowed. The list for space physics is:
@@ -91,14 +91,14 @@ Originally, for ISTP exchangeable data products, the values of `Data_type` were 
 
 ### File_naming_convention
 
-(**_Recommended_**.) Describes the dataset file naming convention using combination of `"source"`, `"descriptor"`, and `"datatype"` (correspond to short names in `Source_name`, `Descriptor`, and `Data_type` attributes) and a date/time format, all separated by `"_"`, e.g., `File_naming_convention = "source_descriptor_datatype_yyyyMMdd"`. **Note** that  `"source_descriptor_datatype"` is the recommended order for new datasets, while `"source_datatype_descriptor"` may be common for older datasets. Date/time format includes a date format, either `"yyyyMMdd"` (recommended) or `"yyyyDDD"`, possibly followed by a time format (`"HHmmss"`, `"HHmm"`, or `"HH"`) with optional `"t"` separating them . E.g., `File_naming_convention = "source_descriptor_datatype_yyyyMMddtHHmmss"`.
+(**_Recommended_**.) Describes the dataset file naming convention using a combination of `"source"`, `"descriptor"`, and `"datatype"` (corresponding to short names in `Source_name`, `Descriptor`, and `Data_type` attributes) and a date/time format, all separated by `"_"`, e.g., `File_naming_convention = "source_descriptor_datatype_yyyyMMdd"`. **Note** that  `"source_descriptor_datatype"` is the recommended order for new datasets, while `"source_datatype_descriptor"` may be common for older datasets. Date/time format includes a date format, either `"yyyyMMdd"` (recommended) or `"yyyyDDD"`, possibly followed by a time format (`"HHmmss"`, `"HHmm"`, or `"HH"`) with optional `"t"` separating them. E.g., `File_naming_convention = "source_descriptor_datatype_yyyyMMddtHHmmss"`.
 
 
 ### Generated_by
 (**_Recommended_**.) This attribute allows for the generating data center/group to be identified.
 
 ### Generation_date
-(**_Recommended_**.) File creation date using *yyyymmdd* syntax, e.g., `Generation_date = "19920923"`. This is distinct from the date in `Validate` below which records the times of later validation processes.
+(**_Recommended_**.) File creation date using *yyyymmdd* syntax, e.g., `Generation_date = "19920923"`. This is distinct from the date in `Validate` below, which records the times of later validation processes.
 
 ### Instrument_type
 (**_Recommended, required by CDAWeb_**.) Combines types of instruments and regions as a simple way to quickly separate types of datasets for search through [CDAWeb](https://cdaweb.gsfc.nasa.gov/). Up to five entries are allowed. The following list contains allowed values:
@@ -124,7 +124,7 @@ Originally, for ISTP exchangeable data products, the values of `Data_type` were 
 
 
 ### LINK_TEXT, LINK_TITLE, HTTP_LINK
-(**_Recommended_**.) These attributes are used together to store the text (in `LINK_TEXT`, optional, even if the other two attributes are present), the title (in `LINK_TITLE`), and the URL (in `HTTP_LINK`)  of the link to the related and useful resources and documents, including links to the online data available at the PI or Co-I web site. The links will be displayed on the [CDAWeb](https://cdaweb.gsfc.nasa.gov/) Data Explorer page for the dataset. For example, if all three attributes are used (and each attribute includes one entry):
+(**_Recommended_**.) These attributes are used together to store the text (in `LINK_TEXT`, optional, even if the other two attributes are present), the title (in `LINK_TITLE`), and the URL (in `HTTP_LINK`)  of the link to the related and useful resources and documents, including links to the online data available at the PI or Co-I website. The links will be displayed on the [CDAWeb](https://cdaweb.gsfc.nasa.gov/) Data Explorer page for the dataset. For example, if all three attributes are used (and each attribute includes one entry):
   
 ```
 LINK_TEXT = "3-sec MGF magnetic field 1 Sep 1993 through 30 Sep 2015 available at "
@@ -182,7 +182,7 @@ These attributes can have multiple entries (up to five entries allowed by [CDAWe
 (**_Optional_**.) This attribute lists the parent files (in CDF or other format) for derived or merged datasets. Multiple entries are used to include multiple parents. The `Parents` entry syntax, e.g., for a CDF parent file, is of the form`"CDF>logical_file_id"`. Alternatively, the whole file name, including extension, can be included as a `Parents` attribute entry.
 
 ### PI_affiliation
-(**_Required_**.) Affiliation of the lead person, usually Principal Investigator (PI). This attribute value should include a recognizable abbreviation.
+(**_Required_**.) Affiliation of the lead person, usually the Principal Investigator (PI). This attribute value should include a recognizable abbreviation.
 
 ### PI_name
 (**_Required_**.) Lead person, usually Principal Investigator (PI). This attribute value should at least include first initial and last name.
@@ -208,7 +208,7 @@ These attributes can have multiple entries (up to five entries allowed by [CDAWe
 (**_Optional, required by Cluster_**.) Version of the software that generated the data file.
 
 ### Source_name
-(**_Required_**.) This attribute identifies the mission or investigation that contains the sensors. For ISTP, this is the mission name for spacecraft missions or the investigation name for ground-based or theory investigations. Both a short name (used in `Logical_source` and in the filename) and a long name (used in `Logical_source_description`) separated by `>` are required. This attribute should be single valued. Examples:
+(**_Required_**.) This attribute identifies the mission or investigation that contains the sensors. For ISTP, this is the mission name for spacecraft missions or the investigation name for ground-based or theory investigations. Both a short name (used in `Logical_source` and in the filename) and a long name (used in `Logical_source_description`) separated by `>` are required. This attribute should be single-valued. Examples:
 
 - `"GEOTAIL>Geomagnetic Tail"`
 - `"WIND>Wind Interplanetary Plasma Laboratory"`
@@ -222,11 +222,11 @@ These attributes can have multiple entries (up to five entries allowed by [CDAWe
 (**_Recommended_**.) Unique dataset identifier assigned by a [SPASE](http://www.spase-group.org/) naming authority, of the form `spase://NAMING_AUTHORITY/UNIQUE_ID`, where `UNIQUE_ID` is the ID assigned by the `NAMING_AUTHORITY`. The SPASE resource record provides metadata about the dataset, including pointers to locations holding the data.
 
 ### TEXT
-(**_Required_**.) This attribute should contain description of the key measurements provided by the dataset. A short description of the experiment, with reference to a journal paper and/or web page describing the experiment in detail, is also essential. The attribute allows multiple entries. It is used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/) as the dataset description, and it is also included when data is requested as an ASCII listing.
+(**_Required_**.) This attribute should contain a description of the key measurements provided by the dataset. A short description of the experiment, with reference to a journal paper and/or web page describing the experiment in detail, is also essential. The attribute allows multiple entries. It is used by [CDAWeb](https://cdaweb.gsfc.nasa.gov/) as the dataset description, and it is also included when data is requested as an ASCII listing.
 
 
 ### Time_resolution
-(**_Recommended_**.) Specifies time resolution of the data, e.g., `"1 min"`
+(**_Recommended_**.) Specifies the time resolution of the data, e.g., `"1 min"`
 
 ### TITLE
 (**_Optional_**.) Dataset title, e.g., `TITLE = "Parker Solar Probe ISOIS level 2 summary"`.

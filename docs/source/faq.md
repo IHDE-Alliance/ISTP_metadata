@@ -1,7 +1,7 @@
 
 # Frequently Asked Questions (FAQ)
 
-This page covers many of the most common questions asked about the ISTP  Guidelines. If you have a question that isn't on this list, please open a ticket on the [ISTP Guidelines Github](https://github.com/IHDE-Alliance/ISTP_metadata) site, so that the ISTP Guidelines community can respond. We will use that list as the basis for additional content for this set of questions.
+This page covers many of the most common questions asked about the ISTP  Guidelines. If you have a question that isn't on this list, please open a ticket on the [ISTP Guidelines GitHub](https://github.com/IHDE-Alliance/ISTP_metadata) site so that the ISTP Guidelines community can respond. We will use that list as the basis for additional content for this set of questions.
 
 Some links in this FAQ may point to previously released versions of the ISTP Guidelines specification.
 
@@ -10,18 +10,18 @@ This section includes general background about the ISTP Guidelines.
 
 ### What are the ISTP Guidelines, and what do they include?
 
-The ISTP Guidelines are designed to promote the processing and sharing of Heliophysics non-solar data in self-describing scientific data formats (including CDF and netCDF files).They define metadata that provide a definitive description of what the data in each variable represents, and enable building generalized analysis and display applications.
+The ISTP Guidelines are designed to promote the processing and sharing of Heliophysics non-solar data in self-describing scientific data formats (including CDF and netCDF files). They define metadata that provide a definitive description of what the data in each variable represents, and enable building generalized analysis and display applications.
 
 ### What are the principles of the ISTP Guidelines?
 Principles of the ISTP Guidelines include self-describing data (no external tables needed for understanding); metadata equally readable by humans and software; minimum redundancy and maximum simplicity; and a development process focusing on existing needs.
 
 ### Who manages the ISTP Guidelines?
 
-The ISTP Guidelines are maintained by volunteers in the Heliophysics community. [define a governance document and rules for changes, email list, Github issues?]
+The ISTP Guidelines are maintained by volunteers in the Heliophysics community. [define a governance document and rules for changes, email list, GitHub issues?]
 
 ### How long have the ISTP Guidelines been around? Is it mature?
 
-Ramona L. Kessel and Robert E. McGuire at the NASA Space Physics Data Facility ([SPDF](https://spdf.gsfc.nasa.gov)) began coordinating development of the ISTP Guidelines in 1991 as part of the International Solar-Terrestrial Physics Project ([ISTP](https://pwg.gsfc.nasa.gov)). It was used by the Polar, Wind, and Geotail missions initially and then adopted by later missions, including Cluster, MMS, Van Allen Probes.
+Ramona L. Kessel and Robert E. McGuire at the NASA Space Physics Data Facility ([SPDF](https://spdf.gsfc.nasa.gov)) began coordinating development of the ISTP Guidelines in 1991 as part of the International Solar-Terrestrial Physics Project ([ISTP](https://pwg.gsfc.nasa.gov)). It was used by the Polar, Wind, and Geotail missions initially and then adopted by later missions, including Cluster, MMS, and Van Allen Probes.
 
 ### How does the ISTP Guidelines relate to other guidelines/specifications?
 Earth sciences has a similar set of metadata guidelines in the [CF conventions](https://cfconventions.org/)

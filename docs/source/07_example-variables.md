@@ -46,7 +46,7 @@ The example demonstrates a scalar **_data_** variable `SW_P_Den` displayed in [C
 
 ### Example of Vector Magnetic Field Variable
 
-**_Data_** variable `BGSE` (Vector Magnetic Field) is displayed as time series plots (`DISPLAY_TYPE = "time_series"`), one for each vector component. The vector variable does not need `DEPEND_1` attribute since it does not depend on any additional numerical data. The x-axis is defined by the **_support_data_** variable `Epoch` (time) attached via `BGSE` variable's `DEPEND_0` attribute. The y-axis labels come from two places: (1) [`"Bx GSE"`, `"By GSE"`, `"Bz GSE"`] array of strings (labeled in blue) from the **_metadata_** variable `label_B_GSE` ([described here](#example-of-magnetic-field-label-variable)) which is attached to `BGSE` via the `LABL_PTR_1` attribute and (2) `"nT"` from the `UNITS` attribute. Note that if each vector component requires distinct unit or format string, instead of using `UNITS` and `FORMAT` attributes, the string arrays must be provided in separate **_metadata_** variables attached to the **_data_** variable via `UNIT_PTR` and `FORM_PTR` attributes. 
+**_Data_** variable `BGSE` (Vector Magnetic Field) is displayed as time series plots (`DISPLAY_TYPE = "time_series"`), one for each vector component. The vector variable does not need `DEPEND_1` attribute since it does not depend on any additional numerical data. The x-axis is defined by the **_support_data_** variable `Epoch` (time) attached via `BGSE` variable's `DEPEND_0` attribute. The y-axis labels come from two places: (1) [`"Bx GSE"`, `"By GSE"`, `"Bz GSE"`] array of strings (labeled in blue) from the **_metadata_** variable `label_B_GSE` ([described here](#example-of-magnetic-field-label-variable)) which is attached to `BGSE` via the `LABL_PTR_1` attribute and (2) `"nT"` from the `UNITS` attribute. Note that if each vector component requires a distinct unit or format string, instead of using `UNITS` and `FORMAT` attributes, the string arrays must be provided in separate **_metadata_** variables attached to the **_data_** variable via `UNIT_PTR` and `FORM_PTR` attributes. 
 
 <img width=550 src="./_static/1d_time_series.png"/>
 
@@ -185,7 +185,7 @@ The z-axis (color bar) is labeled with selected values from the H+ angle label v
 
 The three selected energy bins appear as separate panels. The `angle` (**_support_data_**) variable attribute values (either the `LABLAXIS` value or the `FIELDNAM` value, along with the `UNITS` value) are used to label the y-axis on each panel. The `angle` variable is attached to the `Flux_H` (**_data_**) variable via the `DEPEND_2` attribute.
 
-The z-axis (color bar) is labeled with selected values from the H+ energy label variable `H_energy_of_flux` (**_metadata_**) that is attached to the **_data_** variable via the `LABL_PTR_1` attribute. The z-axis units come from the `Flux_H` (**_data_**) variable's `UNITS` attributes.
+The z-axis (color bar) is labeled with selected values from the H+ energy label variable `H_energy_of_flux` (**_metadata_**) that is attached to the **_data_** variable via the `LABL_PTR_1` attribute. The z-axis units come from the `Flux_H` (**_data_**) variable's `UNITS` attribute.
 
 <img width=650 src="./_static/2d_spectrogram_2.png"/>
 

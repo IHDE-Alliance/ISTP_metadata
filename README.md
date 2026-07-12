@@ -1,6 +1,6 @@
 # ISTP Metadata Guidelines 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20790266.svg)](https://doi.org/10.5281/zenodo.20790266)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20790265.svg)](https://doi.org/10.5281/zenodo.20790265)
 [![Documentation Status](https://readthedocs.org/projects/istp-metadata/badge/?version=latest)](https://istp-metadata.readthedocs.io/)
 
 

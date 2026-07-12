@@ -2,6 +2,12 @@
 ISTP Metadata Guidelines
 ========================
 
+:DOI: |doi_badge|
+
+.. |doi_badge| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.20790266.svg
+   :target: https://doi.org/10.5281/zenodo.20790265
+   :alt: DOI Badge
+
 .. only:: html
 
    |author|

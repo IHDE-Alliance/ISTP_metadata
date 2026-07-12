@@ -14,7 +14,7 @@ Additional variable attributes may be defined. Their names must start with a let
 | -------------- | ---------------- | ------------- | --------- |
 | [`CATDESC`](#catdesc) | **Required** | `"Electron count rate"` <br> CDF_CHAR | Required for **all** variables. No more than 120, but preferably 80, characters.  |
 | [`long_name`](#catdesc) <br> (**netCDF only**) | **Required** | `"Electron count rate"` <br> CDF_CHAR | Required for **all** variables.  |
-| [`COORDINATE_SYSTEM`](#coordinate_system) (**PROPOSAL ONLY**) | **Required** | `"GSE"` <br> CDF_CHAR | Required for **_data_** vectors, tensors, and individual components.  |
+| [`COORDINATE_SYSTEM`](#coordinate_system) (**PROPOSAL ONLY**) | **Recommended** | `"GSE"` <br> CDF_CHAR | Recommended for **_data_** vectors, tensors, and individual components.  |
 | [`DEPEND_0`](#depend_0) | **Required** |  `"Epoch"` <br> CDF_CHAR  | Required for **_RV_** variables.  |
 | [`DEPEND_1`](#depend_i) | **Required** |  `"Electron_Energy"` <br> CDF_CHAR | Required for **_data_** of the following form:  1-D *spectrogram*, 1-D *stack_plot*, 2-D *spectrogram*, *image*. |
 | [`DEPEND_2`](#depend_i) | **Required** |  `"Telescope_angle"` <br> CDF_CHAR | Required for **_data_** of the following form:  2-D *spectrogram*, *image*.  |
@@ -29,9 +29,8 @@ Additional variable attributes may be defined. Their names must start with a let
 | [`LABL_PTR_1`](#labl_ptr_i) | **Required** | `"Electron_Energy_Label"` <br> CDF_CHAR  | Required for **_data_** of the following form: 1-D *Time_series*, 2-D *Spectrogram*. Also needed for 1-D and 2-D **_support_data_** without a `LABLAXIS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
 | [`LABL_PTR_2`](#labl_ptr_i) | **Required** | `"Telescope_Label"` <br> CDF_CHAR  | Required for **_data_** of the following form: 2-D *spectrogram*, 3-D *spectrogram*. Also needed for 2-D **_support_data_** without `LABLAXIS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
 | [`LABL_PTR_3`](#labl_ptr_i) | **Required** | `"Sector_Label"` <br> CDF_CHAR  | Required for **_data_** of the following form: 3-D *Spectrogram*. Points to a 1-D string **_metadata_** variable with the same dimension size. |
-| [`REPRESENTATION_i`](#representation_i) (**PROPOSAL ONLY**)| **Required, required by Cluster** | `"representation_xyz"`  <br> CDF_CHAR  | Required for **_data_** vectors and tensors. Points to a 1-D string **_metadata_** variable with the same dimension size.|
-| [`TENSOR_FRAME`](#tensor_frame) | **Optional, required by Cluster** | `"GSE"`  <br> CDF_CHAR  | Optional (required by Cluster) for _**data**_ vectors, tensors, and individual components.|
-| [`TENSOR_ORDER`](#tensor_order) (**PROPOSAL ONLY**) | **Required, required by Cluster** | `2`  <br> Integer | Required for _**data**_ vectors and tensors. |
+| [`REPRESENTATION_i`](#representation_i) (**PROPOSAL ONLY**)| **Recommended** | `"representation_xyz"`  <br> CDF_CHAR  | Recommended for **_data_** vectors and tensors. Points to a 1-D string **_metadata_** variable with the same dimension size.|
+| [`TENSOR_ORDER`](#tensor_order) (**PROPOSAL ONLY**) | **Recommended** | `2`  <br> Integer | Recommended for _**data**_ vectors and tensors. |
 | [`UNITS`](#units) | **Required** |  `"count/ms"` <br> CDF_CHAR | Required for **_data_** and **_support_data_** not using `UNIT_PTR`. |
 | [`units`](#units)  <br> (**netCDF only**) | **Required** |  `"count/ms"` <br> CDF_CHAR | Required for **_data_** and **_support_data_** not using `UNIT_PTR`. |
 | [`UNIT_PTR`](#unit_ptr) | **Required** |  `"units_E_cnt_rate"` <br> CDF_CHAR | Required for 1-D **_data_** and **_support_data_** not using `UNITS`. Points to a 1-D string **_metadata_** variable with the same dimension size. |
@@ -50,7 +49,7 @@ Additional variable attributes may be defined. Their names must start with a let
 | [`DELTA_MINUS_VAR`](#delta_plus_var-delta_minus_var)  | **Optional** |  `"E_cnt_rate_DELTA"` <br> CDF_CHAR | Optional for **_data_** and **_support_data_** variables. Points to a  **_support_data_** variable with the same dimension sizes.| 
 | [`DELTA_PLUS`](#delta_plus-delta_minus) (**PROPOSAL ONLY**) | **Optional**   | `5.0` <br> **Must match variable data type** | Optional for **_data_** and **_support_data_**. |
 | [`DELTA_PLUS_VAR`](#delta_plus_var-delta_minus_var) | **Optional** |  `"E_cnt_rate_DELTA"` <br> CDF_CHAR | Optional for **_data_** and **_support_data_** variables. Points to a  **_support_data_** variable with the same dimension sizes. |
-| [`FRAME`](#frame) | **Optional** | `"vector>gse_xyz"` <br> CDF_CHAR | Optional for **data**. |
+| [`FRAME`](#frame) | **Optional, required by Cluster** | `"vector>gse_xyz"` <br> CDF_CHAR | Optional (required by Cluster) for **data**. |
 | [`LIMITS_NOMINAL_MIN`](#limits_nominal_min-limits_nominal_max) | **Optional** | `200.0` <br> **Must match variable data type**  | Optional for **_data_** and *RV* **_support_data_**.  |
 | [`LIMITS_NOMINAL_MAX`](#limits_nominal_min-limits_nominal_max) | **Optional** | `800.0` <br> **Must match variable data type**  | Optional for **_data_** and *RV* **_support_data_**.  |
 | [`LIMITS_WARN_MIN`](#limits_warn_min-limits_warn_max) | **Optional** |  `100.0` <br> **Must match variable data type** | Optional for **_data_** and *RV* **_support_data_**.  |
@@ -88,7 +87,7 @@ See CDF_TIME_TT2000 [requirements analysis](http://cdf.gsfc.nasa.gov/html/leapse
 | [`BIN_LOCATION`](#bin_location) | **Optional** | `0.5` <br> CDF_REAL4, CDF_REAL8, or equivalent  | Relative position of time stamp to the data measurement bin, with `0.0` at the beginning of time bin and `1.0` at the end. Default is `0.5` for the time at the center of the data measurement. |
 | [`REFERENCE_POSITION`](#reference_position) | **Optional** | `"Geocenter"` <br> CDF_CHAR | `"Topocenter"` (local), `"Geocenter"`, `"Rotating Earth Geoid"` (used by CDF_TIME_TT2000). |
 | [`RELATIVE_ERROR`](#relative_error) | **Optional** |  `0.4` <br> **Must match variable underlying basic data type** | Relative or random error, in same units as `UNITS` attribute - to specify the accuracy of the time stamps relative to each other. |
-| [`RESOLUTION`](#resolution) | **Optional** | `"1ms"` <br> CDF_CHAR  | Using ISO8601 relative time format, for example: `"1ms"` = 1 millisecond. Resolution provides the smallest change in time that is measured. |
+| [`RESOLUTION`](#resolution) | **Optional** | `"1ms"` <br> CDF_CHAR  | Resolution provides the smallest change in time that is measured. For example, `"1ms"` = 1 millisecond. |
 | [`UNITS`](#units) | **Optional** |  `"ns"` <br> CDF_CHAR | SI measurement unit: `"s"`, `"ms"`(milliseconds for CDF_EPOCH variables), `"ns"`(nanoseconds for CDF_TIME_TT2000), `"ps"`(picoseconds for CDF_EPOCH16).  |
 
 
@@ -126,11 +125,11 @@ See CDF_TIME_TT2000 [requirements analysis](http://cdf.gsfc.nasa.gov/html/leapse
 - **Canopus MARI**: `"Local Auroral Electrojet index, lower bound (CL), scalar"`
 
 ### COORDINATE_SYSTEM
-(**_Required for data vectors, tensors, and individual components. PROPOSAL ONLY_**.) The name of the coordinate system of a tensor, e.g., `"GSE"`. Same as `TENSOR_FRAME`.
+(**_PROPOSAL ONLY. Recommended for data vectors, tensors, and individual components._**) The name of the coordinate system of a tensor, e.g., `"GSE"`.
 
 
 ### DELTA_PLUS, DELTA_MINUS 
-(**_Optional for data and support_data. PROPOSAL ONLY_**.) Similar to `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR`, with the difference that, instead of pointing to variables, `DELTA_PLUS` and `DELTA_MINUS` hold single (+/-) values that apply to all original variable values. `DELTA_PLUS` and `DELTA_MINUS` can also hold 1-D arrays of values (of the same size as the original variable) in case the original variable is a 1-D variable with each value requiring a separate (+/-) pair. The data type of the attribute values **must match** the data type of the original variable. Also, see the `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` descriptions on using with time data types.
+(**_PROPOSAL ONLY. Optional for data and support_data_**.) Similar to `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR`, with the difference that, instead of pointing to variables, `DELTA_PLUS` and `DELTA_MINUS` hold single (+/-) values that apply to all original variable values. `DELTA_PLUS` and `DELTA_MINUS` can also hold 1-D arrays of values (of the same size as the original variable) in case the original variable is a 1-D variable with each value requiring a separate (+/-) pair. The data type of the attribute values **must match** the data type of the original variable. Also, see the `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` descriptions on using with time data types.
 
 ### DELTA_PLUS_VAR, DELTA_MINUS_VAR
 (**_Optional for data and support_data_**.) The two attributes, always used together, have as their values the names of **_metadata_** variables (in the same dataset) which store the uncertainty (or range) of the original variable values. The uncertainty (or range) is stored as a (+/-) on the value of the original variable. In many cases, the original variable will be at the center of the interval, so that only one uncertainty (or range) variable will need to be defined to which both `DELTA_PLUS_VAR` and `DELTA_MINUS_VAR` will point to. See [example of use](07_example-variables.md#example-of-1-d-flux-variable). 
@@ -195,15 +194,15 @@ Additionally, the ISTP Guidelines require the following special `FILLVAL` values
 
 ### FRAME
 
-(**_Optional for data_**.) Optional and partially redundant with the more powerful description provided by the three concepts `TENSOR_ORDER`, `REPRESENTATION_i`, and `TENSOR_FRAME`.
+(**_Optional [required by Cluster] for data_**.) Identifies the nature of the variable, and the frame of reference when applicable. E.g., `FRAME = "vector>gse_xyz"`. Uses `type>frame of reference` format, where `type` is one of `scalar`, `vector`, `tensor`, `array`, `character`, and `frame of reference` may be one of the following: `gse_xyz`, `gsm_xyz`, `na`, `other to be specified`.
 
 ### FRAME_ORIGIN
 
-(**_Recommended for data vectors, tensors, and individual components. PROPOSAL ONLY_**.) Identifies the location of the coordinate system origin (e.g., `FRAME_ORIGIN = "Observatory"`) if different from that implied by the value in `COORDINATE_SYSTEM`.
+(**_PROPOSAL ONLY. Recommended for data vectors, tensors, and individual components_**.) Identifies the location of the coordinate system origin (e.g., `FRAME_ORIGIN = "Observatory"`) if different from that implied by the value in `COORDINATE_SYSTEM`.
 
 ### FRAME_VELOCITY
 
-(**_Recommended for data vectors, tensors, and individual components. PROPOSAL ONLY_**.) Identifies the motion of the coordinate system origin (e.g., `FRAME_VELOCITY = "Observatory"`) if different from that implied by the value in `COORDINATE_SYSTEM`.
+(**_PROPOSAL ONLY. Recommended for data vectors, tensors, and individual components_**.) Identifies the motion of the coordinate system origin (e.g., `FRAME_VELOCITY = "Observatory"`) if different from that implied by the value in `COORDINATE_SYSTEM`.
 
 ### LABLAXIS
 (**_Required, as shown in the table above, for variables not using `LABL_PTR_1`_**.) Should be a short string (no more than 20, but preferably 10, characters), which can be used to label the y-axis for a plot or to provide a heading for a data listing. Note that the unit strings are included separately via the `UNITS`/`UNIT_PTR` attributes.
@@ -235,10 +234,10 @@ limits). Visualization software can use these attributes for indicating limits o
 (**_Optional for time variables_**.) Used to account for time variance with position in the gravity wells and with relative velocity. E.g, `"Topocenter"` (local), `"Geocenter"`, `"Rotating Earth Geoid"` (used by CDF_TIME_TT2000). While we could use a combined `TimeSystem` attribute that defines mission-specific time scales where needed, such as `"UTC-at-STEREO-B"`, it is cleaner to keep them separate as `TIME_SCALE = "UTC"` and `REFERENCE_POSITION = "STEREO-B"`.
 
 ### REPRESENTATION_i
-(**_Required [required by Cluster] for data vectors and tensors. PROPOSAL ONLY_**.) Points to a 1-D metadata variable holding string representations of the i-th dimension of the data variable, e.g., [`"x"`,`"y"`,`"z"`] for Cartesian components in the x-y-z order, [`"r"`,`"p"`,`"t"`] for spherical polar, [`"r"`,"`p`",`"z"`] for cylindrical polar. Number of `REPRESENTATION_i` attributes must match the number of dimensions of the data variable. When `REPRESENTATION_i` are used with `LABLAXIS`, labels for tensor components are created by concatenating to the `LABLAXIS` value the corresponding value in the variable pointed to by `REPRESENTATION_i`, e.g., `"Vx"`, `"Vy"`, `"Vz"` for a 1-D vector (using `LABLAXIS = "V"` and `REPRESENTATION_1` pointing to a variable holding [`"x"`,`"y"`,`"z"`]) or `"Pxx"`, `"Pxy"`, `"Pxz"`, `"Pyx"`, etc., for a tensor of order 2 (using `LABLAXIS = "P"` and both `REPRESENTATION_1` and `REPRESENTATION_2` pointing to a variable holding [`"x"`,`"y"`,`"z"`]).
+(**_PROPOSAL ONLY. Recommended for data vectors and tensors._**) Points to a 1-D metadata variable holding string representations of the i-th dimension of the data variable, e.g., [`"x"`,`"y"`,`"z"`] for Cartesian components in the x-y-z order, [`"r"`,`"p"`,`"t"`] for spherical polar, [`"r"`,"`p`",`"z"`] for cylindrical polar. Number of `REPRESENTATION_i` attributes must match the number of dimensions of the data variable. When `REPRESENTATION_i` are used with `LABLAXIS`, labels for tensor components are created by concatenating to the `LABLAXIS` value the corresponding value in the variable pointed to by `REPRESENTATION_i`, e.g., `"Vx"`, `"Vy"`, `"Vz"` for a 1-D vector (using `LABLAXIS = "V"` and `REPRESENTATION_1` pointing to a variable holding [`"x"`,`"y"`,`"z"`]) or `"Pxx"`, `"Pxy"`, `"Pxz"`, `"Pyx"`, etc., for a tensor of order 2 (using `LABLAXIS = "P"` and both `REPRESENTATION_1` and `REPRESENTATION_2` pointing to a variable holding [`"x"`,`"y"`,`"z"`]).
 
 ### RESOLUTION
-(**_Optional for time variables_**.) Using ISO8601 relative time format, e.g. `"1s"`. Resolution provides the smallest change in time that is measured.
+(**_Optional for time variables_**.) Resolution provides the smallest change in time that is measured. For example, `"1ms"` = 1 millisecond.
 
 ### SCALEMIN, SCALEMAX
 (**_Optional for data and RV support_data_**.) Minimum/maximum values which can be based on the actual values of data found in the dataset or on the probable uses of the data, e.g., plotting multiple files on the same scale. Visualization software can use these attributes as defaults for plotting. The attribute data type **must match** the data type of the variable.
@@ -256,11 +255,8 @@ limits). Visualization software can use these attributes for indicating limits o
 ### sig_digits
 (**_Optional [recommended by Cluster] for data_**.) This attribute provides the number of significant decimal digits required to preserve the precision of the parameter (essential for ASCII conversion).
 
-### TENSOR_FRAME
-(**_Optional [required by Cluster] for data vectors and tensors_**.) The name of the frame (coordinate system) of a tensor, e.g., `"GSE"`. Same as `COORDINATE_SYSTEM`.
-
 ### TENSOR_ORDER
-(**_Required [required by Cluster] for data vectors and tensors. PROPOSAL ONLY_**.) The order of a tensor, i.e. `1` for a vector, `2` for a 3x3 tensor.
+(**_PROPOSAL ONLY. Recommended for data vectors and tensors._**) The order of a tensor, i.e. `1` for a vector, `2` for a 3x3 tensor.
 
 
 ### TIME_BASE

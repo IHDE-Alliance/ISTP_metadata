@@ -10,7 +10,7 @@
 ```
 
 
-| | ISTP  | Cluster | ERG | GOLD | ICON | MMS | PRBEM | Solar Orbiter |
+| | ISTP  | Cluster | ERG | GOLD | ICON | MMS | PRBEM* | Solar Orbiter |
 | ------------ | ----- | ------- | --- | ---- | ---- | --- | ----- |------- |
 | **Global Attribute**  |  | | |  |  | | | |
 | [`Data_type`](./03_metadata-global-attributes.md#data_type) | M  | M | M | M  | M  | M | M | M |
@@ -43,12 +43,13 @@
 | [`Parents`](./03_metadata-global-attributes.md#parents) | O  | M | |  | M  | O | O | M |
 | [`ADID_ref`](./03_metadata-global-attributes.md#adid_ref)  | Not relevant | M | M |  | M  | | R | |
 
+*PRBEM - Panel on Radiation Belt Environment Modeling.
 
 ```{eval-rst}
 .. tabularcolumns:: |\Y{0.28}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|\Y{0.09}|
 ```
 
-|  | ISTP | Cluster |ICON | MMS | PSP | PRBEM | RBSP (Van Allen Probes) | Solar Orbiter |
+|  | ISTP | Cluster |ICON | MMS | PSP | PRBEM* | RBSP (Van Allen Probes) | Solar Orbiter |
 | -------- | --------- | ------- | ---- | --- | --- | ----- | ----- | ----- |
 | **Variable Attribute** |  | | |  |  | | | | | |
 | [`CATDESC`](./05_metadata-variable-attributes.md#catdesc)  | M | M | M | M | M | M | M | M |
@@ -64,3 +65,5 @@
 | [`VAR_TYPE`](./05_metadata-variable-attributes.md#var_type) | M | M | M | M | | M | M | M |
 | [`VAR_NOTES`](./05_metadata-variable-attributes.md#var_notes)  | O | | M | | M | R | M | M |
 | [`DELTA_MINUS_VAR`, `DELTA_PLUS_VAR`](./05_metadata-variable-attributes.md#delta_plus_var-delta_minus_var)  | O | M |  R | M | | M | |
+
+*PRBEM - Panel on Radiation Belt Environment Modeling.

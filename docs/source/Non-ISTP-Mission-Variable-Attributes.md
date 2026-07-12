@@ -10,31 +10,30 @@
 .. tabularcolumns:: |\Y{0.25}|\Y{0.23}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.06}|\Y{0.05}|\Y{0.05}|\Y{0.06}|\Y{0.06}|\Y{0.06}|
 ```
 
-| Attributes | ISTP alternative | Cluster | <br>Arase (ERG) | GOLD | <br> ICON | MMS | <br>PDS | PRBEM | <br>PSP | Solar Orbiter |
+| Attributes | ISTP alternative | Cluster | <br>Arase (ERG) | GOLD | <br> ICON | MMS | <br>PDS | PRBEM* | <br>PSP | Solar Orbiter |
 | ---------- | ---------------- | ------- | --- | ---- | ---- | --- | --- | ----- | --- | ------------- |
 | `_ChunkingSizes` <br> (netCDF Internal) | | | | | M |
-| `COORDINATE_SYSTEM` | | | | | | R |
-| `DATA`  <br> (Cluster CEF only) |  | M  |
+| `COORDINATE_SYSTEM` | | | | | | R | | | | M |
+| `DATA`   |  | M  <br> (CEF only) |
 | `_DeflateLevel` <br> (netCDF Internal) | | | | | M |
-| `DELTA_MINUS` | `DELTA_MINUS_VAR` | O | | | | | | | | 
-| `DELTA_PLUS` | `DELTA_PLUS_VAR` | O | | | | | | | | 
+| `DELTA_MINUS` | `DELTA_MINUS_VAR` | O <br> (CEF only) | | | | | | | | 
+| `DELTA_PLUS` | `DELTA_PLUS_VAR` | O <br> (CEF only) | | | | | | | | 
 | `_FillValue` <br> (netCDF) | `FILLVAL`| | | | M |
 | `FLUX_PTR` | | | | | | | | | M |
-| `FRAME` | | O | | | | | | | | 
 | `long_name` | | | | | R |
 | `Operator_Type` | | | | | | M |
-| `REPRESENTATION_i` | | M | | | | M | | | | 
-| `SI_CONVERSION` | | M | | | | | | | | R |
+| `REPRESENTATION_i` | | M <br> (CEF only) | | | | M | | | | M | 
 | `_Shuffle` <br> (netCDF) | | | | | M |
-| `SIZES`   <br> (Cluster CEF only)| | M |
+| `SIZES`  | | M <br> (CEF only) |
 | `SPECIES` | | | | | | | | | M |
-| `TENSOR_FRAME` | | M | | | | | | | | 
-| `TENSOR_ORDER` | | M | | | | M | | | | 
+| `TENSOR_FRAME` | | M <br> (CEF only) | | | | | | | | 
+| `TENSOR_ORDER` | | M <br> (CEF only) | | | | M | | | | M| 
 | `valid_max` <br> (netCDF) | `VALIDMAX` | | | | M |
 | `valid_min` <br> (netCDF) | `VALIDMIN`| | | | M |
 | `valid_range` <br> (netCDF) | | | | | M |
-| `VALUE_TYPE`   <br> (Cluster CEF only) | | M | | | | | | | | 
+| `VALUE_TYPE`  | | M <br> (CEF only) | | | | | | | | 
  
+*PRBEM - Panel on Radiation Belt Environment Modeling.
 
 **Descriptions**
 
@@ -53,7 +52,7 @@
 
 `_FillValue` &mdash; Used by netCDF to fill in data that was not explicitly set. This is typed data.
 
-`FRAME` &mdash;  Optional and partially redundant with the more powerful description provided by the three concepts TENSOR_ORDER, REPRESENTATION, AND TENSOR_FRAME.
+`FRAME` &mdash;  Optional and partially redundant with the more powerful description provided by the three concepts `TENSOR_ORDER`, `REPRESENTATION_i`, and `TENSOR_FRAME`.
 
 `long_name` &mdash; A description of the data item in string format similar to the ISTP `CATDESC`.
 

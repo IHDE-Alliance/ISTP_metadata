@@ -21,15 +21,14 @@ Some missions that adopted the ISTP metadata guidelines have their own documents
 
 
 ## ISTP Guidelines Structure and Concepts
-- Data is time-ordered and time-identified; in CDF, times vary by record.
-- Multiple time variables in a file, allowing data variables with different time cadences.
+- Data variables are associated with and indexed by a time variable.
+- Multiple time variables in a file, allowing data variables with different times.
 - Set of required and recommended metadata (as defined in this document).
 - Structure of each variable (variable data type, number of its dimensions, and the dimension sizes) stays unchanged throughout the entire mission (all dataset files).
 - Variables can carry metadata, e.g., labels for dimensional variables.
 - Variable attributes can point to other variables by name and carry arguments, thus providing information about relationships among variables.
 - Slowly-varying data should be stored as variables rather than in attributes (CDF variables can be defined with record sparseness set to previous record, allowing storing only records that changed).
-- Skeleton CDF is a CDF with structure and metadata defined but no data, so it can be used as a template from which to build a data CDF file. [NetCDF Common Data Language (CDL)](https://docs.unidata.ucar.edu/nug/2.0-draft/cdl.html) is the netCDF equivalent.
-- General dataset and file naming conventions.
+- General dataset, file, and directory naming conventions.
 
 ## Defining a Dataset
 General guidelines for defining a dataset may include answering the following questions:
@@ -38,7 +37,7 @@ General guidelines for defining a dataset may include answering the following qu
 - What are the key data quantities?
 - What is their definition/meaning?
 - How will they be named?
-- Understand, for each variable, its dimensionality/dimension sizes, dependencies, and variances with time and all dimensions.
+- For each variable, what are its dimensionality/dimension sizes, dependencies, and variances with time and all dimensions at the dataset level (over all dataset files)?
 
 The overall purpose for the dataset and its connections to the missions, instruments, people, and organizations are provided in the [Global Attributes](./03_metadata-global-attributes.md). For example, the [CDAWeb](https://cdaweb.gsfc.nasa.gov/) home page uses global attributes [`Mission_group`](./03_metadata-global-attributes.md#mission_group) and [`Instrument_type`](./03_metadata-global-attributes.md#instrument_type) (a combination of instrument type and observed region) as a simple dataset filtering for quick dataset selection.
 

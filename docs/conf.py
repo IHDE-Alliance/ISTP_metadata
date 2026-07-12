@@ -22,7 +22,7 @@ root_doc = 'index'
 # -- Project information -----------------------------------------------------
 
 project = "ISTP Metadata Guidelines"
-copyright = "CC0 1.0 Universal"
+copyright = "Public Domain (CC0 1.0 Universal)"
 author_list = ["Ramona L. Kessel", "Robert E. McGuire", "D. Aaron Roberts", "Robert M. Candey", "Andriy Koval", "Reine Chimiak", "Lan Jian", "Tamara J. Kovalick", "Sarah M. Fooks", "Eric W. Grimes", "Bernard T. Harris", "Alfredo A. Cruz", "Rita C. Johnson", "Fernando Carcaboso Morales"]
 
 # Automatically formats for HTML front page/footer:

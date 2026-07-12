@@ -1,5 +1,9 @@
 # ISTP Metadata Guidelines 
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20790266.svg)](https://doi.org/10.5281/zenodo.20790266)
+[![Documentation Status](https://readthedocs.org/projects/istp-metadata/badge/?version=latest)](https://istp-metadata.readthedocs.io/)
+
+
 International Solar-Terrestrial Physics (ISTP) Metadata Guidelines for describing the internal meaning of self-describing scientific data formats, such as [CDF](https://cdf.gsfc.nasa.gov) and [netCDF](https://www.unidata.ucar.edu/software/netcdf/) in Heliophysics. Originally developed in the early 1990's as part of the ISTP science initiative for use by the Polar, Wind, Geotail, and Cluster missions, they were later adopted by the Interagency Consultative Group (IACG) for Space Science. The Guidelines are now used by most of the major heliophysics missions, including MMS, Van Allen Probes, Parker Solar Probe, Solar Orbiter and IMAP, and are supported by numerous display and analysis tools, including [CDAWeb](https://cdaweb.gsfc.nasa.gov), [Autoplot](https://autoplot.org), [SpacePy](https://spacepy.github.io) and [PySPEDAS](https://pyspedas.readthedocs.io)/[SPEDAS](https://spedas.org).
 
 ## Table of Contents

@@ -48,3 +48,9 @@ International Solar-Terrestrial Physics (ISTP) Metadata Guidelines for describin
       Appendix G. Frequently Asked Questions (FAQ) <source/faq>
 
 
+.. toctree::
+   :maxdepth: 1
+   :unnumbered:
+
+   source/release-history
+

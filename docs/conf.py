@@ -135,7 +135,7 @@ intersphinx_disabled_reftypes = ["*"]
 
 # Handle appendices in PDF correctly
 # Register your appendix document names (omit the extension)
-latex_appendices = ["source/07_example-variables", "source/08_example-skeletontables", "source/Multi_Mission_Use_of_Attributes", "source/Non-ISTP-Mission-Global-Attributes", "source/Non-ISTP-Mission-Variable-Attributes", "source/best-practices", "source/faq", "release-history"]
+latex_appendices = ["source/07_example-variables", "source/08_example-skeletontables", "source/Multi_Mission_Use_of_Attributes", "source/Non-ISTP-Mission-Global-Attributes", "source/Non-ISTP-Mission-Variable-Attributes", "source/best-practices", "source/faq", "source/release-history"]
 
 
 # Force Sphinx to automatically calculate relative column widths for Markdown tables

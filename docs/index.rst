@@ -50,7 +50,6 @@ International Solar-Terrestrial Physics (ISTP) Metadata Guidelines for describin
 
 .. toctree::
    :maxdepth: 1
-   :unnumbered:
 
    source/release-history
 

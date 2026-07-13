@@ -46,10 +46,5 @@ International Solar-Terrestrial Physics (ISTP) Metadata Guidelines for describin
       Appendix E. Non-ISTP Mission Variable Attributes <source/Non-ISTP-Mission-Variable-Attributes>
       Appendix F. Best Practices <source/best-practices>
       Appendix G. Frequently Asked Questions (FAQ) <source/faq>
-
-
-.. toctree::
-   :maxdepth: 1
-
-   source/release-history
+      Appendix H. Release History <source/release-history>
 
